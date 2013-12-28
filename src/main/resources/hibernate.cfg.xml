@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/businessportal</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="COM/RBNELITE/ENTITY/Login.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Registration.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Other.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Lifestyle.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Hobbies.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Education.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Astro.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Contact.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Family.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Religion.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/CreateEvent.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/I_Need.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Message.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Product.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/StatusUpdate.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/IntrestAreas.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Comment.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Photos.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/ProfileImage.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Frnd_request.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Friendship.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/LikeButton.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Occupation.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Notification.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/UnlikeButton.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/ProductImage.hbm.xml"/>
+    <mapping resource="COM/RBNELITE/ENTITY/Solution.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
