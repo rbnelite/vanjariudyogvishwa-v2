@@ -26,7 +26,7 @@
         class="org.springframework.orm.hibernate4.HibernateTransactionManager"
         p:sessionFactory-ref="sessionFactory"/>
 
- 	<tx:annotation-driven transaction-manager="transactionManager" mode="proxy"/>
+ 	<tx:annotation-driven transaction-manager="transactionManager"/>
  	
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
