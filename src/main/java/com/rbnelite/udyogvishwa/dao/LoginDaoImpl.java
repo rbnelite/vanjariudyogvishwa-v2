@@ -35,9 +35,9 @@ public class LoginDaoImpl extends BaseDao<Login> implements LoginDao {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void insertRecord(Login login) {
 		Session session = sessionFactory.openSession();
-		//session.getTransaction().begin();
+		session.getTransaction().begin();
 		session.save(login);
-		//session.getTransaction().commit();
-		//session.flush();
+	    session.getTransaction().commit();
+		session.flush();
 	}
 }

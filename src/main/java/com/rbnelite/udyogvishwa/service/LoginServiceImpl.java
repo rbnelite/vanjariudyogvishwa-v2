@@ -28,7 +28,7 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public void insertRecord(Credential credential) {
 		Login login = new Login();
-		login.setId(3L);
+		login.setId(3);
 		login.setUserId(credential.getLoginId());
 		login.setPassword(credential.getPassword());
 		
