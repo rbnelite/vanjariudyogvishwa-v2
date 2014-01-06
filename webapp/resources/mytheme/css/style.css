@@ -1,0 +1,629 @@
+/* 
+    Document   : style
+    Created on : Dec 9, 2013, 1:26:56 PM
+    Author     : Manoj
+    Description: Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    background-color: white;
+    
+}
+
+#main{
+    background-color: yellow; 
+    width: 1400px;
+    height: 2300px;
+    margin: 10px 50px 10px 50px;
+    border: 3px solid violet; 
+    border-radius: 3px;
+}
+#mainMsg{
+    background-color: yellow; 
+    width: 1400px;
+    height: fit-content;
+    margin: 10px 50px 10px 50px;
+    border: 3px solid violet; 
+    border-radius: 3px;
+}
+#mainInterestAreas{
+    
+    background-color: yellow;
+    width: 1400px;
+    height: fit-content;
+    margin: 10px 50px 10px 50px;
+    border: 3px solid violet; 
+    border-radius: 3px;
+}
+    #logo1
+{
+	width:141px;
+	height:143px;
+	margin-left: -1000px;
+        margin-bottom: -144px;
+        
+}
+
+
+
+            .style1 {font-family: "3D LET (BRK)"}
+            .style2 {font-family: "Adobe Garamond Pro"}
+            .style6 {font-size: 24px}
+            .style7 {font-size: 9px}
+            .style8 {
+                font-size: 10px;
+            }
+            .style10 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 9px;
+            }
+            .style16 {
+                font-family: Verdana;
+                margin-right: 100px;
+            }
+            .style21 {font-family: Verdana; font-size: 9px; }
+            .style24 {font-size: 12px}
+            .style27 {
+                color: #0099FF;
+                border: 1px;
+                border-color: #0066FF;
+                margin-right: 120px;
+            }
+            .style34 {color: #686868}
+            .style36 {
+                color: #99CC33;
+                font-size: 30px;
+                font-family: "Adobe Caslon Pro Bold";
+            }
+            .style42 {color: #cococo; font-size: 30px; }
+            .style46 {color: #686868; font: 12px Verdana;}
+            .style59 {
+                color: #686868;
+                font: 12px Verdana;
+                font-family: Verdana;
+            }
+            .style64 {font-size: 24px; color: #99CC33; }
+            .style71 {color: #99CC00}
+            .style72 {
+                font-family: "Adobe Caslon Pro Bold";
+                font: bold;
+                color: #99CC33;
+            }
+            .style74 {font-family: Verdana}
+            .style75 {color: #99CC33}
+            .style76 {font-family: Verdana; color: #99CC33; }
+            .style77 {font-family: ELEGANCE; color: #686868; }
+
+
+
+
+#Header{
+    border-radius: 3px;
+    background-color: bisque;
+    width: 1400px;
+    height: 200px;
+    margin: 0px 50px 0px 0px;
+    border: 1px solid gray; 
+    
+}
+#hiderMenu{
+    border-radius: 3px;
+    background-color: bisque;
+    width: 1400px;
+    height: 40px;
+    margin: 0px 50px 5px 0px;
+    font-size: 150%;
+    border: 1px solid chartreuse; 
+    
+}
+
+
+#anchor{
+    margin-left: 80px;
+    font-family: white;
+ }
+ #anchor:hover{
+    
+    border-radius: 10px;
+ }
+
+#input_search{
+    margin-top:10px;
+    margin-left: 400px;
+    width: 350px;
+    height: 30px;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: black;
+    background-color:white;
+    font-size: 100%;
+}
+#profile_photo{
+    
+    float: right;
+    margin-right: 50px;
+    font-size: 100%;
+}
+#Updated_photo{
+    height:50px;
+    width:52px;
+    float: right;
+    margin-right: 50px;
+    font-size: 100%;
+    
+}
+#Updated_photo:hover{
+    height:150px;
+    width:152px;
+    float: right;
+    margin-right: 50px;
+    font-size: 100%;
+}
+#leftMain{
+    border-radius: 3px;
+    float: left;
+    width: 300px;
+    height:1000px;
+    overflow: auto;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+
+#leftMain1{
+    float: left;
+    width: 290px;
+    height:323px;
+    overflow: auto;
+    border-radius: 3px;
+    margin:5px 2px 0px 2px;
+    background-color: bisque;
+}
+
+#leftMain2{
+    border-radius: 3px;
+    float: left;
+    width: 290px;
+    height:323px;
+    overflow: auto;
+    margin:5px 2px 0px 2px;
+    background-color: bisque;
+}
+#leftMain3{
+    border-radius: 3px;
+    float: left;
+    width: 290px;
+    height:323px;
+    overflow: auto;
+    margin:5px 2px 0px 2px;
+    background-color: bisque;
+}
+
+#MiddleTop{
+    
+    border-radius: 35px;
+    width: 790px;
+    height: 100px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+    
+}
+#MiddleTopEvent{
+    border-radius: 35px;
+    width: 790px;
+    height: 350px;
+    background-color: bisque;
+    border: 1px solid aqua;
+}
+#MiddleTopEvent:hover{
+    
+    border-radius: 35px;
+    width: 790px;
+    height: 350px;
+    background-color: whitesmoke;
+    border: 1px solid aqua; 
+    
+}
+#MiddleTopProduct{
+    border-radius: 35px;
+    width: 790px;
+    height: 300px;
+    background-color: bisque;
+    border: 1px solid aqua;
+}
+#middle{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 893px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#middleMsg{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 999px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#middleEvent{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 645px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#middleStep4{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 1090px;
+    height: 645px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#middleStep10{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 780px;
+    height: 715px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#middleOccupation{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 780px;
+    height: 645px;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#ShowStatusUpdet{
+    width: 750px;
+    margin-top: 10px;
+    margin-left: 5px;
+    float: left;
+}
+
+#MsgShowArea{
+    
+    margin:5px auto auto 17px;
+    width: 735px;
+    height: 400px;
+}
+#MsgToArea{
+    
+    margin:5px auto auto 17px;
+    width: 735px;
+    height: 90px;
+}
+#MsgTo{
+float: left;
+margin:5px auto auto 5px;
+}
+
+#CommentToStatus{
+    background-color: burlywood;
+}
+
+#rightMain{
+    border-radius: 3px;
+    margin-top: -1003px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#rightMainPhotos{
+    border-radius: 3px;
+    margin-top: -648px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#rightMainEvents{
+    border-radius: 3px;
+    margin-top: -1005px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#rightMainProducts{
+    border-radius: 3px;
+    margin-top: -955px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+
+
+#rightMainAccSetting{
+    border-radius: 3px;
+    margin-top: -895px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+
+#InterestAreas:hover {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: azure;
+    
+    
+}
+
+#rightMainMSG{
+    border-radius: 3px;
+    margin-top: -1002px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#InterestAreas{
+    border-radius: 3px;
+    border: 1px solid aqua;
+    float: left;
+    width: 462px;
+    height:300px;
+    background-color: bisque;
+}
+#InterestAreas:hover {
+    border-radius: 35px;
+    background-color: whitesmoke;
+    border: 1px solid aqua;
+    
+}
+#Products{
+    border-radius: 3px;
+    border: 1px solid aqua;
+    width: 462px;
+    height:300px;
+    background-color: bisque;
+}
+#Products:hover{
+    border-radius: 35px;
+    border: 1px solid aqua;
+    background-color: whitesmoke;
+}
+#Friends{
+    float: right;
+    border-radius: 3px;
+    border: 1px solid aqua;
+    background-color: bisque;
+    margin-top: -302px;
+    width: 462px;
+    height:300px;
+}
+#Friends:hover{
+    border-radius: 35px;
+    border: 1px solid aqua;
+    background-color: whitesmoke;
+}
+#ProfileDetails{
+    margin-top: 5px;
+    float: left;
+    border-radius: 3px;
+    border: 1px solid aqua;
+    background-color: bisque;
+    width: 930px;
+    height:200px;
+}
+#ProfileDetails:hover{
+    border-radius: 35px;
+    border: 1px solid aqua;
+    background-color: whitesmoke;
+}
+#Photos{
+    
+    border-radius: 3px;
+    border: 1px solid aqua;
+    background-color: bisque;
+    margin-top: 7px;
+    width: 464px;
+    height:300px;
+}
+#Photos:hover{
+    border-radius: 35px;
+    border: 1px solid aqua;
+    background-color: whitesmoke;
+}
+#RightUpdatedStatus{
+    
+    border-radius: 3px;
+    border: 1px solid aqua;
+    background-color: bisque;
+    margin-top: 5px;
+    width: 464px;
+    height:1340px;
+}
+#RightUpdatedStatus:hover{
+    border-radius: 35px;
+    border: 1px solid aqua;
+    background-color: whitesmoke;
+}
+#NeedTop{
+    
+    border-radius: 10px;
+    width: 790px;
+    height: 250px;
+    background-color: bisque;
+    display: none;
+    border: 1px solid gold;
+}
+#NeedTopHome{
+    float: right;
+    /*margin-right: 305px;*/
+    margin-left: 305px;
+    border-radius: 35px;
+    width: 790px;
+    height: 270px;
+    background-color: bisque;
+    display: none;
+    margin-bottom: 35px;
+    border: 1px solid aqua; 
+    position: absolute;
+}
+#NeedTopProfile{
+    /*float: right;*/
+    margin-left: 305px;
+    border-radius: 35px;
+    width: 790px;
+    height: 270px;
+    background-color: bisque;
+    display: none;
+    margin-bottom: 35px;
+    border: 1px solid aqua; 
+    position: absolute;
+}
+#NotificationTopHome{
+    /*float: right;*/
+    /*margin-right: 305px;*/
+    border-radius: 15px;
+    width: 350px;
+    height: auto;
+    background-color: bisque;
+    display: none;
+    /*margin-bottom: 35px;*/
+    margin-left: 650px;
+    border: 1px solid gray; 
+    position: absolute;
+    
+}
+#RequestTopHome{
+    border-radius: 15px;
+    width: 350px;
+    height:auto;
+    background-color: bisque;
+    display: none;
+    margin-left: 820px;
+    border: 1px solid gray; 
+    position: absolute;
+}
+#SettingTopHome{
+    border-radius: 15px;
+    width: 350px;
+    height:auto;
+    background-color: bisque;
+    display: none;
+    margin-left: 950px;
+    border: 1px solid gray; 
+    position: absolute;
+}
+
+#NeedRightMain{
+    border-radius: 10px;
+    margin-top: -1002px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua;
+}
+#NeedMiddle{
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 790px;
+    height: 1000px;
+    background-color: bisque;
+    border: 1px solid aqua;
+}
+
+#info_step2
+{
+    height: 505px;
+    width: 790px;
+    background-color: bisque;
+    
+    margin-top: 5px;
+    border-radius: 10px ;
+    border:1px solid aqua;
+}
+#leftMainInterestAreas{
+    border-radius: 3px;
+    float: left;
+    margin-top: 5px;
+    width: 300px;
+    height:505px;
+    overflow: auto;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#leftMainStep3{
+    border-radius: 3px;
+    float: left;
+    margin-top: 5px;
+    width: 300px;
+    height:645px;
+    overflow: auto;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+#leftMainStep10{
+    border-radius: 3px;
+    float: left;
+    margin-top: 5px;
+    width: 300px;
+    height:713px;
+    overflow: auto;
+    background-color: bisque;
+    border: 1px solid aqua; 
+}
+
+#rightMainInterestAreas{
+    border-radius: 3px;
+    margin-top: -507px;
+    width: 300px;
+    height: 505px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#rightMainStep3{
+    border-radius: 3px;
+    margin-top: -647px;
+    width: 300px;
+    height: 645px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+#rightMainStep10{
+    border-radius: 3px;
+    margin-top: -715px;
+    width: 300px;
+    height: 713px;
+    background-color: bisque;
+    float: right;
+    border: 1px solid aqua; 
+}
+
+#RightProfile{
+    
+    width: 463px; 
+    height: 1700px; 
+     
+    margin-left: 935px;
+}
+
+#aa{
+	height: 100px;
+	 width: 100px; 
+	 background: red; 
+	 display: none;	
+}

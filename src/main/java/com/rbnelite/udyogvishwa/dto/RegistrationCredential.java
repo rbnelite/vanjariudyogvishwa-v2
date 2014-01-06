@@ -1,7 +1,6 @@
 package com.rbnelite.udyogvishwa.dto;
 
-public class RegistrationCredential 
-{
+public class RegistrationCredential {
 
 	private String first_name;
 	private String middle_name;

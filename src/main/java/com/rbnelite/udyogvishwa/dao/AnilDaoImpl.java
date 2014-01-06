@@ -1,34 +1,27 @@
 package com.rbnelite.udyogvishwa.dao;
 
-import java.util.List;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Registration;
+import com.rbnelite.udyogvishwa.model.Anil;
 
 @Repository
-public class RegistrationDaoImpl extends BaseDao<Registration> implements RegistrationDao {
-
-	public RegistrationDaoImpl() {
-		super(Registration.class);
+public class AnilDaoImpl extends BaseDao<Anil> implements AnilDao {
+	public AnilDaoImpl() {
+		super(Anil.class);
 	}
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void RegisterUser1(Registration registration)
-	{
-		System.out.println("hiiii ab");
+	public void RegisterAnil1(Anil abmodel) {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
-		session.save(registration);
+		session.save(abmodel);
 		session.getTransaction().commit();
 		session.flush();
+
 	}
-	
-	
 
 }
