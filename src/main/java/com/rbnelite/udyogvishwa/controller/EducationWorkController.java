@@ -22,7 +22,7 @@ public String insert(@ModelAttribute("EducationWorkCredential") EducationWorkCre
 	
 	educationWorkService.insertEducationWork(educationworkcredential);
 	
-	return"Step8EducationWork";
+	return"Step9LifeStyle";
 	
 }
 @RequestMapping(value="/educationwork")

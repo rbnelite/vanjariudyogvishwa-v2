@@ -23,7 +23,7 @@ public String insert(@ModelAttribute("OccupationCredential") OccupationCredentia
 
 	ocservice.insertOccupation(occredential);
 	
-	return "Step3Occupation";
+	return "Step4Contact";
 	
 }
 @RequestMapping(value="/Occupation")

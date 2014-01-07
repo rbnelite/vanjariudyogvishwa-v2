@@ -4,7 +4,7 @@
 <html>
 <head>
  
-<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+<link href="<c:url value="/Resources/css/main.css" />" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script src="<c:url value="/javascript/js/jquery.1.10.2.min.js" />"></script>
 <title>Vanjari Udyog Vishwa | Registration</title>
@@ -27,5 +27,4 @@ female<input type="checkbox" name="gender" value="female"></td></tr>
 </form>
 </div>
 </body>
-</form>
 </html>

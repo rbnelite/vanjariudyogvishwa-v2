@@ -14,13 +14,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body style="background-color:yellow">
+<body>
 <center>
 Status : ${status}
   <form action="/vanjariudyogvishwa-v2/manoj" method="post">
   First Name : <input name="fName" type="text"/><br>      
   Last Name  : <input name="lName" type="text" /><br>
-  <input type="submit" name="SubmitName">
+  <input type="submit" name="SubmitName" value="">
   </form>
   
   <br>

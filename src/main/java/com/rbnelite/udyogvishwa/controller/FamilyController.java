@@ -31,7 +31,7 @@ public class FamilyController {
 
 		familyServ.insertFamily(familyCred);
 
-		return "Step6Family";
+		return "Step7Astro";
 
 	}
 
