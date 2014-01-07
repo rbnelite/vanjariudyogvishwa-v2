@@ -53,31 +53,31 @@ CREATE TABLE `contact` (
 
 /*Table structure for table `educationWork` */
 
-CREATE TABLE `EducationWork` (
-  `educationId` INT(100) NOT NULL,
-  `school` VARCHAR(100) DEFAULT NULL,
-  `collage` VARCHAR(100) DEFAULT NULL,
-  `graduation` VARCHAR(50) DEFAULT NULL,
-  `otherGraduation` VARCHAR(50) DEFAULT NULL,
-  `PGCollege` VARCHAR(100) DEFAULT NULL,
-  `PGDegree` VARCHAR(50) DEFAULT NULL,
-  `otherPG` VARCHAR(50) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`educationId`)
+CREATE TABLE EducationWork(
+  educationId INT(100) NOT NULL,
+  school VARCHAR(100) DEFAULT NULL,
+  collage VARCHAR(100) DEFAULT NULL,
+  graduation VARCHAR(50) DEFAULT NULL,
+  otherGraduation VARCHAR(50) DEFAULT NULL,
+  PGCollege VARCHAR(100) DEFAULT NULL,
+  PGDegree VARCHAR(50) DEFAULT NULL,
+  otherPG VARCHAR(50) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (educationId)
 );
 
 /*Table structure for table `employment` */
 
-CREATE TABLE `employment` (
-  `employeeId` INT(100) NOT NULL,
-  `companyName` VARCHAR(100) DEFAULT NULL,
-  `occupation` VARCHAR(100) DEFAULT NULL,
-  `productDetails` VARCHAR(200) DEFAULT NULL,
-  `numberOfEmp` VARCHAR(100) DEFAULT NULL,
-  `empType` VARCHAR(100) DEFAULT NULL,
-  `annualIncome` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (`employeeId`)
+  CREATE TABLE occupation (
+  employeeId INT NOT NULL,
+  companyName VARCHAR(100) DEFAULT NULL,
+  occupation VARCHAR(100) DEFAULT NULL,
+  productDetails VARCHAR(200) DEFAULT NULL,
+  numberOfEmp VARCHAR(100) DEFAULT NULL,
+  empType VARCHAR(100) DEFAULT NULL,
+  annualIncome VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY (employeeId)
 );
 
 /*Table structure for table `event` */
