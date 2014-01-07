@@ -21,7 +21,7 @@ public class AstroController {
 	public String astroForm(@ModelAttribute("AstroCredential")AstroCredential astrocredential,ModelMap map)
 	{
 		astroservice.saveAstro(astrocredential);
-		return "Step7Astro";
+		return "Step8EducationWork";
 	}
 
 	@RequestMapping(value="/Astro")

@@ -21,7 +21,7 @@ public class HobbiesController {
 	public String Hobbies(@ModelAttribute("HobbiesCredential")HobbiesCredential hobbycredential,ModelMap map)
 	{
 		hobbiesservice.saveHobbies(hobbycredential);
-		return "Step10Hobbies";
+		return "Step11OtherDetails";
 	}
 	
 	@RequestMapping(value="/Hobbies")

@@ -21,7 +21,7 @@ public class ContactController {
 	public String contact(@ModelAttribute("ContactCredential")ContactCredential contactcredential, ModelMap map){
 		
 	contactservice.SaveContact(contactcredential);
-	return "Step10Hobbies";
+	return "Step5Religion";
 	}
 	
 	@RequestMapping(value="/Contact")
