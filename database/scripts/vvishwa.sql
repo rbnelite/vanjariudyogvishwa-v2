@@ -1,31 +1,29 @@
 
-
 /*Table structure for table `registration` */
 
-CREATE TABLE `registration` (
-  `sno` INT(100) NOT NULL,
-  `fname` VARCHAR(20) DEFAULT NULL,
-  `mname` VARCHAR(20) DEFAULT NULL,
-  `lname` VARCHAR(20) DEFAULT NULL,
-  `emailId` VARCHAR(30) DEFAULT NULL,
-  `contactNo` VARCHAR(22) DEFAULT NULL,
-  `gender` VARCHAR(10) DEFAULT NULL,
-  `bdate` VARCHAR(22) DEFAULT NULL,
-  `password` VARCHAR(20) DEFAULT NULL,
-  `LastLogin` VARCHAR(20) DEFAULT NULL,
-  KEY `sno` (`sno`)
+CREATE TABLE registration (
+  sno INT NOT NULL,
+  firstName VARCHAR(20) DEFAULT NULL,
+  middleName VARCHAR(20) DEFAULT NULL,
+  lastName VARCHAR(20) DEFAULT NULL,
+  emailId VARCHAR(30) DEFAULT NULL,
+  contactNo VARCHAR(22) DEFAULT NULL,
+  gender VARCHAR(10) DEFAULT NULL,
+  birthDate VARCHAR(22) DEFAULT NULL,
+  password VARCHAR(20) DEFAULT NULL,
+  PRIMARY KEY (sno)
 );
 
 
 /*Table structure for table `astro` */
 
-CREATE TABLE `astro` (
-  `astroId` INT(100) NOT NULL,
-  `country` VARCHAR(20) DEFAULT NULL,
-  `city` VARCHAR(20) DEFAULT NULL,
-  `zodiac` VARCHAR(20) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`astroId`)
+CREATE TABLE astro (
+  astroId INT NOT NULL,
+  country VARCHAR(20) DEFAULT NULL,
+  city VARCHAR(20) DEFAULT NULL,
+  zodiac VARCHAR(20) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (astroId)
 );
 
 /*Table structure for table `comment` */
@@ -41,19 +39,19 @@ CREATE TABLE `comment` (
 
 /*Table structure for table `contact` */
 
-CREATE TABLE `contact` (
-  `contactId` INT(100) NOT NULL,
-  `homeAddress` VARCHAR(100) DEFAULT NULL,
-  `officeaddress` VARCHAR(100) DEFAULT NULL,
-  `telephone` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`contactId`)
+CREATE TABLE contact (
+  contactId INT NOT NULL,
+  homeAddress VARCHAR(100) DEFAULT NULL,
+  officeaddress VARCHAR(100) DEFAULT NULL,
+  telephone VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (contactId)
 );
 
 
 /*Table structure for table `educationWork` */
 
-CREATE TABLE `EducationWork` (
+CREATE TABLE `Education` (
   `educationId` INT(100) NOT NULL,
   `school` VARCHAR(100) DEFAULT NULL,
   `collage` VARCHAR(100) DEFAULT NULL,
@@ -146,31 +144,30 @@ CREATE TABLE `groupImage` (
 /*Table structure for table `groups` */
 
 
-CREATE TABLE `groups` (
-  `groupId` INT(100) NOT NULL,
-  `userMail` VARCHAR(50) DEFAULT NULL,
-  `groupName` VARCHAR(500) DEFAULT NULL,
-  PRIMARY KEY (`groupId`)
+CREATE TABLE IntrestAreas (
+  intrestAreaId INT NOT NULL,
+  userMail VARCHAR(50) DEFAULT NULL,
+  IntrestAreaName VARCHAR(500) DEFAULT NULL,
+  PRIMARY KEY (intrestAreaId)
 );
 
 
 
 /*Table structure for table `hobbies` */
 
-CREATE TABLE `hobbies` (
-  `hobbiesId` INT(100) NOT NULL,
-  `hobbies` VARCHAR(100) DEFAULT NULL,
-  `music` VARCHAR(100) DEFAULT NULL,
-  `books` VARCHAR(100) DEFAULT NULL,
-  `dressStyle` VARCHAR(100) DEFAULT NULL,
-  `tvShows` VARCHAR(100) DEFAULT NULL,
-  `prefMovies` VARCHAR(100) DEFAULT NULL,
-  `favMovies` VARCHAR(100) DEFAULT NULL,
-  `sports` VARCHAR(100) DEFAULT NULL,
-  `food` VARCHAR(100) DEFAULT NULL,
-  `vacation` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`hobbiesId`)
+CREATE TABLE hobbies (
+  hobbiesId INT NOT NULL,
+  hobbies VARCHAR(100) DEFAULT NULL,
+  favouriteMusic VARCHAR(100) DEFAULT NULL,
+  favouriteBooks VARCHAR(100) DEFAULT NULL,
+  DressStyletyle VARCHAR(100) DEFAULT NULL,
+  favouritrTvShows VARCHAR(100) DEFAULT NULL,
+  FavouriteMovies VARCHAR(100) DEFAULT NULL,
+  sports VARCHAR(100) DEFAULT NULL,
+  foodIcook VARCHAR(100) DEFAULT NULL,
+  VacationDestination VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (hobbiesId)
 );
 
 

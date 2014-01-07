@@ -1,31 +1,28 @@
 package com.rbnelite.udyogvishwa.dao;
 
-
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Registration;
+import com.rbnelite.udyogvishwa.model.Index;
 
 @Repository
-public class RegistrationDaoImpl extends BaseDao<Registration> implements RegistrationDao {
+public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 
-	public RegistrationDaoImpl() {
-		super(Registration.class);
+	public IndexDaoImpl()
+	{
+		super(Index.class);
 	}
-
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void RegisterUser1(Registration registration)
-	{
-		Session session = sessionFactory.openSession();
+	public void saveRegistration(Index index) {
+		Session session=sessionFactory.openSession();
 		session.getTransaction().begin();
-		session.save(registration);
+		session.save(index);
 		session.getTransaction().commit();
 		session.flush();
+
 	}
-	
-	
 
 }
