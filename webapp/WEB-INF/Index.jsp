@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Registration</title>
 
-        <script>
+    <script>
             function isNumberKey(evt)
             {
                 var charCode=(evt.which) ? evt.which :event.keyCode;
@@ -15,7 +15,7 @@
                     return false;
                 return true;
             }
-        </script>
+    </script>
     </head>
     <body>
     <form action="/vanjariudyogvishwa-v2/Index" method="post">
@@ -71,9 +71,9 @@
                             <tr>
                                 <td width="207" height="117"><p class="style75"><img src="images/1.png"><span class="style74">Get the Latest</span></p>
                                     <p class="style77">Update with ur latest activity</p></td>
-                                <td width="217"><p><img src="images/2.png"><span class="style76">Connect and share</span></p>
+                                <td width="217"><p><img src="resources/images/2.png"><span class="style76">Connect and share</span></p>
                                     <p class="style77">Share the moments with us</p></td>
-                                <td width="201"><p><img src="images/3.png"><span class="style76">Add photos</span></p>
+                                <td width="201"><p><img src="3.png"><span class="style76">Add photos</span></p>
                                     <p class="style77">share photo and videos</p></td>
                             </tr>
                         </table>
@@ -261,5 +261,4 @@
                                                                         </div>
                                                                         </form>
                                                                         </body>
-
                                                                         </html>
