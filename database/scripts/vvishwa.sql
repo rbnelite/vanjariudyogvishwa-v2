@@ -92,14 +92,14 @@ CREATE TABLE `event` (
 
 /*Table structure for table `family` */
 
-CREATE TABLE `family` (
-  `familyId` INT(100) NOT NULL,
-  `familyValue` VARCHAR(50) DEFAULT NULL,
-  `familyType` VARCHAR(50) DEFAULT NULL,
-  `familyStatus` VARCHAR(50) DEFAULT NULL,
-  `familyIncome` VARCHAR(50) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`familyId`)
+CREATE TABLE family (
+  familyId INT(100) NOT NULL,
+  familyValue VARCHAR(50) DEFAULT NULL,
+  familyType VARCHAR(50) DEFAULT NULL,
+  familyStatus VARCHAR(50) DEFAULT NULL,
+  familyIncome VARCHAR(50) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (familyId)
 );
 
 
@@ -246,18 +246,18 @@ CREATE TABLE `notifications` (
 );
 
 
-/*Table structure for table `other` */
+/*Table structure for table `otherDetails` */
 
-CREATE TABLE `other` (
-  `otherId` INT(100) NOT NULL,
-  `socialStatus` VARCHAR(50) DEFAULT NULL,
-  `polyticalStatus` VARCHAR(50) DEFAULT NULL,
-  `socialAct` VARCHAR(100) DEFAULT NULL,
-  `polyticalAct` VARCHAR(100) DEFAULT NULL,
-  `culturalAct` VARCHAR(100) DEFAULT NULL,
-  `games` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`otherId`)
+CREATE TABLE otherDetails (
+  otherId INT(100) NOT NULL,
+  socialStatus VARCHAR(50) DEFAULT NULL,
+  polyticalStatus VARCHAR(50) DEFAULT NULL,
+  socialAct VARCHAR(100) DEFAULT NULL,
+  polyticalAct VARCHAR(100) DEFAULT NULL,
+  culturalAct VARCHAR(100) DEFAULT NULL,
+  games VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (otherId)
 );
 
 
