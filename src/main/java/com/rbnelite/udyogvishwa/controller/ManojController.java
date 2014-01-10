@@ -47,15 +47,9 @@ public class ManojController {
 		String s1="contact";
 		System.out.println("$$$$$"+map.get(s1));
 		
-//		System.out.println("@-@"+ObjManService.listManoj().size()+"@@@@@@@");
-		
-
 		return "manoj";
 	}
 	
-	@RequestMapping
-	public String manojTempMethod(ModelMap m1){
-		return "manoj";
-	}
+	
 
 }

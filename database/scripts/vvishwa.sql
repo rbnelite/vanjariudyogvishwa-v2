@@ -321,12 +321,12 @@ CREATE TABLE `religion` (
 
 /*Table structure for table `status` */
 
-CREATE TABLE `status` (
-  `statusId` INT(100) NOT NULL,
-  `post` VARCHAR(1000) DEFAULT NULL,
-  `postDate` VARCHAR(100) DEFAULT NULL,
-  `userEmail` VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (`statusId`)
+CREATE TABLE status (
+  statusId INT NOT NULL,
+  post VARCHAR(1000) DEFAULT NULL,
+  postDate VARCHAR(100) DEFAULT NULL,
+  userEmail VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY (statusId)
 );
 
 

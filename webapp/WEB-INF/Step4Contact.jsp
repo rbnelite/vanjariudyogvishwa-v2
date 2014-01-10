@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+            <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>step-4 Contact Details Page</title>
     </head>
@@ -26,8 +26,7 @@
                     <a href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
                 </div>
             </div>
-
-            <div id="leftMainStep3"></div>
+	<div id="leftMainStep3"></div>
 
             <div id="middleStep4">
                                 <table align="center">
@@ -35,7 +34,6 @@
                                     <tr>
                                         <td colspan="2"><font size="5">Fill Out Your Contact Details</font></td>
                                     </tr>
-
                                     <tr>
                                         <td colspan="2">This Information will help us to Create Your Profile</td>
                                     </tr>
@@ -55,13 +53,12 @@
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td>Telephone/mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
+                                        <td>Telephone/Mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
                                             <div id="tel_noError" class="red" colspan="2"/></td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td align="right">
-
                                             <input type="submit" id="submit" name="save_contact" value="Save & Continue" >
                                         </td>
                                     </tr>
@@ -70,8 +67,7 @@
                                             
             <div id="rightMainStep3"></div>
         </div>
-        
-                                            </center>
+        </center>
     </form>
     </body>
 </html>
