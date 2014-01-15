@@ -5,23 +5,24 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Anil;
+import com.rbnelite.udyogvishwa.model.LikeStatus;
 
 @Repository
-public class AnilDaoImpl extends BaseDao<Anil> implements AnilDao {
-	public AnilDaoImpl() {
-		super(Anil.class);
-	}
+public class LikeStatusDaoImpl extends BaseDao<LikeStatus> implements LikeStatusDao {
 
+	public LikeStatusDaoImpl()
+	{
+		super(LikeStatus.class);
+	}
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void RegisterAnil1(Anil abmodel) {
-		Session session = sessionFactory.openSession();
+	public void LikeTheStatus(LikeStatus likestatus) {
+		
+		Session session=sessionFactory.openSession();
 		session.getTransaction().begin();
-		session.save(abmodel);
+		session.save(likestatus);
 		session.getTransaction().commit();
 		session.flush();
-
 	}
 
 }

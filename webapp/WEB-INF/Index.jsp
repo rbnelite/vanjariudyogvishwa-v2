@@ -22,7 +22,7 @@
         <div align="center">
             <table align="center" width="1321" height="874">
                 <div id="logo1" align="center">
-                    <img src="images/banner12.png" width="142" height="109" alt="logo"/>
+                    <img src="${pageContext.request.contextPath}/resources/images/banner12.png" width="142" height="150" alt="logo"/>
                 </div>
                 <tr>
                     <td height="79" colspan="2" bgcolor="#fab039">
@@ -38,7 +38,7 @@
                                         <input name="user_name" type="text" maxlength="40"/>      
                                         <input name="pass" type="password" maxlength="20"/> 
 
-                                        <input type="submit" value="" name="login"style="background-image:url(images/login_1.png);width :70px; height: 25px"/>
+                                        <input type="submit" value="" name="login"style="background-image:url(${pageContext.request.contextPath}/resources/images/login_1.png);width :70px; height: 25px"/>
                                     </td>
 
                                 </tr>
@@ -64,23 +64,22 @@
                                 .....
                             </span>
                       
-                        <p><img src="images/world mapu.png" alt="network"   align="middle" width="500" height="400" />        </p>
+                        <p><img src="${pageContext.request.contextPath}/resources/images/world mapu.png" alt="network"   align="middle" width="500" height="400" />        </p>
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
                         <table width="639" height="121" border="0">
                             <tr>
-                                <td width="207" height="117"><p class="style75"><img src="images/1.png"><span class="style74">Get the Latest</span></p>
+                                <td width="207" height="117"><p class="style75"><img src="${pageContext.request.contextPath}/resources/images/1.png"><span class="style74">Get the Latest</span></p>
                                     <p class="style77">Update with ur latest activity</p></td>
-                                <td width="217"><p><img src="resources/images/2.png"><span class="style76">Connect and share</span></p>
+                                <td width="217"><p><img src="${pageContext.request.contextPath}/resources/images/2.png"><span class="style76">Connect and share</span></p>
                                     <p class="style77">Share the moments with us</p></td>
-                                <td width="201"><p><img src="3.png"><span class="style76">Add photos</span></p>
+                                <td width="201"><p><img src="${pageContext.request.contextPath}/resources/images/3.png"><span class="style76">Add photos</span></p>
                                     <p class="style77">share photo and videos</p></td>
                             </tr>
                         </table>
                     </td>
                     <td width="670">
-                       
-                            <table width="493" align="top" height="678" border="0" style="background-image:url(images/Untitled-2.png);">
+                       <table width="493" align="top" height="678" border="0" style="background-image:url(images/Untitled-2.png);">
                                 <tr>
                                     <td width="10"><div>
                                             <th width="473" height="600" class="style27" ><span class="style64">Create Your Account...</span>
@@ -150,8 +149,8 @@
                                                                     <option>30</option>
                                                                     <option>31</option>
                                                                 </select>
-
-                                                                <select id="birthMonth" name="birthMonth">
+																
+																<select id="birthMonth" name="birthMonth">
                                                                     <option selected value="">mm</option>
                                                                     <option>Jan</option>
                                                                     <option>Feb</option>
@@ -166,6 +165,7 @@
                                                                     <option>Nov</option>
                                                                     <option>Dec</option> 
                                                                 </select>
+                                                               
                                                                 <select id="birthYear" name="birthYear">
                                                                     <option selected value="">yy</option>
                                                                     <option>1970</option>
@@ -223,7 +223,7 @@
                                                             <td align="left" class="style46" >Gender<font color="red">*</font></td>
                                                             <td><input type="radio" name="gender" value="male">
                                                                     <span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
-                                                                    <input type="radio" name="gender" value="female">
+																<input type="radio" name="gender" value="female">
                                                                         <span class="style46">Female</span>
                                                                         <div id="genderError" class="red" colspan="2"/>
                                                                         </td>
@@ -241,7 +241,7 @@
                                                                         <tr>
                                                                             <td height="96">     </td>
                                                                             <td align="right">
-                                                                                <input name="Register" type="submit" id="submit" style="background-image: url(images/signup.png); width:72px; height:27px;"/>
+                                                                                <input name="Register" type="submit" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;"/>
                                                                             </td>  
                                                                         </tr>
                                                                         </table>

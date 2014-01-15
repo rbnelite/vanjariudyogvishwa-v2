@@ -28,13 +28,13 @@ CREATE TABLE astro (
 
 /*Table structure for table `comment` */
 
-CREATE TABLE `comment` (
-  `commentId` INT(100) NOT NULL,
-  `comment` VARCHAR(10000) NOT NULL,
-  `commentWhom` VARCHAR(30) DEFAULT NULL,
-  `statusId` INT(100) DEFAULT NULL,
-  `commentOn` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`commentId`)
+CREATE TABLE comment (
+  commentId INT NOT NULL,
+  comment VARCHAR(10000) NOT NULL,
+  whoseComent VARCHAR(30) DEFAULT NULL,
+  statusId INT(100) DEFAULT NULL,
+  commentOn VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (commentId)
 );
 
 /*Table structure for table `contact` */
@@ -51,43 +51,43 @@ CREATE TABLE contact (
 
 /*Table structure for table `educationWork` */
 
-CREATE TABLE `Education` (
-  `educationId` INT(100) NOT NULL,
-  `school` VARCHAR(100) DEFAULT NULL,
-  `collage` VARCHAR(100) DEFAULT NULL,
-  `graduation` VARCHAR(50) DEFAULT NULL,
-  `otherGraduation` VARCHAR(50) DEFAULT NULL,
-  `PGCollege` VARCHAR(100) DEFAULT NULL,
-  `PGDegree` VARCHAR(50) DEFAULT NULL,
-  `otherPG` VARCHAR(50) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`educationId`)
+CREATE TABLE Education (
+  educationId INT NOT NULL,
+  school VARCHAR(100) DEFAULT NULL,
+  collage VARCHAR(100) DEFAULT NULL,
+  graduation VARCHAR(50) DEFAULT NULL,
+  otherGraduationDegree VARCHAR(50) DEFAULT NULL,
+  PGCollege VARCHAR(100) DEFAULT NULL,
+  PGDegree VARCHAR(50) DEFAULT NULL,
+  otherPGDegree VARCHAR(50) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (educationId)
 );
 
 /*Table structure for table `employment` */
 
-CREATE TABLE `employment` (
-  `employeeId` INT(100) NOT NULL,
-  `companyName` VARCHAR(100) DEFAULT NULL,
-  `occupation` VARCHAR(100) DEFAULT NULL,
-  `productDetails` VARCHAR(200) DEFAULT NULL,
-  `numberOfEmp` VARCHAR(100) DEFAULT NULL,
-  `empType` VARCHAR(100) DEFAULT NULL,
-  `annualIncome` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (`employeeId`)
+CREATE TABLE work (
+  employeeId INT NOT NULL,
+  companyName VARCHAR(100) DEFAULT NULL,
+  occupation VARCHAR(100) DEFAULT NULL,
+  productDetails VARCHAR(200) DEFAULT NULL,
+  numberOfEmp VARCHAR(100) DEFAULT NULL,
+  empType VARCHAR(100) DEFAULT NULL,
+  annualIncome VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY (employeeId)
 );
 
 /*Table structure for table `event` */
 
-CREATE TABLE `event` (
-  `eventId` INT(100) NOT NULL,
-  `name` VARCHAR(100) DEFAULT NULL,
-  `details` VARCHAR(100) DEFAULT NULL,
-  `location` VARCHAR(100) DEFAULT NULL,
-  `dataTime` VARCHAR(100) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`eventId`)
+CREATE TABLE event (
+  eventId INT(100) NOT NULL,
+  name VARCHAR(100) DEFAULT NULL,
+  details VARCHAR(100) DEFAULT NULL,
+  location VARCHAR(100) DEFAULT NULL,
+  dataTime VARCHAR(100) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (eventId)
 );
 
 /*Table structure for table `family` */
@@ -201,12 +201,12 @@ CREATE TABLE `lifestyle` (
 
 /*Table structure for table `like` */
 
-CREATE TABLE `like` (
-  `likeId` INT(10) NOT NULL,
-  `count` INT(100) DEFAULT '0',
-  `names` VARCHAR(500) DEFAULT NULL,
-  `satausId` VARCHAR(100) DEFAULT NULL,
-  PRIMARY KEY (`likeId`)
+CREATE TABLE like (
+  likeId INT NOT NULL,
+  count INT DEFAULT '0',
+  names VARCHAR(500) DEFAULT NULL,
+  satausId VARCHAR(100) DEFAULT NULL,
+  PRIMARY KEY (likeId)
 );
 
 
@@ -274,13 +274,13 @@ CREATE TABLE `photos` (
 
 /*Table structure for table `product` */
 
-CREATE TABLE `product` (
-  `productId` INT(100) NOT NULL,
-  `productName` VARCHAR(50) DEFAULT NULL,
-  `productDetails` VARCHAR(200) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  `imgPath` VARCHAR(100) DEFAULT NULL,
-  PRIMARY KEY (`productId`)
+CREATE TABLE product (
+  productId INT NOT NULL,
+  productName VARCHAR(50) DEFAULT NULL,
+  productDetais VARCHAR(200) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  imgPath VARCHAR(100) DEFAULT NULL,
+  PRIMARY KEY (productId)
 );
 
 
@@ -307,14 +307,14 @@ CREATE TABLE `profileimages` (
 
 /*Table structure for table `religion` */
 
-CREATE TABLE `religion` (
-  `religionId` INT(100) NOT NULL,
-  `religion` VARCHAR(20) DEFAULT NULL,
-  `cast` VARCHAR(20) DEFAULT NULL,
-  `motherToung` VARCHAR(20) DEFAULT NULL,
-  `nativePlace` VARCHAR(50) DEFAULT NULL,
-  `userMail` VARCHAR(30) DEFAULT NULL,
-  PRIMARY KEY (`religionId`)
+CREATE TABLE religion (
+  religionId INT NOT NULL,
+  religion VARCHAR(20) DEFAULT NULL,
+  cast VARCHAR(20) DEFAULT NULL,
+  motherToung VARCHAR(20) DEFAULT NULL,
+  nativePlace VARCHAR(50) DEFAULT NULL,
+  userMail VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (religionId)
 );
 
 
@@ -332,12 +332,12 @@ CREATE TABLE status (
 
 /*Table structure for table `unlike` */
 
-CREATE TABLE `unlike` (
-  `unlikeId` INT(100) NOT NULL,
-  `count` INT(10) DEFAULT NULL,
-  `names` VARCHAR(50) DEFAULT NULL,
-  `statusId` VARCHAR(50) DEFAULT NULL,
-  PRIMARY KEY (`unlikeId`)
+CREATE TABLE unlikestatus (
+  unlikeId INT NOT NULL,
+  count INT(10) DEFAULT NULL,
+  names VARCHAR(50) DEFAULT NULL,
+  statusId VARCHAR(50) DEFAULT NULL,
+  PRIMARY KEY (unlikeId)
 );
 
 

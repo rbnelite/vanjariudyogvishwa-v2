@@ -22,7 +22,7 @@ import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 public class OtherDetailsController {
 	@Resource
 	private OtherDetailsService otherDetailsServ;
-	@RequestMapping(value = "/otherDetails", method = RequestMethod.POST)
+	@RequestMapping(value = "/OtherDetails", method = RequestMethod.POST)
 	public String OtherDetailsMethod(
 			@ModelAttribute("OtherDetailsCredential") OtherDetailsCredential OtherCred,
 			ModelMap map) {
@@ -33,7 +33,7 @@ public class OtherDetailsController {
 
 	}
 	
-	@RequestMapping(value="/otherDetails")
+	@RequestMapping(value="/OtherDetails")
 	public String FamilyTempMethod(ModelMap m1) {
 		return "Step11OtherDetails";
 	}

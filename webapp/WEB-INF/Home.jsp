@@ -12,7 +12,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+		<script src="<c:url value="/resources/js/anil.js" />"></script>
+   
         <title>Vanjari Udyog Vishwa | Home</title>
     </head>
 
@@ -32,7 +34,7 @@
                 <a id="anchor" href="Home.jsp" style="text-decoration: none"><font color="white">Home</font></a>
                 <a id="anchor" href="Profile.jsp" style="text-decoration: none"><font color="white">My Profile</font></a>
                 <a id="anchor" href="Message.jsp" style="text-decoration: none"><font color="white">Message</font></a>
-                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" style="text-decoration: none"><font color="white">I Need</font></a>
+                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" style="text-decoration: none"><font color="white">Looking for</font></a>
                 <a id="anchor" href="#" onclick="return DisplayNotificationBlock()" style="text-decoration: none"><font color="white">Notification</font></a>
                 <a id="anchor" href="#" onclick="return DisplayRequestBlock()" style="text-decoration: none"><font color="white">Requests</font></a>
                 <a id="anchor" href="#" onclick="return DisplaySettingBlock()" style="text-decoration: none"><font color="white">Setting</font></a>
@@ -64,7 +66,20 @@
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Products"> <h4><font color="#00cccc">Products</font></h4></a>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
-                <div id="leftMain3">Needs</div>
+                
+                 <c:if  test="${!empty needList}">
+                <div id="leftMain3">
+                 <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Needs</font></th>
+                <c:forEach items="${needList}" var="myNeeds">
+                <tr>
+                <td align="left">Anil Budge Needs : ${myNeeds.need}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                </div>
+                   </c:if>
+                
 
             </div>
             <div id="NeedTopHome">
@@ -101,12 +116,8 @@
                 </table>
                 </form>
             </div>
-            
-            
             <div id="NotificationTopHome">
-                
                 <table width="100%">
-                
                 <th style="background-color: #fab039"><font color="white">Notification</font>
                 <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a>
              </th>
@@ -156,29 +167,42 @@
              		  
                          <div class="StatusContent" >
                      
-                         <table width=100%><tr><td align="left">${status11.status}</td></tr></table>
+                         <table width=100%><tr><td align="left">${status11.status} </td></tr></table>
                         
                          <br>
-                         <div id="Showcomment">
+                          <c:if  test="${!empty commentList}">
+                           <c:forEach items="${commentList}" var="myComment">
+                          
+                         <div id="Showcomment" style="border: 1px solid bisque; margin-top: 5px">
+                         
                          <div class="commentBoxImage">
                          <img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="42" width="40">
                         </div>
-                        <div>
-                        <table width=90%><tr>
+                       
+                       <div>
+                       <table width=90%>
+                        <tr>
                         <td align="left"><font color="green">Vishal Pansare</font>
-                        <br>hii this is my comment 
+                        <br>${myComment.comment}
                         </td>
-                        </tr></table></div>
-                        
-                         </div>
+                        </tr>
+                        </table>
+                       </div>
+                        </div>
+                          </c:forEach>
+						  </c:if>
+                         
                          <div id="commentBox">
                          <div class="commentBoxImage">
                          <img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="42" width="40">
                         </div>
-                        <div > <input type="text" placeholder="Write a comment and Press Enter...."style="width: 440px;height: 20px;margin-top: 10px;margin-left: -30px">
-                        
+                        <div >
+                        <form action="/vanjariudyogvishwa-v2/Comment" method="post" onKeyPress="return submitenter(this,event)" name="commentZone"> 
+                        <input type="hidden" name="statusIdForComment" value="${status11.id}">
+                         <input type="text" name="commenttext" placeholder="Write a comment and Press Enter...."style="width: 440px;height: 20px;margin-top: 10px;margin-left: -30px">
+                        </form>
                         </div>
-                        <br><table align="left" width=50%><tr><td>Like 0</td><td>Unlike 0</td><td>Comments 0</td></tr></table>
+                        <br><table align="left" width=50%><tr><td><form action="/vanjariudyogvishwa-v2/LikeStatus" method="post"><input type="submit" value="Like" class="LikeUnlikeBtn"> 0</form> </td><td><form action="/vanjariudyogvishwa-v2/UnlikeStatus" method="post"><input type="submit" value="Unlike" class="LikeUnlikeBtn"> 0</form></td><td>Comments 0</td></tr></table>
                         
                          </div>
                          </div>
@@ -189,8 +213,7 @@
                      </c:if>
             </div>
             </div>
-            
-                        <div id="rightMain">
+            	  <div id="rightMain">
                         <div id="peopleMayKnw">
                         <table width=100%>
                         <th colspan=3 style="background-color: #fab039"><font color="">People You May Know</th>

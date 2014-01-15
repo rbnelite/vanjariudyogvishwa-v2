@@ -22,10 +22,12 @@ public class EventsDaoImpl extends BaseDao<Events> implements EventsDao{
 	   super(Events.class);
 
 	}
+	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	
-	 public void insertEvents(Events events){
+	public void insertEvents(Events events)
+	{
 		
 		Session session=sessionFactory.openSession();
 		session.getTransaction().begin();
@@ -33,10 +35,10 @@ public class EventsDaoImpl extends BaseDao<Events> implements EventsDao{
 		session.getTransaction().commit();
 		session.flush();
 	}
+	
 	@Override
 	public List<Events> listEvents() {
-		 return sessionFactory.getCurrentSession().createQuery("from Events")
-	 .list();
+		 return sessionFactory.getCurrentSession().createQuery("from Events").list();
 	}
             
 }
