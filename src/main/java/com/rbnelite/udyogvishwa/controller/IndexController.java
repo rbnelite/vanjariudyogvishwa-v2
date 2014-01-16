@@ -17,6 +17,7 @@ public class IndexController {
 	@Resource
 	private IndexService indexservice;
 	
+	
 	@RequestMapping(value="/Index" ,method=RequestMethod.POST)
 	public String registration(@ModelAttribute("IndexCredential")IndexCredential indexcredential,ModelMap map)
 	{
@@ -30,6 +31,4 @@ public class IndexController {
 			return "Index";
 		}
 		
-		
-	
 }

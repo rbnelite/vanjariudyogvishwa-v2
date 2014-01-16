@@ -21,9 +21,9 @@
                 <label style="margin-left: 470px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">
-                    <img  src="/resources/images/dummy_male_ic.png">
+                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
                     <br>
-                    <a href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
+                  
                 </div>
             </div>
 	<div id="leftMainStep3"></div>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <td></td>
                                         <td align="right">
-                                            <input type="submit" id="submit" name="save_contact" value="Save & Continue" >
+                                            <input type="submit" class="savebtn" id="submit" name="save_contact" value="Save & Continue" >
                                         </td>
                                     </tr>
                                 </table>

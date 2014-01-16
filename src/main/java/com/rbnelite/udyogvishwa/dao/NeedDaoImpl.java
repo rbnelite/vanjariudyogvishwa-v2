@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -23,6 +25,13 @@ public class NeedDaoImpl extends BaseDao<Need>  implements NeedDao {
 		session.save(need);
 		session.getTransaction().commit();
 		session.flush();
+	}
+
+	@Override
+	@Transactional
+	public List<Need> listNeeds() {
+	
+		return sessionFactory.getCurrentSession().createQuery("from Need").list();
 	}
  
 }

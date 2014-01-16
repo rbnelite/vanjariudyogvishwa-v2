@@ -10,9 +10,13 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
+import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 
 /**
@@ -26,6 +30,10 @@ public class HomeController {
 	private StatusService statusservice;
 	@Resource
 	private EventsService eventService;
+	@Resource
+	private NeedService needservice;
+	@Resource
+	private CommentService commentservice;
 	
 	@RequestMapping(value="/Home")
 	public String showHome(Map<String, Object> map){
@@ -35,6 +43,13 @@ public class HomeController {
 		
 		map.put("myEvents", new Events());
 		map.put("eventstList", eventService.listEvents());
+		
+		map.put("myNeeds", new Need());
+		map.put("needList", needservice.listNeed());
+		
+		map.put("myComment", new Comment());
+		map.put("commentList", commentservice.listComment());
+		
 		return "Home";
 		
 	}

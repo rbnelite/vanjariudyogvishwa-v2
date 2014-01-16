@@ -1,31 +1,26 @@
 package com.rbnelite.udyogvishwa.dao;
 
-import java.util.List;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Events;
-import com.rbnelite.udyogvishwa.model.Index;
-import com.rbnelite.udyogvishwa.model.Login;
+import com.rbnelite.udyogvishwa.model.UnlikeStatus;
 
 @Repository
-public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
+public class UnlikeStatusDaoImpl extends BaseDao<UnlikeStatus> implements UnlikeStatusDao {
 
-	public IndexDaoImpl()
+	public UnlikeStatusDaoImpl()
 	{
-		super(Index.class);
+		super(UnlikeStatus.class);
 	}
-
+	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void saveRegistration(Index index) {
+	public void unlikeTheStatus(UnlikeStatus unlikestatus) {
 		Session session=sessionFactory.openSession();
 		session.getTransaction().begin();
-		session.save(index);
+		session.save(unlikestatus);
 		session.getTransaction().commit();
 		session.flush();
 

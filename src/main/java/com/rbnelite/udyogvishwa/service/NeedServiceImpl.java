@@ -1,4 +1,6 @@
 package com.rbnelite.udyogvishwa.service;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -21,6 +23,12 @@ public void insertNeed(NeedCredential needcredential){
 	need.setDescription(needcredential.getDescription());
 	need.setMobile(needcredential.getMobile());
 	needdao.insertNeed(need);
+}
+
+@Override
+public List<Need> listNeed() {
+	
+	return needdao.listNeeds();
 }
 
 }

@@ -23,11 +23,11 @@ body{
     border-radius: 3px;
 }
 #mainMsg{
-    background-color: yellow; 
+    background-color: white; 
     width: 1400px;
     height: fit-content;
     margin: 10px 50px 10px 50px;
-    border: 3px solid violet; 
+    border: 1px solid gray; 
     border-radius: 3px;
 }
 #mainInterestAreas{
@@ -341,10 +341,11 @@ float: left;
 #middleStep4{
     margin-top: 5px;
     border-radius: 3px;
-    width: 1090px;
+    width: 780px;
     height: 645px;
     background-color: bisque;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
+    
 }
 #middleStep10{
     margin-top: 5px;
@@ -360,7 +361,7 @@ float: left;
     width: 780px;
     height: 645px;
     background-color: bisque;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #ShowStatusUpdet{
     width: 650px;
@@ -663,7 +664,7 @@ margin:5px auto auto 5px;
     height:645px;
     overflow: auto;
     background-color: bisque;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #leftMainStep10{
     border-radius: 3px;
@@ -673,7 +674,7 @@ margin:5px auto auto 5px;
     height:713px;
     overflow: auto;
     background-color: bisque;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 
 #rightMainInterestAreas{
@@ -692,7 +693,7 @@ margin:5px auto auto 5px;
     height: 645px;
     background-color: bisque;
     float: right;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #rightMainStep10{
     border-radius: 3px;
@@ -730,4 +731,17 @@ margin:5px auto auto 5px;
 	background-color: lime;
 	height: 25px;
 	width: 60px;
+}
+.LikeUnlikeBtn
+{
+	background: none;
+	border: none;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.savebtn
+{
+background-color: #fab039;
+height: 30px	
 }

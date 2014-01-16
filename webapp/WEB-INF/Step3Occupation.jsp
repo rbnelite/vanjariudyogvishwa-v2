@@ -1,7 +1,7 @@
 <%-- 
     Document   : Step3Occupation
     Created on : Dec 24, 2013, 7:52:32 PM
-    Author     : dogkiller
+    Author     :anil
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,27 +9,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+ <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+		<script src="<c:url value="/resources/js/anil.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Step-3 Occupation Details Page</title>
 </head>
 <body>
-
-
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
 				<label style="margin-left: 470px;">WelCome ! User</label> <br>
 				<div id="profile_photo">
-					<img src="images/DefaultProfileImg.png"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
+					<img src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"> <br> 
 				</div>
 			</div>
-
 			<div id="leftMainStep3"></div>
-
 			<div id="middleOccupation">
 				<h2>Step-3</h2>
 				<form action="/vanjariudyogvishwa-v2/Occupation" method="post">
@@ -56,7 +52,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Currently Working (<font color="red">*</font>)</td>
+							<td>Currently Working <font color="red">*</font></td>
 							<td><input type="text" name="companyName" id="org_name"
 								size="30" maxlength="30">
 								<div id="org_nameError" class="red" colspan="2" />
@@ -196,8 +192,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td align="right"><input type="submit"
-								name="save_occupation" id="submit" value="Save & Continue">
+							<td align="right"><input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn">
 							</td>
 						</tr>
 					</table>
