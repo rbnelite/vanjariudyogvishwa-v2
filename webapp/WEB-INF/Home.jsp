@@ -30,15 +30,15 @@
                 </div>
                  <a href="ProfilePhotoOperation.jsp" style="float: right; margin-top: 120px; margin-right: -95px">Change Photo</a>
             </div>
-            <div id="hiderMenu">
-                <a id="anchor" href="Home.jsp" style="text-decoration: none"><font color="white">Home</font></a>
-                <a id="anchor" href="Profile.jsp" style="text-decoration: none"><font color="white">My Profile</font></a>
-                <a id="anchor" href="Message.jsp" style="text-decoration: none"><font color="white">Message</font></a>
-                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" style="text-decoration: none"><font color="white">Looking for</font></a>
-                <a id="anchor" href="#" onclick="return DisplayNotificationBlock()" style="text-decoration: none"><font color="white">Notification</font></a>
-                <a id="anchor" href="#" onclick="return DisplayRequestBlock()" style="text-decoration: none"><font color="white">Requests</font></a>
-                <a id="anchor" href="#" onclick="return DisplaySettingBlock()" style="text-decoration: none"><font color="white">Setting</font></a>
-                <a id="anchor" href="index.jsp" style="text-decoration: none"><font color="white">LogOut</font></a>
+            <div id="hiderMenu" >
+                <a id="anchor" href="Home.jsp" class="menuContent">Home</a>
+                <a id="anchor" href="Profile.jsp" class="menuContent">My Profile</a>
+                <a id="anchor" href="Message.jsp" class="menuContent">Message</a>
+                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" class="menuContent">Looking for</a>
+                <a id="anchor" href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a>
+                <a id="anchor" href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a>
+                <a id="anchor" href="#" onclick="return DisplaySettingBlock()" class="menuContent">Setting</a>
+                <a id="anchor" href="index.jsp" class="menuContent">LogOut</a>
             </div>
 
             <div id="leftMain">
@@ -70,7 +70,7 @@
                  <c:if  test="${!empty needList}">
                 <div id="leftMain3">
                  <table width=100%>
-                <th style="background-color: #fab039"><font color="white">Needs</font></th>
+                <th style="background-color: #fab039"><font color="white">Looking For</font></th>
                 <c:forEach items="${needList}" var="myNeeds">
                 <tr>
                 <td align="left">Anil Budge Needs : ${myNeeds.need}</td>
@@ -79,16 +79,14 @@
                 </table>
                 </div>
                    </c:if>
-                
-
-            </div>
+                </div>
             <div id="NeedTopHome">
             <form action="/vanjariudyogvishwa-v2/Need" method="post">
                 <table>
                     <th style="background-color:#fab039" colspan=2><font color="white">Need Something?</font></th>
                     <a onclick="return DisableINeedBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right; margin-right:10px;margin-top: 5px;"></a>
                     <tr>
-                <td>I Need :</td>
+                <td>Looking For :</td>
                 <td><input type="text" name="need" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
                 </tr>
                 <tr>
@@ -124,19 +122,20 @@
                <tr>
                <td colspan=2 align="center">No notifications for display</td>
                </tr>
-               
                 </table>
             </div>
-            
             <div id="RequestTopHome">
                 <a onclick="return DisableRequestBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a>
                 
             </div>
             <div id="SettingTopHome">
-                <a>Change Account Setting</a>
-                <a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a>
-                <br>
-                <a href="AccountSetting.jsp">More Settings...</a>
+               <table width=100%><tr><th style="background-color: #fab039"> <a href="AccountSetting.jsp" style="text-decoration: none; color: white">Change Account Setting</a><a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a></th></tr>
+                
+               <tr>
+               <td align="left"><a href="" style="text-decoration: none;color: black">Change Password</a></td></tr>
+                <tr>
+               <td align="left"><a href="" style="text-decoration: none; color: black">Change Profile Picture</a></td></tr>
+                </table>
             </div>
             	<div id="MiddleTop">
             	<form action="/vanjariudyogvishwa-v2/Status" method="post">
@@ -164,10 +163,8 @@
              		
              		<div class="statusUserName" style="float: left; margin-left: 10px;"><font color="green">Anil Budge</font></div>
              		<br>
-             		  
-                         <div class="StatusContent" >
-                     
-                         <table width=100%><tr><td align="left">${status11.status} </td></tr></table>
+             		  <div class="StatusContent" >
+                     <table width=100%><tr><td align="left">${status11.status} </td></tr></table>
                         
                          <br>
                           <c:if  test="${!empty commentList}">
@@ -203,17 +200,14 @@
                         </form>
                         </div>
                         <br><table align="left" width=50%><tr><td><form action="/vanjariudyogvishwa-v2/LikeStatus" method="post"><input type="submit" value="Like" class="LikeUnlikeBtn"> 0</form> </td><td><form action="/vanjariudyogvishwa-v2/UnlikeStatus" method="post"><input type="submit" value="Unlike" class="LikeUnlikeBtn"> 0</form></td><td>Comments 0</td></tr></table>
-                        
                          </div>
                          </div>
-                      
-                          </div>
-                     
-                            </c:forEach>
+                       </div>
+                       </c:forEach>
                      </c:if>
-            </div>
-            </div>
-            	  <div id="rightMain">
+            		</div>
+            		</div>
+            	  	<div id="rightMain">
                         <div id="peopleMayKnw">
                         <table width=100%>
                         <th colspan=3 style="background-color: #fab039"><font color="">People You May Know</th>
@@ -222,13 +216,11 @@
                         <td>Manoj Savant</td>
                         <td><input type="button" value="Connect" class="connectBtn"></td>
                         </tr>
-                        
                         <tr>
                         <td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
                         <td>Mayur Kulkarni</td>
                          <td><input type="button" value="Connect" class="connectBtn"></td>
                         </tr>
-                        
                         <tr>
                         <td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
                         <td>Vishal Pansare</td>
