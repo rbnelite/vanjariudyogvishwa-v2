@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rbnelite.udyogvishwa.model.Comment;
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
@@ -48,7 +48,7 @@ public class UnlikeStatusController {
 		map.put("status11", new Status());
 		map.put("statusList", statusservice.listStatus());
 		
-		map.put("myEvents", new Events());
+		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("myNeeds", new Need());

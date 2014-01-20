@@ -2,12 +2,12 @@ package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
 
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 
-public interface EventsDao{
+public interface EventsDao {
 
-	public void insertEvents(Events events);
-	public List<Events> listEvents();
+	public void insertEvents(Event events);
+	public List<Event> listEvents();
 	
 }
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.service.EventsService;
 
 @Controller
@@ -36,7 +36,7 @@ public class EventsController {
 	@RequestMapping("/Events")
 	public String listEvents(Map<String, Object> map) {
 
-		map.put("myEvents", new Events());
+		map.put("myEvents", new Event());
 		map.put("eventstList", eventsservice.listEvents());
 			
 		return "Events";

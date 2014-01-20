@@ -36,7 +36,6 @@ public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 	public List<Status> listStatus() {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Status").list();
-		
 	}
 
 }

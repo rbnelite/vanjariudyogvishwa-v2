@@ -9,18 +9,27 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="event")
-public class Events {
+@Table(name="events")
+public class Event {
 	@Id
-	@Column(name="eventid")
+	@Column(name="event_id")
     @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="events_sequence_eventid")
 	@SequenceGenerator(name="events_sequence_eventid",sequenceName="events_sequence",allocationSize=1)
 	private int eventid;
 	
+	@Column
 	private String name;
+	
+	@Column
 	private String details;
+	
+	@Column
 	private String location;
+	
+	@Column
 	private String datatime;
+	
+	@Column(name="email")
 	private String usermail;
 	
 	

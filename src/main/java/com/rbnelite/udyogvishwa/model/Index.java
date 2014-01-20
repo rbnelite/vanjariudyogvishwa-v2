@@ -18,22 +18,22 @@ public class Index {
 	@SequenceGenerator(name="registration_sequence_id", sequenceName="registration_sequence",allocationSize=1)
 	private int id;
 	
-	@Column
+	@Column(name="first_name")
 	private String firstName;
 	
-	@Column
+	@Column(name="middle_name")
 	private String middleName;
 	
-	@Column
+	@Column(name="last_name")
 	private String lastName;
 	
-	@Column
+	@Column(name="email")
 	private String emailId;
 	
-	@Column
+	@Column(name="contact_no")
 	private String contactNo;
 	
-	@Column
+	@Column(name="birthdate")
 	private String birthDate;
 	
 		

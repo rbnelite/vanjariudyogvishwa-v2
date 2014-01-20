@@ -1,7 +1,7 @@
 /* 
     Document   : style
     Created on : Dec 9, 2013, 1:26:56 PM
-    Author     : Manoj
+    Author     : ab
     Description: Purpose of the stylesheet follows.
 */
 
@@ -417,7 +417,7 @@ margin:5px auto auto 5px;
     height: 1000px;
     background-color: bisque;
     float: right;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #rightMainEvents{
     border-radius: 3px;
@@ -594,8 +594,9 @@ margin:5px auto auto 5px;
     position: absolute;
     
 }
+
 #RequestTopHome{
-    border-radius: 15px;
+    border-radius: 5px;
     width: 350px;
     height:auto;
     background-color: bisque;
@@ -604,6 +605,7 @@ margin:5px auto auto 5px;
     border: 1px solid gray; 
     position: absolute;
 }
+
 #SettingTopHome{
     border-radius: 5px;
     width: 300px;
@@ -624,6 +626,7 @@ margin:5px auto auto 5px;
     float: right;
     border: 1px solid aqua;
 }
+
 #NeedMiddle{
     margin-top: 5px;
     border-radius: 10px;
@@ -747,6 +750,11 @@ height: 30px
 {
 	height: 100px;
 	width: 100px;
-}
+} 
 
+#enlargePhoto
+{
+  display: none;
+  
+}
 

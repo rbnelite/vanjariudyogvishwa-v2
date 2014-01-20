@@ -12,22 +12,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Photos Page</title>
+		<script src="<c:url value="/resources/js/anil.js" />"></script>
+        <title>Vanjari Udyog Vishwa | Photos</title>
         
-        <script>
-        function viewPhoto()
-        {
-        	var photo=document.getElementById("personalPhoto");
-        	photo.style.height='500px';
-        	photo.style.width='500px';
-        	photo.style.position='absolute';
-        }
-        </script>
     </head>
     <body>
-        
-        
-        <center>
+      <center>
         <div id="main">
             <div id="Header">
 
@@ -35,26 +25,27 @@
                 <label style="margin-left: 410px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png">
+                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png" height="120" width="115" >
                     <br>
                     <a href="ProfilePhotoOperation.jsp">Change Photo</a>
                 </div>
             </div>
             <div id="hiderMenu">
-                <a id="anchor" href="Home.jsp" class="menuContent">Home</a>
-                <a id="anchor" href="Profile.jsp"class="menuContent">My Profile</a>
-                <a id="anchor" href="Message.jsp" class="menuContent">Message</a>
-                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" class="menuContent">I Need</a>
-                <a id="anchor" href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a>
-                <a id="anchor" href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a>
-                <a id="anchor" href="#" onclick="return DisplaySettingBlock()"class="menuContent">Setting</a>
-                <a id="anchor" href="index.jsp" class="menuContent">LogOut</a>
+               <table width=100% style="margin-left: 30px;">
+            <tr>
+               <td> <a href="Home" class="menuContent">Home</a> </td>
+               <td> <a href="Profile" class="menuContent">My Profile</a></td>
+               <td> <a href="Message" class="menuContent">Message</a></td>
+               <td> <a href="#" onclick="return DisplayINeedBlock()" class="menuContent">Looking for</a></td>
+               <td> <a href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a></td>
+               <td> <a href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a></td>
+               <td> <a href="#" onclick="return DisplaySettingBlock()" class="menuContent">Setting</a></td>
+               <td> <a href="Index" class="menuContent">LogOut</a></td>
+               </tr>
+               </table>
             </div>
-
             <div id="leftMain">
-
                	 <c:if  test="${!empty eventstList}">
-             		   
                 <div id="leftMain1">
                 <table width=100%>
                 <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
@@ -64,9 +55,7 @@
                 </tr>
                   </c:forEach>
                 </table>
-                
                  </div>
-               
                  </c:if>
                    <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
@@ -150,35 +139,32 @@
                         <td>
                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                         </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                          </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer"id="personalPhoto" onclick="return viewPhoto();">
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" >
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();" >
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img  src="${pageContext.request.contextPath}/resources/images/gallery1.thumb.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                           </td>
                           </tr><tr>
                           <td>
-                          <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                          <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                           </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                          </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                          </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                         </td></tr>
                     </table>
-             
+            		  <div id="enlargePhoto"></div>
             </div>
-		<div id="rightMainPhotos"></div>
+           <div id="rightMainPhotos"></div>
 
         </div>
     </center>
-        
-        
-        
-    </body>
+     </body>
 </html>

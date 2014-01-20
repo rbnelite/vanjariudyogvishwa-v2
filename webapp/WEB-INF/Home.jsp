@@ -27,18 +27,23 @@
                 <br>
                 <div id="profile_photo">
                     <img  src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="120" width="115" >
-                </div>
-                 <a href="ProfilePhotoOperation.jsp" style="float: right; margin-top: 120px; margin-right: -95px">Change Photo</a>
+              <br>
+                 <a href="ProfilePhotoOperation.jsp">Change Photo</a>
+             </div>
             </div>
             <div id="hiderMenu" >
-                <a id="anchor" href="Home.jsp" class="menuContent">Home</a>
-                <a id="anchor" href="Profile.jsp" class="menuContent">My Profile</a>
-                <a id="anchor" href="Message.jsp" class="menuContent">Message</a>
-                <a id="anchor" href="#" onclick="return DisplayINeedBlock()" class="menuContent">Looking for</a>
-                <a id="anchor" href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a>
-                <a id="anchor" href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a>
-                <a id="anchor" href="#" onclick="return DisplaySettingBlock()" class="menuContent">Setting</a>
-                <a id="anchor" href="index.jsp" class="menuContent">LogOut</a>
+            <table width=100% style="margin-left: 30px;">
+            <tr>
+               <td> <a href="Home" class="menuContent">Home</a> </td>
+               <td> <a href="Profile" class="menuContent">My Profile</a></td>
+               <td> <a href="Message" class="menuContent">Message</a></td>
+               <td> <a href="#" onclick="return DisplayINeedBlock()" class="menuContent">Looking for</a></td>
+               <td> <a href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a></td>
+               <td> <a href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a></td>
+               <td> <a href="#" onclick="return DisplaySettingBlock()" class="menuContent">Setting</a></td>
+               <td> <a href="Index" class="menuContent">LogOut</a></td>
+               </tr>
+               </table>
             </div>
 
             <div id="leftMain">
@@ -82,22 +87,23 @@
                 </div>
             <div id="NeedTopHome">
             <form action="/vanjariudyogvishwa-v2/Need" method="post">
-                <table>
-                    <th style="background-color:#fab039" colspan=2><font color="white">Need Something?</font></th>
+                <table width=100%>
+                    <th style="background-color:#fab039" colspan=2><font color="white">Need Something?</font>
                     <a onclick="return DisableINeedBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right; margin-right:10px;margin-top: 5px;"></a>
-                    <tr>
+                    </th>
+                    <tr align="center">
                 <td>Looking For :</td>
                 <td><input type="text" name="need" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
                 </tr>
-                <tr>
+                <tr align="center">
                 <td>
                 Description :
                 </td>
                 <td>
                     <textarea type="text" name="description" placeholder="Write your Need here...." style="width: 400px; height: 100px; resize: none;"></textarea>
                 </td>
-                </tr>
-                <tr>
+                </tr >
+                <tr align="center">
                 <td>
                 Contact No :
                 </td>
@@ -105,7 +111,7 @@
                     <input type="text" name="mobile" placeholder="Write your Need here...." style="width: 400px; height: 30px;"><br><br>
                 </td>
                 </tr>
-                <tr>
+                <tr align="center">
                     <td></td>
                     <td>
                 <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
@@ -125,13 +131,26 @@
                 </table>
             </div>
             <div id="RequestTopHome">
+                <table width=100% >
+                <th colspan=3 style="background-color: #fab039"><font color=white>Contact Requests</font>
                 <a onclick="return DisableRequestBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a>
-                
+                </th>
+                <tr align="center">
+                    <td> <img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
+                    <td><b> Manoj Savant</b><br>java developer at RBNelite</td>
+                    <td> <input type="button" value="Connect" class="connectBtn"></td>
+               
+               </tr>
+               <tr align="center">
+                    <td> <img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
+                    <td><b>Vikram Takalkar</b><br>java developer at RBNelite</td>
+                    <td> <input type="button" value="Connect" class="connectBtn"></td>
+               </tr>
+                </table>
             </div>
             <div id="SettingTopHome">
                <table width=100%><tr><th style="background-color: #fab039"> <a href="AccountSetting.jsp" style="text-decoration: none; color: white">Change Account Setting</a><a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right;"></a></th></tr>
-                
-               <tr>
+                <tr>
                <td align="left"><a href="" style="text-decoration: none;color: black">Change Password</a></td></tr>
                 <tr>
                <td align="left"><a href="" style="text-decoration: none; color: black">Change Profile Picture</a></td></tr>
@@ -151,8 +170,7 @@
                 </tr></table>
                 </form>
             </div>
-
-			<div id="outsidemiddleHome">
+		<div id="outsidemiddleHome">
             <div id="middleHome">
             <c:if  test="${!empty statusList}">
              		    <c:forEach items="${statusList}" var="status11">
@@ -167,8 +185,8 @@
                      <table width=100%><tr><td align="left">${status11.status} </td></tr></table>
                         
                          <br>
-                          <c:if  test="${!empty commentList}">
-                           <c:forEach items="${commentList}" var="myComment">
+                          <c:if  test="${!empty status11.comments}">
+                           <c:forEach items="${status11.comments}" var="myComment">
                           
                          <div id="Showcomment" style="border: 1px solid bisque; margin-top: 5px">
                          
