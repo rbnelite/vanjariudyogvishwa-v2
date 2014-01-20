@@ -24,21 +24,21 @@ import javax.persistence.Table;
 public class Message {
 
 	@Id
-	@Column(name="messageid")
+	@Column(name="message_id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="message_sequence_id")
 	@SequenceGenerator(name="message_sequence_id", sequenceName="message_sequence",allocationSize=1)
 	private int msgID;
 	
-	@Column(name="senderid")
+	@Column(name="sender_email_id")
 	private String msgSenderID;
 	
-	@Column(name="receiverid")
+	@Column(name="receiver_email_id")
 	private String msgReceiverID;
 	
-	@Column(name="messagedate")
+	@Column(name="message_date")
 	private String msgDate;
 	
-	@Column(name="messagetxt")
+	@Column(name="message")
 	private String msgText;
 	
 	public long getMsgID() {

@@ -9,21 +9,26 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="occupation")
-
+@Table(name="employment")
 public class Occupation {
 	@Id
-	@Column(name="occupationid")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="occupation_sequence_occupationid")
-    @SequenceGenerator(name="occupation_sequence_occupationid",sequenceName="occupation_sequence",allocationSize=1)
+	@Column(name="employee_id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="employment_sequence_employee_id")
+    @SequenceGenerator(name="employment_sequence_employee_id",sequenceName="employment_sequence",allocationSize=1)
 	private int occupationid;
 	
+	@Column(name="company_name")
 	private String companyname;
     private String occupation;
+    @Column(name="product_details")
     private String productdetails;
+    @Column(name="number_of_emp")
     private String numberofemp;
+    @Column(name="emp_type")
     private String emptype;
+    @Column(name="annual_income")
     private String annualincome;
+    @Column(name="email")
     private String usermail;
 	public int getOccupationid() {
 		return occupationid;

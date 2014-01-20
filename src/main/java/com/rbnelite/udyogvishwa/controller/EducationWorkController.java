@@ -17,7 +17,7 @@ public class EducationWorkController {
 @Resource
 private EducationWorkService educationWorkService;
 
-@RequestMapping(value="/EducationWork", method=RequestMethod.POST)
+@RequestMapping(value="/educationwork", method=RequestMethod.POST)
 public String insert(@ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential,ModelMap map){
 	
 	educationWorkService.insertEducationWork(educationworkcredential);
@@ -25,7 +25,7 @@ public String insert(@ModelAttribute("EducationWorkCredential") EducationWorkCre
 	return"Step9LifeStyle";
 	
 }
-@RequestMapping(value="/EducationWork")
+@RequestMapping(value="/educationwork")
 public String OccupationForm(ModelMap map){
 
 	return "Step8EducationWork";

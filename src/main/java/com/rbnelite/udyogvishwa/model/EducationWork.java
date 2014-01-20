@@ -9,13 +9,13 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="EducationWork")
+@Table(name="Education")
 public class EducationWork {
 
 @Id
-@Column(name="educationId")
-@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="educationwork_sequence_educationId")
-@SequenceGenerator (name="educationwork_sequence_educationId",sequenceName="educationwork_sequence",allocationSize=1)
+@Column(name="education_Id")
+@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="education_sequence_educationId")
+@SequenceGenerator (name="education_sequence_educationId",sequenceName="education_sequence",allocationSize=1)
 private int educationid;
 
 
@@ -23,10 +23,15 @@ private int educationid;
 private String school;
 private String collage;
 private String graduation;
+@Column(name="other_graduation")
 private String otherGraduation;
+@Column(name="pg_college")
 private String PGCollege;
+@Column(name="pg_degree")
 private String PGDegree;
+@Column(name="other_pg")
 private String otherPG;
+@Column(name="email")
 private String userMail;
 
 public int getEducationid() {
