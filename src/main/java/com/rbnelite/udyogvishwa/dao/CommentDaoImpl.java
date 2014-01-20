@@ -9,33 +9,30 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Comment;
 
-@Repository
-public class CommentDaoImpl extends BaseDao<Comment> implements CommentDao {
-
+	@Repository
+	public class CommentDaoImpl extends BaseDao<Comment> implements CommentDao {
+		
 	public CommentDaoImpl()
 	{
 		super(Comment.class);
 	}
 	
-	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void saveComment(Comment comment) {
-		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		session.save(comment);
-		session.getTransaction().commit();
-		session.flush();
-
-
+	Session session=sessionFactory.openSession();
+	session.getTransaction().begin();
+	session.save(comment);
+	session.getTransaction().commit();
+	session.flush();
 	}
 
 
-	@Override
-	
-	public List<Comment> listcomment() {
+		@Override
+		public List<Comment> listcomment() {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Comment").list();
+		
 	}
 
 }

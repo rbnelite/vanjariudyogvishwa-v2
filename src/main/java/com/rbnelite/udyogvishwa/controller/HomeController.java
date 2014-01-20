@@ -3,6 +3,7 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rbnelite.udyogvishwa.model.Comment;
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
@@ -39,9 +40,10 @@ public class HomeController {
 	public String showHome(Map<String, Object> map){
 		
 		map.put("status11", new Status());
-		map.put("statusList", statusservice.listStatus());
+		List<Status> status = statusservice.listStatus();
+		map.put("statusList", status);
 		
-		map.put("myEvents", new Events());
+		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("myNeeds", new Need());

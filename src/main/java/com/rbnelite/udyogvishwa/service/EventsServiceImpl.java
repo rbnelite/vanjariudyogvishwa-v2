@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.EventsDao;
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 
 @Service
 public class EventsServiceImpl implements EventsService{
@@ -20,7 +20,7 @@ private EventsDao eventsdao;
 @Override
 public void insertEvents(EventsCredential eventscredential){
 	
-	Events events=new Events();
+	Event events=new Event();
 	
 	events.setName(eventscredential.getName());
 	events.setDetails(eventscredential.getDetails());
@@ -35,7 +35,7 @@ public void insertEvents(EventsCredential eventscredential){
 
 @Override
 @Transactional
-public List<Events> listEvents() {
+public List<Event> listEvents() {
 	
 	return eventsdao.listEvents();
 }

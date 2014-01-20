@@ -1,7 +1,7 @@
 /* 
     Document   : style
     Created on : Dec 9, 2013, 1:26:56 PM
-    Author     : Manoj
+    Author     : ab
     Description: Purpose of the stylesheet follows.
 */
 
@@ -120,6 +120,11 @@ body{
     border: 1px solid gray; 
     
 }
+.menuContent
+{
+	text-decoration: none;
+	color: white;
+}
 
 
 #anchor{
@@ -194,23 +199,6 @@ float: left;
 	
 }
 
-
-
-#Updated_photo{
-    height:50px;
-    width:52px;
-    float: right;
-    margin-right: 50px;
-    font-size: 100%;
-    
-}
-#Updated_photo:hover{
-    height:150px;
-    width:152px;
-    float: right;
-    margin-right: 50px;
-    font-size: 100%;
-}
 #leftMain{
     border-radius: 3px;
     float: left;
@@ -336,11 +324,22 @@ float: left;
     width: 790px;
     height: 645px;
     background-color: bisque;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
+
+#middlePhotos{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 645px;
+    background-color: bisque;
+    border: 1px solid gray; 
+}
+
 #middleStep4{
     margin-top: 5px;
     border-radius: 3px;
+    
     width: 780px;
     height: 645px;
     background-color: bisque;
@@ -418,7 +417,7 @@ margin:5px auto auto 5px;
     height: 1000px;
     background-color: bisque;
     float: right;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #rightMainEvents{
     border-radius: 3px;
@@ -584,9 +583,7 @@ margin:5px auto auto 5px;
     position: absolute;
 }
 #NotificationTopHome{
-    /*float: right;*/
-    /*margin-right: 305px;*/
-    border-radius: 15px;
+    border-radius: 5px;
     width: 350px;
     height: auto;
     background-color: bisque;
@@ -597,8 +594,9 @@ margin:5px auto auto 5px;
     position: absolute;
     
 }
+
 #RequestTopHome{
-    border-radius: 15px;
+    border-radius: 5px;
     width: 350px;
     height:auto;
     background-color: bisque;
@@ -607,9 +605,10 @@ margin:5px auto auto 5px;
     border: 1px solid gray; 
     position: absolute;
 }
+
 #SettingTopHome{
-    border-radius: 15px;
-    width: 350px;
+    border-radius: 5px;
+    width: 300px;
     height:auto;
     background-color: bisque;
     display: none;
@@ -627,6 +626,7 @@ margin:5px auto auto 5px;
     float: right;
     border: 1px solid aqua;
 }
+
 #NeedMiddle{
     margin-top: 5px;
     border-radius: 10px;
@@ -745,3 +745,16 @@ margin:5px auto auto 5px;
 background-color: #fab039;
 height: 30px	
 }
+
+.photoviewer
+{
+	height: 100px;
+	width: 100px;
+} 
+
+#enlargePhoto
+{
+  display: none;
+  
+}
+

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rbnelite.udyogvishwa.dto.CommentCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
@@ -40,7 +40,7 @@ public class CommentController {
 		map.put("status11", new Status());
 		map.put("statusList", statusservice.listStatus());
 		
-		map.put("myEvents", new Events());
+		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("myNeeds", new Need());
@@ -49,11 +49,9 @@ public class CommentController {
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
 		
-		
 		return "Home";
 	}
 	
-
 	@RequestMapping(value="/Comment")
 	public String astroFormDetails(Map<String, Object> map) {
 		

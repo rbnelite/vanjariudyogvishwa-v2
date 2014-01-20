@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Events;
+import com.rbnelite.udyogvishwa.model.Event;
 
 @Repository
-public class EventsDaoImpl extends BaseDao<Events> implements EventsDao{
+public class EventsDaoImpl extends BaseDao<Event> implements EventsDao{
 	
 	
 	
@@ -19,14 +19,14 @@ public class EventsDaoImpl extends BaseDao<Events> implements EventsDao{
 	
 	public EventsDaoImpl(){
 	 
-	   super(Events.class);
+	   super(Event.class);
 
 	}
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	
-	public void insertEvents(Events events)
+	public void insertEvents(Event events)
 	{
 		
 		Session session=sessionFactory.openSession();
@@ -37,8 +37,8 @@ public class EventsDaoImpl extends BaseDao<Events> implements EventsDao{
 	}
 	
 	@Override
-	public List<Events> listEvents() {
-		 return sessionFactory.getCurrentSession().createQuery("from Events").list();
+	public List<Event> listEvents() {
+		 return sessionFactory.getCurrentSession().createQuery("from Event").list();
 	}
-            
+
 }

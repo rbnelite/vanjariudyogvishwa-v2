@@ -9,25 +9,25 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="comment")
+@Table(name="comments")
 public class Comment {
 	
 	@Id
-	@Column(name="commentid")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="comment_sequence_id")
-	@SequenceGenerator(name="comment_sequence_id",sequenceName="comment_sequence",allocationSize=1)
+	@Column(name="comment_id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="comments_sequence_id")
+	@SequenceGenerator(name="comments_sequence_id",sequenceName="comments_sequence",allocationSize=1)
 	private int id;
 	
 	@Column
 	private String comment;
 	
-	@Column(name="whosecoment")
+	@Column(name="comment_whom")
 	private String whoseComment;
 	
-	@Column
+	@Column(name="status_id")
 	private int statusId;
 	
-	@Column
+	@Column(name="comment_on")
 	private String commentOn;
 	
 	public int getId() {
