@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Astro {
 	
 	@Id
-	@Column(name="astroid")
+	@Column(name="astro_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="astro_sequence_id")
 	@SequenceGenerator(name="astro_sequence_id", sequenceName="astro_sequence",allocationSize=1)
 	private int id;
@@ -26,6 +26,9 @@ public class Astro {
 	
 	@Column
 	private String zodiac;
+	
+	@Column(name="email")
+	private String userMail;
 	
 	public int getId() {
 		return id;

@@ -22,7 +22,7 @@ public class RelegionController {
 		
 		relegionservice.insertRelegion(relegioncredential);
 		
-		return "Step6Family";
+		return "Step7Astro";
 	}
 	
 	@RequestMapping(value="/Religion")

@@ -13,37 +13,40 @@ import javax.persistence.Table;
 public class Hobbies {
 
 @Id
-@Column(name="hobbiesid")
+@Column(name="hobbies_id")
 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="history_sequence_id")
-@SequenceGenerator(name="history_sequence_id", sequenceName="history_sequence",allocationSize=1)
+@SequenceGenerator(name="history_sequence_id", sequenceName="lifestyle_sequence",allocationSize=1)
 private int id;
 
 @Column
 private String hobbies;
 
-@Column
+@Column(name="favourite_music")
 private String favouriteMusic;
 
-@Column
+@Column(name="favourite_books")
 private String favouriteBooks;
 
-@Column
+@Column(name="dress_style_type")
 private String DressStyletyle;
 
-@Column
+@Column(name="favourit_tv_shows")
 private String favouritrTvShows;
 
-@Column
+@Column(name="favourite_movies")
 private String FavouriteMovies;
 
-@Column
+@Column(name="sports")
 private String sports;
 
-@Column
+@Column(name="foodicook")
 private String foodIcook;
 
-@Column
+@Column(name="vacation_destination")
 private String VacationDestination;
+
+@Column(name="email")
+private String usermail;
 
 
 public int getId() {
@@ -105,5 +108,11 @@ public String getVacationDestination() {
 }
 public void setVacationDestination(String vacationDestination) {
 	VacationDestination = vacationDestination;
+}
+public String getUsermail() {
+	return usermail;
+}
+public void setUsermail(String usermail) {
+	this.usermail = usermail;
 }
 }

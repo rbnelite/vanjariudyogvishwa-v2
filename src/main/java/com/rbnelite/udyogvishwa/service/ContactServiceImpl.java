@@ -1,8 +1,11 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.ContactDao;
 import com.rbnelite.udyogvishwa.dto.ContactCredential;
@@ -22,6 +25,13 @@ public class ContactServiceImpl implements ContactService {
 		contact.setTelephoneNo(contactcredential.getTelephoneNo());
 		contactdao.saveContact(contact);
 
+	}
+
+	@Override
+	@Transactional
+	public List<Contact> listContact() {
+
+		return contactdao.listContact();
 	}
 
 }

@@ -1,8 +1,11 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.HobbiesDao;
 import com.rbnelite.udyogvishwa.dto.HobbiesCredential;
@@ -28,6 +31,13 @@ public class HobbiesServiceImpl implements HobbiesService {
 	hobby.setVacationDestination(hobbiescredential.getVacationDestination());
 	
 	hobbiesdao.saveHobbies(hobby);
+	}
+
+	@Override
+	@Transactional
+	public List<Hobbies> listHobbies() {
+		
+		return hobbiesdao.listHobbies();
 	}
 
 }

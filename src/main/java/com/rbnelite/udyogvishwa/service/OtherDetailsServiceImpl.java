@@ -3,11 +3,13 @@
  */
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.rbnelite.udyogvishwa.dao.FamilyDao;
+
 import com.rbnelite.udyogvishwa.dao.OtherDetailsDao;
 import com.rbnelite.udyogvishwa.dto.OtherDetailsCredential;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
@@ -28,13 +30,19 @@ public class OtherDetailsServiceImpl implements OtherDetailsService {
 		
 		objOtherDet.setUsermail(othetCred.getUsermail());
 		objOtherDet.setCulturalact(othetCred.getCulturalact());
-		objOtherDet.setGames(othetCred.getGames());
+		
 		objOtherDet.setPolyticalact(othetCred.getPolyticalact());
 		objOtherDet.setPolyticalstatus(othetCred.getPolyticalstatus());
 		objOtherDet.setSocialact(othetCred.getSocialact());
 		objOtherDet.setSocialStatus(othetCred.getSocialStatus());
 		
 		ObjOtherDetailsDao.insertOtherDetails(objOtherDet);
+	}
+
+	@Override
+	public List<OtherDetails> listOtherDetails() {
+
+		return ObjOtherDetailsDao.listOtherDetails();
 	}
 
 }

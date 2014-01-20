@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="registration")
+@Table(name="users")
 public class Index {
 	
 	@Id
@@ -36,18 +36,31 @@ public class Index {
 	@Column(name="birthdate")
 	private String birthDate;
 	
-		
-	public String getBirthDate() {
-		return birthDate;
-	}
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
-	}
 	@Column
 	private String gender;
 	
 	@Column
 	private String password;
+	
+	@Column(name="contact_id")
+	private int contactId;
+	
+	@Column(name="home_address")
+	private String homeAddress;
+	
+	private String religion;
+	
+	@Column(name="subcast")
+	private String subCast;
+	
+	@Column(name="office_address")
+	private String officeAddress;
+	
+	
+	private String telephone;
+		
+	
+	
 	
 	public int getId() {
 		return id;
@@ -86,6 +99,13 @@ public class Index {
 		this.contactNo = contactNo;
 	}
 	
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+	
 	public String getGender() {
 		return gender;
 	}
@@ -97,5 +117,41 @@ public class Index {
 	}
 	public void setPassword(String password1) {
 		this.password = password1;
+	}
+	public int getContactId() {
+		return contactId;
+	}
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
+	public String getHomeAddress() {
+		return homeAddress;
+	}
+	public void setHomeAddress(String homeAddress) {
+		this.homeAddress = homeAddress;
+	}
+	public String getReligion() {
+		return religion;
+	}
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+	public String getSubCast() {
+		return subCast;
+	}
+	public void setSubCast(String subCast) {
+		this.subCast = subCast;
+	}
+	public String getOfficeAddress() {
+		return officeAddress;
+	}
+	public void setOfficeAddress(String officeAddress) {
+		this.officeAddress = officeAddress;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 	}

@@ -3,6 +3,8 @@
  */
 package com.rbnelite.udyogvishwa.dao;
 
+import java.util.List;
+
 import com.rbnelite.udyogvishwa.model.Religion;
 
 /**
@@ -12,4 +14,5 @@ import com.rbnelite.udyogvishwa.model.Religion;
 public interface RelegionDao {
 
 	public void insertRelegion(Religion religion);
+	public List<Religion> listReligion();
 }

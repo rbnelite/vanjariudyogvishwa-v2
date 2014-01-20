@@ -9,24 +9,27 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="contacts")
 public class Contact {
 
 	
 	@Id
-	@Column(name="contactid")
+	@Column(name="contact_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="contact_sequence_id")
-	@SequenceGenerator(name="contact_sequence_id",sequenceName="contact_sequence",allocationSize=1)
+	@SequenceGenerator(name="contact_sequence_id",sequenceName="contacts_sequence",allocationSize=1)
 	private int id;
 	
-	@Column(name="homeaddress")
+	@Column(name="home_address")
 	private String homeAddress;
 	
-	@Column
+	@Column(name="office_address")
 	private String officeAddress;
 	
-	@Column
+	@Column(name="telephone")
 	private String telephone;
+	
+	@Column(name="email")
+	private String userMail;
 	
 	
 	public int getId() {
@@ -52,6 +55,12 @@ public class Contact {
 	}
 	public void setTelephoneNo(String telephoneNo) {
 		this.telephone = telephoneNo;
+	}
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 
 }

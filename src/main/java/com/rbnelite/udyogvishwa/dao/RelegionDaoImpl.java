@@ -2,6 +2,8 @@ package com.rbnelite.udyogvishwa.dao;
 
 
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -27,5 +29,12 @@ public class RelegionDaoImpl extends BaseDao<Religion> implements RelegionDao {
 		
 		
 				
+	}
+
+	@Override
+	public List<Religion> listReligion() {
+		String name="manoj";
+		 return sessionFactory.getCurrentSession().createQuery("from Religion  where usermail='"+name+"'")
+	                .list();
 	}
 }

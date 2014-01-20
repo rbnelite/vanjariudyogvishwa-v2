@@ -13,11 +13,24 @@ import javax.persistence.Table;
 public class Religion {
 
 	@Id
-	@Column(name="religionid")
+	@Column(name="religion_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="religion_sequence_religionid")
 	@SequenceGenerator(name="religion_sequence_religionid",sequenceName="religion_sequence",allocationSize=1)
-	
 	private int religionid;
+	
+	@Column(name="religion")
+	private String religionname;
+	@Column(name="religion_cast")
+	private String relcast;
+	
+	private String mothertoung;
+	
+	@Column(name="native_place")
+	private String nativeplace;
+	
+	@Column(name="email")
+	private String usermail;
+	
 	public int getReligionid() {
 		return religionid;
 	}
@@ -54,9 +67,5 @@ public class Religion {
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
 	}
-	private String religionname;
-	private String relcast;
-	private String mothertoung;
-	private String nativeplace;
-	private String usermail;
+	
 }

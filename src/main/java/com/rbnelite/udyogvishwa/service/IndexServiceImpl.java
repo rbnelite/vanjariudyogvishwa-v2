@@ -1,11 +1,11 @@
 package com.rbnelite.udyogvishwa.service;
 
-import java.util.List;
+
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import com.rbnelite.udyogvishwa.dao.IndexDao;
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
@@ -32,7 +32,15 @@ public class IndexServiceImpl implements IndexService {
 		index.setGender(indexcredential.getGender());
 		index.setBirthDate(indexcredential.getBirthDay()+"/"+indexcredential.getBirthMonth()+"/"+indexcredential.getBirthYear());
 		index.setPassword(indexcredential.getPassword1());
+		index.setContactId(indexcredential.getContactId());
+		index.setHomeAddress(indexcredential.getHomeAddress());
+		index.setReligion(indexcredential.getReligion());
+		index.setSubCast(indexcredential.getSubCast());
+		index.setOfficeAddress(indexcredential.getOfficeAddress());
+		index.setTelephone(indexcredential.getTelephone());
+				
 		indexdao.saveRegistration(index);
+		
 		}
 		else
 		{

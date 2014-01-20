@@ -3,6 +3,8 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rbnelite.udyogvishwa.dto.OtherDetailsCredential;
+import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 
 /**
@@ -22,18 +25,22 @@ import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 public class OtherDetailsController {
 	@Resource
 	private OtherDetailsService otherDetailsServ;
-	@RequestMapping(value = "/OtherDetails", method = RequestMethod.POST)
+	
+	@RequestMapping(value = "/otherDetails", method = RequestMethod.POST)
 	public String OtherDetailsMethod(
 			@ModelAttribute("OtherDetailsCredential") OtherDetailsCredential OtherCred,
 			ModelMap map) {
 
 		otherDetailsServ.insertOtherDetails(OtherCred);
 
-		return "Step11OtherDetails";
+		return "Profile";
 
 	}
 	
-	@RequestMapping(value="/OtherDetails")
+	
+	
+	
+	@RequestMapping(value="/otherDetails")
 	public String FamilyTempMethod(ModelMap m1) {
 		return "Step11OtherDetails";
 	}
