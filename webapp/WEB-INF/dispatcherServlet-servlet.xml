@@ -25,7 +25,7 @@
         <property name="password" value="rbnelite"/>
     </bean>
  
- <bean class="org.springframework.context.support.ResourceBundleMessageSource"
+    <bean class="org.springframework.context.support.ResourceBundleMessageSource"
 		id="messageSource">
 		<property name="basename" value="message" />
 	</bean>

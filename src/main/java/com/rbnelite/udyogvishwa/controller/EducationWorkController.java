@@ -24,6 +24,7 @@ private EducationWorkService educationWorkService;
 public String insert(@Valid EducationWork educationwork,BindingResult result,@ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential,ModelMap map){
 	
 	if(result.hasErrors()) {
+		map.addAttribute("educationwork", educationwork);
         return "Step8EducationWork";
     }
 	else
