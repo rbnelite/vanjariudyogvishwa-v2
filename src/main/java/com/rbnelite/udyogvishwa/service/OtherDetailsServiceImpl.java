@@ -29,8 +29,8 @@ public class OtherDetailsServiceImpl implements OtherDetailsService {
 		OtherDetails objOtherDet=new OtherDetails();
 		
 		objOtherDet.setUsermail(othetCred.getUsermail());
-		objOtherDet.setCulturalact(othetCred.getCulturalact());
 		
+		objOtherDet.setCulturalact(othetCred.getCulturalact());
 		objOtherDet.setPolyticalact(othetCred.getPolyticalact());
 		objOtherDet.setPolyticalstatus(othetCred.getPolyticalstatus());
 		objOtherDet.setSocialact(othetCred.getSocialact());

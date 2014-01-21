@@ -28,8 +28,8 @@ public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 	}
 	@Override
 	public List<Hobbies> listHobbies() {
-		String name="manoj";
-		return sessionFactory.getCurrentSession().createQuery("from Hobbies where usermail='"+name+"'")
+		String email="sawantmanojm@gmail.com";
+		return sessionFactory.getCurrentSession().createQuery("from Hobbies where usermail='"+email+"'")
                 .list();
 	}
 

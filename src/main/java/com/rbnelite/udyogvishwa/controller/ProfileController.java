@@ -11,18 +11,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rbnelite.udyogvishwa.model.Astro;
+
+import com.rbnelite.udyogvishwa.model.EducationWork;
+
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 
-
 import com.rbnelite.udyogvishwa.service.AstroService;
+
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
+
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
+
 
 
 /**
@@ -63,7 +68,8 @@ public class ProfileController {
 		System.out.println("&&&&&-2"+map.size());
 		}
 		
-		
+		map.put("educationWORK", new EducationWork());
+		map.put("educationworkList", educationWorkService.listEducationWork());
 	
 		
 		map.put("hobbiesDetails", new Hobbies());

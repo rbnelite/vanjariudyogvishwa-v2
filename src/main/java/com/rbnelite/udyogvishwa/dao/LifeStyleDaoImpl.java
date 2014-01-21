@@ -37,8 +37,8 @@ public class LifeStyleDaoImpl extends BaseDao<LifeStyle> implements LifeStyleDao
 
 	@Override
 	public List<LifeStyle> listLifeStyle() {
-		String name="manoj";
-		return sessionFactory.getCurrentSession().createQuery("from LifeStyle where usermail='"+name+"'").list();
+		String email="sawantmanojm@gmail.com";
+		return sessionFactory.getCurrentSession().createQuery("from LifeStyle where usermail='"+email+"'").list();
 	}
 
 }

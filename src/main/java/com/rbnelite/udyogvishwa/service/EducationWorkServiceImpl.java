@@ -2,10 +2,12 @@ package com.rbnelite.udyogvishwa.service;
 
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.EducationWorkDao;
 import com.rbnelite.udyogvishwa.dto.EducationWorkCredential;
@@ -36,6 +38,12 @@ public void insertEducationWork(EducationWorkCredential educationworkcredential)
 }
 
 
+@Override
+@Transactional
+public List<EducationWork> listEducationWork() {
+
+	return educationworkdao.listEducationWork();
+}
 
 
 }

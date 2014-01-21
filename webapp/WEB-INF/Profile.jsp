@@ -484,10 +484,7 @@
 								</td>
 								<td>${otherDetails.culturalact}</td>
 							</tr>
-							<tr>
-								<td><b>Like Games :</b></td>
-								<td>${otherDetails.games}</td>
-							</tr>
+							
 
 						</c:forEach>
 					</table>
@@ -527,10 +524,7 @@
 								</td>
 								<td><input type="text" placeholder="${EditOtherDetails.culturalact}"></td>
 							</tr>
-							<tr>
-								<td><b>Like Games :</b></td>
-								<td><input type="text" placeholder="${EditOtherDetails.games}"> </td>
-							</tr>
+							
 							<tr>
 								<td colspan="1"><input type="submit" value="Edit" name="editOtherBtn" style="float: right;"></td>
 								<td><input type="reset" value="Cancel"></td>

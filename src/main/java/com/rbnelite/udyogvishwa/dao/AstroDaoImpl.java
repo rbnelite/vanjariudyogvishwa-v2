@@ -39,8 +39,8 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 	@Override
 	public List<Astro> listAstro() {
 		
-		String name="manoj";
-		return sessionFactory.getCurrentSession().createQuery("from Astro where userMail='"+name+"'")
+		String email="sawantmanojm@gmail.com";
+		return sessionFactory.getCurrentSession().createQuery("from Astro where userMail='"+email+"'")
                 .list();
 	}
 

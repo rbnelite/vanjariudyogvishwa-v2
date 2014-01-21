@@ -44,8 +44,8 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 	@Transactional
 	public List<OtherDetails> listOtherDetails() {
 		
-		String name="manoj";
-		return sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+name+"'")
+		String email="sawantmanojm@gmail.com";
+		return sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+email+"'")
                 .list();
 	}
 
