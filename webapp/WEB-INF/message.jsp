@@ -15,11 +15,12 @@
 			<label>Receiver's Name :</label><input type="text" name="receiverID"
 				placeholder="Enter Receivers Name...."> <br> 
 				<label>Message :&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="messageText"
-				placeholder="Enter Yoyr Message here...."><br> <input
-				type="submit" name="SendMsg" Value="Send"> <input
-				type="submit" name="EditMsg" Value="Edit"> <input
-				type="submit" name="Delete" Value="Delete"> <input
-				type="reset" Value="Cancel"><br>
+				placeholder="Enter Yoyr Message here...."><br> 
+				
+				<input type="submit" name="SendMsg" Value="Send"> 
+				<input type="submit" name="EditMsg" Value="Edit"> 
+				<input type="submit" name="Delete" Value="Delete"> 
+				<input type="reset" Value="Cancel"><br>
 			<h3>Status : ${msgStatus}</h3>
 		</form>
 	</center>

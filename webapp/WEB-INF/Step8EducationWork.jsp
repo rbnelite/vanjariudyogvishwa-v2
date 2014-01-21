@@ -136,7 +136,7 @@
                                         <td></td>
                                         <td align="right">
 
-                                            <input type="submit" class="savebtn" name="userMail" id="submit" value="Save & Continue" >
+                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" >
                                         </td>
                                     </tr>
                                 </table>

@@ -6,3 +6,4 @@ public interface EducationWorkDao {
 	public void insertEducationWork(EducationWork educationwork);
 
 }
+ 
