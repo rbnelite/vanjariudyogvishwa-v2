@@ -37,6 +37,7 @@ public String insert(@Valid EducationWork educationwork,BindingResult result,@Mo
 @RequestMapping(value="/educationwork")
 public String OccupationForm(ModelMap map){
 
+	map.addAttribute("educationwork", new EducationWork());
 	return "Step8EducationWork";
 }
 }

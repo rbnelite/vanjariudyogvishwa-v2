@@ -24,10 +24,13 @@ private int educationid;
 @Column
 @NotEmpty
 private String school;
+
 @Column
 private String collage;
+
 @Column
 private String graduation;
+
 @Column(name="other_graduation")
 private String otherGraduation;
 @Column(name="pg_college")
@@ -93,9 +96,4 @@ public String getUserMail() {
 public void setUserMail(String userMail) {
 	this.userMail = userMail;
 }
-
-
-
-
-
 }

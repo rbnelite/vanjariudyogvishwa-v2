@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,7 +45,7 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
-                <Form action="/vanjariudyogvishwa-v2/educationwork"method="POST">
+                <Form action="/vanjariudyogvishwa-v2/educationwork"method="POST" commandName="educationwork">
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -56,14 +57,14 @@
                                     </tr>
                                     <tr><td colspan="2"><hr/></td></tr>
                                     <tr><td><br><br></td></tr>
-
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
                                         <td><input type="text" name="school" id="school_name"size="30" maxlength="50">
                                             <div id="school_nameError" class="red" colspan="2"/></td>
-                                            
-                                    </tr>
+                                   </tr>
                                     <tr><td><form:errors path="school" cssclass="error"></form:errors></td></tr>
+                                    
+                                    
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Name of College <font color="red">*</font></td><td><input type="text" name="collage" id="clg_name" size="30" maxlength="50">
@@ -156,7 +157,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                
+                </Form>
             </div>
             
             
