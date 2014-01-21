@@ -46,7 +46,7 @@
             
             <div id="middleStep4">
                 <form action="/vanjariudyogvishwa-v2/educationwork"method="POST" commandName="educationwork">
-               <form: errors path="*" cssClass="errorblock" element="div"/>
+               <from: errors path="*" cssClass="errorblock" element="div"/>
                
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
@@ -61,10 +61,10 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><form: input path="school"/>
+                                        <td><from: input path="school"/>
                                             <div id="school_nameError" class="red" colspan="2"/></td>
                                    </tr>
-                                    <tr><td><form: errors path="school" cssclass="error"/></td></tr>
+                                    <tr><td><from: errors path="school" cssclass="error"/></td></tr>
                                     
                                     
                                     <tr><td colspan="2"><br></tr>
