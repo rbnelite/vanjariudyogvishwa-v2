@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="Education")
 public class EducationWork {
@@ -19,9 +21,12 @@ public class EducationWork {
 private int educationid;
 
 
-
+@Column
+@NotEmpty
 private String school;
+@Column
 private String collage;
+@Column
 private String graduation;
 @Column(name="other_graduation")
 private String otherGraduation;

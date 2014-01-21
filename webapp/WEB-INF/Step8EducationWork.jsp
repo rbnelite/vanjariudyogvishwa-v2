@@ -1,7 +1,7 @@
 <%-- 
     Document   : Step6EducationWork
     Created on : Dec 24, 2013, 7:42:49 PM
-    Author     : dogkiller
+    Author     : dogkiller,ab
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,6 +13,20 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-8 Education & Work Details Page</title>
+   
+   <style>
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+</style>
     </head>
     <body>
        <center>
@@ -47,7 +61,9 @@
                                         <td> Name of School <font color="red">*</font></td>
                                         <td><input type="text" name="school" id="school_name"size="30" maxlength="50">
                                             <div id="school_nameError" class="red" colspan="2"/></td>
+                                            
                                     </tr>
+                                    <tr><td><form:errors path="school" cssclass="error"></form:errors></td></tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Name of College <font color="red">*</font></td><td><input type="text" name="collage" id="clg_name" size="30" maxlength="50">
