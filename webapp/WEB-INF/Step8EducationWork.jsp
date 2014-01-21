@@ -45,7 +45,9 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
-                <Form action="/vanjariudyogvishwa-v2/educationwork"method="POST" commandName="educationwork">
+                <form action="/vanjariudyogvishwa-v2/educationwork"method="POST" commandName="educationwork">
+               <form: errors path="*" cssClass="errorblock" element="div"/>
+               
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -59,10 +61,10 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><input type="text" name="school" id="school_name"size="30" maxlength="50">
+                                        <td><form: input path="school"/>
                                             <div id="school_nameError" class="red" colspan="2"/></td>
                                    </tr>
-                                    <tr><td><form:errors path="school" cssclass="error"></form:errors></td></tr>
+                                    <tr><td><form: errors path="school" cssclass="error"/></td></tr>
                                     
                                     
                                     <tr><td colspan="2"><br></tr>
@@ -157,7 +159,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                </Form>
+                </form >
             </div>
             
             
