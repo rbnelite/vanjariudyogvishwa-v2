@@ -1,0 +1,913 @@
+/* 
+    Document   : style
+    Created on : Dec 9, 2013, 1:26:56 PM
+    Author     : Manoj
+    Description: Purpose of the stylesheet follows.
+*/
+root {
+	display: block;
+}
+
+body {
+	background-color: white;
+	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
+}
+
+#main {
+	background-color: white;
+	width: 1400px;
+	height: 2300px;
+	margin: 10px 50px 10px 50px;
+	border: 3px solid gray;
+	border-radius: 3px;
+}
+
+#mainHome {
+	background-color: bisque;
+	width: 1400px;
+	height: 1242px;
+	margin: 10px 50px 10px 50px;
+	border: 3px solid gray;
+	border-radius: 3px;
+}
+
+#mainProfile {
+	background-color: white;
+	width: 1400px;
+	height: 2300px;
+	margin: 10px 50px 10px 50px;
+	/* border: 3px solid gray; */
+	border-radius: 3px;
+}
+
+#mainMsg {
+	background-color: yellow;
+	width: 1400px;
+	height: fit-content;
+	margin: 10px 50px 10px 50px;
+	border: 3px solid gray;
+	border-radius: 3px;
+}
+
+#mainInterestAreas {
+	background-color: yellow;
+	width: 1400px;
+	height: fit-content;
+	margin: 10px 50px 10px 50px;
+	border: 3px solid gray;
+	border-radius: 3px;
+}
+
+#logo1 {
+	width: 141px;
+	height: 143px;
+	margin-left: -1000px;
+	margin-bottom: -144px;
+}
+
+.style1 {
+	font-family: "3D LET (BRK)"
+}
+
+.style2 {
+	font-family: "Adobe Garamond Pro"
+}
+
+.style6 {
+	font-size: 24px
+}
+
+.style7 {
+	font-size: 9px
+}
+
+.style8 {
+	font-size: 10px;
+}
+
+.style10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.style16 {
+	font-family: Verdana;
+	margin-right: 100px;
+}
+
+.style21 {
+	font-family: Verdana;
+	font-size: 9px;
+}
+
+.style24 {
+	font-size: 12px
+}
+
+.style27 {
+	color: #0099FF;
+	border: 1px;
+	border-color: #0066FF;
+	margin-right: 120px;
+}
+
+.style34 {
+	color: #686868
+}
+
+.style36 {
+	color: #99CC33;
+	font-size: 30px;
+	font-family: "Adobe Caslon Pro Bold";
+}
+
+.style42 {
+	color: #cococo;
+	font-size: 30px;
+}
+
+.style46 {
+	color: #686868;
+	font: 12px Verdana;
+}
+
+.style59 {
+	color: #686868;
+	font: 12px Verdana;
+	font-family: Verdana;
+}
+
+.style64 {
+	font-size: 24px;
+	color: #99CC33;
+}
+
+.style71 {
+	color: #99CC00
+}
+
+.style72 {
+	font-family: "Adobe Caslon Pro Bold";
+	font: bold;
+	color: #99CC33;
+}
+
+.style74 {
+	font-family: Verdana
+}
+
+.style75 {
+	color: #99CC33
+}
+
+.style76 {
+	font-family: Verdana;
+	color: #99CC33;
+}
+
+.style77 {
+	font-family: ELEGANCE;
+	color: #686868;
+}
+
+#Header {
+	border-radius: 3px;
+	background-color: bisque;
+	width: 1400px;
+	height: 200px;
+	margin: 0px 50px 0px 0px;
+	border: 1px solid gray;
+}
+
+#hiderMenu {
+	border-radius: 3px;
+	background-color: #fab039;
+	width: 1400px;
+	height: 40px;
+	margin: 1px 50px 1px 0px;
+	font-size: 150%;
+	border: 1px solid gray;
+}
+
+#hiderMenuHome {
+	border-radius: 3px;
+	background-color: bisque;
+	width: 1400px;
+	height: 40px;
+	margin: 0px 50px 0px 0px;
+	font-size: 150%;
+	border: 1px solid gray;
+}
+
+#anchor {
+	margin-left: 80px;
+	font-family: white;
+	text-decoration: none;
+}
+
+#anchor:hover {
+	border-radius: 10px;
+}
+
+#input_search {
+	margin-top: 10px;
+	margin-left: 400px;
+	width: 350px;
+	height: 30px;
+	border-radius: 20px;
+	border-width: 5px;
+	border-color: black;
+	background-color: white;
+	font-size: 100%;
+}
+
+#profile_photo {
+	float: right;
+	margin-right: 50px;
+	font-size: 100%;
+}
+
+#Updated_photo {
+	height: 50px;
+	width: 52px;
+	float: right;
+	margin-right: 50px;
+	font-size: 100%;
+}
+
+#Updated_photo:hover {
+	height: 150px;
+	width: 152px;
+	float: right;
+	margin-right: 50px;
+	font-size: 100%;
+}
+
+#leftMain {
+	border-radius: 3px;
+	float: left;
+	width: 300px;
+	height: 1000px;
+	overflow: auto;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#leftMainHome {
+	border-radius: 3px;
+	float: left;
+	width: 300px;
+	height: 995px;
+	overflow: auto;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#leftMain1 {
+	float: left;
+	width: 290px;
+	height: 323px;
+	overflow: auto;
+	border-radius: 3px;
+	margin: 5px 2px 0px 2px;
+	background-color: bisque;
+}
+
+#leftMain2 {
+	border-radius: 3px;
+	float: left;
+	width: 290px;
+	height: 323px;
+	overflow: auto;
+	margin: 5px 2px 0px 2px;
+	background-color: bisque;
+}
+
+#leftMain3 {
+	border-radius: 3px;
+	float: left;
+	width: 290px;
+	height: 323px;
+	overflow: auto;
+	margin: 5px 2px 0px 2px;
+	background-color: bisque;
+}
+
+#MiddleTop {
+	border-radius: 35px;
+	width: 790px;
+	height: 100px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#MiddleTopHome {
+	border-radius: 2px;
+	width: 790px;
+	height: 100px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#MiddleTopEvent {
+	border-radius: 35px;
+	width: 790px;
+	height: 350px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#MiddleTopEvent:hover {
+	border-radius: 35px;
+	width: 790px;
+	height: 350px;
+	background-color: whitesmoke;
+	border: 1px solid aqua;
+}
+
+#MiddleTopProduct {
+	border-radius: 35px;
+	width: 790px;
+	height: 300px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middle {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 790px;
+	height: 893px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleHome {
+	margin-top: 0px;
+	border-radius: 3px;
+	width: 790px;
+	height: 893px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleMsg {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 790px;
+	height: 999px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleEvent {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 790px;
+	height: 645px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleStep4 {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 1090px;
+	height: 645px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleStep10 {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 780px;
+	height: 715px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#middleOccupation {
+	margin-top: 5px;
+	border-radius: 3px;
+	width: 780px;
+	height: 645px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#ShowStatusUpdet {
+	width: 750px;
+	margin-top: 10px;
+	margin-left: 5px;
+	float: left;
+}
+
+#MsgShowArea {
+	margin: 5px auto auto 17px;
+	width: 735px;
+	height: 400px;
+}
+
+#MsgToArea {
+	margin: 5px auto auto 17px;
+	width: 735px;
+	height: 90px;
+}
+
+#MsgTo {
+	float: left;
+	margin: 5px auto auto 5px;
+}
+
+#CommentToStatus {
+	background-color: burlywood;
+}
+
+#rightMain {
+	border-radius: 3px;
+	margin-top: -1003px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#rightMainHome {
+	border-radius: 3px;
+	margin-top: -1000px;
+	width: 300px;
+	height: 995px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#rightMainPhotos {
+	border-radius: 3px;
+	margin-top: -648px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid gray;
+}
+
+#rightMainEvents {
+	border-radius: 3px;
+	margin-top: -1005px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid gray;
+}
+
+#rightMainProducts {
+	border-radius: 3px;
+	margin-top: -955px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid gray;
+}
+
+#rightMainAccSetting {
+	border-radius: 3px;
+	margin-top: -895px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+/* #InterestAreas:hover {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: azure;
+    
+    
+} */
+#rightMainMSG {
+	border-radius: 3px;
+	margin-top: -1002px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#InterestAreas {
+	border-radius: 3px;
+	border: 1px solid gray;
+	float: left;
+	width: 468px;
+	height: 300px;
+	background-color: bisque;
+	margin-bottom: 1px;
+}
+
+/* #InterestAreas:hover {
+	border-radius: 3px;
+	background-color: whitesmoke;
+	border: 1px solid aqua;
+}
+ */
+#Products {
+	border-radius: 3px;
+	border: 1px solid aqua;
+	width: 466px;
+	height: 300px;
+	background-color: bisque;
+	margin-bottom: 2px;
+}
+#ProfileProducts {
+	border-radius: 3px;
+	margin-right:465px;
+	border: 1px solid gray;
+	width: 462px;
+	height: 300px;
+	overflow:auto;
+	background-color: bisque;
+	margin-bottom: 1px;
+}
+
+/* #Products:hover {
+	border-radius: 3px;
+	border: 1px solid aqua;
+	background-color: whitesmoke;
+} */
+
+#Friends {
+	float: right;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: -303px;
+	width: 466px;
+	height: 300px;
+	margin-right: -2px;
+}
+
+/* #Friends:hover {
+	border-radius: 3px;
+	border: 1px solid aqua;
+	background-color: whitesmoke;
+} */
+
+#ProfileDetails {
+	/* margin-top: 1px; */
+	float: left;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	width: 930px;
+	height: 200px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 8px;
+	
+}
+
+#OutsideProfileDetails{
+	margin-top: 1px;
+	float: left;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	width: 930px;
+	height: 200px;
+	overflow: hidden;
+	
+}
+#InsideProfileDetails{
+	
+	width: 800px; height: auto; margin-right: 10px; margin-left: 20px;
+}
+
+#ProfileDetails:hover {
+	border-radius: 3px;
+	border: 1px solid black;
+	/* background-color: whitesmoke; */
+}
+
+#EditProfileDetails{
+	
+	float:right;
+	width: 50px;
+	height: 20px;
+	 margin: 0px 10px 0px 0px;
+}
+
+#Photos {
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	
+	width: 460px;
+	height: 300px;
+	overflow: auto;
+	padding-right: 22px;
+	/* padding-bottom: 20px; */
+}
+#outside_Photos{
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: 4px;
+	width: 460px;
+	height: 300px;
+	overflow: hidden;
+}
+#Photos:hover {
+	/* border-radius: 3px; */
+	border: 1px solid black;
+	
+}
+
+#RightUpdatedStatus {
+	border-radius: 3px;
+	border: 1px solid aqua;
+	background-color: bisque;
+	margin-top: 5px;
+	width: 460px;
+	height: 1310px;
+}
+
+#RightUpdatedStatusProfile {
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: 2px;
+	width: 460px;
+	height: 1317px;
+	overflow: auto;
+	padding-right: 18px;
+	padding-bottom: 18px;
+}
+#OuterRightStatusProfile{
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: 2px;
+	width: 460px;
+	height: 1317px;
+	overflow: hidden;
+	
+}
+
+#RightUpdatedStatus:hover {
+	border-radius: 3px;
+	border: 1px solid aqua;
+	background-color: whitesmoke;
+}
+
+#NeedTop {
+	border-radius: 10px;
+	width: 790px;
+	height: 250px;
+	background-color: bisque;
+	display: none;
+	border: 1px solid gold;
+}
+
+#NeedTopHome {
+	float: right;
+	/*margin-right: 305px;*/
+	margin-left: 305px;
+	border-radius: 35px;
+	width: 790px;
+	height: 270px;
+	background-color: bisque;
+	display: none;
+	margin-bottom: 35px;
+	border: 1px solid aqua;
+	position: absolute;
+}
+
+#NeedTopProfile { /*float: right;*/
+	margin-left: 305px;
+	border-radius: 35px;
+	width: 790px;
+	height: 270px;
+	background-color: bisque;
+	display: none;
+	margin-bottom: 35px;
+	border: 1px solid aqua;
+	position: absolute;
+}
+
+#NotificationTopHome { /*float: right;*/
+	/*margin-right: 305px;*/
+	border-radius: 15px;
+	width: 350px;
+	height: auto;
+	background-color: bisque;
+	display: none;
+	/*margin-bottom: 35px;*/
+	margin-left: 650px;
+	border: 1px solid gray;
+	position: absolute;
+}
+
+#RequestTopHome {
+	border-radius: 15px;
+	width: 350px;
+	height: auto;
+	background-color: bisque;
+	display: none;
+	margin-left: 820px;
+	border: 1px solid gray;
+	position: absolute;
+}
+
+#SettingTopHome {
+	border-radius: 15px;
+	width: 350px;
+	height: auto;
+	background-color: bisque;
+	display: none;
+	margin-left: 950px;
+	border: 1px solid gray;
+	position: absolute;
+}
+
+#NeedRightMain {
+	border-radius: 10px;
+	margin-top: -1002px;
+	width: 300px;
+	height: 1000px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#NeedMiddle {
+	margin-top: 5px;
+	border-radius: 10px;
+	width: 790px;
+	height: 1000px;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#info_step2 {
+	height: 505px;
+	width: 790px;
+	background-color: bisque;
+	margin-top: 5px;
+	border-radius: 10px;
+	border: 1px solid aqua;
+}
+
+#leftMainInterestAreas {
+	border-radius: 3px;
+	float: left;
+	margin-top: 5px;
+	width: 300px;
+	height: 505px;
+	overflow: auto;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#leftMainStep3 {
+	border-radius: 3px;
+	float: left;
+	margin-top: 5px;
+	width: 300px;
+	height: 645px;
+	overflow: auto;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#leftMainStep10 {
+	border-radius: 3px;
+	float: left;
+	margin-top: 5px;
+	width: 300px;
+	height: 713px;
+	overflow: auto;
+	background-color: bisque;
+	border: 1px solid aqua;
+}
+
+#rightMainInterestAreas {
+	border-radius: 3px;
+	margin-top: -507px;
+	width: 300px;
+	height: 505px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#rightMainStep3 {
+	border-radius: 3px;
+	margin-top: -647px;
+	width: 300px;
+	height: 645px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#rightMainStep10 {
+	border-radius: 3px;
+	margin-top: -715px;
+	width: 300px;
+	height: 713px;
+	background-color: bisque;
+	float: right;
+	border: 1px solid aqua;
+}
+
+#RightProfile {
+	width: 463px;
+	height: 1660px;
+	margin-left: 937px;
+}
+
+#aa {
+	height: 100px;
+	width: 100px;
+	background: red;
+	display: none;
+}
+
+
+#ShowStatusUpdetProduct{
+	width: 750px;
+	height:690px;
+    margin-top: 10px;
+    margin-left: 32px;
+    float: left;
+	overflow: auto;
+	border-radius:5px;
+}
+
+#ShowProductUpdetImage{
+    width: 120px;
+    height:100px;
+    margin-top: 10px;
+    /* margin-left: 5px; */
+    float: left;
+    background-color: white;
+    border-radius:5px;
+}
+#ShowProductInfo{
+    width: 600px;
+    height:100px;
+    margin-top: 10px;
+    /* margin-left: 5px; */
+    float: right;
+    background-color: #fcca7b;
+    border-radius:5px;
+}
+#ShowProductInfoMain{
+	width: 720px;
+	height: 102px;
+	margin-top: 10px;
+	
+}
+#ProductInfoheading{
+	margin-left: -400px;
+	
+	
+}
+
+#productsearch{
+	margin-top:-20px;
+	float: right;
+}
+
+#input_searchProduct{
+    
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    background-color:white;
+    font-size: 100%;
+}
+
+/*********************ScrollBar Style for Chrome Browsers****************** */
+
+/* 1.rounded corners style */
+	 
+::-webkit-scrollbar {width: 6px; height: 4px; background: #ffffff; }
+::-webkit-scrollbar-thumb { background-color: #000000; -webkit-border-radius: 1ex; }  
+
+/* 2.square corners with border style  */
+
+/*  	::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
+::-webkit-scrollbar-thumb {background-color:#ffffff ; border: 1px solid black;} */
+	
+	
+	

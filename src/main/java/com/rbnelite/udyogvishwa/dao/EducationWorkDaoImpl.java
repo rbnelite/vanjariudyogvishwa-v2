@@ -1,7 +1,5 @@
 package com.rbnelite.udyogvishwa.dao;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -27,14 +25,6 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 		session.save(educationWork);
 		session.getTransaction().commit();
 		session.flush();
-	}
-
-
-	@Override
-	@Transactional
-	public List<EducationWork> listEducationWork() {
-		
-		return sessionFactory.getCurrentSession().createQuery("from EducationWork").list();
 	}
 
 }

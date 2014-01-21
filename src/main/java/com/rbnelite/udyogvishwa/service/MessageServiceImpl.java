@@ -19,14 +19,14 @@ import com.rbnelite.udyogvishwa.model.Message;
 public class MessageServiceImpl implements MessageService {
 
 	
-	@Resource
+	@Resource                                
 	private MessageDAO msgDao;
 	
 	@Override
 	public void addMessage(MessageDTO msgdto) {
 		Message msg=new Message();
 		
-		msg.setMsgReceiverID(msgdto.getReceiverID());
+		msg.setMsgReceiverID("sawantmanojm@gmail.com");
 		msg.setMsgSenderID(msgdto.getSenderID());
 		msg.setMsgDate(msgdto.getMessageDate());
 		msg.setMsg(msgdto.getMessageText());
