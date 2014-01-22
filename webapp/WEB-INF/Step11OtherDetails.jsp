@@ -36,7 +36,7 @@
 			<div id="leftMainStep3"></div>
 
 			<div id="middleStep4">
-			<form action="/vanjariudyogvishwa-v2/otherDetails" method="post">
+			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post">
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>
