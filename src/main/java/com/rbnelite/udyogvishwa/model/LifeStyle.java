@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class LifeStyle {
 
 	@Id
-	@Column(name="lifestyleid")
+	@Column(name="life_style_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="lifestyle_sequence_lifestyleid")
 	@SequenceGenerator(name="lifestyle_sequence_lifestyleid",sequenceName="lifestyle_sequence",allocationSize=1)
 	private int lifestyleid;
@@ -22,9 +22,17 @@ public class LifeStyle {
 	private String smoke;
 	private String drink;
 	private String complexion;
+
+	
+	@Column(name="body_type")
 	private String bodytype;
+	@Column(name="bloo_dgroup")
 	private String bloodgroup;
+	
 	private String weight;
+	
+	@Column(name="email")
+
 	private String usermail;
 	public int getLifestyleid() {
 		return lifestyleid;

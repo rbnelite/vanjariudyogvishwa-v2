@@ -29,7 +29,7 @@ public class OtherDetailsController {
 
 		otherDetailsServ.insertOtherDetails(OtherCred);
 
-		return "Step11OtherDetails";
+		return "Profile";
 
 	}
 	

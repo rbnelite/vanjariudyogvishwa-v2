@@ -1,8 +1,11 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.LifeStyleDao;
 import com.rbnelite.udyogvishwa.dto.LifeStyleCredential;
@@ -13,12 +16,12 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 
 	@Resource
 	private LifeStyleDao lifestyledao;
-	
+
 	@Override
 	public void insertLifeStyle(LifeStyleCredential lifetstylecredential) {
 		// TODO Auto-generated method stub
 
-		LifeStyle lifestyle=new LifeStyle();
+		LifeStyle lifestyle = new LifeStyle();
 		lifestyle.setDiet(lifetstylecredential.getDiet());
 		lifestyle.setSmoke(lifetstylecredential.getSmoke());
 		lifestyle.setDrink(lifetstylecredential.getDrink());
@@ -28,6 +31,13 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 		lifestyle.setWeight(lifetstylecredential.getWeight());
 		lifestyle.setUsermail(lifetstylecredential.getUsermail());
 		lifestyledao.insertLifeStyle(lifestyle);
+	}
+
+	@Override
+	@Transactional
+	public List<LifeStyle> listLifeStyle() {
+
+		return lifestyledao.listLifeStyle();
 	}
 
 }

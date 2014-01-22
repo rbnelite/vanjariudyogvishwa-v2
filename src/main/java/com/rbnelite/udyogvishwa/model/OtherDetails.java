@@ -16,22 +16,32 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="otherdetails")
+@Table(name="other_details")
 public class OtherDetails {
 
 	@Id
-	@Column(name="otherid")
+	@Column(name="other_id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OtherDetails_sequence_sno")
-	@SequenceGenerator(name="OtherDetails_sequence_sno",sequenceName="otherdetails_sequence",allocationSize=1)
+	@SequenceGenerator(name="OtherDetails_sequence_sno",sequenceName="other_details_sequence",allocationSize=1)
 	private int otherId;
 	
+	@Column(name="social_status")
 	private String socialStatus;
+	@Column(name="polytical_status")
 	private String polyticalstatus;
+	@Column(name="social_act")
 	private String socialact;
+	@Column(name="polytical_act")
 	private String polyticalact;
+	@Column(name="cultural_act")
 	private String culturalact;
-	private String games;
+	
+
+	
+	@Column(name="email")
 	private String usermail;
+	
+
 	public int getOtherId() {
 		return otherId;
 	}
@@ -68,12 +78,9 @@ public class OtherDetails {
 	public void setCulturalact(String culturalact) {
 		this.culturalact = culturalact;
 	}
-	public String getGames() {
-		return games;
-	}
-	public void setGames(String games) {
-		this.games = games;
-	}
+
+
+
 	public String getUsermail() {
 		return usermail;
 	}

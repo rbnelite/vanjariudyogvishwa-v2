@@ -1,5 +1,9 @@
 package com.rbnelite.udyogvishwa.dto;
 
+
+import javax.persistence.Column;
+
+
 public class IndexCredential {
 	private String firstName;
 	private String middleName;
@@ -12,6 +16,30 @@ public class IndexCredential {
 	private String gender;
 	private String password1;
 	private String password2;
+	
+
+	private int contactId;
+	
+	
+	private String homeAddress;
+	
+	
+	private String religion;
+	
+	
+	private String subCast;
+	
+	
+	private String officeAddress;
+	
+	
+	private String telephone;
+	
+	
+	
+	
+	
+	
 	
 	public String getFirstName() {
 		return firstName;
@@ -79,5 +107,43 @@ public class IndexCredential {
 	public void setPassword2(String password2) {
 		this.password2 = password2;
 	}
+
+	public int getContactId() {
+		return contactId;
+	}
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
+	public String getHomeAddress() {
+		return homeAddress;
+	}
+	public void setHomeAddress(String homeAddress) {
+		this.homeAddress = homeAddress;
+	}
+	public String getReligion() {
+		return religion;
+	}
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
+	public String getSubCast() {
+		return subCast;
+	}
+	public void setSubCast(String subCast) {
+		this.subCast = subCast;
+	}
+	public String getOfficeAddress() {
+		return officeAddress;
+	}
+	public void setOfficeAddress(String officeAddress) {
+		this.officeAddress = officeAddress;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
 
 }

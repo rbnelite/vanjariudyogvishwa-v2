@@ -15,6 +15,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Astro {
 	
 	@Id
+
 	@Column(name="astro_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="astro_sequence_id")
 	@SequenceGenerator(name="astro_sequence_id", sequenceName="astro_sequence",allocationSize=1)
@@ -30,6 +31,7 @@ public class Astro {
 	@Column
 	private String zodiac;
 	
+
 	@Column
 	private String email;
 	

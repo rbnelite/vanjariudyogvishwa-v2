@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : Step11OtherDetails
     Created on : Dec 24, 2013, 8:00:42 PM
@@ -13,8 +14,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+<link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <title>Step-11 Other Details Page</title>
 </head>
@@ -27,14 +28,15 @@
 			<div id="Header">
 				<label style="margin-left: 470px;">WelCome ! User</label> <br>
 				<div id="profile_photo">
-					<img src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"> <br> 
+					<img src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"> <br> <a
+						href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
 				</div>
 			</div>
 
 			<div id="leftMainStep3"></div>
 
 			<div id="middleStep4">
-			<form action="/vanjariudyogvishwa-v2/otherDetails" method="post">
+			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post">
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>
@@ -113,7 +115,7 @@
 					<tr>
 						<td></td>
 						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;<input
-							type="submit" name="save_other" value="Save & Continue" class="savebtn">
+							type="submit" name="save_other" value="Save & Continue">
 						</td>
 					</tr>
 				</table>
@@ -130,3 +132,4 @@
 
 </body>
 </html>
+
