@@ -17,7 +17,10 @@
 
     <context:component-scan base-package="com.rbnelite.udyogvishwa"/>
     
-    	<bean id="dataSource"
+    <mvc:annotation-driven />
+    
+	<tx:annotation-driven transaction-manager="transactionManager"/>    
+    <bean id="dataSource"
         class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url" value="jdbc:postgresql://localhost:5432/vvishwa"/>
@@ -27,14 +30,12 @@
  
     <bean class="org.springframework.context.support.ResourceBundleMessageSource"
 		id="messageSource">
-		<property name="basename" value="message" />
+		<property name="basename" value="messages" />
 	</bean>
  
     <bean id="transactionManager"
         class="org.springframework.orm.hibernate4.HibernateTransactionManager"
         p:sessionFactory-ref="sessionFactory"/>
-
- 	<tx:annotation-driven transaction-manager="transactionManager"/>
  	
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -50,7 +51,6 @@
     </bean>
     
     <mvc:resources mapping="/resources/**" location="/resources/mytheme/"/>
-    <mvc:annotation-driven />
         
     <bean id="viewResolver"
       	class="org.springframework.web.servlet.view.UrlBasedViewResolver">

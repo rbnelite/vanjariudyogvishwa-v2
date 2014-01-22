@@ -21,10 +21,10 @@ public class EducationWorkController {
 private EducationWorkService educationWorkService;
 
 @RequestMapping(value="/educationwork", method=RequestMethod.POST)
-public String insert(@Valid EducationWork educationwork,BindingResult result,@ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential,ModelMap map){
+public String insert(@Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
 	if(result.hasErrors()) {
-		map.addAttribute("educationwork", educationwork);
+		map.addAttribute("educationWork", educationWork);
         return "Step8EducationWork";
     }
 	else
@@ -37,7 +37,7 @@ public String insert(@Valid EducationWork educationwork,BindingResult result,@Mo
 }
 @RequestMapping(value="/educationwork")
 public String OccupationForm(ModelMap map){
-	map.addAttribute("educationwork", new EducationWork());
+	map.addAttribute("educationWork", new EducationWork());
 	
 	return "Step8EducationWork";
 }

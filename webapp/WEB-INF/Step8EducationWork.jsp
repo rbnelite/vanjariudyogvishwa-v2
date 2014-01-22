@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -45,7 +45,7 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
-                <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationwork">
+                <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
                <form:errors path="*" cssClass="errorblock" element="div"/>
                
                 <table align="center">
@@ -154,7 +154,6 @@
                                     <tr>
                                         <td></td>
                                         <td align="right">
-
                                             <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" >
                                         </td>
                                     </tr>
@@ -169,3 +168,4 @@
         </center>
     </body>
 </html>
+
