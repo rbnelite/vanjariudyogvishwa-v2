@@ -8,12 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="astro")
 public class Astro {
 	
 	@Id
-	@Column(name="astroid")
+	@Column(name="astro_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="astro_sequence_id")
 	@SequenceGenerator(name="astro_sequence_id", sequenceName="astro_sequence",allocationSize=1)
 	private int id;
@@ -22,11 +24,21 @@ public class Astro {
 	private String country;
 	
 	@Column
+	@NotEmpty
 	private String city;
 	
 	@Column
 	private String zodiac;
 	
+	@Column
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getId() {
 		return id;
 	}

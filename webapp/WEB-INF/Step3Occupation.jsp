@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,8 @@
 			<div id="leftMainStep3"></div>
 			<div id="middleOccupation">
 				<h2>Step-3</h2>
-				<form action="/vanjariudyogvishwa-v2/Occupation" method="post">
+				<form:form action="/vanjariudyogvishwa-v2/Occupation" method="post" commandName="occupation">
+			
 					<table align="center">
 						<tr>
 							<td colspan="2"><br>
@@ -53,9 +55,8 @@
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><input type="text" name="companyName" id="org_name"
-								size="30" maxlength="30">
-								<div id="org_nameError" class="red" colspan="2" />
+							<td><form:input path="companyname" size="30" maxlength="10"/>
+								<form:errors path="companyname" cssClass="error"/>
 							</td>
 						</tr>
 						<tr>
@@ -196,7 +197,7 @@
 							</td>
 						</tr>
 					</table>
-				</form>
+				</form:form>
 			</div>
 			<div id="rightMainStep3"></div>
 

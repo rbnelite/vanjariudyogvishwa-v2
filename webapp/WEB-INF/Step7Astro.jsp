@@ -5,16 +5,18 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Step-7 Astro Details Page</title>
+        <title>Vanjari Udyog Vishwa | Astro Details</title>
     </head>
     <body>
-    <form action="/vanjariudyogvishwa-v2/Astro" method="post">
+    <form:form action="/vanjariudyogvishwa-v2/Astro" method="post" commandName="astro">
+   <form:errors path="*" cssClass="errorblock" element="div"/>
     <center>
         <div id="mainMsg">
         <div id="Header">
@@ -27,9 +29,9 @@
                 </div>
             </div>
        <div id="leftMainStep3"></div>
-       <div id="middleStep4">
-                        <table align="center">
-                                    <tr><td colspan="2"><br></tr>
+       <div id="middleStep4" >
+                        <table >
+                                    <tr><td colspan="2"><br></td></tr>
                                     <tr>
                                         <td colspan="2"><font size="5">Fill Out Your Astro Details</font></td>
                                     </tr>
@@ -38,8 +40,11 @@
                                     </tr>
                                     <tr><td colspan="2"><hr/></td></tr>
                                     <tr><td><br><br></td></tr>
+                                    
                                     <tr>
-                                    <td>Country <font color="red">*</font></td><td><select id="country" name="country" style="width: 223px;">
+                                    <td>Country <font color="red">*</font></td>
+                                    <td>
+                                    <select id="country" name="country" style="width: 223px;">
                                                 <option  selected value="">--Please select...</option>
                                                 <option >Afghanistan</option>
                                                 <option>Albania</option>
@@ -224,17 +229,19 @@
                                             <div id="countryError" class="red" colspan="2"/>
                                         </td>
                                     </tr>
-                                    <tr><td></td></tr>
+                                    <tr><td colspan="2"><br></td></tr>
                                     <tr>
                                         <td>City <font color="red">*</font></td>
-                                        <td><input type="text" name="city" id="city"size="30" maxlength="15">
-                                            <div id="cityError" class="red" colspan="2"/>
-                                        </td>
+                                        <td><form:input path="city"/> </td>
                                     </tr>
-                                    <tr><td></td></tr>
+                                     <tr ><td colspan="2"> <form:errors path="city"/> </td></tr>
+                                    
+                                    <tr><td colspan="2"><br></td></tr>
+                                    
                                     <tr>
                                         <td>Zodiac <font color="red">*</font></td>
-                                        <td><select name="zodiac" id="zodiac" style="width: 223px;">
+                                        <td>
+                                        <select name="zodiac" id="zodiac" style="width: 223px;">
                                                 <option selected value="">--Please Select Zodiac</option>
                                                 <option >Aries</option>
                                                 <option>Taurus</option>
@@ -252,8 +259,9 @@
                                             <div id="zodiacError" class="red" colspan="2"/>
                                         </td>
                                     </tr>
+                                     <tr><td colspan="2"><br></td></tr>
                                     <tr>
-                                    <tr>
+                                
                                         <td></td>
                                         <td align="right">
 
@@ -269,6 +277,6 @@
         
         </div>
         </center>
-        </form>
+        </form:form>
     </body>
 </html>

@@ -1,5 +1,6 @@
 package com.rbnelite.udyogvishwa.model;
 
+import javax.faces.bean.NoneScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="employment")
@@ -18,19 +21,28 @@ public class Occupation {
 	private int occupationid;
 	
 	@Column(name="company_name")
+	@NotEmpty
 	private String companyname;
+	
+    @Column
     private String occupation;
+    
     @Column(name="product_details")
     private String productdetails;
+   
     @Column(name="number_of_emp")
     private String numberofemp;
+    
     @Column(name="emp_type")
     private String emptype;
+   
     @Column(name="annual_income")
     private String annualincome;
+    
     @Column(name="email")
     private String usermail;
-	public int getOccupationid() {
+	
+    public int getOccupationid() {
 		return occupationid;
 	}
 	public void setOccupationid(int occupationid) {

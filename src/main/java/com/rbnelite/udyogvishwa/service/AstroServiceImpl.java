@@ -20,6 +20,7 @@ public class AstroServiceImpl implements AstroService {
 		astro.setCountry(astrodenteal.getCountry());
 		astro.setCity(astrodenteal.getCity());
 		astro.setZodiac(astrodenteal.getZodiac());
+		astro.setEmail("anil@gmail.com");
 		astrodao.saveAstro(astro);
 	}
 

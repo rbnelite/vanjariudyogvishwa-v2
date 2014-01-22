@@ -14,20 +14,6 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-8 Education & Work Details Page</title>
-   
-   <style>
-.error {
-	color: #ff0000;
-}
- 
-.errorblock {
-	color: #000;
-	background-color: #ffEEEE;
-	border: 3px solid #ff0000;
-	padding: 8px;
-	margin: 16px;
-}
-</style>
     </head>
     <body>
        <center>
@@ -61,8 +47,7 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><form:input path="school"/>
-                                            <div id="school_nameError" class="red" colspan="2"/></td>
+                                        <td><form:input path="school"/> </td>
                                    </tr>
                                     <tr><td><form:errors path="school" cssclass="error"/></td></tr>
                                     
@@ -74,7 +59,7 @@
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Graduation Degree <font color="red">*</font></td>
+                                        <td>Graduation Degree<font color="red">*</font></td>
                                         <td>
                                             <select name="graduation" id="graduation" style="width: 223px;">
                                                 <option selected value="">--Please select--</option>

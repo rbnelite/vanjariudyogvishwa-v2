@@ -1,5 +1,4 @@
 package com.rbnelite.udyogvishwa.controller;
-
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
@@ -24,7 +23,7 @@ private EducationWorkService educationWorkService;
 public String insert(@Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
 	if(result.hasErrors()) {
-		map.addAttribute("educationWork", educationWork);
+		
         return "Step8EducationWork";
     }
 	else
