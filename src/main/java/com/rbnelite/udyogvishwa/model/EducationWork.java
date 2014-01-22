@@ -1,3 +1,4 @@
+
 package com.rbnelite.udyogvishwa.model;
 
 import javax.persistence.Column;
@@ -97,3 +98,4 @@ public void setUserMail(String userMail) {
 	this.userMail = userMail;
 }
 }
+
