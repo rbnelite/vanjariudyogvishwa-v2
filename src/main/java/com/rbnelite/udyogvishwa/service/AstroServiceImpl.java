@@ -1,11 +1,13 @@
 package com.rbnelite.udyogvishwa.service;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import com.rbnelite.udyogvishwa.dao.AstroDao;
 import com.rbnelite.udyogvishwa.dto.AstroCredential;
@@ -25,6 +27,7 @@ public class AstroServiceImpl implements AstroService {
 		astro.setZodiac(astrodenteal.getZodiac());
 		astrodao.saveAstro(astro);
 	}
+
 
 	@Override
 	@Transactional

@@ -1,10 +1,12 @@
 package com.rbnelite.udyogvishwa.dao;
 
+
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,11 +16,13 @@ import com.rbnelite.udyogvishwa.model.Astro;
 @Repository
 public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 	
+
 	
 	
 	@Autowired
     private SessionFactory sessionFactory;
 	
+
 	public AstroDaoImpl()
 	{
 		super(Astro.class);
@@ -36,6 +40,7 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 
 	}
 
+
 	@Override
 	public List<Astro> listAstro() {
 		
@@ -43,5 +48,6 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 		return sessionFactory.getCurrentSession().createQuery("from Astro where userMail='"+email+"'")
                 .list();
 	}
+
 
 }

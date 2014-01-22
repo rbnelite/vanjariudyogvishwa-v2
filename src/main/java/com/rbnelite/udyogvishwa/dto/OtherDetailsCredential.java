@@ -15,7 +15,7 @@ public class OtherDetailsCredential {
 	private String socialact;
 	private String polyticalact;
 	private String culturalact;
-	
+
 	private String usermail;
 	public String getSocialStatus() {
 		return socialStatus;
@@ -47,6 +47,7 @@ public class OtherDetailsCredential {
 	public void setCulturalact(String culturalact) {
 		this.culturalact = culturalact;
 	}
+
 	
 	public String getUsermail() {
 		return usermail;

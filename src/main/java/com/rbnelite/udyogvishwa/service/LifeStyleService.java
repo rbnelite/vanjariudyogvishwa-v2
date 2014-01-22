@@ -8,5 +8,7 @@ import com.rbnelite.udyogvishwa.model.LifeStyle;
 public interface LifeStyleService {
 
 	public void insertLifeStyle(LifeStyleCredential lifetstylecredential);
+
 	public List<LifeStyle> listLifeStyle();
+
 }

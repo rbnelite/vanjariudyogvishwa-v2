@@ -9,7 +9,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+
 @Table(name="users")
+
 public class Index {
 	
 	@Id
@@ -36,12 +38,15 @@ public class Index {
 	@Column(name="birthdate")
 	private String birthDate;
 	
+
+
 	@Column
 	private String gender;
 	
 	@Column
 	private String password;
 	
+
 	@Column(name="contact_id")
 	private int contactId;
 	
@@ -62,6 +67,7 @@ public class Index {
 	
 	
 	
+
 	public int getId() {
 		return id;
 	}
@@ -99,6 +105,7 @@ public class Index {
 		this.contactNo = contactNo;
 	}
 	
+
 	public String getBirthDate() {
 		return birthDate;
 	}
@@ -106,6 +113,7 @@ public class Index {
 		this.birthDate = birthDate;
 	}
 	
+
 	public String getGender() {
 		return gender;
 	}
@@ -118,6 +126,7 @@ public class Index {
 	public void setPassword(String password1) {
 		this.password = password1;
 	}
+
 	public int getContactId() {
 		return contactId;
 	}

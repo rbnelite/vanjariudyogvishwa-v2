@@ -3,7 +3,9 @@
  */
 package com.rbnelite.udyogvishwa.dao;
 
+
 import java.util.List;
+
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -40,6 +42,7 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		session.flush();
 	}
 
+
 	@Override
 	@Transactional
 	public List<OtherDetails> listOtherDetails() {
@@ -48,5 +51,6 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		return sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+email+"'")
                 .list();
 	}
+
 
 }

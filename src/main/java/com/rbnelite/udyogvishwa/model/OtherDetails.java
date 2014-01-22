@@ -41,6 +41,7 @@ public class OtherDetails {
 	@Column(name="email")
 	private String usermail;
 	
+
 	public int getOtherId() {
 		return otherId;
 	}
@@ -77,6 +78,8 @@ public class OtherDetails {
 	public void setCulturalact(String culturalact) {
 		this.culturalact = culturalact;
 	}
+
+
 
 	public String getUsermail() {
 		return usermail;

@@ -1,7 +1,5 @@
 package com.rbnelite.udyogvishwa.service;
 
-
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -15,35 +13,35 @@ import com.rbnelite.udyogvishwa.model.EducationWork;
 
 @Service
 public class EducationWorkServiceImpl implements EducationWorkService {
-	
-@Resource 
-private EducationWorkDao educationworkdao;
 
-@Override
-public void insertEducationWork(EducationWorkCredential educationworkcredential){
-	
-	EducationWork educationwork=new EducationWork();
-	
-	educationwork.setSchool(educationworkcredential.getSchool());
-	educationwork.setCollage(educationworkcredential.getCollage());
-	educationwork.setGraduation(educationworkcredential.getGraduation());
-	educationwork.setOtherGraduation(educationworkcredential.getOtherGraduation());
-	educationwork.setPGCollege(educationworkcredential.getPGCollege());
-	educationwork.setPGDegree(educationworkcredential.getPGDegree());
-	educationwork.setOtherPG(educationworkcredential.getOtherPG());
-	educationwork.setUserMail(educationworkcredential.getUserMail());
-	
-	educationworkdao.insertEducationWork(educationwork);
-	
-}
+	@Resource
+	private EducationWorkDao educationworkdao;
 
+	@Override
+	public void insertEducationWork(
+			EducationWorkCredential educationworkcredential) {
 
-@Override
-@Transactional
-public List<EducationWork> listEducationWork() {
+		EducationWork educationwork = new EducationWork();
 
-	return educationworkdao.listEducationWork();
-}
+		educationwork.setSchool(educationworkcredential.getSchool());
+		educationwork.setCollage(educationworkcredential.getCollage());
+		educationwork.setGraduation(educationworkcredential.getGraduation());
+		educationwork.setOtherGraduation(educationworkcredential
+				.getOtherGraduation());
+		educationwork.setPGCollege(educationworkcredential.getPGCollege());
+		educationwork.setPGDegree(educationworkcredential.getPGDegree());
+		educationwork.setOtherPG(educationworkcredential.getOtherPG());
+		educationwork.setUserMail(educationworkcredential.getUserMail());
 
+		educationworkdao.insertEducationWork(educationwork);
+
+	}
+
+	@Override
+	@Transactional
+	public List<EducationWork> listEducationWork() {
+
+		return educationworkdao.listEducationWork();
+	}
 
 }

@@ -1,11 +1,8 @@
 package com.rbnelite.udyogvishwa.service;
 
-
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
-
 
 import com.rbnelite.udyogvishwa.dao.IndexDao;
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
@@ -16,38 +13,37 @@ public class IndexServiceImpl implements IndexService {
 
 	@Resource
 	private IndexDao indexdao;
-	
+
 	@Override
 	public void saveRegistration(IndexCredential indexcredential) {
-		Index index=new Index();
-		String pass1=indexcredential.getPassword1();
-		String pass2=indexcredential.getPassword2();
-		if(pass1.equals(pass2))
-		{
-		index.setFirstName(indexcredential.getFirstName());
-		index.setMiddleName(indexcredential.getMiddleName());
-		index.setLastName(indexcredential.getLastName());
-		index.setEmailId(indexcredential.getEmailId());
-		index.setContactNo(indexcredential.getContactNo());
-		index.setGender(indexcredential.getGender());
-		index.setBirthDate(indexcredential.getBirthDay()+"/"+indexcredential.getBirthMonth()+"/"+indexcredential.getBirthYear());
-		index.setPassword(indexcredential.getPassword1());
-		index.setContactId(indexcredential.getContactId());
-		index.setHomeAddress(indexcredential.getHomeAddress());
-		index.setReligion(indexcredential.getReligion());
-		index.setSubCast(indexcredential.getSubCast());
-		index.setOfficeAddress(indexcredential.getOfficeAddress());
-		index.setTelephone(indexcredential.getTelephone());
-				
-		indexdao.saveRegistration(index);
-		
-		}
-		else
-		{
+		Index index = new Index();
+		String pass1 = indexcredential.getPassword1();
+		String pass2 = indexcredential.getPassword2();
+		if (pass1.equals(pass2)) {
+			index.setFirstName(indexcredential.getFirstName());
+			index.setMiddleName(indexcredential.getMiddleName());
+			index.setLastName(indexcredential.getLastName());
+			index.setEmailId(indexcredential.getEmailId());
+			index.setContactNo(indexcredential.getContactNo());
+			index.setGender(indexcredential.getGender());
+			index.setBirthDate(indexcredential.getBirthDay() + "/"
+					+ indexcredential.getBirthMonth() + "/"
+					+ indexcredential.getBirthYear());
+			index.setPassword(indexcredential.getPassword1());
+
+			index.setContactId(indexcredential.getContactId());
+			index.setHomeAddress(indexcredential.getHomeAddress());
+			index.setReligion(indexcredential.getReligion());
+			index.setSubCast(indexcredential.getSubCast());
+			index.setOfficeAddress(indexcredential.getOfficeAddress());
+			index.setTelephone(indexcredential.getTelephone());
+
+			indexdao.saveRegistration(index);
+
+		} else {
 			System.out.println("password is not same");
 		}
-		
+
 	}
 
-	
 }

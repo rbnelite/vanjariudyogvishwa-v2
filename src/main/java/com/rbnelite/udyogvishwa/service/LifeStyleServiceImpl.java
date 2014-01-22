@@ -16,12 +16,12 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 
 	@Resource
 	private LifeStyleDao lifestyledao;
-	
+
 	@Override
 	public void insertLifeStyle(LifeStyleCredential lifetstylecredential) {
 		// TODO Auto-generated method stub
 
-		LifeStyle lifestyle=new LifeStyle();
+		LifeStyle lifestyle = new LifeStyle();
 		lifestyle.setDiet(lifetstylecredential.getDiet());
 		lifestyle.setSmoke(lifetstylecredential.getSmoke());
 		lifestyle.setDrink(lifetstylecredential.getDrink());
@@ -36,7 +36,7 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 	@Override
 	@Transactional
 	public List<LifeStyle> listLifeStyle() {
-		
+
 		return lifestyledao.listLifeStyle();
 	}
 

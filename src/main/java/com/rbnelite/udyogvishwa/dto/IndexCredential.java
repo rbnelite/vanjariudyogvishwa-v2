@@ -1,6 +1,8 @@
 package com.rbnelite.udyogvishwa.dto;
 
+
 import javax.persistence.Column;
+
 
 public class IndexCredential {
 	private String firstName;
@@ -15,6 +17,7 @@ public class IndexCredential {
 	private String password1;
 	private String password2;
 	
+
 	private int contactId;
 	
 	
@@ -104,6 +107,7 @@ public class IndexCredential {
 	public void setPassword2(String password2) {
 		this.password2 = password2;
 	}
+
 	public int getContactId() {
 		return contactId;
 	}
@@ -140,5 +144,6 @@ public class IndexCredential {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
 
 }

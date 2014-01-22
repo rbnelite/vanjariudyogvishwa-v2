@@ -22,7 +22,7 @@ public class IndexController {
 	public String registration(@ModelAttribute("IndexCredential")IndexCredential indexcredential,ModelMap map)
 	{
 		indexservice.saveRegistration(indexcredential);
-		return "Step2InterestArea";
+		return "Index";
 	}
 	
 		@RequestMapping(value="/Index")

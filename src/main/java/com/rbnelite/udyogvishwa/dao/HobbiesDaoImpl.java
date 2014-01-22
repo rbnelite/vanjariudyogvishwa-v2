@@ -1,6 +1,8 @@
 package com.rbnelite.udyogvishwa.dao;
 
+
 import java.util.List;
+
 
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -26,11 +28,13 @@ public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 		session.flush();
 		
 	}
+
 	@Override
 	public List<Hobbies> listHobbies() {
 		String email="sawantmanojm@gmail.com";
 		return sessionFactory.getCurrentSession().createQuery("from Hobbies where usermail='"+email+"'")
                 .list();
 	}
+
 
 }

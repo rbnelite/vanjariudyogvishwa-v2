@@ -22,6 +22,7 @@ public class LifeStyle {
 	private String smoke;
 	private String drink;
 	private String complexion;
+
 	
 	@Column(name="body_type")
 	private String bodytype;
@@ -31,6 +32,7 @@ public class LifeStyle {
 	private String weight;
 	
 	@Column(name="email")
+
 	private String usermail;
 	public int getLifestyleid() {
 		return lifestyleid;

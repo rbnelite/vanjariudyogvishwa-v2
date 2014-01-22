@@ -1,10 +1,12 @@
 package com.rbnelite.udyogvishwa.dao;
 
+
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,9 +17,11 @@ import com.rbnelite.udyogvishwa.model.LifeStyle;
 public class LifeStyleDaoImpl extends BaseDao<LifeStyle> implements LifeStyleDao {
 
 	
+
 	@Autowired
     private SessionFactory sessionFactory;
 	
+
 	public LifeStyleDaoImpl() {
 		super(LifeStyle.class);
 		// TODO Auto-generated constructor stub
@@ -35,10 +39,12 @@ public class LifeStyleDaoImpl extends BaseDao<LifeStyle> implements LifeStyleDao
 		session.flush();
 	}
 
+
 	@Override
 	public List<LifeStyle> listLifeStyle() {
 		String email="sawantmanojm@gmail.com";
 		return sessionFactory.getCurrentSession().createQuery("from LifeStyle where usermail='"+email+"'").list();
 	}
+
 
 }
