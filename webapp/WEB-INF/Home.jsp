@@ -238,7 +238,7 @@
                         <td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
                         <td>Mayur Kulkarni</td>
                          <td><input type="button" value="Connect" class="connectBtn"></td>
-                        </tr>
+                       </tr>
                         <tr>
                         <td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"></td>
                         <td>Vishal Pansare</td>

@@ -1,11 +1,12 @@
 <%-- 
     Document   : Step6EducationWork
     Created on : Dec 24, 2013, 7:42:49 PM
-    Author     : dogkiller
+    Author     : dogkiller,ab
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +14,20 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-8 Education & Work Details Page</title>
+   
+   <style>
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+</style>
     </head>
     <body>
        <center>
@@ -30,7 +45,9 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
-                <Form action="/vanjariudyogvishwa-v2/educationwork"method="POST">
+                <form action="/vanjariudyogvishwa-v2/educationwork"method="POST" commandName="educationwork">
+               <form: errors path="*" cssClass="errorblock" element="div"/>
+               
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -42,12 +59,14 @@
                                     </tr>
                                     <tr><td colspan="2"><hr/></td></tr>
                                     <tr><td><br><br></td></tr>
-
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><input type="text" name="school" id="school_name"size="30" maxlength="50">
+                                        <td><form: input path="school"/>
                                             <div id="school_nameError" class="red" colspan="2"/></td>
-                                    </tr>
+                                   </tr>
+                                    <tr><td><form: errors path="school" cssclass="error"/></td></tr>
+                                    
+                                    
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Name of College <font color="red">*</font></td><td><input type="text" name="collage" id="clg_name" size="30" maxlength="50">
@@ -140,7 +159,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                
+                </form >
             </div>
             
             
