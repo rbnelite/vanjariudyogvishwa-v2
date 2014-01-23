@@ -45,7 +45,7 @@
                            
                 <tr>
                     <td>Religion <font color="red">*</font></td><td>
-                        <select id="religionname" name="religionname" style="width: 223px;">
+                        <select id="religionname" name="religionName" style="width: 223px;">
                             <option selected value="">--Please Select--</option>
                             <option>Hindu</option>
                             <option>Muslim</option>
@@ -58,18 +58,18 @@
                 </tr>
                  <tr><td colspan="2"><br></tr>
                 <tr>
-                    <td>Caste <font color="red">*</font></td><td><input type="text" name="relcast" id="relcast" size="30" maxlength="20">
+                    <td>Caste <font color="red">*</font></td><td><input type="text" name="relCast" id="relcast" size="30" maxlength="20">
                     <div id="castError" class="red" colspan="2"/></td>
                 </tr>
                               
                  <tr><td colspan="2"><br></tr>
                 <tr>
-                    <td>Mother Tongue <font color="red">*</font></td><td><input type="text" name="mothertoung" id="mothertoung"size="30" maxlength="30">
+                    <td>Mother Tongue <font color="red">*</font></td><td><input type="text" name="motherToung" id="mothertoung"size="30" maxlength="30">
                     <div id="motherError" class="red" colspan="2"/></td>
                 </tr>
                  <tr><td colspan="2"><br></tr>
                 <tr>
-                    <td>Native Place <font color="red">*</font></td><td><input type="text" name="nativeplace" id="nativeplace" size="30" maxlength="50">
+                    <td>Native Place <font color="red">*</font></td><td><input type="text" name="nativePlace" id="nativeplace" size="30" maxlength="50">
                     <div id="natplaceError" class="red" colspan="2"/></td>
                 </tr>
                  <tr><td colspan="2"><br></tr>

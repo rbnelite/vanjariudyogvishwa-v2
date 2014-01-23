@@ -41,7 +41,7 @@
                                     <tr><td><br><br></td></tr>
 
                                     <tr>
-                                        <td>Permanent Home Town <font color="red">*</font></td><td><textarea name="homeAddress" id="home_ad" rows="2" cols="25" maxlength="80" style="resize: none;"></textarea>
+                                        <td>Permanent Home Address <font color="red">*</font></td><td><textarea name="homeAddress" id="home_ad" rows="2" cols="25" maxlength="80" style="resize: none;"></textarea>
                                             <div id="home_adError" class="red" colspan="2"/>
                                         </td>
                                     </tr>
@@ -53,7 +53,7 @@
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td>Telephone/Mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
+                                        <td>Office Telephone/Mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
                                             <div id="tel_noError" class="red" colspan="2"/></td>
                                     </tr>
                                     <tr>

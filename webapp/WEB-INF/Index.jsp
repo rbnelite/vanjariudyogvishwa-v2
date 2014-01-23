@@ -79,7 +79,7 @@
                         </table>
                     </td>
                     <td width="670">
-                       <table width="493" align="top" height="678" border="0" style="background-image:url(images/Untitled-2.png);">
+                       <table width="493" align="top" height="678" border="0" style="background-image:url(${pageContext.request.contextPath}/resources/images/Untitled-2.png);">
                                 <tr>
                                     <td width="10"><div>
                                             <th width="473" height="600" class="style27" ><span class="style64">Create Your Account...</span>

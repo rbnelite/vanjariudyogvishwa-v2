@@ -13,21 +13,22 @@ import com.rbnelite.udyogvishwa.service.AstroService;
 
 @Controller
 public class AstroController {
-	
+
 	@Resource
 	private AstroService astroservice;
-	
-	@RequestMapping(value="/Astro", method=RequestMethod.POST)
-	public String astroForm(@ModelAttribute("AstroCredential")AstroCredential astrocredential,ModelMap map)
-	{
+
+	@RequestMapping(value = "/Astro", method = RequestMethod.POST)
+	public String astroForm(
+			@ModelAttribute("AstroCredential") AstroCredential astrocredential,
+			ModelMap map) {
 		astroservice.saveAstro(astrocredential);
 		return "Step8EducationWork";
 	}
 
-	@RequestMapping(value="/Astro")
+	@RequestMapping(value = "/Astro")
 	public String astroFormDetails(ModelMap map) {
-		
+
 		return "Step7Astro";
 	}
-	
+
 }

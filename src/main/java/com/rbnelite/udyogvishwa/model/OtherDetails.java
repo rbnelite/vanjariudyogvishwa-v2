@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * @author PC3
  *
@@ -26,13 +28,18 @@ public class OtherDetails {
 	private int otherId;
 	
 	@Column(name="social_status")
+	@NotEmpty
 	private String socialStatus;
+	
 	@Column(name="polytical_status")
 	private String polyticalstatus;
+	
 	@Column(name="social_act")
 	private String socialact;
+	
 	@Column(name="polytical_act")
 	private String polyticalact;
+	
 	@Column(name="cultural_act")
 	private String culturalact;
 	

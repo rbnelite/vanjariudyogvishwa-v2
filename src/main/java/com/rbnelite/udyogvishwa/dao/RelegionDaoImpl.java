@@ -1,6 +1,6 @@
 package com.rbnelite.udyogvishwa.dao;
 
-
+import java.util.List;
 
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -11,21 +11,20 @@ import com.rbnelite.udyogvishwa.model.Religion;
 
 @Repository
 public class RelegionDaoImpl extends BaseDao<Religion> implements RelegionDao {
-	
-	public RelegionDaoImpl(){
+
+	public RelegionDaoImpl() {
 		super(Religion.class);
 	}
 
 	@Override
-	@Transactional(propagation=Propagation.REQUIRED)
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void insertRelegion(Religion religion) {
-		Session session=sessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.save(religion);
 		session.getTransaction().commit();
 		session.flush();
-		
-		
-				
+
 	}
+
 }
