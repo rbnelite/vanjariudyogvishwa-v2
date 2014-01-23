@@ -54,10 +54,10 @@ public class ProfileController {
 			map.put("otherDetailsList", otherDetailsServ.listOtherDetails());
 			System.out.println("&&&&&-2" + map.size());
 		}
-
-		map.put("educationWORK", new EducationWork());
-		map.put("educationworkList", educationWorkService.listEducationWork());
-
+		if (!map.containsKey("EditEducationDetails")) {
+			map.put("educationWORK", new EducationWork());
+			map.put("educationworkList", educationWorkService.listEducationWork());
+		}
 		map.put("hobbiesDetails", new Hobbies());
 		map.put("hobbiesList", hobbiesServ.listHobbies());
 
@@ -74,7 +74,7 @@ public class ProfileController {
 	}
 
 	@RequestMapping(value = "/EditOtherDetails")
-	public String EditOtherdetails(Map<String, Object> map) {
+	public String editOtherDetails(Map<String, Object> map) {
 
 		map.put("EditOtherDetails", new OtherDetails());
 		map.put("EditOtherDetailsList", otherDetailsServ.listOtherDetails());
@@ -83,5 +83,16 @@ public class ProfileController {
 		return "Profile";
 
 	}
+	
+	@RequestMapping(value = "/EditEducationDetails")
+	public String editEducationDetails(Map<String, Object> map) {
+
+		map.put("EditEducationDetails", new EducationWork());
+		map.put("EditEducationDetailsList", educationWorkService.listEducationWork());
+		ProfileOperation(map);
+		return "Profile";
+	}
+	
+	
 
 }

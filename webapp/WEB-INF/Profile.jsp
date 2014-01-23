@@ -150,11 +150,14 @@ h3 {
 			<div>
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
+					<c:if test="${!empty educationworkList}">
+					<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
+						<input id="EditProfileDetails" type="submit" value=""
+									name="editOtherReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<h3>Education Details</h3>
 						<div id="InsideProfileDetails">
-							<c:if test="${!empty educationworkList}">
+							
 								<table>
 									<c:forEach items="${educationworkList}" var="educationWORK">
 										<tr>
@@ -188,11 +191,74 @@ h3 {
 
 									</c:forEach>
 								</table>
+								</div>
+								</form>
 							</c:if>
+							<c:if test="${!empty EditEducationDetailsList}">
+							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
+
+
+
+								<h3>Edit Other Details</h3>
+							<div id="InsideProfileDetails">
+							
+								<table>
+									<c:forEach items="${EditEducationDetailsList}" var="EditEducationDetails">
+										<tr>
+											<td style="width: 200px;"><b>Name of School :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.school}"></td>
+										</tr>
+										<tr>
+											<td><b>Name of College :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.collage}"></td>
+										</tr>
+										<tr>
+											<td><b>Graduation Degree :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.graduation}"></td>
+										</tr>
+										<tr>
+											<td><b>Specialization :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.otherGraduation}"></td>
+										</tr>
+										<tr>
+											<td><b>PG College Name :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.PGCollege}"></td>
+										</tr>
+										<tr>
+											<td><b>PG Degree:</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.PGDegree}"></td>
+										</tr>
+										<tr>
+											<td><b>Specialization :</b></td>
+											<td><input type="text"
+													placeholder="${EditEducationDetails.otherPG}"></td>
+										</tr>
+										<tr>
+												<td colspan="1"><input type="submit" value="Edit"
+													name="editEducationBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td></td>
+											</tr>
+									</c:forEach>
+								</table>
+								</div>
+							</form>
+							</c:if>
+							
+							
 						</div>
 
 					</div>
-				</div>
+			
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
@@ -525,124 +591,25 @@ h3 {
 				<div id="outside_Photos">
 					<div id="Photos">
 						<h3>Photos</h3>
-						<img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;"> <img
-							src="${pageContext.request.contextPath}/resources/images/photo.png"
-							style="width: 70px; height: 60px;">
-
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						
 
 					</div>
 				</div>
 				<div id="OuterRightStatusProfile">
 					<div id="RightUpdatedStatusProfile">
 						<h3>Updated Status</h3>
-						<a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a> <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a><a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-							@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </a>
-
+						<a>@@@@@@@@@@ @@@@@@@@@ @@@@@@@@ @@@@@@@@@@@@@ @@@@@@@@@@ @@@@@@@@@@@@ @@@@@@@@@ @@@@
+							@@@@@@@@@@@ @@@@ @@@@@@@@@ @@@@@ @@@@@@@@@@@@
+							@@@@@@@ @@@@@@@@ @@@@@@@@@@@ @@@@@@@@@ @@@@@@@ @@@@@@@@@@@ </a>
+ 
 						<%-- <img src="${pageContext.request.contextPath}/resources/images/photo.png" style=" margin-left:-400px; width: 70px; height: 60px;"> --%>
 					</div>
 				</div>

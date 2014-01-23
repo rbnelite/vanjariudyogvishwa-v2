@@ -15,84 +15,91 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author PC3
- *
+ * 
  */
 @Entity
-@Table(name="other_details")
+@Table(name = "other_details")
 public class OtherDetails {
 
 	@Id
-	@Column(name="other_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="OtherDetails_sequence_sno")
-	@SequenceGenerator(name="OtherDetails_sequence_sno",sequenceName="other_details_sequence",allocationSize=1)
-	private int otherId;
-	
-	@Column(name="social_status")
+	@Column(name = "other_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "OtherDetails_sequence_sno")
+	@SequenceGenerator(name = "OtherDetails_sequence_sno", sequenceName = "other_details_sequence", allocationSize = 1)
+	private long otherId;
+
+	@Column(name = "social_status")
 	@NotEmpty
 	private String socialStatus;
-	
-	@Column(name="polytical_status")
+
+	@Column(name = "polytical_status")
 	private String polyticalstatus;
-	
-	@Column(name="social_act")
+
+	@Column(name = "social_act")
 	private String socialact;
-	
-	@Column(name="polytical_act")
+
+	@Column(name = "polytical_act")
 	private String polyticalact;
-	
-	@Column(name="cultural_act")
+
+	@Column(name = "cultural_act")
 	private String culturalact;
-	
 
-	
-	@Column(name="email")
+	@Column(name = "email")
 	private String usermail;
-	
 
-	public int getOtherId() {
+	public long getOtherId() {
 		return otherId;
 	}
-	public void setOtherId(int otherId) {
+
+	public void setOtherId(long otherId) {
 		this.otherId = otherId;
 	}
+
 	public String getSocialStatus() {
 		return socialStatus;
 	}
+
 	public void setSocialStatus(String socialStatus) {
 		this.socialStatus = socialStatus;
 	}
+
 	public String getPolyticalstatus() {
 		return polyticalstatus;
 	}
+
 	public void setPolyticalstatus(String polyticalstatus) {
 		this.polyticalstatus = polyticalstatus;
 	}
+
 	public String getSocialact() {
 		return socialact;
 	}
+
 	public void setSocialact(String socialact) {
 		this.socialact = socialact;
 	}
+
 	public String getPolyticalact() {
 		return polyticalact;
 	}
+
 	public void setPolyticalact(String polyticalact) {
 		this.polyticalact = polyticalact;
 	}
+
 	public String getCulturalact() {
 		return culturalact;
 	}
+
 	public void setCulturalact(String culturalact) {
 		this.culturalact = culturalact;
 	}
 
-
-
 	public String getUsermail() {
 		return usermail;
 	}
+
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
 	}
-	
+
 }
