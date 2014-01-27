@@ -11,6 +11,7 @@ public class HobbiesCredential {
 	private String sports;
 	private String foodIcook;
 	private String VacationDestination;
+	private String usermail;
 
 	
 	public String getHobbies() {
@@ -66,6 +67,12 @@ public class HobbiesCredential {
 	}
 	public void setVacationDestination(String vacationDestination) {
 		VacationDestination = vacationDestination;
+	}
+	public String getUsermail() {
+		return usermail;
+	}
+	public void setUsermail(String usermail) {
+		this.usermail = usermail;
 	}
 	
 }

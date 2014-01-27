@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.ContactCredential;
 import com.rbnelite.udyogvishwa.service.ContactService;
@@ -18,9 +19,10 @@ public class ContactController {
 	private ContactService contactservice;
 	
 	@RequestMapping(value="/Contact", method=RequestMethod.POST)
-	public String contact(@ModelAttribute("ContactCredential")ContactCredential contactcredential, ModelMap map){
+	public String contact(@RequestParam("emailId") String emailId, @ModelAttribute("ContactCredential")ContactCredential contactcredential, ModelMap map){
 		
 	contactservice.SaveContact(contactcredential);
+	map.put("CurrentEmailId", emailId);
 	return "Step5Religion";
 	}
 	

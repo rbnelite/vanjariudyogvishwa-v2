@@ -74,7 +74,7 @@
                 </tr>
                  <tr><td colspan="2"><br></tr>
                   <tr>
-                     <td></td>
+                     <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                      <td align="right">
                     
                      <input type="submit" name="save_religion" id="submit" value="Save & Continue" class="savebtn">

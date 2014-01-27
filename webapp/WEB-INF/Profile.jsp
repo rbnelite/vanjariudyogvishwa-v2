@@ -29,6 +29,12 @@ h3 {
 	background-color: #fab039;
 	margin-top: 0px;
 }
+
+input{
+	width: 400px;
+	height: auto;
+
+}
 </style>
 
 
@@ -50,14 +56,14 @@ h3 {
 			<div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> <a
 					id="anchor" href="Profile"><font color="indigo">My
-						Profile</font> </a> <a id="anchor" href="Message"><font color="white">Message</font>
+						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font>
 				</a> <a id="anchor" href="#" onclick="DisplayINeedBlockPro()"><font
 					color="white">Looking for</font> </a> <a id="anchor" href="#"
 					onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>
 				</a> <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font
 					color="white">Requests</font> </a> <a id="anchor" href="#"
 					onclick="return DisplaySettingBlock()"><font color="white">Setting</font>
-				</a> <a id="anchor" href="index"><font color="white">LogOut</font> </a>
+				</a> <a id="anchor" href="Index"><font color="white">LogOut</font> </a>
 			</div>
 
 
@@ -153,7 +159,7 @@ h3 {
 					<c:if test="${!empty educationworkList}">
 					<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
 						<input id="EditProfileDetails" type="submit" value=""
-									name="editOtherReqBtn"
+									name="editEducationReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<h3>Education Details</h3>
 						<div id="InsideProfileDetails">
@@ -199,7 +205,7 @@ h3 {
 
 
 
-								<h3>Edit Other Details</h3>
+								<h3>Edit Education Details</h3>
 							<div id="InsideProfileDetails">
 							
 								<table>
@@ -207,37 +213,37 @@ h3 {
 										<tr>
 											<td style="width: 200px;"><b>Name of School :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.school}"></td>
+													value="${EditEducationDetails.school}"></td>
 										</tr>
 										<tr>
 											<td><b>Name of College :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.collage}"></td>
+													value="${EditEducationDetails.collage}"></td>
 										</tr>
 										<tr>
 											<td><b>Graduation Degree :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.graduation}"></td>
+													value="${EditEducationDetails.graduation}"></td>
 										</tr>
 										<tr>
 											<td><b>Specialization :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.otherGraduation}"></td>
+													value="${EditEducationDetails.otherGraduation}"></td>
 										</tr>
 										<tr>
 											<td><b>PG College Name :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.PGCollege}"></td>
+													value="${EditEducationDetails.PGCollege}"></td>
 										</tr>
 										<tr>
 											<td><b>PG Degree:</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.PGDegree}"></td>
+													value="${EditEducationDetails.PGDegree}"></td>
 										</tr>
 										<tr>
 											<td><b>Specialization :</b></td>
 											<td><input type="text"
-													placeholder="${EditEducationDetails.otherPG}"></td>
+													value="${EditEducationDetails.otherPG}"></td>
 										</tr>
 										<tr>
 												<td colspan="1"><input type="submit" value="Edit"
@@ -326,11 +332,14 @@ h3 {
 				</div>
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
+						<c:if test="${!empty hobbiesList}">
+					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
+						<input id="EditProfileDetails" type="submit" value=""
+									name="editHobbiesReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<h3>Hobbies Details</h3>
 						<div id="InsideProfileDetails">
-							<c:if test="${!empty hobbiesList}">
+							
 								<table>
 									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
 										<tr>
@@ -374,17 +383,107 @@ h3 {
 							</tr> --%>
 									</c:forEach>
 								</table>
+								</div>
+								</form>
 							</c:if>
-						</div>
+							
+							<c:if test="${!empty editHobbiesList}">
+					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
+					
+					
+					
+					<h3>Edit Hobbies Details</h3>
+						<div id="InsideProfileDetails">
+							
+								<table>
+									<c:forEach items="${editHobbiesList}" var="editHobbiesDetails">
+										<tr>
+											<td style="width: 200px;"><b>Hobbies :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.hobbies}"></td>
+										</tr>
+										<tr>
+											<td><b>Favourite Music :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.favouriteMusic}"></td>
+										</tr>
+										<tr>
+											<td><b>Favourite Book :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.favouriteBooks}"></td>
+										</tr>
+									<%-- 	<tr>
+								<td><b>Dress Style :</b>
+								</td>
+								<td><input type="text" value="${editHobbiesDetails.DressStyletyle}">
+								</td>
+							</tr> --%>
+										<tr>
+											<td><b>Favourite TV show :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.favouritrTvShows}"></td>
+										</tr>
+										<%-- <tr>
+								<td><b>Favourite Movie :</b>
+								</td>
+								<td><input type="text"
+													value="${editHobbiesDetails.FavouriteMovies}"></td>
+							</tr> --%>
+										<tr>
+											<td><b>Favourite Sport :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.sports}"></td>
+										</tr>
+										<tr>
+											<td><b>Food I Cook :</b></td>
+											<td><input type="text"
+													value="${editHobbiesDetails.foodIcook}"></td>
+										</tr>
+										<%-- <tr>
+								<td><b>Vacation Destination :</b>
+								</td>
+								<td><input type="text"
+													value="${editHobbiesDetails.VacationDestination}">
+								</td>
+							</tr> --%>
+							
+							<tr>
+												<td colspan="1"><input type="submit" value="Edit"
+													name="editHobbiesBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td></td>
+											</tr>
+							
+							
+									</c:forEach>
+								</table>
+								</div>
+					
+					
+					
+					
+					</form>
+					</c:if>
+							
+						
 					</div>
 				</div>
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
+					
+					
+						<c:if test="${!empty astroList}">
+					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
+						<input id="EditProfileDetails" type="submit" value=""
+									name="editAstroReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+									
 						<h3>Astro Details</h3>
 
-						<c:if test="${!empty astroList}">
+						
 							<table>
 								<c:forEach items="${astroList}" var="astroDetails">
 									<tr>
@@ -402,10 +501,44 @@ h3 {
 
 								</c:forEach>
 							</table>
+							</form>
 						</c:if>
 
-
-
+						<c:if test="${!empty editAstroList}">
+					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
+					
+					<h3>Edit Astro Details</h3>
+					<table>
+								<c:forEach items="${editAstroList}" var="editAstroDetails">
+									<tr>
+										<td><b>Country :</b></td>
+										<td><input type="text"
+													value="${editAstroDetails.country}"></td>
+									</tr>
+									<tr>
+										<td><b>City :</b></td>
+										<td><input type="text"
+													value="${editAstroDetails.city}"></td>
+									</tr>
+									<tr>
+										<td><b>Zodiac :</b></td>
+										<td><input type="text"
+													value="${editAstroDetails.zodiac}"></td>
+									</tr>
+									<tr>
+												<td colspan="1"><input type="submit" value="Edit"
+													name="editAstroBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td></td>
+											</tr>
+									
+								</c:forEach>
+							</table>
+						</form>
+					</c:if>
 					</div>
 				</div>
 				<div id="OutsideProfileDetails">
@@ -443,11 +576,15 @@ h3 {
 				</div>
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
-						<h3>Lifestyle and Attributes Details</h3>
-
 						<c:if test="${!empty LifeStylelist}">
+							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
+								<input id="EditProfileDetails" type="submit" value=""
+									name="editLifeStyReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+
+						<h3>Lifestyle and Attributes Details</h3>
+						<div id="InsideProfileDetails">
+						
 							<table>
 								<c:forEach items="${LifeStylelist}" var="lifeStyleDetails">
 									<tr>
@@ -482,7 +619,65 @@ h3 {
 
 								</c:forEach>
 							</table>
+							</div>
+							</form>
 						</c:if>
+						
+						<c:if test="${!empty editLifeStyleList}">
+							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
+								<h3>Edit Lifestyle and Attributes Details</h3>
+								<div id="InsideProfileDetails">
+								
+								<table>
+								<c:forEach items="${editLifeStyleList}" var="editLifeStyleDetails">
+									<tr>
+										<td><b>Diet :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.diet}"></td>
+									</tr>
+									<tr>
+										<td><b>Smoke :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.smoke}"></td>
+									</tr>
+									<tr>
+										<td><b>Drink :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.drink}"></td>
+									</tr>
+									<tr>
+										<td><b>Complexion :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.complexion}"></td>
+									</tr>
+									<tr>
+										<td><b>Body Type :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.bodytype}"></td>
+									</tr>
+
+									<tr>
+										<td><b>Blood Group :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.bloodgroup}"></td>
+									</tr>
+									<tr>
+										<td><b>Weight :</b></td>
+										<td><input type="text" value="${editLifeStyleDetails.weight}"></td>
+									</tr>
+									
+									
+									<tr>
+												<td colspan="1"><input type="submit" value="Edit"
+													name="editLifestyleBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td></td>
+											</tr>
+									
+								</c:forEach>
+							</table>
+								
+								</div>
+							</form>
+						</c:if>
+								
 
 
 					</div>
@@ -542,27 +737,26 @@ h3 {
 											<tr>
 												<td style="width: 200px"><b>Social Status :</b></td>
 												<td style="width: 590px;"><input type="text"
-													placeholder="${EditOtherDetails.socialStatus}"></td>
+													value="${EditOtherDetails.socialStatus}"></td>
 											</tr>
 											<tr>
 												<td><b>Polytical Status :</b></td>
-												<td><input type="text"
-													placeholder="${EditOtherDetails.polyticalstatus}"></td>
+												<td><input type="text" value="${EditOtherDetails.polyticalstatus}"></td>
 											</tr>
 											<tr>
 												<td><b>Social Activities :</b></td>
 												<td><input type="text"
-													placeholder="${EditOtherDetails.socialact}"></td>
+													value="${EditOtherDetails.socialact}"></td>
 											</tr>
 											<tr>
 												<td><b>Polytical Activities :</b></td>
 												<td><input type="text"
-													placeholder="${EditOtherDetails.polyticalact}"></td>
+													value="${EditOtherDetails.polyticalact}"></td>
 											</tr>
 											<tr>
 												<td><b>Cultural activities :</b></td>
 												<td><input type="text"
-													placeholder="${EditOtherDetails.culturalact}"></td>
+													value="${EditOtherDetails.culturalact}"></td>
 											</tr>
 
 											<tr>

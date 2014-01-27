@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.EducationWorkCredential;
 import com.rbnelite.udyogvishwa.model.EducationWork;
@@ -21,16 +22,16 @@ public class EducationWorkController {
 private EducationWorkService educationWorkService;
 
 @RequestMapping(value="/educationwork", method=RequestMethod.POST)
-public String insert(@Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
+public String insert(@RequestParam("userMail") String emailId, @Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
 	if(result.hasErrors()) {
-		map.addAttribute("educationWork", educationWork);
+		map.put("CurrentEmailId", emailId);
         return "Step8EducationWork";
     }
 	else
 	{
 	educationWorkService.insertEducationWork(educationworkcredential);
-	
+	map.put("CurrentEmailId", emailId);
 	return"Step9LifeStyle";
 	}
 	

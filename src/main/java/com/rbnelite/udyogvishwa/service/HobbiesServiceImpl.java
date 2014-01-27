@@ -29,6 +29,7 @@ public class HobbiesServiceImpl implements HobbiesService {
 		hobby.setSports(hobbiescredential.getSports());
 		hobby.setFoodIcook(hobbiescredential.getFoodIcook());
 		hobby.setVacationDestination(hobbiescredential.getVacationDestination());
+		hobby.setUsermail(hobbiescredential.getUsermail());
 
 		hobbiesdao.saveHobbies(hobby);
 	}

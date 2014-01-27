@@ -57,7 +57,7 @@
                                             <div id="tel_noError" class="red" colspan="2"/></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
                                         <td align="right">
                                             <input type="submit" class="savebtn" id="submit" name="save_contact" value="Save & Continue" >
                                         </td>

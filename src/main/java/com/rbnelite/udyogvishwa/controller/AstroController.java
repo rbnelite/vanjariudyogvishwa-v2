@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.AstroCredential;
 import com.rbnelite.udyogvishwa.service.AstroService;
@@ -18,10 +19,11 @@ public class AstroController {
 	private AstroService astroservice;
 
 	@RequestMapping(value = "/Astro", method = RequestMethod.POST)
-	public String astroForm(
+	public String astroForm( @RequestParam("userMail") String emailId,
 			@ModelAttribute("AstroCredential") AstroCredential astrocredential,
 			ModelMap map) {
 		astroservice.saveAstro(astrocredential);
+		map.put("CurrentEmailId", emailId);
 		return "Step8EducationWork";
 	}
 

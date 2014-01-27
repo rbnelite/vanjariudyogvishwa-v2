@@ -11,5 +11,4 @@ public interface EducationWorkService {
 
 	public List<EducationWork> listEducationWork();
 
-	
 }

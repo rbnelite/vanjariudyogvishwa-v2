@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.HobbiesCredential;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
@@ -18,9 +19,10 @@ public class HobbiesController {
 	private HobbiesService hobbiesservice;
 	
 	@RequestMapping(value="/Hobbies", method=RequestMethod.POST)
-	public String Hobbies(@ModelAttribute("HobbiesCredential")HobbiesCredential hobbycredential,ModelMap map)
+	public String Hobbies(@RequestParam("usermail") String emailId, @ModelAttribute("HobbiesCredential")HobbiesCredential hobbycredential,ModelMap map)
 	{
 		hobbiesservice.saveHobbies(hobbycredential);
+		map.put("CurrentEmailId", emailId);
 		return "Step11OtherDetails";
 	}
 	

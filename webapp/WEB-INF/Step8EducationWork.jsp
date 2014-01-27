@@ -61,12 +61,9 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><form:input path="school"/>
+                                        <td><input type="text" name="school" id="school_name"size="30" maxlength="50">
                                             <div id="school_nameError" class="red" colspan="2"/></td>
-                                   </tr>
-                                    <tr><td><form:errors path="school" cssclass="error"/></td></tr>
-                                    
-                                    
+                                    </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Name of College <font color="red">*</font></td><td><input type="text" name="collage" id="clg_name" size="30" maxlength="50">
@@ -152,7 +149,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td></td>
+                                        <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
                                             <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" >
                                         </td>

@@ -254,7 +254,7 @@
                                     </tr>
                                     <tr>
                                     <tr>
-                                        <td></td>
+                                        <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
 
                                             <input type="submit" name="save_astro" id="submit" value="Save & Continue" class="savebtn">

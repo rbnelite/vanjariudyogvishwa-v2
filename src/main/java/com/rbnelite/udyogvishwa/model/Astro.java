@@ -55,6 +55,12 @@ public class Astro {
 	public void setZodiac(String zodiac) {
 		this.zodiac = zodiac;
 	}
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
 
 
 }

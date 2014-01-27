@@ -112,7 +112,7 @@
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td></td>
+                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
                                         <td align="right">
 
                                             <input type="submit" class="savebtn" name="save_lifestyle" id="submit" value="Save & Continue" >

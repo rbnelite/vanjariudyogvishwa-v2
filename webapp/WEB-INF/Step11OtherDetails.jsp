@@ -106,14 +106,14 @@
 					<tr>
 						<td colspan="2"><br>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>Games</td>
 						<td><textarea name="games" rows="1" cols="25" maxlength="80"
 								style="resize: none;"></textarea>
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
-						<td></td>
+						<td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
 						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;<input
 							type="submit" name="save_other" value="Save & Continue">
 						</td>

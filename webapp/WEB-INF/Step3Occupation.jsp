@@ -188,10 +188,11 @@
 							</td>
 						</tr>
 						<tr>
+							
 							<td colspan="2"><br>
 						</tr>
 						<tr>
-							<td></td>
+							<td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
 							<td align="right"><input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn">
 							</td>
 						</tr>
