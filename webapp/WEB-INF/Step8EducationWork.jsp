@@ -45,6 +45,7 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
+            <h2>Step-8</h2>
                 <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
                <form:errors path="*" cssClass="errorblock" element="div"/>
                

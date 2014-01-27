@@ -14,7 +14,7 @@
         <title>Step-7 Astro Details Page</title>
     </head>
     <body>
-    <form action="/vanjariudyogvishwa-v2/Astro" method="post">
+    
     <center>
         <div id="mainMsg">
         <div id="Header">
@@ -28,6 +28,8 @@
             </div>
        <div id="leftMainStep3"></div>
        <div id="middleStep4">
+       <h2>Step-7</h2>
+    <form action="/vanjariudyogvishwa-v2/Astro" method="post">
                         <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -261,7 +263,7 @@
                                         </td>
                                     </tr>
                                 </table>
-           
+           </form>
                     </div>
             
             
@@ -269,6 +271,6 @@
         
         </div>
         </center>
-        </form>
+        
     </body>
 </html>

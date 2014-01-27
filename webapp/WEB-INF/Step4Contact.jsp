@@ -14,7 +14,7 @@
         <title>step-4 Contact Details Page</title>
     </head>
     <body>
-       <form action="/vanjariudyogvishwa-v2/Contact" method="post"> 
+        
     <center>
         <div id="mainMsg">
             <div id="Header">
@@ -29,6 +29,8 @@
 	<div id="leftMainStep3"></div>
 
             <div id="middleStep4">
+            <form action="/vanjariudyogvishwa-v2/Contact" method="post">
+            		<h2>Step-4</h2>
                                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -63,11 +65,12 @@
                                         </td>
                                     </tr>
                                 </table>
+                                </form>
                             </div>
                                             
             <div id="rightMainStep3"></div>
         </div>
         </center>
-    </form>
+   
     </body>
 </html>

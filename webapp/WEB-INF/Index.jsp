@@ -241,7 +241,7 @@
                                                                         <tr>
                                                                             <td height="96">     </td>
                                                                             <td align="right">
-                                                                                <input name="Register" type="submit" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;"/>
+                                                                                <input name="Register" type="submit" value="" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;"/>
                                                                             </td>  
                                                                         </tr>
                                                                         </table>

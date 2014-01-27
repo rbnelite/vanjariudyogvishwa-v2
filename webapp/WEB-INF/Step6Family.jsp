@@ -36,6 +36,7 @@
 
 			<div id="middleStep4">
 				<form action="/vanjariudyogvishwa-v2/Family" method="post">
+				<h2>Step-6</h2>
 					<table align="center">
 						<tr>
 							<td colspan="2"><br>

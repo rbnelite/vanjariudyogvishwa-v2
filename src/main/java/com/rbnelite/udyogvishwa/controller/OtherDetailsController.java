@@ -31,7 +31,7 @@ public class OtherDetailsController {
 		otherDetailsServ.insertOtherDetails(OtherCred);
 		map.put("CurrentEmailId", emailId);
 
-		return "Profile";
+		return "ThankYou";
 
 	}
 	

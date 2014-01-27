@@ -14,7 +14,7 @@
         <title>Step-10 Hobbies Details Page</title>
     </head>
     <body>
-        <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
+        
         <center>
         <div id="mainMsg">
         <div id="Header">
@@ -31,8 +31,8 @@
             
             <div id="middleStep10">
             
-            
-            
+            <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
+            	<h2>Step-10</h2>
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -110,7 +110,7 @@
                                     </tr>
                                 </table>
                 
-                
+                </form>
             
             </div>
                 
@@ -122,6 +122,6 @@
         </center>
         
         
-        </form>
+       
     </body>
 </html>
