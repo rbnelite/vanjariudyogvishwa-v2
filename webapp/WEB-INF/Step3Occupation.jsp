@@ -200,11 +200,8 @@
 				</form:form>
 			</div>
 			<div id="rightMainStep3"></div>
-
 		</div>
-
 	</center>
-
 
 </body>
 </html>
