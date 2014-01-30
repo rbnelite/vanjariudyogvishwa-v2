@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
 import com.rbnelite.udyogvishwa.model.Event;
@@ -21,7 +22,7 @@ public class EventsController {
 	private EventsService eventsservice;
 
 	@RequestMapping(value = "/Events", method = RequestMethod.POST)
-	public String insert(
+	public String insert(@RequestParam("usermail") String user_name,
 			@ModelAttribute("EventsCredential") EventsCredential eventscredential,
 			ModelMap map) {
 

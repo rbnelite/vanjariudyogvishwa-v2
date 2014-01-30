@@ -26,13 +26,15 @@
 <title>Profile2 Page</title>
 <style type="text/css">
 h3 {
-	background-color: #fab039;
+	/* background-color: #fab039; */
+	background-color:#00FF00;
 	margin-top: 0px;
 }
 
-input{
+input[type=text]{
 	width: 400px;
 	height: auto;
+	font-size: large;
 
 }
 </style>
@@ -129,7 +131,8 @@ input{
 				</div>
 				<div id="ProfileProducts">
 
-					<h3>Products</h3>
+					<h3><img src="${pageContext.request.contextPath}/resources/images/new-product.jpg"
+								style="width: 70px; height: 60px;">Products</h3>
 
 					<c:if test="${!empty ProductList}">
 						<c:forEach items="${ProductList}" var="productNAME">
@@ -147,10 +150,8 @@ input{
 
 				</div>
 				<div id="Friends">
-					<h3>Friend's</h3>
-					<img
-						src="${pageContext.request.contextPath}/resources/images/friends1.png"
-						style="float: left; width: 70px; height: 60px;">
+					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
+					
 				</div>
 			</div>
 			<div>
@@ -784,16 +785,9 @@ input{
 			<div id="RightProfile">
 				<div id="outside_Photos">
 					<div id="Photos">
-						<h3>Photos</h3>
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 70px; height: 60px;"> Photos </h3>
 						
+							
 
 					</div>
 				</div>

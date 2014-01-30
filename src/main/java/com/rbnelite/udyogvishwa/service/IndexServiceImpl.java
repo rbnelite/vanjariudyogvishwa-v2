@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -44,6 +46,12 @@ public class IndexServiceImpl implements IndexService {
 			System.out.println("password is not same");
 		}
 
+	}
+
+	@Override
+	public List<Index> LoginAuthintication(String emailId, String pwd) {
+
+		return indexdao.LoginAuthintication(emailId, pwd);
 	}
 
 }

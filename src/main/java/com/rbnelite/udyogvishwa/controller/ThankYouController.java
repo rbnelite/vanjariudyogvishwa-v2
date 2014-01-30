@@ -13,6 +13,7 @@ public class ThankYouController {
 	public String thankYouProcess(@RequestParam("usermail") String emailId,ModelMap map){
 		
 		map.put("CurrentEmailId", emailId);
+		System.out.println("@#@#@#@#"+emailId);
 		return "Profile";
 	}
 	

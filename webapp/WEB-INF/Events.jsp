@@ -32,7 +32,7 @@
 				</a> <a id="anchor" href="Profile" style="text-decoration: none" ><font color="white">My
 						Profile</font>
 				</a> <a id="anchor" href="Message"style="text-decoration: none"><font color="white">Message</font>
-				</a> <a id="anchor" href="#" style="text-decoration: none" onclick="return DisplayINeedBlock()"><font color="white">I Need</font>
+				</a> <a id="anchor" href="#" style="text-decoration: none" onclick="return DisplayINeedBlock()"><font color="white">Looking For</font>
 				</a> <a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayNotificationBlock()"><font color="white">Notification</font>
 				</a> <a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayRequestBlock()"><font color="white">Requests</font>
 				</a> <a id="anchor" href="#" style="text-decoration: none" onclick="return DisplaySettingBlock()"><font color="white">Setting</font>
@@ -131,7 +131,7 @@
 			<div id="MiddleTopEvent">
 				<form action="/vanjariudyogvishwa-v2/Events" method="post">
 					<table>
-						<th style="background-color: "><font color="purple">Create Event</font></th>
+						<h3><font color="purple">Create Event</font></h3>
 						
 
 						<tr>
@@ -144,7 +144,7 @@
 						<tr>
 							<td>Event Details :</td>
 							<td><textarea type="text" name="details"
-									placeholder="Write Event Details...."
+									placeholder="Write Event Details with time...."
 									style="width: 400px; height: 100px; resize: none; margin-left: -100px;"></textarea>
 							</td>
 						</tr>
@@ -162,22 +162,27 @@
 								style="width: 400px; height: 30px; margin-left: -100px;">
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>Time :</td>
-							<td><input type="text" name="usermail"
+							<td><input type="text" name=""
 								placeholder="hh:mm:ss"
 								style="width: 400px; height: 30px; margin-left: -100px;">
 								<select style="height: 30px;"><option>AM</option>
 									<option>PM</option>
 							</select><br>
 							<br></td>
-						</tr>
+						</tr> -->
+						
+						<tr><td></td><td></td></tr>
+						<tr><td></td><td></td></tr>
+						
 						<tr>
 							<td><input type="submit" value="Create Event"
-								style="margin-left: 290px;">
+								style="margin-left: 290px; height: 40px;">
 							</td>
 							<td><input type="reset" value="Cancel"
-								style="margin-left: 100px;">
+								style="margin-left: 100px; height: 40px;">
+								<input type="hidden" name="usermail" value="${CurrentEmailId}">
 							</td>
 						</tr>
 					</table>

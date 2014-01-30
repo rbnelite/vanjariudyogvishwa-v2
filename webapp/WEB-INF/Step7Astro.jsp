@@ -33,7 +33,7 @@
                         <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td colspan="2"><font size="5">Fill Out Your Astro Details</font></td>
+                                        <td colspan="2"><font size="5">Fill Your Astro Details</font></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">This Information will help us to Create Your Profile</td>

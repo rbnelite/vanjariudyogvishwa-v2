@@ -23,7 +23,7 @@
         <div id="main">
             <div id="Header">
                 <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
-                <label style="margin-left: 410px;">WelCome ! User</label>
+                <label style="margin-left: 110px;">WelCome ! ${CurrentEmailId}</label>
                 <br>
                 <div id="profile_photo">
                     <img  src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="120" width="115" >
@@ -112,7 +112,7 @@
                 </td>
                 </tr>
                 <tr align="center">
-                    <td></td>
+                    <td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
                     <td>
                 <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
                 </td>

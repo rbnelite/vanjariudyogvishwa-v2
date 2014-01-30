@@ -35,7 +35,7 @@
                         <table align="center">
                             <tr><td colspan="2"><br></tr>
                             <tr>
-                                <td colspan="2"><font size="5">Fill Out Your Religion and Ethnicity Details</font></td>
+                                <td colspan="2"><font size="5">Fill Your Religion and Ethnicity Details</font></td>
                             </tr>
                            
                             <tr>

@@ -52,7 +52,7 @@
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td colspan="2"><font size="5">Fill Out Your Education Details</font></td>
+                                        <td colspan="2"><font size="5">Fill Your Education Details</font></td>
                                     </tr>
 
                                     <tr>

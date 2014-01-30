@@ -9,9 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-
 @Table(name="users")
-
 public class Index {
 	
 	@Id

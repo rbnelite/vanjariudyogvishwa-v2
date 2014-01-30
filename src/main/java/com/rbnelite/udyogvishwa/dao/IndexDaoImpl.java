@@ -2,19 +2,26 @@ package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
+
+
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Index;
-import com.rbnelite.udyogvishwa.model.Login;
+
 
 @Repository
 public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 
+	
+	
+	@Autowired
+	 private SessionFactory sessionFactory;
+	
 	public IndexDaoImpl()
 	{
 		super(Index.class);
@@ -29,6 +36,14 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		session.getTransaction().commit();
 		session.flush();
 
+	}
+
+	@Override
+	@Transactional
+	public List<Index> LoginAuthintication(String emailId, String pwd) {
+		
+		System.out.println("@@@@@@@"+"From IndxDaoImpl");
+		return sessionFactory.getCurrentSession().createQuery("FROM Index where emailId='"+emailId+"' and password='"+pwd+"' ").list();
 	}
 
 }
