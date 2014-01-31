@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
 import com.rbnelite.udyogvishwa.service.IndexService;
 
 @Controller
+@SessionAttributes("CurrentEmailId")
 public class IndexController {
 
 	@Resource
@@ -41,14 +44,14 @@ public class IndexController {
 		if(!tempLoginUserList.isEmpty())
 		{
 			map.put("CurrentEmailId", user_name);
-			System.out.println("From Index Controller Authintication SuccessFul.");
+			
 			return "Home";
 		}
 		
-		else{
+		else
+		{
 			map.put("LoginError", "invalid userName or password !");
-			System.out.println("From Index Controller Authintication method.");
-			return "Index";
+				return "Index";
 		}
 		
 	}

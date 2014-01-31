@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.EducationWork;
@@ -137,6 +138,17 @@ public class ProfileController {
 
 		map.put("editProductDetails", new Product());
 		map.put("editProductList", productservice.listProduct());
+		ProfileOperation(map);
+		return "Profile";
+	}
+	
+	
+	@RequestMapping(value = "/ProfileFromHome")
+	public String homeReqProfile(@RequestParam("usermail") String emailId, Map<String, Object> map) {
+
+		map.put("CurrentEmailId", emailId);
+		System.out.println("homeReqProfile with email ID" +emailId);
+		
 		ProfileOperation(map);
 		return "Profile";
 	}

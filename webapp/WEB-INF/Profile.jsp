@@ -48,7 +48,8 @@ input[type=text]{
 			<div id="Header">
 
 
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
+				<label style="margin-left: 470px;">WelCome
+					! ${CurrentEmailId}</label> <br>
 				<div id="profile_photo">
 					<img
 						src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png">
@@ -133,6 +134,7 @@ input[type=text]{
 
 					<h3><img src="${pageContext.request.contextPath}/resources/images/new-product.jpg"
 								style="width: 70px; height: 60px;">Products</h3>
+								
 
 					<c:if test="${!empty ProductList}">
 						<c:forEach items="${ProductList}" var="productNAME">
@@ -162,7 +164,10 @@ input[type=text]{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editEducationReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-						<h3>Education Details</h3>
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
+								style=" float:left; width: 70px; height: 60px;">Education Details</h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
@@ -195,7 +200,7 @@ input[type=text]{
 											<td><b>Specialization :</b></td>
 											<td>${educationWORK.otherPG}</td>
 										</tr>
-
+										
 									</c:forEach>
 								</table>
 								</div>
@@ -204,9 +209,10 @@ input[type=text]{
 							<c:if test="${!empty EditEducationDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
 
+							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
+								style="float:left; width: 70px; height: 60px;">Edit Education Details</h3>
 
-
-								<h3>Edit Education Details</h3>
+								
 							<div id="InsideProfileDetails">
 							
 								<table>
@@ -271,9 +277,10 @@ input[type=text]{
 					<div id="ProfileDetails">
 						<img id="EditProfileDetails"
 							src="${pageContext.request.contextPath}/resources/images/edit1.png">
-						<h3>Contact Details</h3>
+						<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
+								style="float:left; width: 70px; height: 60px;">Contact Details</h3>
 						<c:if test="${!empty contactInfoList}">
-							<table>
+							<table style="background-image: url('${pageContext.request.contextPath}/resources/images/ContactDetails.jpg');">
 								<c:forEach items="${contactInfoList}" var="contactInfo">
 									<tr>
 										<td><b>Home Address :</b></td>

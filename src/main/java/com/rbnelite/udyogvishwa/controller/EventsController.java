@@ -25,7 +25,8 @@ public class EventsController {
 	public String insert(@RequestParam("usermail") String user_name,
 			@ModelAttribute("EventsCredential") EventsCredential eventscredential,
 			ModelMap map) {
-
+		 
+		System.out.println("From Insert Events "+map.get("CurrentEmailId"));
 		eventsservice.insertEvents(eventscredential);
 		
 		listEvents(map);

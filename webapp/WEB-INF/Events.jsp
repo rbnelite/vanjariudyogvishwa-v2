@@ -21,7 +21,7 @@
 
 				<input id="input_search" type="text" name="SearchProfile"
 					placeholder="Search" /> <label style="margin-left: 410px;">WelCome
-					! User</label> <br>
+					! ${CurrentEmailId}</label> <br>
 				<div id="profile_photo">
 					<img src="${pageContext.request.contextPath}/resources/images/Events1.jpg"> <br>
 					 <a href="ProfilePhotoOperation.jsp">Change Photo</a>
@@ -216,9 +216,21 @@
 			</div>
 
 
-			<div id="rightMainEvents"></div>
+			<div id="rightMainEvents"> </div>
+				<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
 
 		</div>
-	</center>
+
+			</center>
+			
 </body>
 </html>
