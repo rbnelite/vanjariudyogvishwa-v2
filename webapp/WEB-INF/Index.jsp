@@ -6,16 +6,17 @@
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Registration</title>
-
-    <script>
-            function isNumberKey(evt)
-            {
-                var charCode=(evt.which) ? evt.which :event.keyCode;
-                if(charCode >31 && (charCode<48 || charCode >57))
-                    return false;
-                return true;
-            }
-    </script>
+        
+        <script>
+function isNumberKey(evt)
+{
+    var charCode=(evt.which) ? evt.which :event.keyCode;
+    if(charCode >31 && (charCode<48 || charCode >57))
+        return false;
+    return true;
+}
+</script>
+        
     </head>
     <body>
     <form action="/vanjariudyogvishwa-v2/Index" method="post">
@@ -79,7 +80,7 @@
                         </table>
                     </td>
                     <td width="670">
-                       <table width="493" align="top" height="678" border="0" style="background-image:url(images/Untitled-2.png);">
+                       <table width="493" align="top" height="678" border="0" style="background-image:url(${pageContext.request.contextPath}/resources/images/Untitled-2.png);">
                                 <tr>
                                     <td width="10"><div>
                                             <th width="473" height="600" class="style27" ><span class="style64">Create Your Account...</span>
@@ -221,7 +222,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td align="left" class="style46" >Gender<font color="red">*</font></td>
-                                                            <td><input type="radio" name="gender" value="male">
+                                                            <td><input type="radio" name="gender" value="male" checked="checked">
                                                                     <span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
 																<input type="radio" name="gender" value="female">
                                                                         <span class="style46">Female</span>
@@ -241,7 +242,7 @@
                                                                         <tr>
                                                                             <td height="96">     </td>
                                                                             <td align="right">
-                                                                                <input name="Register" type="submit" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;"/>
+                                                                                <input name="Register" type="submit" value="" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;"/>
                                                                             </td>  
                                                                         </tr>
                                                                         </table>

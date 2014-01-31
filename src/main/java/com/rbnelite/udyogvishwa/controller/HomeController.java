@@ -46,9 +46,6 @@ public class HomeController {
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
-		map.put("myNeeds", new Need());
-		map.put("needList", needservice.listNeed());
-		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
 		

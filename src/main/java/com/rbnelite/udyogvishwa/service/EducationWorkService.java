@@ -10,4 +10,5 @@ public interface EducationWorkService {
 	public void insertEducationWork(EducationWorkCredential inscredential);
 
 	public List<EducationWork> listEducationWork();
+
 }

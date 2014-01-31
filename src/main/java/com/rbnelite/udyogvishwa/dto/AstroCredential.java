@@ -5,13 +5,15 @@ public class AstroCredential {
 	private String country;
 	private String city;
 	private String zodiac;
-	private String email;
+	private String userMail;
+	private String state;
 	
-	public String getEmail() {
-		return email;
+	
+	public String getState() {
+		return state;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setState(String state) {
+		this.state = state;
 	}
 	public String getCountry() {
 		return country;
@@ -30,6 +32,12 @@ public class AstroCredential {
 	}
 	public void setZodiac(String zodiac) {
 		this.zodiac = zodiac;
+	}
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 	
 

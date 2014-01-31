@@ -14,6 +14,20 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-8 Education & Work Details Page</title>
+   
+   <style>
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+</style>
     </head>
     <body>
        <center>
@@ -31,9 +45,9 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
+            <h2>Step-8</h2>
                 <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
-               <form:errors path="*" cssClass="errorblock" element="div"/>
-               
+                          
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -47,97 +61,99 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><form:input path="school"/> </td>
-                                   </tr>
-                                    <tr><td><form:errors path="school" cssclass="error"/></td></tr>
-                                    
-                                    
-                                    <tr><td colspan="2"><br></tr>
-                                    <tr>
-                                        <td>Name of College <font color="red">*</font></td><td><input type="text" name="collage" id="clg_name" size="30" maxlength="50">
-                                            <div id="clg_nameError" class="red" colspan="2"/></td>
+                                        <td><form:input path="school" size="30" maxlength="50"/>
+                                            <form:errors path="school" cssClass="error"/></td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Graduation Degree<font color="red">*</font></td>
+                                        <td>Name of College</td> 
+                                        <td><form:input path="collage" size="30" maxlength="50"/>
+                                           </td>
+                                    </tr>
+                                    <tr><td colspan="2"><br></tr>
+                                    <tr>
+                                        <td>Graduation Degree</td>
                                         <td>
-                                            <select name="graduation" id="graduation" style="width: 223px;">
-                                                <option selected value="">--Please select--</option>
-                                                <option>BA</option> 
-                                                <option>BBA</option>
-                                                <option>B.B.M.</option>
-                                                <option>BCA</option>
-                                                <option>B.Com</option>
-                                                <option>B.D.S</option>
-                                                <option>B.Sc</option>
-                                                <option>B.Sc.HS</option>
-                                                <option>B.E</option>
-                                                <option>B.Tech</option>
-                                                <option>B.Ed.</option>
-                                                <option>BHMCT</option>
-                                                <option>B.Pharm</option>
-                                                <option>D.T.L</option>
-                                                <option>Diploma in Journalism</option>
-                                                <option>Diploma in Philosophy</option>
-                                                <option>Diploma in Social Work</option>
-                                                <option>DM</option>
-                                                <option>D.Ed</option>
-                                                <option>GNM</option>
-                                                <option>LLB</option>
-                                                <option>LLM</option>
+                                            <form:select path="graduation" id="graduation" style="width: 223px;">
+                                                <form:option value="-" label="--Please select--"/>
+                                                <form:option value="BA"/>
+                                                <form:option value="BBA"/>
+                                                <form:option value="B.B.M."/>
+                                                <form:option value="BCA"/>
+                                                <form:option value="B.Com"/>
+                                                <form:option value="B.D.S"/>
+                                                <form:option value="B.Sc"/>
+                                                <form:option value="B.Sc.HS"/>
+                                                <form:option value="B.E"/>
+                                                <form:option value="B.Tech"/>
+                                                <form:option value="B.Ed."/>
+                                                <form:option value="BHMCT"/>
+                                                <form:option value="B.Pharm"/>
+                                                <form:option value="D.T.L"/>
+                                                <form:option value="Diploma in Journalism"/>
+                                                <form:option value="Diploma in Philosophy"/>
+                                                <form:option value="Diploma in Social Work"/>
+                                                <form:option value="DM"/>
+                                                <form:option value="D.Ed"/>
+                                                <form:option value="GNM"/>
+                                                <form:option value="LLB"/>
+                                                <form:option value="LLM"/>
 
-                                            </select>
-                                            <div id="graduationError" class="red" colspan="2"/></td>
+                                            </form:select>
+                                            </td>
                                     </tr>
                                     <tr><td colspan="2" ><br></tr>
                                     <tr>
                                         <td> Specialization 
-                                        </td><td><input type="text" name="otherGraduation" id="othr_graduation" size="30" maxlength="30">
+                                        </td><td><form:input path="otherGraduation" size="30" maxlength="30"/>
+                                       
                                         </td>
                                     </tr><tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>PG College Name </td><td><input type="text" name="PGCollege" id="pg_clg" size="30" maxlength="50">
-                                            <div id="pg_clgError" class="red" colspan="2"/></td>
+                                        <td>PG College Name </td>
+                                        <td><form:input path="PGCollege" size="30" maxlength="50"/>
+                                            </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td> PG Degree </td>
-                                        <td><select name="PGDegree" id="pg_degree" style="width: 223px;">
-                                                <option selected value="">--Please select--</option>
-                                                <option>MA</option> 
-                                                <option>M.Sc</option>
-                                                <option>MCA</option>
-                                                <option>MBA</option>
-                                                <option>M.Tech</option>
-                                                <option>M.E</option>
-                                                <option>M.Com</option>
-                                                <option>MD</option>
-                                                <option>MS</option>
-                                                <option>MBBS</option>
-                                                <option>M.CH</option>
-                                                <option>M.D.S</option>
-                                                <option>M.PhT.</option>
-                                                <option>M.Arch.</option>
-                                                <option>M.Ed</option>
-                                                <option>M.Phil</option>
-                                                <option>M.P.Ed.</option>
-                                                <option>M.P.E.</option>
-                                                <option>M.Pharm</option>
-                                                <option>PGICVTCA</option>
-                                                <option>Ph.D</option>
-                                                <option>Other</option>
+                                        <td><form:select path="PGDegree"  style="width: 223px;">
+                                                <form:option value="-" label="--Please select--"/>
+                                                <form:option value="MA"/>
+                                                <form:option value="M.Sc"/>
+                                                <form:option value="MCA"/>
+                                                <form:option value="MBA"/>
+                                                <form:option value="M.Tech"/>
+                                                <form:option value="M.E"/>
+                                                <form:option value="M.Com"/>
+                                                <form:option value="MD"/>
+                                                <form:option value="MS"/>
+                                                <form:option value="MBBS"/>
+                                                <form:option value="M.CH"/>
+                                                <form:option value="M.D.S"/>
+                                                <form:option value="M.PhT."/>
+                                                <form:option value="M.Arch."/>
+                                                <form:option value="M.Ed"/>
+                                                <form:option value="M.Phil"/>
+                                                <form:option value="M.P.Ed."/>
+                                                <form:option value="M.P.E."/>
+                                                <form:option value="M.Pharm"/>
+                                                <form:option value="PGICVTCA"/>
+                                                <form:option value="Ph.D"/>
+                                                <form:option value="Other"/>
 
-                                            </select>
+                                            </form:select>
                                             <div id="pg_degreeError" class="red" colspan="2"/>
                                         </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Specialization</td><td><input type="text" name="otherPG" id="othr_pg" size="30" maxlength="30"></td>
+                                        <td>Specialization</td><td>
+                                        <form:input path="otherPG" size="30" maxlength="30"/></td>
                                     </tr>
 
                                     <tr>
-                                        <td></td>
+                                        <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
                                             <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" >
                                         </td>

@@ -40,6 +40,7 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		session.save(otherDetail);
 		session.getTransaction().commit();
 		session.flush();
+		System.out.println("From OtherDetailsDaoImpl Record inserted successfully");
 	}
 
 

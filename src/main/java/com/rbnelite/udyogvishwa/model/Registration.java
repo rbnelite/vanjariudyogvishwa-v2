@@ -7,8 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
-@Table(name="registration")
+@Table(name="users")
 public class Registration {
 	
 	@Id
@@ -26,16 +29,18 @@ public class Registration {
 	@Column
 	private String last_name;
 	
-	@Column
+	@Column(name="email")
+	@Email
 	private String email_id;
 	
-	@Column
+	@Column(name="contact_no")
 	private String mobile_no;
 	
 	@Column
 	private String gender;
 	
-	@Column
+	@Column(name="birthdate")
+	@DateTimeFormat
 	private String birth_date;
 	
 	@Column

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="religion")
 public class Religion {
@@ -16,8 +18,25 @@ public class Religion {
 	@Column(name="religionid")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="religion_sequence_religionid")
 	@SequenceGenerator(name="religion_sequence_religionid",sequenceName="religion_sequence",allocationSize=1)
-	
 	private int religionid;
+	
+	@Column
+	@NotEmpty
+	private String religionName;
+	
+	@Column
+	@NotEmpty
+	private String relCast;
+	
+	public String getRelCast() {
+		return relCast;
+	}
+	public void setRelCast(String relCast) {
+		this.relCast = relCast;
+	}
+	@Column
+	private String userMail;
+	
 	public int getReligionid() {
 		return religionid;
 	}
@@ -25,38 +44,17 @@ public class Religion {
 		this.religionid = religionid;
 	}
 	public String getReligionname() {
-		return religionname;
+		return religionName;
 	}
 	public void setReligionname(String religionname) {
-		this.religionname = religionname;
+		this.religionName = religionname;
 	}
-	public String getRelcast() {
-		return relcast;
-	}
-	public void setRelcast(String relcast) {
-		this.relcast = relcast;
-	}
-	public String getMothertoung() {
-		return mothertoung;
-	}
-	public void setMothertoung(String mothertoung) {
-		this.mothertoung = mothertoung;
-	}
-	public String getNativeplace() {
-		return nativeplace;
-	}
-	public void setNativeplace(String nativeplace) {
-		this.nativeplace = nativeplace;
-	}
+	
 	public String getUsermail() {
-		return usermail;
+		return userMail;
 	}
 	public void setUsermail(String usermail) {
-		this.usermail = usermail;
+		this.userMail = usermail;
 	}
-	private String religionname;
-	private String relcast;
-	private String mothertoung;
-	private String nativeplace;
-	private String usermail;
+	
 }

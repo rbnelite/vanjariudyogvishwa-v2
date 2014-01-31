@@ -9,7 +9,7 @@ root {
 }
 
 body {
-	background-color: white;
+	background-color: menu;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 #mainMsg {
-	background-color: yellow;
+	background-color: white;
 	width: 1400px;
 	height: fit-content;
 	margin: 10px 50px 10px 50px;
@@ -375,7 +375,7 @@ body {
 	width: 1090px;
 	height: 645px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid gray;
 }
 
 #middleStep10 {
@@ -783,7 +783,7 @@ body {
 	height: 645px;
 	overflow: auto;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid gray;
 }
 
 #leftMainStep10 {
@@ -814,7 +814,7 @@ body {
 	height: 645px;
 	background-color: bisque;
 	float: right;
-	border: 1px solid aqua;
+	border: 1px solid gray;
 }
 
 #rightMainStep10 {

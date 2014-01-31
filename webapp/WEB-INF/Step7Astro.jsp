@@ -12,11 +12,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Vanjari Udyog Vishwa | Astro Details</title>
+        <title>Step-7 Astro Details Page</title>
     </head>
     <body>
-    <form:form action="/vanjariudyogvishwa-v2/Astro" method="post" commandName="astro">
-   <form:errors path="*" cssClass="errorblock" element="div"/>
+    
     <center>
         <div id="mainMsg">
         <div id="Header">
@@ -29,8 +28,10 @@
                 </div>
             </div>
        <div id="leftMainStep3"></div>
-       <div id="middleStep4" >
-                        <table >
+       <div id="middleStep4">
+       <h2>Step-7</h2>
+    <form:form action="/vanjariudyogvishwa-v2/Astro" method="post" commandName="astro">
+                        <table>
                                     <tr><td colspan="2"><br></td></tr>
                                     <tr>
                                         <td colspan="2"><font size="5">Fill Out Your Astro Details</font></td>
@@ -39,14 +40,11 @@
                                         <td colspan="2">This Information will help us to Create Your Profile</td>
                                     </tr>
                                     <tr><td colspan="2"><hr/></td></tr>
-                                    <tr><td><br><br></td></tr>
-                                    
+                                    <tr><td><br></td></tr>
                                     <tr>
                                     <td>Country <font color="red">*</font></td>
-                                    <td>
-                                    <select id="country" name="country" style="width: 223px;">
-                                                <option  selected value="">--Please select...</option>
-                                                <option >Afghanistan</option>
+                                    <td><select path="country" name="country" style="width: 223px;">
+                                               <option >Afghanistan</option>
                                                 <option>Albania</option>
                                                 <option >Algeria</option>
                                                 <option >Andorra</option>
@@ -114,7 +112,7 @@
                                                 <option >Honduras</option>
                                                 <option >Hungary</option>
                                                 <option >Iceland</option>
-                                                <option >India</option>
+                                                <option  selected>India</option>
                                                 <option >Indonesia</option>
                                                 <option >Iran</option>
                                                 <option >Iraq</option>
@@ -226,50 +224,49 @@
                                                 <option >Zambia</option>
                                                 <option >Zimbabwe</option>
                                             </select>
-                                            <div id="countryError" class="red" colspan="2"/>
-                                        </td>
+                                             </td>
                                     </tr>
-                                    <tr><td colspan="2"><br></td></tr>
+                                     <tr><td></td></tr>
+                                    <tr>
+                                        <td>State <font color="red">*</font></td>
+                                        <td> <form:input path="state" />  <form:errors path="state" cssClass="error"/> </td>
+                                    </tr>
+                                    <tr><td></td></tr>
                                     <tr>
                                         <td>City <font color="red">*</font></td>
-                                        <td><form:input path="city"/> </td>
+                                        <td> <form:input path="city" /> <form:errors path="city" cssClass="error"/></td>
                                     </tr>
-                                     <tr ><td colspan="2"> <form:errors path="city"/> </td></tr>
-                                    
-                                    <tr><td colspan="2"><br></td></tr>
-                                    
+                                    <tr><td></td></tr>
                                     <tr>
                                         <td>Zodiac <font color="red">*</font></td>
-                                        <td>
-                                        <select name="zodiac" id="zodiac" style="width: 223px;">
-                                                <option selected value="">--Please Select Zodiac</option>
-                                                <option >Aries</option>
-                                                <option>Taurus</option>
-                                                <option>Gemini</option>
-                                                <option>Cancer</option>
-                                                <option>Leo</option>
-                                                <option>Virgo</option>
-                                                <option>Libra</option>
-                                                <option>Scorpio</option>
-                                                <option>Sagittarius</option>
-                                                <option>Capricorn</option>
-                                                <option>Aquarius</option>
-                                                <option>Pisces</option>
-                                            </select>
-                                            <div id="zodiacError" class="red" colspan="2"/>
+                                        <td><form:select path="zodiac" id="zodiac" style="width: 223px;">
+                                                <form:option value="" label="--Please Select"/>
+                                                <form:option value="Aries"/>
+                                                <form:option value="Taurus"/>
+                                                <form:option value="Gemini"/>
+                                                <form:option value="Cancer"/>
+                                                <form:option value="Leo"/>
+                                                <form:option value="Virgo"/>
+                                                <form:option value="Libra"/>
+                                                <form:option value="Scorpio"/>
+                                                <form:option value="Sagittarius"/>
+                                                <form:option value="Capricorn"/>
+                                                <form:option value="Aquarius"/>
+                                                <form:option value="Pisces"/>
+                                            </form:select>
+                                            <form:errors path="zodiac" cssClass="error"/>                                            
                                         </td>
                                     </tr>
-                                     <tr><td colspan="2"><br></td></tr>
+                               
                                     <tr>
-                                
-                                        <td></td>
+                                        <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
 
                                             <input type="submit" name="save_astro" id="submit" value="Save & Continue" class="savebtn">
                                         </td>
                                     </tr>
                                 </table>
-           
+           </form:form>
                     </div>
             
             
@@ -277,6 +274,6 @@
         
         </div>
         </center>
-        </form:form>
+        
     </body>
 </html>

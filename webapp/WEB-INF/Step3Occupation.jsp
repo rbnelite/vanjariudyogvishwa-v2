@@ -14,7 +14,15 @@
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 		<script src="<c:url value="/resources/js/anil.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<script>
+function isNumberKey(evt)
+{
+    var charCode=(evt.which) ? evt.which :event.keyCode;
+    if(charCode >31 && (charCode<48 || charCode >57))
+        return false;
+    return true;
+}
+</script>
 <title>Step-3 Occupation Details Page</title>
 </head>
 <body>
@@ -33,40 +41,39 @@
 			
 					<table align="center">
 						<tr>
-							<td colspan="2"><br>
+							<td colspan="2"><br></td>
 						</tr>
 						<tr>
-							<td colspan="2"><font size="5">Fill Out Your
+							<td colspan="2"><font size="5">Fill Your
 									Occupation or Business Details</font>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">This Information will help us to Create Your
-								Profile</td>
+							<td colspan="2">This Information will help us to Create Your Profile</td>
 						</tr>
 						<tr>
-							<td colspan="2"><hr />
+							<td colspan="2"><hr/>
 							</td>
 						</tr>
 						<tr>
-							<td><br>
+							<td>
 							<br>
 							</td>
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><form:input path="companyname" size="30" maxlength="10"/>
-								<form:errors path="companyname" cssClass="error"/>
+							<td><form:input path="companyName" size="30" maxlength="10"/>
+								<form:errors path="companyName" cssClass="error"/>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2"><br>
-						</tr>
+							<td colspan="2"><br></td>
+
+					</tr>
+						
 						<tr>
-							<td>Occupation <font color="red">*</font>
-							</td>
-							<td><select id="occupation" name="occupatiuon"
-								style="width: 223px;">
+							<td>Occupation <font color="red">*</font> </td>
+							<td> <select id="occupation" name="occupatiuon" style="width: 223px;">
 									<option selected value="">--Please select--</option>
 									<option>Admin Professional</option>
 									<option>Actor</option>
@@ -134,37 +141,35 @@
 									<option>Not Working</option>
 									<option>Other</option>
 							</select>
-								<div id="occupationError" class="red" colspan="2" /></td>
+								</td>
 						</tr>
 						<tr>
-							<td colspan="2"><br>
+							<td colspan="2"><br></td>
 						</tr>
 						<tr>
-							<td>Product/Manufacturing Details <font color="red">*</font>
-							</td>
+							<td>Product/Manufacturing Details </td>
 							<td><textarea name="productdetils"
 									style="resize: none; font: normal 12px Trebuchet MS; font-family: Verdana; font-size: 12px;"
 									id="product_details" rows="1" cols="25" maxlength="150"
 									style="resize: none;"></textarea>
-								<div id="product_detailsError" class="red" colspan="2" />
+							
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2"><br></td>
+						</tr>
+						<tr>
+							<td>Total Number of Employees 
+							</td>
+							<td><input type="text" name="numberofemp" id="total_emp" size="30" maxlength="6" onkeypress="return isNumberKey(event)">
+								
 							</td>
 						</tr>
 						<tr>
 							<td colspan="2"><br>
 						</tr>
 						<tr>
-							<td>Total Number of Employees <font color="red">*</font>
-							</td>
-							<td><input type="text" name="numberofemp" id="total_emp"
-								size="30" maxlength="6" onkeypress="return isNumberKey(event)">
-								<div id="total_empError" class="red" colspan="2" />
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2"><br>
-						</tr>
-						<tr>
-							<td>Employment Type <font color="red">*</font>
+							<td>Employment Type 
 							</td>
 							<td><select name="emptype" id="emp_type"
 								style="width: 223px;">
@@ -174,25 +179,24 @@
 									<option>Trainee</option>
 									<option>Temporary</option>
 							</select>
-								<div id="emp_typeError" class="red" colspan="2" /></td>
+								
 						</tr>
 						<tr>
-							<td colspan="2"><br>
+							<td colspan="2"><br></td>
 						</tr>
 						<tr>
 							<td>Annual Income <font color="red">*</font>
 							</td>
-							<td><input type="text" name="annualincome"
-								id="annual_income" size="30" maxlength="8"
-								onkeypress="return isNumberKey(event)">
-								<div id="annual_incomeError" class="red" colspan="2" />
+							<td><form:input path="annualincome"	size="30" maxlength="8" onkeypress="return isNumberKey(event)"/>
+								<form:errors path="annualincome" cssClass="error"/>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2"><br>
+							
+							<td colspan="2"><br></td>
 						</tr>
 						<tr>
-							<td></td>
+							<td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
 							<td align="right"><input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn">
 							</td>
 						</tr>

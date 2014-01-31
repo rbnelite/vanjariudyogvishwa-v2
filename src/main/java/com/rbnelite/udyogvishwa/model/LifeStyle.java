@@ -32,8 +32,8 @@ public class LifeStyle {
 	private String weight;
 	
 	@Column(name="email")
-
 	private String usermail;
+	
 	public int getLifestyleid() {
 		return lifestyleid;
 	}

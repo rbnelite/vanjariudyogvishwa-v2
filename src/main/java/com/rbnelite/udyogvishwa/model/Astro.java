@@ -22,6 +22,7 @@ public class Astro {
 	private int id;
 	
 	@Column
+	@NotEmpty
 	private String country;
 	
 	@Column
@@ -29,18 +30,24 @@ public class Astro {
 	private String city;
 	
 	@Column
+	@NotEmpty
 	private String zodiac;
 	
 
-	@Column
-	private String email;
+	@Column(name="email")
+	private String userMail;
 	
-	public String getEmail() {
-		return email;
+	@Column  
+	@NotEmpty
+	private String state;
+	
+	public String getState() {
+		return state;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setState(String state) {
+		this.state = state;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -64,6 +71,12 @@ public class Astro {
 	}
 	public void setZodiac(String zodiac) {
 		this.zodiac = zodiac;
+	}
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 
 

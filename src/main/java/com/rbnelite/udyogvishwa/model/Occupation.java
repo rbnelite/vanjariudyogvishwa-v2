@@ -1,6 +1,5 @@
 package com.rbnelite.udyogvishwa.model;
 
-import javax.faces.bean.NoneScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,14 +21,20 @@ public class Occupation {
 	
 	@Column(name="company_name")
 	@NotEmpty
-	private String companyname;
-	
-    @Column
+	private String companyName;
+	               	
+    public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	@Column
     private String occupation;
     
     @Column(name="product_details")
     private String productdetails;
-   
+    
     @Column(name="number_of_emp")
     private String numberofemp;
     
@@ -37,6 +42,7 @@ public class Occupation {
     private String emptype;
    
     @Column(name="annual_income")
+    @NotEmpty
     private String annualincome;
     
     @Column(name="email")
@@ -48,12 +54,7 @@ public class Occupation {
 	public void setOccupationid(int occupationid) {
 		this.occupationid = occupationid;
 	}
-	public String getCompanyname() {
-		return companyname;
-	}
-	public void setCompanyname(String companyname) {
-		this.companyname = companyname;
-	}
+	
 	public String getOccupation() {
 		return occupation;
 	}

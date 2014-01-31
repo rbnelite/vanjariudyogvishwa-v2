@@ -18,7 +18,7 @@ private OccupationDao ocdao;
 public void insertOccupation(OccupationCredential occredential){
 	Occupation oc=new Occupation();
 	
-	oc.setCompanyname(occredential.getCompanyName());
+	oc.setCompanyName(occredential.getCompanyName());
 	oc.setOccupation(occredential.getOccupatiuon());
 	oc.setProductdetails(occredential.getProductdetils());
 	oc.setNumberofemp(occredential.getNumberofemp());

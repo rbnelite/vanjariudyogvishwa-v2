@@ -13,18 +13,16 @@ public class RelegionServiceImpl implements RelegionService {
 
 	@Resource
 	private RelegionDao relegiondao;
-	
+
 	@Override
 	public void insertRelegion(ReligionCredential religioncredential) {
 		// TODO Auto-generated method stub
 
-		Religion relegion=new Religion();
+		Religion relegion = new Religion();
 		relegion.setReligionname(religioncredential.getReligionname());
-		relegion.setRelcast(religioncredential.getRelcast());
-		relegion.setMothertoung(religioncredential.getMothertoung());
-		relegion.setNativeplace(religioncredential.getNativeplace());
+		relegion.setRelCast(religioncredential.getRelCast());
 		relegion.setUsermail(religioncredential.getUsermail());
-		
+
 		relegiondao.insertRelegion(relegion);
 	}
 
