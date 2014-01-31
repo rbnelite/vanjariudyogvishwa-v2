@@ -32,8 +32,8 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	
 	@Override
 	@Transactional
-	public List<EducationWork> listEducationWork() {
-		String email="sawantmanojm@gmail.com";
+	public List<EducationWork> listEducationWork(String userMail) {
+		String email=userMail;
 		return sessionFactory.getCurrentSession().createQuery("from EducationWork where userMail='"+email+"' ").list();
 	}
 

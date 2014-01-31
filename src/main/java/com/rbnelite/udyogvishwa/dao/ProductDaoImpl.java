@@ -45,7 +45,7 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 		
 	}
 	@Override
-	public List<Product> listProduct() {
+	public List<Product> listProduct(String userMail) {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Product")
                 .list();

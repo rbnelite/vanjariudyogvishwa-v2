@@ -36,9 +36,9 @@ public class HobbiesServiceImpl implements HobbiesService {
 
 	@Override
 	@Transactional
-	public List<Hobbies> listHobbies() {
+	public List<Hobbies> listHobbies(String userMail) {
 
-		return hobbiesdao.listHobbies();
+		return hobbiesdao.listHobbies(userMail);
 	}
 
 }

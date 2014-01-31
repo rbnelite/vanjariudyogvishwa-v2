@@ -18,6 +18,6 @@ public interface OtherDetailsService {
 	
 	public void insertOtherDetails(OtherDetailsCredential othetCred);
 
-	public List<OtherDetails> listOtherDetails();
+	public List<OtherDetails> listOtherDetails(String userMail);
 
 }

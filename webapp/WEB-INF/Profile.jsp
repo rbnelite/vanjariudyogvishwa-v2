@@ -208,7 +208,8 @@ input[type=text]{
 							</c:if>
 							<c:if test="${!empty EditEducationDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
 								style="float:left; width: 70px; height: 60px;">Edit Education Details</h3>
 
@@ -277,6 +278,8 @@ input[type=text]{
 					<div id="ProfileDetails">
 						<img id="EditProfileDetails"
 							src="${pageContext.request.contextPath}/resources/images/edit1.png">
+							<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
 								style="float:left; width: 70px; height: 60px;">Contact Details</h3>
 						<c:if test="${!empty contactInfoList}">
@@ -310,7 +313,8 @@ input[type=text]{
 						<form action="/vanjariudyogvishwa-v2/Family">
 							<input id="EditProfileDetails" type="submit" value=""
 								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 							<h3>Family Details</h3>
 							<c:if test="${!empty familyList}">
 								<table>
@@ -345,6 +349,8 @@ input[type=text]{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editHobbiesReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3>Hobbies Details</h3>
 						<div id="InsideProfileDetails">
 							
@@ -398,7 +404,8 @@ input[type=text]{
 							<c:if test="${!empty editHobbiesList}">
 					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
 					
-					
+					<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 					
 					<h3>Edit Hobbies Details</h3>
 						<div id="InsideProfileDetails">
@@ -488,7 +495,8 @@ input[type=text]{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editAstroReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-									
+									<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3>Astro Details</h3>
 
 						
@@ -514,7 +522,8 @@ input[type=text]{
 
 						<c:if test="${!empty editAstroList}">
 					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
-					
+					<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 					<h3>Edit Astro Details</h3>
 					<table>
 								<c:forEach items="${editAstroList}" var="editAstroDetails">
@@ -589,7 +598,8 @@ input[type=text]{
 								<input id="EditProfileDetails" type="submit" value=""
 									name="editLifeStyReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3>Lifestyle and Attributes Details</h3>
 						<div id="InsideProfileDetails">
 						
@@ -633,6 +643,8 @@ input[type=text]{
 						
 						<c:if test="${!empty editLifeStyleList}">
 							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 								<h3>Edit Lifestyle and Attributes Details</h3>
 								<div id="InsideProfileDetails">
 								
@@ -697,7 +709,8 @@ input[type=text]{
 								<input id="EditProfileDetails" type="submit" value=""
 									name="editOtherReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 
 								<h3>Other Details</h3>
 								<div id="InsideProfileDetails">
@@ -735,7 +748,8 @@ input[type=text]{
 						<c:if test="${!empty EditOtherDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
 
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 
 								<h3>Edit Other Details</h3>
 								<div id="InsideProfileDetails">

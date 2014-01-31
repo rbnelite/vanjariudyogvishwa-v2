@@ -9,6 +9,6 @@ public interface LifeStyleService {
 
 	public void insertLifeStyle(LifeStyleCredential lifetstylecredential);
 
-	public List<LifeStyle> listLifeStyle();
+	public List<LifeStyle> listLifeStyle(String userMail);
 
 }
