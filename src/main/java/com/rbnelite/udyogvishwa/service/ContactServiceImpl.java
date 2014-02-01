@@ -19,7 +19,8 @@ public class ContactServiceImpl implements ContactService {
 		Contact contact=new Contact();
 		contact.setHomeAddress(contactcredential.getHomeAddress());
 		contact.setOfficeAddress(contactcredential.getOfficeAddress());
-		contact.setTelephoneNo(contactcredential.getTelephoneNo());
+		contact.setTelephone(contactcredential.getTelephoneNo());
+		contact.setUserMail(contactcredential.getUserMail());
 		contactdao.saveContact(contact);
 
 	}

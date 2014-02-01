@@ -2,7 +2,7 @@
 <%-- 
     Document   : Step11OtherDetails
     Created on : Dec 24, 2013, 8:00:42 PM
-    Author     : dogkiller
+    Author     : dogkiller,ab
 --%>
 
 
@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
@@ -56,15 +56,8 @@
 						<td colspan="2">This Information will helps us to Create Your
 							Profile</td>
 					</tr>
-					<tr>
-						<td colspan="2"><hr />
-						</td>
-					</tr>
-					<tr>
-						<td><br>
-						<br>
-						</td>
-					</tr>
+					
+				 <tr><td colspan="2"><hr/></td></tr>
 
 					<tr>
 						<td>Social Status</td>
@@ -114,16 +107,13 @@
 					<tr>
 						<td colspan="2"><br>
 					</tr>
-					<!-- <tr>
-						<td>Games</td>
-						<td><textarea name="games" rows="1" cols="25" maxlength="80"
-								style="resize: none;"></textarea>
-						</td>
-					</tr> -->
+				
 					<tr>
-						<td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
+
+						<td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
 						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" class="savebtn" name="save_other" value="Save & Continue">
+						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
+
 						</td>
 					</tr>
 				</table>

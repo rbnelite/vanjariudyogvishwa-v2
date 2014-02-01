@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="religion")
 public class Religion {
@@ -18,10 +20,21 @@ public class Religion {
 	@SequenceGenerator(name="religion_sequence_religionid",sequenceName="religion_sequence",allocationSize=1)
 	private int religionid;
 	
+	@Column
+	@NotEmpty
 	private String religionName;
+	
+	@Column
+	@NotEmpty
 	private String relCast;
-	private String motherToung;
-	private String nativePlace;
+	
+	public String getRelCast() {
+		return relCast;
+	}
+	public void setRelCast(String relCast) {
+		this.relCast = relCast;
+	}
+	@Column
 	private String userMail;
 	
 	public int getReligionid() {
@@ -36,24 +49,7 @@ public class Religion {
 	public void setReligionname(String religionname) {
 		this.religionName = religionname;
 	}
-	public String getRelcast() {
-		return relCast;
-	}
-	public void setRelcast(String relcast) {
-		this.relCast = relcast;
-	}
-	public String getMothertoung() {
-		return motherToung;
-	}
-	public void setMothertoung(String mothertoung) {
-		this.motherToung = mothertoung;
-	}
-	public String getNativeplace() {
-		return nativePlace;
-	}
-	public void setNativeplace(String nativeplace) {
-		this.nativePlace = nativeplace;
-	}
+	
 	public String getUsermail() {
 		return userMail;
 	}

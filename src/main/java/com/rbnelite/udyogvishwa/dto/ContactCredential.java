@@ -5,7 +5,16 @@ public class ContactCredential {
 	private String homeAddress;
 	private String officeAddress;
 	private String telephoneNo;
+	public String  userMail;
 	
+	
+	
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
 	public String getHomeAddress() {
 		return homeAddress;
 	}

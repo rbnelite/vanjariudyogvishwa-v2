@@ -32,12 +32,16 @@ public class EducationWork {
 
 	@Column(name = "other_graduation")
 	private String otherGraduation;
+	
 	@Column(name = "pg_college")
 	private String PGCollege;
+	
 	@Column(name = "pg_degree")
 	private String PGDegree;
+	
 	@Column(name = "other_pg")
 	private String otherPG;
+	
 	@Column(name = "email")
 	private String userMail;
 

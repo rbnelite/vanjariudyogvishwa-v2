@@ -235,7 +235,7 @@
 							<td><font color="purple">Text</font></td>
 							<td><font color="purple">Photo</font></td>
 							<input type="hidden" name="usermail" value="${CurrentEmailId}">
-							<td><input type="submit" value="POST" class="buttonclr"></td>
+							<td><input type="submit" value="POST" style="margin-right: 30px;" class="buttonclr"></td>
 						</tr>
 					</table>
 				</form>
@@ -300,7 +300,7 @@
 												name="commentZone">
 												<input type="hidden" name="statusIdForComment"
 													value="${status11.id}"> <input type="hidden"
-													name="usermail" value="${CurrentEmailId}"> <input
+													name="whoseComment" value="${CurrentEmailId}"> <input
 													type="text" name="commenttext"
 													placeholder="Write a comment and Press Enter...."
 													style="width: 440px; height: 20px; margin-top: 10px; margin-left: -30px">

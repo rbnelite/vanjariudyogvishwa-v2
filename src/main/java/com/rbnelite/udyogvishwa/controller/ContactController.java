@@ -19,7 +19,7 @@ public class ContactController {
 	private ContactService contactservice;
 	
 	@RequestMapping(value="/Contact", method=RequestMethod.POST)
-	public String contact(@RequestParam("emailId") String emailId, @ModelAttribute("ContactCredential")ContactCredential contactcredential, ModelMap map){
+	public String contact(@RequestParam("userMail") String emailId, @ModelAttribute("ContactCredential")ContactCredential contactcredential, ModelMap map){
 		
 	contactservice.SaveContact(contactcredential);
 	map.put("CurrentEmailId", emailId);

@@ -2,7 +2,7 @@ package com.rbnelite.udyogvishwa.dto;
 
 public class OccupationCredential {
 	
-	private String companyName;
+	private String companyName;				   
 	private String occupatiuon;
 	private String productdetils;
 	private String numberofemp;

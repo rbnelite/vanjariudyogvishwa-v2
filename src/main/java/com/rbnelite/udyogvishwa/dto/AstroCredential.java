@@ -6,7 +6,15 @@ public class AstroCredential {
 	private String city;
 	private String zodiac;
 	private String userMail;
+	private String state;
 	
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	public String getCountry() {
 		return country;
 	}

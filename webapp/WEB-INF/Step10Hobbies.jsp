@@ -42,26 +42,29 @@
                                     <tr>
                                         <td colspan="2">This Information will help us to Create Your Profile</td>
                                     </tr>
+
                                     <tr><td colspan="2"><hr/></td></tr>
                                     <tr><td><br><br></td></tr>
 
+
                                     <tr>
-                                        <td> Hobbies <font color="red">*</font></td><td><textarea name="hobbies" id="hobbies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="hobbiesError" class="red" colspan="2"/></td>
+                                        <td> Hobbies </td><td><textarea name="hobbies" id="hobbies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                           </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite Music <font color="red">*</font></td><td><textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="fav_musicError" class="red" colspan="2"/></td>
+                                        <td>Favourite Music</td><td><textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                            </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Favourite Books <font color="red">*</font></td><td><textarea name="favouriteBooks" id="fav_books"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="fav_booksError" class="red" colspan="2"/></td>
+                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                            </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Dress Style <font color="red">*</font></td><td><select name="DressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
+                                        <td> Dress Style </td>
+                                        <td><select name="DressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
                                                 <option selected value="">--Please Select --</option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
@@ -70,39 +73,41 @@
                                                 <option>Casual</option>
                                                 <option>Not particular</option>
                                             </select>
-                                            <div id="dress_styleError" class="red" colspan="2"/></td>
+                                        </td>
                                     <!--</tr> <tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite TV Shows <font color="red">*</font></td><td><textarea name="favouritrTvShows" id="fav_tvShows" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td>Favourite TV Shows </td><td><textarea name="favouritrTvShows" id="fav_tvShows" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
                                             <div id="fav_tvShowsError" class="red" colspan="2"/></td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     
                                    <tr>
-                                        <td>Favourite Movies <font color="red">*</font> </td><td><textarea name="FavouriteMovies" id="fav_movies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="fav_moviesError" class="red" colspan="2"/></td>
+                                        <td>Favourite Movies </td><td><textarea name="FavouriteMovies" id="fav_movies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Sports <font color="red">*</font></td><td><textarea name="sports" id="sports" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="sportsError" class="red" colspan="2"/></td>
+                                        <td> Sports</td>
+                                        <td><textarea name="sports" id="sports" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Food I Cook <font color="red">*</font></td><td><textarea name="foodIcook" id="food"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="foodError" class="red" colspan="2"/></td></td>
+                                        <td> Food I Cook </td><td><textarea name="foodIcook" id="food"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                            </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite Vacation<br> Destination <font color="red">*</font></td><td><textarea name="VacationDestination" id="vac_dest"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
-                                            <div id="vac_destError" class="red" colspan="2"/></td>
+                                        <td>Favourite Vacation<br> Destination </td>
+                                        <td><textarea name="VacationDestination" id="vac_dest"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                           </td>
                                     </tr> 
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
+                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a href="OtherDetails"><font color="green"><b>SKIP</b></font></a></td>
                                         <td align="right">
 
                                             <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" >

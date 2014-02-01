@@ -6,9 +6,9 @@ public class EducationWorkCredential {
 	private String collage;
 	private String graduation;
 	private String otherGraduation;
-	private String PGCollege;
-	private String PGDegree;
-	private String otherPG;
+	private String pgCollege;
+	private String pgDegree;
+	private String otherPg;
 	private String userMail;
 	
 	public String getSchool() {
@@ -36,22 +36,22 @@ public class EducationWorkCredential {
 		this.otherGraduation = otherGraduation;
 	}
 	public String getPGCollege() {
-		return PGCollege;
+		return pgCollege;
 	}
 	public void setPGCollege(String pGCollege) {
-		PGCollege = pGCollege;
+		pgCollege = pGCollege;
 	}
 	public String getPGDegree() {
-		return PGDegree;
+		return pgDegree;
 	}
 	public void setPGDegree(String pGDegree) {
-		PGDegree = pGDegree;
+		pgDegree = pGDegree;
 	}
 	public String getOtherPG() {
-		return otherPG;
+		return otherPg;
 	}
 	public void setOtherPG(String otherPG) {
-		this.otherPG = otherPG;
+		this.otherPg = otherPG;
 	}
 	public String getUserMail() {
 		return userMail;

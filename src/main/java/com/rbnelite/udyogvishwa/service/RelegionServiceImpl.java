@@ -20,9 +20,7 @@ public class RelegionServiceImpl implements RelegionService {
 
 		Religion relegion = new Religion();
 		relegion.setReligionname(religioncredential.getReligionname());
-		relegion.setRelcast(religioncredential.getRelcast());
-		relegion.setMothertoung(religioncredential.getMothertoung());
-		relegion.setNativeplace(religioncredential.getNativeplace());
+		relegion.setRelCast(religioncredential.getRelCast());
 		relegion.setUsermail(religioncredential.getUsermail());
 
 		relegiondao.insertRelegion(relegion);

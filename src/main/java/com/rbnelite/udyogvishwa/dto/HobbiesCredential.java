@@ -2,7 +2,7 @@ package com.rbnelite.udyogvishwa.dto;
 
 public class HobbiesCredential {
 	
-	private String hobbies;
+	private String hobbiesName;
 	private String favouriteMusic;
 	private String favouriteBooks;
 	private String DressStyletyle;
@@ -14,11 +14,11 @@ public class HobbiesCredential {
 	private String usermail;
 
 	
-	public String getHobbies() {
-		return hobbies;
+	public String getHobbiesName() {
+		return hobbiesName;
 	}
-	public void setHobbies(String hobbies) {
-		this.hobbies = hobbies;
+	public void setHobbiesName(String hobbiesName) {
+		this.hobbiesName = hobbiesName;
 	}
 	public String getFavouriteMusic() {
 		return favouriteMusic;

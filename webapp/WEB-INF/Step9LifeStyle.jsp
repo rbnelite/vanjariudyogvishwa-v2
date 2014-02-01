@@ -1,7 +1,7 @@
 <%-- 
     Document   : Step3LifeStyle
     Created on : Dec 24, 2013, 7:36:40 PM
-    Author     : vishal
+    Author     : vishal,ab
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -47,21 +47,21 @@
                                     <tr><td><br><br></td></tr>
 
                                     <tr>
-                                        <td>Diet <font color="red">*</font></td><td><select id="diet" name="diet" style="width: 223px;">
+                                        <td>Diet</td><td><select id="diet" name="diet" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Veg</option>
                                                 <option>Non-Veg</option>
                                                 <option>Mix</option></select>
-                                            <div id="dietError" class="red" colspan="2"/></td>
+                                           </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Smoke <font color="red">*</font></td><td><select name="smoke" id="smoke" style="width: 223px;">
+                                        <td>Smoke</td><td><select name="smoke" id="smoke" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                                 <option>occasionally</option>
                                                 </select>
-                                            <div id="smokeError" class="red" colspan="2"/></td>
+                                           </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Drink <font color="red">*</font></td><td>
@@ -71,10 +71,10 @@
                                                 <option>No</option>
                                                 <option>occasionally</option>
                                         </select>
-                                            <div id="drinkError" class="red" colspan="2"/></td>
+                                           </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Complexion <font color="red">*</font></td>
+                                        <td>Complexion</td>
                                         <td><select name="complexion" id="complexion" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Very Fair</option>
@@ -83,10 +83,10 @@
                                                 <option>Fair</option>
                                             </select>
 
-                                            <div id="complexionError" class="red" colspan="2"/></td>
+                                            </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td> Health <font color="red">*</font></td>
+                                        <td> Health</td>
                                         <td><select name="bodytype" id="bodytype" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Fat</option>
@@ -96,10 +96,10 @@
                                                 <option>Athlete</option>
                                                 <option>Average</option>
                                             </select>
-                                            <div id="bd_typeError" class="red" colspan="2"/></td>
+                                           </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Blood Group <font color="red">*</font></td><td><select name="bloodgroup" id="bloodgroup" style="width: 223px;">
+                                        <td>Blood Group </td><td><select name="bloodgroup" id="bloodgroup" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>A+</option>
                                                 <option>A-</option>
@@ -109,16 +109,16 @@
                                                 <option>AB+</option>
                                                 <option>AB-</option>
                                             </select>
-                                            <div id="bld_groupError" class="red" colspan="2"/></td>
+                                           </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Weight (in Kg)<font color="red">*</font></td><td><input type="text" name="weight" id="weight" size="30" maxlength="3" onkeypress="return isNumberKey(event)">
-                                            <div id="weightError" class="red" colspan="2"/></td>
+                                        <td>Weight (in Kg)</td><td><input type="text" name="weight" id="weight" size="30" maxlength="3" onkeypress="return isNumberKey(event)">
+                                           </td>
                                     </tr> 
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>
+                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a href="Hobbies"><font color="green"><b>SKIP</font></a></td>
                                         <td align="right">
 
                                             <input type="submit" class="savebtn" name="save_lifestyle" id="submit" value="Save & Continue" >

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="astro")
 public class Astro {
@@ -20,16 +22,31 @@ public class Astro {
 	private int id;
 	
 	@Column
+	@NotEmpty
 	private String country;
 	
 	@Column
+	@NotEmpty
 	private String city;
 	
 	@Column
+	@NotEmpty
 	private String zodiac;
 	
+
 	@Column(name="email")
 	private String userMail;
+	
+	@Column  
+	@NotEmpty
+	private String state;
+	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	
 	public int getId() {
 		return id;

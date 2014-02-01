@@ -32,7 +32,7 @@ body{
 }
 #mainInterestAreas{
     
-    background-color: yellow;
+    background-color: white;
     width: 1400px;
     height: fit-content;
     margin: 10px 50px 10px 50px;
@@ -339,10 +339,9 @@ float: left;
 #middleStep4{
     margin-top: 5px;
     border-radius: 3px;
-    
     width: 780px;
     height: 645px;
-    background-color: bisque;
+    background-color: white;
     border: 1px solid gray; 
     
 }
@@ -462,9 +461,8 @@ margin:5px auto auto 5px;
     margin-top: -1002px;
     width: 300px;
     height: 1000px;
-    background-color: bisque;
     float: right;
-    border: 1px solid aqua; 
+    border: 1px solid gray; 
 }
 #InterestAreas{
     border-radius: 3px;
@@ -757,4 +755,14 @@ height: 30px
   display: none;
   
 }
-
+.error {
+	color: #ff0000;
+}
+ 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}

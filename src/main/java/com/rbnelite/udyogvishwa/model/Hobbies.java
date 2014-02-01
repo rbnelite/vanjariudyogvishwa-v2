@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "hobbies")
 public class Hobbies {
@@ -18,8 +20,9 @@ public class Hobbies {
 	@SequenceGenerator(name = "history_sequence_id", sequenceName = "lifestyle_sequence", allocationSize = 1)
 	private int id;
 
-	@Column
-	private String hobbies;
+	@Column(name="hobbies")
+	@NotEmpty
+	private String hobbiesName;
 
 	@Column(name = "favourite_music")
 	private String favouriteMusic;
@@ -56,14 +59,15 @@ public class Hobbies {
 		this.id = id;
 	}
 
-	public String getHobbies() {
-		return hobbies;
+	public String getHobbiesName() {
+		return hobbiesName;
 	}
 
-	public void setHobbies(String hobbies) {
-		this.hobbies = hobbies;
+	public void setHobbiesName(String hobbiesName) {
+		this.hobbiesName = hobbiesName;
 	}
 
+	
 	public String getFavouriteMusic() {
 		return favouriteMusic;
 	}

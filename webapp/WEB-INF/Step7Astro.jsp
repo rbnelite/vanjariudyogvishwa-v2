@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +30,9 @@
        <div id="leftMainStep3"></div>
        <div id="middleStep4">
        <h2>Step-7</h2>
-    <form action="/vanjariudyogvishwa-v2/Astro" method="post">
-                        <table align="center">
-                                    <tr><td colspan="2"><br></tr>
+    <form:form action="/vanjariudyogvishwa-v2/Astro" method="post" commandName="astro">
+                        <table>
+                                    <tr><td colspan="2"><br></td></tr>
                                     <tr>
                                         <td colspan="2"><font size="5">Fill Your Astro Details</font></td>
                                     </tr>
@@ -39,11 +40,11 @@
                                         <td colspan="2">This Information will help us to Create Your Profile</td>
                                     </tr>
                                     <tr><td colspan="2"><hr/></td></tr>
-                                    <tr><td><br><br></td></tr>
+                                    <tr><td><br></td></tr>
                                     <tr>
-                                    <td>Country <font color="red">*</font></td><td><select id="country" name="country" style="width: 223px;">
-                                                <option  selected value="">--Please select...</option>
-                                                <option >Afghanistan</option>
+                                    <td>Country <font color="red">*</font></td>
+                                    <td><select path="country" name="country" style="width: 223px;">
+                                               <option >Afghanistan</option>
                                                 <option>Albania</option>
                                                 <option >Algeria</option>
                                                 <option >Andorra</option>
@@ -111,7 +112,7 @@
                                                 <option >Honduras</option>
                                                 <option >Hungary</option>
                                                 <option >Iceland</option>
-                                                <option >India</option>
+                                                <option  selected>India</option>
                                                 <option >Indonesia</option>
                                                 <option >Iran</option>
                                                 <option >Iraq</option>
@@ -223,38 +224,40 @@
                                                 <option >Zambia</option>
                                                 <option >Zimbabwe</option>
                                             </select>
-                                            <div id="countryError" class="red" colspan="2"/>
-                                        </td>
+                                             </td>
+                                    </tr>
+                                     <tr><td></td></tr>
+                                    <tr>
+                                        <td>State <font color="red">*</font></td>
+                                        <td> <form:input path="state" />  <form:errors path="state" cssClass="error"/> </td>
                                     </tr>
                                     <tr><td></td></tr>
                                     <tr>
                                         <td>City <font color="red">*</font></td>
-                                        <td><input type="text" name="city" id="city"size="30" maxlength="15">
-                                            <div id="cityError" class="red" colspan="2"/>
-                                        </td>
+                                        <td> <form:input path="city" /> <form:errors path="city" cssClass="error"/></td>
                                     </tr>
                                     <tr><td></td></tr>
                                     <tr>
                                         <td>Zodiac <font color="red">*</font></td>
-                                        <td><select name="zodiac" id="zodiac" style="width: 223px;">
-                                                <option selected value="">--Please Select Zodiac</option>
-                                                <option >Aries</option>
-                                                <option>Taurus</option>
-                                                <option>Gemini</option>
-                                                <option>Cancer</option>
-                                                <option>Leo</option>
-                                                <option>Virgo</option>
-                                                <option>Libra</option>
-                                                <option>Scorpio</option>
-                                                <option>Sagittarius</option>
-                                                <option>Capricorn</option>
-                                                <option>Aquarius</option>
-                                                <option>Pisces</option>
-                                            </select>
-                                            <div id="zodiacError" class="red" colspan="2"/>
+                                        <td><form:select path="zodiac" id="zodiac" style="width: 223px;">
+                                                <form:option value="" label="--Please Select"/>
+                                                <form:option value="Aries"/>
+                                                <form:option value="Taurus"/>
+                                                <form:option value="Gemini"/>
+                                                <form:option value="Cancer"/>
+                                                <form:option value="Leo"/>
+                                                <form:option value="Virgo"/>
+                                                <form:option value="Libra"/>
+                                                <form:option value="Scorpio"/>
+                                                <form:option value="Sagittarius"/>
+                                                <form:option value="Capricorn"/>
+                                                <form:option value="Aquarius"/>
+                                                <form:option value="Pisces"/>
+                                            </form:select>
+                                            <form:errors path="zodiac" cssClass="error"/>                                            
                                         </td>
                                     </tr>
-                                    <tr>
+                               
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
@@ -263,7 +266,7 @@
                                         </td>
                                     </tr>
                                 </table>
-           </form>
+           </form:form>
                     </div>
             
             

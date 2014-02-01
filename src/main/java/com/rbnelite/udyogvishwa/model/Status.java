@@ -32,6 +32,9 @@ public class Status {
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name = "status_id")
 	private List<Comment> comments;
+	
+	@Column(name = "email")
+	private String usermail;
 
 	public int getId() {
 		return id;
@@ -63,6 +66,14 @@ public class Status {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public String getUsermail() {
+		return usermail;
+	}
+
+	public void setUsermail(String usermail) {
+		this.usermail = usermail;
 	}
 
 }

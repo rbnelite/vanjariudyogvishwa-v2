@@ -21,9 +21,9 @@ public class CommentServiceImpl implements CommentService {
 	public void saveComment(CommentCredential commentcredential) {
 		Comment comment=new Comment();
 		comment.setComment(commentcredential.getCommenttext());
-		comment.setWhoseComment("XXX");
+		comment.setWhoseComment(commentcredential.getWhoseComment());
 		comment.setStatusId(Integer.parseInt(commentcredential.getStatusIdForComment()));
-		comment.setCommentOn("xxx");
+		comment.setCommentOn(commentcredential.getCommentOn());
 		commentdao.saveComment(comment);
 
 	}

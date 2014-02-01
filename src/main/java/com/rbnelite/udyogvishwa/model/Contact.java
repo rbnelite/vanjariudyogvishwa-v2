@@ -28,7 +28,23 @@ public class Contact {
 	@Column
 	private String telephone;
 	
+	@Column(name="email")
+	private String userMail;
 	
+	
+	
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getUserMail() {
+		return userMail;
+	}
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
 	public int getId() {
 		return id;
 	}
@@ -47,11 +63,6 @@ public class Contact {
 	public void setOfficeAddress(String officeAddress) {
 		this.officeAddress = officeAddress;
 	}
-	public String getTelephoneNo() {
-		return telephone;
-	}
-	public void setTelephoneNo(String telephoneNo) {
-		this.telephone = telephoneNo;
-	}
+	
 
 }

@@ -351,14 +351,14 @@ input[type=text]{
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
-						<h3>Hobbies Details</h3>
+						<h3>Hobbies </h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
 									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
 										<tr>
 											<td style="width: 200px;"><b>Hobbies :</b></td>
-											<td>${hobbiesDetails.hobbies}</td>
+											<td>${hobbiesDetails.hobbiesName}</td>
 										</tr>
 										<tr>
 											<td><b>Favourite Music :</b></td>
@@ -407,7 +407,7 @@ input[type=text]{
 					<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
 					
-					<h3>Edit Hobbies Details</h3>
+					<h3>Edit Hobbies </h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
@@ -415,7 +415,7 @@ input[type=text]{
 										<tr>
 											<td style="width: 200px;"><b>Hobbies :</b></td>
 											<td><input type="text"
-													value="${editHobbiesDetails.hobbies}"></td>
+													value="${editHobbiesDetails.hobbiesName}"></td>
 										</tr>
 										<tr>
 											<td><b>Favourite Music :</b></td>

@@ -30,7 +30,7 @@ public class IndexController {
 	{
 		indexservice.saveRegistration(indexcredential);
 		map.put("CurrentEmailId", emailId);
-		
+
 		return "Step3Occupation";
 	}
 	

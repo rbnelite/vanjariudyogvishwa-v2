@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -257,6 +258,7 @@
 																<option>2006</option>
 																<option>2007</option>
 
+
 														</select></td>
 													</tr>
 
@@ -272,6 +274,7 @@
 															color="red">*</font></td>
 														<td><input type="radio" name="gender" value="male">
 																<span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
+
 																<input type="radio" name="gender" value="female">
 																	<span class="style46">Female</span>
 																	<div id="genderError" class="red" colspan="2" /></td>
