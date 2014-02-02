@@ -605,7 +605,7 @@ body {
 
 #Photos {
 	border-radius: 3px;
-	border: 1px solid gray;
+	
 	background-color: bisque;
 	
 	width: 460px;
@@ -623,11 +623,11 @@ body {
 	height: 300px;
 	overflow: hidden;
 }
-#Photos:hover {
-	/* border-radius: 3px; */
+/* #Photos:hover {
+	border-radius: 3px;
 	border: 1px solid black;
 	
-}
+} */
 
 #RightUpdatedStatus {
 	border-radius: 3px;
@@ -640,7 +640,7 @@ body {
 
 #RightUpdatedStatusProfile {
 	border-radius: 3px;
-	border: 1px solid gray;
+	
 	background-color: bisque;
 	margin-top: 2px;
 	width: 460px;

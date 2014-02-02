@@ -26,9 +26,10 @@
 <title>Profile2 Page</title>
 <style type="text/css">
 h3 {
-	/* background-color: #fab039; */
-	background-color:#00FF00;
+	 background-color: transparent; 
+	/* background-color:#00FF00; */
 	margin-top: 0px;
+	
 }
 
 input[type=text]{
@@ -806,7 +807,7 @@ input[type=text]{
 			<div id="RightProfile">
 				<div id="outside_Photos">
 					<div id="Photos">
-						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 70px; height: 60px;"> Photos </h3>
+						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 30px; height: 30px;"> Photos </h3>
 						
 							
 

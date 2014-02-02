@@ -42,7 +42,7 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 	@Transactional
 	public List<Index> LoginAuthintication(String emailId, String pwd) {
 		
-		System.out.println("@@@@@@@"+"From IndxDaoImpl");
+		
 		return sessionFactory.getCurrentSession().createQuery("FROM Index where emailId='"+emailId+"' and password='"+pwd+"' ").list();
 	}
 

@@ -253,14 +253,16 @@
 
 								<div class="statusUserName"
 									style="float: left; margin-left: 10px;">
-									<font color="green">Anil Budge</font>
+									
 								</div>
 								<br>
 								<div class="StatusContent">
 									<table width=100%>
+									<tr><td><font color="green">${status11.usermail}</font></td></tr>
 										<tr>
 											<td align="left">${status11.status}</td>
 										</tr>
+										<tr><td><font color="blue" size="2">${status11.statusDate}</font></td></tr>
 									</table>
 
 									<br>
@@ -279,9 +281,10 @@
 												<div>
 													<table width=90%>
 														<tr>
-															<td align="left"><font color="green">Vishal
-																	Pansare</font> <br>${myComment.comment}</td>
+															<td align="left"><font color="green">${myComment.whoseComment}
+																	</font> <br>${myComment.comment}</td>
 														</tr>
+														<tr><td><font color="blue" size="0.5"></font></td></tr>
 													</table>
 												</div>
 											</div>

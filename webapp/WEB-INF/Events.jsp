@@ -48,7 +48,7 @@
                 <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
                 <c:forEach items="${eventstList}" var="myEvents">
                 <tr>
-                <td align="left">Anil Budge created an event :${myEvents.name}</td>
+                <td align="left">${myEvents.usermail} created an event :${myEvents.name}</td>
                 </tr>
                   </c:forEach>
                 </table>
