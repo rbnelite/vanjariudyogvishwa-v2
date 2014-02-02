@@ -20,7 +20,7 @@ public class HobbiesServiceImpl implements HobbiesService {
 	@Override
 	public void saveHobbies(HobbiesCredential hobbiescredential) {
 		Hobbies hobby = new Hobbies();
-		hobby.setHobbies(hobbiescredential.getHobbies());
+		hobby.setHobbiesName(hobbiescredential.getHobbiesName());
 		hobby.setFavouriteMusic(hobbiescredential.getFavouriteMusic());
 		hobby.setFavouriteBooks(hobbiescredential.getFavouriteBooks());
 		hobby.setDressStyletyle(hobbiescredential.getDressStyletyle());

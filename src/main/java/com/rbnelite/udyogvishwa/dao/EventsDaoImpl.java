@@ -12,11 +12,6 @@ import com.rbnelite.udyogvishwa.model.Event;
 @Repository
 public class EventsDaoImpl extends BaseDao<Event> implements EventsDao{
 	
-	
-	
-	/*@Autowired
-    private SessionFactory sessionFactory;*/
-	
 	public EventsDaoImpl(){
 	 
 	   super(Event.class);

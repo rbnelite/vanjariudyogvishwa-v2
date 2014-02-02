@@ -31,4 +31,13 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 
 	}
 
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List searchUserList(String SearchData) {
+		
+		
+		
+		return sessionFactory.getCurrentSession().createQuery("from Index where firstName like concat('%','"+SearchData+"','%')").list();
+	}
+
 }

@@ -8,5 +8,7 @@ public interface StatusDao {
 	
 	public void statusUpdate(Status status);
 	public List<Status> listStatus();
+	
+	
 
 }

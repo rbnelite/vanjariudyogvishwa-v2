@@ -29,10 +29,10 @@ public class AstroController {
 		}
 		else
 		{
-		astroservice.saveAstro(astrocredential);
-		map.put("CurrentEmailId", emailId);
-		return "Step8EducationWork";
-	}
+			astroservice.saveAstro(astrocredential);
+			map.put("CurrentEmailId", emailId);
+			return "Step8EducationWork";
+		}
 	}
 
 	@RequestMapping(value = "/Astro")

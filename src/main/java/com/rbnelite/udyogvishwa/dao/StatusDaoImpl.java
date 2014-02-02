@@ -14,7 +14,6 @@ import com.rbnelite.udyogvishwa.model.Status;
 @Repository
 public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 
-	
 	@Autowired
     private SessionFactory sessionFactory;
 	
@@ -32,10 +31,10 @@ public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 		session.getTransaction().commit();
 		session.flush();
 	}
+	
 	@Override
 	public List<Status> listStatus() {
-		
 		return sessionFactory.getCurrentSession().createQuery("from Status").list();
 	}
-
+	
 }

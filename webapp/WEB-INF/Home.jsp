@@ -22,7 +22,10 @@
     <center>
         <div id="main">
             <div id="Header">
-                <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
+                <form action="/vanjariudyogvishwa-v2/SearchResult">
+                <input  id="input_search" type="text" name="SearchData" placeholder="Search"/>
+                <input type="submit" value="search">
+                </form>
                 <label style="margin-left: 410px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">
