@@ -11,4 +11,7 @@ public interface EducationWorkService {
 
 	public List<EducationWork> listEducationWork(String userMail);
 
+	public void updateEducation(EducationWork educationWork);
+	
+	public EducationWork getByEmailId(String userMail);
 }

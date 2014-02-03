@@ -57,12 +57,12 @@ public class ProfileController {
 		HttpSession session = request.getSession(true);
 		userMail=(String) session.getAttribute("CurrentEmailId");
 		
-		System.out.println(" From Profile controller Value of userMail in/from session% % % % % % % % % % % %"+userMail);
+		System.out.println("from profile Controller() get method.");
 
 		if (!map.containsKey("EditOtherDetails")) {
 			map.put("otherDetails", new OtherDetails());
 			map.put("otherDetailsList", otherDetailsServ.listOtherDetails(userMail));
-			System.out.println("&&&&&-2" + map.size());
+			
 		}
 		if (!map.containsKey("EditEducationDetails")) {
 			map.put("educationWORK", new EducationWork());
@@ -153,7 +153,7 @@ public class ProfileController {
 	public String homeReqProfile(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
 
 		map.put("CurrentEmailId", emailId);
-		System.out.println("homeReqProfile with email ID" +emailId);
+		
 		
 		ProfileOperation(request,response, map,emailId);
 		return "Profile";

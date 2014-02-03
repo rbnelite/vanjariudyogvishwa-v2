@@ -208,7 +208,7 @@ input[type=text]{
 								</form>
 							</c:if>
 							<c:if test="${!empty EditEducationDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
+							<form action="/vanjariudyogvishwa-v2/EditEducation">
 								<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
 							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
@@ -221,37 +221,67 @@ input[type=text]{
 									<c:forEach items="${EditEducationDetailsList}" var="EditEducationDetails">
 										<tr>
 											<td style="width: 200px;"><b>Name of School :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="school"
 													value="${EditEducationDetails.school}"></td>
 										</tr>
 										<tr>
 											<td><b>Name of College :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="collage"
 													value="${EditEducationDetails.collage}"></td>
 										</tr>
 										<tr>
 											<td><b>Graduation Degree :</b></td>
-											<td><input type="text"
-													value="${EditEducationDetails.graduation}"></td>
+											<td>
+											<select style="width: 400px; height: auto;">
+												<option selected="selected">${EditEducationDetails.graduation}</option>
+                                                <option>BA</option>
+                                                <option>BBA</option>
+                                                <option>B.B.M.</option>
+                                                <option>BCA</option>
+                                                <option>B.Com</option>
+                                                <option>B.D.S</option>
+                                                <option>B.Sc</option>
+                                                <option>B.Sc.HS</option>
+                                                <option>B.E</option>
+                                                <option>B.Tech</option>
+                                                <option>B.Ed.</option>
+                                                <option>BHMCT</option>
+                                                <option>B.Pharm</option>
+                                                <option>D.T.L</option>
+                                                <option>Diploma in Journalism</option>
+                                                <option>Diploma in Philosophy</option>
+                                                <option>Diploma in Social Work</option>
+                                                <option>DM</option>
+                                                <option>D.Ed</option>
+                                                <option>GNM</option>
+                                                <option>LLB</option>
+                                                <option>LLM</option>
+                                            </select>
+													
+													
+													
+													
+													
+													</td>
 										</tr>
 										<tr>
 											<td><b>Specialization :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="otherGraduation"
 													value="${EditEducationDetails.otherGraduation}"></td>
 										</tr>
 										<tr>
 											<td><b>PG College Name :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="PGCollege"
 													value="${EditEducationDetails.PGCollege}"></td>
 										</tr>
 										<tr>
 											<td><b>PG Degree:</b></td>
-											<td><input type="text"
+											<td><input type="text" name="PGDegree"
 													value="${EditEducationDetails.PGDegree}"></td>
 										</tr>
 										<tr>
 											<td><b>Specialization :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="otherPG"
 													value="${EditEducationDetails.otherPG}"></td>
 										</tr>
 										<tr>

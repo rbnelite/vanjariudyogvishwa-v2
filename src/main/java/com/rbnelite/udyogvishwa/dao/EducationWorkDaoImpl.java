@@ -18,6 +18,15 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	}
 	
 	@Override
+	@Transactional
+	public EducationWork getByEmailId(String userMail)
+	 {
+		System.out.println("From getByEmailID() in EducationWorkDaoImpl.java");
+	  return (EducationWork) sessionFactory.getCurrentSession().createQuery("from EducationWork where userMail='"+userMail+"' ").uniqueResult();
+		
+	 }
+	
+	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void insertEducationWork(EducationWork educationWork){
 		
@@ -35,6 +44,14 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	public List<EducationWork> listEducationWork(String userMail) {
 		String email=userMail;
 		return sessionFactory.getCurrentSession().createQuery("from EducationWork where userMail='"+email+"' ").list();
+	}
+
+	@Override
+	@Transactional
+	public void updateEducation(EducationWork educationWork) {
+		
+		sessionFactory.getCurrentSession().update(educationWork);
+		
 	}
 
 }
