@@ -10,5 +10,7 @@ public interface HobbiesService {
 	public void saveHobbies(HobbiesCredential hobbiescredential);
 
 	public List<Hobbies> listHobbies(String userMail);
+	public Hobbies getHobbiesByEmailId(String userMail);
+	public void UpdateHobbies(Hobbies hobbies);
 
 }

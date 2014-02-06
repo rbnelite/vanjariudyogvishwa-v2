@@ -8,7 +8,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,6 +36,12 @@ input[type=text]{
 	width: 400px;
 	height: auto;
 	font-size: large;
+
+}
+
+#IntrestAreaImages{
+	width: 100px;
+	height: 50px;
 
 }
 </style>
@@ -67,7 +73,7 @@ input[type=text]{
 				</a> <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font
 					color="white">Requests</font> </a> <a id="anchor" href="#"
 					onclick="return DisplaySettingBlock()"><font color="white">Setting</font>
-				</a> <a id="anchor" href="Index"><font color="white">LogOut</font> </a>
+				</a> <a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
 
@@ -128,29 +134,238 @@ input[type=text]{
 				</a> <br> <a href="AccountSetting">More Settings...</a>
 			</div>
 			<div style="height: 300px; width: 1400px;">
+				<div id="OutsideInterestAreas">
 				<div id="InterestAreas">
-					<h3>Interest Areas</h3>
+					<c:if test="${!empty intrestAreasList}">
+					<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
+						<input id="EditProfileDetails" type="submit" value=""
+									name="editIntrestAreasReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3>IntrestAreas Details</h3>
+								
+									<c:forEach items="${intrestAreasList}" var="intrestAreasDetails">
+									
+											<c:set var="tempStr" value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
+											
+											<c:forEach items="${tempStr}" var="intrestAreaNumber">
+							
+							<c:if test="${intrestAreaNumber=='1'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png" title="Sports" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Sports</h4> </div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='2'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png" title="Drawing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drawing</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='3'}">
+								<div style="width: 120px; float: left;"><img src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png" title="PhotoGraphy" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">PhotoGraphy</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='4'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png" title="Travelling"><h4 style="margin-top:-5px">Travelling</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='5'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/5-musics.png" title="Music" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Music</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='6'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/6-READING.png" title="Reading" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Reading</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='7'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png" title="Browsing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Browsing</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='8'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png" title="Bike Riding" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Bike Riding</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='9'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png" title="Car Riding"style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Car Riding</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='10'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Tracking</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='11'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png" title="Watching Movies" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Movies</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='12'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg" title="Social Work" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Social Work</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='13'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png" title="Politics" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Politics</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='14'}">
+								<div style="width: 140px; float: left;"><img src="${pageContext.request.contextPath}/resources/icons/14-parties.png" title="Friends/Parties/dating" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Friends/Parties/dating</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='15'}">
+							<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"  title="Shopping" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Shopping</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='16'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/16-business.png"  title="Business" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Business</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='17'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/17-drama.png" title="Drama" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drama</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='18'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png" title="Circus" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Circus</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='19'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png" title="Dance Show" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Dance Show</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='20'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png" title="Cultural Activities" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Cultural Activities</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='21'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png" title="Speech" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Speech</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='22'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/22-gym.png" title="Gym/Health Club" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Gym/Health Club</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='23'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/23-teaching.png" title="Teaching" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Teaching</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='24'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png" title="Spirituality" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Spirituality</h4></div>
+							</c:if>
+							
+						</c:forEach>
+											
+									
+								</c:forEach>
+								
+								
+								
+						</form>
+					</c:if>
+					<c:if test="${!empty editIntrestAreasDetailsList}">
+					
+						<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
+						
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3>Edit IntrestAreas Details</h3>
+						<c:forEach items="${editIntrestAreasDetailsList}" var="editIntrestAreasDetails">
+						
+						<c:set var="tempStr" value="${fn: split(editIntrestAreasDetails.interestId,',')}"></c:set>
+							
+						
+						
+						<c:forEach items="${tempStr}" var="intrestAreaNumber">
+							
+							<c:if test="${intrestAreaNumber=='1'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png" title="Sports" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Sports</h4> </div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='2'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png" title="Drawing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drawing</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='3'}">
+								<div style="width: 120px; float: left;"><img src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png" title="PhotoGraphy" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">PhotoGraphy</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='4'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png" title="Travelling"><h4 style="margin-top:-5px">Travelling</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='5'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/5-musics.png" title="Music" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Music</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='6'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/6-READING.png" title="Reading" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Reading</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='7'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png" title="Browsing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Browsing</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='8'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png" title="Bike Riding" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Bike Riding</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='9'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png" title="Car Riding"style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Car Riding</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='10'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Tracking</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='11'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png" title="Watching Movies" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Movies</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='12'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg" title="Social Work" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Social Work</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='13'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png" title="Politics" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Politics</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='14'}">
+								<div style="width: 140px; float: left;"><img src="${pageContext.request.contextPath}/resources/icons/14-parties.png" title="Friends/Parties/dating" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Friends/Parties/dating</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='15'}">
+							<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"  title="Shopping" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Shopping</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='16'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/16-business.png"  title="Business" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Business</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='17'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/17-drama.png" title="Drama" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drama</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='18'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png" title="Circus" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Circus</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='19'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png" title="Dance Show" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Dance Show</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='20'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png" title="Cultural Activities" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Cultural Activities</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='21'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png" title="Speech" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Speech</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='22'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/22-gym.png" title="Gym/Health Club" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Gym/Health Club</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='23'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/23-teaching.png" title="Teaching" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Teaching</h4></div>
+							</c:if>
+							<c:if test="${intrestAreaNumber=='24'}">
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png" title="Spirituality" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Spirituality</h4></div>
+							</c:if>
+							
+						</c:forEach>
+							
+							
+							
+						</c:forEach>
+								
+								
+								
+						</form>
+					</c:if>
+					
+					
 				</div>
+				</div>
+				
+				
+				<div id="OutsideProfileProducts">
 				<div id="ProfileProducts">
 
-					<h3><img src="${pageContext.request.contextPath}/resources/images/new-product.jpg"
-								style="width: 70px; height: 60px;">Products</h3>
+					<h3>Products</h3>
 								
 
 					<c:if test="${!empty ProductList}">
 						<c:forEach items="${ProductList}" var="productNAME">
-							<img
-								src="${pageContext.request.contextPath}/resources/images/product1.png"
-								style="float: left; width: 70px; height: 60px;">
-							<a><font color="Purple"><b>
-										${productNAME.productName}:</b></font></a>
-
+							
+							
+							<div>
+								<table>
+									<tr>
+										<td>
+											<img src="${pageContext.request.contextPath}/resources/images/product1.png" title="${productNAME.productName}" style="width: 70px; height: 60px;">
+										</td>
+										<td>
+											<h4 style="margin-top:-5px">${productNAME.productName}</h4>
+										</td>
+									</tr>
+								</table>
+							</div>
 
 						</c:forEach>
 
 					</c:if>
 
 
+				</div>
 				</div>
 				<div id="Friends">
 					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
@@ -208,8 +423,8 @@ input[type=text]{
 								</form>
 							</c:if>
 							<c:if test="${!empty EditEducationDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/EditEducation">
-								<input type="hidden" name="usermail"
+							<form action="/vanjariudyogvishwa-v2/EditEducation" method="post">
+								<input type="hidden" name="userMail"
 								value="${CurrentEmailId}">
 							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
 								style="float:left; width: 70px; height: 60px;">Edit Education Details</h3>
@@ -232,7 +447,7 @@ input[type=text]{
 										<tr>
 											<td><b>Graduation Degree :</b></td>
 											<td>
-											<select style="width: 400px; height: auto;">
+											<select name="graduation" style="width: 400px; height: auto;">
 												<option selected="selected">${EditEducationDetails.graduation}</option>
                                                 <option>BA</option>
                                                 <option>BBA</option>
@@ -433,7 +648,7 @@ input[type=text]{
 							</c:if>
 							
 							<c:if test="${!empty editHobbiesList}">
-					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
+					<form action="/vanjariudyogvishwa-v2/editHobbies" method="post">
 					
 					<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
@@ -445,50 +660,50 @@ input[type=text]{
 									<c:forEach items="${editHobbiesList}" var="editHobbiesDetails">
 										<tr>
 											<td style="width: 200px;"><b>Hobbies :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="hobbiesName"
 													value="${editHobbiesDetails.hobbiesName}"></td>
 										</tr>
 										<tr>
 											<td><b>Favourite Music :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="favouriteMusic"
 													value="${editHobbiesDetails.favouriteMusic}"></td>
 										</tr>
 										<tr>
 											<td><b>Favourite Book :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="favouriteBooks"
 													value="${editHobbiesDetails.favouriteBooks}"></td>
 										</tr>
 									<%-- 	<tr>
 								<td><b>Dress Style :</b>
 								</td>
-								<td><input type="text" value="${editHobbiesDetails.DressStyletyle}">
+								<td><input type="text" name="DressStyletyle" value="${editHobbiesDetails.DressStyletyle}">
 								</td>
 							</tr> --%>
 										<tr>
 											<td><b>Favourite TV show :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="favouritrTvShows"
 													value="${editHobbiesDetails.favouritrTvShows}"></td>
 										</tr>
 										<%-- <tr>
 								<td><b>Favourite Movie :</b>
 								</td>
-								<td><input type="text"
+								<td><input type="text" name="FavouriteMovies"
 													value="${editHobbiesDetails.FavouriteMovies}"></td>
 							</tr> --%>
 										<tr>
 											<td><b>Favourite Sport :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="sports"
 													value="${editHobbiesDetails.sports}"></td>
 										</tr>
 										<tr>
 											<td><b>Food I Cook :</b></td>
-											<td><input type="text"
+											<td><input type="text" name="foodIcook"
 													value="${editHobbiesDetails.foodIcook}"></td>
 										</tr>
 										<%-- <tr>
 								<td><b>Vacation Destination :</b>
 								</td>
-								<td><input type="text"
+								<td><input type="text" name="VacationDestination"
 													value="${editHobbiesDetails.VacationDestination}">
 								</td>
 							</tr> --%>
@@ -552,27 +767,33 @@ input[type=text]{
 						</c:if>
 
 						<c:if test="${!empty editAstroList}">
-					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
-					<input type="hidden" name="usermail"
+					<form action="/vanjariudyogvishwa-v2/editAstro" method="post">
+					<input type="hidden" name="userMail"
 								value="${CurrentEmailId}">
 					<h3>Edit Astro Details</h3>
 					<table>
 								<c:forEach items="${editAstroList}" var="editAstroDetails">
 									<tr>
 										<td><b>Country :</b></td>
-										<td><input type="text"
+										<td><input type="text" name="country"
 													value="${editAstroDetails.country}"></td>
 									</tr>
 									<tr>
 										<td><b>City :</b></td>
-										<td><input type="text"
+										<td><input type="text" name="city"
 													value="${editAstroDetails.city}"></td>
 									</tr>
 									<tr>
+										<td><b>State :</b></td>
+										<td><input type="text" name="state"
+													value="${editAstroDetails.state}"></td>
+									</tr>
+									<tr>
 										<td><b>Zodiac :</b></td>
-										<td><input type="text"
+										<td><input type="text" name="zodiac"
 													value="${editAstroDetails.zodiac}"></td>
 									</tr>
+									
 									<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editAstroBtn" style="float: right;"></td>
@@ -673,7 +894,7 @@ input[type=text]{
 						</c:if>
 						
 						<c:if test="${!empty editLifeStyleList}">
-							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
+							<form action="/vanjariudyogvishwa-v2/editLifeStyle" method="post">
 								<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
 								<h3>Edit Lifestyle and Attributes Details</h3>
@@ -683,32 +904,32 @@ input[type=text]{
 								<c:forEach items="${editLifeStyleList}" var="editLifeStyleDetails">
 									<tr>
 										<td><b>Diet :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.diet}"></td>
+										<td><input type="text" name="diet" value="${editLifeStyleDetails.diet}"></td>
 									</tr>
 									<tr>
 										<td><b>Smoke :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.smoke}"></td>
+										<td><input type="text" name="smoke" value="${editLifeStyleDetails.smoke}"></td>
 									</tr>
 									<tr>
 										<td><b>Drink :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.drink}"></td>
+										<td><input type="text" name="drink" value="${editLifeStyleDetails.drink}"></td>
 									</tr>
 									<tr>
 										<td><b>Complexion :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.complexion}"></td>
+										<td><input type="text" name="complexion" value="${editLifeStyleDetails.complexion}"></td>
 									</tr>
 									<tr>
 										<td><b>Body Type :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.bodytype}"></td>
+										<td><input type="text" name="bodytype" value="${editLifeStyleDetails.bodytype}"></td>
 									</tr>
 
 									<tr>
 										<td><b>Blood Group :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.bloodgroup}"></td>
+										<td><input type="text" name="bloodgroup" value="${editLifeStyleDetails.bloodgroup}"></td>
 									</tr>
 									<tr>
 										<td><b>Weight :</b></td>
-										<td><input type="text" value="${editLifeStyleDetails.weight}"></td>
+										<td><input type="text" name="weight" value="${editLifeStyleDetails.weight}"></td>
 									</tr>
 									
 									
@@ -777,7 +998,7 @@ input[type=text]{
 						</c:if>
 
 						<c:if test="${!empty EditOtherDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
+							<form action="/vanjariudyogvishwa-v2/editOther" method="post">
 
 								<input type="hidden" name="usermail"
 								value="${CurrentEmailId}">
@@ -789,26 +1010,26 @@ input[type=text]{
 											var="EditOtherDetails">
 											<tr>
 												<td style="width: 200px"><b>Social Status :</b></td>
-												<td style="width: 590px;"><input type="text"
+												<td style="width: 590px;"><input type="text" name="socialStatus"
 													value="${EditOtherDetails.socialStatus}"></td>
 											</tr>
 											<tr>
 												<td><b>Polytical Status :</b></td>
-												<td><input type="text" value="${EditOtherDetails.polyticalstatus}"></td>
+												<td><input type="text" name="polyticalstatus" value="${EditOtherDetails.polyticalstatus}"></td>
 											</tr>
 											<tr>
 												<td><b>Social Activities :</b></td>
-												<td><input type="text"
+												<td><input type="text" name="socialact"
 													value="${EditOtherDetails.socialact}"></td>
 											</tr>
 											<tr>
 												<td><b>Polytical Activities :</b></td>
-												<td><input type="text"
+												<td><input type="text" name="polyticalact"
 													value="${EditOtherDetails.polyticalact}"></td>
 											</tr>
 											<tr>
 												<td><b>Cultural activities :</b></td>
-												<td><input type="text"
+												<td><input type="text" name="culturalact"
 													value="${EditOtherDetails.culturalact}"></td>
 											</tr>
 

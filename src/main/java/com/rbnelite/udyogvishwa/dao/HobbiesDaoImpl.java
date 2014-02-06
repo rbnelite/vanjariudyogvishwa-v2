@@ -5,6 +5,7 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -31,10 +32,40 @@ public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 	}
 
 	@Override
+	@Transactional
 	public List<Hobbies> listHobbies(String userMail) {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Hobbies where usermail='"+userMail+"'")
                 .list();
+	}
+	
+	@Override
+	@Transactional
+	public Hobbies getHobbiesByEmailId(String userMail) {
+		
+		return (Hobbies) sessionFactory.getCurrentSession().createQuery("from Hobbies where usermail='"+userMail+"'").uniqueResult();
+	}
+	
+	@Override
+	@Transactional
+	public void UpdateHobbies(Hobbies hobbies) {
+		
+		Hobbies hobbiesToUpdate=getHobbiesByEmailId(hobbies.getUsermail());
+		
+		System.out.println("1"+hobbies.getDressStyletyle());
+		
+		hobbiesToUpdate.setDressStyletyle(hobbies.getDressStyletyle());
+		hobbiesToUpdate.setFavouriteBooks(hobbies.getFavouriteBooks());
+		hobbiesToUpdate.setFavouriteMovies(hobbies.getFavouriteMovies());
+		hobbiesToUpdate.setFavouriteMusic(hobbies.getFavouriteMusic());
+		hobbiesToUpdate.setFavouritrTvShows(hobbies.getFavouritrTvShows());
+		hobbiesToUpdate.setFoodIcook(hobbies.getFoodIcook());
+		hobbiesToUpdate.setHobbiesName(hobbies.getHobbiesName());
+		hobbiesToUpdate.setSports(hobbies.getSports());
+		hobbiesToUpdate.setVacationDestination(hobbies.getVacationDestination());
+		
+		sessionFactory.getCurrentSession().update(hobbiesToUpdate);
+		
 	}
 
 

@@ -8,6 +8,7 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,28 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		
 		return sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+userMail+"'")
                 .list();
+	}
+
+	@Override
+	@Transactional
+	public void updateOtherDetails(OtherDetails otherDetails) {
+		OtherDetails otherDetails2Update=getOtherDetailsByEmailId(otherDetails.getUsermail());
+		
+		otherDetails2Update.setCulturalact(otherDetails.getCulturalact());
+		otherDetails2Update.setPolyticalact(otherDetails.getPolyticalact());
+		otherDetails2Update.setPolyticalstatus(otherDetails.getPolyticalstatus());
+		otherDetails2Update.setSocialact(otherDetails.getSocialact());
+		otherDetails2Update.setSocialStatus(otherDetails.getSocialStatus());
+		
+		sessionFactory.getCurrentSession().update(otherDetails2Update);
+		
+	}
+
+	@Override
+	@Transactional
+	public OtherDetails getOtherDetailsByEmailId(String userMail) {
+	
+		return (OtherDetails) sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+userMail+"' ").uniqueResult();
 	}
 
 

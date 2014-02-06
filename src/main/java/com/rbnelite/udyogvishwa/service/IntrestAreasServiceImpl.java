@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -21,10 +23,31 @@ public class IntrestAreasServiceImpl implements IntrestAreasService {
 		IntrestAreas intrestareas=new IntrestAreas();
 		intrestareas.setIntrestAreaId(intrestareascredential.getIntrestAreaId());
 		intrestareas.setUserMail(intrestareascredential.getUserMail());
+		intrestareas.setInterestId(intrestareascredential.getInterestId());
 		
 		
 		
 		intresareasdao.insertIntrestAreas(intrestareas);
+	}
+
+	@Override
+	public List<IntrestAreas> listIntrestAreas(String userMail) {
+		
+		return intresareasdao.listIntrestAreas(userMail);
+	}
+
+	@Override
+	public IntrestAreas getIntrestAreasByEmailId(String userMail) {
+		
+		return getIntrestAreasByEmailId(userMail);
+	}
+
+	@Override
+	public void UpdateIntrestAreas(IntrestAreas intrestAreas) {
+		
+		intresareasdao.UpdateIntrestAreas(intrestAreas);
+		
+		
 	}
 
 }

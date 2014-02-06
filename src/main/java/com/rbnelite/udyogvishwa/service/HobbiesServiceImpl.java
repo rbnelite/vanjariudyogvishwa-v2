@@ -24,6 +24,8 @@ public class HobbiesServiceImpl implements HobbiesService {
 		hobby.setFavouriteMusic(hobbiescredential.getFavouriteMusic());
 		hobby.setFavouriteBooks(hobbiescredential.getFavouriteBooks());
 		hobby.setDressStyletyle(hobbiescredential.getDressStyletyle());
+		System.out.println(" @@ hobbiesDAOImpl"+hobbiescredential.getDressStyletyle());
+		
 		hobby.setFavouritrTvShows(hobbiescredential.getFavouritrTvShows());
 		hobby.setFavouriteMovies(hobbiescredential.getFavouriteMovies());
 		hobby.setSports(hobbiescredential.getSports());
@@ -39,6 +41,18 @@ public class HobbiesServiceImpl implements HobbiesService {
 	public List<Hobbies> listHobbies(String userMail) {
 
 		return hobbiesdao.listHobbies(userMail);
+	}
+
+	@Override
+	public Hobbies getHobbiesByEmailId(String userMail) {
+		
+		return hobbiesdao.getHobbiesByEmailId(userMail);
+	}
+
+	@Override
+	public void UpdateHobbies(Hobbies hobbies) {
+		
+		hobbiesdao.UpdateHobbies(hobbies);
 	}
 
 }

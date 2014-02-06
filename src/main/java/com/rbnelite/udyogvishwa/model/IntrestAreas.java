@@ -21,7 +21,7 @@ public class IntrestAreas {
   	private int intrestAreaId;
 	
 	@Column(name="interest_id")
-	private int interestId;
+	private String interestId;
 	
 	@Column(name="email")
 	private String userMail;
@@ -34,11 +34,11 @@ public class IntrestAreas {
 		this.intrestAreaId = intrestAreaId;
 	}
 
-	public int getInterestId() {
+	public String getInterestId() {
 		return interestId;
 	}
 
-	public void setInterestId(int interestId) {
+	public void setInterestId(String interestId) {
 		this.interestId = interestId;
 	}
 

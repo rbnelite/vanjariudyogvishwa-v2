@@ -1,6 +1,10 @@
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -33,6 +37,16 @@ public class AstroController {
 		map.put("CurrentEmailId", emailId);
 		return "Step8EducationWork";
 	}
+	}
+	
+	
+	@RequestMapping(value="/editAstro", method=RequestMethod.POST)
+	public String editAstroDetails(HttpServletRequest request,HttpServletResponse response,@RequestParam("userMail") String emailId, @ModelAttribute Astro astro, Map<String, Object> map){
+		
+		astroservice.updateAstro(astro);
+		
+		return "Profile";
+		
 	}
 
 	@RequestMapping(value = "/Astro")

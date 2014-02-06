@@ -3,6 +3,10 @@ package com.rbnelite.udyogvishwa.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -50,9 +54,22 @@ public class IndexController {
 		
 		else
 		{
-			map.put("LoginError", "invalid userName or password !");
+			map.put("LoginError", "Invalid userName or password !");
 				return "Index";
 		}
+		
+	}
+	
+	@RequestMapping(value="/logoutUser")
+	public String logOutOperation(HttpServletRequest request,HttpServletResponse response,ModelMap map) throws ServletException {
+		
+		HttpSession session = request.getSession(true);
+		
+		session.removeAttribute("CurrentEmailId");
+		
+		map.put("LogOutMsg", "You are Loged Out Successfully !");
+		
+		return "Index";
 		
 	}
 	

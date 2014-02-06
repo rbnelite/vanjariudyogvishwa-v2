@@ -56,7 +56,7 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><font color="yellow">${LoginError}</font></td>
+								<td><marquee><font color="Red">${LoginError}</font></marquee><marquee><font color="white">${LogOutMsg}</font></marquee></td>
 							</tr>
 							<tr>
 								<td height="22">&nbsp;</td>

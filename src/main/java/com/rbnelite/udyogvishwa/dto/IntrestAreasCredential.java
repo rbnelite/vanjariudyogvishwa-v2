@@ -3,7 +3,7 @@ package com.rbnelite.udyogvishwa.dto;
 public class IntrestAreasCredential {
 
 	private int intrestAreaId;
-	private int interestId;
+	private String interestId;
 	private String userMail;
 	public int getIntrestAreaId() {
 		return intrestAreaId;
@@ -11,10 +11,10 @@ public class IntrestAreasCredential {
 	public void setIntrestAreaId(int intrestAreaId) {
 		this.intrestAreaId = intrestAreaId;
 	}
-	public int getInterestId() {
+	public String getInterestId() {
 		return interestId;
 	}
-	public void setInterestId(int interestId) {
+	public void setInterestId(String interestId) {
 		this.interestId = interestId;
 	}
 	public String getUserMail() {

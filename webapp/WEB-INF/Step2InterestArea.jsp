@@ -116,7 +116,7 @@
 
 						</tr>
 						<tr>
-							<td><input type="hidden" name="emailId" value="${CurrentEmailId}"></td>
+							<td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
 						</tr>
 						<tr>
 							<td></td>

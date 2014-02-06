@@ -40,7 +40,7 @@
                <td> <a href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a></td>
                <td> <a href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a></td>
                <td> <a href="#" onclick="return DisplaySettingBlock()" class="menuContent">Setting</a></td>
-               <td> <a href="Index" class="menuContent">LogOut</a></td>
+               <td> <a href="logoutUser" class="menuContent">LogOut</a></td>
                </tr>
                </table>
             </div>
@@ -159,8 +159,21 @@
                          </td><td>
                          <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
                         </td></tr>
+                        
                     </table>
-            		  <div id="enlargePhoto"></div>
+            		  <div id="enlargePhoto">
+            		  	
+            		  	<form action="/vanjariudyogvishwa-v2/editOther" method="post">
+            		  	<table>
+            		  		<tr><td><input type="file"></td>
+                        <td><input type="submit" value="Upload"> </td>
+                        </tr>
+            		  	</table>
+            		  	
+            		  	</form>
+            		  	
+            		  	
+            		  </div>
             </div>
            <div id="rightMainPhotos"></div>
 

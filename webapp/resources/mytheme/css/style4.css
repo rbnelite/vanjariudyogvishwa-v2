@@ -509,6 +509,20 @@ body {
 	height: 300px;
 	background-color: bisque;
 	margin-bottom: 1px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+#OutsideInterestAreas{
+	
+	border-radius: 3px;
+	border: 1px solid gray;
+	float: left;
+	width: 468px;
+	height: 300px;
+	background-color: bisque;
+	overflow: hidden;
 }
 
 /* #InterestAreas:hover {
@@ -531,11 +545,22 @@ body {
 	border: 1px solid gray;
 	width: 462px;
 	height: 300px;
-	overflow:auto;
 	background-color: bisque;
 	margin-bottom: 1px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 20px;
 }
-
+#OutsideProfileProducts {
+	border-radius: 3px;
+	margin-right:465px;
+	border: 1px solid gray;
+	width: 462px;
+	height: 300px;
+	background-color: bisque;
+	margin-bottom: 1px;
+	overflow: hidden;
+}
 /* #Products:hover {
 	border-radius: 3px;
 	border: 1px solid aqua;
@@ -602,6 +627,8 @@ body {
 	height: 20px;
 	 margin: 0px 10px 0px 0px;
 }
+
+
 
 #Photos {
 	border-radius: 3px;
@@ -896,6 +923,15 @@ body {
     background-color:white;
     font-size: 100%;
 }
+
+#IntrestAreaImageProfile{
+	width: 100px;;
+	float: left;	
+}
+#ProductImageProfile{
+	width: 100px;
+}
+
 
 /*********************ScrollBar Style for Chrome Browsers****************** */
 

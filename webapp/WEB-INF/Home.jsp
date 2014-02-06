@@ -48,7 +48,7 @@
 							class="menuContent">Requests</a></td>
 						<td><a href="#" onclick="return DisplaySettingBlock()"
 							class="menuContent">Setting</a></td>
-						<td><a href="Index" class="menuContent">LogOut</a></td>
+						<td><a href="logoutUser" class="menuContent">LogOut</a></td>
 					</tr>
 				</table>
 			</div>
@@ -97,7 +97,7 @@
 					<br> <img style="float: right;"
 						src="${pageContext.request.contextPath}/resources/images/product1.png"
 						title="My Products" height="32" width="32"><a
-						style="float: right;" href="Products">
+						style="float: right;" href="Product">
 						<h4>
 							<font color="#00cccc">Products</font>
 						</h4>

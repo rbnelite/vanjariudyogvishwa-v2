@@ -50,7 +50,16 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	@Transactional
 	public void updateEducation(EducationWork educationWork) {
 		
-		sessionFactory.getCurrentSession().update(educationWork);
+		EducationWork eduToUpdate=getByEmailId(educationWork.getUserMail());
+				
+		eduToUpdate.setSchool(educationWork.getSchool());
+		eduToUpdate.setCollage(educationWork.getCollage());
+		eduToUpdate.setGraduation(educationWork.getGraduation());
+		eduToUpdate.setOtherGraduation(educationWork.getOtherGraduation());
+		eduToUpdate.setPGCollege(educationWork.getPGCollege());
+		eduToUpdate.setPGDegree(educationWork.getPGDegree());
+		eduToUpdate.setOtherPG(educationWork.getOtherPG());
+		sessionFactory.getCurrentSession().update(eduToUpdate);
 		
 	}
 
