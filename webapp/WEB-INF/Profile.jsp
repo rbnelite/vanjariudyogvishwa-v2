@@ -65,7 +65,7 @@ input[type=text]{
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> <a
-					id="anchor" href="Profile"><font color="indigo">My
+					id="anchor" href="#"><font color="indigo">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font>
 				</a> <a id="anchor" href="#" onclick="DisplayINeedBlockPro()"><font
 					color="white">Looking for</font> </a> <a id="anchor" href="#"

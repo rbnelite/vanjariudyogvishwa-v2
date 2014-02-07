@@ -39,7 +39,7 @@
 								value="${CurrentEmailId}">
 						<td><a href="Home" class="menuContent">Home</a></td>
 						<td><a href="Profile" class="menuContent">My Profile</a></td>
-						<td><a href="Message" class="menuContent">Message</a></td>
+						<td><a href="message" class="menuContent">Message</a></td>
 						<td><a href="#" onclick="return DisplayINeedBlock()"
 							class="menuContent">Looking for</a></td>
 						<td><a href="#" onclick="return DisplayNotificationBlock()"

@@ -38,8 +38,8 @@ public class Message {
 	@Column(name="message_date")
 	private String msgDate;
 	
-	@Column(name="message")
-	private String msgText;
+	@Column(name="message_text")
+	private String myMsgText;
 	
 	public long getMsgID() {
 		return msgID;
@@ -69,12 +69,13 @@ public class Message {
         msgDate=now_date;
 		this.msgDate = msgDate;
 	}
-	public String getMsg() {
-		return msgText;
+	public String getMyMsgText() {
+		return myMsgText;
 	}
-	public void setMsg(String msgText) {
-		this.msgText = msgText;
+	public void setMyMsgText(String myMsgText) {
+		this.myMsgText = myMsgText;
 	}
+	
 
 	
 }

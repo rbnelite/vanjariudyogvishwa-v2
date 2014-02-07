@@ -19,7 +19,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
+import com.rbnelite.udyogvishwa.model.Comment;
+import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.Status;
+import com.rbnelite.udyogvishwa.service.CommentService;
+import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.IndexService;
+import com.rbnelite.udyogvishwa.service.StatusService;
 
 @Controller
 @SessionAttributes("CurrentEmailId")
@@ -27,6 +33,13 @@ public class IndexController {
 
 	@Resource
 	private IndexService indexservice;
+	
+	@Resource
+	private StatusService statusservice;
+	@Resource
+	private EventsService eventService;
+	@Resource
+	private CommentService commentservice;
 	
 	
 	@RequestMapping(value="/Index" ,method=RequestMethod.POST)
@@ -48,6 +61,17 @@ public class IndexController {
 		if(!tempLoginUserList.isEmpty())
 		{
 			map.put("CurrentEmailId", user_name);
+			
+			map.put("status11", new Status());
+			List<Status> status = statusservice.listStatus();
+			map.put("statusList", status);
+			
+			map.put("myEvents", new Event());
+			map.put("eventstList", eventService.listEvents());
+			
+			map.put("myComment", new Comment());
+			map.put("commentList", commentservice.listComment());
+			
 			
 			return "Home";
 		}
