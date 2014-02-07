@@ -8,6 +8,8 @@ import java.util.List;
 
 
 
+
+import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 
 /**
@@ -19,4 +21,7 @@ public interface LifeStyleDao {
 	public void insertLifeStyle(LifeStyle lifestyle);
 
 	public List<LifeStyle> listLifeStyle(String userMail);
+	public void updateLifeStyle(LifeStyle lifeStyle);
+
+	public LifeStyle getLifeStyleByEmailId(String userMail);
 }

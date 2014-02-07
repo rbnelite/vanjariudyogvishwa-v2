@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : InterestAreas
     Created on : Dec 21, 2013, 11:02:28 AM
@@ -49,12 +50,12 @@
 						</tr>
 						<tr>
 
-							<td><input type="checkbox" name="interestId" id="interestId" value="1">Sports</td>
-							<td><input type="checkbox" name="interestId" id="interestId" value="2">Drawing
+							<td><input type="checkbox" name="interestId" value="1">Sports</td>
+							<td><input type="checkbox" name="interestId" value="2">Drawing
 							</td>
-							<td><input type="checkbox" name="interestId" id="interestId" value="3">Photography
+							<td><input type="checkbox" name="interestId" value="3">Photography
 							</td>
-							<td><input type="checkbox" name="interestId" id="interestId" value="4">Traveling
+							<td><input type="checkbox" name="interestId" value="4">Traveling
 							</td>
 						</tr>
 						<tr>
@@ -116,7 +117,7 @@
 
 						</tr>
 						<tr>
-							<td><input type="hidden" name="emailId" value="${CurrentEmailId}"></td>
+							<td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -138,3 +139,4 @@
 
 </body>
 </html>
+

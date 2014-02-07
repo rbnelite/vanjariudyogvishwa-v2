@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,12 +21,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Hobbies;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.service.AstroService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
+import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -50,6 +54,9 @@ public class ProfileController {
 	private LifeStyleService lifeStyleServ;
 	@Resource
 	private ProductService productservice;
+	
+	@Resource
+	private IntrestAreasService intrestAreasService;
 
 	@RequestMapping(value = "/Profile")
 	public String ProfileOperation(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map, String userMail) throws ServletException {
@@ -57,12 +64,12 @@ public class ProfileController {
 		HttpSession session = request.getSession(true);
 		userMail=(String) session.getAttribute("CurrentEmailId");
 		
-		System.out.println(" From Profile controller Value of userMail in/from session% % % % % % % % % % % %"+userMail);
+		System.out.println("from profile Controller() get method.");
 
 		if (!map.containsKey("EditOtherDetails")) {
 			map.put("otherDetails", new OtherDetails());
 			map.put("otherDetailsList", otherDetailsServ.listOtherDetails(userMail));
-			System.out.println("&&&&&-2" + map.size());
+			
 		}
 		if (!map.containsKey("EditEducationDetails")) {
 			map.put("educationWORK", new EducationWork());
@@ -88,6 +95,14 @@ public class ProfileController {
 		map.put("productNAME", new Product());
 		map.put("ProductList", productservice.listProduct(userMail));
 		}
+		
+		if (!map.containsKey("editIntrestAreasDetails")) {
+			map.put("intrestAreasDetails", new IntrestAreas());
+			map.put("intrestAreasList", intrestAreasService.listIntrestAreas(userMail));
+			
+		}
+		
+		
 		return "Profile";
 	}
 
@@ -148,12 +163,21 @@ public class ProfileController {
 		return "Profile";
 	}
 	
+	@RequestMapping(value = "/EditIntrestAreasDetails")
+	public String editIntrestAreasDetails(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
+
+		map.put("editIntrestAreasDetails", new IntrestAreas());
+		map.put("editIntrestAreasDetailsList", intrestAreasService.listIntrestAreas(emailId));
+		ProfileOperation(request,response, map,emailId);
+		return "Profile";
+	}
+	
 	
 	@RequestMapping(value = "/ProfileFromHome")
 	public String homeReqProfile(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
 
 		map.put("CurrentEmailId", emailId);
-		System.out.println("homeReqProfile with email ID" +emailId);
+		
 		
 		ProfileOperation(request,response, map,emailId);
 		return "Profile";

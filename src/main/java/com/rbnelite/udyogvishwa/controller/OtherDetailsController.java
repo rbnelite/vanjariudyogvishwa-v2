@@ -3,7 +3,11 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.OtherDetailsCredential;
+import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 
@@ -44,6 +49,15 @@ public class OtherDetailsController {
 
 		return "ThankYou";
 		 }
+	}
+	
+	@RequestMapping(value="/editOther", method=RequestMethod.POST)
+	public String editLifeStyle(HttpServletRequest request,HttpServletResponse response,@RequestParam("usermail") String emailId, @ModelAttribute OtherDetails otherDetails, Map<String, Object> map){
+		
+		otherDetailsServ.updateOtherDetails(otherDetails);
+		
+		return "Profile";
+		
 	}
 	
 	@RequestMapping(value="/OtherDetails")

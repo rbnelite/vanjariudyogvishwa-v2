@@ -33,7 +33,7 @@ body {
 }
 
 #mainProfile {
-	background-color: white;
+	background-color:bisque;
 	width: 1400px;
 	height: 2300px;
 	margin: 10px 50px 10px 50px;
@@ -510,6 +510,20 @@ body {
 	height: 300px;
 	background-color: bisque;
 	margin-bottom: 1px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+#OutsideInterestAreas{
+	
+	border-radius: 3px;
+	border: 1px solid gray;
+	float: left;
+	width: 468px;
+	height: 300px;
+	background-color: bisque;
+	overflow: hidden;
 }
 
 /* #InterestAreas:hover {
@@ -532,11 +546,22 @@ body {
 	border: 1px solid gray;
 	width: 462px;
 	height: 300px;
-	overflow:auto;
 	background-color: bisque;
 	margin-bottom: 1px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 20px;
 }
-
+#OutsideProfileProducts {
+	border-radius: 3px;
+	margin-right:465px;
+	border: 1px solid gray;
+	width: 462px;
+	height: 300px;
+	background-color: bisque;
+	margin-bottom: 1px;
+	overflow: hidden;
+}
 /* #Products:hover {
 	border-radius: 3px;
 	border: 1px solid aqua;
@@ -592,7 +617,7 @@ body {
 
 #ProfileDetails:hover {
 	border-radius: 3px;
-	border: 1px solid black;
+	border: 1px solid lime;
 	/* background-color: whitesmoke; */
 }
 
@@ -604,9 +629,11 @@ body {
 	 margin: 0px 10px 0px 0px;
 }
 
+
+
 #Photos {
 	border-radius: 3px;
-	border: 1px solid gray;
+	
 	background-color: bisque;
 	
 	width: 460px;
@@ -624,11 +651,11 @@ body {
 	height: 300px;
 	overflow: hidden;
 }
-#Photos:hover {
-	/* border-radius: 3px; */
+/* #Photos:hover {
+	border-radius: 3px;
 	border: 1px solid black;
 	
-}
+} */
 
 #RightUpdatedStatus {
 	border-radius: 3px;
@@ -641,7 +668,7 @@ body {
 
 #RightUpdatedStatusProfile {
 	border-radius: 3px;
-	border: 1px solid gray;
+	
 	background-color: bisque;
 	margin-top: 2px;
 	width: 460px;
@@ -898,6 +925,15 @@ body {
     font-size: 100%;
 }
 
+#IntrestAreaImageProfile{
+	width: 100px;;
+	float: left;	
+}
+#ProductImageProfile{
+	width: 100px;
+}
+
+
 /*********************ScrollBar Style for Chrome Browsers****************** */
 
 /* 1.rounded corners style */
@@ -911,3 +947,5 @@ body {
 ::-webkit-scrollbar-thumb {background-color:#ffffff ; border: 1px solid black;} */
 	
 	
+	
+>>>>>>> 5621efb8ce9645cc57d87f4989c447d1615ff074

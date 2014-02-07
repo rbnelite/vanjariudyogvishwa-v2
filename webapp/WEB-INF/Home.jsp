@@ -52,7 +52,7 @@ function abc1(){
 								value="${CurrentEmailId}">
 						<td><a href="Home" class="menuContent">Home</a></td>
 						<td><a href="Profile" class="menuContent">My Profile</a></td>
-						<td><a href="Message" class="menuContent">Message</a></td>
+						<td><a href="message" class="menuContent">Message</a></td>
 						<td><a href="#" onclick="return DisplayINeedBlock()"
 							class="menuContent">Looking for</a></td>
 						<td><a href="#" onclick="return DisplayNotificationBlock()"
@@ -61,7 +61,7 @@ function abc1(){
 							class="menuContent">Requests</a></td>
 						<td><a href="#" onclick="return DisplaySettingBlock()"
 							class="menuContent">Setting</a></td>
-						<td><a href="Index" class="menuContent">LogOut</a></td>
+						<td><a href="logoutUser" class="menuContent">LogOut</a></td>
 					</tr>
 				</table>
 			</div>
@@ -110,7 +110,7 @@ function abc1(){
 					<br> <img style="float: right;"
 						src="${pageContext.request.contextPath}/resources/images/product1.png"
 						title="My Products" height="32" width="32"><a
-						style="float: right;" href="Products">
+						style="float: right;" href="Product">
 						<h4>
 							<font color="#00cccc">Products</font>
 						</h4>

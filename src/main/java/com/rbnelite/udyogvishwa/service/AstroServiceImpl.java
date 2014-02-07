@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import com.rbnelite.udyogvishwa.dao.AstroDao;
 import com.rbnelite.udyogvishwa.dto.AstroCredential;
 import com.rbnelite.udyogvishwa.model.Astro;
@@ -37,6 +38,20 @@ public class AstroServiceImpl implements AstroService {
 	public List<Astro> listAstro(String userMail) {
 
 		return astrodao.listAstro(userMail);
+	}
+
+
+	@Override
+	public void updateAstro(Astro astro) {
+		astrodao.updateAstro(astro);
+		
+	}
+
+
+	@Override
+	public Astro getAstroByEmailId(String userMail) {
+
+		return astrodao.getAstroByEmailId(userMail);
 	}
 
 }

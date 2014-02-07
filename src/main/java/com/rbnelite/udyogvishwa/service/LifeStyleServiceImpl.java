@@ -40,4 +40,17 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 		return lifestyledao.listLifeStyle(userMail);
 	}
 
+	@Override
+	public void updateLifeStyle(LifeStyle lifeStyle) {
+		
+		lifestyledao.updateLifeStyle(lifeStyle);
+		
+	}
+
+	@Override
+	public LifeStyle getLifeStyleByEmailId(String userMail) {
+		
+		return lifestyledao.getLifeStyleByEmailId(userMail);
+	}
+
 }

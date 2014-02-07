@@ -1,4 +1,3 @@
-
 package com.rbnelite.udyogvishwa.model;
 
 import javax.persistence.Column;
@@ -9,21 +8,20 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="intrest_areas")
+@Table(name = "intrest_areas")
 public class IntrestAreas {
 
 	@Id
-	@Column(name="intrestarea_id")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="intrestareas_sequence_id")
-	@SequenceGenerator(name="intrestareas_sequence_id",sequenceName="intrest_areas_sequence",allocationSize=1)
-  	private int intrestAreaId;
-	
-	@Column(name="interest_id")
+	@Column(name = "intrestarea_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "intrestareas_sequence_id")
+	@SequenceGenerator(name = "intrestareas_sequence_id", sequenceName = "intrest_areas_sequence", allocationSize = 1)
+	private int intrestAreaId;
+
+	@Column(name = "interest_id")
 	private String interestId;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String userMail;
 
 	public int getIntrestAreaId() {
@@ -49,8 +47,5 @@ public class IntrestAreas {
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
-	
-
-
 
 }

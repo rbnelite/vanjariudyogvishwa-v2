@@ -48,8 +48,9 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<Product> listProduct(String userMail) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product").list();
-	
+
+		return sessionFactory.getCurrentSession().createQuery("from Product where userMail='"+userMail+"' ")
+                .list();
 	}
 	
 	@Override

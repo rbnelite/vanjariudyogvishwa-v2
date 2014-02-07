@@ -2,8 +2,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -12,7 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-	<title>Registration</title> <script>
+	<title>Registration</title>
+	
+	
+	 <script>
             function isNumberKey(evt)
             {
                 var charCode=(evt.which) ? evt.which :event.keyCode;
@@ -55,7 +56,7 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><font color="yellow">${LoginError}</font></td>
+								<td><marquee><font color="Red">${LoginError}</font></marquee><marquee><font color="white">${LogOutMsg}</font></marquee></td>
 							</tr>
 							<tr>
 								<td height="22">&nbsp;</td>
@@ -200,6 +201,8 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													</tr>
 												</table>
 											</div>
+											</th>
+											</div></td>
 							</tr>
 							<tr>
 							</tr>

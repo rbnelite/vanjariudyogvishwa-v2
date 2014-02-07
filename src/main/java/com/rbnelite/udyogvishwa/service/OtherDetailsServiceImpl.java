@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 
 import com.rbnelite.udyogvishwa.dao.OtherDetailsDao;
@@ -43,6 +44,19 @@ public class OtherDetailsServiceImpl implements OtherDetailsService {
 	public List<OtherDetails> listOtherDetails(String userMail) {
 
 		return ObjOtherDetailsDao.listOtherDetails(userMail);
+	}
+
+	@Override
+	public void updateOtherDetails(OtherDetails otherDetails) {
+		
+		ObjOtherDetailsDao.updateOtherDetails(otherDetails);
+		
+	}
+
+	@Override
+	public OtherDetails getOtherDetailsByEmailId(String userMail) {
+		
+		return ObjOtherDetailsDao.getOtherDetailsByEmailId(userMail);
 	}
 
 }

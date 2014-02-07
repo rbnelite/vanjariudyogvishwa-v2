@@ -9,34 +9,36 @@ package com.rbnelite.udyogvishwa.dto;
  */
 public class MessageDTO {
 
-	private String senderID;
-	private String receiverID;
-	private String messageDate;
-	private String messageText;
+	private String msgSenderID;
+	private String msgReceiverID;
+	private String msgDate;
+	private String myMsgText;
 	
-	public String getSenderID() {
-		return senderID;
+	
+	public String getMsgSenderID() {
+		return msgSenderID;
 	}
-	public void setSenderID(String senderID) {
-		this.senderID = senderID;
+	public void setMsgSenderID(String msgSenderID) {
+		this.msgSenderID = msgSenderID;
 	}
-	public String getReceiverID() {
-		return receiverID;
+	public String getMsgReceiverID() {
+		return msgReceiverID;
 	}
-	public void setReceiverID(String receiverID) {
-		this.receiverID = receiverID;
+	public void setMsgReceiverID(String msgReceiverID) {
+		this.msgReceiverID = msgReceiverID;
 	}
-	public String getMessageDate() {
-		return messageDate;
+	public String getMsgDate() {
+		return msgDate;
 	}
-	public void setMessageDate(String messageDate) {
-		this.messageDate = messageDate;
+	public void setMsgDate(String msgDate) {
+		this.msgDate = msgDate;
 	}
-	public String getMessageText() {
-		return messageText;
+	public String getMyMsgText() {
+		return myMsgText;
 	}
-	public void setMessageText(String messageText) {
-		this.messageText = messageText;
+	public void setMyMsgText(String myMsgText) {
+		this.myMsgText = myMsgText;
 	}
 	
+		
 }
