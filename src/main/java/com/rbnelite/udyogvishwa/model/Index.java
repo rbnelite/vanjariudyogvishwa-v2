@@ -8,10 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
-
 @Table(name="users")
-
 public class Index {
 	
 	@Id
@@ -21,32 +21,39 @@ public class Index {
 	private int id;
 	
 	@Column(name="first_name")
+	@NotEmpty
 	private String firstName;
 	
 	@Column(name="middle_name")
+	@NotEmpty
 	private String middleName;
 	
 	@Column(name="last_name")
+	@NotEmpty
 	private String lastName;
 	
 	@Column(name="email")
+	@NotEmpty
 	private String emailId;
 	
 	@Column(name="contact_no")
+	@NotEmpty
 	private String contactNo;
 	
 	@Column(name="birthdate")
+	@NotEmpty
 	private String birthDate;
 	
-
-
 	@Column
+	@NotEmpty
 	private String gender;
 	
-	@Column
+	@Column(name="password")
+	@NotEmpty
 	private String password;
 	
-
+	private String telephone;
+	
 	@Column(name="contact_id")
 	private int contactId;
 	
@@ -61,13 +68,6 @@ public class Index {
 	@Column(name="office_address")
 	private String officeAddress;
 	
-	
-	private String telephone;
-		
-	
-	
-	
-
 	public int getId() {
 		return id;
 	}

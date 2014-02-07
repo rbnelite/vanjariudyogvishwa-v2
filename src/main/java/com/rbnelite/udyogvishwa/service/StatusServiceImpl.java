@@ -28,6 +28,7 @@ public class StatusServiceImpl implements StatusService {
 		Date date = new Date();
 		status.setStatus(statuscredential.getStatus());
 		status.setStatusDate(dateFormat.format(date));
+		status.setUsermail(statuscredential.getUsermail());
 		statusdao.statusUpdate(status);
 	}
 
@@ -35,5 +36,11 @@ public class StatusServiceImpl implements StatusService {
 	@Transactional
 	public List<Status> listStatus() {
 		return statusdao.listStatus();
+	}
+
+	@Override
+	public List searchStatusList(String SearchData) {
+		
+		return statusdao.searchStatusList(SearchData);
 	}
 }

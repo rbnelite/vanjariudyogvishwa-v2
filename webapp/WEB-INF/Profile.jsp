@@ -26,13 +26,16 @@
 <title>Profile2 Page</title>
 <style type="text/css">
 h3 {
-	background-color: #fab039;
+	 background-color: transparent; 
+	/* background-color:#00FF00; */
 	margin-top: 0px;
+	
 }
 
-input{
+input[type=text]{
 	width: 400px;
 	height: auto;
+	font-size: large;
 
 }
 </style>
@@ -46,7 +49,8 @@ input{
 			<div id="Header">
 
 
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
+				<label style="margin-left: 470px;">WelCome
+					! ${CurrentEmailId}</label> <br>
 				<div id="profile_photo">
 					<img
 						src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png">
@@ -129,7 +133,9 @@ input{
 				</div>
 				<div id="ProfileProducts">
 
-					<h3>Products</h3>
+					<h3><img src="${pageContext.request.contextPath}/resources/images/new-product.jpg"
+								style="width: 70px; height: 60px;">Products</h3>
+								
 
 					<c:if test="${!empty ProductList}">
 						<c:forEach items="${ProductList}" var="productNAME">
@@ -147,10 +153,8 @@ input{
 
 				</div>
 				<div id="Friends">
-					<h3>Friend's</h3>
-					<img
-						src="${pageContext.request.contextPath}/resources/images/friends1.png"
-						style="float: left; width: 70px; height: 60px;">
+					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
+					
 				</div>
 			</div>
 			<div>
@@ -161,7 +165,10 @@ input{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editEducationReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-						<h3>Education Details</h3>
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
+								style=" float:left; width: 70px; height: 60px;">Education Details</h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
@@ -194,7 +201,7 @@ input{
 											<td><b>Specialization :</b></td>
 											<td>${educationWORK.otherPG}</td>
 										</tr>
-
+										
 									</c:forEach>
 								</table>
 								</div>
@@ -202,10 +209,12 @@ input{
 							</c:if>
 							<c:if test="${!empty EditEducationDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
+								style="float:left; width: 70px; height: 60px;">Edit Education Details</h3>
 
-
-
-								<h3>Edit Education Details</h3>
+								
 							<div id="InsideProfileDetails">
 							
 								<table>
@@ -270,9 +279,12 @@ input{
 					<div id="ProfileDetails">
 						<img id="EditProfileDetails"
 							src="${pageContext.request.contextPath}/resources/images/edit1.png">
-						<h3>Contact Details</h3>
+							<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
+								style="float:left; width: 70px; height: 60px;">Contact Details</h3>
 						<c:if test="${!empty contactInfoList}">
-							<table>
+							<table style="background-image: url('${pageContext.request.contextPath}/resources/images/ContactDetails.jpg');">
 								<c:forEach items="${contactInfoList}" var="contactInfo">
 									<tr>
 										<td><b>Home Address :</b></td>
@@ -302,7 +314,8 @@ input{
 						<form action="/vanjariudyogvishwa-v2/Family">
 							<input id="EditProfileDetails" type="submit" value=""
 								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 							<h3>Family Details</h3>
 							<c:if test="${!empty familyList}">
 								<table>
@@ -337,14 +350,16 @@ input{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editHobbiesReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-						<h3>Hobbies Details</h3>
+						<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
+						<h3>Hobbies </h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
 									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
 										<tr>
 											<td style="width: 200px;"><b>Hobbies :</b></td>
-											<td>${hobbiesDetails.hobbies}</td>
+											<td>${hobbiesDetails.hobbiesName}</td>
 										</tr>
 										<tr>
 											<td><b>Favourite Music :</b></td>
@@ -390,9 +405,10 @@ input{
 							<c:if test="${!empty editHobbiesList}">
 					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
 					
+					<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 					
-					
-					<h3>Edit Hobbies Details</h3>
+					<h3>Edit Hobbies </h3>
 						<div id="InsideProfileDetails">
 							
 								<table>
@@ -400,7 +416,7 @@ input{
 										<tr>
 											<td style="width: 200px;"><b>Hobbies :</b></td>
 											<td><input type="text"
-													value="${editHobbiesDetails.hobbies}"></td>
+													value="${editHobbiesDetails.hobbiesName}"></td>
 										</tr>
 										<tr>
 											<td><b>Favourite Music :</b></td>
@@ -480,7 +496,8 @@ input{
 						<input id="EditProfileDetails" type="submit" value=""
 									name="editAstroReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-									
+									<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3>Astro Details</h3>
 
 						
@@ -506,7 +523,8 @@ input{
 
 						<c:if test="${!empty editAstroList}">
 					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
-					
+					<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 					<h3>Edit Astro Details</h3>
 					<table>
 								<c:forEach items="${editAstroList}" var="editAstroDetails">
@@ -581,7 +599,8 @@ input{
 								<input id="EditProfileDetails" type="submit" value=""
 									name="editLifeStyReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 						<h3>Lifestyle and Attributes Details</h3>
 						<div id="InsideProfileDetails">
 						
@@ -625,6 +644,8 @@ input{
 						
 						<c:if test="${!empty editLifeStyleList}">
 							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 								<h3>Edit Lifestyle and Attributes Details</h3>
 								<div id="InsideProfileDetails">
 								
@@ -689,7 +710,8 @@ input{
 								<input id="EditProfileDetails" type="submit" value=""
 									name="editOtherReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 
 								<h3>Other Details</h3>
 								<div id="InsideProfileDetails">
@@ -727,7 +749,8 @@ input{
 						<c:if test="${!empty EditOtherDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
 
-
+								<input type="hidden" name="usermail"
+								value="${CurrentEmailId}">
 
 								<h3>Edit Other Details</h3>
 								<div id="InsideProfileDetails">
@@ -784,16 +807,9 @@ input{
 			<div id="RightProfile">
 				<div id="outside_Photos">
 					<div id="Photos">
-						<h3>Photos</h3>
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style="width: 70px; height: 60px;">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 30px; height: 30px;"> Photos </h3>
 						
+							
 
 					</div>
 				</div>

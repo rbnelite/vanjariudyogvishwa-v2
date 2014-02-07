@@ -34,7 +34,15 @@ public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 	
 	@Override
 	public List<Status> listStatus() {
-		return sessionFactory.getCurrentSession().createQuery("from Status").list();
+		
+		return sessionFactory.getCurrentSession().createQuery("from Status ORDER BY id DESC").list();
+
+	}
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List searchStatusList(String SearchData) {
+	
+		return sessionFactory.getCurrentSession().createQuery("from Status where status like concat('%','"+SearchData+"','%')").list();
 	}
 	
 }

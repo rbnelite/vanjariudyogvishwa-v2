@@ -38,9 +38,9 @@ public class EducationWorkServiceImpl implements EducationWorkService {
 
 	@Override
 	@Transactional
-	public List<EducationWork> listEducationWork() {
+	public List<EducationWork> listEducationWork(String userMail) {
 
-		return educationworkdao.listEducationWork();
+		return educationworkdao.listEducationWork(userMail);
 	}
 
 }

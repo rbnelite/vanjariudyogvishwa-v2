@@ -9,6 +9,6 @@ public interface EducationWorkService {
 
 	public void insertEducationWork(EducationWorkCredential inscredential);
 
-	public List<EducationWork> listEducationWork();
+	public List<EducationWork> listEducationWork(String userMail);
 
 }

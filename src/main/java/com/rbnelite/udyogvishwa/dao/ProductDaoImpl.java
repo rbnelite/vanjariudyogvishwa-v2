@@ -45,11 +45,18 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 		
 	}
 	@Override
-	public List<Product> listProduct() {
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List<Product> listProduct(String userMail) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product")
-                .list();
+		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	
+	}
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List searchProductList(String SearchData) {
+		
+		return sessionFactory.getCurrentSession().createQuery("from Product where productName like concat('%','"+SearchData+"','%')").list();
 	}
 
 }

@@ -4,11 +4,9 @@ import java.util.List;
 
 import com.rbnelite.udyogvishwa.model.Status;
 
-public interface StatusDao {
-	
+public interface StatusDao 
+{
 	public void statusUpdate(Status status);
 	public List<Status> listStatus();
-	
-	
-
+	public List searchStatusList(String SearchData);
 }

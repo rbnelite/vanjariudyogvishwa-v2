@@ -37,7 +37,7 @@
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td colspan="2"><font size="5">Fill Out Your LifeStyle & Attributes Details</font></td>
+                                        <td colspan="2"><font size="5">Fill Your LifeStyle & Attributes Details</font></td>
                                     </tr>
 
                                     <tr>
@@ -58,14 +58,19 @@
                                         <td>Smoke</td><td><select name="smoke" id="smoke" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Yes</option>
-                                                <option>No</option></select>
+                                                <option>No</option>
+                                                <option>occasionally</option>
+                                                </select>
                                            </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Drink </td><td><select name="drink" id="drink" style="width: 223px;">
+                                        <td>Drink <font color="red">*</font></td><td>
+                                        <select name="drink" id="drink" style="width: 223px;">
                                                 <option selected value="">-------Please Select-------</option>
                                                 <option>Yes</option>
-                                                <option>No</option></select>
+                                                <option>No</option>
+                                                <option>occasionally</option>
+                                        </select>
                                            </td>
                                     </tr> <tr><td colspan="2"><br></tr>
                                     <tr>

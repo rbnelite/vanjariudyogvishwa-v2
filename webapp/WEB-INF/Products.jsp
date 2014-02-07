@@ -1,7 +1,7 @@
 <%-- 
     Document   : Products
     Created on : Dec 10, 2013, 6:19:54 PM
-    Author     : vishal
+    Author     : vishal,ab
 --%>
 
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -23,7 +23,7 @@
         <div id="main">
             <div id="Header">
 
-                <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
+              <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
                 <label style="margin-left: 410px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">

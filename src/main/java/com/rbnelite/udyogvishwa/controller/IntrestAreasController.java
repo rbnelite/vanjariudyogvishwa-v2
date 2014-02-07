@@ -7,7 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.IntrestAreasCredential;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
@@ -19,12 +18,11 @@ public class IntrestAreasController {
 	private IntrestAreasService intrestareasservice;
 	
 	@RequestMapping(value="/IntrestAreas",method=RequestMethod.POST)
-	public String insertIntrestAreas(@RequestParam("emailId") String emailId, @ModelAttribute("IntrestAreasCredential") IntrestAreasCredential intrestareascredential,ModelMap map){
+	public String insertIntrestAreas(@ModelAttribute("IntrestAreasCredential") IntrestAreasCredential intrestareascredential,ModelMap map){
 		
 		intrestareasservice.insertIntrestAreas(intrestareascredential);
-		map.put("CurrentEmailId", emailId);
 		
-		return "Step3Occupation";
+		return "Step2InterestArea";
 	}
 	
 	@RequestMapping(value="/IntrestAreas")

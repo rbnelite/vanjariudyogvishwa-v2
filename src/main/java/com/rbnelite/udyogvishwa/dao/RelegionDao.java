@@ -3,9 +3,7 @@
  */
 package com.rbnelite.udyogvishwa.dao;
 
-import java.util.List;
-
-import com.rbnelite.udyogvishwa.model.Religion;
+import com.rbnelite.udyogvishwa.model.Index;
 
 /**
  * @author PC2
@@ -13,6 +11,6 @@ import com.rbnelite.udyogvishwa.model.Religion;
  */
 public interface RelegionDao {
 
-	public void insertRelegion(Religion religion);
+	public void insertRelegion(Index indexreligion);
 
 }

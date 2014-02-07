@@ -3,6 +3,10 @@ package com.rbnelite.udyogvishwa.controller;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.rbnelite.udyogvishwa.dto.StatusCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
-import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
@@ -34,8 +37,12 @@ public class StatusController {
 	private CommentService commentservice;
 	
 	@RequestMapping(value="/Status",method=RequestMethod.POST)
-	public String statusupdateform(@ModelAttribute("StatusCredential")StatusCredential statuscredential,ModelMap map)
+	public String statusupdateform(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("StatusCredential")StatusCredential statuscredential,ModelMap map, String userMail) throws ServletException
 	{
+		
+		HttpSession session = request.getSession(true);
+		userMail=(String) session.getAttribute("CurrentEmailId");
+		
 		statusservice.SaveStatusUpdate(statuscredential);
 		
 		map.put("status11", new Status());
@@ -43,9 +50,6 @@ public class StatusController {
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
-		
-		map.put("myNeeds", new Need());
-		map.put("needList", needservice.listNeed());
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());

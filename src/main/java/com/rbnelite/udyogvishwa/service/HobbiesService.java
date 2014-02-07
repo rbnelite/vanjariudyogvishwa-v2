@@ -9,6 +9,6 @@ public interface HobbiesService {
 
 	public void saveHobbies(HobbiesCredential hobbiescredential);
 
-	public List<Hobbies> listHobbies();
+	public List<Hobbies> listHobbies(String userMail);
 
 }

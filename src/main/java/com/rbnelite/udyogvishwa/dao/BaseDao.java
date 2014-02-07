@@ -1,9 +1,6 @@
 package com.rbnelite.udyogvishwa.dao;
-
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

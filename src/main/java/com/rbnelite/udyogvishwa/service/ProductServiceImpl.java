@@ -31,9 +31,15 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	@Transactional
-	public List<Product> listProduct() {
+	public List<Product> listProduct(String userMail) {
 		
-		return productdao.listProduct();
+		return productdao.listProduct(userMail);
+	}
+
+	@Override
+	public List searchProductList(String SearchData) {
+		
+		return productdao.searchProductList(SearchData);
 	}
 
 }

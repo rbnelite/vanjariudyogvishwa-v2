@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,9 +40,9 @@ public class LifeStyleDaoImpl extends BaseDao<LifeStyle> implements LifeStyleDao
 
 
 	@Override
-	public List<LifeStyle> listLifeStyle() {
-		String email="sawantmanojm@gmail.com";
-		return sessionFactory.getCurrentSession().createQuery("from LifeStyle where usermail='"+email+"'").list();
+	public List<LifeStyle> listLifeStyle(String userMail) {
+		
+		return sessionFactory.getCurrentSession().createQuery("from LifeStyle where usermail='"+userMail+"'").list();
 	}
 
 

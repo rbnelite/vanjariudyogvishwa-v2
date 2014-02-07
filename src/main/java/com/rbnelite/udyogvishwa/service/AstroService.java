@@ -10,6 +10,6 @@ public interface AstroService {
 	
 	public void saveAstro(AstroCredential astrodenteal);
 
-	public List<Astro> listAstro();
+	public List<Astro> listAstro(String userMail);
 
 }

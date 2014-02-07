@@ -35,8 +35,9 @@
             <form:form action="/vanjariudyogvishwa-v2/Religion" method="POST" commandName="religion">
             <h2>Step-5</h2>
                         <table align="center">
-                        <tr>
-                            <td colspan="2"><font size="5">Fill Out Your Religion and Ethnicity Details</font></td>
+                            <tr><td colspan="2"><br></tr>
+                            <tr>
+                                <td colspan="2"><font size="5">Fill Your Religion and Ethnicity Details</font></td>
                             </tr>
                            
                             <tr>

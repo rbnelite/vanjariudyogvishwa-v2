@@ -40,9 +40,9 @@ public class OtherDetailsServiceImpl implements OtherDetailsService {
 	}
 
 	@Override
-	public List<OtherDetails> listOtherDetails() {
+	public List<OtherDetails> listOtherDetails(String userMail) {
 
-		return ObjOtherDetailsDao.listOtherDetails();
+		return ObjOtherDetailsDao.listOtherDetails(userMail);
 	}
 
 }

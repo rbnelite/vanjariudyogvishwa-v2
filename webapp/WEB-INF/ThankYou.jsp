@@ -1,4 +1,5 @@
 
+
 <%-- 
     Document   : Step11OtherDetails
     Created on : Dec 24, 2013, 8:00:42 PM
@@ -44,8 +45,11 @@
 					<h2 style="color: blue">${CurrentEmailId} ! </h2>
 					<h3>Thank you for Registration on</h3>
 					<h5>www.vanjariudyogvishwa.com</h5>
+					
+					<input type="hidden" name="usermail" value="${CurrentEmailId}">
+					
 					<input type="submit" value="Get Start">
-
+					
 
 				</form>
 

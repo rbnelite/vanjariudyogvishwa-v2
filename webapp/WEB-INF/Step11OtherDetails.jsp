@@ -7,8 +7,11 @@
 
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> --%>
+	<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,14 +39,15 @@
 			<div id="leftMainStep3"></div>
 
 			<div id="middleStep4">
-			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post">
+			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
+			<form:errors path="*" cssClass="errorblock" element="div"/>
 			<h2>Step-11</h2>
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>
 					</tr>
 					<tr>
-						<td colspan="2"><font size="5">Fill Out Your Other
+						<td colspan="2"><font size="5">Fill Your Other
 								Details</font>
 						</td>
 					</tr>
@@ -59,7 +63,10 @@
 						<td>Social Status</td>
 						<td><textarea name="socialStatus" rows="1" cols="25"
 								maxlength="80" style="resize: none;"></textarea>
-						</td>
+						</td>						
+                         <td><form:errors path="socialStatus" cssclass="error"/></td>
+						
+						
 					</tr>
 					<tr>
 						<td colspan="2"><br>
@@ -102,8 +109,11 @@
 					</tr>
 				
 					<tr>
+
 						<td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
-						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
+						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
+
 						</td>
 					</tr>
 				</table>

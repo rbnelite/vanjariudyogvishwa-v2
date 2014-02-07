@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,10 +41,10 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 
 
 	@Override
-	public List<Astro> listAstro() {
+	public List<Astro> listAstro(String userMail) {
 		
-		String email="sawantmanojm@gmail.com";
-		return sessionFactory.getCurrentSession().createQuery("from Astro where userMail='"+email+"'")
+		
+		return sessionFactory.getCurrentSession().createQuery("from Astro where userMail='"+userMail+"'")
                 .list();
 	}
 

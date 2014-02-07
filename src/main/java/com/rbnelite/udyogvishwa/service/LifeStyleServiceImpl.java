@@ -35,9 +35,9 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 
 	@Override
 	@Transactional
-	public List<LifeStyle> listLifeStyle() {
+	public List<LifeStyle> listLifeStyle(String userMail) {
 
-		return lifestyledao.listLifeStyle();
+		return lifestyledao.listLifeStyle(userMail);
 	}
 
 }
