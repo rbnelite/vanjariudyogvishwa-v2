@@ -138,17 +138,18 @@
                 <div  style=" margin:20px auto auto 37px; width: 735px;
     				height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 8px;padding-bottom: 8px;">
                 	<c:if test="${!empty msgConversionList}">
-                	<table align="left">
+                	<table align="center">
+                	<img  src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png" height="100" width="100" title="${msgConversion.msgSenderID}">
                 		<c:forEach items="${msgConversionList}" var="msgConversion">
-                		
+                			
                 		
     					<c:choose>
     					<c:when test="${msgConversion.msgSenderID==CurrentEmailId}">
                 		
                 			<tr style="border: 1px solid gray">
-                                        <td >  <font color="purple" size="2">You&nbsp;</font> </td>
+                                        <td >  <font color="purple" size="4">You&nbsp;</font> </td>
                                         <td><img src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png" height="18" width="20"></td>
-                                        <td>  ${msgConversion.myMsgText }    </td> 
+                                        <td><font color="purple" size="4"> ${msgConversion.myMsgText }</font> </td> 
                             </tr>
                         </c:when>
                           
@@ -157,9 +158,9 @@
                         <c:otherwise>     
                                     
                                     <tr style="border: 1px solid gray">
-                                        <td >  <font color="sky blue" size="2">${msgConversion.msgSenderID}</font> </td>
+                                        <td >  <font color="sky blue" size="4">${msgConversion.msgSenderID}</font> </td>
                                         <td><img src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png" height="18" width="20"></td>
-                                        <td>  ${msgConversion.myMsgText}    </td> 
+                                        <td><font color="sky blue" size="4"> ${msgConversion.myMsgText} </font>   </td> 
                                     </tr>  
                                    
                 		</c:otherwise>
