@@ -68,3 +68,4 @@ public class IntrestAreasDaoImpl extends BaseDao<IntrestAreas> implements Intres
 	}
 
 }
+

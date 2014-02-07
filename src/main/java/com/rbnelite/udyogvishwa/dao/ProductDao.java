@@ -9,4 +9,6 @@ public interface ProductDao {
 	public void insertProduct(Product product);
 	
 	public List <Product> listProduct(String userMail);
+	
+	public List searchProductList(String SearchData);
 }

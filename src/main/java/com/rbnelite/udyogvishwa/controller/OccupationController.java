@@ -33,8 +33,7 @@ public String insert(@Valid Occupation occupation, BindingResult result,@Request
 	{
 	ocservice.insertOccupation(occredential);
 	map.put("CurrentEmailId", emailId);
-	
-	return "Step7Astro";
+	return "Step4Contact";
 	}
 	
 }

@@ -36,4 +36,10 @@ public class ProductServiceImpl implements ProductService {
 		return productdao.listProduct(userMail);
 	}
 
+	@Override
+	public List searchProductList(String SearchData) {
+		
+		return productdao.searchProductList(SearchData);
+	}
+
 }

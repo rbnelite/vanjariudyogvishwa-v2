@@ -7,28 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
-<script type="text/javascript">
-//code for validation status post for blank code
-function abc1(){
-	 var status1=document.myform.status.value;
-	 
-	 if(status1.length==0)
-		 {
-		 alert("please enter something");
-		 return false;
-		 }
-	
-}
-</script>
 </head>
-
 <body>
 	<center>
 		<div id="main">
@@ -52,7 +38,7 @@ function abc1(){
 								value="${CurrentEmailId}">
 						<td><a href="Home" class="menuContent">Home</a></td>
 						<td><a href="Profile" class="menuContent">My Profile</a></td>
-						<td><a href="message" class="menuContent">Message</a></td>
+						<td><a href="Message" class="menuContent">Message</a></td>
 						<td><a href="#" onclick="return DisplayINeedBlock()"
 							class="menuContent">Looking for</a></td>
 						<td><a href="#" onclick="return DisplayNotificationBlock()"
@@ -61,7 +47,7 @@ function abc1(){
 							class="menuContent">Requests</a></td>
 						<td><a href="#" onclick="return DisplaySettingBlock()"
 							class="menuContent">Setting</a></td>
-						<td><a href="logoutUser" class="menuContent">LogOut</a></td>
+						<td><a href="Index" class="menuContent">LogOut</a></td>
 					</tr>
 				</table>
 			</div>
@@ -110,7 +96,7 @@ function abc1(){
 					<br> <img style="float: right;"
 						src="${pageContext.request.contextPath}/resources/images/product1.png"
 						title="My Products" height="32" width="32"><a
-						style="float: right;" href="Product">
+						style="float: right;" href="Products">
 						<h4>
 							<font color="#00cccc">Products</font>
 						</h4>
@@ -124,59 +110,9 @@ function abc1(){
 					</a>
 				</div>
 
-				<c:if test="${!empty needList}">
-					<div id="leftMain3">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Looking
-									For</font></th>
-							<c:forEach items="${needList}" var="myNeeds">
-								<tr>
-									<td align="left">Anil Budge Needs : ${myNeeds.need}</td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div>
-				</c:if>
+				
 			</div>
-			<div id="NeedTopHome">
-				<form action="/vanjariudyogvishwa-v2/Need" method="post">
-					<table width=100%>
-						<th style="background-color: #fab039" colspan=2><font
-							color="white">Need Something?</font> <a
-							onclick="return DisableINeedBlock()"> <img
-								src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-						</th>
-						<tr align="center">
-							<td>Looking For :</td>
-							<td><input type="text" name="need"
-								placeholder="Write your Need here...."
-								style="width: 400px; height: 30px;"></td>
-						</tr>
-						<tr align="center">
-							<td>Description :</td>
-							<td><textarea type="text" name="description"
-									placeholder="Write your Need here...."
-									style="width: 400px; height: 100px; resize: none;"></textarea>
-							</td>
-						</tr>
-						<tr align="center">
-							<td>Contact No :</td>
-							<td><input type="text" name="mobile"
-								placeholder="Write your Need here...."
-								style="width: 400px; height: 30px;"><br>
-							<br></td>
-						</tr>
-						<tr align="center">
-							<td><input type="hidden" name="usermail"
-								value="${CurrentEmailId}"></td>
-							<td><input type="submit" value="Ask for Solution"
-								style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
+			
 			<div id="NotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
@@ -188,6 +124,7 @@ function abc1(){
 					</tr>
 				</table>
 			</div>
+			
 			<div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font
@@ -233,52 +170,64 @@ function abc1(){
 					</tr>
 				</table>
 			</div>
-			<div id="MiddleTop">
-				<form name="myform" action="/vanjariudyogvishwa-v2/Status" method="post">
-					<table align="left">
-						<tr>
-							<td>Update Status/Photo</td>
-						</tr>
-					</table>
-					<br>
-					<textarea name="status" rows="2" cols="95" style="resize: none" ></textarea>
-					<br>
-					<table align="left" width="170%">
-						<tr>
-							<td><font color="purple">Text</font></td>
-							<td><font color="purple">Photo</font></td>
-							<input type="hidden" name="usermail" value="${CurrentEmailId}">
-							<td><input type="submit" value="POST" style="margin-right: 30px;" class="buttonclr" onclick="return abc1()"></td>
-						</tr>
-					</table>
-				</form>
-			</div>
-			<div id="outsidemiddleHome">
+			
+			<div id="outsidemiddleHome" style="border: 1px solid red;">
 				<div id="middleHome">
-					<c:if test="${!empty statusList}">
-						<c:forEach items="${statusList}" var="status11">
+					<table width=60%>
+			<th colspan="3">Users List</th>
+	<c:if test="${!empty SearchUserList}">
+		
+			<c:forEach items="${SearchUserList}" var="searchUser">
+				<tr style="background-color: gray">
+					<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"> </td>
+					<td> ${searchUser.firstName}&nbsp;${searchUser.middleName}&nbsp;${searchUser.lastName}&nbsp;</td>
+					<td><input type="button" value="Connect" class="connectBtn"></td>
+				</tr>
+			</c:forEach>
+	
+	</c:if>
+		</table>
+		
+			<table width=60%>
+			<th colspan="2">Product List</th>
+	<c:if test="${!empty SearchProductList}">
+		
+			<c:forEach items="${SearchProductList}" var="searchProduct">
+				<tr style="background-color: gray">
+					<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="30" width="30"> </td>
+					<td> ${searchProduct.productName}&nbsp;Owners Name : ${searchProduct.userMail}</td>
+					
+				</tr>
+			</c:forEach>
+	
+	</c:if>
+		</table>
+		
+							<c:if test="${!empty SearchStatusList}">
+						<c:forEach items="${SearchStatusList}" var="searchStatus">
 							<div id="ShowStatusUpdet">
 								<div class="userStatusImage">
 									<img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-										height="72" width="70">
+										height="52" width="50">
 								</div>
 
-								<div class="statusUserName"style="float: left; margin-left: 10px;">
-									<font color="green">${status11.usermail}</font>
+								<div class="statusUserName"
+									style="float: left; margin-left: 10px;">
+									
 								</div>
 								<br>
 								<div class="StatusContent">
 									<table width=100%>
-									
+									<tr><td><font color="green">${searchStatus.usermail}</font></td></tr>
 										<tr>
-											<td align="left">${status11.status}</td>
+											<td align="left">${searchStatus.status}</td>
 										</tr>
-										<tr><td></td><td align="right"><font color="gray" size="2">${status11.statusDate}</font></td></tr>
+										<tr><td><font color="blue" size="2">${searchStatus.statusDate}</font></td></tr>
 									</table>
 
-								
-									<c:if test="${!empty status11.comments}">
-										<c:forEach items="${status11.comments}" var="myComment">
+									<br>
+									<c:if test="${!empty searchStatus.comments}">
+										<c:forEach items="${searchStatus.comments}" var="myComment">
 
 											<div id="Showcomment"
 												style="border: 1px solid bisque; margin-top: 5px">
@@ -302,82 +251,18 @@ function abc1(){
 										</c:forEach>
 									</c:if>
 
-									<div id="commentBox">
-										<div class="commentBoxImage">
-											<img
-												src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-												height="42" width="40">
-										</div>
-										<div>
-											<form action="/vanjariudyogvishwa-v2/Comment" method="post"
-												onKeyPress="return submitenter(this,event)"
-												name="commentZone">
-												<input type="hidden" name="statusIdForComment"
-													value="${status11.id}"> <input type="hidden"
-													name="whoseComment" value="${CurrentEmailId}"> <input
-													type="text" name="commenttext"
-													placeholder="Write a comment and Press Enter...."
-													style="width: 440px; height: 20px; margin-top: 10px; margin-left: -30px">
-											</form>
-										</div>
-										<br>
-										<table align="left" width=50%>
-											<tr>
-												<td>
-													<form action="/vanjariudyogvishwa-v2/LikeStatus"
-														method="post">
-														<input type="hidden"
-													name="usermail" value="${CurrentEmailId}">
-														<input type="submit" value="Like" class="LikeUnlikeBtn">
-														0
-													</form>
-												</td>
-												<td><form action="/vanjariudyogvishwa-v2/UnlikeStatus"
-														method="post">
-														<input type="hidden"
-													name="usermail" value="${CurrentEmailId}">
-														<input type="submit" value="Unlike" class="LikeUnlikeBtn">
-														0
-													</form></td>
-												<td>Comments 0</td>
-											</tr>
-										</table>
-									</div>
+
 								</div>
 							</div>
 						</c:forEach>
 					</c:if>
 				</div>
+				
+				
+				
+				
 			</div>
-			<div id="rightMain">
-				<div id="peopleMayKnw">
-					<table width=100%>
-						<th colspan=3 style="background-color: #fab039"><font
-							color="">People You May Know</th>
-						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-							<td>Manoj Savant</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
-						</tr>
-						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-							<td>Mayur Kulkarni</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
-						</tr>
-						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-							<td>Vishal Pansare</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
-						</tr>
-					</table>
-				</div>
-			</div>
+	
 		</div>
 	</center>
 </body>

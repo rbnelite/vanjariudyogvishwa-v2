@@ -32,8 +32,6 @@ public class HomeController {
 	@Resource
 	private EventsService eventService;
 	@Resource
-	private NeedService needservice;
-	@Resource
 	private CommentService commentservice;
 	
 	@RequestMapping(value="/Home")

@@ -25,8 +25,9 @@ public class IntrestAreasController {
 		intrestareasservice.insertIntrestAreas(intrestareascredential);
 		map.put("CurrentEmailId", emailId);
 		map.addAttribute("occupation", new Occupation());
+
 		
-		return "Step3Occupation";
+		return "Step2InterestArea";
 	}
 	
 	@RequestMapping(value="/IntrestAreas")

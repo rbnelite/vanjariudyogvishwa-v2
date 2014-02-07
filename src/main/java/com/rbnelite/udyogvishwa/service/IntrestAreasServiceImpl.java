@@ -1,3 +1,4 @@
+
 package com.rbnelite.udyogvishwa.service;
 
 import java.util.List;
@@ -51,3 +52,4 @@ public class IntrestAreasServiceImpl implements IntrestAreasService {
 	}
 
 }
+

@@ -8,14 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 		<script src="<c:url value="/resources/js/anil.js" />"></script>
         <title>Vanjari Udyog Vishwa | Photos</title>
-        
-    </head>
+         </head>
     <body>
       <center>
         <div id="main">
@@ -66,18 +64,7 @@
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Products"> <h4><font color="#00cccc">Products</font></h4></a>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
-                <c:if  test="${!empty needList}">
-                <div id="leftMain3">
-                 <table width=100%>
-                <th style="background-color: #fab039"><font color="white">Looking For</font></th>
-                <c:forEach items="${needList}" var="myNeeds">
-                <tr>
-                <td align="left">Anil Budge Needs : ${myNeeds.need}</td>
-                </tr>
-                  </c:forEach>
-                </table>
-                </div>
-                  </c:if>
+               
 				 </div>
 
             <div id="NeedTopHome">
@@ -112,11 +99,10 @@
                     </tr>
                 </table>
             </div>
-
-
             <div id="NotificationTopHome">
+                
                 <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-
+				
             </div>
 
             <div id="RequestTopHome">
@@ -129,35 +115,32 @@
                 <br>
                 <a href="AccountSetting.jsp">More Settings...</a>
             </div>
-
-            
-
             <div id="middlePhotos">
                
                     <table width=90%>
                         <tr>
                         <td>
-                        <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                        <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
                         </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
                          </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer"id="personalPhoto" onclick="return viewPhoto();">
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer"id="personalPhoto" >
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto">
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();" >
+                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto">
                           </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/gallery1.thumb.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img  src="${pageContext.request.contextPath}/resources/images/gallery1.thumb.jpg" class="photoviewer" id="personalPhoto" >
                           </td>
                           </tr><tr>
                           <td>
-                          <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                          <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
                           </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
                          </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
                          </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer" id="personalPhoto" onclick="return viewPhoto();">
+                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer" id="personalPhoto" >
                         </td></tr>
                         
                     </table>
@@ -176,7 +159,6 @@
             		  </div>
             </div>
            <div id="rightMainPhotos"></div>
-
         </div>
     </center>
      </body>

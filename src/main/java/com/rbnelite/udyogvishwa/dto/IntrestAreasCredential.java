@@ -1,3 +1,4 @@
+
 package com.rbnelite.udyogvishwa.dto;
 
 public class IntrestAreasCredential {
@@ -26,3 +27,4 @@ public class IntrestAreasCredential {
 	
 	
 }
+

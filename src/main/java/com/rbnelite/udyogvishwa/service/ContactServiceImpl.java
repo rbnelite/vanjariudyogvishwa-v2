@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.rbnelite.udyogvishwa.dao.ContactDao;
 import com.rbnelite.udyogvishwa.dto.ContactCredential;
-import com.rbnelite.udyogvishwa.model.Contact;
+import com.rbnelite.udyogvishwa.model.Index;
 
 @Service
 public class ContactServiceImpl implements ContactService {
@@ -16,12 +16,13 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Override
 	public void SaveContact(ContactCredential contactcredential) {
-		Contact contact=new Contact();
-		contact.setHomeAddress(contactcredential.getHomeAddress());
-		contact.setOfficeAddress(contactcredential.getOfficeAddress());
-		contact.setTelephone(contactcredential.getTelephoneNo());
-		contact.setUserMail(contactcredential.getUserMail());
-		contactdao.saveContact(contact);
+		Index index=new Index();
+		index.setHomeAddress(contactcredential.getHomeAddress());
+		index.setOfficeAddress(contactcredential.getOfficeAddress());
+		index.setTelephone(contactcredential.getTelephoneNo());
+		index.setEmailId(contactcredential.getUserMail());
+		index.setId(67);
+		contactdao.saveContact(index);
 
 	}
 

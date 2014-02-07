@@ -1,3 +1,4 @@
+
 package com.rbnelite.udyogvishwa.service;
 
 import java.util.List;
@@ -13,3 +14,4 @@ public interface IntrestAreasService {
 	public IntrestAreas getIntrestAreasByEmailId(String userMail);
 	public void UpdateIntrestAreas(IntrestAreas intrestAreas);
 }
+

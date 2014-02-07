@@ -10,4 +10,6 @@ public interface ProductService {
 	public void insertProduct(ProductCredential productcredential);
 	
 	public List <Product> listProduct(String userMail);
+	
+	public List searchProductList(String SearchData);
 }

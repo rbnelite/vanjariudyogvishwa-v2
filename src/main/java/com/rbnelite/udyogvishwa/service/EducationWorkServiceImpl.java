@@ -37,8 +37,7 @@ public class EducationWorkServiceImpl implements EducationWorkService {
 		educationwork.setSchool(educationworkcredential.getSchool());
 		educationwork.setCollage(educationworkcredential.getCollage());
 		educationwork.setGraduation(educationworkcredential.getGraduation());
-		educationwork.setOtherGraduation(educationworkcredential
-				.getOtherGraduation());
+		educationwork.setOtherGraduation(educationworkcredential.getOtherGraduation());
 		educationwork.setPGCollege(educationworkcredential.getPGCollege());
 		educationwork.setPGDegree(educationworkcredential.getPGDegree());
 		educationwork.setOtherPG(educationworkcredential.getOtherPG());

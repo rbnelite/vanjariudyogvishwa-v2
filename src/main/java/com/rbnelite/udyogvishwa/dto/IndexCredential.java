@@ -10,11 +10,21 @@ public class IndexCredential {
 	private String lastName;
 	private String emailId;
 	private String contactNo;
-	private String birthDay;
-	private String birthMonth;
-	private String birthYear;
+	private String birthDate;
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
 	private String gender;
-	private String password1;
+	private String password;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	private String password2;
 	
 
@@ -71,36 +81,14 @@ public class IndexCredential {
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
-	public String getBirthDay() {
-		return birthDay;
-	}
-	public void setBirthDay(String birthDay) {
-		this.birthDay = birthDay;
-	}
-	public String getBirthMonth() {
-		return birthMonth;
-	}
-	public void setBirthMonth(String birthMonth) {
-		this.birthMonth = birthMonth;
-	}
-	public String getBirthYear() {
-		return birthYear;
-	}
-	public void setBirthYear(String birthYear) {
-		this.birthYear = birthYear;
-	}
+	
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getPassword1() {
-		return password1;
-	}
-	public void setPassword1(String password1) {
-		this.password1 = password1;
-	}
+	
 	public String getPassword2() {
 		return password2;
 	}

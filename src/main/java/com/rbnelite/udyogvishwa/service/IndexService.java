@@ -7,8 +7,12 @@ import com.rbnelite.udyogvishwa.model.Index;
 
 public interface IndexService {
 	public void saveRegistration(IndexCredential indexcredential);
+
+	public List searchUserList(String SearchData);
+
 	public List<Index> LoginAuthintication(String emailId, String pwd);
 		
+
 	
 	
 }

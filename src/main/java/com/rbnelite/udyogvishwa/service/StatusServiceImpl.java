@@ -37,4 +37,10 @@ public class StatusServiceImpl implements StatusService {
 	public List<Status> listStatus() {
 		return statusdao.listStatus();
 	}
+
+	@Override
+	public List searchStatusList(String SearchData) {
+		
+		return statusdao.searchStatusList(SearchData);
+	}
 }

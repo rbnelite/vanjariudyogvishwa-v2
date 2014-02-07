@@ -9,6 +9,6 @@ public interface StatusService {
 	
 	public void SaveStatusUpdate(StatusCredential statuscredential);
 	public List<Status> listStatus();
-	
+	public List searchStatusList(String SearchData);
 
 }

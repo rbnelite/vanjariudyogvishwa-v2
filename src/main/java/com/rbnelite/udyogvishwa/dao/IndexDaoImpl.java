@@ -1,9 +1,6 @@
 package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
-
-
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Index;
 
-
 @Repository
 public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 
-	
-	
 	@Autowired
 	 private SessionFactory sessionFactory;
 	
@@ -39,11 +33,18 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List searchUserList(String SearchData) {
+		
+		return sessionFactory.getCurrentSession().createQuery("from Index where firstName like concat('%','"+SearchData+"','%') or middleName like concat('%','"+SearchData+"','%') or lastName like concat('%','"+SearchData+"','%')").list();
+	}
+	
 	@Transactional
 	public List<Index> LoginAuthintication(String emailId, String pwd) {
 		
 		
 		return sessionFactory.getCurrentSession().createQuery("FROM Index where emailId='"+emailId+"' and password='"+pwd+"' ").list();
+
 	}
 
 }

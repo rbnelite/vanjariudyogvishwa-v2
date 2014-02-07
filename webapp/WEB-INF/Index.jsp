@@ -2,8 +2,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -31,8 +29,7 @@
 
 		<table align="center" width="1321" height="874">
 			<div id="logo1" align="center">
-				<img
-					src="${pageContext.request.contextPath}/resources/images/banner12.png"
+				<img src="${pageContext.request.contextPath}/resources/images/banner12.png"
 					width="142" height="150" alt="logo" />
 			</div>
 			<tr>
@@ -68,8 +65,7 @@
 											class="style21"><span class="style8">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="#" style="text-decoration: none"
-												onclick="javascript:void window.open('Forgot_Pass.jsp','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250');return false;">Forgot
-													your Password</a>
+onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250');return false;">Forgot	your Password ?</a>
 										</span>
 									</span></span></td>
 							</tr>
@@ -115,7 +111,7 @@
 						</tr>
 					</table></td>
 				<td width="670">
-					<form action="/vanjariudyogvishwa-v2/Index" method="post">
+					<form:form action="/vanjariudyogvishwa-v2/Index" method="post" commandName="index">
 						<table width="493" align="top" height="678" border="0"
 							style="background-image:url(${pageContext.request.contextPath}/resources/images/Untitled-2.png);">
 							<tr>
@@ -131,187 +127,87 @@
 														<td width="121" align="left" class="style59">First
 															Name<font color="red">*</font>
 														</td>
-														<td width="194"><input type="text" name="firstName"
-															id="firstName" size="30" maxlength="15" />
-														<div id="fnameError" class="red" colspan="2" /></td>
+														<td width="194"><form:input path="firstName" size="30" maxlength="15" />
+														<form:errors path="firstName" cssClass="error"/></td>
 													</tr>
 
 													<tr>
 														<td align="left"><span class="style34"><span
 																class="style46">Middle Name<font color="red">*</font></span></span>
 														</td>
-														<td><input type="text" name="middleName" id="mname"
-															size="30" maxlength="15" />
-														<div id="mnameError" class="red" colspan="2" /></td>
+														<td><form:input path="middleName"	size="30" maxlength="15" />
+														<form:errors path="middleName" cssClass="error" /></td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Last Name<font
 															color="red">*</font></td>
-														<td><input type="text" name="lastName" id="lname"
-															size="30" maxlength="15" />
-														<div id="lnameError" class="red" colspan="2" /></td>
+														<td><form:input path="lastName" size="30" maxlength="15" />
+														<form:errors path="lastName" cssClass="error" /></td>
 													</tr>
 													<tr>
 														<td align="left" class="style46">Email Id<font
 															color="red">*</font></td>
-														<td><input type="text" name="emailId" id="email_id"
-															size="30" maxlength="30" />
-														<div id="email_idError" class="red" colspan="2" />${requestScope.message_email}</td>
+														<td><form:input path="emailId" 	size="30" maxlength="30" />
+														<form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Contact No.<font
 															color="red">*</font></td>
-														<td><input type="text" name="contactNo" id="contact"
-															size="30" maxlength="10"
-															onkeypress="return isNumberKey(event)" />
-														<div id="contactError" class="red" colspan="2" /></td>
+														<td><form:input path="contactNo" size="30" maxlength="10" onkeypress="return isNumberKey(event)" />
+														<form:errors path="contactNo" cssClass="error" /></td>
 													</tr>
-
 													<tr>
 														<td align="left" class="style46">Birth Date<font
 															color="red">*</font></td>
-														<td><select id="birthDay" name="birthDay">
-																<option selected value="">dd</option>
-																<option>1</option>
-																<option>2</option>
-																<option>3</option>
-																<option>4</option>
-																<option>5</option>
-																<option>6</option>
-																<option>7</option>
-																<option>8</option>
-																<option>9</option>
-																<option>10</option>
-																<option>11</option>
-																<option>12</option>
-																<option>13</option>
-																<option>14</option>
-																<option>15</option>
-																<option>16</option>
-																<option>17</option>
-																<option>18</option>
-																<option>19</option>
-																<option>20</option>
-																<option>21</option>
-																<option>22</option>
-																<option>23</option>
-																<option>24</option>
-																<option>25</option>
-																<option>26</option>
-																<option>27</option>
-																<option>28</option>
-																<option>27</option>
-																<option>29</option>
-																<option>30</option>
-																<option>31</option>
-														</select> <select id="birthMonth" name="birthMonth">
-																<option selected value="">mm</option>
-																<option>Jan</option>
-																<option>Feb</option>
-																<option>Mar</option>
-																<option>Apr</option>
-																<option>May</option>
-																<option>Jun</option>
-																<option>Jul</option>
-																<option>Aug</option>
-																<option>Sep</option>
-																<option>Oct</option>
-																<option>Nov</option>
-																<option>Dec</option>
-														</select> <select id="birthYear" name="birthYear">
-																<option selected value="">yy</option>
-																<option>1970</option>
-																<option>1971</option>
-																<option>1972</option>
-																<option>1973</option>
-																<option>1974</option>
-																<option>1975</option>
-																<option>1976</option>
-																<option>1977</option>
-																<option>1978</option>
-																<option>1979</option>
-																<option>1980</option>
-																<option>1981</option>
-																<option>1982</option>
-																<option>1983</option>
-																<option>1984</option>
-																<option>1985</option>
-																<option>1986</option>
-																<option>1987</option>
-																<option>1988</option>
-																<option>1989</option>
-																<option>1990</option>
-																<option>1991</option>
-																<option>1992</option>
-																<option>1993</option>
-																<option>1994</option>
-																<option>1995</option>
-																<option>1996</option>
-																<option>1997</option>
-																<option>1998</option>
-																<option>1999</option>
-																<option>2000</option>
-																<option>2001</option>
-																<option>2002</option>
-																<option>2003</option>
-																<option>2004</option>
-																<option>2005</option>
-																<option>2006</option>
-																<option>2007</option>
-
-
-														</select></td>
+														<td><form:input path="birthDate" size="30" placeholder="mm/dd/yyyy"/><form:errors path="birthDate"/>
+														</td>
+																												</td>
 													</tr>
 
 													<tr>
 														<td>&nbsp;</td>
 														<td><font color="red" style="font-weight: normal">${requestScope.message11}</font>
-															<div id="bdayError" class="red" colspan="2" />
-															<div id="bmonthError" class="red" colspan="2" />
-															<div id="byearError" class="red" colspan="2" /></td>
-													</tr>
+												</tr>
 													<tr>
-														<td align="left" class="style46">Gender<font
-															color="red">*</font></td>
-														<td><input type="radio" name="gender" value="male">
+														<td align="left" class="style46">Gender<font color="red">*</font></td>
+														<td><form:radiobutton path="gender" value="male"/>
 																<span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
 
-																<input type="radio" name="gender" value="female">
+																<form:radiobutton path="gender" value="female"/>
 																	<span class="style46">Female</span>
-																	<div id="genderError" class="red" colspan="2" /></td>
+																	<form:errors path="gender" cssClass="error"/></td>
 													</tr>
 													<tr>
 														<td align="left" class="style46">Password<font
 															color="red">*</font></td>
-														<td><input type="password" name="password1"
-															id="password1" size="30" maxlength="20" />
-														<div id="pass1Error" class="red" colspan="2" /></td>
+														<td><form:password path="password" size="30" maxlength="20" />
+														<form:errors path="password" cssClass="error" /></td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Confirm Password<font
 															color="red">*</font></td>
-														<td><input type="password" name="password2"
-															id="password2" size="30" maxlength="20" />
-														<div id="pass2Error" class="red" colspan="2" /></td>
+														<td><input type="password" name="password2" size="30" maxlength="20" />
+														</td>
 													</tr>
 
 													<tr>
 														<td height="96"></td>
-														<td align="right"><input name="Register"
-															type="submit" value="" id="submit"
-															style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
+														<td align="right">
+														<input name="Register" type="submit" value="" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
 														</td>
 													</tr>
 												</table>
 											</div>
+											</th>
+											</div></td>
 							</tr>
 							<tr>
 							</tr>
 						</table>
-					</form>
+					</form:form>
 				</td>
 
 			</tr>

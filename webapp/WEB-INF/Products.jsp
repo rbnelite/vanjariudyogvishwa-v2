@@ -1,7 +1,8 @@
 <%-- 
     Document   : Products
     Created on : Dec 10, 2013, 6:19:54 PM
-    Author     : vishal
+    Author     : vishal,ab
+
 --%>
 
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -23,7 +24,9 @@
         <div id="main">
             <div id="Header">
 
-                <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
+
+              <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
+
                 <label style="margin-left: 410px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">
@@ -40,7 +43,9 @@
                 <a id="anchor" href="#" onclick="return DisplayNotificationBlock()"><font color="#f868f2">Notification</font></a>
                 <a id="anchor" href="#" onclick="return DisplayRequestBlock()"><font color="#f868f2">Requests</font></a>
                 <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font color="#f868f2">Setting</font></a>
+
                 <a id="anchor" href="logoutUser"><font color="#f868f2">LogOut</font></a>
+
             </div>
 
             <div id="leftMain">
