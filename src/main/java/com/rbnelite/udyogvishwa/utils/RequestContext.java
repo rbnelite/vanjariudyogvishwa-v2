@@ -13,4 +13,8 @@ public class RequestContext {
 		RequestContext.user.set(user);
 	}
 
+	public static void clear() {
+		user.remove();
+	}
+
 }

@@ -50,9 +50,10 @@ public class IndexServiceImpl implements IndexService {
 
 		return indexdao.searchUserList(SearchData);
 	}
+	
 	public List<Index> LoginAuthintication(String emailId, String pwd) {
 
-		return indexdao.LoginAuthintication(emailId, pwd);
+		return indexdao.loginAuthintication(emailId, pwd);
 	}
 
 }

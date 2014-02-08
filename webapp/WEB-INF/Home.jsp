@@ -34,10 +34,10 @@ function abc1(){
 		<div id="main">
 			<div id="Header">
 			<form action="/vanjariudyogvishwa-v2/SearchResult">
-				<input id="SearchData" type="text" name="SearchData" placeholder="Search" /><input type="submit" value="Search Data">
+				<input id="SearchData" type="text" name="SearchData" placeholder="Search" style="height: 25px; width: 200px;"/>
+				<input type="submit" value=" " style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');" >
 					</form>
-					 <label style="margin-left: 110px;">WelCome
-					! ${CurrentEmailId}</label> <br>
+					 <label style="margin-left: 110px;">WelCome	! ${loginUser.firstName}</label> <br>
 				<div id="profile_photo">
 					<img
 						src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
@@ -275,8 +275,6 @@ function abc1(){
 										</tr>
 										<tr><td></td><td align="right"><font color="gray" size="2">${status11.statusDate}</font></td></tr>
 									</table>
-
-								
 									<c:if test="${!empty status11.comments}">
 										<c:forEach items="${status11.comments}" var="myComment">
 
