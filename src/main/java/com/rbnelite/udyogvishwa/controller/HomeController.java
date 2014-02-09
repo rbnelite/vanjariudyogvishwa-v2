@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.NeedService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 
 /**
@@ -33,6 +35,9 @@ public class HomeController {
 	private EventsService eventService;
 	@Resource
 	private CommentService commentservice;
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
+	
 	
 	@RequestMapping(value="/Home")
 	public String showHome(Map<String, Object> map){
@@ -46,6 +51,9 @@ public class HomeController {
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 		
 		return "Home";
 		

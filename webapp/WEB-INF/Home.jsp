@@ -349,31 +349,27 @@ function abc1(){
 			</div>
 			<div id="rightMain">
 				<div id="peopleMayKnw">
+					
 					<table width=100%>
 						<th colspan=3 style="background-color: #fab039"><font
 							color="">People You May Know</th>
+							<c:if test="${!empty knownPeopleList}">
+						<c:forEach items="${knownPeopleList}" var="knownPeople">
+						<c:choose>
+						<c:when test="${knownPeople.userMail != loginUser.email}">
 						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+							<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
 								height="30" width="30"></td>
-							<td>Manoj Savant</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
+							<td>${knownPeople.userMail}<br><font size="2" color="gray">RBNelite It Solutions</font>
+						<input type="button" value="Connect" class="connectBtn" style="float: right;"></td>
 						</tr>
-						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-							<td>Mayur Kulkarni</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
-						</tr>
-						<tr>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-							<td>Vishal Pansare</td>
-							<td><input type="button" value="Connect" class="connectBtn"></td>
-						</tr>
+						<tr><td colspan="2"></td></tr>
+						</c:when>
+						</c:choose>
+						</c:forEach>
+						</c:if>
 					</table>
+						
 				</div>
 			</div>
 		</div>

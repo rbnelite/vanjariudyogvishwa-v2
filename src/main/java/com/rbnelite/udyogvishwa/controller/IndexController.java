@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Index;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
@@ -28,6 +29,7 @@ import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.IndexService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.utils.Constants;
 
@@ -42,6 +44,8 @@ public class IndexController {
 	private EventsService eventService;
 	@Resource
 	private CommentService commentservice;
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
 
 	@RequestMapping(value = "/Index", method = RequestMethod.POST)
 	public String registration(@Valid Index index, BindingResult result, @RequestParam("emailId") String emailId, 
@@ -83,8 +87,12 @@ public class IndexController {
 
 			map.put("myComment", new Comment());
 			map.put("commentList", commentservice.listComment());
+			
+			map.put("knownPeople", new IntrestAreas());
+			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 
 			return "Home";
+		
 		} else {
 			map.put("LoginError", "Invalid userName or password !");
 			return "Index";
