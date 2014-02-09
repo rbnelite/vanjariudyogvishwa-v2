@@ -57,14 +57,17 @@ public class MessageController {
 		List<Status> status = statusservice.listStatus();
 		map.put("statusList", status);
 		
-		map.put("myEvents", new Event());
-		map.put("eventstList", eventService.listEvents());
+		/*map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());*/
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
 		
 		map.put("msgConversion",new Message());
 		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, msgReceiverID));
+		
+		map.put("msgSentFriends", new Message());
+		map.put("msgSentFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
 		
 		return "message";
 	}

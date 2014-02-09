@@ -39,9 +39,11 @@ public class IndexServiceImpl implements IndexService {
 
 			indexdao.saveRegistration(index);
 
-		} else {
-			System.out.println("password is not same");
-		}
+		} 
+			else
+			{
+				System.out.println("password is not same");
+			}
 
 	}
 

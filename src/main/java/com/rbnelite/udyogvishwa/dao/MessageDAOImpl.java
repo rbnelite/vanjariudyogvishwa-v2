@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import com.rbnelite.udyogvishwa.model.Message;
 
 /**
@@ -44,6 +45,13 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 	public List<Message> listMessage(String msgSenderID, String msgReceiverID) {
 		
 		return sessionFactory.getCurrentSession().createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();
+	}
+
+	@Override
+	@Transactional
+	public List<Message> listMessagedFriends(String userMail) {
+		
+		return sessionFactory.getCurrentSession().createQuery("FROM Message where msgReceiverID ='"+userMail+"' ").list();
 	}
 
 }

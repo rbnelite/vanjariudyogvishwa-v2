@@ -24,7 +24,9 @@ private OcccupationService ocservice;
 
 @RequestMapping(value="/Occupation", method=RequestMethod.POST)
 public String insert(@Valid Occupation occupation, BindingResult result,@RequestParam("usermail") String emailId, @ModelAttribute("OccupationCredential") OccupationCredential occredential,ModelMap map){
-
+	
+	
+	System.out.println("!!!!!"+emailId);
 	if(result.hasErrors())
 	{
 	return "Step3Occupation";	

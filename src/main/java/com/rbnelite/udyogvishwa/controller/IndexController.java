@@ -1,16 +1,11 @@
 package com.rbnelite.udyogvishwa.controller;
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import javax.validation.Valid;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -19,18 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
-
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.Occupation;
-
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
-
 import com.rbnelite.udyogvishwa.service.IndexService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 
@@ -40,8 +31,6 @@ public class IndexController {
 
 	@Resource
 	private IndexService indexservice;
-	
-
 	@Resource
 	private StatusService statusservice;
 	@Resource

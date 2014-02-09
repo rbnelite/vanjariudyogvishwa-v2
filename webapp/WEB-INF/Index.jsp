@@ -21,6 +21,25 @@
                     return false;
                 return true;
             }
+            
+            function passwordNotSame()
+            {
+            	
+            	var pass=document.getElementById("password2").value;
+            	var pass1=document.getElementById("password2");
+            	if(pass==null || pass=="")
+            			{
+            		pass1.style.background='red';
+            		return false;
+            			}
+            	
+            	var pass2=document.getElementById("password").value;
+            	if(pass2!=pass)
+            		{
+            		alert("both password not same");
+            		return false;
+            		}
+            }
     </script>
 </head>
 <body>
@@ -182,21 +201,21 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Password<font
 															color="red">*</font></td>
-														<td><form:password path="password" size="30" maxlength="20" />
+														<td><form:password path="password" id="password" size="30" maxlength="20"  />
 														<form:errors path="password" cssClass="error" /></td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Confirm Password<font
 															color="red">*</font></td>
-														<td><input type="password" name="password2" size="30" maxlength="20" />
+														<td><input type="password" name="password2" id="password2" size="30" maxlength="20" style="background: white;" />
 														</td>
 													</tr>
 
 													<tr>
 														<td height="96"></td>
 														<td align="right">
-														<input name="Register" type="submit" value="" id="submit" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
+														<input name="Register" type="submit" value="" id="submit"  onclick="return passwordNotSame()" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
 														</td>
 													</tr>
 												</table>
