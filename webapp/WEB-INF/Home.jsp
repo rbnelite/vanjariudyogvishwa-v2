@@ -75,14 +75,12 @@ function abc1(){
 									Events</font></th>
 							<c:forEach items="${eventstList}" var="myEvents">
 								<tr>
-									<td align="left">Anil Budge created an event
+									<td align="left"><font color="orange">${myEvents.usermail}</font> created an event
 										:${myEvents.name}</td>
 								</tr>
 							</c:forEach>
 						</table>
-
 					</div>
-
 				</c:if>
 				<div id="leftMain2">
 					<table width=100%>
@@ -117,26 +115,13 @@ function abc1(){
 					</a> <img style="float: left;"
 						src="${pageContext.request.contextPath}/resources/images/friends1.png"
 						title="Friend's" height="32" width="32"><a
-						style="float: left;" href="Friends">
+						style="float: left;" href="FriendList">
 						<h4>
 							<font color="#00cccc">Friends</font>
 						</h4>
 					</a>
 				</div>
 
-				<c:if test="${!empty needList}">
-					<div id="leftMain3">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Looking
-									For</font></th>
-							<c:forEach items="${needList}" var="myNeeds">
-								<tr>
-									<td align="left">Anil Budge Needs : ${myNeeds.need}</td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div>
-				</c:if>
 			</div>
 			<div id="NeedTopHome">
 				<form action="/vanjariudyogvishwa-v2/Need" method="post">
@@ -357,12 +342,21 @@ function abc1(){
 						<c:forEach items="${knownPeopleList}" var="knownPeople">
 						<c:choose>
 						<c:when test="${knownPeople.userMail != loginUser.email}">
+						
 						<tr>
+						
 							<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
 								height="30" width="30"></td>
 							<td>${knownPeople.userMail}<br><font size="2" color="gray">RBNelite It Solutions</font>
-						<input type="button" value="Connect" class="connectBtn" style="float: right;"></td>
+						<form action="/vanjariudyogvishwa-v2/sendFriendRequest" method="post">					
+						<input type="hidden" name="requestTo" value="${knownPeople.userMail}">
+						<input type="hidden" name="requestFrom"value="${loginUser.email}">
+						<input type="submit" value="Connect" class="connectBtn" style="float: right;">
+						</form>
+						</td>
+							
 						</tr>
+					
 						<tr><td colspan="2"></td></tr>
 						</c:when>
 						</c:choose>
