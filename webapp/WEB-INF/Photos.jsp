@@ -67,48 +67,43 @@
                
 				 </div>
 
-            <div id="NeedTopHome">
-                <table>
-                    <label><font color="purple">Need Something?</font></label>
-                    <a onclick="return DisableINeedBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px;height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-                    <tr>
-                        <td>I Need :</td>
-                        <td><input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Description :
-                        </td>
-                        <td>
-                            <textarea type="text" placeholder="Write your Need here...." style="width: 400px; height: 100px; resize: none;"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Contact No :
-                        </td>
-                        <td>
-                            <input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"><br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-                        </td>
-                    </tr>
-                </table>
-            </div>
+
             <div id="NotificationTopHome">
                 
                 <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
 				
             </div>
 
-            <div id="RequestTopHome">
-                <a onclick="return DisableRequestBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
+           			<div id="RequestTopHome">
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
 
-            </div>
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
+			</div>
             <div id="SettingTopHome">
                 <a>Change Account Setting</a>
                 <a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>

@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.ProductCredential;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Product;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 
 @Controller
@@ -24,6 +27,8 @@ public class ProductController {
 
 	@Resource
 	private ProductService productservice;
+	@Resource 
+	private FriendRequestService friendrequestservice;
 
 	@RequestMapping(value = "/AddProduct", method = RequestMethod.POST)
 	public String insertProduct(HttpServletRequest request,HttpServletResponse response,
@@ -46,7 +51,14 @@ public class ProductController {
 		map.put("productNAME", new Product());
 
 		map.put("ProductList", productservice.listProduct(emailId));
-
+		HttpSession session = request.getSession(true);
+		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+	
+		String userMail=loginUser.getEmail();
+		
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		return "Products";
 	}
 }
