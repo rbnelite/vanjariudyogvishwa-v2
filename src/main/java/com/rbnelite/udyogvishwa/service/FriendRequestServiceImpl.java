@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 
+
 import com.rbnelite.udyogvishwa.dao.FriendRequestDao;
 import com.rbnelite.udyogvishwa.dto.FriendRequestCredential;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
@@ -49,6 +50,12 @@ public class FriendRequestServiceImpl implements FriendRequestService{
 		friendrequest.setRequestStatus(status);
 		friendrequestdao.acceptFriendRequest(friendrequest);
 		
+	}
+
+	@Override
+	public List<FriendRequest> listFriends(String userMail) {
+		
+		return friendrequestdao.listFriends(userMail);
 	}
 	
 	

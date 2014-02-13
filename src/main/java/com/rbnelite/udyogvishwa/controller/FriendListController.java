@@ -76,15 +76,16 @@ public class FriendListController {
 	
 		userMail=loginUser.getEmail();
 		
-		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 		
-		return "Friendlist";
+		map.put("userFriends", new FriendRequest());
+		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
 		
+		return "Friendlist";
 		
 	}
 }

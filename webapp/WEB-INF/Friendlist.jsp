@@ -177,56 +177,46 @@
 				<div id="middleHome">
 				<div id="userStatusImage">
 				<table width=90%>
+			<c:if test="${!empty userFriendsList}">
+			  <c:forEach items="${userFriendsList}" var="userFriends">
+				<c:choose>
+				<c:when test="${userFriends.requestFrom == loginUser.email}">
 				<tr>
 				<td>
-				<img src="${pageContext.request.contextPath}/resources/images/33.png" height="72" width="70"></td>
-			     <td><a>Vishale Panasare</a>
-			     <br>
-			     <a> <font color="gray" size="2">Works @ Rbnelite</font></a></td>
-			    
-			    <td> <img src="${pageContext.request.contextPath}/resources/images/1.png" height="72" width="70"></td>
-			     <td><a>Vikram takalkar</a>
-			     <br>
-			     <a><font color="gray" size="2">Works @ Seed Infotech</a></td>
-			     </tr>
-			     
-			     <tr>
-			     <td><img src="${pageContext.request.contextPath}/resources/images/2.png" height="72" width="70"></td>
-			     <td><a>Manoj Sawant</a>
-			     <br>
-			     <a><font color="gray" size="2">Works @ Police station</a></td>
-			     
-			     <td><img src="${pageContext.request.contextPath}/resources/images/3.png" height="72" width="70"></td>
-			    <td> <a>Mayur Kulkarni</a>
-			     <br>
-			     <a><font color="gray" size="2">Works @ Java</a></td>
-			     </tr>
-			     
-			     <tr>
-			     <td>
-			     <img src="${pageContext.request.contextPath}/resources/images/banner12.png" height="72" width="70"></td>
-			     <td><a>Vikas dhabai</a>
-			     <br>
-			     <a><font color="gray" size="2">Works @ Govt of india</a></td>
-			   
-			     <td>
-			     <img src="${pageContext.request.contextPath}/resources/images/calender.png" height="72" width="70"></td>
-			     <td><a>Anil budge</a>
-			     <br>
-			     <a><font color="gray" size="2">Works @ Rbnelite</a>
-			     </table>
+			<img src="${pageContext.request.contextPath}/resources/images/33.png" height="72" width="70"></td>
+			   <td>
+			   <form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+			   <input type="submit" name="friendsEmailId" value="${userFriends.requestTo}">
+			   <br>
+			   <a> <font color="gray" size="2">Works @ Rbnelite</font></a>
+			   </form>
+			   </td>
+			    </tr>
+			    </c:when>
+			    <c:when test="${userFriends.requestTo == loginUser.email}">
+				<tr>
+				<td>
+			<img src="${pageContext.request.contextPath}/resources/images/33.png" height="72" width="70"></td>
+			   <td>
+			   <form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+			   <input type="submit" name="friendsEmailId" value="${userFriends.requestFrom}">
+			   <br>
+			   <a><font color="gray" size="2">Works @ Rbnelite</font></a>
+			   </form>
+			   </td>
+			    </tr>
+			    </c:when>
+			    </c:choose>
+			  </c:forEach>
+			 </c:if>
+			  </table>
 			     </div>
-				
 				</div>
-				
 				</div>
 			</div>
-					
-								
-			<div id="rightMain" style="margin-top: -2060px; float: none; margin-left: 1100px;" >
+			<div id="rightMain" style="margin-top: -2060px; float: none; margin-left: 1100px;">
 			<div id="peopleMayKnw">
-					
-					<table width=100%>
+			<table width=100%>
 						<th colspan=3 style="background-color: #fab039"><font
 							color="">People You May Know</th>
 							<c:if test="${!empty knownPeopleList}">
@@ -234,25 +224,22 @@
 						<c:choose>
 						<c:when test="${knownPeople.userMail != loginUser.email}">
 						<tr>
-							<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
 								height="30" width="30"></td>
-							<td>${knownPeople.userMail}<br><font size="2" color="gray">RBNelite It Solutions</font>
+						<td>${knownPeople.userMail}<br><font size="2" color="gray">RBNelite It Solutions</font>
 						<form action="/vanjariudyogvishwa-v2/sendFriendRequest" method="post">					
 						<input type="hidden" name="requestTo" value="${knownPeople.userMail}">
 						<input type="hidden" name="requestFrom"value="${loginUser.email}">
 						<input type="submit" value="Connect" class="connectBtn" style="float: right;">
 						</form>
 						</td>
-							
 						</tr>
-					
 						<tr><td colspan="2"></td></tr>
 						</c:when>
 						</c:choose>
 						</c:forEach>
 						</c:if>
-					</table>
-						
+				</table>
 				</div>
 			</div>
 		</div>

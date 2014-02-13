@@ -1,7 +1,6 @@
 package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 
 @Repository
@@ -35,15 +33,12 @@ public class FriendRequestDaoImpl extends BaseDao<FriendRequest>implements Frien
 		session.flush();
 		
 	}
-
-	
 	@Override
 	@Transactional
 	public List<FriendRequest> listFriendRequest(String userMail) {
 		return sessionFactory.getCurrentSession().createQuery("from FriendRequest where requestTo ='"+userMail+"' ").list();
 	   
 	}
-
 	@Override
 	@Transactional
 	public void acceptFriendRequest(FriendRequest friendrequest) {
@@ -61,7 +56,10 @@ public class FriendRequestDaoImpl extends BaseDao<FriendRequest>implements Frien
 		session.flush();
 	}
 
-	
+	@Override
+	@Transactional
+	public List<FriendRequest> listFriends(String userMail) {
 		
-
+		return sessionFactory.getCurrentSession().createQuery("from FriendRequest where requestFrom='"+userMail+"' or requestTo='"+userMail+"' and requestStatus='Accept'").list();
+	}
 }

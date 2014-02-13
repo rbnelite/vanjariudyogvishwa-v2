@@ -13,4 +13,5 @@ public interface FriendRequestDao {
 	public void sendFriendRequest(FriendRequest friendRequest);
 	public List<FriendRequest> listFriendRequest(String userMail);
 	public void acceptFriendRequest(FriendRequest friendrequest);
+	public List<FriendRequest> listFriends(String userMail);
 }

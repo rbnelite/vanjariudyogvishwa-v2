@@ -13,4 +13,6 @@ public interface FriendRequestService {
 	public List<FriendRequest> listFriendRequest(String userMail);
 	
 	public void acceptFriendRequest(FriendRequestCredential friendrequestdto,String status);
+	
+	public List<FriendRequest> listFriends(String userMail);
 }
