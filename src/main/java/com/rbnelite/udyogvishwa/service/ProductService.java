@@ -7,9 +7,12 @@ import com.rbnelite.udyogvishwa.model.Product;
 
 public interface ProductService {
 	
-	public void insertProduct(ProductCredential productcredential);
+	public void insertProduct(String pname, String pdetail,
+			String originalFilename, String userMail);
 	
 	public List <Product> listProduct(String userMail);
 	
 	public List searchProductList(String SearchData);
+
+	
 }

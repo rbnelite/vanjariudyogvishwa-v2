@@ -1,5 +1,6 @@
 package com.rbnelite.udyogvishwa.controller;
 
+import java.io.File;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -14,38 +15,92 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.ProductCredential;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.Product;
+import com.rbnelite.udyogvishwa.model.ProfileImages;
+import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
+import com.rbnelite.udyogvishwa.service.ProfileImageService;
 
 @Controller
 public class ProductController {
 
 	@Resource
 	private ProductService productservice;
-
+	@Resource
+	private EventsService eventService;
+	
+	@Resource
+	private ProfileImageService profileImageService;
+	
+	private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProductImages/";
+	
+	
 	@RequestMapping(value = "/AddProduct", method = RequestMethod.POST)
-	public String insertProduct(HttpServletRequest request,HttpServletResponse response,
-			@ModelAttribute("ProductCredential") ProductCredential productcredential,
-			ModelMap map,String userMail) throws ServletException {
-
+	public String insertProduct(HttpServletRequest request, HttpServletResponse response,@RequestParam("productName")String pname, @RequestParam("productDetails")String pdetail, @RequestParam CommonsMultipartFile[] imgPath, 
+			ModelMap map) throws Exception {
+    System.out.println("gooodmorning");
+    HttpSession session = request.getSession(true);
+    LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+		String userMail=loginUser.getEmail();
 		
-		HttpSession session = request.getSession(true);
-		userMail=(String) session.getAttribute("CurrentEmailId");
+				if (imgPath != null && imgPath.length > 0) {
+            for (CommonsMultipartFile aFile : imgPath){
+                 
+                System.out.println("Saving file: " + aFile.getOriginalFilename());
+                 
+                if (!aFile.getOriginalFilename().equals("")) {
+                	 aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
+                 
+                	
+             		        	 
+             	
+                	productservice.insertProduct(pname, pdetail,aFile.getOriginalFilename(),userMail);
+                	
+                
+                }
+                
+            }
+        }
 		
-		productservice.insertProduct(productcredential);
 		
-		listProduct(request,response, map,userMail);
-		
+				map.put("productNAME", new Product());
+				map.put("ProductList", productservice.listProduct(userMail));
+				
+				map.put("myEvents", new Event());
+				map.put("eventstList", eventService.listEvents());
+				
+				map.put("ProfileImage", new ProfileImages());
+				map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+				
 		return "Products";
 	}
 
 	@RequestMapping(value = "/Product")
-	public String listProduct(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map,String emailId)  throws ServletException {
+	public String listProduct(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map)  throws ServletException {
+		HttpSession session = request.getSession(true);
+		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+		String emailId=loginUser.getEmail();
+		
+		
+		System.out.println("$$$$$$$"+emailId);
+		
+		
 		map.put("productNAME", new Product());
-
 		map.put("ProductList", productservice.listProduct(emailId));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+
+		
+		
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(emailId));
 
 		return "Products";
 	}

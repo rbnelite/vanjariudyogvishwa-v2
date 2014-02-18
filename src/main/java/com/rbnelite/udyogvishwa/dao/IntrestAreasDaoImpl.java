@@ -53,7 +53,7 @@ public class IntrestAreasDaoImpl extends BaseDao<IntrestAreas> implements Intres
 	@Transactional
 	public IntrestAreas getIntrestAreasByEmailId(String userMail) {
 		
-		return (IntrestAreas)sessionFactory.getCurrentSession().createQuery("from IntrestAreas where userMail='"+userMail+"' ").uniqueResult();
+		return(IntrestAreas)sessionFactory.getCurrentSession().createQuery("from IntrestAreas where userMail='"+userMail+"' ").uniqueResult();
 	}
 
 	@Override
@@ -61,7 +61,6 @@ public class IntrestAreasDaoImpl extends BaseDao<IntrestAreas> implements Intres
 	public void UpdateIntrestAreas(IntrestAreas intrestAreas) {
 		
 		IntrestAreas intrestAreas2Update=getIntrestAreasByEmailId(intrestAreas.getUserMail());
-		
 		intrestAreas2Update.setInterestId(intrestAreas.getInterestId());
 		sessionFactory.getCurrentSession().update(intrestAreas2Update);
 		

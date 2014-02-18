@@ -14,6 +14,36 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
+
+
+<script type="text/javascript">
+function DisplayChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='block';
+}
+
+function HideChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='none';
+}
+
+</script>
+<style type="text/css">
+#ChangePhotoHome{
+	border-radius: 5px;
+    width: 300px;
+    height:100px;
+    background-color: bisque;
+    display: none;
+    margin-left: 1090px;
+    border: 1px solid gray; 
+    position: absolute;
+    margin-top: 130px;
+    }
+
+</style>
+
+
 </head>
 <body>
 	<center>
@@ -22,13 +52,39 @@
 			<form action="/vanjariudyogvishwa-v2/SearchResult">
 				<input id="SearchData" type="text" name="SearchData" placeholder="Search" /><input type="submit" value="Search Data">
 					</form>
-					 <label style="margin-left: 110px;">WelCome
-					! ${CurrentEmailId}</label> <br>
+					 <label style="margin-left: 110px; margin-right:5px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo">
-					<img
-						src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-						height="120" width="115"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Photo</a>
+					<c:if test="${! empty ProfileImageList}">
+				<c:forEach items="${ProfileImageList}" var="ProfileImage">
+					<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:forEach>
+					</c:if>
+
+				</div>
+				
+				<div id="ChangePhotoHome">
+				<form action="/vanjariudyogvishwa-v2/UpdateProfileImage" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="JspPageName" value="SearchResult">
+				<a onclick="return HideChangePhotoBlock()">
+				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+								
+				<table>
+				<tr>
+                                        <td>Pick file : 
+                                        <input type="file" name="updateProfileImage" size="50" /></td>
+                                    </tr>
+                                    <tr><td colspan="2"><br></tr>
+                                    <tr>
+                                     <td><input type="submit" value="Upload" name=""></td>
+                                        <td>
+                                        
+                                        </td>
+                                    </tr> 
+                                </table>
+                                </form>
 				</div>
 			</div>
 			<div id="hiderMenu">

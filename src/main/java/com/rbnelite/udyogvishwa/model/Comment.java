@@ -2,9 +2,12 @@ package com.rbnelite.udyogvishwa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -29,6 +32,10 @@ public class Comment {
 	
 	@Column(name="comment_on")
 	private String commentOn;
+	
+	/* @ManyToOne(fetch = FetchType.EAGER)
+	 @JoinColumn(name = "comment_whom", nullable = false)
+	private Index index;*/
 	
 	public int getId() {
 		return id;
@@ -60,6 +67,12 @@ public class Comment {
 	public void setCommentOn(String commentOn) {
 		this.commentOn = commentOn;
 	}
+	/*public Index getIndex() {
+		return index;
+	}
+	public void setIndex(Index index) {
+		this.index = index;
+	}*/
 	
 
 }

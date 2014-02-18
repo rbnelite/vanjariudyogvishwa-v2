@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.StatusCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.NeedService;
+import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 
 @Controller
@@ -36,23 +39,34 @@ public class StatusController {
 	@Resource
 	private CommentService commentservice;
 	
+	@Resource
+	ProfileImageService profileImageService;
+	
 	@RequestMapping(value="/Status",method=RequestMethod.POST)
-	public String statusupdateform(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("StatusCredential")StatusCredential statuscredential,ModelMap map, String userMail) throws ServletException
+	public String statusupdateform(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("StatusCredential")StatusCredential statuscredential,ModelMap map) throws ServletException
 	{
 		
-		HttpSession session = request.getSession(true);
-		userMail=(String) session.getAttribute("CurrentEmailId");
 		
+		HttpSession session=request.getSession(true);
+    	LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
+    	String userMail=loginUser.getEmail();
+    	
 		statusservice.SaveStatusUpdate(statuscredential);
 		
 		map.put("status11", new Status());
 		map.put("statusList", statusservice.listStatus());
+		
+		System.out.println("@@@@"+map.get("statusList"));
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
 		return "Home";
 	}
 	

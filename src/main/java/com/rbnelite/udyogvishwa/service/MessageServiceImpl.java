@@ -42,8 +42,9 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public List<Message> listMessagedFriends(String userMail) {
-		
+
 		return msgDao.listMessagedFriends(userMail);
 	}
 
+	
 }

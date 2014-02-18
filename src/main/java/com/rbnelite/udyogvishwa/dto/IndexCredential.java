@@ -45,12 +45,6 @@ public class IndexCredential {
 	
 	private String telephone;
 	
-	
-	
-	
-	
-	
-	
 	public String getFirstName() {
 		return firstName;
 	}

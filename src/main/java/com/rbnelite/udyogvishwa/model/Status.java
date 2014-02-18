@@ -35,7 +35,8 @@ public class Status {
 	
 	@Column(name = "email")
 	private String usermail;
-
+	
+	
 	public int getId() {
 		return id;
 	}

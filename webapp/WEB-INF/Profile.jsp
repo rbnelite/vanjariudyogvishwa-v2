@@ -10,6 +10,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,11 +21,19 @@
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
+<script type="text/javascript">
+function DisplayChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='block';
+}
 
+function HideChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='none';
+}
 
+</script>
 
-
-<title>Profile2 Page</title>
 <style type="text/css">
 h3 {
 	 background-color: transparent; 
@@ -45,9 +54,21 @@ input[type=text]{
 	height: 50px;
 
 }
+#ChangePhotoHome{
+	border-radius: 5px;
+    width: 300px;
+    height:100px;
+    background-color: bisque;
+    display: none;
+    margin-left: 1090px;
+    border: 1px solid gray; 
+    position: absolute;
+    margin-top: 130px;
+    }
+
 </style>
 
-
+<title>${loginUser.firstName} ${loginUser.lastName}'s Profile Page</title>
 
 </head>
 <body>
@@ -56,25 +77,58 @@ input[type=text]{
 			<div id="Header">
 
 
-				<label style="margin-left: 470px;">WelCome
-					! ${CurrentEmailId}</label> <br>
-				<div id="profile_photo">
-					<img
-						src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png">
-					<br>&nbsp;&nbsp;&nbsp; <a href="#">Change Photo</a>
+				<label style="margin-left: 110px; margin-right:5px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br><br>
+				<div id="profile_photo" style="margin-top: -20px;">
+					<c:if test="${! empty ProfileImageList}">
+				<c:forEach items="${ProfileImageList}" var="ProfileImage">
+					<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:forEach>
+					</c:if>
+					
+					<c:if test="${empty ProfileImageList}">
+						<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/DefaultProfileImg.png">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:if>
+					
+
 				</div>
+				
+				<div id="ChangePhotoHome">
+				<form action="/vanjariudyogvishwa-v2/UpdateProfileImage" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="JspPageName" value="Profile">
+				<a onclick="return HideChangePhotoBlock()">
+				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+								
+				<table>
+				<tr>
+                                        <td>Pick file : 
+                                        <input type="file" name="updateProfileImage" size="50" /></td>
+                                    </tr>
+                                    <tr><td colspan="2"><br></tr>
+                                    <tr>
+                                     <td><input type="submit" value="Upload" name=""></td>
+                                        <td>
+                                        
+                                        </td>
+                                    </tr> 
+                                </table>
+                                </form>
+				</div>
+				
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="white">Home</font> </a> <a
-					id="anchor" href="#"><font color="indigo">My
-						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font>
-				</a> <a id="anchor" href="#" onclick="DisplayINeedBlockPro()"><font
-					color="white">Looking for</font> </a> <a id="anchor" href="#"
-					onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>
-				</a> <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font
-					color="white">Requests</font> </a> <a id="anchor" href="#"
-					onclick="return DisplaySettingBlock()"><font color="white">Setting</font>
-				</a> <a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
+				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
+				<a	id="anchor" href="#"><font color="indigo">My Profile</font> </a>
+				<a id="anchor" href="message"><font color="white">Message</font></a>
+				<a id="anchor" href="#" onclick="DisplayINeedBlockPro()"><font color="white">Looking for</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
+				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
 
@@ -139,11 +193,9 @@ input[type=text]{
 				<div id="InterestAreas">
 					<c:if test="${!empty intrestAreasList}">
 					<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
-						<input id="EditProfileDetails" type="submit" value=""
-									name="editIntrestAreasReqBtn"
-									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+						
 						<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3>IntrestAreas Details</h3>
 								
 									<c:forEach items="${intrestAreasList}" var="intrestAreasDetails">
@@ -239,7 +291,7 @@ input[type=text]{
 						<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
 						
 						<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3>Edit IntrestAreas Details</h3>
 						<c:forEach items="${editIntrestAreasDetailsList}" var="editIntrestAreasDetails">
 						
@@ -382,7 +434,7 @@ input[type=text]{
 									name="editEducationReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
 								style=" float:left; width: 70px; height: 60px;">Education Details</h3>
 						<div id="InsideProfileDetails">
@@ -426,7 +478,7 @@ input[type=text]{
 							<c:if test="${!empty EditEducationDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditEducation" method="post">
 								<input type="hidden" name="userMail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
 								style="float:left; width: 70px; height: 60px;">Edit Education Details</h3>
 
@@ -526,7 +578,7 @@ input[type=text]{
 						<img id="EditProfileDetails"
 							src="${pageContext.request.contextPath}/resources/images/edit1.png">
 							<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
 								style="float:left; width: 70px; height: 60px;">Contact Details</h3>
 						<c:if test="${!empty contactInfoList}">
@@ -561,7 +613,7 @@ input[type=text]{
 							<input id="EditProfileDetails" type="submit" value=""
 								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 							<h3>Family Details</h3>
 							<c:if test="${!empty familyList}">
 								<table>
@@ -597,7 +649,7 @@ input[type=text]{
 									name="editHobbiesReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3>Hobbies </h3>
 						<div id="InsideProfileDetails">
 							
@@ -652,7 +704,7 @@ input[type=text]{
 					<form action="/vanjariudyogvishwa-v2/editHobbies" method="post">
 					
 					<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 					
 					<h3>Edit Hobbies </h3>
 						<div id="InsideProfileDetails">
@@ -743,7 +795,7 @@ input[type=text]{
 									name="editAstroReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 									<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3>Astro Details</h3>
 
 						
@@ -770,7 +822,7 @@ input[type=text]{
 						<c:if test="${!empty editAstroList}">
 					<form action="/vanjariudyogvishwa-v2/editAstro" method="post">
 					<input type="hidden" name="userMail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 					<h3>Edit Astro Details</h3>
 					<table>
 								<c:forEach items="${editAstroList}" var="editAstroDetails">
@@ -852,7 +904,7 @@ input[type=text]{
 									name="editLifeStyReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 						<h3>Lifestyle and Attributes Details</h3>
 						<div id="InsideProfileDetails">
 						
@@ -897,7 +949,7 @@ input[type=text]{
 						<c:if test="${!empty editLifeStyleList}">
 							<form action="/vanjariudyogvishwa-v2/editLifeStyle" method="post">
 								<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 								<h3>Edit Lifestyle and Attributes Details</h3>
 								<div id="InsideProfileDetails">
 								
@@ -963,7 +1015,7 @@ input[type=text]{
 									name="editOtherReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 
 								<h3>Other Details</h3>
 								<div id="InsideProfileDetails">
@@ -1002,7 +1054,7 @@ input[type=text]{
 							<form action="/vanjariudyogvishwa-v2/editOther" method="post">
 
 								<input type="hidden" name="usermail"
-								value="${CurrentEmailId}">
+								value="${loginUser.email}">
 
 								<h3>Edit Other Details</h3>
 								<div id="InsideProfileDetails">

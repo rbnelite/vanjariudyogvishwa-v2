@@ -14,10 +14,14 @@ import javax.servlet.http.HttpSession;
 
 
 
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Hobbies;
@@ -25,6 +29,7 @@ import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
+import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.AstroService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
@@ -32,6 +37,7 @@ import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
+import com.rbnelite.udyogvishwa.service.ProfileImageService;
 
 /**
  * @author PC3
@@ -57,12 +63,18 @@ public class ProfileController {
 	
 	@Resource
 	private IntrestAreasService intrestAreasService;
+	
+	@Resource
+	private ProfileImageService profileImageService; 
 
 	@RequestMapping(value = "/Profile")
 	public String ProfileOperation(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map, String userMail) throws ServletException {
 		
 		HttpSession session = request.getSession(true);
-		userMail=(String) session.getAttribute("CurrentEmailId");
+		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+		
+		userMail=loginUser.getEmail();
+		/*userMail=(String) session.getAttribute("loginUser");*/
 		
 		System.out.println("from profile Controller() get method.");
 
@@ -102,7 +114,9 @@ public class ProfileController {
 			
 		}
 		
-		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+				
 		return "Profile";
 	}
 

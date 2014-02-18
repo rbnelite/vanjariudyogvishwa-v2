@@ -1,6 +1,8 @@
 package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +41,14 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		return sessionFactory.getCurrentSession().createQuery("from Index where firstName like concat('%','"+SearchData+"','%') or middleName like concat('%','"+SearchData+"','%') or lastName like concat('%','"+SearchData+"','%')").list();
 	}
 	
+	@Override
 	@Transactional
-	public List<Index> LoginAuthintication(String emailId, String pwd) {
+	public List<Index> loginAuthintication(String emailId, String pwd) {
+		Query query = sessionFactory.getCurrentSession().createQuery("FROM Index where emailId= :emailId and password=:pwd");
+		query.setParameter("emailId", emailId);
+		query.setParameter("pwd", pwd);
 		
-		
-		return sessionFactory.getCurrentSession().createQuery("FROM Index where emailId='"+emailId+"' and password='"+pwd+"' ").list();
-
+		return query.list();
 	}
 
 }

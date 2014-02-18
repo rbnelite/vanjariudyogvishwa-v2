@@ -18,13 +18,13 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDao productdao;
 	
 	@Override
-	public void insertProduct(ProductCredential productcredential) {
+	public void insertProduct(String pname, String pdetail, String originalFilename, String userMail) {
 		// TODO Auto-generated method stub
 		Product product=new Product();
-		product.setProductName(productcredential.getProductName());
-		product.setProductDetails(productcredential.getProductDetails());
-		product.setUserMail(productcredential.getUserMail());
-		product.setImgPath(productcredential.getImgPath());
+		product.setProductName(pname);
+		product.setProductDetails(pdetail);
+		product.setUserMail(userMail);
+		product.setImgPath(originalFilename);
 		
 		productdao.insertProduct(product);
 	}
@@ -40,6 +40,8 @@ public class ProductServiceImpl implements ProductService {
 	public List searchProductList(String SearchData) {
 		
 		return productdao.searchProductList(SearchData);
+	}	
+		
 	}
 
-}
+

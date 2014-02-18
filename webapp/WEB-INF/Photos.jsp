@@ -12,6 +12,34 @@
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 		<script src="<c:url value="/resources/js/anil.js" />"></script>
+<script type="text/javascript">
+function DisplayChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='block';
+}
+
+function HideChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='none';
+}
+
+</script>		
+		
+<style type="text/css">
+#ChangePhotoHome{
+	border-radius: 5px;
+    width: 300px;
+    height:100px;
+    background-color: bisque;
+    display: none;
+    margin-left: 1090px;
+    border: 1px solid gray; 
+    position: absolute;
+    margin-top: 130px;
+    }
+
+</style>
+		
         <title>Vanjari Udyog Vishwa | Photos</title>
          </head>
     <body>
@@ -20,20 +48,54 @@
             <div id="Header">
 
                 <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
-                <label style="margin-left: 410px;">WelCome ! User</label>
+                <label style="margin-left:110px; margin-right:5px; float: right;">WelCome !<b>${loginUser.firstName} ${loginUser.lastName}</b></label>
                 <br>
-                <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png" height="120" width="115" >
-                    <br>
-                    <a href="ProfilePhotoOperation.jsp">Change Photo</a>
-                </div>
+                <div id="profile_photo" style="margin-top: -20px;">
+					<c:if test="${! empty ProfileImageList}">
+				<c:forEach items="${ProfileImageList}" var="ProfileImage">
+					<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:forEach>
+					</c:if>
+					
+					<c:if test="${empty ProfileImageList}">
+						<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/DefaultProfileImg.png">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:if>
+
+				</div>
+				
+				<div id="ChangePhotoHome">
+				<form action="/vanjariudyogvishwa-v2/UpdateProfileImage" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="JspPageName" value="Photos">
+				<a onclick="return HideChangePhotoBlock()">
+				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+								
+				<table>
+				<tr>
+                                        <td>Pick file : 
+                                        <input type="file" name="updateProfileImage" size="50" /></td>
+                                    </tr>
+                                    <tr><td colspan="2"><br></tr>
+                                    <tr>
+                                     <td><input type="submit" value="Upload" name=""></td>
+                                        <td>
+                                        
+                                        </td>
+                                    </tr> 
+                                </table>
+                                </form>
+				</div>
             </div>
             <div id="hiderMenu">
                <table width=100% style="margin-left: 30px;">
             <tr>
                <td> <a href="Home" class="menuContent">Home</a> </td>
                <td> <a href="Profile" class="menuContent">My Profile</a></td>
-               <td> <a href="Message" class="menuContent">Message</a></td>
+               <td> <a href="message" class="menuContent">Message</a></td>
                <td> <a href="#" onclick="return DisplayINeedBlock()" class="menuContent">Looking for</a></td>
                <td> <a href="#" onclick="return DisplayNotificationBlock()" class="menuContent">Notification</a></td>
                <td> <a href="#" onclick="return DisplayRequestBlock()" class="menuContent">Requests</a></td>
@@ -55,17 +117,17 @@
                 </table>
                  </div>
                  </c:if>
-                   <div id="leftMain2">
+                <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="Message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Products"> <h4><font color="#00cccc">Products</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
-               
-				 </div>
+                
+				</div>
 
             <div id="NeedTopHome">
                 <table>

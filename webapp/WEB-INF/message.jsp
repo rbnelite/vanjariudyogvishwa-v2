@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Photos
+    Document   : Message
     Created on : Dec 10, 2013, 6:18:04 PM
-    Author     : anil
+    Author     : Manoj Sawant
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,20 +15,64 @@
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <title>Vanjari Udyog Vishwa | Photos</title>
 
+<script type="text/javascript">
+function DisplayChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='block';
+}
+
+function HideChangePhotoBlock(){
+    var dispPhoto=document.getElementById("ChangePhotoHome");
+    dispPhoto.style.display='none';
+}
+
+</script>
+
 <style type="text/css">
+
+#anchor {
+	margin-left: 80px;
+	font-family: white;
+	text-decoration: none;
+}
+#hiderMenu {
+	border-radius: 3px;
+	background-color: #fab039;
+	width: 1400px;
+	height: 40px;
+	margin: 1px 50px 1px 0px;
+	font-size: 150%;
+	border: 1px solid gray;
+}
+#mainMessage {
+	background-color: orange;
+	width: 1400px;
+	height: 1000px;
+	margin: 10px 50px 10px 50px;
+	border: 3px solid gray;
+	border-radius: 3px;
+}
+
 #showFrndConversionImg {
 	width: 100px;
 	height: 100px;
 }
 
 #showFrndConversionName {
-	background:none;
-	border:none;
+	background: none;
+	border: none;
 	border-color: bisque;
 	border-radius: 20px;
 }
+/* #showFrndConversionName:hover {
+	background: none;
+	border: none;
+	border-color: yellow;
+	border-radius: 20px;
+	
+} */
 
-#InnerleftMainMsg{
+#InnerleftMainMsg {
 	border-radius: 3px;
 	float: left;
 	width: 300px;
@@ -38,10 +82,10 @@
 	border: 1px solid gray;
 	overflow: auto;
 	padding-right: 20px;
-	padding-bottom: 8px;
+	padding-bottom: 10px;
 }
 
-#OutsideleftMainMsg{
+#OutsideleftMainMsg {
 	border-radius: 3px;
 	float: left;
 	width: 300px;
@@ -49,14 +93,19 @@
 	background-color: bisque;
 	border: 1px solid gray;
 	overflow: hidden;
-	
-	
 }
 
-#InsideRightMessage{
+#RightMainMessage {
+	width: 300px;
+	height: 645px;
+	background-color: red;
+	float: right;
+}
+
+#InsideRightMessage {
 	border-radius: 3px;
-	margin-top: -648px;
-	width: 285px;
+	/* margin-top: -648px; */
+	width: 300px;
 	height: 645px;
 	background-color: bisque;
 	float: right;
@@ -64,13 +113,12 @@
 	overflow: auto;
 	padding-right: 20px;
 	padding-bottom: 8px;
-	
 }
 
 #OutsideRightMessage {
 	border-radius: 3px;
 	margin-top: -648px;
-	width: 285px;
+	width: 300px;
 	height: 645px;
 	background-color: bisque;
 	float: right;
@@ -78,42 +126,78 @@
 	overflow: hidden;
 }
 
-
+#ChangePhotoHome{
+	border-radius: 5px;
+    width: 300px;
+    height:100px;
+    background-color: bisque;
+    display: none;
+    margin-left: 1090px;
+    border: 1px solid gray; 
+    position: absolute;
+    margin-top: 130px;
+    }
 </style>
 
 
 </head>
 <body>
 	<center>
-		<div id="main">
+		<div id="mainMessage">
 			<div id="Header">
-				<input id="input_search" type="text" name="SearchProfile"
-					placeholder="Search" /> <label style="margin-left: 110px;">WelCome
-					! ${CurrentEmailId}</label> <br>
-				<div id="profile_photo">
-					<img
-						src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"
-						height="120" width="115"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Photo</a>
+				<input id="input_search" type="text" name="SearchProfile" placeholder="Search" />
+				 <label style="margin-left: 110px; margin-right:5px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
+				<div id="profile_photo" style="margin-top: -25px;">
+					<c:if test="${! empty ProfileImageList}">
+				<c:forEach items="${ProfileImageList}" var="ProfileImage">
+					<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:forEach>
+					</c:if>
+					
+					<c:if test="${empty ProfileImageList}">
+						<img width="140px" height="140px"
+						src="${pageContext.request.contextPath}/resources/ProfileImages/DefaultProfileImg.png">
+					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
+					</c:if>
+
 				</div>
+				
+				<div id="ChangePhotoHome">
+				<form action="/vanjariudyogvishwa-v2/UpdateProfileImage" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="JspPageName" value="message">
+				<a onclick="return HideChangePhotoBlock()">
+				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+								
+				<table>
+				<tr>
+                                        <td>Pick file : 
+                                        <input type="file" name="updateProfileImage" size="50" /></td>
+                                    </tr>
+                                    <tr><td colspan="2"><br></tr>
+                                    <tr>
+                                     <td><input type="submit" value="Upload" name=""></td>
+                                        <td>
+                                        
+                                        </td>
+                                    </tr> 
+                                </table>
+                                </form>
+				</div>
+				
+				
 			</div>
 			<div id="hiderMenu">
-				<table width=100% style="margin-left: 30px;">
-					<tr>
-						<td><a href="Home" class="menuContent">Home</a></td>
-						<td><a href="Profile" class="menuContent">My Profile</a></td>
-						<td><a href="#" class="menuContent">Message</a></td>
-						<td><a href="#" onclick="return DisplayINeedBlock()"
-							class="menuContent">Looking for</a></td>
-						<td><a href="#" onclick="return DisplayNotificationBlock()"
-							class="menuContent">Notification</a></td>
-						<td><a href="#" onclick="return DisplayRequestBlock()"
-							class="menuContent">Requests</a></td>
-						<td><a href="#" onclick="return DisplaySettingBlock()"
-							class="menuContent">Setting</a></td>
-						<td><a href="logoutUser" class="menuContent">LogOut</a></td>
-					</tr>
-				</table>
+				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
+				<a id="anchor" href="#"><font color="indigo">Message</font></a>
+				<a id="anchor" href="#" onclick="DisplayINeedBlock()"><font color="white">Looking for</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
+				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
 
@@ -137,8 +221,7 @@
 					<tr>
 						<td>Contact No :</td>
 						<td><input type="text" placeholder="Write your Need here...."
-							style="width: 400px; height: 30px;"><br>
-						<br></td>
+							style="width: 400px; height: 30px;"><br> <br></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -172,23 +255,27 @@
 			</div>
 
 			<div id="OutsideleftMainMsg">
-				
+
 				<div id="InnerleftMainMsg">
 					<h3 style="background-color: #FAB039; margin-top: 0px;">Inbox</h3>
-					<form action="">
+					<form action="/vanjariudyogvishwa-v2/viewConversion" ,  method="post">
+						<input type="hidden" name="msgSenderID" value="${loginUser.email}">
 						<table>
-							<c:if test="${!empty msgSentFriendsList}">
-								<c:forEach items="${msgSentFriendsList}" var="msgSentFriends">
-									<tr>
-										<td><input id="showFrndConversionImg" type="submit" value=""
-											name="viewFrndConversion" width="70px" height="60px"
-											style="background-image: url('${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png');">
-										</td>
-										<td><input id="showFrndConversionName" type="submit" value="${msgSentFriends.msgSenderID}"
-											name="msgReceiverID" style="color: ">
+							<c:if test="${!empty msgFriendsList}">
+								<c:forEach items="${msgFriendsList}" var="msgFriends">
+									<c:if test="${msgFriends.msgSenderID != loginUser.email}">
+										<tr>
+											<td><input id="showFrndConversionImg" type="submit"
+												value="" name="viewFrndConversion" width="70px"
+												height="60px"
+												style="background-image: url('${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png');">
 											</td>
-									</tr>
-									
+											<td><input id="showFrndConversionName" type="submit"
+												value="${msgFriends.msgSenderID}" name="msgReceiverID"
+												style="color:"></td>
+										</tr>
+										</c:if>
+										
 								</c:forEach>
 
 							</c:if>
@@ -197,15 +284,15 @@
 					</form>
 
 				</div>
-				
+
 			</div>
 
 			<div id="middlePhotos">
 				<form action="/vanjariudyogvishwa-v2/message" ,  method="post">
 					<a id="MsgTo"> To :<input type="text" name="msgReceiverID"
 						placeholder="Write initial of Name..."
-						style="width: 734px; height: 25px; border-radius: 5px;" /></a>
-						 <input	type="hidden" name="msgSenderID" value="${CurrentEmailId}">
+						style="width: 734px; height: 25px; border-radius: 5px;" /></a> <input
+						type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
 					<div
 						style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: hidden;">
@@ -213,14 +300,18 @@
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 								<table align="center" style="float: left;">
+<%-- 								<c:if test="${FrndProfileImageList}">
+									<c:forEach items="${FrndProfileImageList}" var="FrndProfileImage"> --%>
 									<img
 										src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
 										height="100" width="100" title="${msgConversion.msgSenderID}">
+								<%-- 	</c:forEach>
+								</c:if> --%>
 									<c:forEach items="${msgConversionList}" var="msgConversion">
 
 
 										<c:choose>
-											<c:when test="${msgConversion.msgSenderID==CurrentEmailId}">
+											<c:when test="${msgConversion.msgSenderID==loginUser.email}">
 
 												<tr style="border: 1px solid gray">
 													<td><font color="purple" size="4">You&nbsp;</font></td>
@@ -233,9 +324,6 @@
 																${msgConversion.msgDate}</font></a></td>
 												</tr>
 											</c:when>
-
-
-
 											<c:otherwise>
 
 												<tr style="border: 1px solid gray">
@@ -253,11 +341,6 @@
 											</c:otherwise>
 
 										</c:choose>
-
-
-										<%-- ${msgConversion.msgSenderID } : ${msgConversion.msgReceiverID }
-                			<a><font color="blue"> ${msgConversion.myMsgText }</font></a> --%>
-
 									</c:forEach>
 								</table>
 
@@ -275,10 +358,17 @@
 						value="Send" style="margin-top: 5px;"></a>
 				</form>
 			</div>
-			<div id="OutsideRightMessage"></div>
-			<div id="InsideRightMessage">
-				
+
+			<!-- <div id="RightMainMessage"> -->
+			<div id="OutsideRightMessage">
+				<div id="InsideRightMessage">
+
+					<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+
+
+				</div>
 			</div>
+			<!-- </div> -->
 		</div>
 	</center>
 </body>

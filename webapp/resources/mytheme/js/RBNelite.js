@@ -75,4 +75,14 @@
        alert("hiiii");
     }
 
+    /********************* For Products.jsp Page *********************/
+    
+    function DisableaddProductUnable(){
+    	var dispProduct=document.getElementById("MiddleTopProduct");
+    	dispProduct.style.display="none";
+    }
+    function addProductUnable(){
+    	var dispProduct=document.getElementById("MiddleTopProduct");
+    	dispProduct.style.display="block";
+    }
    
