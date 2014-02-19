@@ -89,15 +89,13 @@ function HideChangePhotoBlock(){
 				</div>
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home" style="text-decoration: none"><font color="white">Home</font>
-				</a> <a id="anchor" href="Profile" style="text-decoration: none" ><font color="white">My Profile</font>	</a>
+				<a id="anchor" href="Home" style="text-decoration: none"><font color="white">Home</font></a>
+				<a id="anchor" href="Profile" style="text-decoration: none" ><font color="white">My Profile</font></a>
 				<a id="anchor" href="message"style="text-decoration: none"><font color="white">Message</font></a>
-				<a id="anchor" href="#" style="text-decoration: none" onclick="return DisplayINeedBlock()"><font color="white">Looking For</font>
-				</a> <a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayNotificationBlock()"><font color="white">Notification</font>
-				</a> <a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayRequestBlock()"><font color="white">Requests</font>
-				</a> <a id="anchor" href="#" style="text-decoration: none" onclick="return DisplaySettingBlock()"><font color="white">Setting</font>
-				</a> <a id="anchor" href="logoutUser" style="text-decoration: none" ><font color="white">LogOut</font>
-				</a>
+				<a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayNotificationBlock()"><font color="white">Notification</font></a>
+				<a id="anchor" href="#" style="text-decoration: none"onclick="return DisplayRequestBlock()"><font color="white">Requests</font></a> 
+				<a id="anchor" href="#" style="text-decoration: none" onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
+				<a id="anchor" href="logoutUser" style="text-decoration: none" ><font color="white">LogOut</font></a>
 			</div>
 
 			 <div id="leftMain">
@@ -129,41 +127,7 @@ function HideChangePhotoBlock(){
 
             </div>
 
-			<div id="NeedTopHome">
-
-				<table>
-					<label><font color="purple">Need Something?</font>
-					</label>
-					<a onclick="return DisableINeedBlock()"> <img
-						src="${pageContext.request.contextPath}/resources/images/close (3).png" style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;">
-					</a>
-					<tr>
-						<td>I Need :</td>
-						<td><input type="text" placeholder="Write your Need here...."
-							style="width: 400px; height: 30px;">
-						</td>
-					</tr>
-					<tr>
-						<td>Description :</td>
-						<td><textarea type="text"
-								placeholder="Write your Need here...."
-								style="width: 400px; height: 100px; resize: none;"></textarea></td>
-					</tr>
-					<tr>
-						<td>Contact No :</td>
-						<td><input type="text" placeholder="Write your Need here...."
-							style="width: 400px; height: 30px;"><br>
-						<br></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><input type="submit" value="Ask for Solution"
-							style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-						</td>
-					</tr>
-				</table>
-
-			</div>
+			
 
 
 			<div id="NotificationTopHome">

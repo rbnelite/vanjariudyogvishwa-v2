@@ -96,24 +96,13 @@ function HideChangePhotoBlock(){
 				</div>
             </div>
             <div id="hiderMenu">
-				<table width=100% style="margin-left: 30px;">
-					<tr>
-					<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-						<td><a href="Home" class="menuContent">Home</a></td>
-						<td><a href="Profile" class="menuContent">My Profile</a></td>
-						<td><a href="message" class="menuContent">Message</a></td>
-						<td><a href="#" onclick="return DisplayINeedBlock()"
-							class="menuContent">Looking for</a></td>
-						<td><a href="#" onclick="return DisplayNotificationBlock()"
-							class="menuContent">Notification</a></td>
-						<td><a href="#" onclick="return DisplayRequestBlock()"
-							class="menuContent">Requests</a></td>
-						<td><a href="#" onclick="return DisplaySettingBlock()"
-							class="menuContent">Setting</a></td>
-						<td><a href="Index" class="menuContent">LogOut</a></td>
-					</tr>
-				</table>
+				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
+				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
+				<a id="anchor" href="message"><font color="white">Message</font></a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
+				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
             <div id="leftMain">
@@ -132,80 +121,19 @@ function HideChangePhotoBlock(){
 
 			    </div>
                 <div id="leftMain2">
-					<table width=100%>
-						<th style="background-color: #fab039"><font color="white">Links</font></th>
-					</table>
-					<br> <img style="float: left;"
-						src="${pageContext.request.contextPath}/resources/images/message-1.png"
-						title="Message" height="32" width="32"><a
-						style="float: left;" href="message"><h4>
-							<font color="#00cccc">Message</font>
-						</h4></a> <img style="float: right;"
-						src="${pageContext.request.contextPath}/resources/images/event.png"
-						title="Events" height="32" width="32"><a
-						style="float: right;" href="Events"><h4>
-							<font color="#00cccc">Events</font>
-						</h4></a> <br>
-					<br>
-					<br> <img style="float: left;"
-						src="${pageContext.request.contextPath}/resources/images/photo.png"
-						title="Photos" height="32" width="32"><a
-						style="float: left;" href="Photos"><h4>
-							<font color="#00cccc">Photos</font>
-						</h4></a> <br>
-					<br>
-					<br> <img style="float: right;"
-						src="${pageContext.request.contextPath}/resources/images/product1.png"
-						title="My Products" height="32" width="32"><a
-						style="float: right;" href="Product">
-						<h4>
-							<font color="#00cccc">Products</font>
-						</h4>
-					</a> <img style="float: left;"
-						src="${pageContext.request.contextPath}/resources/images/friends1.png"
-						title="Friend's" height="32" width="32"><a
-						style="float: left;" href="Friends">
-						<h4>
-							<font color="#00cccc">Friends</font>
-						</h4>
-					</a>
-				</div>
+                  <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
+                    <br>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="black">Products</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
+                </div>
                 <div id="leftMain3">Needs</div>
 
             </div>
 
-            <div id="NeedTopHome">
-                <table>
-                    <label><font color="purple">Need Something?</font></label>
-                    <a onclick="return DisableINeedBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-                    <tr>
-                        <td>I Need :</td>
-                        <td><input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Description :
-                        </td>
-                        <td>
-                            <textarea type="text" placeholder="Write your Need here...." style="width: 400px; height: 100px; resize: none;"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Contact No :
-                        </td>
-                        <td>
-                            <input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"><br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            
 
 
             <div id="NotificationTopHome">

@@ -40,7 +40,6 @@ public class Message {
 	
 	@Column(name="message_text")
 	private String myMsgText;
-	
 	public long getMsgID() {
 		return msgID;
 	}
