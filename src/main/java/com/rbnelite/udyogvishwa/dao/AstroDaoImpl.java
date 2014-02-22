@@ -42,6 +42,7 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 
 
 	@Override
+	@Transactional
 	public List<Astro> listAstro(String userMail) {
 		
 		

@@ -5,11 +5,13 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.LikeStatus;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
@@ -33,9 +35,9 @@ public class LikeStatusController {
 	private CommentService commentservice;
 	
 	@RequestMapping(value="/LikeStatus",method=RequestMethod.POST)
-	public String likeform()
+	public String likeform(@ModelAttribute LikeStatus likeStatus)
 	{
-		likestatusservice.LikeTheStatus();
+		likestatusservice.LikeTheStatus(likeStatus);
 		return "Home";
 	}
 	

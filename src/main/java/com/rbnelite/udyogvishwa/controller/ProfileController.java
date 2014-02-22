@@ -111,7 +111,6 @@ public class ProfileController {
 		if (!map.containsKey("editIntrestAreasDetails")) {
 			map.put("intrestAreasDetails", new IntrestAreas());
 			map.put("intrestAreasList", intrestAreasService.listIntrestAreas(userMail));
-			
 		}
 		
 		map.put("ProfileImage", new ProfileImages());

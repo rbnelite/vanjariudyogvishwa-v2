@@ -9,23 +9,23 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="likestatus")
+@Table(name="like_status")
 public class LikeStatus {
 	
 	@Id
-	@Column(name="likeid")
+	@Column(name="like_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="likestatus_sequence_id")
-	@SequenceGenerator(name="likestatus_sequence_id", sequenceName="likestatus_sequence",allocationSize=1)
+	@SequenceGenerator(name="likestatus_sequence_id", sequenceName="like_status_sequence",allocationSize=1)
 	private int id;
 	
-	@Column
-	private int count;
+	@Column(name="status")
+	private boolean count;
 	
-	@Column(name="names")
+	@Column(name="email")
 	private String whoLike;
 	
-	@Column(name="satausid")
-	private String statusId;
+	@Column(name="status_id")
+	private long statusId;
 	
 	
 	public int getId() {
@@ -34,10 +34,10 @@ public class LikeStatus {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getCount() {
+	public boolean getCount() {
 		return count;
 	}
-	public void setCount(int count) {
+	public void setCount(boolean count) {
 		this.count = count;
 	}
 	public String getWhoLike() {
@@ -46,10 +46,10 @@ public class LikeStatus {
 	public void setWhoLike(String whoLike) {
 		this.whoLike = whoLike;
 	}
-	public String getStatusId() {
+	public long getStatusId() {
 		return statusId;
 	}
-	public void setStatusId(String statusId) {
+	public void setStatusId(long statusId) {
 		this.statusId = statusId;
 	}
 

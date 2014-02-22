@@ -54,7 +54,7 @@ function HideChangePhotoBlock(){
             <div id="Header">
 
                 <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
-                <label style="margin-left:110px; margin-right:5px; float: right;">WelCome !<b>${loginUser.firstName} ${loginUser.lastName}</b></label>
+                <label style="margin-left:110px; margin-right:5px; float: right;">WelCome!<b> ${loginUser.firstName} ${loginUser.lastName}</b></label>
                 <br>
                 <div id="profile_photo" style="margin-top: -20px;">
 					<c:if test="${! empty ProfileImageList}">
@@ -124,24 +124,50 @@ function HideChangePhotoBlock(){
                     <br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="#"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
                 
 				</div>
 
-            
+
             <div id="NotificationTopHome">
                 
                 <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
 				
             </div>
 
-            <div id="RequestTopHome">
-                <a onclick="return DisableRequestBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
+           			<div id="RequestTopHome">
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
 
-            </div>
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
+			</div>
             <div id="SettingTopHome">
                 <a>Change Account Setting</a>
                 <a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>

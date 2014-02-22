@@ -13,7 +13,10 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
-<title>Vanjari Udyog Vishwa | Photos</title>
+<link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.4.4.min.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
+<title>Vanjari Udyog Vishwa | Message</title>
 
 <script type="text/javascript">
 function DisplayChangePhotoBlock(){
@@ -148,8 +151,11 @@ function HideChangePhotoBlock(){
 	<center>
 		<div id="mainMessage">
 			<div id="Header">
-				<input id="input_search" type="text" name="SearchProfile" placeholder="Search" />
-				 <label style="margin-left: 110px; margin-right:5px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
+				<form action="/vanjariudyogvishwa-v2/SearchResult">
+				<input id="SearchData" type="text" name="SearchData" placeholder="Search" style="height: 25px; width: 200px;"/>
+				<input type="submit" value=" " style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');" >
+					</form>
+					 <label style="margin-left: 110px; margin-right:5px; margin-top: -30px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
@@ -262,10 +268,17 @@ function HideChangePhotoBlock(){
 
 			<div id="middlePhotos">
 				<form action="/vanjariudyogvishwa-v2/message" ,  method="post">
-					<a id="MsgTo"> To :<input type="text" name="msgReceiverID"
-						placeholder="Write initial of Name..."
-						style="width: 734px; height: 25px; border-radius: 5px;" /></a> <input
-						type="hidden" name="msgSenderID" value="${loginUser.email}">
+					
+					<input type="hidden" name="msgReceiverID" value="${msgConversionFrndName}" 
+							style="width: 734px; height: 25px; border-radius: 5px;" />
+						
+						<a id="MsgTo"> To :<input type="text" id="country"
+							name="country" style="width: 700px;" /> <script>
+								$("#country").autocomplete("list");
+							</script>
+						</a>
+					
+						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
 					<div
 						style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: hidden;">
@@ -273,7 +286,7 @@ function HideChangePhotoBlock(){
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 								<table align="center" style="float: left;">
-<%-- 								<c:if test="${FrndProfileImageList}">
+							<%-- <c:if test="${FrndProfileImageList}">
 									<c:forEach items="${FrndProfileImageList}" var="FrndProfileImage"> --%>
 									<img
 										src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
@@ -322,13 +335,14 @@ function HideChangePhotoBlock(){
 
 						</div>
 					</div>
-
+					
 					<input type="text" id="MsgToArea" name="myMsgText"
 						style="resize: none; border-radius: 5px;"
 						placeholder="Write your message here..."> <a id="anchor">Text</a>
 					<a id="anchor">Photos</a> <a id="anchor">Link</a> <a id="anchor">Videos</a>
 					<a id="anchor"><input type="submit" name="SubmitMsg"
 						value="Send" style="margin-top: 5px;"></a>
+					
 				</form>
 			</div>
 
@@ -345,4 +359,5 @@ function HideChangePhotoBlock(){
 		</div>
 	</center>
 </body>
+
 </html>

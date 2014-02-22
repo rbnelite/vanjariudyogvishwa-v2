@@ -38,6 +38,25 @@ function HideChangePhotoBlock(){
     position: absolute;
     margin-top: 130px;
     }
+    #leftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    padding-right: 20px;
+}
+#OutsideleftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+}
 
 </style>
 
@@ -47,8 +66,7 @@ function HideChangePhotoBlock(){
 		<div id="main">
 			<div id="Header">
 
-				<input id="input_search" type="text" name="SearchProfile"
-					placeholder="Search" />
+				<input id="input_search" type="text" name="SearchProfile" placeholder="Search" />
 					<label style="margin-left: 110px; margin-right:5px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo" style="margin-top: -20px;">
 					<c:if test="${! empty ProfileImageList}">
@@ -86,6 +104,7 @@ function HideChangePhotoBlock(){
                                     </tr> 
                                 </table>
                                 </form>
+
 				</div>
 			</div>
 			<div id="hiderMenu">
@@ -100,7 +119,7 @@ function HideChangePhotoBlock(){
 
 			 <div id="leftMain">
 				 <c:if  test="${!empty eventstList}">
-             		   
+             		   <div id="OutsideleftMain1">
                 <div id="leftMain1">
                 <table width=100%>
                 <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
@@ -112,7 +131,7 @@ function HideChangePhotoBlock(){
                 </table>
                 
                  </div>
-               
+               </div>
                  </c:if>
                 <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
@@ -121,28 +140,45 @@ function HideChangePhotoBlock(){
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="#"><h4><font color="black">Events</font></h4></a> <br><br><br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="Friends"> <h4><font color="#00cccc">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
                 <div id="leftMain3">Needs</div>
-
             </div>
-
-			
-
 
 			<div id="NotificationTopHome">
 				<a onclick="return DisableNotificBlock()"> 
 				<img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px; height: 40px; float: right;">
 				</a>
-
 			</div>
+						<div id="RequestTopHome">
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
 
-			<div id="RequestTopHome">
-				<a onclick="return DisableRequestBlock()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close (3).png"
-					style="width: 40px; height: 40px; float: right;">
-				</a>
-
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
 			</div>
 			<div id="SettingTopHome">
 				<a>Change Account Setting</a> <a

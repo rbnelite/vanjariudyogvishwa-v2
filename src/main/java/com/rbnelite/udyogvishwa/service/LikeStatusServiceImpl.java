@@ -14,11 +14,11 @@ public class LikeStatusServiceImpl implements LikeStatusService {
 	private LikeStatusDao likestatusdao;
 	
 	@Override
-	public void LikeTheStatus() {
+	public void LikeTheStatus(LikeStatus likeStatus) {
 		LikeStatus likestatus=new LikeStatus();
-		likestatus.setCount(1);
-		likestatus.setStatusId("xx");
-		likestatus.setWhoLike("abc");
+		likestatus.setCount(true);
+		likestatus.setStatusId(likeStatus.getStatusId());
+		likestatus.setWhoLike(likeStatus.getWhoLike());
 		likestatusdao.LikeTheStatus(likestatus);
 	}
 

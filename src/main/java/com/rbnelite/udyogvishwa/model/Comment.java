@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,6 +28,7 @@ public class Comment {
 	
 	@Column(name="comment_whom")
 	private String whoseComment;
+	
 	
 	@Column(name="status_id")
 	private int statusId;

@@ -2,9 +2,14 @@ package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -38,7 +43,17 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List searchUserList(String SearchData) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Index where firstName like concat('%','"+SearchData+"','%') or middleName like concat('%','"+SearchData+"','%') or lastName like concat('%','"+SearchData+"','%')").list();
+		Session session=sessionFactory.openSession();
+		Criteria criteria=session.createCriteria(Index.class);
+		
+		Criterion firstName=Restrictions.ilike("firstName", SearchData,MatchMode.ANYWHERE);
+		Criterion middleName=Restrictions.ilike("middleName",SearchData,MatchMode.ANYWHERE);
+		Criterion lastName=Restrictions.ilike("lastName", SearchData,MatchMode.ANYWHERE);
+		LogicalExpression orExp=Restrictions.or(firstName, middleName);
+		LogicalExpression orExp1=Restrictions.or(orExp, lastName);
+		criteria.add(orExp1);
+			
+		return criteria.list();
 	}
 	
 	@Override

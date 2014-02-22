@@ -6,7 +6,9 @@ import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+
 
 
 
@@ -20,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 
+
 import com.rbnelite.udyogvishwa.dto.EducationWorkCredential;
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
 
@@ -50,14 +54,15 @@ public String insert(@RequestParam("userMail") String emailId, @Valid EducationW
 
 
 @RequestMapping(value = "/EditEducation", method=RequestMethod.POST)
-public String editEducation(HttpServletRequest request,HttpServletResponse response,@RequestParam("userMail") String emailId, @ModelAttribute EducationWork educationWork, Map<String, Object> map) throws ServletException {
+public String editEducation(HttpServletRequest request,HttpServletResponse response, @ModelAttribute EducationWork educationWork, Map<String, Object> map) throws ServletException {
 	
-	System.out.println("from Education controller- editEducation() method");
+	HttpSession session = request.getSession(true);
+	LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+	String emailId=loginUser.getEmail();
+	System.out.println("from Education controller- editEducation("+emailId+") method");
 		
 		educationWorkService.updateEducation(educationWork);
-		ProfileController profileController = new ProfileController();
 		
-		profileController.ProfileOperation(request, response, map, emailId);
 		
 	return "Profile";
 }

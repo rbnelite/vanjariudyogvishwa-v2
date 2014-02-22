@@ -19,10 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.MessageDTO;
+
+
+import com.rbnelite.udyogvishwa.model.FriendRequest;
+
 import com.rbnelite.udyogvishwa.model.Message;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.MessageService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
@@ -46,6 +51,8 @@ public class MessageController {
 	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
+	@Resource 
+	private FriendRequestService friendrequestservice;
 	@Resource
 	private ProfileImageService profileImageService;
 
@@ -56,6 +63,7 @@ public class MessageController {
 			@ModelAttribute("MessageDTO") MessageDTO msgdto,
 			Map<String, Object> map) {
 		
+
 		ObjmsgService.addMessage(msgdto);
 
 		
@@ -89,16 +97,27 @@ public class MessageController {
 		
 		map.put("msgFriends", new Message());
 		map.put("msgFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
+		map.put("msgConversionFrndName", msgReceiverID);
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(msgSenderID));
 		
+		
+		HttpSession session = request.getSession(true);
+		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+	
+		String userMail=loginUser.getEmail();
+		
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		return "message";
 		
 	}
 
 	@RequestMapping(value = "/message")
+
 	public String messageForm(HttpServletRequest request,HttpServletResponse response, ModelMap map) {
 		
 		HttpSession session = request.getSession(true);
@@ -112,6 +131,10 @@ public class MessageController {
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+
 		return "message";
 	}
 
