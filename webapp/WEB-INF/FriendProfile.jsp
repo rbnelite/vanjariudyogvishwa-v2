@@ -76,15 +76,14 @@
                 </div>
             </div>
             <div id="hiderMenu">
-                <a id="anchor" href="Home.jsp"><font color="#f868f2">Home</font></a>
-                <a id="anchor" href="Profile.jsp"><font color="indigo">My Profile</font></a>
-                <a id="anchor" href="Message.jsp"><font color="#f868f2">Message</font></a>
-                <a id="anchor" href="#" onclick="DisplayINeedBlockPro()"><font color="#f868f2">I Need</font></a>
-                <a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font color="#f868f2">Notification</font></a>
-                <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="#f868f2">Requests</font></a>
-                <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font color="#f868f2">Setting</font></a>
-                <a id="anchor" href="index.jsp"><font color="#f868f2">LogOut</font></a>
-            </div>
+				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
+				<a id="anchor" href="message"><font color="white">Message</font></a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
+				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
+			</div>
             
             
             

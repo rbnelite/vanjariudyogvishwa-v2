@@ -52,7 +52,7 @@ public class OtherDetailsController {
 	}
 	
 	@RequestMapping(value="/editOther", method=RequestMethod.POST)
-	public String editLifeStyle(HttpServletRequest request,HttpServletResponse response,@RequestParam("usermail") String emailId, @ModelAttribute OtherDetails otherDetails, Map<String, Object> map){
+	public String editLifeStyle(@RequestParam("usermail") String emailId, @ModelAttribute OtherDetails otherDetails, Map<String, Object> map){
 		
 		otherDetailsServ.updateOtherDetails(otherDetails);
 		

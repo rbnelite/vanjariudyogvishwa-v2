@@ -29,6 +29,7 @@ import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 
 @Controller
@@ -48,7 +49,7 @@ public class ChangePasswordController{
 	private FriendRequestService friendrequestservice;
 	
 	@RequestMapping(value="/ChangePassword",method=RequestMethod.POST)
-	public String changepassform1(@Valid ChangePassword changepwd,BindingResult res,@ModelAttribute("ChangePasswordCredential")ChangePasswordCredential changepasscred,ModelMap map,HttpServletRequest request,HttpServletResponse response,String userMail)
+	public String changepassform1(@Valid ChangePassword changepwd,BindingResult res,@ModelAttribute("ChangePasswordCredential")ChangePasswordCredential changepasscred,ModelMap map,String userMail)
 	{
 		if(res.hasErrors())
 		{
@@ -72,8 +73,7 @@ public class ChangePasswordController{
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
 		

@@ -29,6 +29,7 @@ import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 /**
  * @author PC3
@@ -72,10 +73,9 @@ public class FriendListController {
 	}
 	
 	@RequestMapping(value="/FriendList")
-	public String showHome(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map,String userMail)throws ServletException{
+	public String showHome(Map<String, Object> map,String userMail)throws ServletException{
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
 		

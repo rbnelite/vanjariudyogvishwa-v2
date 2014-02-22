@@ -18,6 +18,7 @@ import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
 public class PhotosController {
@@ -32,10 +33,9 @@ public class PhotosController {
 	private ProfileImageService profileImageService;
 
 	@RequestMapping(value = "/Photos")
-	public String photoform(HttpServletRequest request, Map<String, Object> map) {
+	public String photoform(Map<String, Object> map) {
 		
-		HttpSession session=request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 
 		map.put("status11", new Status());

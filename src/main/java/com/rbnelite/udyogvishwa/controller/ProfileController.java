@@ -17,6 +17,9 @@ import javax.servlet.http.HttpSession;
 
 
 
+
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.EducationWork;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
@@ -32,12 +36,14 @@ import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.AstroService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 /**
  * @author PC3
@@ -66,12 +72,13 @@ public class ProfileController {
 	
 	@Resource
 	private ProfileImageService profileImageService; 
+	@Resource
+	private FriendRequestService friendrequestservice;
 
 	@RequestMapping(value = "/Profile")
-	public String ProfileOperation(HttpServletRequest request,HttpServletResponse response,Map<String, Object> map, String userMail) throws ServletException {
+	public String ProfileOperation(Map<String, Object> map, String userMail) throws ServletException {
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 		
 		userMail=loginUser.getEmail();
 		/*userMail=(String) session.getAttribute("loginUser");*/
@@ -115,84 +122,87 @@ public class ProfileController {
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("userFriends", new FriendRequest());
+		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
 				
 		return "Profile";
 	}
 
 	@RequestMapping(value = "/EditOtherDetails")
-	public String editOtherDetails(HttpServletRequest request,HttpServletResponse response,@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
+	public String editOtherDetails(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
 
 		map.put("EditOtherDetails", new OtherDetails());
 		map.put("EditOtherDetailsList", otherDetailsServ.listOtherDetails(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 
 		return "Profile";
 
 	}
 	
 	@RequestMapping(value = "/EditEducationDetails")
-	public String editEducationDetails(HttpServletRequest request,HttpServletResponse response,@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
+	public String editEducationDetails(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
 
 		map.put("EditEducationDetails", new EducationWork());
 		map.put("EditEducationDetailsList", educationWorkService.listEducationWork(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	@RequestMapping(value = "/EditHobbiesDetails")
-	public String editHobbiesDetails(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
+	public String editHobbiesDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
 
 		map.put("editHobbiesDetails", new Hobbies());
 		map.put("editHobbiesList", hobbiesServ.listHobbies(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	@RequestMapping(value = "/EditAstroDetails")
-	public String editAstroDetails(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
+	public String editAstroDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
 
 		map.put("editAstroDetails", new Astro());
 		map.put("editAstroList", astroServ.listAstro(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	@RequestMapping(value = "/EditLifeStyleDetails")
-	public String editLifeStyle(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
+	public String editLifeStyle(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
 
 		map.put("editLifeStyleDetails", new LifeStyle());
 		map.put("editLifeStyleList", lifeStyleServ.listLifeStyle(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	
 	@RequestMapping(value = "/EditProductDetails")
-	public String editProductDetails(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId,Map<String, Object> map)  throws ServletException {
+	public String editProductDetails(@RequestParam("usermail") String emailId,Map<String, Object> map)  throws ServletException {
 
 		map.put("editProductDetails", new Product());
 		map.put("editProductList", productservice.listProduct(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	@RequestMapping(value = "/EditIntrestAreasDetails")
-	public String editIntrestAreasDetails(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
+	public String editIntrestAreasDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
 
 		map.put("editIntrestAreasDetails", new IntrestAreas());
 		map.put("editIntrestAreasDetailsList", intrestAreasService.listIntrestAreas(emailId));
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 	
 	
 	@RequestMapping(value = "/ProfileFromHome")
-	public String homeReqProfile(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
+	public String homeReqProfile(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
 
 		map.put("CurrentEmailId", emailId);
 		
 		
-		ProfileOperation(request,response, map,emailId);
+		ProfileOperation(map,emailId);
 		return "Profile";
 	}
 

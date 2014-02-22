@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -23,6 +25,11 @@ public class LikeStatusDaoImpl extends BaseDao<LikeStatus> implements LikeStatus
 		session.save(likestatus);
 		session.getTransaction().commit();
 		session.flush();
+	}
+	@Override
+	@Transactional
+	public List<LikeStatus> listLikeStatus() {
+		return sessionFactory.getCurrentSession().createQuery("from LikeStatus").list();
 	}
 
 }

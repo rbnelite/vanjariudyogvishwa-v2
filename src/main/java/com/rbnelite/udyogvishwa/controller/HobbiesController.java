@@ -35,7 +35,7 @@ public class HobbiesController {
 	
 	
 	@RequestMapping(value="/editHobbies", method=RequestMethod.POST)
-	public String editHobbies(HttpServletRequest request,HttpServletResponse response, @RequestParam("usermail") String userMail, @ModelAttribute Hobbies hobbies, Map<String, Object> map){
+	public String editHobbies(@RequestParam("usermail") String userMail, @ModelAttribute Hobbies hobbies, Map<String, Object> map){
 		
 		hobbiesservice.UpdateHobbies(hobbies);
 		

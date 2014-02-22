@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -20,6 +22,14 @@ public class LikeStatusServiceImpl implements LikeStatusService {
 		likestatus.setStatusId(likeStatus.getStatusId());
 		likestatus.setWhoLike(likeStatus.getWhoLike());
 		likestatusdao.LikeTheStatus(likestatus);
+	}
+
+	@Override
+	public List<LikeStatus> listLikeStatus() {
+		
+		List<LikeStatus> l1=likestatusdao.listLikeStatus();
+		System.out.println("88888likeStatus List contains" + l1.size()+" Elements");
+		return l1;
 	}
 
 }

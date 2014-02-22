@@ -22,6 +22,7 @@ import com.rbnelite.udyogvishwa.service.IndexService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
 public class SearchResultController {
@@ -44,12 +45,11 @@ public class SearchResultController {
 	private ProfileImageService profileImageService;
 	
 	@RequestMapping(value="/SearchResult")
-	public String searchForm(HttpServletRequest request, @RequestParam("SearchData") String searchstrHome,  Map<String, Object> map)
+	public String searchForm(@RequestParam("SearchData") String searchstrHome,  Map<String, Object> map)
 	{
 		
-		HttpSession session=request.getSession(true);
-    	LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
-    	String userMail=loginUser.getEmail();
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
     	
 		
 		map.put("myEvents", new Event());

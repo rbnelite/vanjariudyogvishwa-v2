@@ -4,9 +4,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpServletResponse;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -19,13 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
-
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
-
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 
 @Controller
@@ -45,15 +42,14 @@ public class EventsController {
 	@RequestMapping(value = "/Events", method = RequestMethod.POST)
 	public String insert(@RequestParam("usermail") String user_name,
 			@ModelAttribute("EventsCredential") EventsCredential eventscredential,
-			ModelMap map,HttpServletRequest request,HttpServletResponse response,String userMail) {
+			ModelMap map,String userMail) {
 		 
 		eventsservice.insertEvents(eventscredential);
 		
 
-		listEvents(request, response, userMail, map);
+		listEvents(userMail, map);
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
 		
@@ -67,12 +63,11 @@ public class EventsController {
 	
 	
 	@RequestMapping("/Events")
-	public String listEvents(HttpServletRequest request,HttpServletResponse response,String userMail,Map<String, Object> map) {
+	public String listEvents(String userMail,Map<String, Object> map) {
 
 		
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
 		

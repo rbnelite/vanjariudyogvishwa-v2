@@ -98,7 +98,7 @@ function HideChangePhotoBlock(){
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
-				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
@@ -107,19 +107,24 @@ function HideChangePhotoBlock(){
 			</div>
 			
             <div id="leftMain">
-               	 <c:if  test="${!empty eventstList}">
-                <div id="leftMain1">
-                <table width=100%>
-                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
-                <c:forEach items="${eventstList}" var="myEvents">
-                <tr>
-                <td align="left">Anil Budge created an event :${myEvents.name}</td>
-                </tr>
-                  </c:forEach>
-                </table>
-                 </div>
-                 </c:if>
-                <div id="leftMain2">
+				<c:if test="${!empty eventstList}">
+					<div id="OutsideleftMain1">
+						<div id="leftMain1">
+							<table width=100%>
+								<th style="background-color: #fab039"><font color="white">Upcoming
+										Events</font></th>
+								<c:forEach items="${eventstList}" var="myEvents">
+									<tr>
+										<td align="left">${myEvents.usermail}created an event
+											:${myEvents.name}</td>
+									</tr>
+								</c:forEach>
+							</table>
+
+						</div>
+					</div>
+				</c:if>
+				<div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>

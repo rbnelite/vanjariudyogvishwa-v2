@@ -22,7 +22,6 @@ import com.rbnelite.udyogvishwa.dto.MessageDTO;
 
 
 import com.rbnelite.udyogvishwa.model.FriendRequest;
-
 import com.rbnelite.udyogvishwa.model.Message;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.CommentService;
@@ -32,6 +31,7 @@ import com.rbnelite.udyogvishwa.service.MessageService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 /**
  * @author PC3
@@ -57,7 +57,7 @@ public class MessageController {
 	private ProfileImageService profileImageService;
 
 	@RequestMapping(value = "/message", method = RequestMethod.POST)
-	public String messageMethod(HttpServletRequest request,	HttpServletResponse response, 
+	public String messageMethod( 
 			@RequestParam("msgSenderID") String msgSenderID,
 			@RequestParam("msgReceiverID") String msgReceiverID,
 			@ModelAttribute("MessageDTO") MessageDTO msgdto,
@@ -81,8 +81,7 @@ public class MessageController {
 	}
 	
 	@RequestMapping(value="/viewConversion", method=RequestMethod.POST)
-	public String messageConversion(HttpServletRequest request,	HttpServletResponse response, 
-			@RequestParam("msgSenderID") String msgSenderID,
+	public String messageConversion(@RequestParam("msgSenderID") String msgSenderID,
 			@RequestParam("msgReceiverID") String msgReceiverID,
 			@ModelAttribute("MessageDTO") MessageDTO msgdto,
 			Map<String, Object> map) {
@@ -103,8 +102,7 @@ public class MessageController {
 		map.put("ProfileImageList", profileImageService.getProfileImage(msgSenderID));
 		
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser=(LoginUser)session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 	
 		String userMail=loginUser.getEmail();
 		
@@ -118,10 +116,9 @@ public class MessageController {
 
 	@RequestMapping(value = "/message")
 
-	public String messageForm(HttpServletRequest request,HttpServletResponse response, ModelMap map) {
+	public String messageForm(ModelMap map) {
 		
-		HttpSession session = request.getSession(true);
-		LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+		LoginUser loginUser = RequestContext.getUser();
 		
 		String userMail=loginUser.getEmail();
 		

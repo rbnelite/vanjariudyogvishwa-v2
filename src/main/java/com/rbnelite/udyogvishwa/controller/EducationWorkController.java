@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -23,10 +24,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 
+
 import com.rbnelite.udyogvishwa.dto.EducationWorkCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
 public class EducationWorkController {
@@ -54,10 +57,9 @@ public String insert(@RequestParam("userMail") String emailId, @Valid EducationW
 
 
 @RequestMapping(value = "/EditEducation", method=RequestMethod.POST)
-public String editEducation(HttpServletRequest request,HttpServletResponse response, @ModelAttribute EducationWork educationWork, Map<String, Object> map) throws ServletException {
+public String editEducation(@ModelAttribute EducationWork educationWork, Map<String, Object> map) throws ServletException {
 	
-	HttpSession session = request.getSession(true);
-	LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
+	LoginUser loginUser = RequestContext.getUser();
 	String emailId=loginUser.getEmail();
 	System.out.println("from Education controller- editEducation("+emailId+") method");
 		

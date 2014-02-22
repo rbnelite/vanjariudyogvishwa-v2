@@ -35,7 +35,7 @@ public class LifeStyleController {
 	
 	
 	@RequestMapping(value="/editLifeStyle", method=RequestMethod.POST)
-	public String editLifeStyle(HttpServletRequest request,HttpServletResponse response,@RequestParam("usermail") String emailId, @ModelAttribute LifeStyle lifeStyle, Map<String, Object> map){
+	public String editLifeStyle(@RequestParam("usermail") String emailId, @ModelAttribute LifeStyle lifeStyle, Map<String, Object> map){
 		
 		lifestyleservice.updateLifeStyle(lifeStyle);
 		

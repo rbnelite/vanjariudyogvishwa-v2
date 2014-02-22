@@ -349,6 +349,18 @@ function HideChangePhotoBlock(){
 				<div id="middleHome">
 					<c:if test="${!empty statusList}">
 						<c:forEach items="${statusList}" var="status11">
+						
+						
+						<!-- ******************* For count of Like/Unlike ****************** -->
+						
+							
+							
+							
+							
+						
+						<!-- ******************* End of Count for Like/Unlike ****************** -->
+						
+						
 							<div id="ShowStatusUpdet">
 								<div class="userStatusImage">
 									<img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
@@ -419,7 +431,7 @@ function HideChangePhotoBlock(){
 														<input type="hidden" name="statusId" value="${status11.id}">
 														<input type="hidden" name="whoLike" value="${loginUser.email}">
 														<input type="submit" value="Like" class="LikeUnlikeBtn">
-														0
+														
 													</form>
 												</td>
 												<td><form action="/vanjariudyogvishwa-v2/UnlikeStatus"

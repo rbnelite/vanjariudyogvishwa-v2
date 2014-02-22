@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
-
+import com.rbnelite.udyogvishwa.model.LikeStatus;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
@@ -25,16 +25,16 @@ import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
-
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.service.LikeStatusService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
-
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 /**
  * @author PC3
@@ -53,7 +53,8 @@ public class HomeController {
 	private PeopleRefrenceService peoplerefservice;
 	@Resource
 	private FriendRequestService friendrequestservice;
-	
+	@Resource
+	private LikeStatusService likeStatusService;
 	
 	@Resource
 	private ProfileImageService profileImageService; 
@@ -62,8 +63,7 @@ public class HomeController {
 
 	public String showHome(HttpServletRequest request, Map<String, Object> map){
 		
-		HttpSession session=request.getSession(true);
-		LoginUser loginUser=(LoginUser) session.getAttribute("loginUser"); 
+		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 		System.out.println("@@@"+userMail);
 
@@ -71,6 +71,9 @@ public class HomeController {
 		map.put("status11", new Status());
 		List<Status> status = statusservice.listStatus();
 		map.put("statusList", status);
+		
+		map.put("likeStatus", new LikeStatus());
+		map.put("likeStatusList", likeStatusService.listLikeStatus());
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());

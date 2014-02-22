@@ -389,8 +389,50 @@ input[type=text]{
 
 				</div>
 				</div>
+				
 				<div id="Friends">
 					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
+					
+					<table width=90%>
+							<c:if test="${!empty userFriendsList}">
+								<c:forEach items="${userFriendsList}" var="userFriends">
+									<c:choose>
+										<c:when test="${userFriends.requestFrom == loginUser.email}">
+											<tr>
+												<td><img
+													src="${pageContext.request.contextPath}/resources/images/33.png"
+													height="72" width="70"></td>
+												<td>
+													<form action="/vanjariudyogvishwa-v2/FriendProfile"
+														method="post">
+														<input type="submit" name="friendsEmailId"
+															value="${userFriends.requestTo}"> <br> <a>
+															<font color="gray" size="2">Works @ Rbnelite</font>
+														</a>
+													</form>
+												</td>
+											</tr>
+										</c:when>
+										<c:when test="${userFriends.requestTo == loginUser.email}">
+											<tr>
+												<td><img
+													src="${pageContext.request.contextPath}/resources/images/33.png"
+													height="72" width="70"></td>
+												<td>
+													<form action="/vanjariudyogvishwa-v2/FriendProfile"
+														method="post">
+														<input type="submit" name="friendsEmailId"
+															value="${userFriends.requestFrom}"> <br> <a><font
+															color="gray" size="2">Works @ Rbnelite</font></a>
+													</form>
+												</td>
+											</tr>
+										</c:when>
+									</c:choose>
+								</c:forEach>
+							</c:if>
+						</table>
+					
 					
 				</div>
 			</div>

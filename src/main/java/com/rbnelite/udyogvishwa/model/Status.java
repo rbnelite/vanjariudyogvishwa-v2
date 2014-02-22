@@ -13,6 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.engine.profile.Fetch;
+
 @Entity
 @Table(name = "status")
 public class Status {
@@ -32,6 +36,10 @@ public class Status {
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name = "status_id")
 	private List<Comment> comments;
+	
+	@OneToMany
+	@JoinColumn(name = "status_id")
+	private List<LikeStatus> likeStatus ;
 	
 	@Column(name = "email")
 	private String usermail;
@@ -75,6 +83,14 @@ public class Status {
 
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
+	}
+
+	public List<LikeStatus> getLikeStatus() {
+		return likeStatus;
+	}
+
+	public void setLikeStatus(List<LikeStatus> likeStatus) {
+		this.likeStatus = likeStatus;
 	}
 
 }
