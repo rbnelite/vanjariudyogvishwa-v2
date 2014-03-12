@@ -20,12 +20,14 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.ProductCredential;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -46,7 +48,8 @@ public class ProductController {
 	
 	@Resource 
 	private FriendRequestService friendrequestservice;
-
+	@Resource
+	private NotificationService notificationService;
 
 	@RequestMapping(value = "/AddProduct", method = RequestMethod.POST)
 	public String insertProduct(HttpServletRequest request, HttpServletResponse response,@RequestParam("productName")String pname, @RequestParam("productDetails")String pdetail, @RequestParam CommonsMultipartFile[] imgPath, 
@@ -84,6 +87,9 @@ public class ProductController {
 				map.put("ProfileImage", new ProfileImages());
 				map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 				
+				map.put("Notification",new Notification());
+				map.put("NotificationList", notificationService.listNotification(userMail));
+				
 		return "Products";
 	}
 
@@ -108,6 +114,9 @@ public class ProductController {
 
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 
 		return "Products";
 	}

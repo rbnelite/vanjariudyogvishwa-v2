@@ -10,26 +10,37 @@ import org.springframework.transaction.annotation.Transactional;
 import com.rbnelite.udyogvishwa.model.LikeStatus;
 
 @Repository
-public class LikeStatusDaoImpl extends BaseDao<LikeStatus> implements LikeStatusDao {
+public class LikeStatusDaoImpl extends BaseDao<LikeStatus> implements
+		LikeStatusDao {
 
-	public LikeStatusDaoImpl()
-	{
+	public LikeStatusDaoImpl() {
 		super(LikeStatus.class);
 	}
+
 	@Override
-	@Transactional(propagation=Propagation.REQUIRED)
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void LikeTheStatus(LikeStatus likestatus) {
-		
-		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		session.save(likestatus);
-		session.getTransaction().commit();
-		session.flush();
+
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(likestatus);
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
 	}
+
 	@Override
 	@Transactional
 	public List<LikeStatus> listLikeStatus() {
-		return sessionFactory.getCurrentSession().createQuery("from LikeStatus").list();
+		Session session = sessionFactory.openSession();
+		try {
+			return session.createQuery("from LikeStatus").list();
+		} finally {
+			session.close();
+		}
 	}
 
 }

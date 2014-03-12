@@ -11,73 +11,80 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="astro")
+@Table(name = "astro")
 public class Astro {
-	
-	@Id
 
-	@Column(name="astro_id")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="astro_sequence_id")
-	@SequenceGenerator(name="astro_sequence_id", sequenceName="astro_sequence",allocationSize=1)
+	@Id
+	@Column(name = "astro_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "astro_sequence_id")
+	@SequenceGenerator(name = "astro_sequence_id", sequenceName = "astro_sequence", allocationSize = 1)
 	private int id;
-	
+
 	@Column
 	@NotEmpty
 	private String country;
-	
+
 	@Column
 	@NotEmpty
 	private String city;
-	
+
 	@Column
 	@NotEmpty
 	private String zodiac;
-	
 
-	@Column(name="email")
+	@Column(name = "email")
 	private String userMail;
-	
-	@Column  
+
+	@Column
 	@NotEmpty
 	private String state;
-	
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getCountry() {
 		return country;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getZodiac() {
 		return zodiac;
 	}
+
 	public void setZodiac(String zodiac) {
 		this.zodiac = zodiac;
 	}
+
 	public String getUserMail() {
 		return userMail;
 	}
+
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
-
 
 }

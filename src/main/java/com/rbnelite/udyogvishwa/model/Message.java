@@ -20,13 +20,13 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="message")
+@Table(name="messages")
 public class Message {
 
 	@Id
 	@Column(name="message_id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="message_sequence_id")
-	@SequenceGenerator(name="message_sequence_id", sequenceName="message_sequence",allocationSize=1)
+	@SequenceGenerator(name="message_sequence_id", sequenceName="messages_sequence",allocationSize=1)
 	private int msgID;
 	
 	@Column(name="sender_email_id")
@@ -38,7 +38,7 @@ public class Message {
 	@Column(name="message_date")
 	private String msgDate;
 	
-	@Column(name="message_text")
+	@Column(name="message")
 	private String myMsgText;
 	public long getMsgID() {
 		return msgID;

@@ -19,13 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.FriendRequestCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.NeedService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
@@ -54,15 +57,38 @@ public class FriendListController {
 	@Resource
 	private ProfileImageService profileImageService;
 	
+	@Resource
+	private NotificationService notificationService;
+	
 	
 	@RequestMapping(value="/sendFriendRequest", method=RequestMethod.POST)
-	public String sendFriendRequest(@ModelAttribute("FriendRequestCredential") FriendRequestCredential friendRequestCredential, Map<String, Object> map){
+	public String sendFriendRequest(@ModelAttribute("FriendRequestCredential") FriendRequestCredential friendRequestCredential,@RequestParam("JspPageName") String JspPageName, Map<String, Object> map){
 		
 		friendrequestservice.sendFriendRequest(friendRequestCredential);
 		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
-		return "Friendlist";
+		
+		map.put("userFriends", new FriendRequest());
+		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
+		
+		
+		return JspPageName;
 	}
 	
 	@RequestMapping(value="/acceptFriendRequest",method=RequestMethod.POST)
@@ -73,14 +99,18 @@ public class FriendListController {
 	}
 	
 	@RequestMapping(value="/FriendList")
-	public String showHome(Map<String, Object> map,String userMail)throws ServletException{
+	public String showHome(Map<String, Object> map)throws ServletException{
 		
 		LoginUser loginUser = RequestContext.getUser();
 	
-		userMail=loginUser.getEmail();
+		String userMail=loginUser.getEmail();
+		System.out.println(123123+"$$$$");
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
@@ -90,6 +120,9 @@ public class FriendListController {
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "Friendlist";
 		

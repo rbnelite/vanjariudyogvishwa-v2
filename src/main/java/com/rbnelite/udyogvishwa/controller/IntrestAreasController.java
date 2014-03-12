@@ -27,7 +27,7 @@ public class IntrestAreasController {
 		map.addAttribute("occupation", new Occupation());
 
 		
-		return "Step2InterestArea";
+		return "Step3Occupation";
 	}
 	
 	@RequestMapping(value="/IntrestAreas")

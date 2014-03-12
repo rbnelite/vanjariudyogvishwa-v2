@@ -22,6 +22,8 @@ public class RelegionServiceImpl implements RelegionService {
 		relegion.setReligion(religioncredential.getReligionname());
 		relegion.setSubCast(religioncredential.getRelCast());
 		//relegion.setUsermail(religioncredential.getUsermail());
+		relegion.setEmailId(religioncredential.getUsermail());
+		
 
 		relegiondao.insertRelegion(relegion);
 	}

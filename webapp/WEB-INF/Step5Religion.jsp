@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+       <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-5 Religion Details Page</title>
  
@@ -35,7 +36,7 @@
             <form:form action="/vanjariudyogvishwa-v2/Religion" method="POST" commandName="religion">
             <h2>Step-5</h2>
                         <table align="center">
-                            <tr><td colspan="2"><br></tr>
+                            <tr><td colspan="2"></td><br></tr>
                             <tr>
                                 <td colspan="2"><font size="5">Fill Your Religion and Ethnicity Details</font></td>
                             </tr>
@@ -71,7 +72,7 @@
                  <tr><td colspan="2"><br></td></tr>
                 
                  <tr>
-                     <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
+                     <td><input type="hidden" name="usermail" value="${loginUser.email}"></td>
                      <td align="right">
                     
                      <input type="submit" name="save_religion" id="submit" value="Save & Continue" class="savebtn">

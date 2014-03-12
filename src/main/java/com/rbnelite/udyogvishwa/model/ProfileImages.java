@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,13 +13,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="profile_images")
-public class ProfileImages {
+public class ProfileImages implements Serializable {
 
 	@Id
 	@Column(name="profile_img_id")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="profileimages_sequence_id")
 	@SequenceGenerator(name="profileimages_sequence_id",sequenceName="profileimages_sequence",allocationSize=1)
-	
 	private int profile_img_id;
 	
 	@Column(name="profile_img_path")
@@ -44,4 +45,15 @@ public class ProfileImages {
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
+	
+
+public String getDisplayPhoto() {
+		StringBuilder sb = new StringBuilder();
+		
+		if(this.profileImage != null)
+				sb.append(this.profileImage);
+		
+		return sb.toString();
+}
+	
 }

@@ -23,6 +23,13 @@ function HideChangePhotoBlock(){
     dispPhoto.style.display='none';
 }
 
+function jumpcomment(NotificationId) {
+	/* alert(NotificationId); */
+	document.getElementById("notificationId").value = NotificationId;
+
+	var temp = document.getElementById("submit1").click();
+}
+
 </script>		
 		
 <style type="text/css">
@@ -44,6 +51,146 @@ function HideChangePhotoBlock(){
     margin-top: 130px;
     }
 
+/* -------------------image viewer------------------ */
+*
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* =Basic HTML, Non-essential
+----------------------------------------------------------------------*/
+
+a
+{
+	text-decoration: none;
+}
+
+
+
+h1
+{
+	background: inherit;
+	border-bottom: 1px dashed #ccc;
+	color: #933;
+	font: 17px Georgia, serif;
+	margin: 0 0 10px;
+	padding: 0 0 5px;
+	text-align: center;
+}
+
+p
+{
+	clear: both;
+	font: 10px Verdana, sans-serif;
+	padding: 10px 0;
+	text-align: center;
+}
+
+p a
+{
+	background: inherit;
+	color: #777;
+}
+
+p a:hover
+{
+	background: inherit;
+	color: #000;
+}
+
+/* =Hoverbox Code
+----------------------------------------------------------------------*/
+
+.hoverbox
+{
+	cursor: default;
+	list-style: none;
+}
+
+.hoverbox a
+{
+	cursor: default;
+}
+
+.hoverbox a .preview
+{
+	display: none;
+}
+
+.hoverbox a:hover .preview
+{
+	display: block;
+	position: absolute;
+	top: -33px;
+	left: -45px;
+	z-index: 1;
+}
+
+.hoverbox img
+{
+	background: #fff;
+	border-color: #aaa #ccc #ddd #bbb;
+	border-style: solid;
+	border-width: 1px;
+	color: inherit;
+	padding: 2px;
+	vertical-align: top;
+	width: 200px;
+	height: 150px;
+}
+
+.hoverbox li
+{
+	background: #eee;
+	border-color: #ddd #bbb #aaa #ccc;
+	border-style: solid;
+	border-width: 1px;
+	color: inherit;
+	display: inline;
+	float: left;
+	margin: 3px;
+	padding: 5px;
+	position: relative;
+}
+
+.hoverbox .preview
+{
+	border-color: #000;
+	width: 400px;
+	height: 350px;
+}
+
+
+
+
+
+/* =Internet Explorer Fixes
+----------------------------------------------------------------------*/
+
+.hoverbox a
+{
+	position: relative;
+}
+
+.hoverbox a:hover
+{
+	display: block;
+	font-size: 100%;
+	z-index: 1;
+}
+
+.hoverbox a:hover .preview
+{
+	top: -38px;
+	left: -50px;
+}
+
+.hoverbox li
+{
+	position: static;
+}
 </style>
 		
         <title>Vanjari Udyog Vishwa | Photos</title>
@@ -98,7 +245,7 @@ function HideChangePhotoBlock(){
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
-				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
+				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
@@ -107,41 +254,61 @@ function HideChangePhotoBlock(){
 			</div>
 			
             <div id="leftMain">
-				<c:if test="${!empty eventstList}">
-					<div id="OutsideleftMain1">
-						<div id="leftMain1">
-							<table width=100%>
-								<th style="background-color: #fab039"><font color="white">Upcoming
-										Events</font></th>
-								<c:forEach items="${eventstList}" var="myEvents">
-									<tr>
-										<td align="left">${myEvents.usermail}created an event
-											:${myEvents.name}</td>
-									</tr>
-								</c:forEach>
-							</table>
-
-						</div>
-					</div>
-				</c:if>
-				<div id="leftMain2">
+				 <c:if  test="${!empty eventstList}">
+             		   <div id="OutsideleftMain1">
+                <div id="leftMain1">
+                <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
+                <c:forEach items="${eventstList}" var="myEvents">
+                <tr>
+                <td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> created an event :${myEvents[0]}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                
+                 </div>
+               </div>
+                 </c:if>
+                <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="#"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png"  title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: left; margin-left: 100px;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="#"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
                 
-				</div>
-
-
-            <div id="NotificationTopHome">
-                
-                <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-				
             </div>
+
+
+            <div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+				<table width="100%">
+					<th style="background-color: #fab039"><font color="white">Notification</font>
+						<a onclick="return DisableNotificBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
+				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
 
            			<div id="RequestTopHome">
 				<table width=100%>
@@ -174,53 +341,39 @@ function HideChangePhotoBlock(){
 				</table>
 			</div>
             <div id="SettingTopHome">
-                <a>Change Account Setting</a>
-                <a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-                <br>
-                <a href="AccountSetting.jsp">More Settings...</a>
-            </div>
+				<table width=100%>
+					<tr>
+						<th style="background-color: #fab039"><a
+							href="ChangePassword"
+							style="text-decoration: none; color: white">Change Account
+								Setting</a><a onclick="return DisableSettingBlock()"> <img
+								src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right;"></a></th>
+					</tr>
+					<tr>
+						<td align="left"><a href="ChangePassword"
+							style="text-decoration: none; color: black">Change Password</a></td>
+					</tr>
+					
+				</table>
+			</div>
             <div id="middlePhotos">
+              
+             
+            <table><tr><td><form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data"><input type="file" name="photoPath"><input type="submit" value="Upload"></form></td></tr></table>
+                	<c:if test="${!empty userPhotosList}">
+
+							
+								<c:forEach items="${userPhotosList}" var="userPhotos">           
+<ul class="hoverbox">
+<li>
+<a href="#"><img src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description" /><img src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description" class="preview" /></a>
+</li>
+</ul>
+</c:forEach>
+						
+						</c:if>
                
-                    <table width=90%>
-                        <tr>
-                        <td>
-                        <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
-                        </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
-                         </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer"id="personalPhoto" >
-                          </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto">
-                          </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto">
-                          </td><td>
-                         <img  src="${pageContext.request.contextPath}/resources/images/gallery1.thumb.jpg" class="photoviewer" id="personalPhoto" >
-                          </td>
-                          </tr><tr>
-                          <td>
-                          <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
-                          </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
-                         </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg" class="photoviewer" id="personalPhoto" >
-                         </td><td>
-                         <img src="${pageContext.request.contextPath}/resources/images/full-image.jpg"class="photoviewer" id="personalPhoto" >
-                        </td></tr>
-                        
-                    </table>
-            		  <div id="enlargePhoto">
-            		  	
-            		  	<form action="/vanjariudyogvishwa-v2/editOther" method="post">
-            		  	<table>
-            		  		<tr><td><input type="file"></td>
-                        <td><input type="submit" value="Upload"> </td>
-                        </tr>
-            		  	</table>
-            		  	
-            		  	</form>
-            		  	
-            		  	
-            		  </div>
             </div>
            <div id="rightMainPhotos"></div>
         </div>

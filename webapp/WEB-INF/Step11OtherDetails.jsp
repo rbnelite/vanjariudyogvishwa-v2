@@ -5,7 +5,6 @@
     Author     : dogkiller,ab
 --%>
 
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%> --%>
@@ -18,14 +17,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+<link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <title>Step-11 Other Details Page</title>
 </head>
 <body>
-
-
-
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
@@ -107,11 +104,9 @@
 					<tr>
 						<td colspan="2"><br>
 					</tr>
-				
 					<tr>
-
-						<td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
-						<td align="right">&nbsp;&nbsp;&nbsp;&nbsp;
+						<td><input type="hidden" name="usermail" value="${loginUser.email}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
+						<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
 
 						</td>
@@ -119,8 +114,6 @@
 				</table>
 				</form>
 			</div>
-
-
 			<div id="rightMainStep3"></div>
 
 		</div>

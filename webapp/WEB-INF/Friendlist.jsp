@@ -25,6 +25,25 @@ function HideChangePhotoBlock(){
     dispPhoto.style.display='none';
 }
 
+function underscoreName() {
+	var nameButton=document.getElementById("nameButton");
+	nameButton.style.background='orange';
+	
+}
+
+function NounderscoreName() {
+	var nameButton=document.getElementById("nameButton");
+	nameButton.style.background='none';
+	
+}
+
+
+function jumpcomment(NotificationId) {
+	/* alert(NotificationId); */
+	document.getElementById("notificationId").value = NotificationId;
+
+	var temp = document.getElementById("submit1").click();
+}
 </script>
 
 <style type="text/css">
@@ -32,6 +51,7 @@ function HideChangePhotoBlock(){
 	margin-left: 80px;
 	font-family: white;
 	text-decoration: none;
+	
 }
 #ChangePhotoHome{
 	border-radius: 5px;
@@ -44,6 +64,30 @@ function HideChangePhotoBlock(){
     position: absolute;
     margin-top: 130px;
     }
+
+#peopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: auto;
+    padding-right: 40px;
+}
+#OutsidepeopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: hidden;
+}
 
 </style>
 
@@ -107,72 +151,90 @@ function HideChangePhotoBlock(){
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 				<div id="leftMain">
-				<c:if test="${!empty eventstList}">
-
-					<div id="leftMain1">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Upcoming
-									Events</font></th>
-							<c:forEach items="${eventstList}" var="myEvents">
-								<tr>
-									<td align="left">Anil Budge created an event
-										:${myEvents.name}</td>
-								</tr>
-							</c:forEach>
-						</table>
-
-					</div>
-
-				</c:if>
-				<div id="leftMain2">
+				 <c:if  test="${!empty eventstList}">
+             		   <div id="OutsideleftMain1">
+                <div id="leftMain1">
+                <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
+                <c:forEach items="${eventstList}" var="myEvents">
+                <tr>
+                <td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> created an event :${myEvents[0]}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                
+                 </div>
+               </div>
+                 </c:if>
+                <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="#"> <h4><font color="Black">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png"  title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="#"> <h4><font color="black">Friends</font></h4></a>
                 </div>
-			</div>
+                
+            </div>
 			
-			<div id="NotificationTopHome">
+			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
 							style="width: 40px; height: 40px; float: right;"></a></th>
-					<tr>
-						<td colspan=2 align="center">No notifications for display</td>
-					</tr>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
 				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 			<div id="RequestTopHome">
 				<table width=100%>
-					<th colspan=3 style="background-color: #fab039"><font color=white>
-					Contact Requests</font> <a
+					<th colspan=3 style="background-color: #fab039"><font
+						color=white> Contact Requests</font> <a
 						onclick="return DisableRequestBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
 							style="width: 40px; height: 40px; float: right;"></a></th>
-							<c:if test="${!empty friendRequestList}">
-					<c:forEach items="${friendRequestList}" var="friendRequest">
-					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
-					
-					<tr align="center">
-					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
-					<input type="hidden" name="requestTo" value="${loginUser.email}">
-						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
-							height="30" width="30"></td>
-						<td>
-						<b>${friendRequest.requestFrom}</b><br>
-						java developer @ RBNelite</td>
-						<td><input type="submit" name="status" value="Accept" class="connectBtn">
-						
-						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
+					<c:if test="${!empty friendRequestList}">
+						<c:forEach items="${friendRequestList}" var="friendRequest">
+							<form action="/vanjariudyogvishwa-v2/acceptFriendRequest"
+								method="post">
 
-					</tr>
-					</form>
-					</c:forEach>
-					
+								<tr align="center">
+									<input type="hidden" name="requestFrom"
+										value="${friendRequest.requestFrom}">
+									<input type="hidden" name="requestTo"
+										value="${loginUser.email}">
+									<td><img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="30" width="30"></td>
+									<td><b>${friendRequest.requestFrom}</b><br> java
+										developer @ RBNelite</td>
+									<td><input type="submit" name="status" value="Accept"
+										class="connectBtn"> <input type="submit" name="status"
+										value="Reject" class="connectBtn"></td>
+
+								</tr>
+							</form>
+						</c:forEach>
+
 					</c:if>
 				</table>
 			</div>
@@ -181,98 +243,113 @@ function HideChangePhotoBlock(){
 				<table width=100%>
 					<tr>
 						<th style="background-color: #fab039"><a
-							href="AccountSetting.jsp"
+							href="ChangePassword"
 							style="text-decoration: none; color: white">Change Account
 								Setting</a><a onclick="return DisableSettingBlock()"> <img
 								src="${pageContext.request.contextPath}/resources/images/close (3).png"
 								style="width: 40px; height: 40px; float: right;"></a></th>
 					</tr>
 					<tr>
-						<td align="left"><a href=""
+						<td align="left"><a href="ChangePassword"
 							style="text-decoration: none; color: black">Change Password</a></td>
 					</tr>
-					<tr>
-						<td align="left"><a href=""
-							style="text-decoration: none; color: black">Change Profile
-								Picture</a></td>
-					</tr>
+					
 				</table>
 			</div>
 			
-			<div id="outsidemiddleHome">
+			<div id="outsidemiddleHome" style="margin-right: 300px">
 				<div id="middleHome">
 				<div id="userStatusImage">
-				<table width=90%>
-							<c:if test="${!empty userFriendsList}">
-								<c:forEach items="${userFriendsList}" var="userFriends">
-									<c:choose>
-										<c:when test="${userFriends.requestFrom == loginUser.email}">
-											<tr>
-												<td><img
-													src="${pageContext.request.contextPath}/resources/images/33.png"
-													height="72" width="70"></td>
-												<td>
-													<form action="/vanjariudyogvishwa-v2/FriendProfile"
-														method="post">
-														<input type="submit" name="friendsEmailId"
-															value="${userFriends.requestTo}"> <br> <a>
-															<font color="gray" size="2">Works @ Rbnelite</font>
-														</a>
-													</form>
-												</td>
-											</tr>
-										</c:when>
-										<c:when test="${userFriends.requestTo == loginUser.email}">
-											<tr>
-												<td><img
-													src="${pageContext.request.contextPath}/resources/images/33.png"
-													height="72" width="70"></td>
-												<td>
-													<form action="/vanjariudyogvishwa-v2/FriendProfile"
-														method="post">
-														<input type="submit" name="friendsEmailId"
-															value="${userFriends.requestFrom}"> <br> <a><font
-															color="gray" size="2">Works @ Rbnelite</font></a>
-													</form>
-												</td>
-											</tr>
-										</c:when>
-									</c:choose>
-								</c:forEach>
-							</c:if>
-						</table>
+				<table width=90% style="margin-top: 5px; ">
+			<c:if test="${!empty userFriendsList}">
+			  <c:forEach items="${userFriendsList}" var="userFriends">
+				
+				
+				<tr>
+				<td>
+				<table style="border: 1px solid gray;border-radius: 5px;">
+				<tr><td rowspan="3">
+			<img src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}" style="height: 150px; width: 140px;">
+			   </td>
+			   <td align="left">
+			   <form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+					<input type="submit" id="nameButton"
+						style="background: none; margin-right: 10px; border: none; font-size: 30px;
+						font-family: monospace; font-weight: bold;"
+						name="friendsEmailId"
+						value="${userFriends[0]} ${userFriends[1]}"
+						onmouseover="return underscoreName();"
+						onmouseout="return NounderscoreName();">
+				</form>
+			   </td>
+			   <td width="100%"></td>
+			   </tr>
+			   <tr><td><a> <font color="gray" size="2">From Pune, India</font></a></td></tr>
+			   <tr><td><a> <font color="gray" size="2">Works @ Rbnelite</font></a></td></tr>
+			   </table>
+			   </td>
+			    </tr>
+			  </c:forEach>
+			 </c:if>
+			  </table>
 			     </div>
 				</div>
 				</div>
-			</div>
-			<div id="rightMain" style="margin-top: -2060px; float: none; margin-left: 1100px;">
+			
+			<div id="rightMain" style="margin-top: -1003px; float: right; margin-right: 4px;">
+			<div id="OutsidepeopleMayKnw">
 			<div id="peopleMayKnw">
-			<table width=100%>
+
+					<table width=100%>
 						<th colspan=3 style="background-color: #fab039"><font
 							color="">People You May Know</th>
-							<c:if test="${!empty knownPeopleList}">
-						<c:forEach items="${knownPeopleList}" var="knownPeople">
-						<c:choose>
-						<c:when test="${knownPeople.userMail != loginUser.email}">
-						<tr>
-						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-								height="30" width="30"></td>
-						<td>${knownPeople.userMail}<br><font size="2" color="gray">RBNelite It Solutions</font>
-						<form action="/vanjariudyogvishwa-v2/sendFriendRequest" method="post">					
-						<input type="hidden" name="requestTo" value="${knownPeople.userMail}">
-						<input type="hidden" name="requestFrom"value="${loginUser.email}">
-						<input type="submit" value="Connect" class="connectBtn" style="float: right;">
-						</form>
-						</td>
-						</tr>
-						<tr><td colspan="2"></td></tr>
-						</c:when>
-						</c:choose>
-						</c:forEach>
+						<c:if test="${!empty knownPeopleList}">
+							<c:forEach items="${knownPeopleList}" var="knownPeople">
+								
+										<tr>
+
+											<td><img
+												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30"></td>
+											<td>${knownPeople[1]} ${knownPeople[2]}<br>
+											<font size="2" color="gray">${knownPeople[0]}</font>
+												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
+													method="post">
+													<input type="hidden" name="JspPageName" value="Home">
+													<input type="hidden" name="requestTo"
+														value="${knownPeople[0]}"> <input
+														type="hidden" name="requestFrom"
+														value="${loginUser.email}"> <input type="submit"
+														value="Connect" class="connectBtn" style="float: right;">
+												</form>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2"></td>
+										</tr>
+								
+							</c:forEach>
 						</c:if>
-				</table>
+					</table>
 				</div>
+				</div>
+				<!-- <div id="OutsideRightMessage">
+					<div id="InsideRightMessage">
+						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+					</div>
+				</div> -->
+				
 			</div>
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
 		</div>
 	</center>
 </body>

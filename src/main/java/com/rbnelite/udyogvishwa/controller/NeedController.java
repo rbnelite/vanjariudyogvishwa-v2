@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.NeedCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
@@ -17,6 +18,7 @@ import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.StatusService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
 public class NeedController {
@@ -35,8 +37,12 @@ private CommentService commentservice;
 public String insert (@ModelAttribute("NeedCredential") NeedCredential needcredential,ModelMap map){
 	
 	needservice.insertNeed(needcredential);
+	
+	LoginUser loginUser = RequestContext.getUser();
+	String userMail=loginUser.getEmail();
+	
 	map.put("status11", new Status());
-	map.put("statusList", statusservice.listStatus());
+	map.put("statusList", statusservice.listStatus(userMail));
 	
 	map.put("myEvents", new Event());
 	map.put("eventstList", eventService.listEvents());

@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
@@ -37,7 +41,11 @@ public class EventsController {
 
 	@Resource 
 	private FriendRequestService friendrequestservice;
-
+	
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
+	@Resource
+	private NotificationService notificationService;
 
 	@RequestMapping(value = "/Events", method = RequestMethod.POST)
 	public String insert(@RequestParam("usermail") String user_name,
@@ -54,8 +62,20 @@ public class EventsController {
 		userMail=loginUser.getEmail();
 		
 		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventsservice.listEvents());
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 
 		return "Events";
 
@@ -79,6 +99,12 @@ public class EventsController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 
 		return "Events";
 	}

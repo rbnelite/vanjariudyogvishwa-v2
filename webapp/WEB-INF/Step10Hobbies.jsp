@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+        <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-10 Hobbies Details Page</title>
     </head>
@@ -48,7 +49,7 @@
 
 
                                     <tr>
-                                        <td> Hobbies </td><td><textarea name="hobbies" id="hobbies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td> Hobbies </td><td><textarea name="hobbiesName" id="hobbies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
@@ -107,7 +108,7 @@
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td><input type="hidden" name="usermail" value="${CurrentEmailId}"><a href="OtherDetails"><font color="green"><b>SKIP</b></font></a></td>
+                                        <td><input type="hidden" name="usermail" value="${loginUser.email}"><a href="OtherDetails"><font color="green"><b>SKIP</b></font></a></td>
                                         <td align="right">
 
                                             <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" >

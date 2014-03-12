@@ -3,11 +3,11 @@ package com.rbnelite.udyogvishwa.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,18 +19,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.model.Index;
-import com.rbnelite.udyogvishwa.model.IntrestAreas;
-import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.Index;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.LikeStatus;
+import com.rbnelite.udyogvishwa.model.Notification;
+import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.IndexService;
-import com.rbnelite.udyogvishwa.service.ProfileImageService;
+import com.rbnelite.udyogvishwa.service.LikeStatusService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
+import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.utils.Constants;
 
@@ -49,13 +53,16 @@ public class IndexController {
 	private ProfileImageService profileImageService;
 	@Resource
 	private PeopleRefrenceService peoplerefservice;
-
+	@Resource
+	private NotificationService notificationService;
+	@Resource
+	private LikeStatusService likeStatusService;
 
 	@RequestMapping(value = "/Index", method = RequestMethod.POST)
 	public String registration(@Valid Index index, BindingResult result,
 			@RequestParam("emailId") String emailId,
 			@ModelAttribute("IndexCredential") IndexCredential indexcredential,
-			ModelMap map) {
+			HttpServletRequest request,ModelMap map) {
 		if (result.hasErrors()) {
 			return "Index";
 		} else {
@@ -66,9 +73,16 @@ public class IndexController {
 			profileImageService.insertProfileImage(fileName, emailId);
 			
 			/***********For Profile Image Default**********/
+			
+			LoginUser loginUser = new LoginUser();
+			loginUser.setEmail(emailId);
+			map.put("loginUser", loginUser);
+			request.getSession().setAttribute(Constants.LOGGEDIN_USER,
+					loginUser);
+			
 			map.put("CurrentEmailId", emailId);
 			map.addAttribute("occupation", new Occupation());
-			return "Step3Occupation";
+			return "Step2InterestArea";
 		}
 	}
 
@@ -77,7 +91,7 @@ public class IndexController {
 			@RequestParam("password") String passWord,
 			HttpServletRequest request, ModelMap map) {
 
-		List<Index> tempLoginUserList = indexservice.LoginAuthintication(
+		List<Index> tempLoginUserList = indexservice.loginAuthintication(
 				userName, passWord);
 		if (!tempLoginUserList.isEmpty()) {
 			Index index = tempLoginUserList.get(0);
@@ -87,15 +101,24 @@ public class IndexController {
 			loginUser.setId(index.getId());
 			loginUser.setLastName(index.getLastName());
 
-			map.put("loginUser", loginUser);
+			/*map.put("loginUser", loginUser);*/
 			request.getSession().setAttribute(Constants.LOGGEDIN_USER,
 					loginUser);
 
-			// map.put("CurrentEmailId", userName);
+			//map.put("CurrentEmailId", userName);
 
 			map.put("status11", new Status());
-			List<Status> status = statusservice.listStatus();
+			List<Status> status = statusservice.listStatus(loginUser.getEmail());
+		/*	for(Status status : statusList ) {
+				for(Comment comment : status.getComments()) {
+					System.out.println(comment.getUser().getDisplayName());
+				}
+			}*/
 			map.put("statusList", status);
+			
+			map.put("likeStatus", new LikeStatus());
+			List<LikeStatus> likeStatusList=likeStatusService.listLikeStatus();
+			map.put("likeStatusList", likeStatusList);
 
 			map.put("myEvents", new Event());
 			map.put("eventstList", eventService.listEvents());
@@ -109,8 +132,10 @@ public class IndexController {
 
 			map.put("knownPeople", new IntrestAreas());
 			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
-
-
+			/*View perticular status Start here*/
+			map.put("Notification",new Notification());
+			map.put("NotificationList", notificationService.listNotification(loginUser.getEmail()));
+			/*View perticular status End here*/
 			return "Home";
 		
 		} else {

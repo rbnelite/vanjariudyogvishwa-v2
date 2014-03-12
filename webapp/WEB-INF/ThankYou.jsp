@@ -15,8 +15,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link href="<c:url value="/resources/css/style4.css" />"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+<link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <title>Thank You! - RBNelite IT Solutions</title>

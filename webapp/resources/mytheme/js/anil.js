@@ -2,15 +2,28 @@
 /*code for Home page- to submit comment after click ENTER*/
 function submitenter(myfield,e)
    {
-       var keycode;
+	
+
+	var keycode;
        if (window.event) keycode = window.event.keyCode;
        else if (e) keycode = e.which;
-       else return true;
+       else return false;
        if (keycode == 13)
        {
-           myfield.submit();
+    	   
+    	   var temp=document.getElementById("commentt").value;
+    		if(temp==null || temp=="")
+    			{
+    			/* alert("please enter the comment");*/
+    			return false;
+    			}
+    		else {
+    			myfield.submit();
+    			return true;
+			}
+           
 
-           return false;
+           
        }
        else
            return true;

@@ -50,7 +50,7 @@ public String insert(@RequestParam("userMail") String emailId, @Valid EducationW
 	{
 	educationWorkService.insertEducationWork(educationworkcredential);
 	map.put("CurrentEmailId", emailId);
-	return"Step9LifeStyle";
+	return"Step10Hobbies";
 	}
 	
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.ContactCredential;
+import com.rbnelite.udyogvishwa.model.Religion;
 import com.rbnelite.udyogvishwa.service.ContactService;
 
 @Controller
@@ -23,6 +24,7 @@ public class ContactController {
 		
 	contactservice.SaveContact(contactcredential);
 	map.put("CurrentEmailId", emailId);
+	map.addAttribute("religion", new Religion());
 	return "Step5Religion";
 	}
 	

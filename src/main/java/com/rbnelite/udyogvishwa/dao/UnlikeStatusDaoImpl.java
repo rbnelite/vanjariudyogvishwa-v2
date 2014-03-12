@@ -8,22 +8,25 @@ import org.springframework.transaction.annotation.Transactional;
 import com.rbnelite.udyogvishwa.model.UnlikeStatus;
 
 @Repository
-public class UnlikeStatusDaoImpl extends BaseDao<UnlikeStatus> implements UnlikeStatusDao {
+public class UnlikeStatusDaoImpl extends BaseDao<UnlikeStatus> implements
+		UnlikeStatusDao {
 
-	public UnlikeStatusDaoImpl()
-	{
+	public UnlikeStatusDaoImpl() {
 		super(UnlikeStatus.class);
 	}
-	
-	@Override
-	@Transactional(propagation=Propagation.REQUIRED)
-	public void unlikeTheStatus(UnlikeStatus unlikestatus) {
-		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		session.save(unlikestatus);
-		session.getTransaction().commit();
-		session.flush();
 
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void unlikeTheStatus(UnlikeStatus unlikestatus) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(unlikestatus);
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
 	}
 
 }

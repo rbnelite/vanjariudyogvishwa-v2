@@ -12,58 +12,74 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+       <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-	   <style>
-	   #OutsideInterestAreas{
+	   <script type="text/javascript">
+	   function jumpcomment(NotificationId) {
+			/* alert(NotificationId); */
+			document.getElementById("notificationId").value = NotificationId;
+
+			var temp = document.getElementById("submit1").click();
+		}
+	   </script>
+	<style>
+	h3 {
+		background-color: transparent;
+		/* background-color:#00FF00; */
+		margin-top: 0px;
+	}
 	
-	border-radius: 3px;
-	border: 1px solid gray;
-	float: left;
-	width: 468px;
-	height: 300px;
-	background-color: bisque;
-	overflow: hidden;
-}
-#InterestAreas {
-	border-radius: 3px;
-	border: 1px solid gray;
-	float: left;
-	width: 468px;
-	height: 300px;
-	background-color: bisque;
-	margin-bottom: 1px;
-	overflow: auto;
-	padding-right: 20px;
-	padding-bottom: 20px;
-}
-#ProfileProducts {
-	padding-right:30px;
-	border-radius: 3px;
-	margin-right:465px;
-	border: 1px solid gray;
-	width: 462px;
-	height: 300px;
-	overflow:auto;
-	background-color: bisque;
-	margin-bottom: 1px;
-}
-#OutsideProfileProducts {
-	border-radius: 3px;
-	margin-right:465px;
-	border: 1px solid gray;
-	width: 462px;
-	height: 300px;
-	overflow:hidden;
-	background-color: bisque;
-	margin-bottom: 1px;
+	#OutsideInterestAreas {
+		border-radius: 3px;
+		border: 1px solid gray;
+		float: left;
+		width: 468px;
+		height: 300px;
+		background-color: bisque;
+		overflow: hidden;
+	}
 	
-}
-	   </style>
-        <title>FriendsProfilePage</title>
+	#InterestAreas {
+		border-radius: 3px;
+		border: 1px solid gray;
+		float: left;
+		width: 468px;
+		height: 300px;
+		background-color: bisque;
+		margin-bottom: 1px;
+		overflow: auto;
+		padding-right: 20px;
+		padding-bottom: 20px;
+	}
+	
+	#ProfileProducts {
+		padding-right: 30px;
+		border-radius: 3px;
+		margin-right: 465px;
+		border: 1px solid gray;
+		width: 462px;
+		height: 300px;
+		overflow: auto;
+		background-color: bisque;
+		margin-bottom: 1px;
+	}
+	
+	#OutsideProfileProducts {
+		border-radius: 3px;
+		margin-right: 465px;
+		border: 1px solid gray;
+		width: 462px;
+		height: 300px;
+		overflow: hidden;
+		background-color: bisque;
+		margin-bottom: 1px;
+	}
+	</style>
+<title>FriendsProfilePage</title>
     </head>
     <body>
     <center>
-        <div id="main">
+        <div id="mainProfile">
             <div id="Header">
 
                 
@@ -121,25 +137,86 @@
             </div>
             
             
-            <div id="NotificationTopHome">
-                <a onclick="return DisableNotificBlockPro()"> <img src="images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-                
-            </div>
+            <div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+				<table width="100%">
+					<th style="background-color: #fab039"><font color="white">Notification</font>
+						<a onclick="return DisableNotificBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
+				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
             
             <div id="RequestTopHome">
-                <a onclick="return DisableRequestBlockPro()"> <img src="images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-                
-            </div>
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
+
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
+			</div>
             <div id="SettingTopHome">
-                <a>Change Account Setting</a>
-                <a onclick="return DisableSettingBlock()"> <img src="images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-                <br>
-                <a href="AccountSetting.jsp">More Settings...</a>
-            </div>
+				<table width=100%>
+					<tr>
+						<th style="background-color: #fab039"><a
+							href="ChangePassword"
+							style="text-decoration: none; color: white">Change Account
+								Setting</a><a onclick="return DisableSettingBlock()"> <img
+								src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right;"></a></th>
+					</tr>
+					<tr>
+						<td align="left"><a href="ChangePassword"
+							style="text-decoration: none; color: black">Change Password</a></td>
+					</tr>
+					
+				</table>
+			</div>
             <div style="height: 300px;width: 1400px;">
             
             <div id="OutsideInterestAreas">
-            <div id="InterestAreas">Interest Areas
+            <div id="InterestAreas">
+            <h3>IntrestAreas Details</h3>
             <c:if test="${!empty FriendsintrestAreasList}">
            <c:forEach items="${FriendsintrestAreasList}" var="FriendsintrestAreasDetails">
 									
@@ -228,7 +305,7 @@
             </div>
             </div>
             <div id="OutsideProfileProducts">
-            <div id="ProfileProducts"> Products
+            <div id="ProfileProducts"><h3> Products</h3>
             <c:if test="${!empty FriendsProductList}">
             <c:forEach items="${FriendsProductList}" var="FriendsproductNAME">
             <table>
@@ -245,18 +322,19 @@
             </c:if>
             </div>
             </div>
-            <div id="Friends">Friend's</div>
+            <div id="Friends"><h3>Friend's</h3></div>
             </div>
             
-            
-            <div id="ProfileDetails">Education Details
+            <div id="OutsideProfileDetails">
+            <div id="ProfileDetails">
+            	<h3>Education Details</h3>
             	<c:if test="${!empty FriendseducationworkList}">
                   <c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
                   <table>
                   <tr>
                   <td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
                   <tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
-                  <tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td>></tr>
+                  <tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
                    <tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
                     <tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
                      <tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
@@ -267,14 +345,14 @@
                   </c:forEach>
                  </c:if>
             </div>
+            </div>
             
-            <div id="ProfileDetails">Contact Details </div>
+           <div id="OutsideProfileDetails"> <div id="ProfileDetails">Contact Details </div></div>
             
-            <!--<div id="RightUpdatedStatus">Updated Status</div>-->
-            <div id="ProfileDetails">Family Details
-   
-             </div>
-            <div id="ProfileDetails">Hobbies Details
+          
+             <div id="OutsideProfileDetails">
+            <div id="ProfileDetails">
+             <h3>Hobbies Details</h3>
              <c:if test="${!empty FriendshobbiesList}">
              <c:forEach items="${FriendshobbiesList}" var="FriendshobbiesDetails">
              <table>
@@ -289,41 +367,14 @@
              </c:forEach>
              </c:if>
             </div>
-            
-            
-            <div id="ProfileDetails">Astro Details
-            <c:if test="${!empty FriendsastroList}">
-            <c:forEach items="${FriendsastroList}" var="FriendsastroDetails">
-           <table>
-           <tr><td><b>Country :</b></td><td>${FriendsastroDetails.country}</td></tr>
-           <tr><td><b>City :</b></td><td>${FriendsastroDetails.city}</td></tr>
-			<tr><td><b>Zodiac :</b></td><td>${FriendsastroDetails.zodiac}</td></tr>					
-            
-            
-            </table>
-            </c:forEach>
-            </c:if>
             </div>
             
             
             
-            <div id="ProfileDetails">Religion & Ethnicity Details</div>
-            <div id="ProfileDetails">Lifestyle and Attributes Details
-            <c:if test="${!empty FriendsLifeStylelist}">
-            <c:forEach items="${FriendsLifeStylelist}" var="FriendslifeStyleDetails"> 
-            <table>
-            <tr><td><b>Diet :</b></td><td>${FriendslifeStyleDetails.diet}</td></tr>
-            <tr><td><b>Smoke :</b></td><td>${FriendslifeStyleDetails.smoke}</td></tr>
-            <tr><td><b>Drink :</b></td><td>${FriendslifeStyleDetails.drink}</td></tr>
-		    <tr><td><b>Complexion :</b></td><td>${FriendslifeStyleDetails.complexion}</td></tr>
-		    <tr><td><b>Body Type :</b></td><td>${FriendslifeStyleDetails.bodytype}</td></tr>
-
-            <tr><td><b>Blood Group :</b></td><td>${FriendslifeStyleDetails.bloodgroup}</td></tr>
-			<tr><td><b>Weight :</b></td><td>${FriendslifeStyleDetails.weight}</td></tr>
-            </table>
-            </c:forEach>
-            </c:if>
+            <div id="OutsideProfileDetails">
+            <div id="ProfileDetails"><h3>Religion & Ethnicity Details</h3></div>
             </div>
+            <div id="OutsideProfileDetails">
             <div id="ProfileDetails">Other Details
             <c:if test="${!empty FriendsotherDetailsList}">
             <c:forEach items="${FriendsotherDetailsList}" var="FriendsotherDetailsList">
@@ -355,12 +406,28 @@
             </c:forEach>
              </c:if>
             </div>
-            
-            <div id="RightProfile">
-                <div id="Photos">Photos</div>
-                <div id="RightUpdatedStatus">Updated Status</div>
-                
             </div>
+            <div id="RightProfile">
+				<div id="outside_Photos">
+					<div id="Photos">
+						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 30px; height: 30px;"> Photos </h3>
+						
+							
+
+					</div>
+				</div>
+				<div id="OuterRightStatusProfile">
+					<div id="RightUpdatedStatusProfile">
+						<h3>Updated Status</h3>
+						<a>@@@@@@@@@@ @@@@@@@@@ @@@@@@@@ @@@@@@@@@@@@@ @@@@@@@@@@ @@@@@@@@@@@@ @@@@@@@@@ @@@@
+							@@@@@@@@@@@ @@@@ @@@@@@@@@ @@@@@ @@@@@@@@@@@@
+							@@@@@@@ @@@@@@@@ @@@@@@@@@@@ @@@@@@@@@ @@@@@@@ @@@@@@@@@@@ </a>
+ 
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/photo.png" style=" margin-left:-400px; width: 70px; height: 60px;"> --%>
+					</div>
+				</div>
+
+			</div>
 
         </div>
     </center>

@@ -22,8 +22,15 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	public EducationWork getByEmailId(String userMail)
 	 {
 		System.out.println("From getByEmailID() in EducationWorkDaoImpl.java");
-	  return (EducationWork) sessionFactory.getCurrentSession().createQuery("from EducationWork where userMail='"+userMail+"' ").uniqueResult();
 		
+		Session session=sessionFactory.openSession();
+		try{
+	  return (EducationWork) session.createQuery("from EducationWork where userMail='"+userMail+"' ").uniqueResult();
+		}
+		finally
+		{
+			session.close();
+		}
 	 }
 	
 	@Override
@@ -31,11 +38,15 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	public void insertEducationWork(EducationWork educationWork){
 		
 		
-		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		session.save(educationWork);
-		session.getTransaction().commit();
-		session.flush();
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(educationWork);
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
 	}
 	
 	
@@ -43,7 +54,12 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 	@Transactional
 	public List<EducationWork> listEducationWork(String userMail) {
 		String email=userMail;
-		return sessionFactory.getCurrentSession().createQuery("from EducationWork where userMail='"+email+"' ").list();
+		Session session=sessionFactory.openSession();
+		try{
+		return session.createQuery("from EducationWork where userMail='"+email+"' ").list();
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
@@ -59,8 +75,15 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 		eduToUpdate.setPGCollege(educationWork.getPGCollege());
 		eduToUpdate.setPGDegree(educationWork.getPGDegree());
 		eduToUpdate.setOtherPG(educationWork.getOtherPG());
-		sessionFactory.getCurrentSession().update(eduToUpdate);
+		Session session=sessionFactory.openSession();
+		try{
+		session.update(eduToUpdate);
+		}
+		finally
 		
+		{ 
+			session.close();
+		}
 	}
 
 }

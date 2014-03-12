@@ -7,7 +7,8 @@ import com.rbnelite.udyogvishwa.model.Comment;
 
 public interface CommentService {
 	
-	public void saveComment(CommentCredential commentcredential);
+	public int saveComment(CommentCredential commentcredential);
 	public List<Comment> listComment();
+	void updateComment(String commenttext, String id);
 
 }

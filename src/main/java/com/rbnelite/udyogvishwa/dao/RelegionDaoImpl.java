@@ -18,24 +18,27 @@ public class RelegionDaoImpl extends BaseDao<Index> implements RelegionDao {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void insertRelegion(Index index) {
-		/*Session session = sessionFactory.openSession();
-		session.getTransaction().begin();
-		session.save(religion);
-		session.getTransaction().commit();
-		session.flush();
-*/
-		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		
-		Query query=session.createQuery("update Index i set i.religion=:religion, i.subCast=:subCast where i.emailId=:emailId ");
-		
-		query.setParameter("religion", index.getReligion());
-		query.setParameter("subCast", index.getSubCast());
-		query.setParameter("emailId", "mayur@gmail.com");
-		query.executeUpdate();
-		session.getTransaction().commit();
-		session.flush();
-		
+		/*
+		 * Session session = sessionFactory.openSession();
+		 * session.getTransaction().begin(); session.save(religion);
+		 * session.getTransaction().commit(); session.flush();
+		 */
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+
+			Query query = session
+					.createQuery("update Index i set i.religion=:religion, i.subCast=:subCast where i.emailId=:emailId ");
+
+			query.setParameter("religion", index.getReligion());
+			query.setParameter("subCast", index.getSubCast());
+			query.setParameter("emailId", index.getEmailId());
+			query.executeUpdate();
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
 	}
 
 }

@@ -32,11 +32,14 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void saveRegistration(Index index) {
 		Session session=sessionFactory.openSession();
+		try{
 		session.getTransaction().begin();
 		session.save(index);
 		session.getTransaction().commit();
 		session.flush();
-
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
@@ -44,6 +47,7 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 	public List searchUserList(String SearchData) {
 		
 		Session session=sessionFactory.openSession();
+		try{
 		Criteria criteria=session.createCriteria(Index.class);
 		
 		Criterion firstName=Restrictions.ilike("firstName", SearchData,MatchMode.ANYWHERE);
@@ -54,16 +58,27 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		criteria.add(orExp1);
 			
 		return criteria.list();
+		}finally{
+			session.close();
+		}
 	}
 	
 	@Override
 	@Transactional
 	public List<Index> loginAuthintication(String emailId, String pwd) {
-		Query query = sessionFactory.getCurrentSession().createQuery("FROM Index where emailId= :emailId and password=:pwd");
+		Session session=sessionFactory.openSession();
+		try{
+			
+		Query query = session.createQuery("FROM Index where emailId= :emailId and password=:pwd");
+		
 		query.setParameter("emailId", emailId);
 		query.setParameter("pwd", pwd);
 		
 		return query.list();
+		
+		}finally{
+			session.close();
+		}
 	}
 
 }

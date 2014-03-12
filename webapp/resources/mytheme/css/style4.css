@@ -595,11 +595,10 @@ body {
 	border: 1px solid gray;
 	background-color: bisque;
 	width: 930px;
-	height: 200px;
+	height: auto;
 	overflow: auto;
 	padding-right: 20px;
 	padding-bottom: 8px;
-	
 }
 
 #OutsideProfileDetails{
@@ -609,7 +608,7 @@ body {
 	border: 1px solid gray;
 	background-color: bisque;
 	width: 930px;
-	height: 200px;
+	height: auto;
 	overflow: hidden;
 	
 }

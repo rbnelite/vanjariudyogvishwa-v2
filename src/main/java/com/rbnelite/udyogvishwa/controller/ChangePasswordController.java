@@ -22,12 +22,16 @@ import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.Notification;
+import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.ChangePasswordService;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
+import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
 
@@ -47,6 +51,10 @@ public class ChangePasswordController{
 	private PeopleRefrenceService peoplerefservice;
 	@Resource
 	private FriendRequestService friendrequestservice;
+	@Resource
+	private ProfileImageService profileImageService;
+	@Resource
+	private NotificationService notificationService;
 	
 	@RequestMapping(value="/ChangePassword",method=RequestMethod.POST)
 	public String changepassform1(@Valid ChangePassword changepwd,BindingResult res,@ModelAttribute("ChangePasswordCredential")ChangePasswordCredential changepasscred,ModelMap map,String userMail)
@@ -59,8 +67,13 @@ public class ChangePasswordController{
 		else
 		changepassservice.savePassword(changepasscred);
 		
+		
+		
+		LoginUser loginUser = RequestContext.getUser();
+		userMail=loginUser.getEmail();
+		
 		map.put("status11", new Status());
-		List<Status> status = statusservice.listStatus();
+		List<Status> status = statusservice.listStatus(userMail);
 		map.put("statusList", status);
 		
 		map.put("myEvents", new Event());
@@ -72,14 +85,15 @@ public class ChangePasswordController{
 		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
-		
-		LoginUser loginUser = RequestContext.getUser();
-	
-		userMail=loginUser.getEmail();
-		
+			
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "Home";
 	}
@@ -87,7 +101,26 @@ public class ChangePasswordController{
 	@RequestMapping(value="/ChangePassword")
 	public String changepassform2(ModelMap map)
 	{
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+		
 		map.addAttribute("changepwd", new ChangePassword());
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
+		
 		return "Changepassword";
 	}
 	

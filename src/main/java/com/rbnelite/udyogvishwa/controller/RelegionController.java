@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.ReligionCredential;
+import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Religion;
 import com.rbnelite.udyogvishwa.service.RelegionService;
 
@@ -19,10 +20,10 @@ import com.rbnelite.udyogvishwa.service.RelegionService;
 public class RelegionController {
 
 	@Resource
-	RelegionService relegionservice;
+	private RelegionService relegionservice;
 	
 	@RequestMapping(value="/Religion",method=RequestMethod.POST)
-	public String RelegionMethod(@Valid Religion religion,BindingResult result,@RequestParam("userMail") String emailId, @ModelAttribute("ReligionCredential") ReligionCredential relegioncredential,ModelMap map){
+	public String RelegionMethod(@Valid Religion religion,BindingResult result,@RequestParam("usermail") String emailId, @ModelAttribute("ReligionCredential") ReligionCredential relegioncredential,ModelMap map){
 		if(result.hasErrors())
 		{
 		return "Step5Religion";	
@@ -31,8 +32,8 @@ public class RelegionController {
 		{
 		relegionservice.insertRelegion(relegioncredential);
 		map.put("CurrentEmailId", emailId);
-		
-		return "Step7Astro";
+		map.addAttribute("educationWork", new EducationWork());
+		return "Step8EducationWork";
 		}
 	}
 	

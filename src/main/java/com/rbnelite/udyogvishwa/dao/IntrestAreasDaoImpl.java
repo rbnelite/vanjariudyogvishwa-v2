@@ -34,36 +34,52 @@ public class IntrestAreasDaoImpl extends BaseDao<IntrestAreas> implements Intres
 		
 
 		Session session=sessionFactory.openSession();
+		try{
 		session.getTransaction().begin();
 		session.save(intrestareas);
 
 		session.getTransaction().commit();
 		session.flush();
-		
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
 	@Transactional
 	public List<IntrestAreas> listIntrestAreas(String userMail) {
+		Session session=sessionFactory.openSession();
+		try{
 		
-		return sessionFactory.getCurrentSession().createQuery("from IntrestAreas where userMail='"+userMail+"' ").list();
+				return session.createQuery("from IntrestAreas where userMail='"+userMail+"' ").list();
+				
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
 	@Transactional
 	public IntrestAreas getIntrestAreasByEmailId(String userMail) {
-		
-		return(IntrestAreas)sessionFactory.getCurrentSession().createQuery("from IntrestAreas where userMail='"+userMail+"' ").uniqueResult();
+		Session session=sessionFactory.openSession();
+		try{
+		return (IntrestAreas) session.createQuery("from IntrestAreas where userMail='"+userMail+"' ").uniqueResult();
+		}finally{
+			session.close();
+		}
 	}
 
 	@Override
 	@Transactional
 	public void UpdateIntrestAreas(IntrestAreas intrestAreas) {
-		
+		Session session = sessionFactory.openSession();
+		try{
 		IntrestAreas intrestAreas2Update=getIntrestAreasByEmailId(intrestAreas.getUserMail());
 		intrestAreas2Update.setInterestId(intrestAreas.getInterestId());
-		sessionFactory.getCurrentSession().update(intrestAreas2Update);
-		
+		session.update(intrestAreas2Update);
+		}finally{
+			session.close();
+		}
 	}
 
 }

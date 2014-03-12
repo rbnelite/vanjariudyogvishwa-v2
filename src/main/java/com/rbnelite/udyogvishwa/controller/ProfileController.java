@@ -20,6 +20,8 @@ import javax.servlet.http.HttpSession;
 
 
 
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,6 +33,7 @@ import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -40,6 +43,7 @@ import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
@@ -74,6 +78,8 @@ public class ProfileController {
 	private ProfileImageService profileImageService; 
 	@Resource
 	private FriendRequestService friendrequestservice;
+	@Resource
+	private NotificationService notificationService;
 
 	@RequestMapping(value = "/Profile")
 	public String ProfileOperation(Map<String, Object> map, String userMail) throws ServletException {
@@ -99,12 +105,12 @@ public class ProfileController {
 		map.put("hobbiesDetails", new Hobbies());
 		map.put("hobbiesList", hobbiesServ.listHobbies(userMail));
 		}
-		
+		/*
 		if (!map.containsKey("editAstroDetails")) {
 		map.put("astroDetails", new Astro());
 		map.put("astroList", astroServ.listAstro(userMail));
 		}
-		
+		*/
 		if (!map.containsKey("editLifeStyleDetails")) {
 		map.put("lifeStyleDetails", new LifeStyle());
 		map.put("LifeStylelist", lifeStyleServ.listLifeStyle(userMail));
@@ -125,6 +131,9 @@ public class ProfileController {
 		
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 				
 		return "Profile";
 	}
@@ -157,7 +166,7 @@ public class ProfileController {
 		ProfileOperation(map,emailId);
 		return "Profile";
 	}
-	
+	/*
 	@RequestMapping(value = "/EditAstroDetails")
 	public String editAstroDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
 
@@ -165,7 +174,7 @@ public class ProfileController {
 		map.put("editAstroList", astroServ.listAstro(emailId));
 		ProfileOperation(map,emailId);
 		return "Profile";
-	}
+	}*/
 	
 	@RequestMapping(value = "/EditLifeStyleDetails")
 	public String editLifeStyle(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {

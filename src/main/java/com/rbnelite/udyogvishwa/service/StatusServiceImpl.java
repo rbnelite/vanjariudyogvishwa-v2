@@ -12,7 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.StatusDao;
 import com.rbnelite.udyogvishwa.dto.StatusCredential;
+import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.Status;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Service
 public class StatusServiceImpl implements StatusService {
@@ -28,14 +30,19 @@ public class StatusServiceImpl implements StatusService {
 		Date date = new Date();
 		status.setStatus(statuscredential.getStatus());
 		status.setStatusDate(dateFormat.format(date));
-		status.setUsermail(statuscredential.getUsermail());
+		
+		Index user = new Index();
+		user.setId(RequestContext.getUser().getId());
+		user.setEmailId(statuscredential.getUsermail());
+		
+		status.setUser(user);
 		statusdao.statusUpdate(status);
 	}
 
 	@Override
 	@Transactional
-	public List<Status> listStatus() {
-		return statusdao.listStatus();
+	public List<Status> listStatus(String userMail) {
+		return statusdao.listStatus(userMail);
 	}
 
 	@Override

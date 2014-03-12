@@ -60,7 +60,7 @@ public class StatusController {
 		statusservice.SaveStatusUpdate(statuscredential);
 		
 		map.put("status11", new Status());
-		map.put("statusList", statusservice.listStatus());
+		map.put("statusList", statusservice.listStatus(userMail));
 		
 		System.out.println("@@@@"+map.get("statusList"));
 		

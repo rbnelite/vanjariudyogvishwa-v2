@@ -4,8 +4,6 @@
     Created on : Dec 9, 2013, 6:10:34 PM
     Author     : dogkiller
 --%>
-
-
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -17,8 +15,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<c:url value="/resources/css/style4.css" />"
-	rel="stylesheet">
+<link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+<link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <script type="text/javascript">
@@ -32,6 +30,12 @@ function HideChangePhotoBlock(){
     dispPhoto.style.display='none';
 }
 
+	function jumpcomment(NotificationId) {
+		/* alert(NotificationId); */
+		document.getElementById("notificationId").value = NotificationId;
+
+		var temp = document.getElementById("submit1").click();
+	}
 </script>
 
 <style type="text/css">
@@ -65,7 +69,28 @@ input[type=text]{
     position: absolute;
     margin-top: 130px;
     }
-
+#Friends {
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: 0.1px;
+	width: 466px;
+	height: 300px;
+	 margin-right: -18px; 
+	overflow: auto;
+	padding-left: 20px;
+}
+#OutsideFriends {
+	float: right;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: -303px;
+	width: 466px;
+	height: 300px;
+	margin-right: -2px;
+	overflow: hidden;
+}
 </style>
 
 <title>${loginUser.firstName} ${loginUser.lastName}'s Profile Page</title>
@@ -135,38 +160,93 @@ input[type=text]{
 			
 
 
-			<div id="NotificationTopHome">
-				<a onclick="return DisableNotificBlockPro()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;">
-				</a>
-
+			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+				<table width="100%">
+					<th style="background-color: #fab039"><font color="white">Notification</font>
+						<a onclick="return DisableNotificBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+						</div>
+						<h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
+				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 
 			<div id="RequestTopHome">
-				<a onclick="return DisableRequestBlockPro()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;">
-				</a>
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
 
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
 			</div>
 			<div id="SettingTopHome">
-				<a>Change Account Setting</a> <a
-					onclick="return DisableSettingBlock()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;">
-				</a> <br> <a href="AccountSetting">More Settings...</a>
+				<table width=100%>
+					<tr>
+						<th style="background-color: #fab039"><a
+							href="ChangePassword"
+							style="text-decoration: none; color: white">Change Account
+								Setting</a><a onclick="return DisableSettingBlock()"> <img
+								src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right;"></a></th>
+					</tr>
+					<tr>
+						<td align="left"><a href="ChangePassword"
+							style="text-decoration: none; color: black">Change Password</a></td>
+					</tr>
+					
+				</table>
 			</div>
 			<div style="height: 300px; width: 1400px;">
 				<div id="OutsideInterestAreas">
 				<div id="InterestAreas">
+					<h3>IntrestAreas Details</h3>
 					<c:if test="${!empty intrestAreasList}">
 					<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
 						
 						<input type="hidden" name="usermail"
 								value="${loginUser.email}">
-						<h3>IntrestAreas Details</h3>
-								
+						
+								<table>
 									<c:forEach items="${intrestAreasList}" var="intrestAreasDetails">
 									
 											<c:set var="tempStr" value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
@@ -174,10 +254,10 @@ input[type=text]{
 											<c:forEach items="${tempStr}" var="intrestAreaNumber">
 							
 							<c:if test="${intrestAreaNumber=='1'}">
-								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png" title="Sports" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Sports</h4> </div>
+								<tr><td><div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png" title="Sports" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Sports</h4> </div></td></tr>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='2'}">
-								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png" title="Drawing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drawing</h4></div>
+								<tr><td><div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png" title="Drawing" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Drawing</h4></div></td></tr>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='3'}">
 								<div style="width: 120px; float: left;"><img src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png" title="PhotoGraphy" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">PhotoGraphy</h4></div>
@@ -250,18 +330,18 @@ input[type=text]{
 											
 									
 								</c:forEach>
-								
+								</table>
 								
 								
 						</form>
 					</c:if>
 					<c:if test="${!empty editIntrestAreasDetailsList}">
-					
+						<h3>Edit IntrestAreas Details</h3>
 						<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
 						
 						<input type="hidden" name="usermail"
 								value="${loginUser.email}">
-						<h3>Edit IntrestAreas Details</h3>
+						
 						<c:forEach items="${editIntrestAreasDetailsList}" var="editIntrestAreasDetails">
 						
 						<c:set var="tempStr" value="${fn: split(editIntrestAreasDetails.interestId,',')}"></c:set>
@@ -389,56 +469,52 @@ input[type=text]{
 
 				</div>
 				</div>
-				
+				<div id="OutsideFriends">
 				<div id="Friends">
 					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
 					
-					<table width=90%>
+					<table width=90% >
 							<c:if test="${!empty userFriendsList}">
 								<c:forEach items="${userFriendsList}" var="userFriends">
-									<c:choose>
-										<c:when test="${userFriends.requestFrom == loginUser.email}">
+									
 											<tr>
-												<td><img
-													src="${pageContext.request.contextPath}/resources/images/33.png"
-													height="72" width="70"></td>
-												<td>
-													<form action="/vanjariudyogvishwa-v2/FriendProfile"
-														method="post">
-														<input type="submit" name="friendsEmailId"
-															value="${userFriends.requestTo}"> <br> <a>
-															<font color="gray" size="2">Works @ Rbnelite</font>
-														</a>
-													</form>
-												</td>
-											</tr>
-										</c:when>
-										<c:when test="${userFriends.requestTo == loginUser.email}">
-											<tr>
-												<td><img
-													src="${pageContext.request.contextPath}/resources/images/33.png"
-													height="72" width="70"></td>
-												<td>
-													<form action="/vanjariudyogvishwa-v2/FriendProfile"
-														method="post">
-														<input type="submit" name="friendsEmailId"
-															value="${userFriends.requestFrom}"> <br> <a><font
-															color="gray" size="2">Works @ Rbnelite</font></a>
-													</form>
-												</td>
-											</tr>
-										</c:when>
-									</c:choose>
-								</c:forEach>
+												<td style="border: 1px solid gray;">
+													
+											<form action="/vanjariudyogvishwa-v2/FriendProfile"
+												method="post">
+
+												<table>
+													<tr>
+														<td rowspan="2">
+														<img
+															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
+															height="72" width="70">
+														</td>
+													</tr>
+													<tr>
+														<td><input type="hidden" name="friendsEmailId"
+															value="${userFriends[2]}"> <input type="submit"
+															style="background: none; border: none;"
+															value="${userFriends[0]} ${userFriends[1]}"> <br>
+															<a><font color="gray" size="2">Works @
+																	Rbnelite</font></a>
+												</table>
+											</form>
+
+
+										</td>
+												</tr>
+										</c:forEach>
 							</c:if>
 						</table>
 					
-					
+					</div>
 				</div>
 			</div>
 			<div>
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
+					
 					<c:if test="${!empty educationworkList}">
 					<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
 						<input id="EditProfileDetails" type="submit" value=""
@@ -446,10 +522,10 @@ input[type=text]{
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<input type="hidden" name="usermail"
 								value="${loginUser.email}">
-						<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
-								style=" float:left; width: 70px; height: 60px;">Education Details</h3>
+						
 						<div id="InsideProfileDetails">
-							
+							<h3><img src="${pageContext.request.contextPath}/resources/images/Education Details.png"
+								style=" float:left; width: 70px; height: 60px;">Education Details</h3>
 								<table>
 									<c:forEach items="${educationworkList}" var="educationWORK">
 										<tr>
@@ -618,42 +694,10 @@ input[type=text]{
 
 					</div>
 				</div>
+				
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<form action="/vanjariudyogvishwa-v2/Family">
-							<input id="EditProfileDetails" type="submit" value=""
-								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-							<h3>Family Details</h3>
-							<c:if test="${!empty familyList}">
-								<table>
-									<c:forEach items="${familyList}" var="family">
-										<tr>
-											<td><b>Family Members :</b></td>
-											<td>${family.familyValue}</td>
-										</tr>
-										<tr>
-											<td><b>Family type :</b></td>
-											<td>${family.familyType}</td>
-										</tr>
-										<tr>
-											<td><b>Family Status :</b></td>
-											<td>${family.familyStatus}</td>
-										</tr>
-										<tr>
-											<td><b>Family Income :</b></td>
-											<td>${family.familyIncome}</td>
-										</tr>
-
-									</c:forEach>
-								</table>
-							</c:if>
-						</form>
-					</div>
-				</div>
-				<div id="OutsideProfileDetails">
-					<div id="ProfileDetails">
+						
 						<c:if test="${!empty hobbiesList}">
 					<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
 						<input id="EditProfileDetails" type="submit" value=""
@@ -661,9 +705,9 @@ input[type=text]{
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 						<input type="hidden" name="usermail"
 								value="${loginUser.email}">
-						<h3>Hobbies </h3>
+						
 						<div id="InsideProfileDetails">
-							
+							<h3>Hobbies </h3>
 								<table>
 									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
 										<tr>
@@ -796,84 +840,7 @@ input[type=text]{
 						
 					</div>
 				</div>
-				<div id="OutsideProfileDetails">
-					<div id="ProfileDetails">
-					
-					
-						<c:if test="${!empty astroList}">
-					<form action="/vanjariudyogvishwa-v2/EditAstroDetails">
-						<input id="EditProfileDetails" type="submit" value=""
-									name="editAstroReqBtn"
-									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-									<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-						<h3>Astro Details</h3>
-
-						
-							<table>
-								<c:forEach items="${astroList}" var="astroDetails">
-									<tr>
-										<td><b>Country :</b></td>
-										<td>${astroDetails.country}</td>
-									</tr>
-									<tr>
-										<td><b>City :</b></td>
-										<td>${astroDetails.city}</td>
-									</tr>
-									<tr>
-										<td><b>Zodiac :</b></td>
-										<td>${astroDetails.zodiac}</td>
-									</tr>
-
-								</c:forEach>
-							</table>
-							</form>
-						</c:if>
-
-						<c:if test="${!empty editAstroList}">
-					<form action="/vanjariudyogvishwa-v2/editAstro" method="post">
-					<input type="hidden" name="userMail"
-								value="${loginUser.email}">
-					<h3>Edit Astro Details</h3>
-					<table>
-								<c:forEach items="${editAstroList}" var="editAstroDetails">
-									<tr>
-										<td><b>Country :</b></td>
-										<td><input type="text" name="country"
-													value="${editAstroDetails.country}"></td>
-									</tr>
-									<tr>
-										<td><b>City :</b></td>
-										<td><input type="text" name="city"
-													value="${editAstroDetails.city}"></td>
-									</tr>
-									<tr>
-										<td><b>State :</b></td>
-										<td><input type="text" name="state"
-													value="${editAstroDetails.state}"></td>
-									</tr>
-									<tr>
-										<td><b>Zodiac :</b></td>
-										<td><input type="text" name="zodiac"
-													value="${editAstroDetails.zodiac}"></td>
-									</tr>
-									
-									<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editAstroBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-									
-								</c:forEach>
-							</table>
-						</form>
-					</c:if>
-					</div>
-				</div>
+				
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
 						<img id="EditProfileDetails"
@@ -907,119 +874,10 @@ input[type=text]{
 					</div>
 
 				</div>
+				
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<c:if test="${!empty LifeStylelist}">
-							<form action="/vanjariudyogvishwa-v2/EditLifeStyleDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editLifeStyReqBtn"
-									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-						<h3>Lifestyle and Attributes Details</h3>
-						<div id="InsideProfileDetails">
 						
-							<table>
-								<c:forEach items="${LifeStylelist}" var="lifeStyleDetails">
-									<tr>
-										<td><b>Diet :</b></td>
-										<td>${lifeStyleDetails.diet}</td>
-									</tr>
-									<tr>
-										<td><b>Smoke :</b></td>
-										<td>${lifeStyleDetails.smoke}</td>
-									</tr>
-									<tr>
-										<td><b>Drink :</b></td>
-										<td>${lifeStyleDetails.drink}</td>
-									</tr>
-									<tr>
-										<td><b>Complexion :</b></td>
-										<td>${lifeStyleDetails.complexion}</td>
-									</tr>
-									<tr>
-										<td><b>Body Type :</b></td>
-										<td>${lifeStyleDetails.bodytype}</td>
-									</tr>
-
-									<tr>
-										<td><b>Blood Group :</b></td>
-										<td>${lifeStyleDetails.bloodgroup}</td>
-									</tr>
-									<tr>
-										<td><b>Weight :</b></td>
-										<td>${lifeStyleDetails.weight}</td>
-									</tr>
-
-								</c:forEach>
-							</table>
-							</div>
-							</form>
-						</c:if>
-						
-						<c:if test="${!empty editLifeStyleList}">
-							<form action="/vanjariudyogvishwa-v2/editLifeStyle" method="post">
-								<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-								<h3>Edit Lifestyle and Attributes Details</h3>
-								<div id="InsideProfileDetails">
-								
-								<table>
-								<c:forEach items="${editLifeStyleList}" var="editLifeStyleDetails">
-									<tr>
-										<td><b>Diet :</b></td>
-										<td><input type="text" name="diet" value="${editLifeStyleDetails.diet}"></td>
-									</tr>
-									<tr>
-										<td><b>Smoke :</b></td>
-										<td><input type="text" name="smoke" value="${editLifeStyleDetails.smoke}"></td>
-									</tr>
-									<tr>
-										<td><b>Drink :</b></td>
-										<td><input type="text" name="drink" value="${editLifeStyleDetails.drink}"></td>
-									</tr>
-									<tr>
-										<td><b>Complexion :</b></td>
-										<td><input type="text" name="complexion" value="${editLifeStyleDetails.complexion}"></td>
-									</tr>
-									<tr>
-										<td><b>Body Type :</b></td>
-										<td><input type="text" name="bodytype" value="${editLifeStyleDetails.bodytype}"></td>
-									</tr>
-
-									<tr>
-										<td><b>Blood Group :</b></td>
-										<td><input type="text" name="bloodgroup" value="${editLifeStyleDetails.bloodgroup}"></td>
-									</tr>
-									<tr>
-										<td><b>Weight :</b></td>
-										<td><input type="text" name="weight" value="${editLifeStyleDetails.weight}"></td>
-									</tr>
-									
-									
-									<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editLifestyleBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-									
-								</c:forEach>
-							</table>
-								
-								</div>
-							</form>
-						</c:if>
-								
-
-
-					</div>
-				</div>
-				<div id="OutsideProfileDetails">
-					<div id="ProfileDetails">
 						<c:if test="${!empty otherDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
 								<input id="EditProfileDetails" type="submit" value=""
@@ -1028,9 +886,9 @@ input[type=text]{
 								<input type="hidden" name="usermail"
 								value="${loginUser.email}">
 
-								<h3>Other Details</h3>
+								
 								<div id="InsideProfileDetails">
-
+									<h3>Other Details</h3>
 									<table>
 										<c:forEach items="${otherDetailsList}" var="otherDetails">
 											<tr>

@@ -6,9 +6,6 @@ package com.rbnelite.udyogvishwa.controller;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,12 +20,14 @@ import com.rbnelite.udyogvishwa.dto.MessageDTO;
 
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Message;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.MessageService;
 import com.rbnelite.udyogvishwa.service.NeedService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -55,18 +54,21 @@ public class MessageController {
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private ProfileImageService profileImageService;
+	@Resource
+	private NotificationService notificationService;
 
 	@RequestMapping(value = "/message", method = RequestMethod.POST)
-	public String messageMethod( 
-			@RequestParam("msgSenderID") String msgSenderID,
+	public String messageMethod(@RequestParam("msgSenderID") String msgSenderID,
 			@RequestParam("msgReceiverID") String msgReceiverID,
 			@ModelAttribute("MessageDTO") MessageDTO msgdto,
 			Map<String, Object> map) {
 		
-
-		ObjmsgService.addMessage(msgdto);
-
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
 		
+		ObjmsgService.addMessage(msgdto);
+		
+		map.put("msgConversionFrndName", msgReceiverID);
 
 		map.put("msgConversion", new Message());
 		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, msgReceiverID));
@@ -76,6 +78,9 @@ public class MessageController {
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(msgSenderID));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 
 		return "message";
 	}
@@ -85,6 +90,9 @@ public class MessageController {
 			@RequestParam("msgReceiverID") String msgReceiverID,
 			@ModelAttribute("MessageDTO") MessageDTO msgdto,
 			Map<String, Object> map) {
+		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
 		
 		map.put("msgConversion", new Message());
 		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, msgReceiverID));
@@ -96,30 +104,26 @@ public class MessageController {
 		
 		map.put("msgFriends", new Message());
 		map.put("msgFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
+		
 		map.put("msgConversionFrndName", msgReceiverID);
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(msgSenderID));
-		
-		
-		LoginUser loginUser = RequestContext.getUser();
 	
-		String userMail=loginUser.getEmail();
-		
-		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "message";
 		
 	}
 
 	@RequestMapping(value = "/message")
-
 	public String messageForm(ModelMap map) {
 		
 		LoginUser loginUser = RequestContext.getUser();
-		
 		String userMail=loginUser.getEmail();
 		
 		map.put("msgFriends", new Message());
@@ -130,6 +134,9 @@ public class MessageController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 
 		return "message";

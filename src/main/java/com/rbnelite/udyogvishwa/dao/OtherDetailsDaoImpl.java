@@ -37,12 +37,23 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void insertOtherDetails(OtherDetails otherDetail) {
 		
-		Session session=sessionFactory.openSession();
+		/*Session session=sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.save(otherDetail);
 		session.getTransaction().commit();
-		session.flush();
+		session.flush();*/
+		
+		Session session=sessionFactory.openSession();
+		try{
+		session.save(otherDetail);
 		System.out.println("From OtherDetailsDaoImpl Record inserted successfully");
+		}
+	
+		finally
+		{
+			session.close();
+		}
+	
 	}
 
 
@@ -50,9 +61,14 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 	@Transactional
 	public List<OtherDetails> listOtherDetails(String userMail) {
 		
-		
-		return sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+userMail+"'")
+		Session session=sessionFactory.openSession();
+		try{
+		return session.createQuery("from OtherDetails where usermail='"+userMail+"'")
                 .list();
+		}
+		finally{
+			session.close();
+		}
 	}
 
 	@Override
@@ -66,16 +82,30 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		otherDetails2Update.setSocialact(otherDetails.getSocialact());
 		otherDetails2Update.setSocialStatus(otherDetails.getSocialStatus());
 		
-		sessionFactory.getCurrentSession().update(otherDetails2Update);
-		
+		Session session=sessionFactory.openSession();
+		try{
+		session.update(otherDetails2Update);
+		}
+		finally
+		{
+			session.close();
+		}
 	}
 
 	@Override
 	@Transactional
 	public OtherDetails getOtherDetailsByEmailId(String userMail) {
-	
-		return (OtherDetails) sessionFactory.getCurrentSession().createQuery("from OtherDetails where usermail='"+userMail+"' ").uniqueResult();
+	     
+		Session session=sessionFactory.openSession();
+		try{
+		return (OtherDetails) session.createQuery("from OtherDetails where usermail='"+userMail+"' ").uniqueResult();
+	}      
+	      finally
+	      {
+	    	  session.close();
+	      }
 	}
+	
 
 
 }

@@ -11,6 +11,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
@@ -29,6 +30,20 @@ function HideChangePhotoBlock(){
     dispPhoto.style.display='none';
 }
 
+function jumpcomment(NotificationId) {
+	/* alert(NotificationId); */
+	document.getElementById("notificationId").value = NotificationId;
+
+	var temp = document.getElementById("submit1").click();
+}
+	/* function setReceiverEmailId() {
+		var tempString = document.getElementById("country").value;
+		var msg = tempString.split("@ManojSawant420");
+		var ReceiverID = msg[1];
+		alert(ReceiverID);
+		var tempMsgReceiverID = document.getElementById("msgReceiverID");
+		tempMsgReceiverID.style.value = ReceiverID;
+	} */
 </script>
 
 <style type="text/css">
@@ -212,25 +227,80 @@ function HideChangePhotoBlock(){
 			
 
 
-			<div id="NotificationTopHome">
-				<a onclick="return DisableNotificBlock()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;"></a>
-
+			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+				<table width="100%">
+					<th style="background-color: #fab039"><font color="white">Notification</font>
+						<a onclick="return DisableNotificBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
+				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 
 			<div id="RequestTopHome">
-				<a onclick="return DisableRequestBlock()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;"></a>
+				<table width=100%>
+					<th colspan=3 style="background-color: #fab039"><font color=white>
+					Contact Requests</font> <a
+						onclick="return DisableRequestBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+							<c:if test="${!empty friendRequestList}">
+					<c:forEach items="${friendRequestList}" var="friendRequest">
+					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
+					
+					<tr align="center">
+					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
+					<input type="hidden" name="requestTo" value="${loginUser.email}">
+						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
+							height="30" width="30"></td>
+						<td>
+						<b>${friendRequest.requestFrom}</b><br>
+						java developer @ RBNelite</td>
+						<td><input type="submit" name="status" value="Accept" class="connectBtn">
+						
+						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
 
+					</tr>
+					</form>
+					</c:forEach>
+					
+					</c:if>
+				</table>
 			</div>
 			<div id="SettingTopHome">
-				<a>Change Account Setting</a> <a
-					onclick="return DisableSettingBlock()"> <img
-					src="${pageContext.request.contextPath}/resources/images/close.png"
-					style="width: 40px; height: 40px; float: right;"></a> <br> <a
-					href="AccountSetting.jsp">More Settings...</a>
+				<table width=100%>
+					<tr>
+						<th style="background-color: #fab039"><a
+							href="ChangePassword"
+							style="text-decoration: none; color: white">Change Account
+								Setting</a><a onclick="return DisableSettingBlock()"> <img
+								src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right;"></a></th>
+					</tr>
+					<tr>
+						<td align="left"><a href="ChangePassword"
+							style="text-decoration: none; color: black">Change Password</a></td>
+					</tr>
+					
+				</table>
 			</div>
 
 			<div id="OutsideleftMainMsg">
@@ -269,14 +339,32 @@ function HideChangePhotoBlock(){
 			<div id="middlePhotos">
 				<form action="/vanjariudyogvishwa-v2/message" ,  method="post">
 					
-					<input type="hidden" name="msgReceiverID" value="${msgConversionFrndName}" 
+					
+					<c:if test="${! empty msgConversionFrndName}">
+					<input type="hidden" id="msgReceiverID" name="msgReceiverID" value="${msgConversionFrndName}" 
 							style="width: 734px; height: 25px; border-radius: 5px;" />
+						</c:if>
 						
-						<a id="MsgTo"> To :<input type="text" id="country"
-							name="country" style="width: 700px;" /> <script>
+						<c:if test="${empty msgConversionFrndName}">
+						
+						<input type="hidden" id="msgReceiverID" name="msgReceiverID" 
+							style="width: 734px; height: 25px; border-radius: 5px;" />
+							<script>
+								$("#msgReceiverID").autocomplete("searchReceiverMail");
+							</script>
+						</c:if>
+					<a id="MsgTo"> To :<input type="text" id="country"
+							name="country" style="width: 700px;"/>
+							<script>
 								$("#country").autocomplete("list");
 							</script>
 						</a>
+						
+					<%-- <c:if test="${! empty msgConversionFrndName}">
+						<input type="hidden" id="msgReceiverID" name="msgReceiverID" value="${msgConversionFrndName}" 
+							style="width: 734px; height: 25px; border-radius: 5px;" />
+					</c:if> --%>
+						
 					
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
@@ -306,9 +394,12 @@ function HideChangePhotoBlock(){
 														height="18" width="20"></td>
 													<td><font color="purple" size="4">
 															${msgConversion.myMsgText }</font> <br> <a
-														style="float: left;"><font color="gray" size="2">
-																${msgConversion.msgDate}</font></a></td>
+														style="float: left;"><font color="gray" size="1">
+																${msgConversion.msgDate}</font></a><br>	<hr>
+													</td>
+																
 												</tr>
+												
 											</c:when>
 											<c:otherwise>
 
@@ -320,8 +411,9 @@ function HideChangePhotoBlock(){
 														height="18" width="20"></td>
 													<td><font color="sky blue" size="4">
 															${msgConversion.myMsgText} </font> <br> <a
-														style="float: left;"><font color="gray" size="2">
-																${msgConversion.msgDate}</font></a></td>
+														style="float: left;"><font color="gray" size="1">
+																${msgConversion.msgDate}</font></a><br>	<hr color="sky blue">
+													</td>
 												</tr>
 
 											</c:otherwise>

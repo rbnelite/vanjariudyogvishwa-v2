@@ -62,8 +62,8 @@ public class FriendProfileController {
 	@Resource
 	private LifeStyleService lifestyleservice;
 	
-	@Resource
-	private AstroService astroservice;
+	/*@Resource
+	private AstroService astroservice;*/
 	
 	@Resource
 	private ContactService contactservice;
@@ -85,8 +85,8 @@ public class FriendProfileController {
 	map.put("FriendshobbiesDetails", new Hobbies());
 	map.put("FriendshobbiesList", hobbiesservice.listHobbies(userMail));
 
-	map.put("FriendsastroDetails", new Astro());
-	map.put("FriendsastroList", astroservice.listAstro(userMail));
+	/*map.put("FriendsastroDetails", new Astro());
+	map.put("FriendsastroList", astroservice.listAstro(userMail));*/
 	
 	map.put("FriendslifeStyleDetails", new LifeStyle());
 	map.put("FriendsLifeStylelist", lifestyleservice.listLifeStyle(userMail));

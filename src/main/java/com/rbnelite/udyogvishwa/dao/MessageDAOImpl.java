@@ -48,47 +48,46 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 		
 		
 		Session session = sessionFactory.openSession();
+		try
+		{
 		session.getTransaction().begin();
 		session.save(msg);
 		session.getTransaction().commit();
 		session.flush();
-		System.out.println("from insertMessage() after saving");
-	}
+		}
+		finally
+		{
+			session.close();
+		}
+		}
+		
 
 	@Override
 	@Transactional
 	public List<Message> listMessage(String msgSenderID, String msgReceiverID) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();
-	}
+	   Session session=sessionFactory.openSession();
+	   try{
+		return session.createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();
+	   }
+	   finally
+	   {
+		   session.close();
+	   }
+	   }
 
 	@Override
 	@Transactional
 	public List<Message> listMessagedFriends(String userMail) {
-		
-		/*Session session=sessionFactory.openSession();
-		Criteria criteria=session.createCriteria(Message.class);
-		Criterion msgSenderID=Restrictions.eq("msgSenderID", userMail);
-		Criterion msgReceiverID=Restrictions.eq("msgReceiverID", userMail);
-		
-		LogicalExpression orExp=Restrictions.or(msgSenderID, msgReceiverID);
-		criteria.add(orExp);
-	criteria.setResultTransformer(criteria.DISTINCT_ROOT_ENTITY);
-		
-		
-		
-	
-		List l1= criteria.list();
-		
-		System.out.println("@"+l1.size());
-		System.out.println("@@@@@"+l1.isEmpty());
-		
-		return l1;*/
-		
-		
-		return sessionFactory.getCurrentSession().createQuery("FROM Message where msgReceiverID ='"+userMail+"' union FROM Message where msgSenderID='"+userMail+"' ").list();
-		
-		
+			
+		Session session=sessionFactory.openSession();
+		try{
+		return session.createQuery("FROM Message where msgReceiverID ='"+userMail+"' union FROM Message where msgSenderID='"+userMail+"' ").list();
+		}
+		finally
+		{
+			session.close();
+		}
 	}
 
 	

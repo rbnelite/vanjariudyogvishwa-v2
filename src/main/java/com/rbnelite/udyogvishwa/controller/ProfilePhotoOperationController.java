@@ -125,7 +125,7 @@ public class ProfilePhotoOperationController {
 	            		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 	            		
 	            		map.put("status11", new Status());
-	            		List<Status> status = statusservice.listStatus();
+	            		List<Status> status = statusservice.listStatus(userMail);
 	            		map.put("statusList", status);
 	            		
 	            		map.put("myEvents", new Event());

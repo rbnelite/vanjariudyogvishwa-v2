@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.HobbiesCredential;
 import com.rbnelite.udyogvishwa.model.Hobbies;
+import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 
 @Controller
@@ -28,6 +29,7 @@ public class HobbiesController {
 	{
 		hobbiesservice.saveHobbies(hobbycredential);
 		map.put("CurrentEmailId", emailId);
+		map.addAttribute("otherdetails", new OtherDetails ());
 		return "Step11OtherDetails";
 	}
 	

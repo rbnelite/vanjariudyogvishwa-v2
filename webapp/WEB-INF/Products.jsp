@@ -15,6 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link href="<c:url value="/resources/css/style4.css" />" rel="stylesheet">
+         <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 
 <script type="text/javascript">
@@ -29,6 +30,12 @@ function HideChangePhotoBlock(){
     dispPhoto.style.display='none';
 }
 
+function jumpcomment(NotificationId) {
+	/* alert(NotificationId); */
+	document.getElementById("notificationId").value = NotificationId;
+
+	var temp = document.getElementById("submit1").click();
+}
 </script>
 
 <style type="text/css">
@@ -54,9 +61,16 @@ function HideChangePhotoBlock(){
         <div id="main">
             <div id="Header">
 
-                <input  id="input_search" type="text" name="SearchProfile" placeholder="Search"/>
-                <label style="margin-left:110px; margin-right:5px; float: right;">WelCome !<b>${loginUser.firstName} ${loginUser.lastName}</b></label>
-                <br>
+               <form action="/vanjariudyogvishwa-v2/SearchResult">
+					<input id="SearchData" type="text" name="SearchData"
+						placeholder="Search" style="height: 25px; width: 200px;" /> <input
+						type="submit" value=" "
+						style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');">
+				</form>
+				<label
+					style="margin-left: 110px; margin-right: 5px; margin-top: -30px; float: right;">WelCome
+					!<b> ${loginUser.firstName} ${loginUser.lastName}</b>
+				</label> <br>
                <div id="profile_photo" style="margin-top: -20px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
@@ -114,9 +128,9 @@ function HideChangePhotoBlock(){
 									Events</font></th>
 							<c:forEach items="${eventstList}" var="myEvents">
 								<tr>
-									<td align="left">Anil Budge created an event
-										:${myEvents.name}</td>
-								</tr>
+										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
+											created an event :${myEvents[0]}</td>
+									</tr>
 							</c:forEach>
 						</table>
 
@@ -137,10 +151,33 @@ function HideChangePhotoBlock(){
             
 
 
-            <div id="NotificationTopHome">
-                <a onclick="return DisableNotificBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-
-            </div>
+            <div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+				<table width="100%">
+					<th style="background-color: #fab039"><font color="white">Notification</font>
+						<a onclick="return DisableNotificBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right;"></a></th>
+					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+											<c:if test="${!empty NotificationList}">
+						<c:forEach items="${NotificationList}" var="note">
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						
+						<input type="submit" id="submit1" style="display: none">
+						</td></tr>						
+						</c:forEach>
+						<input type="hidden" id="notificationId" name="notificationId">
+						</c:if>
+						
+					</form>
+				</table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
 
             <div id="RequestTopHome">
 				<table width=100%>
@@ -173,11 +210,22 @@ function HideChangePhotoBlock(){
 				</table>
 			</div> 
             <div id="SettingTopHome">
-                <a>Change Account Setting</a>
-                <a onclick="return DisableSettingBlock()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
-                <br>
-                <a href="AccountSetting.jsp">More Settings...</a>
-            </div>
+				<table width=100%>
+					<tr>
+						<th style="background-color: #fab039"><a
+							href="ChangePassword"
+							style="text-decoration: none; color: white">Change Account
+								Setting</a><a onclick="return DisableSettingBlock()"> <img
+								src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								style="width: 40px; height: 40px; float: right;"></a></th>
+					</tr>
+					<tr>
+						<td align="left"><a href="ChangePassword"
+							style="text-decoration: none; color: black">Change Password</a></td>
+					</tr>
+					
+				</table>
+			</div>
 
             
 
@@ -240,7 +288,7 @@ function HideChangePhotoBlock(){
                     <div id="ShowProductInfoMain">
                         <div id="ShowProductUpdetImage">
                         		<%-- ${productNAME.imgPath} --%>
-                                <img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="Photos" height="100" width="120">
+                                <img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="100" width="120">
                          </div>
                          <div id="ShowProductInfo">
                             <table width=100%>

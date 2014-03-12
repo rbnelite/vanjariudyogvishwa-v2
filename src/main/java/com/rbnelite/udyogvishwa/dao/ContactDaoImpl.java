@@ -20,18 +20,22 @@ public class ContactDaoImpl extends BaseDao<Index> implements ContactDao {
 	public void saveContact(Index index) {
 	
 		Session session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		
-		Query query=session.createQuery("update Index i set i.homeAddress=:homeAddress, i.officeAddress=:officeAddress, i.telephone=:telephone where i.emailId=:emailId ");
-		
-		query.setParameter("homeAddress", index.getHomeAddress());
-		query.setParameter("officeAddress", index.getOfficeAddress());
-		query.setParameter("telephone", index.getTelephone());
-		query.setParameter("emailId", "mayur@gmail.com");
-		query.executeUpdate();
-		session.getTransaction().commit();
-		session.flush();
-		
+		try {
+			session.getTransaction().begin();
+
+			Query query = session
+					.createQuery("update Index i set i.homeAddress=:homeAddress, i.officeAddress=:officeAddress, i.telephone=:telephone where i.emailId=:emailId ");
+
+			query.setParameter("homeAddress", index.getHomeAddress());
+			query.setParameter("officeAddress", index.getOfficeAddress());
+			query.setParameter("telephone", index.getTelephone());
+			query.setParameter("emailId", index.getEmailId());
+			query.executeUpdate();
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
 	}
 
 }

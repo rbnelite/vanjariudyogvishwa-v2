@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+            <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>step-4 Contact Details Page</title>
     </head>
@@ -59,7 +60,7 @@
                                             <div id="tel_noError" class="red" colspan="2"/></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="hidden" name="userMail" value="ba@gmail.com"></td>
+                                        <td><input type="hidden" name="userMail" value="${loginUser.email}"></td>
                                         <td align="right">
                                             <input type="submit" class="savebtn" id="submit" name="save_contact" value="Save & Continue" >
                                         </td>

@@ -17,18 +17,19 @@ public class LikeStatusServiceImpl implements LikeStatusService {
 	
 	@Override
 	public void LikeTheStatus(LikeStatus likeStatus) {
-		LikeStatus likestatus=new LikeStatus();
-		likestatus.setCount(true);
-		likestatus.setStatusId(likeStatus.getStatusId());
-		likestatus.setWhoLike(likeStatus.getWhoLike());
-		likestatusdao.LikeTheStatus(likestatus);
+		LikeStatus like_status=new LikeStatus();
+		like_status.setMyReply(likeStatus.getMyReply());
+		like_status.setStatusId(likeStatus.getStatusId());
+		like_status.setWhoLike(likeStatus.getWhoLike());
+		
+		likestatusdao.LikeTheStatus(like_status);
 	}
 
 	@Override
 	public List<LikeStatus> listLikeStatus() {
 		
 		List<LikeStatus> l1=likestatusdao.listLikeStatus();
-		System.out.println("88888likeStatus List contains" + l1.size()+" Elements");
+		
 		return l1;
 	}
 

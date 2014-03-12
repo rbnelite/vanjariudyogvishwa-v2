@@ -20,7 +20,7 @@ public class Religion {
 	@SequenceGenerator(name="religion_sequence_religionid",sequenceName="religion_sequence",allocationSize=1)
 	private int religionid;
 	
-	@Column
+	@Column(name="")
 	@NotEmpty
 	private String religionName;
 	

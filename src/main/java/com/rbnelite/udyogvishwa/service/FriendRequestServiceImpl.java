@@ -34,7 +34,7 @@ public class FriendRequestServiceImpl implements FriendRequestService{
 		
 	    friendrequest.setRequestFrom(friendRequestCredential.getRequestFrom());
 	    friendrequest.setRequestTo(friendRequestCredential.getRequestTo());
-	    friendrequest.setRequestStatus(friendRequestCredential.getRequestStatus());
+	    friendrequest.setRequestStatus("Pending");
 		friendrequest.setRequestDate(dateFormat.format(date));
 		
 		friendrequestdao.sendFriendRequest(friendrequest);

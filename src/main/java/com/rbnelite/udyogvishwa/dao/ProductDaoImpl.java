@@ -38,27 +38,45 @@ public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 		// TODO Auto-generated method stub
 
 		Session session=sessionFactory.openSession();
+		try{
 		session.getTransaction().begin();
 		session.save(product);
 		session.getTransaction().commit();
 		session.flush();
-		
+		}
+		finally
+		{
+			session.close();
+		}
 	}
 	@Override
 	@Transactional
 	public List<Product> listProduct(String userMail) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product where userMail='"+userMail+"' order by productId desc")
+		Session session=sessionFactory.openSession();
+		try{
+		return session.createQuery("from Product where userMail='"+userMail+"' order by productId desc")
                 .list();
-	
+		}
+		finally
+		{
+			session.close();
+		}
 	}
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List searchProductList(String SearchData) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Product where productName like concat('%','"+SearchData+"','%')").list();
-	}
+		Session session=sessionFactory.openSession();
+		try{
+		return session.createQuery("from Product where productName like concat('%','"+SearchData+"','%')").list();
+		}
+		finally
+		{
+			session.close();
+		}
+		}
 	
 
 }

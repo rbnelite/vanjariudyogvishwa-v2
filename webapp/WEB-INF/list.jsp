@@ -8,10 +8,6 @@
 
 
 
-<c:forEach items="${SearchUserList}" var="myEvents">
-
-${myEvents.firstName} ${myEvents.middleName} ${myEvents.lastName}===>${myEvents.emailId}
-
+<c:forEach items="${SearchUserList}" var="myFriends">
+${myFriends.firstName} ${myFriends.middleName} ${myFriends.lastName}
 </c:forEach>
-
-

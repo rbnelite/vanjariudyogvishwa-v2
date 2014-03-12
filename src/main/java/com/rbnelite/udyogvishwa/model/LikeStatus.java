@@ -19,7 +19,7 @@ public class LikeStatus {
 	private int id;
 	
 	@Column(name="status")
-	private boolean count;
+	private boolean MyReply;
 	
 	@Column(name="email")
 	private String whoLike;
@@ -34,12 +34,7 @@ public class LikeStatus {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public boolean getCount() {
-		return count;
-	}
-	public void setCount(boolean count) {
-		this.count = count;
-	}
+
 	public String getWhoLike() {
 		return whoLike;
 	}
@@ -51,6 +46,12 @@ public class LikeStatus {
 	}
 	public void setStatusId(long statusId) {
 		this.statusId = statusId;
+	}
+	public boolean getMyReply() {
+		return MyReply;
+	}
+	public void setMyReply(boolean myReply) {
+		MyReply = myReply;
 	}
 
 }

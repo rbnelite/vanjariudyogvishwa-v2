@@ -21,7 +21,7 @@ public class ContactServiceImpl implements ContactService {
 		index.setOfficeAddress(contactcredential.getOfficeAddress());
 		index.setTelephone(contactcredential.getTelephoneNo());
 		index.setEmailId(contactcredential.getUserMail());
-		index.setId(67);
+		/*index.setId(67);*/
 		contactdao.saveContact(index);
 
 	}

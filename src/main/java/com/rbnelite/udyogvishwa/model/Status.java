@@ -2,6 +2,7 @@ package com.rbnelite.udyogvishwa.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,13 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import org.hibernate.engine.profile.Fetch;
 
 @Entity
 @Table(name = "status")
@@ -41,8 +40,17 @@ public class Status {
 	@JoinColumn(name = "status_id")
 	private List<LikeStatus> likeStatus ;
 	
-	@Column(name = "email")
-	private String usermail;
+	@OneToOne(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "email", referencedColumnName = "email", insertable=false, updatable=false)
+	private ProfileImages profileImages;
+	
+	/*@Column(name = "email")
+	private String usermail;*/
+	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "email", referencedColumnName = "email")
+	private Index user;
+	
 	
 	
 	public int getId() {
@@ -77,13 +85,13 @@ public class Status {
 		this.comments = comments;
 	}
 
-	public String getUsermail() {
+	/*public String getUsermail() {
 		return usermail;
 	}
 
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
-	}
+	}*/
 
 	public List<LikeStatus> getLikeStatus() {
 		return likeStatus;
@@ -92,5 +100,23 @@ public class Status {
 	public void setLikeStatus(List<LikeStatus> likeStatus) {
 		this.likeStatus = likeStatus;
 	}
+
+	public Index getUser() {
+		return user;
+	}
+
+	public void setUser(Index user) {
+		this.user = user;
+	}
+
+	public ProfileImages getProfileImages() {
+		return profileImages;
+	}
+
+	public void setProfileImages(ProfileImages profileImages) {
+		this.profileImages = profileImages;
+	}
+
+	
 
 }
