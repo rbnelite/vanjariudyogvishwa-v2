@@ -63,7 +63,7 @@ function isNumberKey(evt)
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><form:input path="companyName" size="30" maxlength="10"/>
+							<td><form:input path="companyName" size="30" maxlength="30"/>
 								<form:errors path="companyName" cssClass="error"/>
 							</td>
 						</tr>

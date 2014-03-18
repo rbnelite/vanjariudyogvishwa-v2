@@ -84,7 +84,11 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		
 		Session session=sessionFactory.openSession();
 		try{
-		session.update(otherDetails2Update);
+			session.getTransaction().begin();
+			session.update(otherDetails2Update);
+			session.getTransaction().commit();
+			session.flush();
+		
 		}
 		finally
 		{

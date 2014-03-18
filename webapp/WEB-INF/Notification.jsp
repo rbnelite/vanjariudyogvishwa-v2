@@ -330,7 +330,12 @@ document.getElementById("notificationId").value=NotificationId;
 					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 											<c:if test="${!empty NotificationList}">
 						<c:forEach items="${NotificationList}" var="note">
-						<tr><td colspan=2 align="center"><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						<tr><td colspan=2 align="left">
+						<div class="userStatusImage">
+									<img
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
+										height="20" width="20">
+								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
 						<input type="submit" id="submit1" style="display: none">
 						</td></tr>						
@@ -340,7 +345,8 @@ document.getElementById("notificationId").value=NotificationId;
 						
 					</form>
 				</table>
-				<table style="float: right;"><tr><td><a href="#"><b>See Old Notifications</b></a></td></tr></table>
+				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
+				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 			<div id="RequestTopHome">
 				<table width=100%>
@@ -405,7 +411,7 @@ document.getElementById("notificationId").value=NotificationId;
 								
 								<tr style="background-color: #fab039">
 									<td width="40px;"><img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
 										height="80" width="80"></td>
 									<td>
 									&nbsp;<span id="${notification[3]}" onclick="return jumpcomment('${notification[3]}')">
@@ -416,7 +422,7 @@ document.getElementById("notificationId").value=NotificationId;
 								</tr>
 								<tr></tr>
 							</c:forEach>
-<input type="hidden" id="notificationId" name="notificationId">
+							<input type="hidden" id="notificationId" name="notificationId">
 						</c:if>
 						</form>
 						<c:if test="${empty NotificationList}">
@@ -445,13 +451,13 @@ document.getElementById("notificationId").value=NotificationId;
 										<tr>
 
 											<td><img
-												src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30"></td>
 											<td>${knownPeople[1]} ${knownPeople[2]}<br>
 											<font size="2" color="gray">${knownPeople[0]}</font>
 												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
 													method="post">
-													<input type="hidden" name="JspPageName" value="Notification">
+													<input type="hidden" name="JspPageName" value="Home">
 													<input type="hidden" name="requestTo"
 														value="${knownPeople[0]}"> <input
 														type="hidden" name="requestFrom"

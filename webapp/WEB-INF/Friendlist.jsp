@@ -190,7 +190,7 @@ function jumpcomment(NotificationId) {
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
@@ -273,10 +273,19 @@ function jumpcomment(NotificationId) {
 			   </td>
 			   <td align="left">
 			   <form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+			   <c:choose>
+			   	<c:when test="${userFriends[2]==loginUser.email}">
+			   		<input type="hidden" name="friendsEmailId" value="${userFriends[3]}">
+			   		
+			   	</c:when>
+			   	<c:otherwise>
+			   		<input type="hidden" name="friendsEmailId" value="${userFriends[2]}">
+			   		
+			   	</c:otherwise>
+			   	</c:choose>
 					<input type="submit" id="nameButton"
 						style="background: none; margin-right: 10px; border: none; font-size: 30px;
 						font-family: monospace; font-weight: bold;"
-						name="friendsEmailId"
 						value="${userFriends[0]} ${userFriends[1]}"
 						onmouseover="return underscoreName();"
 						onmouseout="return NounderscoreName();">
@@ -333,11 +342,11 @@ function jumpcomment(NotificationId) {
 					</table>
 				</div>
 				</div>
-				<!-- <div id="OutsideRightMessage">
+				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
 					</div>
-				</div> -->
+				</div>
 				
 			</div>
 			<table>

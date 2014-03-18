@@ -50,7 +50,39 @@ function jumpcomment(NotificationId) {
     position: absolute;
     margin-top: 130px;
     }
-
+#rightMainPhotos {
+    margin-top: -648px;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    background-color: #FFE4C4;
+    float: right;
+    border-radius: 0px;
+    border: 1px solid #808080;
+}
+#peopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: auto;
+    padding-right: 40px;
+}
+#OutsidepeopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: hidden;
+}
 /* -------------------image viewer------------------ */
 *
 {
@@ -294,7 +326,7 @@ p a:hover
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
@@ -375,7 +407,44 @@ p a:hover
 						</c:if>
                
             </div>
-           <div id="rightMainPhotos"></div>
+           <div id="rightMainPhotos">
+           		<div id="OutsidepeopleMayKnw">
+			<div id="peopleMayKnw">
+
+					<table width=100%>
+						<th colspan=3 style="background-color: #fab039"><font
+							color="">People You May Know</th>
+						<c:if test="${!empty knownPeopleList}">
+							<c:forEach items="${knownPeopleList}" var="knownPeople">
+								
+										<tr>
+
+											<td><img
+												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30"></td>
+											<td>${knownPeople[1]} ${knownPeople[2]}<br>
+											<font size="2" color="gray">${knownPeople[0]}</font>
+												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
+													method="post">
+													<input type="hidden" name="JspPageName" value="Home">
+													<input type="hidden" name="requestTo"
+														value="${knownPeople[0]}"> <input
+														type="hidden" name="requestFrom"
+														value="${loginUser.email}"> <input type="submit"
+														value="Connect" class="connectBtn" style="float: right;">
+												</form>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2"></td>
+										</tr>
+								
+							</c:forEach>
+						</c:if>
+					</table>
+				</div>
+				</div>
+           </div>
         </div>
     </center>
      </body>

@@ -15,12 +15,41 @@
 	
 	
 	 <script>
+	 
+	 
+	 
+	 function validateDOB(){
+
+		    var dob = document.getElementById("txtDOB").value;
+		    alert(dob);
+		    var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+		    if (dob == null || dob == "" || !pattern.test(dob))
+		    {
+		        errMessage += "Invalid date of birth\n"; 
+		        return false;
+		    }
+		    else{
+		        return true
+		    }
+		}
+	 
+	 
+	 
             function isNumberKey(evt)
             {
                 var charCode=(evt.which) ? evt.which :event.keyCode;
                 if(charCode >31 && (charCode<48 || charCode >57))
                     return false;
                 return true;
+            }
+            
+            function isCharKey(evt)
+            {
+        		 var charCode=(evt.which) ? evt.which :event.keyCode;
+        		 
+        	        if(charCode >64 && charCode<123)
+        	            return true;
+        	        return false;
             }
             
             function passwordNotSame()
@@ -60,9 +89,9 @@
 							<tr>
 								<td width="577" height="21">&nbsp;</td>
 								<td width="607"><span class="style8"><span
-										class="style16"><span class="style8">Email-</span></span></span><span
+										class="style16"><span class="style8">Email:</span></span></span><span
 									class="style8 style8"></span><span class="style8"></span><span
-									class="style8"><span class="style16" class="password">&nbsp;&nbsp;&nbsp;Password-
+									class="style8"><span class="style16" class="password">&nbsp;&nbsp;&nbsp;Password:
 									</span></span></td>
 							</tr>
 							<tr>
@@ -76,7 +105,7 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><marquee><font color="Red">${LoginError}</font></marquee><marquee><font color="white">${LogOutMsg}</font></marquee></td>
+								<td><marquee><font color="Red" size="5">${LoginError}</font></marquee><marquee><font color="white">${LogOutMsg}</font></marquee></td>
 							</tr>
 							<tr>
 								<td height="22">&nbsp;</td>
@@ -147,7 +176,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 														<td width="121" align="left" class="style59">First
 															Name<font color="red">*</font>
 														</td>
-														<td width="194"><form:input path="firstName" size="30" maxlength="15" />
+														<td width="194"><form:input path="firstName" size="30" maxlength="15" onkeypress="return isCharKey(event);" />
 														<form:errors path="firstName" cssClass="error"/></td>
 													</tr>
 
@@ -155,14 +184,14 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 														<td align="left"><span class="style34"><span
 																class="style46">Middle Name<font color="red">*</font></span></span>
 														</td>
-														<td><form:input path="middleName"	size="30" maxlength="15" />
+														<td><form:input path="middleName"	size="30" maxlength="15" onkeypress="return isCharKey(event);"/>
 														<form:errors path="middleName" cssClass="error" /></td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Last Name<font
 															color="red">*</font></td>
-														<td><form:input path="lastName" size="30" maxlength="15" />
+														<td><form:input path="lastName" size="30" maxlength="15" onkeypress="return isCharKey(event);" />
 														<form:errors path="lastName" cssClass="error" /></td>
 													</tr>
 													<tr>
@@ -181,7 +210,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Birth Date<font
 															color="red">*</font></td>
-														<td><form:input path="birthDate" size="30" placeholder="mm/dd/yyyy"/><form:errors path="birthDate"/>
+														<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="mm/dd/yyyy"/><form:errors path="birthDate"/>
 														</td>
 																												</td>
 													</tr>
@@ -196,7 +225,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 																<span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
 
 																<form:radiobutton path="gender" value="female"/>
-																	<span class="style46">Female</span>
+																	<span class="style46">Female</span><br>
 																	<form:errors path="gender" cssClass="error"/></td>
 													</tr>
 													<tr>

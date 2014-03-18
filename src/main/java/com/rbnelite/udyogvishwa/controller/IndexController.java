@@ -139,7 +139,8 @@ public class IndexController {
 			return "Home";
 		
 		} else {
-			map.put("LoginError", "Invalid userName or password !");
+			map.addAttribute("index", new Index());
+			map.put("LoginError", "Invalid User Name or password !");
 			return "Index";
 		}
 

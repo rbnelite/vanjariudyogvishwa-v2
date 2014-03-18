@@ -19,7 +19,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 
 		String uri = request.getRequestURI();
-		if (!uri.endsWith("loginAuthentication") && !uri.endsWith("logoutUser") && !uri.endsWith("Index")) {
+		if (!uri.endsWith("loginAuthentication") && !uri.endsWith("logoutUser") && !uri.endsWith("Index")&&!uri.endsWith("ForgotPassword")) {
 			LoginUser loginUser = (LoginUser) request.getSession().getAttribute(Constants.LOGGEDIN_USER);
 			
 			if (loginUser == null) {

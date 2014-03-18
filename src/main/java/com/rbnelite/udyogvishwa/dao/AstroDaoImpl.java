@@ -66,7 +66,11 @@ public class AstroDaoImpl extends BaseDao<Astro> implements AstroDao {
 
 		Session session = sessionFactory.openSession();
 		try {
+			
+			session.getTransaction().begin();
 			session.update(astroToChange);
+			session.getTransaction().commit();
+			session.flush();
 		} finally {
 			session.close();
 		}

@@ -76,7 +76,11 @@ public class IntrestAreasDaoImpl extends BaseDao<IntrestAreas> implements Intres
 		try{
 		IntrestAreas intrestAreas2Update=getIntrestAreasByEmailId(intrestAreas.getUserMail());
 		intrestAreas2Update.setInterestId(intrestAreas.getInterestId());
+		session.getTransaction().begin();
 		session.update(intrestAreas2Update);
+		session.getTransaction().commit();
+		session.flush();
+		
 		}finally{
 			session.close();
 		}

@@ -86,9 +86,14 @@
                 <label style="margin-left: 470px;">WelCome ! User</label>
                 <br>
                 <div id="profile_photo">
-                    <img  src="images/DefaultProfileImg.png">
-                    <br>&nbsp;&nbsp;&nbsp;
-                    <a href="#">Change Photo</a>
+                    <c:if test="${! empty ProfileImageList}">
+						<c:forEach items="${ProfileImageList}" var="ProfileImage">
+							<img width="140px" height="140px"
+								src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
+							<br>&nbsp;&nbsp;&nbsp;
+
+						</c:forEach>
+					</c:if>
                 </div>
             </div>
             <div id="hiderMenu">
@@ -149,7 +154,7 @@
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
@@ -322,7 +327,45 @@
             </c:if>
             </div>
             </div>
-            <div id="Friends"><h3>Friend's</h3></div>
+            <div id="Friends">
+					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
+					
+					<table width=90% >
+							<c:if test="${!empty userFriendsList}">
+								<c:forEach items="${userFriendsList}" var="userFriends">
+									
+											<tr>
+												<td style="border: 1px solid gray;">
+													
+											<form action="/vanjariudyogvishwa-v2/FriendProfile"
+												method="post">
+
+												<table>
+													<tr>
+														<td rowspan="2">
+														<img
+															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
+															height="72" width="70">
+														</td>
+													</tr>
+													<tr>
+														<td><input type="hidden" name="friendsEmailId"
+															value="${userFriends[2]}"> <input type="submit"
+															style="background: none; border: none;"
+															value="${userFriends[0]} ${userFriends[1]}"> <br>
+															<a><font color="gray" size="2">Works @
+																	Rbnelite</font></a>
+												</table>
+											</form>
+
+
+										</td>
+												</tr>
+										</c:forEach>
+							</c:if>
+						</table>
+					
+					</div>
             </div>
             
             <div id="OutsideProfileDetails">

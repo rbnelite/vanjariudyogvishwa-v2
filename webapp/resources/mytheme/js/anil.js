@@ -21,13 +21,10 @@ function submitenter(myfield,e)
     			myfield.submit();
     			return true;
 			}
-           
-
-           
        }
-       else
+       else{
            return true;
-
+       }
    }
  
  /*code for photos.jsp page- to view photo in large size*/

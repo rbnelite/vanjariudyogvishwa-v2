@@ -92,7 +92,11 @@ public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 
 		Session session = sessionFactory.openSession();
 		try {
+			
+			session.getTransaction().begin();
 			session.update(hobbiesToUpdate);
+			session.getTransaction().commit();
+			session.flush();
 		} finally {
 			session.close();
 		}

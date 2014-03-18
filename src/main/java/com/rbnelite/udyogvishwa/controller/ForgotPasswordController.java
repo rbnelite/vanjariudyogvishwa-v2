@@ -22,7 +22,8 @@ public class ForgotPasswordController {
 	public String formForgotPass(@RequestParam("emailAddress")String emailAddress,Map<String, Object> map)
 	{
 		map.put("emailAddress", emailAddress);
-		forgotpasswordser.getOldPassword(emailAddress);
+		map.put("forgotPassMessage", forgotpasswordser.getOldPassword(emailAddress));
+		
 		return "Forgot_Pass";
 	}
 

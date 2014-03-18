@@ -25,7 +25,7 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 		
 		Session session=sessionFactory.openSession();
 		try{
-	  return (EducationWork) session.createQuery("from EducationWork where userMail='"+userMail+"' ").uniqueResult();
+			return (EducationWork) session.createQuery("from EducationWork where userMail='"+userMail+"' ").uniqueResult();
 		}
 		finally
 		{
@@ -56,7 +56,7 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 		String email=userMail;
 		Session session=sessionFactory.openSession();
 		try{
-		return session.createQuery("from EducationWork where userMail='"+email+"' ").list();
+			return session.createQuery("from EducationWork where userMail='"+email+"' ").list();
 		}finally{
 			session.close();
 		}
@@ -77,7 +77,11 @@ public class EducationWorkDaoImpl extends BaseDao<EducationWork>implements Educa
 		eduToUpdate.setOtherPG(educationWork.getOtherPG());
 		Session session=sessionFactory.openSession();
 		try{
-		session.update(eduToUpdate);
+			session.getTransaction().begin();
+			session.update(eduToUpdate);
+			session.getTransaction().commit();
+			session.flush();
+			
 		}
 		finally
 		

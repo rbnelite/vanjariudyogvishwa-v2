@@ -172,7 +172,7 @@ input[type=text]{
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 						</div>
 						<h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>

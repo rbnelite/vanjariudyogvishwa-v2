@@ -24,10 +24,16 @@ public class ForgotPasswordDaoImpl extends BaseDao<Index> implements ForgotPassw
 	public String getOldPassword(String emailAddress) {
 		
 		List tempuserPass=sessionFactory.getCurrentSession().createQuery("select password from Index where emailId='"+emailAddress+"' ").list();
-		
-		String tempStr=tempuserPass.toString();
-		System.out.println("@@@#@#"+tempStr);
-		return tempStr;
+		if (!tempuserPass.isEmpty()) {
+			System.out.println("is list empty: "+tempuserPass.isEmpty());
+			String tempStr = (String) tempuserPass.get(0);
+			System.out.println("@@@#@#" + tempStr);
+
+			return tempStr;
+		} else {
+			return null;
+		}
+		}
 	}
 
-}
+

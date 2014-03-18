@@ -13,6 +13,15 @@
             <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>step-4 Contact Details Page</title>
+        <script type="text/javascript">
+        function isNumberKey(evt)
+        {
+            var charCode=(evt.which) ? evt.which :event.keyCode;
+            if(charCode >31 && (charCode<48 || charCode >57))
+                return false;
+            return true;
+        }
+        </script>
     </head>
     <body>
         
@@ -56,7 +65,8 @@
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td>Office Telephone/Mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
+                                        <td>Office Telephone/Mobile <font color="red">*</font></td>
+                                        <td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
                                             <div id="tel_noError" class="red" colspan="2"/></td>
                                     </tr>
                                     <tr>
