@@ -30,7 +30,9 @@
         <center>
         <div id="mainMsg">
         <div id="Header">
+
 				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+
 				
 			</div>
             

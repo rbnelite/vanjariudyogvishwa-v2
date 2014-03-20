@@ -102,7 +102,7 @@
 						<td colspan="2"><br>
 					</tr>
 					<tr>
-						<td><input type="hidden" name="usermail" value="${loginUser.email}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
+						<td><input type="hidden" name="usermail" value="${loginUser.email}"><a><a href="Index"><font color="green"><b>SKIP</b></font></a></td>
 						<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
 

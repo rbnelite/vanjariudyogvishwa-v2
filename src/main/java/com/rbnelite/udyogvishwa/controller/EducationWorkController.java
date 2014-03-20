@@ -1,11 +1,9 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.util.Map;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.validation.Valid;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.rbnelite.udyogvishwa.dto.EducationWorkCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.EducationWork;
@@ -65,9 +62,7 @@ public class EducationWorkController {
 	@Resource
 	private NotificationService notificationService;
 
-
-
-@RequestMapping(value="/educationwork", method=RequestMethod.POST)
+	@RequestMapping(value="/educationwork", method=RequestMethod.POST)
 public String insert(@RequestParam("userMail") String emailId, @Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
 	if(result.hasErrors()) {

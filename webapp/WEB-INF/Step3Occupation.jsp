@@ -30,8 +30,9 @@ function isNumberKey(evt)
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
+
 				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
-				
+
 			</div>
 			<div id="leftMainStep3"></div>
 			<div id="middleOccupation" style="background-color: bisque;">
