@@ -20,7 +20,7 @@
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
-<title>Step-11 Other Details Page</title>
+<title>Step-8 Other Details Page</title>
 </head>
 <body>
 	<center>

@@ -14,7 +14,7 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
       <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Step-8 Education & Work Details Page</title>
+        <title>Step-6 Education & Work Details Page</title>
    
    <style>
 .error {
