@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table
 public class Contact {
@@ -20,9 +22,11 @@ public class Contact {
 	private int id;
 	
 	@Column(name="homeaddress")
+	@NotEmpty
 	private String homeAddress;
 	
 	@Column
+	@NotEmpty
 	private String officeAddress;
 	
 	@Column

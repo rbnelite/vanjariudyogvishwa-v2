@@ -27,12 +27,8 @@
 		<div id="mainInterestAreas">
 
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-
-					<img src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
-				</div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
 			</div>
 
 			<div id="leftMainInterestAreas"></div>

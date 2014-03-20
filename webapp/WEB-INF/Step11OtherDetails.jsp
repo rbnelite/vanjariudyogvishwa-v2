@@ -26,11 +26,8 @@
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-					<img src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
-				</div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
 			</div>
 
 			<div id="leftMainStep3"></div>
@@ -105,7 +102,7 @@
 						<td colspan="2"><br>
 					</tr>
 					<tr>
-						<td><input type="hidden" name="usermail" value="${loginUser.email}"><a><a href="Home"><font color="green"><b>SKIP</b></font></a></td>
+						<td><input type="hidden" name="usermail" value="${loginUser.email}"><a><a href="Index"><font color="green"><b>SKIP</b></font></a></td>
 						<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
 

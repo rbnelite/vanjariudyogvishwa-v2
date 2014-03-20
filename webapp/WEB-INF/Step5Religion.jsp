@@ -15,20 +15,24 @@
        <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-5 Religion Details Page</title>
- 
+		<script type="text/javascript">
+		function isCharKey(evt)
+        {
+    		 var charCode=(evt.which) ? evt.which :event.keyCode;
+    		 
+    	        if(charCode >64 && charCode<123)
+    	            return true;
+    	        return false;
+        }
+		</script> 
     </head>
     <body>
         <center>
         <div id="mainMsg">
         <div id="Header">
-                <label style="margin-left: 470px;">WelCome ! User</label>
-                <br>
-                <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"/>
-                    <br>
-                   
-                </div>
-            </div>
+				<label style="margin-left: 470px;"></label> <br>
+				
+			</div>
             
             <div id="leftMainStep3"></div>
             
@@ -64,7 +68,7 @@
                  <tr><td colspan="2"><br></td></tr>
                 <tr>
                     <td>Caste <font color="red">*</font></td>
-                    <td><form:input path="relCast"/>
+                    <td><form:input path="relCast" onkeypress="return isCharKey(event);"/>
                     <form:errors path="relCast" cssClass="error"/>
                    </td>
                 </tr>

@@ -19,8 +19,12 @@ function isBlank()
 </script>
 </head>
 <body style="background-color: bisque">
+<h3><font color="blue">${forgotPassMessage}</font></h3>
+<c:if test="${empty forgotPassMessage}">
 <form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post" >
 		<table style="border: 1px solid gray; border-radius: 5px; margin-top: 80px; " align="center" >
+		<tr><td></td></tr>
+		
 		<tr>
 		<td>Email Address :-</td>
 		</tr>
@@ -33,5 +37,6 @@ function isBlank()
 		</tr>
 		</table>
 </form>
+</c:if>
  </body>
 </html>

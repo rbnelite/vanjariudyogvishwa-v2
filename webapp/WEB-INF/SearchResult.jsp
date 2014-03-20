@@ -43,16 +43,50 @@ function HideChangePhotoBlock(){
     position: absolute;
     margin-top: 130px;
     }
-
+	#peopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: auto;
+    padding-right: 40px;
+}
+#OutsidepeopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+#rightMain {
+    border-radius: 3px;
+    margin-top: -1003px;
+    width: 300px;
+    height: 1000px;
+    background-color: #FFF;
+    float: right;
+}
 </style>
 </head>
 <body>
 	<center>
 		<div id="main">
 			<div id="Header">
-				<input id="input_search" type="text" name="SearchProfile"
-					placeholder="Search" />
-					<label style="margin-left:110px; margin-right:5px; float: right;">WelCome!<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
+				<form action="/vanjariudyogvishwa-v2/SearchResult">
+					<input id="SearchData" type="text" name="SearchData"
+						placeholder="Search" style="height: 25px; width: 200px;" /> <input
+						type="submit" value=" "
+						style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');">
+				</form>
+					<label style="margin-left:110px; margin-right:5px;margin-top: -30px; float: right;">WelCome!<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
@@ -103,33 +137,63 @@ function HideChangePhotoBlock(){
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
-			<div id="leftMain">
-				<c:if test="${!empty eventstList}">
+			<div id="leftMain" style="background-color: bisque">
+				<div id="OutsideleftMainHome">
+					<div id="leftMainHome">
 
-					<div id="leftMain1">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Upcoming
-									Events</font></th>
-							<c:forEach items="${eventstList}" var="myEvents">
-								<tr>
-									<td align="left">${myEvents[1]} ${myEvents[2]} created an event
-										:${myEvents[0]}</td>
-								</tr>
-							</c:forEach>
-						</table>
+						<c:if test="${!empty eventstList}">
 
+							<table width=100%>
+								<th style="background-color: #fab039"><font color="white">Upcoming
+										Events</font></th>
+								<c:forEach items="${eventstList}" var="myEvents">
+								
+									<tr>
+										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
+											created an event :${myEvents[0]}</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</c:if>
 					</div>
+				</div>
 
-				</c:if>
 				<div id="leftMain2">
-                  <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
-                    <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
-                </div>
+					<table width=100%>
+						<th style="background-color: #fab039"><font color="white">Links</font></th>
+					</table>
+					<br> <img style="float: left;"
+						src="${pageContext.request.contextPath}/resources/images/message-1.png"
+						title="Message" height="32" width="32"><a
+						style="float: left;" href="message"><h4>
+							<font color="#00cccc">Message</font>
+						</h4></a> <img style="float: right;"
+						src="${pageContext.request.contextPath}/resources/images/event.png"
+						title="Events" height="32" width="32"><a
+						style="float: right;" href="Events"><h4>
+							<font color="#00cccc">Events</font>
+						</h4></a> <br> <br> <br> <img style="float: left;"
+						src="${pageContext.request.contextPath}/resources/images/photo.png"
+						title="Photos" height="32" width="32"><a
+						style="float: left;" href="Photos"><h4>
+							<font color="#00cccc">Photos</font>
+						</h4></a> <br> <br> <br> <img style="float: right;"
+						src="${pageContext.request.contextPath}/resources/images/product1.png"
+						title="My Products" height="32" width="32"><a
+						style="float: right;" href="Product">
+						<h4>
+							<font color="#00cccc">Products</font>
+						</h4>
+					</a> <img style="float: left;"
+						src="${pageContext.request.contextPath}/resources/images/friends1.png"
+						title="Friend's" height="32" width="32"><a
+						style="float: left;" href="FriendList">
+						<h4>
+							<font color="#00cccc">Friends</font>
+						</h4>
+					</a>
+				</div>
+
 			</div>
 
 			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
@@ -144,7 +208,7 @@ function HideChangePhotoBlock(){
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
@@ -211,7 +275,7 @@ function HideChangePhotoBlock(){
 				</table>
 			</div>
 
-			<div id="outsidemiddleHome" style="border: 1px solid red;">
+			<div id="outsidemiddleHome" style="margin-right: 300px;">
 				<div id="middleHome">
 					<table width=60%>
 						<th colspan="3" bgcolor="#fcca7b">Users List</th>
@@ -291,7 +355,7 @@ function HideChangePhotoBlock(){
 								</div>
 								<div class="statusUserName"
 									style="float: left; margin-left: 10px;">
-									<font color="green">${searchStatus.usermail}</font>
+									<%-- <font color="green">${searchStatus.usermail}</font> --%>
 								</div>
 								<div class="StatusContent">
 									<table width=100%>
@@ -344,7 +408,8 @@ function HideChangePhotoBlock(){
 
 			</div>
 			
-			<div id="rightMain">
+			<div id="rightMain" style="background-color: bisque">
+			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
 					<table width=100%>
@@ -378,6 +443,7 @@ function HideChangePhotoBlock(){
 							</c:forEach>
 						</c:if>
 					</table>
+				</div>
 				</div>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">

@@ -30,10 +30,8 @@ function isNumberKey(evt)
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-					<img src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"> <br> 
-				</div>
+				<label style="margin-left: 470px;"></label> <br>
+				
 			</div>
 			<div id="leftMainStep3"></div>
 			<div id="middleOccupation">
@@ -63,7 +61,7 @@ function isNumberKey(evt)
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><form:input path="companyName" size="30" maxlength="10"/>
+							<td><form:input path="companyName" size="30" maxlength="30"/>
 								<form:errors path="companyName" cssClass="error"/>
 							</td>
 						</tr>

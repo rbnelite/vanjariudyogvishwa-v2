@@ -45,8 +45,11 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		
 		Session session=sessionFactory.openSession();
 		try{
-		session.save(otherDetail);
-		System.out.println("From OtherDetailsDaoImpl Record inserted successfully");
+			
+			session.getTransaction().begin();
+			session.save(otherDetail);
+			session.getTransaction().commit();
+			session.flush();
 		}
 	
 		finally
@@ -84,7 +87,11 @@ public class OtherDetailsDaoImpl extends BaseDao<OtherDetails> implements OtherD
 		
 		Session session=sessionFactory.openSession();
 		try{
-		session.update(otherDetails2Update);
+			session.getTransaction().begin();
+			session.update(otherDetails2Update);
+			session.getTransaction().commit();
+			session.flush();
+		
 		}
 		finally
 		{

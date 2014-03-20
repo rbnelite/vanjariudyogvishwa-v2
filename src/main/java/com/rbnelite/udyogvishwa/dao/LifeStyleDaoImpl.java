@@ -70,7 +70,11 @@ public class LifeStyleDaoImpl extends BaseDao<LifeStyle> implements
 
 		Session session = sessionFactory.openSession();
 		try {
+			session.getTransaction().begin();
 			session.update(lifeStyleToUpdate);
+			session.getTransaction().commit();
+			session.flush();
+			
 		} finally {
 			session.close();
 		}

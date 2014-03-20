@@ -108,9 +108,10 @@ public class NotificationController {
 	{
 		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
-		System.out.println("%in contr%%^"+userMail);
+				
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotificationAll(userMail));	
+		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 		
@@ -119,6 +120,7 @@ public class NotificationController {
 
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
@@ -126,8 +128,25 @@ public class NotificationController {
 	}
 	
 	@RequestMapping(value="/Notificationjsp")
-	public String notificationform()
+	public String notificationform(ModelMap map)
 	{
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotificationAll(userMail));	
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
 		return "Notification";
 	}
 	

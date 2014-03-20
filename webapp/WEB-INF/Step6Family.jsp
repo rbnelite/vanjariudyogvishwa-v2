@@ -27,10 +27,8 @@
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-					<img src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png"> <br> 
-				</div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
 			</div>
 
 			<div id="leftMainStep3"></div>

@@ -146,8 +146,11 @@ function errorComment()
     margin-left: 75px;
     float: left;
     height: auto;
-    border: 2px solid red;
-    background-color: white;
+    border-top: 4px solid Red;
+    border-right: 4px solid Red;
+    border-bottom: 1px solid Red;
+    border-left: 1px solid Red;
+    background-color: bisque;
    
 }
 #peopleMayKnw
@@ -356,7 +359,7 @@ function errorComment()
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
 								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
@@ -432,14 +435,14 @@ function errorComment()
 					<br>
 					<textarea name="status" rows="2" cols="95" style="resize: none"></textarea>
 					<br>
-					<table align="left" width="170%">
+					<table align="right">
 						<tr>
-							<td><font color="purple">Text</font></td>
-							<td><font color="purple">Photo</font></td>
+							
 							<input type="hidden" name="usermail" value="${loginUser.email}">
 							<td><input type="submit" value="POST"
 								style="margin-right: 30px;" class="buttonclr"
-								onclick="return abc1()"></td>
+								onclick="return abc1()">
+							</td>
 						</tr>
 					</table>
 				</form>
@@ -473,8 +476,8 @@ function errorComment()
 											<td align="left">${notifStatus[0].status}</td>
 										</tr>
 										<tr>
-											<td></td>
-											<td align="right"><font color="gray" size="2">${notifStatus[0].statusDate}</font></td>
+											
+											<td align="right" colspan="2"><font color="gray" size="2">${notifStatus[0].statusDate}</font></td>
 										</tr>
 									</table>
 									<c:if test="${!empty notifStatus[0].comments}">
@@ -582,14 +585,14 @@ function errorComment()
 								<br>
 
 								<div class="StatusContent">
-									<table width=100%>
+									<table width=100% >
 
 										<tr>
 											<td align="left">${status11.status}</td>
 										</tr>
 										<tr>
-											<td></td>
-											<td align="right"><font color="gray" size="2">${status11.statusDate}</font></td>
+											
+											<td align="right" colspan="2"><font color="gray" size="2">${status11.statusDate}</font></td>
 										</tr>
 									</table>
 									<c:if test="${!empty status11.comments}">
@@ -663,7 +666,7 @@ function errorComment()
 											<tr>
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
-														<!-- Code for Like Count Start here -->
+										<!-- Code for Like Count Start here -->
 														
 															<c:set var="LikeCount" value="0"></c:set>
 														<c:if test="${!empty likeStatusList || empty likeStatusList}">
@@ -676,7 +679,7 @@ function errorComment()
 															</c:forEach>
 														</c:if>
 														
-														<!-- Code for Like Count End here -->
+										<!-- Code for Like Count End here -->
 														<input type="hidden" name="statusId" value="${status11.id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="MyReply" value="true">

@@ -30,9 +30,9 @@ public class NotificationDaoImpl extends BaseDao<Notification> implements
 		try {
 			return session
 					.createSQLQuery(
-							"SELECT c.comment,u.first_name, u.last_name, n.notification_id FROM comments c,users u, notifications n, status s where s.email='"
+							"SELECT c.comment,u.first_name, u.last_name, n.notification_id, pi.profile_img_path FROM comments c,users u, notifications n, status s, profile_images pi where s.email='"
 									+ userMail
-									+ "' and n.display_flag='0'and n.status_id=s.status_id and n.comment_id=c.comment_id and u.email=c.comment_whom ORDER BY n.notification_id DESC;")
+									+ "' and n.display_flag='0'and n.status_id=s.status_id and n.comment_id=c.comment_id and u.email=c.comment_whom and c.comment_whom=pi.email ORDER BY n.notification_id DESC;")
 					.list();
 		} finally {
 			session.close();
@@ -91,9 +91,9 @@ public class NotificationDaoImpl extends BaseDao<Notification> implements
 		try {
 			return session
 					.createSQLQuery(
-							"SELECT c.comment,u.first_name, u.last_name, n.notification_id FROM comments c,users u, notifications n, status s where s.email='"
+							"SELECT c.comment,u.first_name, u.last_name, n.notification_id, pi.profile_img_path FROM comments c,users u, notifications n, status s, profile_images pi where s.email='"
 									+ userMail
-									+ "' and n.status_id=s.status_id and n.comment_id=c.comment_id and u.email=c.comment_whom ORDER BY n.notification_id DESC;")
+									+ "' and n.status_id=s.status_id and n.comment_id=c.comment_id and u.email=c.comment_whom and c.comment_whom=pi.email ORDER BY n.notification_id DESC;")
 					.list();
 		} finally {
 			session.close();

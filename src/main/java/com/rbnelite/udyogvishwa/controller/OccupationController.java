@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.OccupationCredential;
+import com.rbnelite.udyogvishwa.model.Contact;
 import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.service.OcccupationService;
 
@@ -35,6 +36,7 @@ public String insert(@Valid Occupation occupation, BindingResult result,@Request
 	{
 	ocservice.insertOccupation(occredential);
 	map.put("CurrentEmailId", emailId);
+	map.addAttribute("contact", new Contact());
 	return "Step4Contact";
 	}
 	

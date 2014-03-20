@@ -28,30 +28,26 @@
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-					<img
-						src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png">
-					<br> <a href="ProfilePhotoOperation.jsp">Change Profile
-						Photo</a>
-				</div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
 			</div>
 
 			<div id="leftMainStep3"></div>
 
 			<div id="middleStep4">
 
-				<form action="/vanjariudyogvishwa-v2/Profile" method="post">
+				
 					<h2 style="color: blue">${CurrentEmailId} ! </h2>
 					<h3>Thank you for Registration on</h3>
 					<h5>www.vanjariudyogvishwa.com</h5>
 					
-					<input type="hidden" name="usermail" value="${CurrentEmailId}">
 					
-					<input type="submit" value="Get Start">
+					
+					<a href="Index">click here to Get Started..........</a>
+					
 					
 
-				</form>
+				
 
 			</div>
 

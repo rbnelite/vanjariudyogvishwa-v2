@@ -19,6 +19,7 @@ public class IntrestAreasController {
 	@Resource
 	private IntrestAreasService intrestareasservice;
 	
+	
 	@RequestMapping(value="/IntrestAreas",method=RequestMethod.POST)
 	public String insertIntrestAreas(@RequestParam("userMail") String emailId, @ModelAttribute("IntrestAreasCredential") IntrestAreasCredential intrestareascredential,ModelMap map){
 		

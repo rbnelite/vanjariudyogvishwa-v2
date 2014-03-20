@@ -20,6 +20,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.ProductCredential;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -28,6 +29,7 @@ import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -48,6 +50,8 @@ public class ProductController {
 	
 	@Resource 
 	private FriendRequestService friendrequestservice;
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
 	@Resource
 	private NotificationService notificationService;
 
@@ -81,6 +85,9 @@ public class ProductController {
 				map.put("productNAME", new Product());
 				map.put("ProductList", productservice.listProduct(userMail));
 				
+				map.put("knownPeople", new IntrestAreas());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				
 				map.put("myEvents", new Event());
 				map.put("eventstList", eventService.listEvents());
 				
@@ -102,7 +109,9 @@ public class ProductController {
 		
 		map.put("productNAME", new Product());
 		map.put("ProductList", productservice.listProduct(emailId));
-
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());

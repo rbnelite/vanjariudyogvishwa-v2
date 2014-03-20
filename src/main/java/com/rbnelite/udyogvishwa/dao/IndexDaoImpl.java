@@ -9,6 +9,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Index;
+import com.rbnelite.udyogvishwa.model.ProfileImages;
 
 @Repository
 public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
@@ -49,14 +52,30 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		Session session=sessionFactory.openSession();
 		try{
 		Criteria criteria=session.createCriteria(Index.class);
-		
+				
 		Criterion firstName=Restrictions.ilike("firstName", SearchData,MatchMode.ANYWHERE);
 		Criterion middleName=Restrictions.ilike("middleName",SearchData,MatchMode.ANYWHERE);
 		Criterion lastName=Restrictions.ilike("lastName", SearchData,MatchMode.ANYWHERE);
+		Criterion emailId=Restrictions.ilike("emailId", SearchData, MatchMode.ANYWHERE);
 		LogicalExpression orExp=Restrictions.or(firstName, middleName);
 		LogicalExpression orExp1=Restrictions.or(orExp, lastName);
-		criteria.add(orExp1);
+		LogicalExpression orExp2=Restrictions.or(orExp1, emailId);
+		
+		criteria.add(orExp2);
 			
+				
+		/* Criteria criteria2=session.createCriteria(ProfileImages.class);
+		 * projectionList.add(Projections.property("orExp1.emailId"));
+		criteria3.setProjection(projectionList);
+		Criterion ll=Restrictions.eq("userMail", criteria3);*/
+		
+		/*List<Index> SearchedUser=criteria.list();
+		for(Index index: SearchedUser){
+			System.out.println(index.getDisplayName()+": "+index.getEmailId());
+			criteria2.add(Restrictions.eq("userMail", index.getEmailId()));
+		}*/
+		
+		
 		return criteria.list();
 		}finally{
 			session.close();

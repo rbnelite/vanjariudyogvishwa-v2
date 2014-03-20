@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,24 +14,28 @@
             <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 	   <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>step-4 Contact Details Page</title>
+        <script type="text/javascript">
+        function isNumberKey(evt)
+        {
+            var charCode=(evt.which) ? evt.which :event.keyCode;
+            if(charCode >31 && (charCode<48 || charCode >57))
+                return false;
+            return true;
+        }
+        </script>
     </head>
     <body>
         
     <center>
         <div id="mainMsg">
             <div id="Header">
-                <label style="margin-left: 470px;">WelCome ! User</label>
-                <br>
-                <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
-                    <br>
-                  
-                </div>
-            </div>
+				<label style="margin-left: 470px;"></label> <br>
+				
+			</div>
 	<div id="leftMainStep3"></div>
 
             <div id="middleStep4">
-            <form action="/vanjariudyogvishwa-v2/Contact" method="post">
+            <form:form action="/vanjariudyogvishwa-v2/Contact" method="post" commandName="contact">
             		<h2>Step-4</h2>
                                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
@@ -44,20 +49,23 @@
                                     <tr><td><br><br></td></tr>
 
                                     <tr>
-                                        <td>Permanent Home Address <font color="red">*</font></td><td><textarea name="homeAddress" id="home_ad" rows="2" cols="25" maxlength="80" style="resize: none;"></textarea>
-                                            <div id="home_adError" class="red" colspan="2"/>
+                                        <td>Permanent Home Address <font color="red">*</font></td>
+                                        <td><form:input path="homeAddress" maxlength="80" />
+                                            <form:errors path="homeAddress" cssClass="error"/>
                                         </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Office Location <font color="red">*</font></td><td><textarea name="officeAddress" id="off_ad" rows="2" cols="25" maxlength="80" style="resize: none;"></textarea>
-                                            <div id="off_adError" class="red" colspan="2"/></td>
+                                        <td>Office Location <font color="red">*</font></td>
+                                        <td><form:input path="officeAddress" id="off_ad" maxlength="80" />
+                                            <form:errors path="officeAddress" cssClass="error"/></td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
 
                                     <tr>
-                                        <td>Office Telephone/Mobile <font color="red">*</font></td><td><input type="text" name="telephoneNo" id="tel_no" size="30" maxlength="12" onkeypress="return isNumberKey(event)">
-                                            <div id="tel_noError" class="red" colspan="2"/></td>
+                                        <td>Office Telephone/Mobile </td>
+                                        <td><input name type="text" ="telephoneNo" maxlength="12" onkeypress="return isNumberKey(event)">
+                                            </td>
                                     </tr>
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${loginUser.email}"></td>
@@ -66,7 +74,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                                </form>
+                                </form:form>
                             </div>
                                             
             <div id="rightMainStep3"></div>

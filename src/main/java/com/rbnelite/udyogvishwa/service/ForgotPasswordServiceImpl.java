@@ -27,6 +27,7 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 		String to=emailAddress;//change accordingly
 		String pass=forgotpassworddao.getOldPassword(emailAddress);
 		System.out.println(pass+"qqqqqq");
+		String forgotPassMessage="";
 		//Get the session object
 		  Properties props = new Properties();
 		  props.put("mail.smtp.host", "smtp.gmail.com");
@@ -45,6 +46,7 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 		 
 		//compose message
 		  try {
+			  
 		   MimeMessage message = new MimeMessage(session);
 		   message.setFrom(new InternetAddress("anilbudge@gmail.com"));//change accordingly
 		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
@@ -52,13 +54,22 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 		   message.setText("Your Password is : "+pass);
 		   
 		   //send message
-		   Transport.send(message);
+		   if(pass!=null){
+			   Transport.send(message);
 
-		   System.out.println("message sent successfully");
+		   		System.out.println("message sent successfully");
+		   		forgotPassMessage="Please check your mail box. we sent you a mail containing your vanjari udyog vishwa password and please close this window.";
+		   		return forgotPassMessage;
+			  }else {
+				  forgotPassMessage="Please provide valid email id. Press 'Backspace' to try again.";
+				  return forgotPassMessage;
+			}
+		   
+		  } catch (MessagingException e) {
+			  throw new RuntimeException(e);
+			  }
 		 
-		  } catch (MessagingException e) {throw new RuntimeException(e);}
-		 
-		return null;
+		
 	}
 
 }
