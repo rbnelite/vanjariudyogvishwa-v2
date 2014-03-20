@@ -210,7 +210,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Birth Date<font
 															color="red">*</font></td>
-														<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="mm/dd/yyyy"/><form:errors path="birthDate"/>
+														<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="dd/mm/yyyy"/><form:errors path="birthDate"/>
 														</td>
 																												</td>
 													</tr>

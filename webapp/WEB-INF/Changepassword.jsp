@@ -278,7 +278,8 @@
 						<form:errors cssClass="errorblock"/>
 					<input type="hidden" name="user_email" value="${loginUser.email}">
 					<center>
-						<table width=40% style="margin-top: 30px">
+					<h5><font color="blue">${changePwdMessage}</font></h5>
+						<table width=40% style="margin-top: 10px">
 							<tr>
 								<th colspan="2">Change Password</th>
 							</tr>
@@ -302,6 +303,7 @@
 								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value=" Save Changes"></center></td>
 								<td style="padding-top: 15px;padding-bottom: -6px;"><input type="reset" value="Cancel"></td>
 							</tr>
+
 						</table>
 					</center>
 				</form:form>
@@ -321,7 +323,8 @@
 							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-								
+								<c:choose>
+								<c:when test="${loginUser.email != knownPeople[0]}">
 										<tr>
 
 											<td><img
@@ -343,7 +346,8 @@
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-								
+								</c:when>
+								</c:choose>
 							</c:forEach>
 						</c:if>
 					</table>

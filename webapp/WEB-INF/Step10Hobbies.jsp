@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Step8Hobbies
+    Document   : Step7Hobbies
     Created on : Dec 24, 2013, 7:45:28 PM
     Author     : anil
 --%>
@@ -12,28 +12,23 @@
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
         <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Step-10 Hobbies Details Page</title>
+        <title>Step-7 Hobbies Details Page</title>
     </head>
     <body>
         
         <center>
         <div id="mainMsg">
         <div id="Header">
-                <label style="margin-left: 470px;">WelCome ! User</label>
-                <br>
-                <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
-                    <br>
-                   
-                </div>
-            </div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
+			</div>
             
             <div id="leftMainStep10"></div>
             
             <div id="middleStep10">
             
             <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
-            	<h2>Step-10</h2>
+            	<h2>Step-7</h2>
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>

@@ -1,6 +1,6 @@
 
 <%-- 
-    Document   : Step11OtherDetails
+    Document   : Step8OtherDetails
     Created on : Dec 24, 2013, 8:00:42 PM
     Author     : dogkiller,ab
 --%>
@@ -20,25 +20,22 @@
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
-<title>Step-11 Other Details Page</title>
+<title>Step-8 Other Details Page</title>
 </head>
 <body>
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! User</label> <br>
-				<div id="profile_photo">
-					<img src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"> <br> <a
-						href="ProfilePhotoOperation.jsp">Change Profile Photo</a>
-				</div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
 			</div>
 
 			<div id="leftMainStep3"></div>
 
-			<div id="middleStep4">
+			<div id="middleOccupation">
 			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
 			<form:errors path="*" cssClass="errorblock" element="div"/>
-			<h2>Step-11</h2>
+			<h2>Step-8</h2>
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>

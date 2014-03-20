@@ -360,11 +360,7 @@ function jumpcomment(NotificationId) {
 							</script>
 						</a>
 						
-					<%-- <c:if test="${! empty msgConversionFrndName}">
-						<input type="hidden" id="msgReceiverID" name="msgReceiverID" value="${msgConversionFrndName}" 
-							style="width: 734px; height: 25px; border-radius: 5px;" />
-					</c:if> --%>
-						
+					
 					
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>

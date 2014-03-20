@@ -14,7 +14,7 @@
       <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
       <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-        <title>Step-8 Education & Work Details Page</title>
+        <title>Step-6 Education & Work Details Page</title>
    
    <style>
 .error {
@@ -34,19 +34,14 @@
        <center>
         <div id="mainMsg">
         <div id="Header">
-                <label style="margin-left: 470px;">WelCome ! User</label>
-                <br>
-                <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
-                    <br>
-                   
-                </div>
-            </div>
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				
+			</div>
             
             <div id="leftMainStep3"></div>
             
-            <div id="middleStep4">
-            <h2>Step-8</h2>
+            <div id="middleOccupation">
+            <h2>Step-6</h2>
                 <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
                           
                 <table align="center">

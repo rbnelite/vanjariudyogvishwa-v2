@@ -61,33 +61,29 @@ public class ChangePasswordController{
 	{
 		if(res.hasErrors())
 		{
+			System.out.println(res.getErrorCount()+" Errors found inchange password Mobel insert");
 			map.addAttribute("changepwd", new ChangePassword());
 			return "Changepassword";	
 		}
-		else
-		changepassservice.savePassword(changepasscred);
-		
+		else{
+			map.put("changePwdMessage", changepassservice.savePassword(changepasscred));
+			
+		}
 		
 		
 		LoginUser loginUser = RequestContext.getUser();
 		userMail=loginUser.getEmail();
 		
-		map.put("status11", new Status());
-		List<Status> status = statusservice.listStatus(userMail);
-		map.put("statusList", status);
+		map.addAttribute("changepwd", new ChangePassword());
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
-		map.put("myComment", new Comment());
-		List<Comment> comment= commentservice.listComment();
-		map.put("commentList", comment);
-		
 		map.put("knownPeople", new IntrestAreas());
 		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
-			
-		map.put("ProfileImage", new ProfileImages());
-		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
@@ -95,7 +91,7 @@ public class ChangePasswordController{
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
 		
-		return "Home";
+		return "Changepassword";
 	}
 	
 	@RequestMapping(value="/ChangePassword")

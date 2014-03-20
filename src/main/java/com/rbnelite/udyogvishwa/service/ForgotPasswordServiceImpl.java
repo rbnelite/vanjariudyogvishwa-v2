@@ -58,10 +58,10 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 			   Transport.send(message);
 
 		   		System.out.println("message sent successfully");
-		   		forgotPassMessage="Please check your mail box. we sent you a mail containing your vanjari udyog vishwa password";
+		   		forgotPassMessage="Please check your mail box. we sent you a mail containing your vanjari udyog vishwa password and please close this window.";
 		   		return forgotPassMessage;
 			  }else {
-				  forgotPassMessage="Please provide valid email id";
+				  forgotPassMessage="Please provide valid email id. Press 'Backspace' to try again.";
 				  return forgotPassMessage;
 			}
 		   

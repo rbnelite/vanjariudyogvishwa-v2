@@ -383,7 +383,8 @@ function jumpcomment(NotificationId) {
 							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-								
+								<c:choose>
+								<c:when test="${loginUser.email != knownPeople[0]}">
 										<tr>
 
 											<td><img
@@ -405,7 +406,8 @@ function jumpcomment(NotificationId) {
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-								
+								</c:when>
+								</c:choose>
 							</c:forEach>
 						</c:if>
 					</table>

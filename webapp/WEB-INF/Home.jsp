@@ -38,6 +38,20 @@ function HideChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
     dispPhoto.style.display='none';
 }
+
+function DisplayUPdatePhotoBlock()
+{
+   var updatePhoto=document.getElementById("UpdatePhoto");
+   updatePhoto.style.display='block';
+}
+function HideUpdatePhotoBlock()
+{
+	 var updatePhoto=document.getElementById("UpdatePhoto");
+	   updatePhoto.style.display='none';
+}
+
+
+
 function showSpanEdit(id)
 {
 	var spanComment=document.getElementById(id);
@@ -96,7 +110,14 @@ function errorComment()
 	position: absolute;
 	margin-top: 130px;
 }
+#UpdatePhoto{
+display: none;
+background-color:#fab039;
+width:790px;	
+position: absolute;
+height:125px;	
 
+}
 #InsideRightMessage {
 	border-radius: 3px;
 	width: 300px;
@@ -425,6 +446,25 @@ function errorComment()
 				</table>
 			</div>
 			<div id="MiddleTop">
+			<div id="UpdatePhoto">
+				<table>
+				<tr>
+				<td>
+				<a
+							onclick="return HideUpdatePhotoBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right; margin-right: -220px; margin-top: 5px;"></a>
+				</td>
+				</tr>
+					<tr>
+						<td><form action="/vanjariudyogvishwa-v2/AddPhotos"
+								method="POST" enctype="multipart/form-data">
+								<input type="file" name="photoPath"><input type="submit"
+									value="Upload">
+							</form></td>
+					</tr>
+				</table>
+			</div>
 				<form name="myform" action="/vanjariudyogvishwa-v2/Status"
 					method="post">
 					<table align="left">
@@ -435,12 +475,17 @@ function errorComment()
 					<br>
 					<textarea name="status" rows="2" cols="95" style="resize: none"></textarea>
 					<br>
-					<table align="right">
+					<table align="right" width="70%">
 						<tr>
+							<td><font color="purple">Text</font></td>
+						
+							<td><a href="#" style="text-decoration: none;"
+								onclick="return DisplayUPdatePhotoBlock()"><font color="purple">Photo</font></a></td>
+							
 							
 							<input type="hidden" name="usermail" value="${loginUser.email}">
 							<td><input type="submit" value="POST"
-								style="margin-right: 30px;" class="buttonclr"
+								style="" class="buttonclr"
 								onclick="return abc1()">
 							</td>
 						</tr>
@@ -715,7 +760,8 @@ function errorComment()
 							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-								
+								<c:choose>
+								<c:when test="${loginUser.email != knownPeople[0]}">
 										<tr>
 
 											<td><img
@@ -737,7 +783,8 @@ function errorComment()
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-								
+								</c:when>
+								</c:choose>
 							</c:forEach>
 						</c:if>
 					</table>
