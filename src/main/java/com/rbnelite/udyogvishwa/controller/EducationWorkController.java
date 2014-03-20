@@ -62,7 +62,7 @@ public class EducationWorkController {
 	@Resource
 	private NotificationService notificationService;
 
-@RequestMapping(value="/educationwork", method=RequestMethod.POST)
+	@RequestMapping(value="/educationwork", method=RequestMethod.POST)
 public String insert(@RequestParam("userMail") String emailId, @Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
 	if(result.hasErrors()) {
