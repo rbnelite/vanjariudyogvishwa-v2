@@ -167,7 +167,7 @@ input[type=text]{
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
 							style="width: 40px; height: 40px; float: right;"></a></th>
 					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
-											<c:if test="${!empty NotificationList}">
+					  <c:if test="${!empty NotificationList}">
 						<c:forEach items="${NotificationList}" var="note">
 						<tr><td colspan=2 align="left">
 						<div class="userStatusImage">

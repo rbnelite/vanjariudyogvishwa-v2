@@ -191,7 +191,7 @@ document.getElementById("notificationId").value=NotificationId;
 				<div id="ChangePhotoHome">
 					<form action="/vanjariudyogvishwa-v2/UpdateProfileImage"
 						method="post" enctype="multipart/form-data">
-						<input type="hidden" name="JspPageName" value="Home"> <a
+						<input type="hidden" name="JspPageName" value="Notification"> <a
 							onclick="return HideChangePhotoBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
 							style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
@@ -449,28 +449,39 @@ document.getElementById("notificationId").value=NotificationId;
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
 								<c:choose>
 								<c:when test="${loginUser.email != knownPeople[0]}">
-										<tr>
-
-											<td><img
-												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
-												height="30" width="30"></td>
-											<td>${knownPeople[1]} ${knownPeople[2]}<br>
-											<font size="2" color="gray">${knownPeople[0]}</font>
-												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
-													method="post">
-													<input type="hidden" name="JspPageName" value="Home">
-													<input type="hidden" name="requestTo"
-														value="${knownPeople[0]}"> <input
-														type="hidden" name="requestFrom"
-														value="${loginUser.email}"> <input type="submit"
-														value="Connect" class="connectBtn" style="float: right;">
-												</form>
-											</td>
+								<tr>
+								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+									
+									
+										<td>
+										
+										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30">
+										</td>
+										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+											<font size="2" color="gray">
+												
+											</font>
+										</td>	
+									
+									
+								</form>
+										<td>
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="Notification">
+										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
+									</form>
+										</td>
 										</tr>
 										<tr>
 											<td colspan="2"></td>
 										</tr>
+
 								</c:when>
+
 								</c:choose>
 							</c:forEach>
 						</c:if>

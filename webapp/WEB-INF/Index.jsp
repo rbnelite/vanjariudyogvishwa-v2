@@ -15,8 +15,28 @@
 	
 	
 	 <script>
-	 
-	 
+	 function LoginMailValidation(){
+		 var uName=document.getElementById("LoginUserName").value;
+		 if(uName==null || uName==""){
+			 alert("user name can't be blank.");
+		 }
+	 }
+	 function LoginFormValidation(){
+		 var uName=document.getElementById("LoginUserName").value;
+		 var uPass=document.getElementById("LoginPassword").value;
+		 if((uName==null || uName=="") && (uPass==null || uPass=="")){
+			 
+			 alert("User name and password can't be null...!!!");
+			 return false;
+		 }
+		 
+		 if(uName==null || uName==""){
+			 alert("user name can't be blank.");
+		 }
+		 if(uPass==null || uPass==""){
+			 alert("password cant be blank.");
+		 }
+	 }
 	 
 	 function validateDOB(){
 
@@ -96,9 +116,9 @@
 							</tr>
 							<tr>
 								<td height="26"></td>
-								<td><input name="user_name" type="text" maxlength="40" /> 
-									<input name="password" type="password" maxlength="20" /> 
-									<input type="submit" value="" name="login"
+								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40"/> 
+									<input id="LoginPassword" name="password" type="password" maxlength="20" onfocus="return LoginMailValidation()" /> 
+									<input type="submit" value="" name="login" onfocus="return LoginFormValidation()"
 									style="background-image:url(${pageContext.request.contextPath}/resources/images/login_1.png);width :70px; height: 25px" />
 								</td>
 
