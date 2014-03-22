@@ -160,7 +160,7 @@ public class IndexController {
 
 	}
 
-	@RequestMapping(value = "/Index")
+	@RequestMapping({"/Index", "/"})
 	public String indexForm(ModelMap map) {
 		map.addAttribute("index", new Index());
 		return "Index";

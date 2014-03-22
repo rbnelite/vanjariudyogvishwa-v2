@@ -186,7 +186,7 @@
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png"  title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="#"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
                     <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
                     <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
@@ -194,7 +194,8 @@
 
 			</div>
 			
-			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+			<div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -220,6 +221,7 @@
 				</table>
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
 			</div>
 			<div id="RequestTopHome">
 				<table width=100%>

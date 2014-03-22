@@ -368,7 +368,8 @@ height:125px;
 					</table>
 				</form>
 			</div>
-			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+			<div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -394,6 +395,7 @@ height:125px;
 				</table>
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
 			</div>
 			<div id="RequestTopHome">
 				<table width=100%>
