@@ -66,7 +66,7 @@
 							<td><input type="checkbox"  name="interestId" value="1">Sports</td>
 							<td><input type="checkbox"  name="interestId" value="2">Drawing</td>
 							<td><input type="checkbox"  name="interestId" value="3">Photography</td>
-							<td><input type="checkbox"  name="interestId" value="4">Traveling</td>
+							<td><input type="checkbox"  name="interestId" value="4">Travelling</td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
@@ -82,7 +82,7 @@
 						</tr>
 						<tr>
 							<td><input type="checkbox"  name="interestId" value="9">Car Riding</td>
-							<td><input type="checkbox"  name="interestId" value="10">Tracking</td>
+							<td><input type="checkbox"  name="interestId" value="10">Trekking</td>
 							<td><input type="checkbox"  name="interestId" value="11">Movies</td>
 							<td><input type="checkbox"  name="interestId" value="12">Social Work</td>
 						</tr>

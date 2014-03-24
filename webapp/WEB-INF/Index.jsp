@@ -21,9 +21,18 @@
 			 alert("user name can't be blank.");
 		 }
 	 }
+	 function hideErrorMsg(){
+		 var xyz=document.getElementById("LoginErrorDiv");
+		 xyz.style.display='none';
+		 var xyz=document.getElementById("LogOutMsgDiv");
+		 xyz.style.display='none';
+	 }
 	 function LoginFormValidation(){
 		 var uName=document.getElementById("LoginUserName").value;
 		 var uPass=document.getElementById("LoginPassword").value;
+		 
+		 
+		 
 		 if((uName==null || uName=="") && (uPass==null || uPass=="")){
 			 
 			 alert("User name and password can't be null...!!!");
@@ -116,7 +125,7 @@
 							</tr>
 							<tr>
 								<td height="26"></td>
-								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40"/> 
+								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" onfocus="return hideErrorMsg()"/> 
 									<input id="LoginPassword" name="password" type="password" maxlength="20" onfocus="return LoginMailValidation()" /> 
 									<input type="submit" value="" name="login" onfocus="return LoginFormValidation()"
 									style="background-image:url(${pageContext.request.contextPath}/resources/images/login_1.png);width :70px; height: 25px" />
@@ -125,7 +134,10 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><marquee><font color="Red" size="5">${LoginError}</font></marquee><marquee><font color="white">${LogOutMsg}</font></marquee></td>
+								<td>
+									<a id="LoginErrorDiv"><marquee><font color="Red" size="5">${LoginError}</font></marquee></a>
+									<a id="LogOutMsgDiv"><marquee><font color="white">${LogOutMsg}</font></marquee></a>
+								</td>
 							</tr>
 							<tr>
 								<td height="22">&nbsp;</td>
@@ -134,7 +146,7 @@
 											class="style21"><span class="style8">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="#" style="text-decoration: none"
-onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250');return false;">Forgot	your Password ?</a>
+onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
 										</span>
 									</span></span></td>
 							</tr>

@@ -66,12 +66,19 @@ public class MessageController {
 		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 		
-		ObjmsgService.addMessage(msgdto);
+		String s1[]=msgReceiverID.split("'");
+		System.out.println(s1.length+"333333");
+		if(s1.length!=0){
+			System.out.println(s1[1]+"&&&&&&&&&&&&&");
+		}
+		
+		ObjmsgService.addMessage(msgdto,s1[1]);
+		
 		
 		map.put("msgConversionFrndName", msgReceiverID);
 
 		map.put("msgConversion", new Message());
-		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, msgReceiverID));
+		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, s1[1]));
 
 		map.put("msgFriends", new Message());
 		map.put("msgFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
@@ -94,14 +101,16 @@ public class MessageController {
 		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 		
+		
+		String s1[]=msgReceiverID.split("'");
+		System.out.println(s1.length+"333333");
+		if(s1.length!=0){
+			System.out.println(s1[1]+"444444");
+		}
+		
 		map.put("msgConversion", new Message());
-		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, msgReceiverID));
-		
-		/***************Friends Profile Image*******************/
-		/*map.put("FrndProfileImage", new Message());
-		map.put("FrndProfileImageList", profileImageService.getProfileImage(msgReceiverID));*/
-		/***************Friends Profile Image*******************/
-		
+		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, s1[1]));
+					
 		map.put("msgFriends", new Message());
 		map.put("msgFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
 		

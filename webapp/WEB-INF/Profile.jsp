@@ -304,7 +304,7 @@ input[type=text]{
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png" title="Car Riding"style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Car Riding</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='10'}">
-								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Tracking</h4></div>
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Trekking</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='11'}">
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png" title="Watching Movies" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Movies</h4></div>
@@ -401,7 +401,7 @@ input[type=text]{
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png" title="Car Riding"style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Car Riding</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='10'}">
-								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Tracking</h4></div>
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Trekking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Trekking</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='11'}">
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png" title="Watching Movies" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Movies</h4></div>

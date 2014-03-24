@@ -52,14 +52,14 @@
 
                                     <tr>
                                         <td>Permanent Home Address <font color="red">*</font></td>
-                                        <td><form:input path="homeAddress" maxlength="80" />
+                                        <td><form:input path="homeAddress" maxlength="200" />
                                             <form:errors path="homeAddress" cssClass="error"/>
                                         </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Office Location <font color="red">*</font></td>
-                                        <td><form:input path="officeAddress" id="off_ad" maxlength="80" />
+                                        <td><form:input path="officeAddress" id="off_ad" maxlength="200" />
                                             <form:errors path="officeAddress" cssClass="error"/></td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>

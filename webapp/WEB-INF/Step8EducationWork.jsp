@@ -57,13 +57,13 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><form:input path="school" size="30" maxlength="50"/>
+                                        <td><form:input path="school" size="30" maxlength="100"/>
                                             <form:errors path="school" cssClass="error"/></td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Name of College</td> 
-                                        <td><form:input path="collage" size="30" maxlength="50"/>
+                                        <td><form:input path="collage" size="30" maxlength="100"/>
                                            </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
@@ -101,13 +101,13 @@
                                     <tr><td colspan="2" ><br></tr>
                                     <tr>
                                         <td> Specialization 
-                                        </td><td><form:input path="otherGraduation" size="30" maxlength="30"/>
+                                        </td><td><form:input path="otherGraduation" size="30" maxlength="50"/>
                                        
                                         </td>
                                     </tr><tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>PG College Name </td>
-                                        <td><form:input path="PGCollege" size="30" maxlength="50"/>
+                                        <td><form:input path="PGCollege" size="30" maxlength="100"/>
                                             </td>
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
@@ -145,7 +145,7 @@
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td>Specialization</td><td>
-                                        <form:input path="otherPG" size="30" maxlength="30"/></td>
+                                        <form:input path="otherPG" size="30" maxlength="50"/></td>
                                     </tr>
 
                                     <tr>

@@ -9,5 +9,5 @@
 
 
 <c:forEach items="${SearchUserList}" var="myFriends">
-${myFriends.firstName} ${myFriends.middleName} ${myFriends.lastName}
+${myFriends.firstName} ${myFriends.middleName} ${myFriends.lastName} '${myFriends.emailId}'
 </c:forEach>

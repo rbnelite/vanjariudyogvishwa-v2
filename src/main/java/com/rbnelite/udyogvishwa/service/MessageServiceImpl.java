@@ -24,10 +24,10 @@ public class MessageServiceImpl implements MessageService {
 	private MessageDAO msgDao;
 
 	@Override
-	public void addMessage(MessageDTO msgdto) {
+	public void addMessage(MessageDTO msgdto,String msgReceiverID) {
 		Message msg = new Message();
 
-		msg.setMsgReceiverID(msgdto.getMsgReceiverID());
+		msg.setMsgReceiverID(msgReceiverID);
 		msg.setMsgSenderID(msgdto.getMsgSenderID());
 		msg.setMsgDate(msgdto.getMsgDate());
 		msg.setMyMsgText(msgdto.getMyMsgText());
