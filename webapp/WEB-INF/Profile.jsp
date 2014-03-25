@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : Profile
     Created on : Dec 9, 2013, 6:10:34 PM
@@ -681,7 +680,7 @@ input[type=text]{
 									</tr>
 									<tr>
 										<%-- <td><b>Telephone No. :</b></td>
-						<td>${contactInfo.telephone}</td> --%>
+										<td>${contactInfo.telephone}</td> --%>
 									</tr>
 
 								</c:forEach>
@@ -690,6 +689,7 @@ input[type=text]{
 
 
 						</c:if>
+						
 
 
 					</div>

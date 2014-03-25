@@ -10,13 +10,13 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.autocomplete.js"/>"></script>
 <title>Vanjari Udyog Vishwa | Message</title>
 
 <script type="text/javascript">
@@ -313,6 +313,7 @@ function jumpcomment(NotificationId) {
 							<c:if test="${!empty msgFriendsList}">
 								<c:forEach items="${msgFriendsList}" var="msgFriends">
 									<c:if test="${msgFriends.msgSenderID != loginUser.email}">
+									
 										<tr>
 											<td><input id="showFrndConversionImg" type="submit"
 												value="" name="viewFrndConversion" width="70px"
@@ -323,6 +324,7 @@ function jumpcomment(NotificationId) {
 												value="${msgFriends.msgSenderID}" name="msgReceiverID"
 												style="color:"></td>
 										</tr>
+										
 										</c:if>
 										
 								</c:forEach>
@@ -424,7 +426,6 @@ function jumpcomment(NotificationId) {
 
 							</c:if>
 
-
 						</div>
 					</div>
 					
@@ -443,7 +444,6 @@ function jumpcomment(NotificationId) {
 				<div id="InsideRightMessage">
 
 					<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
-
 
 				</div>
 			</div>

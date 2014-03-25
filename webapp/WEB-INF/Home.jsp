@@ -18,17 +18,28 @@
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <script type="text/javascript">
 //code for validation status post for blank code
-function abc1(){
-	 var status1=document.myform.status.value;
-	 
-	 if(status1.length==0)
-		 {
-		 alert("please enter something");
-		 return false;
-		 }
+var flag="";
+function abc1(evt){
 	
+	 var charCode=(evt.which) ? evt.which :event.keyCode;
+	
+if(charCode==32 && (flag=="n" || flag==""))
+	{
+	flag="n";}
+else
+	flag="y";
+if(charCode==8) flag="";
 }
 
+
+function abc(){
+	 var status1=document.myform.status.value;
+		 if(status1.length==0|| flag=="n")
+		 {
+		   /* alert("please enter something");   */
+		 return false;
+		 }	
+}
 function DisplayChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
     dispPhoto.style.display='block';
@@ -238,7 +249,6 @@ function errorComment()
 					</form>
 				</div>
 
-
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="indigo">Home</font> </a> <a
@@ -340,7 +350,7 @@ function errorComment()
 						<tr align="center">
 							<td><input type="hidden" name="usermail"
 								value="${loginUser.email}"></td>
-							<td><input type="submit" value="Ask for Solution"
+							<td><input type="submit" value="Ask for Solution" 
 								style="margin-left: 287px;" onclick="return DisableINeedBlock()">
 							</td>
 						</tr>
@@ -433,7 +443,7 @@ function errorComment()
 						</tr>
 					</table>
 					<br>
-					<textarea name="status" rows="2" cols="95" style="resize: none"></textarea>
+					<textarea name="status" rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)"></textarea>
 					<br>
 					<table align="right">
 						<tr>
@@ -441,7 +451,7 @@ function errorComment()
 							<input type="hidden" name="usermail" value="${loginUser.email}">
 							<td><input type="submit" value="POST"
 								style="margin-right: 30px;" class="buttonclr"
-								onclick="return abc1()">
+								onclick="return abc()">
 							</td>
 						</tr>
 					</table>
@@ -519,7 +529,7 @@ function errorComment()
 														height="42" width="40">
 														</c:forEach>
 														</c:if>
-										</div>
+								</div>
 										<div>
 											<form action="/vanjariudyogvishwa-v2/Comment" method="post"
 												onKeyPress="return submitenter(this,event)"
