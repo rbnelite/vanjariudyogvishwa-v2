@@ -25,8 +25,10 @@ public class Religion {
 	private String religionName;
 	
 	@Column
-	@NotEmpty
 	private String relCast;
+	
+	@Column
+	private String userMail;
 	
 	public String getRelCast() {
 		return relCast;
@@ -34,8 +36,7 @@ public class Religion {
 	public void setRelCast(String relCast) {
 		this.relCast = relCast;
 	}
-	@Column
-	private String userMail;
+	
 	
 	public int getReligionid() {
 		return religionid;

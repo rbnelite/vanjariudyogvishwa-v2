@@ -1,6 +1,6 @@
 
 <%-- 
-    Document   : Step11OtherDetails
+    Document   : Step8OtherDetails
     Created on : Dec 24, 2013, 8:00:42 PM
     Author     : dogkiller,ab
 --%>
@@ -32,10 +32,10 @@
 
 			<div id="leftMainStep3"></div>
 
-			<div id="middleStep4">
+			<div id="middleOccupation">
 			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
 			<form:errors path="*" cssClass="errorblock" element="div"/>
-			<h2>Step-11</h2>
+			<h2>Step-8</h2>
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>

@@ -49,6 +49,20 @@ function HideChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
     dispPhoto.style.display='none';
 }
+
+function DisplayUPdatePhotoBlock()
+{
+   var updatePhoto=document.getElementById("UpdatePhoto");
+   updatePhoto.style.display='block';
+}
+function HideUpdatePhotoBlock()
+{
+	 var updatePhoto=document.getElementById("UpdatePhoto");
+	   updatePhoto.style.display='none';
+}
+
+
+
 function showSpanEdit(id)
 {
 	var spanComment=document.getElementById(id);
@@ -107,7 +121,14 @@ function errorComment()
 	position: absolute;
 	margin-top: 130px;
 }
+#UpdatePhoto{
+display: none;
+background-color:#fab039;
+width:790px;	
+position: absolute;
+height:125px;	
 
+}
 #InsideRightMessage {
 	border-radius: 3px;
 	width: 300px;
@@ -357,7 +378,8 @@ function errorComment()
 					</table>
 				</form>
 			</div>
-			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+			<div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -383,6 +405,7 @@ function errorComment()
 				</table>
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+			</div>
 			</div>
 			<div id="RequestTopHome">
 				<table width=100%>
@@ -435,6 +458,25 @@ function errorComment()
 				</table>
 			</div>
 			<div id="MiddleTop">
+			<div id="UpdatePhoto">
+				<table>
+				<tr>
+				<td>
+				<a
+							onclick="return HideUpdatePhotoBlock()"> <img
+							src="${pageContext.request.contextPath}/resources/images/close (3).png"
+							style="width: 40px; height: 40px; float: right; margin-right: -220px; margin-top: 5px;"></a>
+				</td>
+				</tr>
+					<tr>
+						<td><form action="/vanjariudyogvishwa-v2/AddPhotos"
+								method="POST" enctype="multipart/form-data">
+								<input type="file" name="photoPath"><input type="submit"
+									value="Upload">
+							</form></td>
+					</tr>
+				</table>
+			</div>
 				<form name="myform" action="/vanjariudyogvishwa-v2/Status"
 					method="post">
 					<table align="left">
@@ -445,13 +487,23 @@ function errorComment()
 					<br>
 					<textarea name="status" rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)"></textarea>
 					<br>
-					<table align="right">
+					<table align="right" width="70%">
 						<tr>
+							<td><font color="purple">Text</font></td>
+						
+							<td><a href="#" style="text-decoration: none;"
+								onclick="return DisplayUPdatePhotoBlock()"><font color="purple">Photo</font></a></td>
+							
 							
 							<input type="hidden" name="usermail" value="${loginUser.email}">
 							<td><input type="submit" value="POST"
+
 								style="margin-right: 30px;" class="buttonclr"
 								onclick="return abc()">
+
+								style="" class="buttonclr"
+								onclick="return abc1()">
+
 							</td>
 						</tr>
 					</table>
@@ -725,30 +777,42 @@ function errorComment()
 							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-							<c:choose>	
-							<c:when test="${knownPeople[0] != loginUser.email}">
-										<tr>
 
-											<td><img
-												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
-												height="30" width="30"></td>
-											<td>${knownPeople[1]} ${knownPeople[2]}<br>
-											<font size="2" color="gray">${knownPeople[0]}</font>
-												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
-													method="post">
-													<input type="hidden" name="JspPageName" value="Home">
-													<input type="hidden" name="requestTo"
-														value="${knownPeople[0]}"> <input
-														type="hidden" name="requestFrom"
-														value="${loginUser.email}"> <input type="submit"
-														value="Connect" class="connectBtn" style="float: right;">
-												</form>
-											</td>
+								<c:choose>
+								<c:when test="${loginUser.email != knownPeople[0]}">
+								<tr>
+								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+									
+									
+										<td>
+										
+										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30">
+										</td>
+										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+											<font size="2" color="gray">
+												
+											</font>
+										</td>	
+									
+									
+								</form>
+										<td>
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="Home">
+										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
+									</form>
+										</td>
 										</tr>
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-										</c:when>
+
+								</c:when>
+
 								</c:choose>
 							</c:forEach>
 						</c:if>

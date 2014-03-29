@@ -30,11 +30,12 @@ function isNumberKey(evt)
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;"></label> <br>
-				
+
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+
 			</div>
 			<div id="leftMainStep3"></div>
-			<div id="middleOccupation">
+			<div id="middleOccupation" style="background-color: bisque;">
 				<h2>Step-3</h2>
 				<form:form action="/vanjariudyogvishwa-v2/Occupation" method="post" commandName="occupation">
 			
@@ -62,11 +63,12 @@ function isNumberKey(evt)
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
 							<td><form:input path="companyName" size="30" maxlength="30"/>
-								<form:errors path="companyName" cssClass="error"/>
+								
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2"><br></td>
+						<td></td>
+							<td colspan="2"><form:errors path="companyName" cssClass="error"/><br></td>
 
 					</tr>
 						
@@ -187,12 +189,12 @@ function isNumberKey(evt)
 							<td>Annual Income <font color="red">*</font>
 							</td>
 							<td><form:input path="annualincome"	size="30" maxlength="8" onkeypress="return isNumberKey(event)"/>
-								<form:errors path="annualincome" cssClass="error"/>
+								
 							</td>
 						</tr>
 						<tr>
-							
-							<td colspan="2"><br></td>
+							<td></td>
+							<td colspan="2"><form:errors path="annualincome" cssClass="error"/><br></td>
 						</tr>
 						<tr>
 							<td><input type="hidden" name="usermail" value="${CurrentEmailId}"></td>

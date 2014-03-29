@@ -73,6 +73,28 @@ function jumpcomment(NotificationId) {
     border: 1px solid gray;
     overflow: hidden;
 }
+#NotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    display: none;
+    margin-left: 650px;
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: hidden;
+    /* style="height: auto ;overflow:auto" */
+ }
+#InsideNotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    /* margin-left: 650px; */
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: auto;
+ }
 </style>
 
         <title>Products Page</title>
@@ -174,7 +196,8 @@ function jumpcomment(NotificationId) {
             
 
 
-            <div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+            <div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -201,7 +224,7 @@ function jumpcomment(NotificationId) {
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
-
+			</div>
             <div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font color=white>
@@ -348,29 +371,42 @@ function jumpcomment(NotificationId) {
 							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-								
-										<tr>
-
-											<td><img
-												src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
-												height="30" width="30"></td>
-											<td>${knownPeople[1]} ${knownPeople[2]}<br>
-											<font size="2" color="gray">${knownPeople[0]}</font>
-												<form action="/vanjariudyogvishwa-v2/sendFriendRequest"
-													method="post">
-													<input type="hidden" name="JspPageName" value="Home">
-													<input type="hidden" name="requestTo"
-														value="${knownPeople[0]}"> <input
-														type="hidden" name="requestFrom"
-														value="${loginUser.email}"> <input type="submit"
-														value="Connect" class="connectBtn" style="float: right;">
-												</form>
-											</td>
+								<c:choose>
+								<c:when test="${loginUser.email != knownPeople[0]}">
+								<tr>
+								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+									
+									
+										<td>
+										
+										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30">
+										</td>
+										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+											<font size="2" color="gray">
+												
+											</font>
+										</td>	
+									
+									
+								</form>
+										<td>
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="Products">
+										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
+									</form>
+										</td>
 										</tr>
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-								
+
+								</c:when>
+
+								</c:choose>
 							</c:forEach>
 						</c:if>
 					</table>

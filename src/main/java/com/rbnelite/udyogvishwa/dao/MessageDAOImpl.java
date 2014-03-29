@@ -82,7 +82,10 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 			
 		Session session=sessionFactory.openSession();
 		try{
-			return session.createQuery("FROM Message where msgReceiverID ='"+userMail+"' union FROM Message where msgSenderID='"+userMail+"' ").list();
+			
+			/*return session.createQuery("FROM Message where msgReceiverID ='"+userMail+"' union FROM Message where msgSenderID='"+userMail+"' ").list();*/
+			
+			return session.createQuery("select I.emailId,I.firstName, I.middleName, I.lastName, pi.profileImage FROM Index I, ProfileImages pi where I.emailId in(select msg.msgSenderID from Message msg where msg.msgReceiverID ='"+userMail+"' and msg.msgSenderID = pi.userMail) or I.emailId in(select msg.msgReceiverID from Message msg where msg.msgSenderID ='"+userMail+"' and msg.msgReceiverID = pi.userMail) ").list();
 		}
 		finally
 		{

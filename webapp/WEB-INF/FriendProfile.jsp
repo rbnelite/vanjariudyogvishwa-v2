@@ -74,6 +74,28 @@
 		background-color: bisque;
 		margin-bottom: 1px;
 	}
+	#NotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    display: none;
+    margin-left: 650px;
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: hidden;
+    /* style="height: auto ;overflow:auto" */
+ }
+#InsideNotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    /* margin-left: 650px; */
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: auto;
+ }
 	</style>
 <title>FriendsProfilePage</title>
     </head>
@@ -142,7 +164,8 @@
             </div>
             
             
-            <div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+            <div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -169,7 +192,7 @@
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
-            
+            </div>
             <div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font color=white>
@@ -257,7 +280,7 @@
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png" title="Car Riding"style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Car Riding</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='10'}">
-								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Tracking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Tracking</h4></div>
+								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png" title="Trekking" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Trekking</h4></div>
 							</c:if>
 							<c:if test="${intrestAreaNumber=='11'}">
 								<div id="IntrestAreaImageProfile"><img src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png" title="Watching Movies" style="width: 50px; height: 50px;"><h4 style="margin-top:-5px">Movies</h4></div>

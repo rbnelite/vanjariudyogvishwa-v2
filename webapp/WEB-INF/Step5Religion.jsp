@@ -30,7 +30,9 @@
         <center>
         <div id="mainMsg">
         <div id="Header">
-				<label style="margin-left: 470px;"></label> <br>
+
+				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+
 				
 			</div>
             
@@ -67,7 +69,7 @@
                 </tr>
                  <tr><td colspan="2"><br></td></tr>
                 <tr>
-                    <td>Caste <font color="red">*</font></td>
+                    <td>Caste</td>
                     <td><form:input path="relCast" onkeypress="return isCharKey(event);"/>
                     <form:errors path="relCast" cssClass="error"/>
                    </td>

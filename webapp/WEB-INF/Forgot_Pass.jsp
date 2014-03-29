@@ -8,35 +8,48 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
-<title>,m  mVanjari Udyog Vishwa | Forgot Password</title>
+<link rel="shortcut icon"
+	href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
+<title>,m mVanjari Udyog Vishwa | Forgot Password</title>
 
 <script>
-function isBlank()
-{
-	alert("check if it is blank");
-}
+	function isBlank() {
+		var email = document.getElementById("emailAddress").value;
+		if (email == null || email == "") {
+			alert("email Address field can't be blank");
+			return false;
+		}
+	}
 </script>
 </head>
 <body style="background-color: bisque">
-<h3><font color="blue">${forgotPassMessage}</font></h3>
-<c:if test="${empty forgotPassMessage}">
-<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post" >
-		<table style="border: 1px solid gray; border-radius: 5px; margin-top: 80px; " align="center" >
-		<tr><td></td></tr>
-		
-		<tr>
-		<td>Email Address :-</td>
-		</tr>
-		<tr>
-		<td><input type="text" name="emailAddress" style="height:25px; width: 300px;"/></td>
-		</tr>
-		<tr>
-		
-		<td align="right"><input type="submit" value="Send Password" class="savebtn"></td>
-		</tr>
-		</table>
-</form>
-</c:if>
- </body>
+	<h3>
+		<font color="blue">${forgotPassMessage}</font>
+	</h3>
+	<c:if test="${empty forgotPassMessage}">
+		<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post">
+			<table
+				style="border: 1px solid gray; border-radius: 5px; margin-top: 80px;"
+				align="center">
+				<tr>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td>Email Address :-</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="emailAddress" id="emailAddress"
+						placeholder="please write your Registered EmailId"
+						style="height: 25px; width: 300px;"/></td>
+				</tr>
+				<tr>
+
+					<td align="right"><input type="submit" value="Send Password"
+						class="savebtn" onclick="return isBlank()"></td>
+				</tr>
+			</table>
+		</form>
+	</c:if>
+</body>
 </html>

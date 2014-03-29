@@ -30,7 +30,8 @@ public String insert(@Valid Occupation occupation, BindingResult result,@Request
 	System.out.println("!!!!!"+emailId);
 	if(result.hasErrors())
 	{
-	return "Step3Occupation";	
+		map.put("CurrentEmailId", emailId);
+		return "Step3Occupation";	
 	}
 	else
 	{

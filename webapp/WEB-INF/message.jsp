@@ -10,13 +10,13 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.autocomplete.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
 <title>Vanjari Udyog Vishwa | Message</title>
 
 <script type="text/javascript">
@@ -36,14 +36,20 @@ function jumpcomment(NotificationId) {
 
 	var temp = document.getElementById("submit1").click();
 }
-	/* function setReceiverEmailId() {
-		var tempString = document.getElementById("country").value;
-		var msg = tempString.split("@ManojSawant420");
-		var ReceiverID = msg[1];
-		alert(ReceiverID);
-		var tempMsgReceiverID = document.getElementById("msgReceiverID");
-		tempMsgReceiverID.style.value = ReceiverID;
-	} */
+/******************For Message Form Validation ******************/
+
+function validateMsgForm() {
+	var msgToId=document.getElementById("country").value;
+	var msgToArea=document.getElementById("MsgToArea").value;
+	if(msgToId==null || msgToId==""){
+		alert("Receiver's Name is required. Write receivers name.");
+		return false;
+	}
+	if (msgToArea==null || msgToArea=="") {
+		alert("If you want to send any message then, Write your message.");
+		return false;
+	}
+}
 </script>
 
 <style type="text/css">
@@ -227,7 +233,8 @@ function jumpcomment(NotificationId) {
 			
 
 
-			<div id="NotificationTopHome" style="overflow:scroll;height: auto ;width:30%;overflow:auto">
+			<div id="NotificationTopHome">
+				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
@@ -254,7 +261,7 @@ function jumpcomment(NotificationId) {
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
-
+			</div>
 			<div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font color=white>
@@ -307,66 +314,64 @@ function jumpcomment(NotificationId) {
 
 				<div id="InnerleftMainMsg">
 					<h3 style="background-color: #FAB039; margin-top: 0px;">Inbox</h3>
-					<form action="/vanjariudyogvishwa-v2/viewConversion" ,  method="post">
-						<input type="hidden" name="msgSenderID" value="${loginUser.email}">
+					
+						
 						<table>
 							<c:if test="${!empty msgFriendsList}">
 								<c:forEach items="${msgFriendsList}" var="msgFriends">
-									<c:if test="${msgFriends.msgSenderID != loginUser.email}">
 									
-										<tr>
-											<td><input id="showFrndConversionImg" type="submit"
-												value="" name="viewFrndConversion" width="70px"
-												height="60px"
-												style="background-image: url('${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png');">
-											</td>
-											<td><input id="showFrndConversionName" type="submit"
-												value="${msgFriends.msgSenderID}" name="msgReceiverID"
-												style="color:"></td>
-										</tr>
+									<form action="/vanjariudyogvishwa-v2/viewConversion" ,  method="post">
 										
-										</c:if>
+										<tr>
+											<td>
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}"
+												height="30" width="30">
+											</td>
+									<td>
+										<input type="hidden" name="msgSenderID" value="${loginUser.email}">
+										 <input type="hidden" name="msgReceiverID" 
+										 value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
+										<input id="showFrndConversionName" type="submit"
+										value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" style="color:">
+									</td>
+
+								</tr>
+										</form>
+										
 										
 								</c:forEach>
 
 							</c:if>
 
 						</table>
-					</form>
+					
 
 				</div>
 
 			</div>
 
 			<div id="middlePhotos">
-				<form action="/vanjariudyogvishwa-v2/message" ,  method="post">
+				<form action="/vanjariudyogvishwa-v2/message", method="post" onsubmit="return validateMsgForm()">
 					
 					
 					<c:if test="${! empty msgConversionFrndName}">
-					<input type="hidden" id="msgReceiverID" name="msgReceiverID" value="${msgConversionFrndName}" 
-							style="width: 734px; height: 25px; border-radius: 5px;" />
-						</c:if>
-						
-						<c:if test="${empty msgConversionFrndName}">
-						
-						<input type="hidden" id="msgReceiverID" name="msgReceiverID" 
-							style="width: 734px; height: 25px; border-radius: 5px;" />
-							<script>
-								$("#msgReceiverID").autocomplete("searchReceiverMail");
-							</script>
-						</c:if>
-					<a id="MsgTo"> To :<input type="text" id="country"
-							name="country" style="width: 700px;"/>
+						<a id="MsgTo"> To :<input type="text" id="country" value="${msgConversionFrndName}"
+							name="msgReceiverID" style="width: 700px;"/>
 							<script>
 								$("#country").autocomplete("list");
 							</script>
 						</a>
+					</c:if>
 						
-					<%-- <c:if test="${! empty msgConversionFrndName}">
-						<input type="hidden" id="msgReceiverID" name="msgReceiverID" value="${msgConversionFrndName}" 
-							style="width: 734px; height: 25px; border-radius: 5px;" />
-					</c:if> --%>
-						
+					<c:if test="${empty msgConversionFrndName}">
+						<a id="MsgTo"> To :<input type="text" id="country"
+							name="msgReceiverID" style="width: 700px;"/>
+							<script>
+								$("#country").autocomplete("list");
+							</script>
+						</a>
+					</c:if>	
+					
 					
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
@@ -376,13 +381,11 @@ function jumpcomment(NotificationId) {
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 								<table align="center" style="float: left;">
-							<%-- <c:if test="${FrndProfileImageList}">
-									<c:forEach items="${FrndProfileImageList}" var="FrndProfileImage"> --%>
+							
 									<img
 										src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
 										height="100" width="100" title="${msgConversion.msgSenderID}">
-								<%-- 	</c:forEach>
-								</c:if> --%>
+								
 									<c:forEach items="${msgConversionList}" var="msgConversion">
 
 
@@ -426,6 +429,7 @@ function jumpcomment(NotificationId) {
 
 							</c:if>
 
+
 						</div>
 					</div>
 					
@@ -444,6 +448,7 @@ function jumpcomment(NotificationId) {
 				<div id="InsideRightMessage">
 
 					<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+
 
 				</div>
 			</div>

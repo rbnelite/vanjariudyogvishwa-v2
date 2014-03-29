@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.Contact;
 import com.rbnelite.udyogvishwa.model.EducationWork;
@@ -17,6 +18,7 @@ import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -27,26 +29,16 @@ import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.LifeStyleService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
 public class FriendProfileController {
 
-	/*@Resource 
-	private FriendProfileService friendprofileservice;*/
 	
-	/*@RequestMapping(value="/FriendProfile",method="RequestMethod.POST")
-	public string  insert(@ModelAttribute("FriendProfileCredential")FriendProfileCredential friendprofilecredential,ModelMap map){
-	
-		friendprofileservice.insertFriendProfile(friendprofilecredential)
-		{
-			return " ";
-		}
-	
-	}
-	*/
 	
 	@Resource
 	private IntrestAreasService intrestAreasService;
@@ -67,14 +59,12 @@ public class FriendProfileController {
 	private LifeStyleService lifestyleservice;
 	@Resource
 	private FriendRequestService friendrequestservice;
-	
-	/*@Resource
-	private AstroService astroservice;*/
-	
 	@Resource
 	private ContactService contactservice;
 	@Resource
 	private ProfileImageService profileImageService; 
+	@Resource
+	private NotificationService notificationService;
 	
 	@RequestMapping(value="/FriendProfile")
 	public String showFriendProfile(ModelMap map){
@@ -84,6 +74,9 @@ public class FriendProfileController {
 	@RequestMapping(value="/FriendProfile", method=RequestMethod.POST)
 	public String FriendForm(@RequestParam("friendsEmailId")String friendsMail, ModelMap map){
 		System.out.println("from friends profile view method"+friendsMail);
+		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
 		
 	map.put("FriendsotherDetailsList", new OtherDetails());
 	map.put("FriendsotherDetailsList", otherDetailsService.listOtherDetails(friendsMail));	
@@ -108,6 +101,11 @@ public class FriendProfileController {
 	
 	map.put("ProfileImage", new ProfileImages());
 	map.put("ProfileImageList", profileImageService.getProfileImage(friendsMail));
+	
+	map.put("Notification",new Notification());
+	map.put("NotificationList", notificationService.listNotification(userMail));
+	
+	
 	
 	/*System.out.println("Size of friends friend: "+friendrequestservice.listFriends(userMail).size());*/
 	

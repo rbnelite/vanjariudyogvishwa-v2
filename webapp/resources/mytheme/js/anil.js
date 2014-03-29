@@ -5,7 +5,6 @@ count = 0;
 function submitenter(myfield, e) {
 
 	var keycode;
-<<<<<<< HEAD
 	if (window.event)
 		keycode = window.event.keyCode;
 	else if (e) {
@@ -36,34 +35,6 @@ function submitenter(myfield, e) {
 /*code for photos.jsp page- to view photo in large size*/
 function viewPhoto() {
 	/*	 var photo=document.getElementById("enlargePhoto");
-=======
-       if (window.event) keycode = window.event.keyCode;
-       else if (e) keycode = e.which;
-       else return false;
-       if (keycode == 13)
-       {
-    	   
-    	   var temp=document.getElementById("commentt").value;
-    		if(temp==null || temp=="")
-    			{
-    			/* alert("please enter the comment");*/
-    			return false;
-    			}
-    		else {
-    			myfield.submit();
-    			return true;
-			}
-       }
-       else{
-           return true;
-       }
-   }
- 
- /*code for photos.jsp page- to view photo in large size*/
- function viewPhoto()
- {
- /*	 var photo=document.getElementById("enlargePhoto");
->>>>>>> d40ecfea0de7eb05e86996a2f4998dfc6e49f499
 	 photo.style.display='block';
 	 photo.style.height='500px';
 	 photo.style.width='600px';

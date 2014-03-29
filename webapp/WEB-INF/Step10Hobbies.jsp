@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Step8Hobbies
+    Document   : Step7Hobbies
     Created on : Dec 24, 2013, 7:45:28 PM
     Author     : anil
 --%>
@@ -28,7 +28,7 @@
             <div id="middleStep10">
             
             <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
-            	<h2>Step-10</h2>
+            	<h2>Step-7</h2>
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
