@@ -16,6 +16,20 @@
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js" />"></script>
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
+
+$('#btnclick').click(function() {
+$('#testdiv').show();
+setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
+})
+})
+</script>
+
 <script type="text/javascript">
 //code for validation status post for blank code
 var flag="";
@@ -282,6 +296,7 @@ height:125px;
 					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font
 					color="white">LogOut</font> </a>
 			</div>
+			
 			<div id="leftMain" style="background-color: bisque">
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
@@ -340,7 +355,9 @@ height:125px;
 				</div>
 
 			</div>
+			<div id="testdiv" style="position: absolute;margin-left: 500px; height : 30px; width : 400px;border: 1px solid red "><font color="green"> ${ab}</font>  </div>
 			<div id="NeedTopHome">
+			
 				<form action="/vanjariudyogvishwa-v2/Need" method="post">
 					<table width=100%>
 						<th style="background-color: #fab039" colspan=2><font
@@ -500,9 +517,6 @@ height:125px;
 
 								style="margin-right: 30px;" class="buttonclr"
 								onclick="return abc()">
-
-								style="" class="buttonclr"
-								onclick="return abc1()">
 
 							</td>
 						</tr>

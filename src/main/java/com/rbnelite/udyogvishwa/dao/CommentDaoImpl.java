@@ -24,7 +24,6 @@ public class CommentDaoImpl extends BaseDao<Comment> implements CommentDao {
 		try {
 			session.getTransaction().begin();
 			Integer commentId = (Integer) session.save(comment);
-			System.out.println("$$$" + commentId);
 			session.getTransaction().commit();
 			session.flush();
 

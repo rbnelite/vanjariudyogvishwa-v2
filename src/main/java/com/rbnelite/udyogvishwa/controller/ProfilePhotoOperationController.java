@@ -1,14 +1,6 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.io.File;
-
-
-
-
-
-
-
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,27 +13,11 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.dto.ProfileImageCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
@@ -72,7 +48,7 @@ public class ProfilePhotoOperationController {
 	private PeopleRefrenceService peoplerefservice;
 	
 	
-	 private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
+	 private String saveDirectory = "F:/team/anil/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
      
 	    @RequestMapping(value="/uploadFile", method = RequestMethod.POST)
 	    public String handleFileUpload(HttpServletRequest request, @RequestParam("userMail")String userMail, @RequestParam CommonsMultipartFile[] profileImage) throws Exception {
@@ -145,6 +121,8 @@ public class ProfilePhotoOperationController {
 	            		
 	            		map.put("knownPeople", new IntrestAreas());
 	            		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+	            		
+	            		map.put("ab", "your profile picture changed sucessfully");
 	                }
 	            }
 	        }
