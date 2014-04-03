@@ -157,7 +157,7 @@ function jumpcomment(NotificationId) {
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
-				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>

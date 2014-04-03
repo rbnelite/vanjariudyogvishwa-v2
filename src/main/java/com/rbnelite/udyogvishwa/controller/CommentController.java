@@ -115,6 +115,9 @@ public class CommentController {
         map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
 		return "Home";
 	}
 	

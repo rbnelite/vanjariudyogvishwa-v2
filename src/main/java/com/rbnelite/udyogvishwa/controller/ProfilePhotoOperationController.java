@@ -40,16 +40,20 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 
 
+
+
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.ProfileImageCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
@@ -70,7 +74,8 @@ public class ProfilePhotoOperationController {
 	private ProductService productservice;
 	@Resource
 	private PeopleRefrenceService peoplerefservice;
-	
+	@Resource
+	private FriendRequestService friendrequestservice;
 	
 	 private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
      
@@ -145,6 +150,9 @@ public class ProfilePhotoOperationController {
 	            		
 	            		map.put("knownPeople", new IntrestAreas());
 	            		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+	            		
+	            		map.put("friendRequest", new FriendRequest());
+	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 	                }
 	            }
 	        }

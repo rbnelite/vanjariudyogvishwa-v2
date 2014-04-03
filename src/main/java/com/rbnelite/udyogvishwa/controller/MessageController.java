@@ -88,6 +88,9 @@ public class MessageController {
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 
 		return "message";
 	}

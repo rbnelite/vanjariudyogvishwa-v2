@@ -105,6 +105,9 @@ public class FriendProfileController {
 	map.put("Notification",new Notification());
 	map.put("NotificationList", notificationService.listNotification(userMail));
 	
+	map.put("friendRequest", new FriendRequest());
+	map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+	
 	
 	
 	/*System.out.println("Size of friends friend: "+friendrequestservice.listFriends(userMail).size());*/

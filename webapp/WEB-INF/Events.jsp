@@ -36,6 +36,15 @@ function jumpcomment(NotificationId) {
 </script>
 <style type="text/css">
 
+#ShowEventsUpdet{
+    width: 650px;
+    margin-top: 10px;
+    margin-left: 75px;
+    float: left;
+    height: 600px;
+    overflow: auto;
+   
+}
 #anchor {
 	margin-left: 80px;
 	font-family: white;
@@ -350,7 +359,7 @@ function jumpcomment(NotificationId) {
 			</div>
 
 			<div id="middleEvent">
-				<div id="ShowStatusUpdet">
+				<div id="ShowEventsUpdet">
 					<h3>List of Events</h3>
 					<c:if test="${!empty eventstList}">
 						<table border=1 width=100%>

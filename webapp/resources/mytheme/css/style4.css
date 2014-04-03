@@ -614,7 +614,10 @@ body {
 }
 #InsideProfileDetails{
 	
-	width: 800px; height: auto; margin-right: 10px; margin-left: 20px;
+	width: 800px;
+	height: auto;
+	margin-left: 20px;
+	margin-right: 10px;
 }
 
 #ProfileDetails:hover {

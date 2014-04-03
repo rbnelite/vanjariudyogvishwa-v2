@@ -41,7 +41,6 @@ function jumpcomment(NotificationId) {
 function validateMsgForm() {
 	var msgToId=document.getElementById("country").value;
 	var msgToArea=document.getElementById("MsgToArea").value;
-	alert("123"+msgToId);
 	if(msgToId==null || msgToId==""){
 		alert("Receiver's Name is required. Write receivers name.");
 		return false;
