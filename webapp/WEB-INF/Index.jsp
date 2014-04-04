@@ -118,7 +118,7 @@
 							<tr>
 								<td width="577" height="21">&nbsp;</td>
 								<td width="607"><span class="style8"><span
-										class="style16"><span class="style8">Email:</span></span></span><span
+										class="style16"><span class="style8">Email</span></span></span><span
 									class="style8 style8"></span><span class="style8"></span><span
 									class="style8"><span class="style16" class="password">&nbsp;&nbsp;&nbsp;Password:
 									</span></span></td>

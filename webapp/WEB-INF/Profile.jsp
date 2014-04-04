@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : Profile
     Created on : Dec 9, 2013, 6:10:34 PM
@@ -708,8 +707,10 @@ input[type=text]{
 										<td>${contactInfo.officeAddress}</td>
 									</tr>
 									<tr>
+
 										<td><b>Telephone No. :</b></td>
 						<td>${contactInfo.contactNo}</td>
+
 									</tr>
 
 								</c:forEach>
@@ -719,6 +720,7 @@ input[type=text]{
 						</form>
 						</c:if>
 						
+
 						<c:if test="${!empty EditContactDetailsList}">
 						
 						<form action="/vanjariudyogvishwa-v2/editContact" method="post">
@@ -757,6 +759,7 @@ input[type=text]{
 												<td></td>
 											</tr>
 								</c:forEach>
+
 
 							</table>
 						</div>

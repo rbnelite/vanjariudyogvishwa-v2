@@ -1,12 +1,5 @@
-/**
- * 
- */
 package com.rbnelite.udyogvishwa.dao;
-
-
-
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Product;
 
-/**
- * @author PC2
- *
- */
 @Repository
 public class ProductDaoImpl extends BaseDao<Product> implements ProductDao {
 

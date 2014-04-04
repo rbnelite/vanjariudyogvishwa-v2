@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.rbnelite.udyogvishwa.controller;
 
 import java.util.List;
@@ -106,7 +103,6 @@ public class HomeController {
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
-		
 		
 		return "Home";
 

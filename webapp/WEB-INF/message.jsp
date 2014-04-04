@@ -365,7 +365,7 @@ function validateMsgForm() {
 						
 					<c:if test="${empty msgConversionFrndName}">
 						<a id="MsgTo"> To :<input type="text" id="country"
-							name="msgReceiverID" style="width: 700px;"/>
+							name="msgReceiverID" style="width: 700px;" contenteditable="true" />
 							<script>
 								$("#country").autocomplete("list");
 							</script>

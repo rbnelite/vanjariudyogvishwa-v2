@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.sun.istack.internal.NotNull;
+
 @Entity
 @Table(name="events")
 public class Event {
@@ -24,9 +26,11 @@ public class Event {
 	private String details;
 	
 	@Column
+	
 	private String location;
 	
 	@Column
+	@NotNull
 	private String datatime;
 	
 	@Column(name="email")

@@ -2,16 +2,15 @@ package com.rbnelite.udyogvishwa.dao;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Notification;
-import com.rbnelite.udyogvishwa.model.Status;
+
 
 @Repository
 public class NotificationDaoImpl extends BaseDao<Notification> implements
@@ -19,7 +18,6 @@ public class NotificationDaoImpl extends BaseDao<Notification> implements
 
 	public NotificationDaoImpl() {
 		super(Notification.class);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -71,11 +69,6 @@ public class NotificationDaoImpl extends BaseDao<Notification> implements
 					.createQuery("Update from Notification n1 set n1.displayflag='1' where n1.notification_id='"
 							+ notif1 + "' ");
 			query1.executeUpdate();
-			/*
-			 * Query query1=session.createQuery(
-			 * "delete from Notification n1 where n1.notification_id='"
-			 * +notif1+"'"); query1.executeUpdate();
-			 */
 			session.getTransaction().commit();
 			session.flush();
 			return ulist;

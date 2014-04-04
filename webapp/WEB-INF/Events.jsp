@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,32 @@
 <title>Events Page</title>
 
 <script type="text/javascript">
+
+function abc(){
+	 var name=document.getElementById("name").value;
+	 var details=document.getElementById("details").value;
+	 var location=document.getElementById("location").value;
+	 var datatime=document.getElementById("datatime").value;
+		 if(name.length==0|| details.length==0 || location.length==0|| datatime.length==0)
+		 {
+		   /* alert("please enter something");   */
+		 return false;
+		 }	
+}
+/* function validateDate(){
+
+    var dob = document.getElementById("datatime").value;
+    alert(dob);
+    var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+    if (dob == null || dob == "" || !pattern.test(dob))
+    {
+         return false;
+    }
+    else{
+        return true
+    }
+} */
+
 function DisplayChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
     dispPhoto.style.display='block';
@@ -298,37 +325,39 @@ function jumpcomment(NotificationId) {
 			</div>
 
 			<div id="MiddleTopEvent">
-				<form action="/vanjariudyogvishwa-v2/Events" method="post">
+				<form:form action="/vanjariudyogvishwa-v2/Events" method="post" commandName="myEvents">
 					<table>
 						<h3><font color="purple">Create Event</font></h3>
 						
 
 						<tr>
 							<td>Event Name :</td>
-							<td><input type="text" name="name"
+							<td><input type="text" name="name" id="name"
 								placeholder="Write Event Name...."
 								style="width: 400px; height: 30px; margin-left: -100px;">
+								
 							</td>
 						</tr>
 						<tr>
 							<td>Event Details :</td>
-							<td><textarea type="text" name="details"
+							<td><textarea type="text" name="details" id="details"
 									placeholder="Write Event Details with time...."
 									style="width: 400px; height: 100px; resize: none; margin-left: -100px;"></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td>Event Location :</td>
-							<td><input type="text" name="location"
+							<td><input type="text" name="location" id="location"
 								placeholder="Write Location of Event...."
 								style="width: 400px; height: 30px; margin-left: -100px;">
 							</td>
 						</tr>
 						<tr>
 							<td>Date :</td>
-							<td><input type="text" name="datatime"
+							<td><form:input type="text" path="datatime" id="datatime"
 								placeholder="dd/mm/yyyy"
-								style="width: 400px; height: 30px; margin-left: -100px;">
+								style="width: 400px; height: 30px; margin-left: -100px;"/>
+								 <form:errors path="datatime" cssClass="error"/>
 							</td>
 						</tr>
 						<!-- <tr>
@@ -347,7 +376,7 @@ function jumpcomment(NotificationId) {
 						
 						<tr>
 							<td><input type="submit" value="Create Event"
-								style="margin-left: 290px; height: 40px;">
+								style="margin-left: 290px; height: 40px;" >
 							</td>
 							<td><input type="reset" value="Cancel"
 								style="margin-left: 100px; height: 40px;">
@@ -355,7 +384,7 @@ function jumpcomment(NotificationId) {
 							</td>
 						</tr>
 					</table>
-				</form>
+				</form:form>
 			</div>
 
 			<div id="middleEvent">
