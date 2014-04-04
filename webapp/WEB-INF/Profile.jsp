@@ -685,14 +685,19 @@ input[type=text]{
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
-							<input type="hidden" name="usermail"
-								value="${loginUser.email}">
-						<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
-								style="float:left; width: 70px; height: 60px;">Contact Details</h3>
 						<c:if test="${!empty contactInfoList}">
-							<table style="background-image: url('${pageContext.request.contextPath}/resources/images/ContactDetails.jpg');">
+						
+						<form action="/vanjariudyogvishwa-v2/EditContactDetails">
+						<input id="EditProfileDetails" type="submit" value=""
+									name="editContactReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+						<input type="hidden" name="usermail"
+								value="${loginUser.email}">
+						
+						<div id="InsideProfileDetails">
+							<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
+								style=" float:left; width: 70px; height: 60px;">Contact Details</h3>
+							<table>
 								<c:forEach items="${contactInfoList}" var="contactInfo">
 									<tr>
 										<td><b>Home Address :</b></td>
@@ -703,17 +708,60 @@ input[type=text]{
 										<td>${contactInfo.officeAddress}</td>
 									</tr>
 									<tr>
-										<%-- <td><b>Telephone No. :</b></td>
-						<td>${contactInfo.telephone}</td> --%>
+										<td><b>Telephone No. :</b></td>
+						<td>${contactInfo.contactNo}</td>
 									</tr>
 
 								</c:forEach>
 
 							</table>
-
-
+						</div>
+						</form>
 						</c:if>
+						
+						<c:if test="${!empty EditContactDetailsList}">
+						
+						<form action="/vanjariudyogvishwa-v2/editContact" method="post">
+					
+					<input type="hidden" name="userMail"
+								value="${loginUser.email}">
+					
+					<h3><img src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
+								style=" float:left; width: 70px; height: 60px;">Edit Contact Details</h3>
+						<div id="InsideProfileDetails">
+							
+							<table>
+								<c:forEach items="${EditContactDetailsList}" var="EditContactDetails">
+									<tr>
+										<td><b>Home Address :</b></td>
+										<td><input type="text" name="homeAddress"
+													value="${EditContactDetails.homeAddress}"></td>
+									</tr>
+									<tr>
+										<td><b>Office Address :</b></td>
+										<td><input type="text" name="officeAddress"
+													value="${EditContactDetails.officeAddress}"></td>
+									</tr>
+									<tr>
+										<td><b>Telephone No. :</b></td>
+						<td><input type="text" name="telephone"
+													value="${EditContactDetails.contactNo}"></td>
+									</tr>
+									<tr>
+												<td colspan="1"><input type="submit" value="Edit"
+													name="editContactBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel"></td>
+											</tr>
+											<tr>
+												<td><br></td>
+												<td></td>
+											</tr>
+								</c:forEach>
 
+							</table>
+						</div>
+						</form>
+						</c:if>
 
 					</div>
 				</div>
@@ -838,8 +886,8 @@ input[type=text]{
 													value="${editHobbiesDetails.VacationDestination}">
 								</td>
 							</tr> --%>
-							
-							<tr>
+
+											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editHobbiesBtn" style="float: right;"></td>
 												<td><input type="reset" value="Cancel"></td>
@@ -848,9 +896,9 @@ input[type=text]{
 												<td><br></td>
 												<td></td>
 											</tr>
-							
-							
-									</c:forEach>
+
+
+										</c:forEach>
 								</table>
 								</div>
 					
@@ -866,32 +914,72 @@ input[type=text]{
 				
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-						<img id="EditProfileDetails"
-							src="${pageContext.request.contextPath}/resources/images/edit1.png">
-						<h3>Religion & Ethnicity Details</h3>
-
 						<c:if test="${!empty religionList}">
+							<form action="/vanjariudyogvishwa-v2/EditReligionDetails">
+								<input id="EditProfileDetails" type="submit" value=""
+									name="editOtherReqBtn"
+									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+								<input type="hidden" name="usermail"
+								value="${loginUser.email}">
+
+								
+								<div id="InsideProfileDetails">
+									<h3>Religion Details</h3>
+						
 							<table>
 								<c:forEach items="${religionList}" var="religionDetails">
 									<tr>
 										<td><b>Religion :</b></td>
-										<td>${religionDetails.religionname}</td>
+										<td>${religionDetails.religion}</td>
 									</tr>
 									<tr>
 										<td><b>Cast :</b></td>
-										<td>${religionDetails.relcast}</td>
+										<td>${religionDetails.subCast}</td>
 									</tr>
-									<tr>
-										<td><b>MotherToung :</b></td>
-										<td>${religionDetails.mothertoung}</td>
-									</tr>
-									<tr>
-										<td><b>Native Place :</b></td>
-										<td>${religionDetails.nativeplace}</td>
-									</tr>
+									
 
 								</c:forEach>
 							</table>
+							</div>
+							</form>
+						</c:if>
+						
+						
+						<c:if test="${!empty EditReligionList}">
+							<form action="/vanjariudyogvishwa-v2/editReligion" method="post">
+
+								<input type="hidden" name="emailId"
+								value="${loginUser.email}">
+
+								<h3>Edit Religion Details</h3>
+								<div id="InsideProfileDetails">
+						
+							<table>
+								<c:forEach items="${EditReligionList}" var="EditReligionDetails">
+									<tr>
+										<td><b>Religion :</b></td>
+										<td><input type="text" name="religion"
+													value="${EditReligionDetails.religion}"></td>
+									</tr>
+									<tr>
+										<td><b>Cast :</b></td>
+										<td><input type="text" name="subCast"
+													value="${EditReligionDetails.subCast}"></td>
+									</tr>
+									
+									<tr>
+										<td colspan="1"><input type="submit" value="Edit"
+											name="editReligionBtn" style="float: right;"></td>
+										<td><input type="reset" value="Cancel"></td>
+									</tr>
+									<tr>
+										<td><br></td>
+										<td></td>
+									</tr>
+								</c:forEach>
+							</table>
+							</div>
+							</form>
 						</c:if>
 
 					</div>

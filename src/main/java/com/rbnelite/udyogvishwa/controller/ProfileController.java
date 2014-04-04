@@ -7,30 +7,16 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-
-
-
-
-
-
-
-
-
-
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.model.Astro;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
+import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.Notification;
@@ -38,6 +24,7 @@ import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.AstroService;
+import com.rbnelite.udyogvishwa.service.ContactService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
@@ -47,6 +34,7 @@ import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
+import com.rbnelite.udyogvishwa.service.RelegionService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 /**
@@ -80,7 +68,11 @@ public class ProfileController {
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private NotificationService notificationService;
-
+	@Resource
+	private ContactService contactServ;
+	@Resource
+	private RelegionService relegionservice;
+	
 	@RequestMapping(value = "/Profile")
 	public String ProfileOperation(Map<String, Object> map, String userMail) throws ServletException {
 		
@@ -105,12 +97,12 @@ public class ProfileController {
 		map.put("hobbiesDetails", new Hobbies());
 		map.put("hobbiesList", hobbiesServ.listHobbies(userMail));
 		}
-		/*
-		if (!map.containsKey("editAstroDetails")) {
-		map.put("astroDetails", new Astro());
-		map.put("astroList", astroServ.listAstro(userMail));
+		
+		if (!map.containsKey("EditReligionList")) {
+			map.put("religionDetails", new Index());
+			map.put("religionList", relegionservice.listReligion(userMail));
 		}
-		*/
+		
 		if (!map.containsKey("editLifeStyleDetails")) {
 		map.put("lifeStyleDetails", new LifeStyle());
 		map.put("LifeStylelist", lifeStyleServ.listLifeStyle(userMail));
@@ -124,6 +116,16 @@ public class ProfileController {
 		if (!map.containsKey("editIntrestAreasDetails")) {
 			map.put("intrestAreasDetails", new IntrestAreas());
 			map.put("intrestAreasList", intrestAreasService.listIntrestAreas(userMail));
+		}
+		
+		if (!map.containsKey("EditContactDetailsList")) {
+			map.put("contactInfo", new Index());
+			map.put("contactInfoList", contactServ.listContact(userMail));
+		}
+		
+		if (!map.containsKey("EditReligionList")) {
+			map.put("religionDetails", new Index());
+			map.put("religionList", contactServ.listContact(userMail));
 		}
 		
 		map.put("ProfileImage", new ProfileImages());
@@ -161,6 +163,24 @@ public class ProfileController {
 		return "Profile";
 	}
 	
+	@RequestMapping(value = "/EditContactDetails")
+	public String EditContactDetails(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
+
+		map.put("EditContactDetails", new Index());
+		map.put("EditContactDetailsList", contactServ.listContact(emailId));
+		ProfileOperation(map,emailId);
+		return "Profile";
+	}
+	
+	@RequestMapping(value = "/EditReligionDetails")
+	public String editReligionDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
+
+		map.put("EditReligionDetails", new Index());
+		map.put("EditReligionList", relegionservice.listReligion(emailId));
+		ProfileOperation(map,emailId);
+		return "Profile";
+	}
+	
 	@RequestMapping(value = "/EditHobbiesDetails")
 	public String editHobbiesDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException {
 
@@ -169,15 +189,8 @@ public class ProfileController {
 		ProfileOperation(map,emailId);
 		return "Profile";
 	}
-	/*
-	@RequestMapping(value = "/EditAstroDetails")
-	public String editAstroDetails(@RequestParam("usermail") String emailId, Map<String, Object> map)  throws ServletException{
-
-		map.put("editAstroDetails", new Astro());
-		map.put("editAstroList", astroServ.listAstro(emailId));
-		ProfileOperation(map,emailId);
-		return "Profile";
-	}*/
+	
+	
 	
 	@RequestMapping(value = "/EditLifeStyleDetails")
 	public String editLifeStyle(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
