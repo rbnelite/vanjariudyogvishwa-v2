@@ -3,6 +3,7 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -22,11 +23,14 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.LikeStatus;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
+import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.service.LikeStatusService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
@@ -56,10 +60,10 @@ public class FriendListController {
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private ProfileImageService profileImageService;
-	
 	@Resource
 	private NotificationService notificationService;
-	
+	@Resource
+	private LikeStatusService likeStatusService;
 	
 	@RequestMapping(value="/sendFriendRequest", method=RequestMethod.POST)
 	public String sendFriendRequest(@ModelAttribute("FriendRequestCredential") FriendRequestCredential friendRequestCredential,@RequestParam("JspPageName") String JspPageName, Map<String, Object> map){
@@ -76,7 +80,7 @@ public class FriendListController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
@@ -87,6 +91,13 @@ public class FriendListController {
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
 		
+		map.put("status11", new Status());
+		List<Status> status = statusservice.listStatus(userMail);
+		map.put("statusList", status);
+				
+		map.put("likeStatus", new LikeStatus());
+		List<LikeStatus> likeStatusList=likeStatusService.listLikeStatus();
+		map.put("likeStatusList", likeStatusList);
 		
 		return JspPageName;
 	}
@@ -113,7 +124,7 @@ public class FriendListController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));

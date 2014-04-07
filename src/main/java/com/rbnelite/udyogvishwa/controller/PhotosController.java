@@ -74,7 +74,7 @@ public class PhotosController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
@@ -119,7 +119,7 @@ public class PhotosController {
 				map.put("userPhotosList", photoservice.ShowPhotos(userMail));
 				
 				map.put("knownPeople", new IntrestAreas());
-				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 				
 				map.put("myEvents", new Event());
 				map.put("eventstList", eventService.listEvents());

@@ -131,7 +131,7 @@ public class IndexController {
 			map.put("ProfileImageList", profileImageService.getProfileImage(userName));
 
 			map.put("knownPeople", new IntrestAreas());
-			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userName));
 			/*View perticular status Start here*/
 			map.put("Notification",new Notification());
 			map.put("NotificationList", notificationService.listNotification(loginUser.getEmail()));

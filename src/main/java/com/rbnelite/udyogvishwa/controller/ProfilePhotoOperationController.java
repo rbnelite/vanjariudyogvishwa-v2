@@ -124,7 +124,7 @@ public class ProfilePhotoOperationController {
 	            		map.put("ProductList", productservice.listProduct(userMail));
 	            		
 	            		map.put("knownPeople", new IntrestAreas());
-	            		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+	            		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 	            		
 
 	            		map.put("friendRequest", new FriendRequest());

@@ -17,12 +17,14 @@ public class PeopleRefrenceDaoImpl extends BaseDao<IntrestAreas> implements
 
 	@Override
 	@Transactional
-	public List<IntrestAreas> peopleYouMayKnow() {
+	public List<IntrestAreas> peopleYouMayKnow(String userMail) {
 		Session session = sessionFactory.openSession();
 		try {
 			return session
 					.createQuery(
-							"select Ia.userMail, I.firstName, I.lastName, Pi.profileImage from IntrestAreas Ia, Index I, ProfileImages Pi where Ia.userMail = I.emailId and I.emailId = Pi.userMail")
+							"select I.emailId, I.firstName, I.lastName, Pi.profileImage from IntrestAreas Ia, Index I, ProfileImages Pi"
+							+ " where Ia.userMail = I.emailId and I.emailId = Pi.userMail"
+							+ "")
 					.list();
 		} finally {
 			session.close();

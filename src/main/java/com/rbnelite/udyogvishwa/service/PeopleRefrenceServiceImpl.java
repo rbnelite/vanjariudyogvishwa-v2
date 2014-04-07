@@ -15,8 +15,8 @@ public class PeopleRefrenceServiceImpl implements PeopleRefrenceService {
 	private PeopleRefrenceDao peopleRefrefdao;
 	
 	@Override
-	public List<IntrestAreas> peopleYouMayKnow() {
-		return peopleRefrefdao.peopleYouMayKnow();
+	public List<IntrestAreas> peopleYouMayKnow(String userMail) {
+		return peopleRefrefdao.peopleYouMayKnow(userMail);
 	}
 
 }

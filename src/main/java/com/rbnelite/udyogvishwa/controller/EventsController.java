@@ -84,7 +84,7 @@ public class EventsController {
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
@@ -113,7 +113,7 @@ public class EventsController {
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
