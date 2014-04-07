@@ -223,18 +223,19 @@ input[type=text]{
 					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
 					
 					<tr align="center">
-					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
-					<input type="hidden" name="requestTo" value="${loginUser.email}">
-						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
-							height="30" width="30"></td>
-						<td>
-						<b>${friendRequest.requestFrom}</b><br>
-						java developer @ RBNelite</td>
-						<td><input type="submit" name="status" value="Accept" class="connectBtn">
-						
-						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
+									<input type="hidden" name="requestFrom"
+										value="${friendRequest[0]}">
+									<input type="hidden" name="requestTo"
+										value="${loginUser.email}">
+									<td><img
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${friendRequest[1]}"
+										height="30" width="30"></td>
+									<td><b>${friendRequest[0]}</b><br>${friendRequest[3]}  @ ${friendRequest[2]}</td>
+									<td><input type="submit" name="status" value="Accept"
+										class="connectBtn"> <input type="submit" name="status"
+										value="Reject" class="connectBtn"></td>
 
-					</tr>
+								</tr>
 					</form>
 					</c:forEach>
 					
@@ -514,12 +515,21 @@ input[type=text]{
 														</td>
 													</tr>
 													<tr>
-														<td><input type="hidden" name="friendsEmailId"
-															value="${userFriends[2]}"> <input type="submit"
+														<td>
+															<c:if test="${loginUser.email== userFriends[2]}">
+																<input type="hidden" name="friendsEmailId"
+															value="${userFriends[3]}">
+															</c:if>
+															<c:if test="${loginUser.email== userFriends[3]}">
+																<input type="hidden" name="friendsEmailId"
+															value="${userFriends[2]}">
+															</c:if>
+															
+															<input type="submit"
 															style="background: none; border: none;"
 															value="${userFriends[0]} ${userFriends[1]}"> <br>
 															<a><font color="gray" size="2">Works @
-																	Rbnelite</font></a>
+																	${userFriends[5]}</font></a>
 												</table>
 											</form>
 

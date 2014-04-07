@@ -22,13 +22,7 @@ public class Occupation {
 	@Column(name="company_name")
 	@NotEmpty
 	private String companyName;
-	               	
-    public String getCompanyName() {
-		return companyName;
-	}
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    
 	@Column
     private String occupation;
     
@@ -60,6 +54,13 @@ public class Occupation {
 	}
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
+	}
+	
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 	public String getProductdetails() {
 		return productdetails;

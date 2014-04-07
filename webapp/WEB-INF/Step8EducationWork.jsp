@@ -36,7 +36,7 @@
         <div id="Header">
 				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
 				
-			</div>
+		</div>
             
             <div id="leftMainStep3"></div>
             
@@ -62,7 +62,7 @@
                                     </tr>
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
-                                        <td>Name of College</td> 
+                                        <td>Name of Graduation College</td> 
                                         <td><form:input path="collage" size="30" maxlength="100"/>
                                            </td>
                                     </tr>
@@ -94,7 +94,7 @@
                                                 <form:option value="GNM"/>
                                                 <form:option value="LLB"/>
                                                 <form:option value="LLM"/>
-
+												<form:option value="none"/>
                                             </form:select>
                                             </td>
                                     </tr>
@@ -137,7 +137,7 @@
                                                 <form:option value="PGICVTCA"/>
                                                 <form:option value="Ph.D"/>
                                                 <form:option value="Other"/>
-
+												<form:option value="none"/>	
                                             </form:select>
                                             <div id="pg_degreeError" class="red" colspan="2"/>
                                         </td>

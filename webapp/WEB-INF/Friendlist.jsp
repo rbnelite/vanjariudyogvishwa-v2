@@ -193,7 +193,8 @@ function jumpcomment(NotificationId) {
 									<img
 										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
 										height="20" width="20">
-								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
+						</div>
+							<h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
 						
 						<input type="submit" id="submit1" style="display: none">
 						</td></tr>						
@@ -221,14 +222,13 @@ function jumpcomment(NotificationId) {
 
 								<tr align="center">
 									<input type="hidden" name="requestFrom"
-										value="${friendRequest.requestFrom}">
+										value="${friendRequest[0]}">
 									<input type="hidden" name="requestTo"
 										value="${loginUser.email}">
 									<td><img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${friendRequest[1]}"
 										height="30" width="30"></td>
-									<td><b>${friendRequest.requestFrom}</b><br> java
-										developer @ RBNelite</td>
+									<td><b>${friendRequest[0]}</b><br>${friendRequest[3]}  @ ${friendRequest[2]}</td>
 									<td><input type="submit" name="status" value="Accept"
 										class="connectBtn"> <input type="submit" name="status"
 										value="Reject" class="connectBtn"></td>
@@ -295,8 +295,8 @@ function jumpcomment(NotificationId) {
 			   </td>
 			   <td width="100%"></td>
 			   </tr>
-			   <tr><td><a> <font color="gray" size="2">From Pune, India</font></a></td></tr>
-			   <tr><td><a> <font color="gray" size="2">Works @ Rbnelite</font></a></td></tr>
+			   <tr><td><a> <font color="gray" size="2">Works @ ${userFriends[5]}</font></a></td></tr>
+			   <tr><td><a> <font color="gray" size="2">As ${userFriends[6]} </font></a></td></tr>
 			   </table>
 			   </td>
 			    </tr>
