@@ -76,7 +76,7 @@ public class HobbiesController {
 	
 	
 	@RequestMapping(value="/editHobbies", method=RequestMethod.POST)
-	public String editHobbies(@RequestParam("usermail") String userMail, @ModelAttribute Hobbies hobbies, Map<String, Object> map)
+	public String editHobbies(@ModelAttribute Hobbies hobbies, Map<String, Object> map)
 	{
 			
 		LoginUser loginUser = RequestContext.getUser();

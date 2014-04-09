@@ -65,7 +65,7 @@ public class CommentController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
@@ -110,10 +110,13 @@ public class CommentController {
 		map.put("commentList", commentservice.listComment());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
         map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		return "Home";
 	}

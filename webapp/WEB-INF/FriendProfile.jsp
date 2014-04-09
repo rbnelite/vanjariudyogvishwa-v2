@@ -23,80 +23,105 @@
 		}
 	   </script>
 	<style>
-	h3 {
-		background-color: transparent;
-		/* background-color:#00FF00; */
-		margin-top: 0px;
-	}
-	
-	#OutsideInterestAreas {
-		border-radius: 3px;
-		border: 1px solid gray;
-		float: left;
-		width: 468px;
-		height: 300px;
-		background-color: bisque;
-		overflow: hidden;
-	}
-	
-	#InterestAreas {
-		border-radius: 3px;
-		border: 1px solid gray;
-		float: left;
-		width: 468px;
-		height: 300px;
-		background-color: bisque;
-		margin-bottom: 1px;
-		overflow: auto;
-		padding-right: 20px;
-		padding-bottom: 20px;
-	}
-	
-	#ProfileProducts {
-		padding-right: 30px;
-		border-radius: 3px;
-		margin-right: 465px;
-		border: 1px solid gray;
-		width: 462px;
-		height: 300px;
-		overflow: auto;
-		background-color: bisque;
-		margin-bottom: 1px;
-	}
-	
-	#OutsideProfileProducts {
-		border-radius: 3px;
-		margin-right: 465px;
-		border: 1px solid gray;
-		width: 462px;
-		height: 300px;
-		overflow: hidden;
-		background-color: bisque;
-		margin-bottom: 1px;
-	}
-	#NotificationTopHome{
-    border-radius: 5px;
-    width: 350px;
-    height: 300px;
-    background-color: bisque;
-    display: none;
-    margin-left: 650px;
-    border: 1px solid gray; 
-    position: absolute;
-    overflow: hidden;
-    /* style="height: auto ;overflow:auto" */
- }
-#InsideNotificationTopHome{
-    border-radius: 5px;
-    width: 350px;
-    height: 300px;
-    background-color: bisque;
-    /* margin-left: 650px; */
-    border: 1px solid gray; 
-    position: absolute;
-    overflow: auto;
- }
-	</style>
+h3 {
+	background-color: transparent;
+	/* background-color:#00FF00; */
+	margin-top: 0px;
+}
+
+#OutsideInterestAreas {
+	border-radius: 3px;
+	border: 1px solid gray;
+	float: left;
+	width: 468px;
+	height: 300px;
+	background-color: bisque;
+	overflow: hidden;
+}
+
+#InterestAreas {
+	border-radius: 3px;
+	border: 1px solid gray;
+	float: left;
+	width: 468px;
+	height: 300px;
+	background-color: bisque;
+	margin-bottom: 1px;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+#Friends {
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: 0.1px;
+	width: 466px;
+	height: 300px;
+	 margin-right: -18px; 
+	overflow: auto;
+	padding-left: 20px;
+}
+#OutsideFriends {
+	float: right;
+	border-radius: 3px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-top: -303px;
+	width: 466px;
+	height: 300px;
+	margin-right: -2px;
+	overflow: hidden;
+}
+
+#ProfileProducts {
+	padding-right: 30px;
+	border-radius: 3px;
+	margin-right: 465px;
+	border: 1px solid gray;
+	width: 462px;
+	height: 300px;
+	overflow: auto;
+	background-color: bisque;
+	margin-bottom: 1px;
+}
+
+#OutsideProfileProducts {
+	border-radius: 3px;
+	margin-right: 465px;
+	border: 1px solid gray;
+	width: 462px;
+	height: 300px;
+	overflow: hidden;
+	background-color: bisque;
+	margin-bottom: 1px;
+}
+
+#NotificationTopHome {
+	border-radius: 5px;
+	width: 350px;
+	height: 300px;
+	background-color: bisque;
+	display: none;
+	margin-left: 650px;
+	border: 1px solid gray;
+	position: absolute;
+	overflow: hidden;
+	/* style="height: auto ;overflow:auto" */
+}
+
+#InsideNotificationTopHome {
+	border-radius: 5px;
+	width: 350px;
+	height: 300px;
+	background-color: bisque;
+	/* margin-left: 650px; */
+	border: 1px solid gray;
+	position: absolute;
+	overflow: auto;
+}
+</style>
 <title>FriendsProfilePage</title>
     </head>
     <body>
@@ -205,18 +230,19 @@
 					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
 					
 					<tr align="center">
-					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
-					<input type="hidden" name="requestTo" value="${loginUser.email}">
-						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
-							height="30" width="30"></td>
-						<td>
-						<b>${friendRequest.requestFrom}</b><br>
-						java developer @ RBNelite</td>
-						<td><input type="submit" name="status" value="Accept" class="connectBtn">
-						
-						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
+									<input type="hidden" name="requestFrom"
+										value="${friendRequest[0]}">
+									<input type="hidden" name="requestTo"
+										value="${loginUser.email}">
+									<td><img
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${friendRequest[1]}"
+										height="30" width="30"></td>
+									<td><b>${friendRequest[0]}</b><br>${friendRequest[3]}  @ ${friendRequest[2]}</td>
+									<td><input type="submit" name="status" value="Accept"
+										class="connectBtn"> <input type="submit" name="status"
+										value="Reject" class="connectBtn"></td>
 
-					</tr>
+								</tr>
 					</form>
 					</c:forEach>
 					
@@ -350,6 +376,7 @@
             </c:if>
             </div>
             </div>
+            <div id="OutsideFriends">
             <div id="Friends">
 					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
 					
@@ -376,8 +403,7 @@
 															value="${userFriends[2]}"> <input type="submit"
 															style="background: none; border: none;"
 															value="${userFriends[0]} ${userFriends[1]}"> <br>
-															<a><font color="gray" size="2">Works @
-																	Rbnelite</font></a>
+															<a><font color="gray" size="2">Works @ ${userFriends[5]}</font></a>
 												</table>
 											</form>
 
@@ -388,6 +414,7 @@
 							</c:if>
 						</table>
 					
+					</div>
 					</div>
             </div>
             

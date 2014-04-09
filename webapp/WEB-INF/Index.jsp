@@ -74,7 +74,7 @@
             {
         		 var charCode=(evt.which) ? evt.which :event.keyCode;
         		 
-        	        if(charCode >64 && charCode<123)
+        	        if(charCode >64 && charCode<123 || charCode==8)
         	            return true;
         	        return false;
             }

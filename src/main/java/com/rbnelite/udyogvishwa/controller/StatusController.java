@@ -16,15 +16,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 
+
+
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.StatusCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
@@ -44,10 +48,10 @@ public class StatusController {
 	private CommentService commentservice;
 	@Resource
 	private PeopleRefrenceService peoplerefservice;
-	
-	
 	@Resource
-	ProfileImageService profileImageService;
+	private ProfileImageService profileImageService;
+	@Resource
+	private FriendRequestService friendrequestservice;
 	
 	@RequestMapping(value="/Status",method=RequestMethod.POST)
 	public String statusupdateform(@ModelAttribute("StatusCredential")StatusCredential statuscredential,ModelMap map) throws ServletException
@@ -76,7 +80,10 @@ public class StatusController {
 		
 
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 
 		return "Home";
 	}

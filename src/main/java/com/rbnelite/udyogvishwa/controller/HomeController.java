@@ -66,34 +66,16 @@ public class HomeController {
 		map.put("status11", new Status());
 		List<Status> status = statusservice.listStatus(userMail);
 		map.put("statusList", status);
-		/*	for(Status status : statusList ) {
-		for(Comment comment : status.getComments()) {
-			System.out.println(comment.getUser().getDisplayName());
-		}
-		 */
-		
-		
+				
 		map.put("likeStatus", new LikeStatus());
 		List<LikeStatus> likeStatusList=likeStatusService.listLikeStatus();
 		map.put("likeStatusList", likeStatusList);
-		
-		/*for(LikeStatus likeStatus : likeStatusList){
 			
-			System.out.println(likeStatus.getWhoLike()+" Likes Status ID: ");
-			System.err.println(likeStatus.getStatusId());
-			
-		}*/
-		
-		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		
-		/*map.put("myComment", new Comment());
-		List<Comment> comment= commentservice.listComment();
-		map.put("commentList", comment);*/
-		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));

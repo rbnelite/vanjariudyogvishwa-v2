@@ -11,6 +11,8 @@ public interface MessageDAO {
 	public List<Message> listMessage(String msgSenderID, String msgReceiverID);
 
 	public List<Message> listMessagedFriends(String userMail);
+	
+	
 
 	
 

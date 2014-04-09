@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.LikeStatusService;
 import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.StatusService;
@@ -36,6 +38,8 @@ public class UnlikeStatusController {
 	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
+	@Resource
+	private FriendRequestService friendrequestservice;
 	
 	@RequestMapping(value="/UnlikeStatus",method=RequestMethod.POST)
 	public String unlikeform()
@@ -61,6 +65,9 @@ public class UnlikeStatusController {
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		return "Home";
 	}

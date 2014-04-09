@@ -13,6 +13,29 @@
         <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
         <title>Step-7 Hobbies Details Page</title>
+        <script type="text/javascript">
+        function check()
+        {
+        	
+        	var temp=document.getElementById("fav_music");
+        
+        	var totalChecked = 0;
+        	 for (i = 0; i < temp.options.length; i++) {
+                 if (temp.options[i].selected) {
+                     totalChecked++;
+                 }
+             }
+        	 
+        	 if(totalChecked > 4)
+        		 {
+        		 document.getElementById("massage").innerHTML="You can't check more than 4 options";
+        		 return false;
+        		 }
+        	 document.getElementById("massage").innerHTML="";
+        	 return true;
+        	 
+        	}
+        </script>
     </head>
     <body>
         
@@ -49,12 +72,32 @@
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite Music</td><td><textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td>Favourite Music</td><td><!-- <textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"> -->
+                                        <!-- </textarea> -->
+                                        <select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
+                                        <option>Blues</option>
+                                        <option>Alternative Music</option>
+                                        <option>Classical Music</option>
+                                        <option>Country Music</option>
+                                        <option>Dance Music</option>
+                                        <option>Easy Listening</option>
+                                        <option>Electronic Music</option>
+                                        <option>European Music</option>
+                                        <option>Indie Pop</option>
+                                        <option>Hip Hop / Rap</option>
+                                        <option>Jazz</option>
+                                        <option>Latin Music</option>
+                                        <option>Pop</option>
+                                        <option>Rock</option>
+                                         <option>World Music / Beats</option>
+                                        <option>Soul</option>
+                                           </select>
                                             </td>
                                     </tr> 
+                                    <tr><td></td><td><span id="massage" style="color: red;"></span></td></tr>
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books" rows="1" cols="25" maxlength="50" style="resize: none;" onfocus=" return check()"></textarea>
                                             </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->

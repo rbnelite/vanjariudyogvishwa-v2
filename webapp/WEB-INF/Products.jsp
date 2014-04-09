@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%-- 
     Document   : Products
@@ -157,7 +158,7 @@ function jumpcomment(NotificationId) {
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
-				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
@@ -237,18 +238,19 @@ function jumpcomment(NotificationId) {
 					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
 					
 					<tr align="center">
-					<input type="hidden" name="requestFrom" value="${friendRequest.requestFrom}">
-					<input type="hidden" name="requestTo" value="${loginUser.email}">
-						<td><img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" 
-							height="30" width="30"></td>
-						<td>
-						<b>${friendRequest.requestFrom}</b><br>
-						java developer @ RBNelite</td>
-						<td><input type="submit" name="status" value="Accept" class="connectBtn">
-						
-						<input type="submit" name="status" value="Reject" class="connectBtn"></td>
+									<input type="hidden" name="requestFrom"
+										value="${friendRequest[0]}">
+									<input type="hidden" name="requestTo"
+										value="${loginUser.email}">
+									<td><img
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${friendRequest[1]}"
+										height="30" width="30"></td>
+									<td><b>${friendRequest[0]}</b><br>${friendRequest[3]}  @ ${friendRequest[2]}</td>
+									<td><input type="submit" name="status" value="Accept"
+										class="connectBtn"> <input type="submit" name="status"
+										value="Reject" class="connectBtn"></td>
 
-					</tr>
+								</tr>
 					</form>
 					</c:forEach>
 					
@@ -425,4 +427,3 @@ function jumpcomment(NotificationId) {
         
     </body>
 </html>
-

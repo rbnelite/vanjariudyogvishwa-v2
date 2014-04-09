@@ -17,6 +17,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Photos;
@@ -24,6 +25,7 @@ import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.PhotosService;
@@ -48,6 +50,8 @@ public class PhotosController {
 	private PhotosService photoservice;
 	@Resource
 	private NotificationService notificationService;
+	@Resource
+	private FriendRequestService friendrequestservice;
 	
 	private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/photos/";
 	
@@ -70,7 +74,7 @@ public class PhotosController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
@@ -80,6 +84,9 @@ public class PhotosController {
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		return "Photos";
 	}
@@ -112,7 +119,7 @@ public class PhotosController {
 				map.put("userPhotosList", photoservice.ShowPhotos(userMail));
 				
 				map.put("knownPeople", new IntrestAreas());
-				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 				
 				map.put("myEvents", new Event());
 				map.put("eventstList", eventService.listEvents());
@@ -122,6 +129,9 @@ public class PhotosController {
 				
 				map.put("Notification",new Notification());
 				map.put("NotificationList", notificationService.listNotification(userMail));
+				
+				map.put("friendRequest", new FriendRequest());
+				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 				
 		return "Photos";
 	}

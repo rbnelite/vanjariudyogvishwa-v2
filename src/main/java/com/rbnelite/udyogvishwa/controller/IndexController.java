@@ -21,6 +21,7 @@ import com.rbnelite.udyogvishwa.dto.IndexCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LikeStatus;
@@ -30,6 +31,7 @@ import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.IndexService;
 import com.rbnelite.udyogvishwa.service.LikeStatusService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
@@ -57,6 +59,8 @@ public class IndexController {
 	private NotificationService notificationService;
 	@Resource
 	private LikeStatusService likeStatusService;
+	@Resource
+	private FriendRequestService friendrequestservice;
 
 	@RequestMapping(value = "/Index", method = RequestMethod.POST)
 	public String registration(@Valid Index index, BindingResult result,
@@ -126,12 +130,14 @@ public class IndexController {
 			map.put("myComment", new Comment());
 			map.put("commentList", commentservice.listComment());
 			
-
+			map.put("friendRequest", new FriendRequest());
+			map.put("friendRequestList", friendrequestservice.listFriendRequest(userName));
+			
 			map.put("ProfileImage", new ProfileImages());
 			map.put("ProfileImageList", profileImageService.getProfileImage(userName));
 
 			map.put("knownPeople", new IntrestAreas());
-			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userName));
 			/*View perticular status Start here*/
 			map.put("Notification",new Notification());
 			map.put("NotificationList", notificationService.listNotification(loginUser.getEmail()));

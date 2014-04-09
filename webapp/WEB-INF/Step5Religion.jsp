@@ -57,7 +57,7 @@
                     <td>Religion <font color="red">*</font></td>
                     <td>
                         <form:select path="religionname" style="width: 223px;">
-                            
+                             <form:option value="--Select Religion--"/>
                             <form:option value="Hindu"/>
                             <form:option value="Muslim"/>
                             <form:option value="Christen"/>

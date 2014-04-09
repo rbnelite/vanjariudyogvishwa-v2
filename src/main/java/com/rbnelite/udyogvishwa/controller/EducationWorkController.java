@@ -115,6 +115,9 @@ public String editEducation(@ModelAttribute EducationWork educationWork, Map<Str
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(emailId));
 		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(emailId));
+		
 		
 	return "Profile";
 }

@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
+import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.EventsService;
+import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.IndexService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -29,20 +31,18 @@ public class SearchResultController {
 	
 	@Resource
 	private IndexService indexService;
-	
 	@Resource
 	private EventsService eventService;
-	
 	@Resource
 	private ProductService productservice;
-	
 	@Resource
 	private StatusService statusservice;
-	
 	@Resource
 	private PeopleRefrenceService peoplerefservice;
 	@Resource
 	private ProfileImageService profileImageService;
+	@Resource
+	private FriendRequestService friendrequestservice;
 	
 	@RequestMapping(value="/SearchResult")
 	public String searchForm(@RequestParam("SearchData") String searchstrHome,  Map<String, Object> map)
@@ -68,10 +68,13 @@ public class SearchResultController {
 		map.put("SearchStatusList", statusservice.searchStatusList(searchstrHome));
 					
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		System.out.println("from search controller End");
 		return "SearchResult";

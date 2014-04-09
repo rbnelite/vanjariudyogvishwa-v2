@@ -86,7 +86,7 @@ public class ProductController {
 				map.put("ProductList", productservice.listProduct(userMail));
 				
 				map.put("knownPeople", new IntrestAreas());
-				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 				
 				map.put("myEvents", new Event());
 				map.put("eventstList", eventService.listEvents());
@@ -96,6 +96,9 @@ public class ProductController {
 				
 				map.put("Notification",new Notification());
 				map.put("NotificationList", notificationService.listNotification(userMail));
+				
+				map.put("friendRequest", new FriendRequest());
+				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 				
 		return "Products";
 	}
@@ -111,7 +114,7 @@ public class ProductController {
 		map.put("ProductList", productservice.listProduct(emailId));
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(emailId));
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());

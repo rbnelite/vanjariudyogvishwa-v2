@@ -14,16 +14,22 @@ public class PeopleRefrenceDaoImpl extends BaseDao<IntrestAreas> implements
 
 	@Override
 	@Transactional
-	public List<IntrestAreas> peopleYouMayKnow() {
-		//String userMail="budgeanil@gmail.com";
+	public List<IntrestAreas> peopleYouMayKnow(String userMail) {
 		Session session = sessionFactory.openSession();
 		try {
-// "select Ia.userMail, I.firstName, I.lastName, Pi.profileImage from IntrestAreas Ia, Index I, ProfileImages Pi where Ia.userMail = I.emailId and I.emailId = Pi.userMail")
+			
 			return session
-					.createQuery("select Ia.userMail, I.firstName, I.lastName, Pi.profileImage from IntrestAreas Ia, Index I, ProfileImages Pi where Ia.userMail = I.emailId and I.emailId = Pi.userMail")
-						
-					.list();
-								//(select F.requestFrom,F.requestTofrom FriendRequest F where F.requestFrom = '"+userMail+"' and F.requestStatus = 'Accept' or F.requestTo = '"+userMail+"' and F.requestStatus = 'Accept')
+					.createQuery(
+							"select I.emailId, I.firstName, I.lastName, Pi.profileImage from IntrestAreas Ia, Index I, ProfileImages Pi"
+							+ " where Ia.userMail = I.emailId and I.emailId = Pi.userMail"
+							+ "")
+					.list();  
+			/*Query for People you may know once*/
+			/*return session
+					.createQuery(
+							"select I.emailId, I.firstName, I.lastName, Pi.profileImage from Index I, ProfileImages Pi"
+							+ " where I.emailId = Pi.userMail and I.emailId in() ").list();*/
+			
 			
 		} finally {
 			session.close();

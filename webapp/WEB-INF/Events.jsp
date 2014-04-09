@@ -64,6 +64,15 @@ function jumpcomment(NotificationId) {
 </script>
 <style type="text/css">
 
+#ShowEventsUpdet{
+    width: 650px;
+    margin-top: 10px;
+    margin-left: 75px;
+    float: left;
+    height: 600px;
+    overflow: auto;
+   
+}
 #anchor {
 	margin-left: 80px;
 	font-family: white;
@@ -279,14 +288,13 @@ function jumpcomment(NotificationId) {
 
 								<tr align="center">
 									<input type="hidden" name="requestFrom"
-										value="${friendRequest.requestFrom}">
+										value="${friendRequest[0]}">
 									<input type="hidden" name="requestTo"
 										value="${loginUser.email}">
 									<td><img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${friendRequest[1]}"
 										height="30" width="30"></td>
-									<td><b>${friendRequest.requestFrom}</b><br> java
-										developer @ RBNelite</td>
+									<td><b>${friendRequest[0]}</b><br>${friendRequest[3]}  @ ${friendRequest[2]}</td>
 									<td><input type="submit" name="status" value="Accept"
 										class="connectBtn"> <input type="submit" name="status"
 										value="Reject" class="connectBtn"></td>
@@ -378,7 +386,7 @@ function jumpcomment(NotificationId) {
 			</div>
 
 			<div id="middleEvent">
-				<div id="ShowStatusUpdet">
+				<div id="ShowEventsUpdet">
 					<h3>List of Events</h3>
 					<c:if test="${!empty eventstList}">
 						<table border=1 width=100%>

@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.rbnelite.udyogvishwa.dao.RelegionDao;
 import com.rbnelite.udyogvishwa.dto.ReligionCredential;
 import com.rbnelite.udyogvishwa.model.Index;
+import com.rbnelite.udyogvishwa.model.Religion;
 
 @Service
 public class RelegionServiceImpl implements RelegionService {
@@ -26,6 +29,18 @@ public class RelegionServiceImpl implements RelegionService {
 		
 
 		relegiondao.insertRelegion(relegion);
+	}
+
+	@Override
+	public List<Index> listReligion(String UserMail) {
+		
+		return relegiondao.listReligion(UserMail);
+	}
+
+	@Override
+	public void UpdateReligion(Index index) {
+		relegiondao.UpdateReligion(index);
+		
 	}
 
 }

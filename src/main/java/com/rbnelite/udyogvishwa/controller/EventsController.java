@@ -50,6 +50,10 @@ public class EventsController {
 			ModelMap map,String userMail) {
 		 if(result.hasErrors())
 		 {
+			 
+			 LoginUser loginUser = RequestContext.getUser();
+				
+				userMail=loginUser.getEmail();
 			 map.put("myEvents", new Event());
 				map.put("eventstList", eventsservice.listEvents());
 				
@@ -60,7 +64,7 @@ public class EventsController {
 				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 				
 				map.put("knownPeople", new IntrestAreas());
-				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 				
 				map.put("Notification",new Notification());
 				map.put("NotificationList", notificationService.listNotification(userMail));
@@ -90,7 +94,7 @@ public class EventsController {
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
@@ -121,7 +125,7 @@ public class EventsController {
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));

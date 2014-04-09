@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 
-
-
 public interface PeopleRefrenceDao {
-	public List<IntrestAreas> peopleYouMayKnow();
+	public List<IntrestAreas> peopleYouMayKnow(String userMail);
 
 }

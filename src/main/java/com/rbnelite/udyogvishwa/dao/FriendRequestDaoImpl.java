@@ -49,15 +49,15 @@ public class FriendRequestDaoImpl extends BaseDao<FriendRequest>implements Frien
 		String pending= "Pending";
 		Session session=sessionFactory.openSession();
 		try{
-		Criteria criteria = session.createCriteria(FriendRequest.class);
-		Criterion accept=Restrictions.eq("requestStatus", pending);
-		Criterion request_to=Restrictions.eq("requestTo", userMail);
-		LogicalExpression andExp=Restrictions.and(accept, request_to);
-		return criteria.add(andExp).list();
+		
+			return session.createQuery("Select F.requestFrom, Pi.profileImage, O.companyName,O.occupation"
+					+ " from  FriendRequest F, ProfileImages Pi,Occupation O"
+					+ "  where F.requestTo ='"+userMail+"'"
+					+ " and F.requestStatus='"+pending+"' and F.requestFrom = Pi.userMail and F.requestFrom = O.usermail").list();
 		}finally{
 			session.close();
 		}
-		/*return sessionFactory.getCurrentSession().createQuery("from FriendRequest where requestTo ='"+userMail+"' ").list();*/
+		
 	   
 	}
 	@Override
@@ -87,7 +87,11 @@ public class FriendRequestDaoImpl extends BaseDao<FriendRequest>implements Frien
 		Session session=sessionFactory.openSession();
 		try{
 	
-		return session.createQuery("select I.firstName, I.lastName,F.requestFrom,F.requestTo,Pi.profileImage from FriendRequest F, Index I, ProfileImages Pi where F.requestFrom = '"+userMail+"' and F.requestStatus = 'Accept' and F.requestTo = I.emailId and I.emailId = Pi.userMail or F.requestTo = '"+userMail+"' and F.requestStatus = 'Accept' and F.requestFrom = I.emailId and I.emailId = Pi.userMail").list();
+		return session.createQuery("select I.firstName, I.lastName,F.requestFrom,F.requestTo,Pi.profileImage, O.companyName,O.occupation"
+				+ " from FriendRequest F, Index I, ProfileImages Pi,Occupation O where F.requestFrom = '"+userMail+"' and "
+						+ " F.requestStatus = 'Accept' and F.requestTo = I.emailId and I.emailId = Pi.userMail and I.emailId=O.usermail or"
+						+ " F.requestTo = '"+userMail+"' and F.requestStatus = 'Accept' and F.requestFrom = I.emailId and "
+								+ "I.emailId = Pi.userMail and I.emailId=O.usermail").list();
 		}finally{
 			session.close();
 		}
