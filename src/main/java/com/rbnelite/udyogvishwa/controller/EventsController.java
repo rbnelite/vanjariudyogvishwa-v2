@@ -1,13 +1,8 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.util.Map;
-
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -15,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
@@ -56,15 +50,28 @@ public class EventsController {
 			ModelMap map,String userMail) {
 		 if(result.hasErrors())
 		 {
-			 System.out.println("in error");
-			 
-			 return "Events";
+			 map.put("myEvents", new Event());
+				map.put("eventstList", eventsservice.listEvents());
+				
+				map.put("ProfileImage", new ProfileImages());
+				map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+				
+				map.put("friendRequest", new FriendRequest());
+				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+				
+				map.put("knownPeople", new IntrestAreas());
+				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow());
+				
+				map.put("Notification",new Notification());
+				map.put("NotificationList", notificationService.listNotification(userMail));
+
+			
+			 	return "Events";
 		 }
 		 else
 		 {
 			 
-		 System.out.println("without error in Event controller");
-		eventsservice.insertEvents(eventscredential);
+		 eventsservice.insertEvents(eventscredential);
 		
 
 		listEvents(userMail, map);
@@ -72,7 +79,6 @@ public class EventsController {
 		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
-		
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventsservice.listEvents());
@@ -102,6 +108,8 @@ public class EventsController {
 		LoginUser loginUser = RequestContext.getUser();
 	
 		userMail=loginUser.getEmail();
+		
+		map.put("myEvents1", new Event());
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventsservice.listEvents());

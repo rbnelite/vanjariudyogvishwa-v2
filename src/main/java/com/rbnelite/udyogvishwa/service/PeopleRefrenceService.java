@@ -8,4 +8,5 @@ public interface PeopleRefrenceService {
 	
 	public List<IntrestAreas> peopleYouMayKnow();
 
+	
 }

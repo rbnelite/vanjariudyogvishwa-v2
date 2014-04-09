@@ -43,4 +43,15 @@ public class LikeStatusDaoImpl extends BaseDao<LikeStatus> implements
 		}
 	}
 
+	@Override
+	public int likecnt(int like_id) {
+		Session session = sessionFactory.openSession();
+		try {
+			String cnt=session.createQuery("select count('"+like_id+"') from like_status where status='TRUE'").toString();
+		} finally {
+			session.close();
+		}
+		return 0;
+	}
+
 }
