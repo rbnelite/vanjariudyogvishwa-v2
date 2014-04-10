@@ -170,8 +170,8 @@ input[type=text]{
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
 				<a	id="anchor" href="#"><font color="indigo">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
-				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
-				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
 				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>

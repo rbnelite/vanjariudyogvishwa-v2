@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,8 +99,12 @@ function jumpcomment(NotificationId) {
 	<center>
 		<div id="main">
 			<div id="Header">
-				<input id="input_search" type="text" name="SearchProfile"
-					placeholder="Search" />
+				<form action="/vanjariudyogvishwa-v2/SearchResult">
+					<input id="SearchData" type="text" name="SearchData"
+						placeholder="Search" style="height: 25px; width: 200px;" /> <input
+						type="submit" value=" "
+						style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');">
+				</form>
 					<label style="margin-left:110px; margin-right:5px; float: right;">WelCome!<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">
@@ -145,8 +150,8 @@ function jumpcomment(NotificationId) {
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
 				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="#"><font color="white">Message</font></a>
-				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
-				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
 				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>

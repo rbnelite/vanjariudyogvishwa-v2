@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@ function abc(){
 	 var datatime=document.getElementById("datatime").value;
 		 if(name.length==0|| details.length==0 || location.length==0|| datatime.length==0)
 		 {
-		   /* alert("please enter something");   */
+		    alert("please enter required all fields.");
 		 return false;
 		 }	
 }
@@ -209,8 +210,8 @@ function jumpcomment(NotificationId) {
 					id="anchor" href="Profile"><font color="white">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font> </a> <a id="anchor" href="#"
-					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font>
+					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a> <a id="anchor" href="#"
+					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
 					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font
 					color="white">LogOut</font> </a>
@@ -370,11 +371,12 @@ function jumpcomment(NotificationId) {
 							<br></td>
 						</tr> -->
 						
-						<tr><td></td><td></td></tr>
+						<tr><td></td><td><input type="text" value="" style="background-color: transparent;
+							plac width: 400px; height: 30px; margin-left: -100px;"></td></tr>
 						<tr><td></td><td></td></tr>
 						
 						<tr>
-							<td><input type="submit" value="Create Event"
+							<td><input type="submit" value="Create Event" onclick="return abc()"
 								style="margin-left: 290px; height: 40px;" >
 							</td>
 							<td><input type="reset" value="Cancel"

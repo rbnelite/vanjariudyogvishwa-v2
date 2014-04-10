@@ -69,6 +69,10 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 	   Session session=sessionFactory.openSession();
 	   try{
 		return session.createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();
+		
+		/*return session.createQuery("Select m.msgSenderID, m.msgReceiverID,m.msgDate,m.myMsgText,pi.profileImage "
+				+ " from Message m,ProfileImages pi where m.msgSenderID='"+msgSenderID+"' and m.msgSenderID=pi.userMail and m.msgReceiverID='"+msgReceiverID+"' and m.msgReceiverID=pi.userMail"
+				+ " or m.msgSenderID='"+msgReceiverID+"' and m.msgSenderID=pi.userMail and m.msgReceiverID='"+msgSenderID+"' and m.msgReceiverID=pi.userMail ORDER BY msgID DESC").list();*/
 	   }
 	   finally
 	   {
@@ -85,7 +89,12 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 			
 			/*return session.createQuery("FROM Message where msgReceiverID ='"+userMail+"' union FROM Message where msgSenderID='"+userMail+"' ").list();*/
 			
-			return session.createQuery("select I.emailId,I.firstName, I.middleName, I.lastName, pi.profileImage FROM Index I, ProfileImages pi where I.emailId in(select msg.msgSenderID from Message msg where msg.msgReceiverID ='"+userMail+"' and msg.msgSenderID = pi.userMail) or I.emailId in(select msg.msgReceiverID from Message msg where msg.msgSenderID ='"+userMail+"' and msg.msgReceiverID = pi.userMail) ").list();
+			return session.createQuery("select I.emailId,I.firstName, I.middleName, I.lastName, pi.profileImage "
+					+ " FROM Index I, ProfileImages pi "
+						+ " where I.emailId in(select msg.msgSenderID from Message msg "
+							+ " where msg.msgReceiverID ='"+userMail+"' and msg.msgSenderID = pi.userMail) "
+						+ " or I.emailId in(select msg.msgReceiverID from Message msg "
+							+ " where msg.msgSenderID ='"+userMail+"' and msg.msgReceiverID = pi.userMail) ").list();
 		}
 		finally
 		{

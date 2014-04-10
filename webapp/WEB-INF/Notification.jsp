@@ -5,6 +5,7 @@
 --%>
 <%@ page import="java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -219,8 +220,8 @@ document.getElementById("notificationId").value=NotificationId;
 					id="anchor" href="Profile"><font color="white">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font> </a> <a id="anchor" href="#"
-					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font>
+					color="white">Notification</font></a> <a id="anchor" href="#"
+					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
 					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font
 					color="white">LogOut</font> </a>

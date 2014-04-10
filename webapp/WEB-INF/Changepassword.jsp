@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,6 +91,27 @@
     border: 1px solid gray;
     overflow: hidden;
 }
+
+#leftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    padding-right: 20px;
+}
+#OutsideleftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    margin-left: 7px;
+}
 </style>
 </head>
 
@@ -155,33 +177,29 @@
 					id="anchor" href="Profile"><font color="white">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font> </a> <a id="anchor" href="#"
-					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font>
+					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a> <a id="anchor" href="#"
+					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
 					color="indigo">Setting</font></a> <a id="anchor" href="logoutUser"><font
 					color="white">LogOut</font> </a>
 			</div>
 
 			<div id="leftMain">
-					<div id="leftMain1">
-						
-							<c:if test="${!empty eventstList}">
-
-							<table width=100%>
-								<th style="background-color: #fab039"><font color="white">Upcoming
-										Events</font></th>
-								<c:forEach items="${eventstList}" var="myEvents">
-								
-									<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
-											created an event :${myEvents[0]}</td>
-									</tr>
-								</c:forEach>
-							</table>
-						</c:if>
-						
-
-					</div>
+					<c:if  test="${!empty eventstList}">
+             		   <div id="OutsideleftMain1">
+                <div id="leftMain1">
+                <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
+                <c:forEach items="${eventstList}" var="myEvents">
+                <tr>
+                <td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> created an event :${myEvents[0]}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                
+                 </div>
+               </div>
+                 </c:if>
 				<div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>

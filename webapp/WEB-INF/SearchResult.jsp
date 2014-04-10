@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,6 +75,27 @@ function HideChangePhotoBlock(){
     background-color: #FFF;
     float: right;
 }
+
+#leftMainHome {
+	float: left;
+	width: 290px;
+	height: 350px;
+	overflow: auto;
+	/* border-radius: 3px; */
+	background-color: bisque;
+	/* border: 1px solid gray; */
+	padding-right: 27px;
+}
+
+#OutsideleftMainHome {
+	float: left;
+	width: 300px;
+	height: 350px;
+	overflow: hidden;
+	border-radius: 3px;
+	background-color: bisque;
+	/* border: 1px solid gray; */
+}
 </style>
 </head>
 <body>
@@ -131,8 +153,8 @@ function HideChangePhotoBlock(){
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
 				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="#"><font color="white">Message</font></a>
-				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
-				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font></a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
 				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
@@ -288,10 +310,23 @@ function HideChangePhotoBlock(){
 										height="80" width="80"></td>
 									<td>&nbsp;
 										${searchUser.firstName}&nbsp;${searchUser.middleName}&nbsp;${searchUser.lastName}&nbsp;</td>
-									<td width="100px;"><center>
-											<input type="button" value="Connect" class="connectBtn"
-												style="height: 40px; width: 80px; background-color: #fab039; border-style: outset; font-family: inherit;">
-										</center></td>
+									<td width="100px;">
+									<center>
+										<c:if test="${searchUser.emailId != loginUser.email}">
+											
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="SearchResult">
+										<input type="hidden" name="requestTo" value="${searchUser.emailId}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"
+											style="height: 40px; width: 80px; background-color: #fab039; border-style: outset; font-family: inherit;">
+									</form>
+										
+										
+										
+										</c:if>
+									</center>
+									</td>
 								</tr>
 								<tr></tr>
 							</c:forEach>

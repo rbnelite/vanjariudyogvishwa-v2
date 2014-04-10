@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(function() {
 	
 setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
@@ -28,7 +29,7 @@ $('#testdiv').show();
 setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
 })
 })
-</script>
+</script> -->
 
 <script type="text/javascript">
 //code for validation status post for blank code
@@ -290,8 +291,8 @@ height:125px;
 					id="anchor" href="Profile"><font color="white">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font> </a> <a id="anchor" href="#"
-					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font>
+					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a> <a id="anchor" href="#"
+					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
 					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font
 					color="white">LogOut</font> </a>
@@ -355,7 +356,7 @@ height:125px;
 				</div>
 
 			</div>
-			<div id="testdiv" style="position: absolute;margin-left: 500px; height : 30px; width : 400px;border: 1px solid red "><font color="green"> ${ab}</font>  </div>
+			<%-- <div id="testdiv" style="position: absolute;margin-left: 500px; height : 30px; width : 400px;border: 1px solid red "><font color="green"> ${ab}</font>  </div> --%>
 			<div id="NeedTopHome">
 			
 				<form action="/vanjariudyogvishwa-v2/Need" method="post">
@@ -432,6 +433,7 @@ height:125px;
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
 							style="width: 40px; height: 40px; float: right;"></a></th>
 					<c:if test="${!empty friendRequestList}">
+						
 						<c:forEach items="${friendRequestList}" var="friendRequest">
 							<form action="/vanjariudyogvishwa-v2/acceptFriendRequest"
 								method="post">
