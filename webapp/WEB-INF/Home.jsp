@@ -301,12 +301,12 @@ height:125px;
 			<div id="leftMain" style="background-color: bisque">
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-
-						<c:if test="${!empty eventstList}">
-
-							<table width=100%>
+					<table width=100%>
 								<th style="background-color: #fab039"><font color="white">Upcoming
 										Events</font></th>
+						<c:if test="${!empty eventstList}">
+
+							
 								<c:forEach items="${eventstList}" var="myEvents">
 								
 									<tr>
@@ -314,8 +314,9 @@ height:125px;
 											created an event :${myEvents[0]}</td>
 									</tr>
 								</c:forEach>
-							</table>
+							
 						</c:if>
+						</table>
 					</div>
 				</div>
 
@@ -356,7 +357,9 @@ height:125px;
 				</div>
 
 			</div>
+
 			<%-- <div id="testdiv" style="position: absolute;margin-left: 500px; height : 30px; width : 400px;border: 1px solid red "><font color="green"> ${ab}</font>  </div> --%>
+
 			<div id="NeedTopHome">
 			
 				<form action="/vanjariudyogvishwa-v2/Need" method="post">

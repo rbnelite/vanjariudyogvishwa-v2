@@ -8,6 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -329,47 +330,46 @@ function jumpcomment(NotificationId) {
 					<table>
 						<h3><font color="purple">Create Event</font></h3>
 						
-
 						<tr>
 							<td>Event Name :</td>
-							<td><input type="text" name="name" id="name"
+							<td><form:input path="name" id="name"
 								placeholder="Write Event Name...."
-								style="width: 400px; height: 30px; margin-left: -100px;">
+								style="width: 400px; height: 30px; margin-left: -100px;"/>
+								
+								
+							</td>
+							
+						</tr>
+						<tr><td> <form:errors path="name" cssClass="error"/></td></tr>
+						<tr>
+							<td>Event Details :</td>
+							<td>
+							<form:input path="details" id="details"
+									placeholder="Write Event Details with time...."
+									style="width: 400px; height: 100px; resize: none; margin-left: -100px;"/><br>
 								
 							</td>
 						</tr>
-						<tr>
-							<td>Event Details :</td>
-							<td><textarea type="text" name="details" id="details"
-									placeholder="Write Event Details with time...."
-									style="width: 400px; height: 100px; resize: none; margin-left: -100px;"></textarea>
-							</td>
-						</tr>
+						<tr><td>  <form:errors path="details" cssClass="error"/> </td></tr>
 						<tr>
 							<td>Event Location :</td>
-							<td><input type="text" name="location" id="location"
+							<td><form:input path="location" id="location"
 								placeholder="Write Location of Event...."
-								style="width: 400px; height: 30px; margin-left: -100px;">
+								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
+								
 							</td>
 						</tr>
+						<tr><td>  <form:errors path="location" cssClass="error"/> </td></tr>
 						<tr>
 							<td>Date :</td>
-							<td><form:input type="text" path="datatime" id="datatime"
+							<td><form:input path="datatime" id="datatime"
 								placeholder="dd/mm/yyyy"
-								style="width: 400px; height: 30px; margin-left: -100px;"/>
-								 <form:errors path="datatime" cssClass="error"/>
+								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
+								
 							</td>
 						</tr>
-						<!-- <tr>
-							<td>Time :</td>
-							<td><input type="text" name=""
-								placeholder="hh:mm:ss"
-								style="width: 400px; height: 30px; margin-left: -100px;">
-								<select style="height: 30px;"><option>AM</option>
-									<option>PM</option>
-							</select><br>
-							<br></td>
-						</tr> -->
+						
+						<tr><td> <form:errors path="datatime" cssClass="error"/> </td></tr>
 						
 						<tr><td></td><td><input type="text" value="" style="background-color: transparent;
 							plac width: 400px; height: 30px; margin-left: -100px;"></td></tr>
@@ -379,8 +379,7 @@ function jumpcomment(NotificationId) {
 							<td><input type="submit" value="Create Event" onclick="return abc()"
 								style="margin-left: 290px; height: 40px;" >
 							</td>
-							<td><input type="reset" value="Cancel"
-								style="margin-left: 100px; height: 40px;">
+							<td>
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 							</td>
 						</tr>

@@ -8,5 +8,5 @@ public interface LikeStatusDao {
 	public void LikeTheStatus(LikeStatus likestatus);
 
 	public List<LikeStatus> listLikeStatus();
-
+	public int likecnt(int like_id);
 }
