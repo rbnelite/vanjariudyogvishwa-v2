@@ -103,7 +103,8 @@
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td> Dress Style </td>
-                                        <td><select name="DressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
+                                        <td>
+                                        <select name="DressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
                                                 <option selected value="">--Please Select --</option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
@@ -111,7 +112,7 @@
                                                 <option>Formal</option>
                                                 <option>Casual</option>
                                                 <option>Not particular</option>
-                                            </select>
+                                        </select>
                                         </td>
                                     <!--</tr> <tr><td colspan="2"><br></tr>-->
                                     <tr>

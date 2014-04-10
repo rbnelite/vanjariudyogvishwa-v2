@@ -220,7 +220,7 @@ document.getElementById("notificationId").value=NotificationId;
 					id="anchor" href="Profile"><font color="white">My
 						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font></a> <a id="anchor" href="#"
+					color="indigo">Notification</font></a> <a id="anchor" href="#"
 					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
 					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font

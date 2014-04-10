@@ -97,6 +97,27 @@ function jumpcomment(NotificationId) {
     position: absolute;
     overflow: auto;
  }
+ 
+ #leftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    padding-right: 20px;
+}
+#OutsideleftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    margin-left: 7px;
+}
 </style>
 
         <title>Products Page</title>
@@ -168,31 +189,31 @@ function jumpcomment(NotificationId) {
 			</div>
 
             <div id="leftMain">
-
+				 <c:if  test="${!empty eventstList}">
+             		   <div id="OutsideleftMain1">
                 <div id="leftMain1">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Upcoming
-									Events</font></th>
-							<c:forEach items="${eventstList}" var="myEvents">
-								<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
-											created an event :${myEvents[0]}</td>
-									</tr>
-							</c:forEach>
-						</table>
-
-			    </div>
+                <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
+                <c:forEach items="${eventstList}" var="myEvents">
+                <tr>
+                <td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> created an event :${myEvents[0]}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                
+                 </div>
+               </div>
+                 </c:if>
                 <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="black">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png"  title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: left; margin-left: 100px;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="#"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
-                <div id="leftMain3">Needs</div>
-
+                
             </div>
 
             
