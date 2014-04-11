@@ -1,5 +1,7 @@
 package com.rbnelite.udyogvishwa.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -30,5 +32,19 @@ public class OccupationDaoImpl extends BaseDao<Occupation> implements
 		} finally {
 			session.close();
 		}
+	}
+
+	@Override
+	public List searchPeopleByProffession(String SearchDatabyprofession) {
+		Session session=sessionFactory.openSession();
+		/*"from Occupation where occupation like concat('%','"+SearchDatabyprofession+"','%')"*/
+		try{
+		return session.createQuery("select i.firstName, i.lastName,pi.profileImage,o.occupation from Occupation o, Index i,ProfileImages pi where o.occupation like concat('%','"+SearchDatabyprofession+"','%') and i.emailId=o.usermail and pi.userMail=o.usermail").list();
+		}
+		finally
+		{
+			session.close();
+		}
+		
 	}
 }
