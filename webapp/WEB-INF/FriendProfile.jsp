@@ -155,40 +155,7 @@ h3 {
             
             
             
-            <div id="NeedTopProfile">
-                <table>
-                    <label><font color="purple">Need Something?</font></label>
-                    <a onclick="return DisableINeedBlockPro()"> <img src="images/close.png" style="width: 40px;height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-                    <tr>
-                <td>I Need :</td>
-                <td><input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
-                </tr>
-                <tr>
-                <td>
-                Description :
-                </td>
-                <td>
-                    <textarea type="text" placeholder="Write your Need here...." style="width: 400px; height: 100px; resize: none;"></textarea>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                Contact No :
-                </td>
-                <td>
-                    <input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"><br><br>
-                </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-                </td>
-                </tr>
-                </table>
-            </div>
-            
-            
+                        
             <div id="NotificationTopHome">
 				<div id="InsideNotificationTopHome">
 				<table width="100%">

@@ -358,47 +358,6 @@ height:125px;
 
 			</div>
 
-			<%-- <div id="testdiv" style="position: absolute;margin-left: 500px; height : 30px; width : 400px;border: 1px solid red "><font color="green"> ${ab}</font>  </div> --%>
-
-			<div id="NeedTopHome">
-			
-				<form action="/vanjariudyogvishwa-v2/Need" method="post">
-					<table width=100%>
-						<th style="background-color: #fab039" colspan=2><font
-							color="white">Need Something?</font> <a
-							onclick="return DisableINeedBlock()"> <img
-								src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-						</th>
-						<tr align="center">
-							<td>Looking For :</td>
-							<td><input type="text" name="need"
-								placeholder="Write your Need here...."
-								style="width: 400px; height: 30px;"></td>
-						</tr>
-						<tr align="center">
-							<td>Description :</td>
-							<td><textarea type="text" name="description"
-									placeholder="Write your Need here...."
-									style="width: 400px; height: 100px; resize: none;"></textarea>
-							</td>
-						</tr>
-						<tr align="center">
-							<td>Contact No :</td>
-							<td><input type="text" name="mobile"
-								placeholder="Write your Need here...."
-								style="width: 400px; height: 30px;"><br> <br></td>
-						</tr>
-						<tr align="center">
-							<td><input type="hidden" name="usermail"
-								value="${loginUser.email}"></td>
-							<td><input type="submit" value="Ask for Solution" 
-								style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
 			<div id="NotificationTopHome">
 				<div id="InsideNotificationTopHome">
 				<table width="100%">

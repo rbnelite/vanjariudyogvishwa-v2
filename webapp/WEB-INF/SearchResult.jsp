@@ -358,7 +358,7 @@ function HideChangePhotoBlock(){
 								<tr></tr>
 								<tr>
 									<td colspan="3" bgcolor="#fcca7b"><center>
-											<b>Status/Need</b>
+											<b>Status</b>
 										</center></td>
 								</tr>
 							</c:forEach>
@@ -372,7 +372,7 @@ function HideChangePhotoBlock(){
 								<tr></tr>
 								<tr>
 									<td bgcolor="#fcca7b"><center>
-											<b>Status/Need</b>
+											<b>Status</b>
 										</center></td>
 								</tr>
 							</table>
