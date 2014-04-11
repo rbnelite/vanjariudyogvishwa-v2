@@ -23,7 +23,6 @@ import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
-import com.rbnelite.udyogvishwa.service.AstroService;
 import com.rbnelite.udyogvishwa.service.ContactService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
@@ -51,9 +50,6 @@ public class ProfileController {
 
 	@Resource
 	private HobbiesService hobbiesServ;
-	@Resource
-	private AstroService astroServ;
-
 	@Resource
 	private LifeStyleService lifeStyleServ;
 	@Resource

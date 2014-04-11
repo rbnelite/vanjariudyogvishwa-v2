@@ -1,3 +1,6 @@
+
+
+
 <%-- 
     Document   : Products
     Created on : Dec 10, 2013, 6:19:54 PM
@@ -7,6 +10,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -94,6 +98,27 @@ function jumpcomment(NotificationId) {
     position: absolute;
     overflow: auto;
  }
+ 
+ #leftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    padding-right: 20px;
+}
+#OutsideleftMain1{
+    float: left;
+    width: 290px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: bisque;
+    border: 1px solid gray;
+    margin-left: 7px;
+}
 </style>
 
         <title>Products Page</title>
@@ -158,38 +183,38 @@ function jumpcomment(NotificationId) {
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
 				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
-				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
-				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font></a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
 				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
 
             <div id="leftMain">
-
+				 <c:if  test="${!empty eventstList}">
+             		   <div id="OutsideleftMain1">
                 <div id="leftMain1">
-						<table width=100%>
-							<th style="background-color: #fab039"><font color="white">Upcoming
-									Events</font></th>
-							<c:forEach items="${eventstList}" var="myEvents">
-								<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
-											created an event :${myEvents[0]}</td>
-									</tr>
-							</c:forEach>
-						</table>
-
-			    </div>
+                <table width=100%>
+                <th style="background-color: #fab039"><font color="white">Upcoming Events</font></th>
+                <c:forEach items="${eventstList}" var="myEvents">
+                <tr>
+                <td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> created an event :${myEvents[0]}</td>
+                </tr>
+                  </c:forEach>
+                </table>
+                
+                 </div>
+               </div>
+                 </c:if>
                 <div id="leftMain2">
                   <table width=100%><th style="background-color: #fab039"><font color="white">Links</font></th></table>
                     <br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32"width="32"><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> <br><br><br>
-                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="black">Products</font></h4></a>
-                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png"  title="Message" height="32"width="32"><a style="float: left;" href="message"><h4><font color="#00cccc">Message</font></h4></a>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/event.png"  title="Events" height="32"width="32"><a style="float: right;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> <br><br><br>
+                    <img style="float: left; margin-left: 100px;" src="${pageContext.request.contextPath}/resources/images/photo.png"  title="Photos" height="32"width="32"><a style="float: left;" href="#"><h4><font color="Black">Photos</font></h4></a> <br><br><br>
+                    <img style="float: right;" src="${pageContext.request.contextPath}/resources/images/product1.png"  title="My Products" height="32"width="32"><a style="float: right;" href="Product"> <h4><font color="#00cccc">Products</font></h4></a>
+                    <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png"  title="Friend's" height="32"width="32"><a style="float: left;" href="FriendList"> <h4><font color="#00cccc">Friends</font></h4></a>
                 </div>
-                <div id="leftMain3">Needs</div>
-
+                
             </div>
 
             

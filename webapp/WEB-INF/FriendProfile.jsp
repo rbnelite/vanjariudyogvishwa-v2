@@ -130,7 +130,7 @@ h3 {
             <div id="Header">
 
                 
-                <label style="margin-left: 470px;">WelCome ! User</label>
+                <label style="margin-left: 470px;"></label>
                 <br>
                 <div id="profile_photo">
                     <c:if test="${! empty ProfileImageList}">
@@ -147,48 +147,15 @@ h3 {
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
 				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
-				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font>	</a>
-				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font> </a>
+				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font>	</a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
 				<a id="anchor" href="#"	onclick="return DisplaySettingBlock()"><font color="white">Setting</font></a>
 				<a id="anchor" href="logoutUser"><font color="white">LogOut</font> </a>
 			</div>
             
             
             
-            <div id="NeedTopProfile">
-                <table>
-                    <label><font color="purple">Need Something?</font></label>
-                    <a onclick="return DisableINeedBlockPro()"> <img src="images/close.png" style="width: 40px;height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
-                    <tr>
-                <td>I Need :</td>
-                <td><input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"></td>
-                </tr>
-                <tr>
-                <td>
-                Description :
-                </td>
-                <td>
-                    <textarea type="text" placeholder="Write your Need here...." style="width: 400px; height: 100px; resize: none;"></textarea>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                Contact No :
-                </td>
-                <td>
-                    <input type="text" placeholder="Write your Need here...." style="width: 400px; height: 30px;"><br><br>
-                </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                <input type="submit" value="Ask for Solution" style="margin-left: 287px;" onclick="return DisableINeedBlock()">
-                </td>
-                </tr>
-                </table>
-            </div>
-            
-            
+                        
             <div id="NotificationTopHome">
 				<div id="InsideNotificationTopHome">
 				<table width="100%">

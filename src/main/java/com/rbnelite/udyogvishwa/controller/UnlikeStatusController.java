@@ -12,13 +12,11 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
-import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.LikeStatusService;
-import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.service.UnlikeStatusService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -34,8 +32,6 @@ public class UnlikeStatusController {
 	private StatusService statusservice;
 	@Resource
 	private EventsService eventService;
-	@Resource
-	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
 	@Resource
@@ -59,9 +55,6 @@ public class UnlikeStatusController {
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
-		
-		map.put("myNeeds", new Need());
-		map.put("needList", needservice.listNeed());
 		
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());

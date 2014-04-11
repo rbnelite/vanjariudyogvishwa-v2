@@ -29,7 +29,6 @@ import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
-import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.StatusService;
@@ -42,8 +41,6 @@ public class StatusController {
 	private StatusService statusservice;
 	@Resource
 	private EventsService eventService;
-	@Resource
-	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
 	@Resource
