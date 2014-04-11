@@ -31,7 +31,6 @@ import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.LikeStatusService;
-import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
@@ -49,8 +48,6 @@ public class FriendListController {
 	private StatusService statusservice;
 	@Resource
 	private EventsService eventService;
-	@Resource
-	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
 	@Resource

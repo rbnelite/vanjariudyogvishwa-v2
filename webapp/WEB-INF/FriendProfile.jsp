@@ -130,7 +130,7 @@ h3 {
             <div id="Header">
 
                 
-                <label style="margin-left: 470px;">WelCome ! User</label>
+                <label style="margin-left: 470px;"></label>
                 <br>
                 <div id="profile_photo">
                     <c:if test="${! empty ProfileImageList}">

@@ -9,7 +9,7 @@ import java.util.List;
 
 
 
-import com.rbnelite.udyogvishwa.model.Astro;
+
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 
 /**

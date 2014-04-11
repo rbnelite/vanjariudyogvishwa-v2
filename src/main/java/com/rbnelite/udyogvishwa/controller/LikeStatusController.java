@@ -16,14 +16,12 @@ import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LikeStatus;
-import com.rbnelite.udyogvishwa.model.Need;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.LikeStatusService;
-import com.rbnelite.udyogvishwa.service.NeedService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
@@ -38,8 +36,6 @@ public class LikeStatusController {
 	private StatusService statusservice;
 	@Resource
 	private EventsService eventService;
-	@Resource
-	private NeedService needservice;
 	@Resource
 	private CommentService commentservice;
 	
@@ -101,10 +97,7 @@ public class LikeStatusController {
 		
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
-		
-		map.put("myNeeds", new Need());
-		map.put("needList", needservice.listNeed());
-		
+			
 		map.put("myComment", new Comment());
 		map.put("commentList", commentservice.listComment());
 		
