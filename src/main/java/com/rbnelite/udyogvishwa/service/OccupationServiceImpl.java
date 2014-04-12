@@ -1,8 +1,11 @@
 package com.rbnelite.udyogvishwa.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.OccupationDao;
 import com.rbnelite.udyogvishwa.dto.OccupationCredential;
@@ -29,6 +32,13 @@ public void insertOccupation(OccupationCredential occredential){
 	ocdao.insertOccupation1(oc);
 	
 	
+}
+
+@Override
+@Transactional
+public List searchPeopleByProffession(String SearchDatabyprofession) {
+	
+	return ocdao.searchPeopleByProffession(SearchDatabyprofession);
 }
 	
 

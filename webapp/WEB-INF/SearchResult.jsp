@@ -299,6 +299,33 @@ function HideChangePhotoBlock(){
 
 			<div id="outsidemiddleHome" style="margin-right: 300px;">
 				<div id="middleHome">
+				
+				<table width=60%>
+						<th colspan="3" bgcolor="#fcca7b">People By Profession</th>
+						<c:if test="${!empty searchSByProfList}">
+
+							<c:forEach items="${searchSByProfList}" var="searchSByProf">
+								<tr style="background-color: #fab039">
+									<td width="40px;"><img
+										src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}"
+										height="80" width="80"></td>
+									<td>&nbsp; ${searchSByProf[0]}&nbsp;${searchSByProf[1]}
+										</td>
+
+								</tr>
+								<tr></tr>
+								<tr></tr>
+								<tr>
+									<td colspan="3" bgcolor="#fcca7b"><center>
+											<b>Status/Need</b>
+										</center></td>
+								</tr>
+							</c:forEach>
+						</c:if>
+						
+
+					</table>
+				
 					<table width=60%>
 						<th colspan="3" bgcolor="#fcca7b">Users List</th>
 						<c:if test="${!empty SearchUserList}">
@@ -379,7 +406,9 @@ function HideChangePhotoBlock(){
 						</c:if>
 
 					</table>
-
+					
+					
+					
 					<c:if test="${!empty SearchStatusList}">
 						<c:forEach items="${SearchStatusList}" var="searchStatus">
 							<div id="ShowStatusUpdet"  style="border: 1px solid gray;">

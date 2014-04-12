@@ -15,8 +15,7 @@ public class PeopleRefrenceDaoImpl extends BaseDao<IntrestAreas> implements
 	@Override
 	@Transactional
 	public List<IntrestAreas> peopleYouMayKnow(String userMail) {
-		String anil="budgeanil@gmail.com";
-		
+				
 		Session session = sessionFactory.openSession();
 		try {
 			
