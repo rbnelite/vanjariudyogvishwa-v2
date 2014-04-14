@@ -121,7 +121,7 @@ public class ProfileController {
 		
 		if (!map.containsKey("EditReligionList")) {
 			map.put("religionDetails", new Index());
-			map.put("religionList", contactServ.listContact(userMail));
+			map.put("religionList", relegionservice.listReligion(userMail));
 		}
 		
 		map.put("ProfileImage", new ProfileImages());

@@ -21,20 +21,33 @@
 <script type="text/javascript">
 
 function abc(){
-	 var evtname=document.getElementById("name").value;
+	 var name=document.getElementById("name").value;
 	 var details=document.getElementById("details").value;
 	 var location=document.getElementById("location").value;
 	 var datatime=document.getElementById("datatime").value;
-	 var msger=document.getElementById("errortr");
-		 if(evtname.length==0|| details.length==0 || location.length==0|| datatime.length==0)
-		 {
-			 
-			 msger.style.display='block';    
-		/* 	 evtname.style.value="";
-			 details.style.value=""; */
+	 		if(name.length==0)
+		{
 			
-		 return false;
-		 }	
+		document.getElementById("error").innerHTML="please provide proper name"; 
+	     return false;		
+		}
+		if(details.length==0)
+	    {
+			
+			document.getElementById("error").innerHTML="please provide proper details";    
+		   return false;	
+	    }
+	    if(location.length==0) 
+		{
+	    	document.getElementById("error").innerHTML="please provide proper location";
+	    	return false;
+		} 
+	    if(datatime.length==0)
+	    {
+	    	document.getElementById("error").innerHTML="please provide proper datetime";
+	    	return false;
+	    }
+	    document.getElementById("error").innerHTML="";   
 }
 /* function validateDate(){
 
@@ -80,10 +93,19 @@ function jumpcomment(NotificationId) {
    
 }
 
-#errortr{
 
+
+#errortr{
 display: none;
 }
+
+
+
+
+
+
+
+
 
 #anchor {
 	margin-left: 80px;
@@ -379,12 +401,7 @@ display: none;
 								
 							</td>
 						</tr>
-						
-						<tr><td> <form:errors path="datatime" cssClass="error"/> </td></tr>
-						
-						<tr id="errortr"><td><font color="red">Please provide required fields.</td><td></td></tr>
-						<tr><td></td><td></td></tr>
-						
+						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
 							<td><input type="submit" value="Create Event" onclick="return abc()"
 								style="margin-left: 290px; height: 40px;" >
@@ -399,6 +416,7 @@ display: none;
 
 			<div id="middleEvent">
 				<div id="ShowEventsUpdet">
+				<span id="massage" style="color: green;">${massage}</span>
 					<h3>List of Events</h3>
 					<c:if test="${!empty eventstList}">
 						<table border=1 width=100%>

@@ -15,6 +15,7 @@ import com.rbnelite.udyogvishwa.model.Contact;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
+import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.Notification;
@@ -31,6 +32,7 @@ import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
+import com.rbnelite.udyogvishwa.service.RelegionService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Controller
@@ -59,6 +61,8 @@ public class FriendProfileController {
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private ContactService contactservice;
+	@Resource
+	private RelegionService relegionservice;
 	@Resource
 	private ProfileImageService profileImageService; 
 	@Resource
@@ -93,6 +97,12 @@ public class FriendProfileController {
 	
 	map.put("FriendsintrestAreasDetails", new IntrestAreas());
 	map.put("FriendsintrestAreasList", intrestAreasService.listIntrestAreas(friendsMail));
+	
+	map.put("contactInfo", new Index());
+	map.put("contactInfoList", contactservice.listContact(friendsMail));
+	
+	map.put("religionDetails", new Index());
+	map.put("religionList", relegionservice.listReligion(friendsMail));
 	
 	map.put("userFriends", new FriendRequest());
 	map.put("userFriendsList", friendrequestservice.listFriends(friendsMail));

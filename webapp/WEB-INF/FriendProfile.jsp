@@ -121,6 +121,13 @@ h3 {
 	position: absolute;
 	overflow: auto;
 }
+
+#FrndReqBtn{
+	background-color: #0F0;
+	height: 25px;
+	width: 60px;
+	float: left;
+}
 </style>
 <title>FriendsProfilePage</title>
     </head>
@@ -128,10 +135,15 @@ h3 {
     <center>
         <div id="mainProfile">
             <div id="Header">
-
-                
-                <label style="margin-left: 470px;"></label>
-                <br>
+				<input id="FrndReqBtn" type="submit" value="Connect"/>
+               <label style="margin-left: 110px; margin-right: 5px; float: right;">
+					<c:if test="${!empty contactInfoList}">
+						<c:forEach items="${contactInfoList}" var="contactInfo">
+							<b> ${contactInfo.firstName} ${contactInfo.lastName}</b>
+						</c:forEach>
+					</c:if>
+				</label> <br>
+				<br>
                 <div id="profile_photo">
                     <c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
@@ -366,10 +378,22 @@ h3 {
 														</td>
 													</tr>
 													<tr>
-														<td><input type="hidden" name="friendsEmailId"
-															value="${userFriends[2]}"> <input type="submit"
-															style="background: none; border: none;"
-															value="${userFriends[0]} ${userFriends[1]}"> <br>
+														<td><input type="hidden" name="friendsEmailId" value="${userFriends[2]}"> 
+															<c:if test="${userFriends[2]!=loginUser.email}">
+															<input type="submit" style="background: none; border: none;"
+															value="${userFriends[0]} ${userFriends[1]}"> 
+															</c:if>
+															<c:if test="${userFriends[2]==loginUser.email}">
+																<script type="text/javascript">
+																	function showFrndReqBtn(){
+																		
+																		
+																	}
+																</script>
+																
+																<a href="Profile">${userFriends[0]} ${userFriends[1]}</a>
+															</c:if>
+															<br>
 															<a><font color="gray" size="2">Works @ ${userFriends[5]}</font></a>
 												</table>
 											</form>
@@ -407,7 +431,39 @@ h3 {
             </div>
             </div>
             
-           <div id="OutsideProfileDetails"> <div id="ProfileDetails">Contact Details </div></div>
+           <div id="OutsideProfileDetails">
+					<div id="ProfileDetails">
+					<h3>
+						<img
+							src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
+							style="float: left; width: 70px; height: 60px;">Contact
+						Details
+					</h3>
+					<c:if test="${!empty contactInfoList}">
+									<table>
+										<c:forEach items="${contactInfoList}" var="contactInfo">
+											<tr>
+												<td><b>Home Address :</b></td>
+												<td>${contactInfo.homeAddress}</td>
+											</tr>
+											<tr>
+												<td><b>Office Address :</b></td>
+												<td>${contactInfo.officeAddress}</td>
+											</tr>
+											<tr>
+
+												<td><b>Telephone No. :</b></td>
+												<td>${contactInfo.contactNo}</td>
+
+											</tr>
+
+										</c:forEach>
+
+									</table>
+								
+							</c:if>
+					</div>
+				</div>
             
           
              <div id="OutsideProfileDetails">
@@ -428,13 +484,34 @@ h3 {
              </c:if>
             </div>
             </div>
-            
-            
-            
-            <div id="OutsideProfileDetails">
-            <div id="ProfileDetails"><h3>Religion & Ethnicity Details</h3></div>
-            </div>
-            <div id="OutsideProfileDetails">
+
+			
+			<div id="OutsideProfileDetails">
+					<div id="ProfileDetails">
+						<h3>Religion Details</h3>
+						<c:if test="${!empty religionList}">
+									<table>
+										<c:forEach items="${religionList}" var="religionDetails">
+											<tr>
+												<td><b>Religion :</b></td>
+												<td>${religionDetails.religion}</td>
+											</tr>
+											<tr>
+												<td><b>Cast :</b></td>
+												<td>${religionDetails.subCast}</td>
+											</tr>
+
+
+										</c:forEach>
+									</table>
+								
+						</c:if>
+					</div>
+
+				</div>
+			
+			
+			<div id="OutsideProfileDetails">
             <div id="ProfileDetails">Other Details
             <c:if test="${!empty FriendsotherDetailsList}">
             <c:forEach items="${FriendsotherDetailsList}" var="FriendsotherDetailsList">

@@ -331,30 +331,29 @@ function HideChangePhotoBlock(){
 						<c:if test="${!empty SearchUserList}">
 
 							<c:forEach items="${SearchUserList}" var="searchUser">
+									<c:if test="${searchUser.emailId != loginUser.email}">
 								<tr style="background-color: #fab039">
 									<td width="40px;"><img
 										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
 										height="80" width="80"></td>
-									<td>&nbsp;
-										${searchUser.firstName}&nbsp;${searchUser.middleName}&nbsp;${searchUser.lastName}&nbsp;</td>
-									<td width="100px;">
+										<td width="100px;">
 									<center>
-										<c:if test="${searchUser.emailId != loginUser.email}">
+										
 											
-									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
-										<input type="hidden" name="JspPageName" value="SearchResult">
-										<input type="hidden" name="requestTo" value="${searchUser.emailId}">
-										<input type="hidden" name="requestFrom" value="${loginUser.email}">
-										<input type="submit" value="Connect" class="connectBtn"
-											style="height: 40px; width: 80px; background-color: #fab039; border-style: outset; font-family: inherit;">
+									<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+										<input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
+										<a>${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
+										<br>
+										<input type="submit"  value="View Profile">
 									</form>
 										
 										
 										
-										</c:if>
+										
 									</center>
 									</td>
 								</tr>
+								</c:if>
 								<tr></tr>
 							</c:forEach>
 

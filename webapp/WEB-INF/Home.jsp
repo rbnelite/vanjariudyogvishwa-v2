@@ -652,9 +652,12 @@ height:125px;
 														<table width=90%>
 															<tr>
 																<td align="left"><font color="green">${myComment.user.displayName}
-																</font><input type="button"
+																</font>
+																<c:if test="${myComment.user.emailId==loginUser.email}">
+																<input type="button"
 																	style="width: 50px; height: 20px; float: right; margin-top: -4px; background-color: #fab039; border-style: outset;"
 																	value="edit" onclick="showSpanEdit('${myComment.id}')">
+																</c:if>
 																	<br> <span id="${myComment.id}">${myComment.comment}</span>
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">

@@ -98,7 +98,7 @@ public class EventsController {
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
-
+		map.put("massage","Event Created Successfully");
 		return "Events";
 		 }
 	}

@@ -45,9 +45,7 @@ public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 	public List<Status> listStatus(String userMail) {
 		Session session = sessionFactory.openSession();
 		
-		//LoginUser loginUser = new LoginUser();
-		//userMail=loginUser.getEmail();
-		System.out.println(userMail+" ;;;;;;;;;;;;;;usermail");		
+				
 		try {
 			session.beginTransaction();
 /*
