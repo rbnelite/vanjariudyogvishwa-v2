@@ -21,13 +21,18 @@
 <script type="text/javascript">
 
 function abc(){
-	 var name=document.getElementById("name").value;
+	 var evtname=document.getElementById("name").value;
 	 var details=document.getElementById("details").value;
 	 var location=document.getElementById("location").value;
 	 var datatime=document.getElementById("datatime").value;
-		 if(name.length==0|| details.length==0 || location.length==0|| datatime.length==0)
+	 var msger=document.getElementById("errortr");
+		 if(evtname.length==0|| details.length==0 || location.length==0|| datatime.length==0)
 		 {
-		    alert("please enter required all fields.");
+			 
+			 msger.style.display='block';    
+		/* 	 evtname.style.value="";
+			 details.style.value=""; */
+			
 		 return false;
 		 }	
 }
@@ -74,6 +79,12 @@ function jumpcomment(NotificationId) {
     overflow: auto;
    
 }
+
+#errortr{
+
+display: none;
+}
+
 #anchor {
 	margin-left: 80px;
 	font-family: white;
@@ -371,8 +382,7 @@ function jumpcomment(NotificationId) {
 						
 						<tr><td> <form:errors path="datatime" cssClass="error"/> </td></tr>
 						
-						<tr><td></td><td><input type="text" value="" style="background-color: transparent;
-							plac width: 400px; height: 30px; margin-left: -100px;"></td></tr>
+						<tr id="errortr"><td><font color="red">Please provide required fields.</td><td></td></tr>
 						<tr><td></td><td></td></tr>
 						
 						<tr>

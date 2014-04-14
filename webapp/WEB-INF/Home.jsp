@@ -592,7 +592,7 @@ height:125px;
 														 0
 													</form>
 												</td>
-												<td>Comments 0</td>
+												<td>Comments <font color="blue">${fn:length(notifStatus[0].comments)}</font></td>
 											</tr>
 										</table>
 									</div>
@@ -603,10 +603,10 @@ height:125px;
 					</c:if>
 					
 					
-					
-					
-					
 					<!-- View perticular Notification End here -->
+					
+					
+					
 					<c:if test="${!empty statusList}">
 						<c:forEach items="${statusList}" var="status11">
 							<div id="ShowStatusUpdet">
@@ -735,7 +735,7 @@ height:125px;
 														 0
 													</form>
 												</td>
-												<td>Comments 0</td>
+												<td>Comments <font color="blue">${fn:length(status11.comments)}</font></td>
 											</tr>
 										</table>
 									</div>
