@@ -109,6 +109,8 @@ public class NotificationController {
 		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 				
+		notificationService.changeNotificationStatus(userMail);
+		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotificationAll(userMail));	
 		

@@ -59,6 +59,11 @@ body {
 	border-radius: 3px;
 }
 
+#oldnotification:hover, #close:hover
+{
+cursor: pointer;
+}
+
 #logo1 {
 	width: 141px;
 	height: 143px;

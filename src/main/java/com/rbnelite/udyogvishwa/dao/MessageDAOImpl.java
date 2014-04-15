@@ -68,7 +68,12 @@ public class MessageDAOImpl extends BaseDao<Message> implements MessageDAO{
 		
 	   Session session=sessionFactory.openSession();
 	   try{
-		return session.createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();
+		/*return session.createQuery("from Message m where m.msgSenderID='"+msgSenderID+"' and m.msgReceiverID='"+msgReceiverID+"' or m.msgSenderID='"+msgReceiverID+"' and m.msgReceiverID='"+msgSenderID+"' ORDER BY msgID DESC").list();*/
+		
+		return session.createQuery("SELECT m.msgSenderID, m.msgReceiverID, m.msgDate, m.myMsgText ,u.firstName,u.lastName FROM Message m ,Index u "
+			       + " where (m.msgSenderID='"+msgSenderID+"'  AND m.msgReceiverID='"+msgReceiverID+"' AND (u.emailId='"+msgReceiverID+"')) OR "
+			       + "(m.msgSenderID='"+msgReceiverID+"'  AND m.msgReceiverID='"+msgSenderID+"'  AND (u.emailId='"+msgReceiverID+"')) ORDER BY m.msgID DESC ").list();
+		
 		
 		/*return session.createQuery("Select m.msgSenderID, m.msgReceiverID,m.msgDate,m.myMsgText,pi.profileImage "
 				+ " from Message m,ProfileImages pi where m.msgSenderID='"+msgSenderID+"' and m.msgSenderID=pi.userMail and m.msgReceiverID='"+msgReceiverID+"' and m.msgReceiverID=pi.userMail"

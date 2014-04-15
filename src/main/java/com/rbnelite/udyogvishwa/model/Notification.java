@@ -18,11 +18,6 @@ public class Notification {
 @SequenceGenerator(name="notifications_sequence_notification_id",sequenceName="notifications_sequence",allocationSize=1)
 private int notification_id;
 
-
-@Column(name="notification")
-private String notification;
-
-
 @Column(name="datetime")
 private String datetime;
 
@@ -53,14 +48,6 @@ public int getNotification_id() {
 
 public void setNotification_id(int notification_id) {
 	this.notification_id = notification_id;
-}
-
-public String getNotification() {
-	return notification;
-}
-
-public void setNotification(String notification) {
-	this.notification = notification;
 }
 
 public String getDatetime() {

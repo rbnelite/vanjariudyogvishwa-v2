@@ -92,5 +92,26 @@ public class NotificationDaoImpl extends BaseDao<Notification> implements
 			session.close();
 		}
 	}
+	
+	@Override
+	public void changeNotificationStatus(String userMail) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		try
+		{
+
+			 Query q1=session.createQuery("update from Notification n1 set n1.displayflag='1' where n1.displayflag='0' and n1.statusId In(select s.id from Status s where s.user.emailId='"+userMail+"') ");
+			 q1.executeUpdate();
+			 session.getTransaction().commit();
+			
+		}
+		finally
+		{
+			
+			session.close();
+		}
+		
+	}
+	
 
 }

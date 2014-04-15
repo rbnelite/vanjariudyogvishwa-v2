@@ -157,6 +157,10 @@ public class IndexController {
 			HttpServletResponse response, ModelMap map) throws ServletException {
 
 		HttpSession session = request.getSession();
+		LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
+    	String userMail=loginUser.getEmail();
+		notificationService.changeNotificationStatus(userMail);
+		
 		session.invalidate();
 		// session.setAttribute("CurrentEmailId", null);
 		map.addAttribute("index", new Index());

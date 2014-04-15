@@ -10,4 +10,5 @@ public interface NotificationDao {
 	public List <Notification>listNotification(String userMail);
 	public List<Notification> deleteNotification(Integer notif);
 	public List<Notification> listNotificationAll(String userMail);
+	public void changeNotificationStatus(String userMail);
 }

@@ -2,7 +2,6 @@ package com.rbnelite.udyogvishwa.dto;
 
 public class NotificationDto {
 	private int notification_id;
-	private String notification;
 	private String datetime;
 	private String usermail;
 	private int statusId;
@@ -20,12 +19,6 @@ public class NotificationDto {
 	}
 	public void setNotification_id(int notification_id) {
 		this.notification_id = notification_id;
-	}
-	public String getNotification() {
-		return notification;
-	}
-	public void setNotification(String notification) {
-		this.notification = notification;
 	}
 	public String getDatetime() {
 		return datetime;

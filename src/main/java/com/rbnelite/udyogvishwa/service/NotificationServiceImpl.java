@@ -28,9 +28,9 @@ public class NotificationServiceImpl implements NotificationService {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 		
-		String noti=commentCredential.getWhoseComment()+"commented on your status : "+commentCredential.getCommenttext();
+		
 		String flag="0";
-		notification.setNotification(noti);
+		
 		notification.setDatetime(dateFormat.format(date));
 		notification.setUsermail(commentCredential.getWhoseComment());
 		notification.setDisplayflag(flag);
@@ -58,6 +58,12 @@ public class NotificationServiceImpl implements NotificationService {
 	public List<Notification> listNotificationAll(String userMail) {
 		
 		return notificationdao.listNotificationAll(userMail);
+	}
+
+	@Override
+	public void changeNotificationStatus(String userMail) {
+		notificationdao.changeNotificationStatus(userMail);
+		
 	}
 
 	

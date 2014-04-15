@@ -200,7 +200,7 @@ function validateMsgForm() {
 				<input type="hidden" name="JspPageName" value="message">
 				<a onclick="return HideChangePhotoBlock()">
 				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+							id="close" style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
 								
 				<table>
 				<tr>
@@ -240,7 +240,7 @@ function validateMsgForm() {
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							style="width: 40px; height: 40px; float: right;"></a></th>
+							id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 											<c:if test="${!empty NotificationList}">
 						<c:forEach items="${NotificationList}" var="note">
@@ -260,7 +260,7 @@ function validateMsgForm() {
 					</form>
 				</table>
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
-				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 			</div>
 			<div id="RequestTopHome">
@@ -269,7 +269,7 @@ function validateMsgForm() {
 					Contact Requests</font> <a
 						onclick="return DisableRequestBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							style="width: 40px; height: 40px; float: right;"></a></th>
+							id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 							<c:if test="${!empty friendRequestList}">
 					<c:forEach items="${friendRequestList}" var="friendRequest">
 					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
@@ -302,7 +302,7 @@ function validateMsgForm() {
 							style="text-decoration: none; color: white">Change Account
 								Setting</a><a onclick="return DisableSettingBlock()"> <img
 								src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right;"></a></th>
+								id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 					</tr>
 					<tr>
 						<td align="left"><a href="ChangePassword"
@@ -382,54 +382,54 @@ function validateMsgForm() {
 						<div
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
-								<table align="center" style="float: left;">
-							
-									<img
-										src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
-										height="100" width="100" title="${msgConversion.msgSenderID}">
-								
-									<c:forEach items="${msgConversionList}" var="msgConversion">
+        <table align="center" style="float: left;">
+       
+         <img
+          src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
+          height="100" width="100" title="">
+        
+         <c:forEach items="${msgConversionList}" var="msgConversion">
 
 
-										<c:choose>
-											<c:when test="${msgConversion.msgSenderID==loginUser.email}">
+          <c:choose>
+           <c:when test="${msgConversion[0]==loginUser.email}">
 
-												<tr style="border: 1px solid gray">
-													<td><font color="purple" size="4">You&nbsp;</font></td>
-													<td><img
-														src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png"
-														height="18" width="20"></td>
-													<td><font color="purple" size="4">
-															${msgConversion.myMsgText }</font> <br> <a
-														style="float: left;"><font color="gray" size="1">
-																${msgConversion.msgDate}</font></a><br>	<hr>
-													</td>
-																
-												</tr>
-												
-											</c:when>
-											<c:otherwise>
+            <tr style="border: 1px solid gray">
+             <td><font color="purple" size="4">You&nbsp;</font></td>
+             <td><img
+              src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png"
+              height="18" width="20"></td>
+             <td><font color="purple" size="4">
+               ${msgConversion[3] }</font> <br> <a
+              style="float: left;"><font color="gray" size="1">
+                ${msgConversion[2]}</font></a><br> <hr>
+             </td>
+                
+            </tr>
+            
+           </c:when>
+           <c:otherwise>
 
-												<tr style="border: 1px solid gray">
-													<td><font color="sky blue" size="4">${msgConversion.msgSenderID}</font>
-													</td>
-													<td><img
-														src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png"
-														height="18" width="20"></td>
-													<td><font color="sky blue" size="4">
-															${msgConversion.myMsgText} </font> <br> <a
-														style="float: left;"><font color="gray" size="1">
-																${msgConversion.msgDate}</font></a><br>	<hr color="sky blue">
-													</td>
-												</tr>
+            <tr style="border: 1px solid gray">
+             <td><font color="sky blue" size="4">${msgConversion[4]} ${msgConversion[5]}</font>
+             </td>
+             <td><img
+              src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png"
+              height="18" width="20"></td>
+             <td><font color="sky blue" size="4">
+               ${msgConversion[3]} </font> <br> <a
+              style="float: left;"><font color="gray" size="1">
+                ${msgConversion[2]}</font></a><br> <hr color="sky blue">
+             </td>
+            </tr>
 
-											</c:otherwise>
+           </c:otherwise>
 
-										</c:choose>
-									</c:forEach>
-								</table>
+          </c:choose>
+         </c:forEach>
+        </table>
 
-							</c:if>
+       </c:if>
 
 
 						</div>

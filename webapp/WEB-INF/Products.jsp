@@ -161,7 +161,7 @@ function jumpcomment(NotificationId) {
 				<input type="hidden" name="JspPageName" value="Products">
 				<a onclick="return HideChangePhotoBlock()">
 				 <img src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+								id="close" style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
 								
 				<table>
 				<tr>
@@ -226,7 +226,7 @@ function jumpcomment(NotificationId) {
 					<th style="background-color: #fab039"><font color="white">Notification</font>
 						<a onclick="return DisableNotificBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							style="width: 40px; height: 40px; float: right;"></a></th>
+							id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 											<c:if test="${!empty NotificationList}">
 						<c:forEach items="${NotificationList}" var="note">
@@ -246,7 +246,7 @@ function jumpcomment(NotificationId) {
 					</form>
 				</table>
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
-				<table style="float: right;"><tr><td><input type="submit" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 			</div>
             <div id="RequestTopHome">
@@ -255,7 +255,7 @@ function jumpcomment(NotificationId) {
 					Contact Requests</font> <a
 						onclick="return DisableRequestBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							style="width: 40px; height: 40px; float: right;"></a></th>
+							id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 							<c:if test="${!empty friendRequestList}">
 					<c:forEach items="${friendRequestList}" var="friendRequest">
 					<form action="/vanjariudyogvishwa-v2/acceptFriendRequest" method="post">
@@ -288,7 +288,7 @@ function jumpcomment(NotificationId) {
 							style="text-decoration: none; color: white">Change Account
 								Setting</a><a onclick="return DisableSettingBlock()"> <img
 								src="${pageContext.request.contextPath}/resources/images/close (3).png"
-								style="width: 40px; height: 40px; float: right;"></a></th>
+								id="close" style="width: 40px; height: 40px; float: right;"></a></th>
 					</tr>
 					<tr>
 						<td align="left"><a href="ChangePassword"
@@ -320,7 +320,7 @@ function jumpcomment(NotificationId) {
                 
                 <div id="MiddleTopProduct">
             <form action="/vanjariudyogvishwa-v2/AddProduct", method="POST" enctype="multipart/form-data">
-            <a onclick="return DisableaddProductUnable()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" style="width: 40px;height: 40px; float: right;"></a>
+            <a onclick="return DisableaddProductUnable()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" id="close" style="width: 40px;height: 40px; float: right;"></a>
             <input type="hidden" name="userMail"
 								value="${loginUser.email}">
                 <table>
