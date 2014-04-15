@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -54,6 +55,10 @@ public class Index implements Serializable {
 
 	@Column(name = "password")
 	@NotEmpty
+	@Pattern.List({
+	    @Pattern(regexp = "((?=.*[a-z])(?=.*d)(?=.*[@#$%])(?=.*[A-Z]).{6,16})", 
+	    message = "Password must contain 1 digit, 1 lower case letter, 1 Upper case letter, 1 Special character and password Length must be 6-16."),
+	 })
 	private String password;
 
 	private String telephone;

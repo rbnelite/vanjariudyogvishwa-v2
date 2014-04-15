@@ -262,9 +262,9 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 														<td align="left" class="style46">Password<font
 															color="red">*</font></td>
 														<td><form:password path="password" id="password" size="30" maxlength="20"  />
-														<form:errors path="password" cssClass="error" /></td>
+														</td>
 													</tr>
-
+													
 													<tr>
 														<td align="left" class="style46">Confirm Password<font
 															color="red">*</font></td>
@@ -277,6 +277,10 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 														<td align="right">
 														<input name="Register" type="submit" value="" id="submit"  onclick="return passwordNotSame()" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
 														</td>
+													</tr>
+													<tr>
+														<td><form:errors path="password" cssClass="error" /></td>
+														<td></td>
 													</tr>
 												</table>
 											</div>
