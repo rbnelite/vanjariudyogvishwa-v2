@@ -16,6 +16,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name = "status")
 public class Status {
@@ -36,8 +39,9 @@ public class Status {
 	@JoinColumn(name = "status_id")
 	private List<Comment> comments;
 	
-	@OneToMany(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "status_id", referencedColumnName = "status_id", insertable=false, updatable=false)
+	@OneToMany
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@JoinColumn(name = "status_id")
 	private List<LikeStatus> likeStatus ;
 	
 	@OneToOne(cascade = CascadeType.REFRESH)

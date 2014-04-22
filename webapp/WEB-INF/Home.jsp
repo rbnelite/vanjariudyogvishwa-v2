@@ -585,7 +585,7 @@ height:125px;
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
 														<input type="hidden" name="statusId" value="${notifStatus[0].id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
-															 <input type="hidden" name="MyReply" value="true">
+															 <input type="hidden" name="myReply" value="true">
 															 <input	type="submit" value="Like" class="LikeUnlikeBtn">
 														0
 													</form>
@@ -594,7 +594,7 @@ height:125px;
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
 														<input type="hidden" name="statusId" value="${notifStatus[0].id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
-															 <input type="hidden" name="MyReply" value="false">
+															 <input type="hidden" name="myReply" value="false">
 															 <input	type="submit" value="UnLike" class="LikeUnlikeBtn">
 														 0
 													</form>
@@ -712,26 +712,30 @@ height:125px;
 										</div>
 										<br>
 										<table align="left" width=50%>
+											
 											<tr>
+												
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
-										<!-- Code for Like Count Start here -->
-														
-															<c:set var="LikeCount" value="0"></c:set>
-														<c:if test="${!empty likeStatusList}">
-															<c:forEach items="likeStatusList" var="likeStatus">
-																<%-- <c:if test="${status11.id==likeStatus.getStatusId}"> --%>
-																	<%-- <a>${status11.likeStatus.getMyReply}</a> --%>
-																	<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
-																	
-																<%-- </c:if> --%>
-															</c:forEach>
+										<!-- Code for Like Count/Unlike Count Start here -->
+												<c:set var="LikeCount" value="0"></c:set>
+												<c:set var="UnLikeCount" value="0"></c:set>
+												<c:if test="${!empty status11.likeStatus}">
+													<c:forEach items="${status11.likeStatus}" var="likeStatus">
+														<c:if test="${status11.id==likeStatus.statusId}">
+															<c:if test="${likeStatus.myReply}">
+																<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
+															</c:if>
+															<c:if test="${! likeStatus.myReply}">
+																<c:set var="UnLikeCount" value="${UnLikeCount + 1}"></c:set>
+															</c:if>
 														</c:if>
-														
-										<!-- Code for Like Count End here -->
+														</c:forEach>
+														</c:if>
+										<!-- Code for Like Count/Unlike Count End here -->
 														<input type="hidden" name="statusId" value="${status11.id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
-															 <input type="hidden" name="MyReply" value="true">
+															 <input type="hidden" name="myReply" value="true">
 															 <input	type="submit" value="Like" class="LikeUnlikeBtn">
 														${LikeCount}
 														
@@ -739,14 +743,16 @@ height:125px;
 												</td>
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
-														<input type="hidden" name="statusId" value="${status11.id}">
+										<input type="hidden" name="statusId" value="${status11.id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
-															 <input type="hidden" name="MyReply" value="false">
+															 <input type="hidden" name="myReply" value="false">
 															 <input	type="submit" value="UnLike" class="LikeUnlikeBtn">
-														 0
+														 ${UnLikeCount}
 													</form>
 												</td>
+												
 												<td>Comments <font color="blue">${fn:length(status11.comments)}</font></td>
+												
 											</tr>
 										</table>
 									</div>
