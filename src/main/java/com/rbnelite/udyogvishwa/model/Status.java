@@ -36,8 +36,8 @@ public class Status {
 	@JoinColumn(name = "status_id")
 	private List<Comment> comments;
 	
-	@OneToMany
-	@JoinColumn(name = "status_id")
+	@OneToMany(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "status_id", referencedColumnName = "status_id", insertable=false, updatable=false)
 	private List<LikeStatus> likeStatus ;
 	
 	@OneToOne(cascade = CascadeType.REFRESH)

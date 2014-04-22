@@ -476,9 +476,12 @@ h3 {
              <tr><td style="width: 200px;"><b>Hobbies :</b></td><td>${FriendshobbiesDetails.hobbiesName}</td></tr>
              <tr><td><b>Favourite Music :</b></td><td>${FriendshobbiesDetails.favouriteMusic}</td></tr>
              <tr><td><b>Favourite Book :</b></td><td>${FriendshobbiesDetails.favouriteBooks}</td></tr>
+             <tr><td><b>Dress Style :</b></td><td>${FriendshobbiesDetails.dressStyletyle}</td></tr>
              <tr><td><b>Favourite TV show :</b></td><td>${FriendshobbiesDetails.favouritrTvShows}</td></tr>
+             <tr><td><b>Favourite Movie :</b></td><td>${FriendshobbiesDetails.favouriteMovies}</td></tr>
              <tr><td><b>Favourite Sport :</b></td><td>${FriendshobbiesDetails.sports}</td></tr>
-              <tr> 	<td><b>Food I Cook :</b></td>    <td>${FriendshobbiesDetails.foodIcook}</td></tr>  
+             <tr><td><b>Food I Cook :</b></td><td>${FriendshobbiesDetails.foodIcook}</td></tr>
+             <tr><td><b>Vacation Destination :</b></td><td>${FriendshobbiesDetails.vacationDestination}</td></tr>  
              </table>
              </c:forEach>
              </c:if>

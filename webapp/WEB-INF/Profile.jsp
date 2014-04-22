@@ -1114,20 +1114,20 @@ input[type=text] {
 												<td><b>Favourite Book :</b></td>
 												<td>${hobbiesDetails.favouriteBooks}</td>
 											</tr>
-											<%-- <tr>
+											<tr>
 								<td><b>Dress Style :</b>
 								</td>
-								<td>${hobbiesDetails.DressStyletyle}</td>
-							</tr> --%>
+								<td>${hobbiesDetails.dressStyletyle}</td>
+							</tr>
 											<tr>
 												<td><b>Favourite TV show :</b></td>
 												<td>${hobbiesDetails.favouritrTvShows}</td>
 											</tr>
-											<%-- <tr>
+											<tr>
 								<td><b>Favourite Movie :</b>
 								</td>
-								<td>${hobbiesDetails.FavouriteMovies}</td>
-							</tr> --%>
+								<td>${hobbiesDetails.favouriteMovies}</td>
+							</tr>
 											<tr>
 												<td><b>Favourite Sport :</b></td>
 												<td>${hobbiesDetails.sports}</td>
@@ -1136,11 +1136,11 @@ input[type=text] {
 												<td><b>Food I Cook :</b></td>
 												<td>${hobbiesDetails.foodIcook}</td>
 											</tr>
-											<%-- <tr>
+											<tr>
 								<td><b>Vacation Destination :</b>
 								</td>
-								<td>${hobbiesDetails.VacationDestination}</td>
-							</tr> --%>
+								<td>${hobbiesDetails.vacationDestination}</td>
+							</tr>
 										</c:forEach>
 									</table>
 								</div>
@@ -1164,31 +1164,59 @@ input[type=text] {
 											</tr>
 											<tr>
 												<td><b>Favourite Music :</b></td>
-												<td><input type="text" name="favouriteMusic"
-													value="${editHobbiesDetails.favouriteMusic}"></td>
+												<td>
+										<select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
+                                        <option selected="selected">${editHobbiesDetails.favouriteMusic}</option>
+                                        <option>Blues</option>
+                                        <option>Alternative Music</option>
+                                        <option>Classical Music</option>
+                                        <option>Country Music</option>
+                                        <option>Dance Music</option>
+                                        <option>Easy Listening</option>
+                                        <option>Electronic Music</option>
+                                        <option>European Music</option>
+                                        <option>Indie Pop</option>
+                                        <option>Hip Hop / Rap</option>
+                                        <option>Jazz</option>
+                                        <option>Latin Music</option>
+                                        <option>Pop</option>
+                                        <option>Rock</option>
+                                         <option>World Music / Beats</option>
+                                        <option>Soul</option>
+                                           </select>	
+												</td>
 											</tr>
 											<tr>
 												<td><b>Favourite Book :</b></td>
 												<td><input type="text" name="favouriteBooks"
 													value="${editHobbiesDetails.favouriteBooks}"></td>
 											</tr>
-											<%-- 	<tr>
+												<tr>
 								<td><b>Dress Style :</b>
 								</td>
-								<td><input type="text" name="DressStyletyle" value="${editHobbiesDetails.DressStyletyle}">
+								<td>
+									<select name="dressStyletyle"  style="width: 407px; height: 30px;">
+                                                <option selected="selected" value="${editHobbiesDetails.dressStyletyle}"></option>
+                                                <option>Indian</option>
+                                                <option>Western</option>
+                                                <option>Sports</option>
+                                                <option>Formal</option>
+                                                <option>Casual</option>
+                                                <option>Not particular</option>
+                                        </select>
 								</td>
-							</tr> --%>
+							</tr>
 											<tr>
 												<td><b>Favourite TV show :</b></td>
 												<td><input type="text" name="favouritrTvShows"
 													value="${editHobbiesDetails.favouritrTvShows}"></td>
 											</tr>
-											<%-- <tr>
+											<tr>
 								<td><b>Favourite Movie :</b>
 								</td>
-								<td><input type="text" name="FavouriteMovies"
-													value="${editHobbiesDetails.FavouriteMovies}"></td>
-							</tr> --%>
+								<td><input type="text" name="favouriteMovies"
+													value="${editHobbiesDetails.favouriteMovies}"></td>
+							</tr>
 											<tr>
 												<td><b>Favourite Sport :</b></td>
 												<td><input type="text" name="sports"
@@ -1199,13 +1227,13 @@ input[type=text] {
 												<td><input type="text" name="foodIcook"
 													value="${editHobbiesDetails.foodIcook}"></td>
 											</tr>
-											<%-- <tr>
+											<tr>
 								<td><b>Vacation Destination :</b>
 								</td>
-								<td><input type="text" name="VacationDestination"
-													value="${editHobbiesDetails.VacationDestination}">
+								<td><input type="text" name="vacationDestination"
+													value="${editHobbiesDetails.vacationDestination}">
 								</td>
-							</tr> --%>
+							</tr>
 
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"

@@ -718,11 +718,11 @@ height:125px;
 										<!-- Code for Like Count Start here -->
 														
 															<c:set var="LikeCount" value="0"></c:set>
-														<c:if test="${!empty likeStatusList || empty likeStatusList}">
+														<c:if test="${!empty likeStatusList}">
 															<c:forEach items="likeStatusList" var="likeStatus">
-																<%-- <c:if test="${likeStatus.statusId == status11.id}"> --%>
-																	
-																	<c:set var="LikeCount" value="${ikeCount + 1}"></c:set>
+																<%-- <c:if test="${status11.id==likeStatus.getStatusId}"> --%>
+																	<%-- <a>${status11.likeStatus.getMyReply}</a> --%>
+																	<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
 																	
 																<%-- </c:if> --%>
 															</c:forEach>
@@ -734,6 +734,7 @@ height:125px;
 															 <input type="hidden" name="MyReply" value="true">
 															 <input	type="submit" value="Like" class="LikeUnlikeBtn">
 														${LikeCount}
+														
 													</form>
 												</td>
 												<td>

@@ -66,11 +66,17 @@ public class HomeController {
 		map.put("status11", new Status());
 		List<Status> status = statusservice.listStatus(userMail);
 		map.put("statusList", status);
-				
+		System.out.println("@@@"+userMail);
+		
 		map.put("likeStatus", new LikeStatus());
 		List<LikeStatus> likeStatusList=likeStatusService.listLikeStatus();
 		map.put("likeStatusList", likeStatusList);
-			
+			for (int i = 0; i < status.size(); i++) {
+				System.out.print("~ ~ ~ ~ ~ ~ ~ "+status.get(i)+" ~ ~ ~ ");
+				/*System.out.print("* * * * * * "+status.get(i).getLikeStatus().get(i).getWhoLike() +" * * * * * * ");
+				System.out.print("* * * * * * "+status.get(i).getLikeStatus().get(i).getMyReply() +" * * * * * * ");*/
+				System.out.println();
+			}
 		map.put("myEvents", new Event());
 		map.put("eventstList", eventService.listEvents());
 		

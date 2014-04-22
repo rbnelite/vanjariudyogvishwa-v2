@@ -31,13 +31,13 @@ public class Hobbies {
 	private String favouriteBooks;
 
 	@Column(name = "dress_style_type")
-	private String DressStyletyle;
+	private String dressStyletyle;
 
 	@Column(name = "favourit_tv_shows")
 	private String favouritrTvShows;
 
 	@Column(name = "favourite_movies")
-	private String FavouriteMovies;
+	private String favouriteMovies;
 
 	@Column(name = "sports")
 	private String sports;
@@ -46,7 +46,7 @@ public class Hobbies {
 	private String foodIcook;
 
 	@Column(name = "vacation_destination")
-	private String VacationDestination;
+	private String vacationDestination;
 
 	@Column(name = "email")
 	private String usermail;
@@ -85,11 +85,11 @@ public class Hobbies {
 	}
 
 	public String getDressStyletyle() {
-		return DressStyletyle;
+		return dressStyletyle;
 	}
 
 	public void setDressStyletyle(String dressStyletyle) {
-		DressStyletyle = dressStyletyle;
+		this.dressStyletyle = dressStyletyle;
 	}
 
 	public String getFavouritrTvShows() {
@@ -101,11 +101,11 @@ public class Hobbies {
 	}
 
 	public String getFavouriteMovies() {
-		return FavouriteMovies;
+		return favouriteMovies;
 	}
 
 	public void setFavouriteMovies(String favouriteMovies) {
-		FavouriteMovies = favouriteMovies;
+		this.favouriteMovies = favouriteMovies;
 	}
 
 	public String getSports() {
@@ -125,11 +125,11 @@ public class Hobbies {
 	}
 
 	public String getVacationDestination() {
-		return VacationDestination;
+		return vacationDestination;
 	}
 
 	public void setVacationDestination(String vacationDestination) {
-		VacationDestination = vacationDestination;
+		this.vacationDestination = vacationDestination;
 	}
 
 	public String getUsermail() {

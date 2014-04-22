@@ -218,7 +218,6 @@ CREATE SEQUENCE MESSAGES_SEQUENCE;
 
 CREATE TABLE notifications (
   notification_id INT NOT NULL,
-  notification VARCHAR(100) DEFAULT NULL,
   datetime VARCHAR(50) DEFAULT NULL,
   email VARCHAR(50) DEFAULT NULL,
   status_id INT NOT NULL,

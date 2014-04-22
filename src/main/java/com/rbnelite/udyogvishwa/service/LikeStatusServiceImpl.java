@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.LikeStatusDao;
 import com.rbnelite.udyogvishwa.model.LikeStatus;
@@ -26,6 +27,7 @@ public class LikeStatusServiceImpl implements LikeStatusService {
 	}
 
 	@Override
+	@Transactional
 	public List<LikeStatus> listLikeStatus() {
 		
 		List<LikeStatus> l1=likestatusdao.listLikeStatus();

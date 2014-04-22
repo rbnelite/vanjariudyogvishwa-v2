@@ -104,7 +104,7 @@
                                     <tr>
                                         <td> Dress Style </td>
                                         <td>
-                                        <select name="DressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
+                                        <select name="dressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
                                                 <option selected value="">--Please Select --</option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
@@ -122,7 +122,7 @@
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     
                                    <tr>
-                                        <td>Favourite Movies </td><td><textarea name="FavouriteMovies" id="fav_movies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td>Favourite Movies </td><td><textarea name="favouriteMovies" id="fav_movies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
                                         </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
@@ -141,7 +141,7 @@
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td>Favourite Vacation<br> Destination </td>
-                                        <td><textarea name="VacationDestination" id="vac_dest"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td><textarea name="vacationDestination" id="vac_dest"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
                                     <tr><td colspan="2"><br></tr>
