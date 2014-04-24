@@ -243,7 +243,6 @@ float: left;
     float: left;
     width: 290px;
     height:323px;
-    overflow: auto;
     margin:2px 2px 0px 7px;
     background-color: bisque;
      border: 1px solid gray;
@@ -848,4 +847,8 @@ height: 30px
     margin:2px 2px 0px 7px;
     background-color: bisque;
      border: 1px solid gray;
+}
+
+#leftLink:HOVER {
+	background-color: skyblue;
 }

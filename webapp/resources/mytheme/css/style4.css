@@ -284,7 +284,6 @@ cursor: pointer;
 	float: left;
 	width: 290px;
 	height: 323px;
-	overflow: auto;
 	margin: 5px 2px 0px 2px;
 	background-color: bisque;
 }
@@ -952,7 +951,9 @@ cursor: pointer;
 #ProductImageProfile{
 	width: 100px;
 }
-
+#leftLink:HOVER {
+	background-color: skyblue;
+}
 
 /*********************ScrollBar Style for Chrome Browsers****************** */
 
@@ -966,6 +967,4 @@ cursor: pointer;
 /*  	::-webkit-scrollbar {width: 9px; height: 3px; background: #FFFFFF;}
 ::-webkit-scrollbar-thumb {background-color:#ffffff ; border: 1px solid black;} */
 	
-	
-	
->>>>>>> 5621efb8ce9645cc57d87f4989c447d1615ff074
+
