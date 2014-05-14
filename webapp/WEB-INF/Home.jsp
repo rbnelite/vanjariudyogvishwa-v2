@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Home Page : Vanjari Udyog Vishwa</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js" />"></script>
@@ -117,6 +118,24 @@ function errorComment()
 	return true;
 	 }
 </script>
+
+		<script type="text/javascript">
+            
+            var image1=new Image()
+            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
+            var image2=new Image()
+            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg"
+            var image3=new Image()
+            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg"
+            var image4=new Image()
+            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg"
+            var image5=new Image()
+            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg"
+            var image6=new Image()
+            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
+            
+        </script>
+
 
 <style type="text/css">
 
@@ -807,6 +826,37 @@ height:125px;
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+						<div style="border: 1px solid gray; width: 290px;height: 600px; margin-left: 25px;margin-top: -18px">
+							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="290" height="600"/>
+                        </div>
+                        
+                            <script>
+                                
+                                //variable that will increment through the images
+                                var step=1
+                               
+                                function slideit(){
+                                    //if browser does not support the image object, exit.
+                                    if (!document.images)
+                                        return
+                                    document.images.slide.src=eval("image"+step+".src")
+                                    
+                                    if (step<6 )
+                                       	step++
+                                       
+                                    else
+                                        step=1
+                                        
+                                    //call function "slideit()" every 2.5 seconds
+                                    setTimeout("slideit()",2500)
+                                }
+                                slideit()
+                                
+                            </script>
+						
+						</div>
+						
+						
 					</div>
 				</div>
 			</div>

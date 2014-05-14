@@ -70,7 +70,8 @@ public class MessageController {
 		}
 		
 		ObjmsgService.addMessage(msgdto,s1[1]);
-		
+		map.put("ProfileImageMsgFrnd", new ProfileImages());
+		map.put("ProfileImageListMsgFrnd", profileImageService.getProfileImage(s1[1]));
 		
 		map.put("msgConversionFrndName", msgReceiverID);
 
@@ -110,7 +111,10 @@ public class MessageController {
 		
 		map.put("msgConversion", new Message());
 		map.put("msgConversionList", ObjmsgService.listMessage(msgSenderID, s1[1]));
-					
+		
+		map.put("ProfileImageMsgFrnd", new ProfileImages());
+		map.put("ProfileImageListMsgFrnd", profileImageService.getProfileImage(s1[1]));
+		
 		map.put("msgFriends", new Message());
 		map.put("msgFriendsList", ObjmsgService.listMessagedFriends(msgSenderID));
 		

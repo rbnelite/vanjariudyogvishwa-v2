@@ -10,12 +10,12 @@ root {
 }
 
 body{
-   background-color: menu;
+   background-color: bisque;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
 #main{
-    background-color: white; 
+    background-color: transparent; 
     width: 1400px;
     height: 2300px;
     margin: 10px 50px 10px 50px;
@@ -23,7 +23,7 @@ body{
     border-radius: 3px;
 }
 #mainMsg{
-    background-color: white; 
+    background-color: transparent; 
     width: 1400px;
     height: fit-content;
     margin: 10px 50px 10px 50px;
@@ -211,7 +211,7 @@ float: left;
     width: 300px;
     height:1000px;
     overflow: auto;
-    background-color: white;
+    background-color: transparent;
    
 }
 
@@ -410,7 +410,7 @@ margin:5px auto auto 5px;
     margin-top: -1130px;
     width: 300px;
     height: 1000px;
-    background-color: white;
+    background-color: transparent;
     float: right;
   
 }
@@ -795,7 +795,7 @@ height: 30px
 	 margin-top: 5px;
 	width: 790px;
     height: 1000px;
-    background-color: white;
+    background-color: transparent;
     margin-right: 305px;
 }
 #MiddleTopchangepwd
@@ -804,7 +804,7 @@ height: 30px
 	border-radius: 5px;
     width: 790px;
     height: 250px;
-    background-color: white;
+    background-color: transparent;
     margin-right: 305px;
     
 }
@@ -823,7 +823,7 @@ height: 30px
     margin-top: -1255px;
     width: 300px;
     height: 1000px;
-    background-color: white;
+    background-color: transparent;
     float: right;
    
 }

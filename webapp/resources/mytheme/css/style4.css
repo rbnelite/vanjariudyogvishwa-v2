@@ -10,12 +10,12 @@ root {
 }
 
 body {
-	background-color: menu;
+	background-color: bisque;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
 #main {
-	background-color: white;
+	background-color: transparent;
 	width: 1400px;
 	height: 2300px;
 	margin: 10px 50px 10px 50px;
@@ -42,7 +42,7 @@ body {
 }
 
 #mainMsg {
-	background-color: white;
+	background-color: transparent;
 	width: 1400px;
 	height: fit-content;
 	margin: 10px 50px 10px 50px;

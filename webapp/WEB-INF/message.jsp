@@ -382,12 +382,21 @@ function validateMsgForm() {
 						<div
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
-        <table align="center" style="float: left;">
-       
-         <img
-          src="${pageContext.request.contextPath}/resources/images/DefaultProfileImg.png"
-          height="100" width="100" title="">
-        
+							<table>
+								<c:if test="${! empty ProfileImageListMsgFrnd}">
+									<c:forEach items="${ProfileImageListMsgFrnd}"
+										var="ProfileImageMsgFrnd">
+										<tr>
+											<td></td>
+											<td><img width="140px" height="140px"
+												src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImageMsgFrnd.profileImage}">
+											</td>
+										</tr>
+									</c:forEach>
+								</c:if>
+							</table>
+								<table align="center" style="float: left;">
+       			
          <c:forEach items="${msgConversionList}" var="msgConversion">
 
 
