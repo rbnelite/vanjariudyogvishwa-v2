@@ -56,8 +56,8 @@ public class Index implements Serializable {
 	@Column(name = "password")
 	@NotEmpty
 	@Pattern.List({
-	    @Pattern(regexp = "((?=.*[a-z])(?=.*d)(?=.*[@#$%])(?=.*[A-Z]).{6,16})", 
-	    message = "Password must contain 1 digit, 1 lower case letter, 1 Upper case letter, 1 Special character and password Length must be 6-16."),
+	    @Pattern(regexp = "((?=.*[a-z])(?=.*\\d).{6,16})", 
+	    message = "Password must contain 1 digit, 1 Character"),
 	 })
 	private String password;
 

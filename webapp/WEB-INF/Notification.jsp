@@ -68,6 +68,21 @@ document.getElementById("notificationId").value=NotificationId;
 </script>
 
 <style type="text/css">
+
+
+#outsidemiddleNoti{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 788px;
+    height: 1000px;
+    background-color: bisque;
+    border: 1px solid gray; 
+    overflow: hidden;
+    margin-right: 305px;
+    
+    
+}
+
 #peopleMayKnw
 {
 	width: 290px;
@@ -80,9 +95,9 @@ document.getElementById("notificationId").value=NotificationId;
     overflow: auto;
     padding-right: 40px;
 }
-#OutsidepeopleMayKnw
+#OutsidepeopleMayKnwNoti
 {
-	width: 290px;
+	width: 303px;
     height: auto;
     max-height: 500px;
     overflow: auto;
@@ -90,6 +105,7 @@ document.getElementById("notificationId").value=NotificationId;
     background-color: bisque;
     border: 1px solid gray;
     overflow: hidden;
+    margin-left: -3px;
 }
 #anchor {
 	margin-left: 80px;
@@ -109,27 +125,7 @@ document.getElementById("notificationId").value=NotificationId;
 	margin-top: 130px;
 }
 
-#InsideRightMessage {
-	border-radius: 3px;
-	width: 300px;
-	height: 645px;
-	background-color: bisque;
-	float: right;
-	border: 1px solid gray;
-	overflow: auto;
-	padding-right: 20px;
-	padding-bottom: 8px;
-}
 
-#OutsideRightMessage {
-	border-radius: 3px;
-	width: 300px;
-	height: 645px;
-	background-color: bisque;
-	float: right;
-	border: 1px solid gray;
-	overflow: hidden;
-}
 
 #leftMainHome {
 	float: left;
@@ -158,7 +154,7 @@ document.getElementById("notificationId").value=NotificationId;
 <body>
 	<center>
 	
-		<div id="main">
+		<div id="mainNoti">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
 					<input id="SearchData" type="text" name="SearchData"
@@ -353,7 +349,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</table>
 			</div>
 			
-			<div id="outsidemiddleHome">
+			<div id="outsidemiddleNoti">
 				<div id="middleHome">
 					
 					<!-- View perticular Notification Start here -->
@@ -393,7 +389,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</div>
 			</div>
 			<div id="rightMain" style="margin-top: -1002px;">
-					<div id="OutsidepeopleMayKnw">
+					<div id="OutsidepeopleMayKnwNoti">
 				<div id="peopleMayKnw">
 
 					<table width=100%>
@@ -448,6 +444,18 @@ document.getElementById("notificationId").value=NotificationId;
 					</div>
 				</div>
 			</div>
+			
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+			
 		</div>
 	</center>
 </body>

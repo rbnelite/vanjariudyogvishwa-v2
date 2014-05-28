@@ -73,9 +73,9 @@ function validateMsgForm() {
 	border: 1px solid gray;
 }
 #mainMessage {
-	background-color: orange;
+	background-color: transparent;
 	width: 1400px;
-	height: 1000px;
+	height: 1314px;
 	margin: 10px 50px 10px 50px;
 	border: 3px solid gray;
 	border-radius: 3px;
@@ -117,7 +117,7 @@ function validateMsgForm() {
 	border-radius: 3px;
 	float: left;
 	width: 300px;
-	height: 645px;
+	height: 649px;
 	background-color: bisque;
 	border: 1px solid gray;
 	overflow: hidden;
@@ -134,10 +134,9 @@ function validateMsgForm() {
 	border-radius: 3px;
 	/* margin-top: -648px; */
 	width: 300px;
-	height: 645px;
+	height: 998px;
 	background-color: bisque;
 	float: right;
-	border: 1px solid gray;
 	overflow: auto;
 	padding-right: 20px;
 	padding-bottom: 8px;
@@ -145,9 +144,9 @@ function validateMsgForm() {
 
 #OutsideRightMessage {
 	border-radius: 3px;
-	margin-top: -648px;
+	margin-top: -1005px;
 	width: 300px;
-	height: 645px;
+	height: 998px;
 	background-color: bisque;
 	float: right;
 	border: 1px solid gray;
@@ -358,7 +357,7 @@ function validateMsgForm() {
 					
 					<c:if test="${! empty msgConversionFrndName}">
 						<a id="MsgTo"> To :<input type="text" id="country" value="${msgConversionFrndName}"
-							name="msgReceiverID" style="width: 700px;"/>
+							name="msgReceiverID" style="width: 725px; height: 22px; border-radius:15px"/>
 							<script>
 								$("#country").autocomplete("list");
 							</script>
@@ -367,7 +366,7 @@ function validateMsgForm() {
 						
 					<c:if test="${empty msgConversionFrndName}">
 						<a id="MsgTo"> To :<input type="text" id="country"
-							name="msgReceiverID" style="width: 700px;" contenteditable="true" />
+							name="msgReceiverID" style="width: 725px; height: 22px; border-radius:15px" contenteditable="true" />
 							<script>
 								$("#country").autocomplete("list");
 							</script>
@@ -378,7 +377,7 @@ function validateMsgForm() {
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
 					<div
-						style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: hidden;">
+						style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 100px; background-color: white; overflow: hidden;">
 						<div
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
@@ -388,7 +387,7 @@ function validateMsgForm() {
 										var="ProfileImageMsgFrnd">
 										<tr>
 											<td></td>
-											<td><img width="140px" height="140px"
+											<td><img width="60px" height="60px"
 												src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImageMsgFrnd.profileImage}">
 											</td>
 										</tr>
@@ -436,12 +435,15 @@ function validateMsgForm() {
 
           </c:choose>
          </c:forEach>
+         <tr><td></td><td></td><td></td></tr>
+         
         </table>
 
        </c:if>
 
 
 						</div>
+						
 					</div>
 					
 					<input type="text" id="MsgToArea" name="myMsgText"
@@ -464,6 +466,19 @@ function validateMsgForm() {
 				</div>
 			</div>
 			<!-- </div> -->
+			
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+			
+			
 		</div>
 	</center>
 </body>

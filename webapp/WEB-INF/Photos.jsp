@@ -74,11 +74,10 @@ function jumpcomment(NotificationId) {
     margin-left: 7px;
 }
 
-#rightMainPhotos {
-    margin-top: -648px;
+#rightMainPhotos1 {
+    margin-top: -1005px;
     width: 300px;
-    height: auto;
-    max-height: 500px;
+    height: 1000px;
     background-color: #FFE4C4;
     float: right;
     border-radius: 0px;
@@ -306,7 +305,7 @@ p a:hover
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="white">Home</font> </a> 
-				<a	id="anchor" href="#"><font color="white">My Profile</font> </a>
+				<a	id="anchor" href="Profile"><font color="white">My Profile</font> </a>
 				<a id="anchor" href="message"><font color="white">Message</font></a>
 				<a id="anchor" href="#"	onclick="DisplayNotificationBlockPro()"><font color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font></a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font> </a>
@@ -454,7 +453,7 @@ p a:hover
 						</c:if>
                
             </div>
-           <div id="rightMainPhotos">
+           <div id="rightMainPhotos1">
            		<div id="OutsidepeopleMayKnw">
 			<div id="peopleMayKnw">
 
@@ -504,7 +503,24 @@ p a:hover
 					</table>
 				</div>
 				</div>
+				<div id="OutsideRightMessage">
+					<div id="InsideRightMessage">
+						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+					</div>
+				</div>
            </div>
+           
+           <table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+           
         </div>
     </center>
      </body>

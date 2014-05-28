@@ -123,7 +123,7 @@
 						type="submit" value=" "
 						style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');">
 				</form>
-				<label style="margin-left: 110px; margin-right: 5px; float: right;">WelCome!<b>
+				<label style="margin-left: 110px; margin-right: 5px;margin-top: -30px; float: right;">WelCome!<b>
 						${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">

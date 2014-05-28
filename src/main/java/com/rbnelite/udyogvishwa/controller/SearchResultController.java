@@ -54,7 +54,6 @@ public class SearchResultController {
 		String userMail=loginUser.getEmail();
     	
 		map.put("myEvents", new Event());
-		
 		map.put("eventstList", eventService.listEvents());
 
 		map.put("SearchUserList", indexService.searchUserList(searchstrHome));
@@ -85,8 +84,24 @@ public class SearchResultController {
 	public String searchFormForProffession(@RequestParam("SearchDatabyprofession") String SearchDatabyprofession,  Map<String, Object> map)
 	{
 		System.out.println("from search controller...!!!");
+		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+		
 		map.put("searchSByProf", new Occupation());
 		map.put("searchSByProfList", occupationservice.searchPeopleByProffession(SearchDatabyprofession));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
 		return "SearchResult";
 	}

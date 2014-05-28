@@ -56,6 +56,12 @@ function abc(){
 		 return false;
 		 }	
 }
+
+function dispimgUploadBtn(){
+	var btn=document.getElementById("imgUploadBtn");
+	btn.style.display='block';
+}
+
 function DisplayChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
     dispPhoto.style.display='block';
@@ -75,6 +81,8 @@ function HideUpdatePhotoBlock()
 {
 	 var updatePhoto=document.getElementById("UpdatePhoto");
 	   updatePhoto.style.display='none';
+	   var btn=document.getElementById("imgUploadBtn");
+		btn.style.display='none';
 }
 
 
@@ -151,6 +159,9 @@ cursor: pointer;
 	text-decoration: none;
 }
 
+#imgUploadBtn{
+	display: none;
+}
 #ChangePhotoHome {
 	border-radius: 5px;
 	width: 300px;
@@ -176,7 +187,7 @@ height:125px;
 	height: 645px;
 	background-color: bisque;
 	float: right;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	overflow: auto;
 	padding-right: 20px;
 	padding-bottom: 8px;
@@ -336,8 +347,7 @@ height:125px;
 								<c:forEach items="${eventstList}" var="myEvents">
 								
 									<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
-											created an event :${myEvents[0]}</td>
+										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
 									</tr>
 								</c:forEach>
 							
@@ -467,8 +477,8 @@ height:125px;
 					<tr>
 						<td><form action="/vanjariudyogvishwa-v2/AddPhotos"
 								method="POST" enctype="multipart/form-data">
-								<input type="file" name="photoPath"><input type="submit"
-									value="Upload">
+								<input type="file" name="photoPath" onclick="return dispimgUploadBtn()">
+								<input id="imgUploadBtn" type="submit" value="Upload">
 							</form></td>
 					</tr>
 				</table>
@@ -675,6 +685,7 @@ height:125px;
 																	value="edit" onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
 																	<br> <span id="${myComment.id}">${myComment.comment}</span>
+																	<%-- <br><span>${myComment.date}</span> --%>
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">
 
@@ -859,8 +870,20 @@ height:125px;
 						
 					</div>
 				</div>
+				
+				<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
+
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+				
 			</div>
-		</div>
+		
 	</center>
 </body>
 </html>

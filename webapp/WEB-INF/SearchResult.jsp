@@ -307,7 +307,7 @@ function HideChangePhotoBlock(){
 								<tr></tr>
 								<tr>
 									<td colspan="3" bgcolor="#fcca7b"><center>
-											<b>Status/Need</b>
+											<!-- <b>Status/Need</b> -->
 										</center></td>
 								</tr>
 							</c:forEach>
@@ -351,7 +351,7 @@ function HideChangePhotoBlock(){
 						<c:if test="${empty SearchUserList}">
 							<table>
 								<tr>
-									<td>Empty</td>
+									<td>There is no user with name you searched.</td>
 								</tr>
 							</table>
 						</c:if>
@@ -382,7 +382,7 @@ function HideChangePhotoBlock(){
 						<c:if test="${empty SearchProductList}">
 							<table width=60%>
 								<tr>
-									<td><center>Empty</center></td>
+									<td><center>There is no any Product with name you searched.</center></td>
 								</tr>
 								<tr></tr>
 								<tr></tr>
@@ -517,7 +517,18 @@ function HideChangePhotoBlock(){
 					</div>
 				</div>
 			</div>
+			
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
 
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+			
 		</div>
 	</center>
 </body>

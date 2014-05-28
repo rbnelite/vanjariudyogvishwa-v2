@@ -45,7 +45,12 @@ h3 {
 	/* background-color:#00FF00; */
 	margin-top: 0px;
 }
+h4{
+	font-family: "Verdana";
+    font-size: 12px;
+            
 
+}
 input[type=text] {
 	width: 400px;
 	height: auto;
@@ -307,7 +312,7 @@ input[type=text] {
 															<img
 																src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
 																title="Sports" style="width: 50px; height: 50px;">
-															<h4 style="margin-top: -5px">Sports</h4>
+															<h4 style="margin-top: -5px; fo">Sports</h4>
 														</div></td>
 												</tr>
 											</c:if>
@@ -1461,7 +1466,18 @@ input[type=text] {
 				</div>
 
 			</div>
+			
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
 
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
+			
 		</div>
 	</center>
 </body>

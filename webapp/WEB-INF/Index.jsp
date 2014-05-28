@@ -13,8 +13,10 @@
 	<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 	<title>Registration</title>
 	
-	
-	 <script>
+	<style type="text/css">
+		
+	</style>
+	<script>
 	 function LoginMailValidation(){
 		 var uName=document.getElementById("LoginUserName").value;
 		 if(uName==null || uName==""){
@@ -227,7 +229,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Email Id<font
 															color="red">*</font></td>
-														<td><form:input path="emailId" 	size="30" maxlength="30" />
+														<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="write valid EmailId" />
 														<form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
 													</tr>
 
@@ -261,27 +263,27 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Password<font
 															color="red">*</font></td>
-														<td><form:password path="password" id="password" size="30" maxlength="20"  />
+														<td><form:password path="password" id="password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." />
 														</td>
 													</tr>
 													
 													<tr>
 														<td align="left" class="style46">Confirm Password<font
 															color="red">*</font></td>
-														<td><input type="password" name="password2" id="password2" size="30" maxlength="20" style="background: white;" />
+														<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" style="background: white;" title="Type password matches to above" />
 														</td>
 													</tr>
-
+													<tr>
+														<td align="left" class="style46"></td>
+														<td><form:errors path="password" cssClass="error" /></td>
+													</tr>
 													<tr>
 														<td height="96"></td>
 														<td align="right">
 														<input name="Register" type="submit" value="" id="submit"  onclick="return passwordNotSame()" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
 														</td>
 													</tr>
-													<tr>
-														<td><form:errors path="password" cssClass="error" /></td>
-														<td></td>
-													</tr>
+													
 												</table>
 											</div>
 											</th>

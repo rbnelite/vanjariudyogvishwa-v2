@@ -10,14 +10,14 @@ root {
 }
 
 body{
-   background-color: bisque;
+   background-color: #EFCFF0;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
 #main{
     background-color: transparent; 
     width: 1400px;
-    height: 2300px;
+    height: 1440px;
     margin: 10px 50px 10px 50px;
    
     border-radius: 3px;
@@ -30,9 +30,16 @@ body{
     border: 1px solid gray; 
     border-radius: 3px;
 }
+#mainNoti{
+    background-color: red; 
+    width: 1400px;
+    height: 1315px;
+    margin: 10px 50px 10px 50px;
+    border-radius: 3px;
+}
 #mainInterestAreas{
     
-    background-color: white;
+    background-color: bisque;
     width: 1400px;
     height: fit-content;
     margin: 10px 50px 10px 50px;
@@ -65,7 +72,7 @@ cursor: pointer;
             }
             .style10 {
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 9px;
+                font-size: 19px;
             }
             .style16 {
                 font-family: Verdana;
@@ -209,7 +216,7 @@ float: left;
     border-radius: 3px;
     float: left;
     width: 300px;
-    height:1000px;
+    height:1127px;
     overflow: auto;
     background-color: transparent;
    
@@ -336,7 +343,7 @@ float: left;
     margin-top: 5px;
     border-radius: 3px;
     width: 790px;
-    height: 645px;
+    height: 1000px;
     background-color: bisque;
     border: 1px solid gray; 
 }
@@ -702,7 +709,7 @@ margin:5px auto auto 5px;
     border-radius: 3px;
     margin-top: -647px;
     width: 300px;
-    height: 645px;
+    height: 644px;
     background-color: bisque;
     float: right;
     border: 1px solid gray; 
@@ -711,7 +718,7 @@ margin:5px auto auto 5px;
     border-radius: 3px;
     margin-top: -715px;
     width: 300px;
-    height: 713px;
+    height: 712px;
     background-color: bisque;
     float: right;
     border: 1px solid aqua; 

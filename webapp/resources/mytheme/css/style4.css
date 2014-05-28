@@ -10,14 +10,14 @@ root {
 }
 
 body {
-	background-color: bisque;
+	background-color: #EFCFF0;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
 #main {
 	background-color: transparent;
 	width: 1400px;
-	height: 2300px;
+	height: 1440px;
 	margin: 10px 50px 10px 50px;
 	border: 3px solid gray;
 	border-radius: 3px;
@@ -35,7 +35,7 @@ body {
 #mainProfile {
 	background-color:bisque;
 	width: 1400px;
-	height: 2300px;
+	height: 2270px;
 	margin: 10px 50px 10px 50px;
 	/* border: 3px solid gray; */
 	border-radius: 3px;
@@ -93,7 +93,7 @@ cursor: pointer;
 
 .style10 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 9px;
+	font-size: 19px;
 }
 
 .style16 {
@@ -178,7 +178,7 @@ cursor: pointer;
 
 #Header {
 	border-radius: 3px;
-	background-color: bisque;
+	background-color: #fcca7b;
 	width: 1400px;
 	height: 200px;
 	margin: 0px 50px 0px 0px;
@@ -253,10 +253,9 @@ cursor: pointer;
 	border-radius: 3px;
 	float: left;
 	width: 300px;
-	height: 1000px;
+	height: 1127px;
 	overflow: auto;
-	background-color: bisque;
-	border: 1px solid aqua;
+	background-color: transparent;
 }
 
 #leftMainHome {
@@ -848,7 +847,7 @@ cursor: pointer;
 	border-radius: 3px;
 	margin-top: -647px;
 	width: 300px;
-	height: 645px;
+	height: 644px;
 	background-color: bisque;
 	float: right;
 	border: 1px solid gray;
@@ -858,7 +857,7 @@ cursor: pointer;
 	border-radius: 3px;
 	margin-top: -715px;
 	width: 300px;
-	height: 713px;
+	height: 712px;
 	background-color: bisque;
 	float: right;
 	border: 1px solid aqua;

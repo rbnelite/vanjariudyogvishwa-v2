@@ -39,10 +39,6 @@
 				<form name="IntrestAreasForm" action="/vanjariudyogvishwa-v2/IntrestAreas" method="post">
 					
 					<table>
-						
-						<tr>
-							<td colspan="2"><br></td>
-						</tr>
 						<tr>
 							<td colspan="2"><font size="5">Select Your
 									Interest areas Details</font>
@@ -125,16 +121,26 @@
 							<td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
 						</tr>
 						<tr>
-							<td></td>
-							<td align="right"><input type="submit" name="save_intrests"
+							<td></td><td></td>
+							<td align="left"><input type="submit" name="save_intrests"
 								value="Save & Continue"></td>
+							<td></td>
 						</tr>
 
 					</table>
 				</form>
 			</div>
 
+			<table>
+			<tr>
+				<td height="45"  width= "1400" colspan="2" bgcolor="#fab039" align="center"><span class="style10"> About | Developers | Create Ad | Music |
+						Games | Apps | Privacy | Help</span>
 
+					<p class="style8">
+						<u>All Right Reserved</u>
+					</p></td>
+			</tr>
+			</table>
 		
 
 

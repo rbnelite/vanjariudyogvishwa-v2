@@ -130,6 +130,7 @@ public class ContactController {
 
 	@RequestMapping(value = "/Contact")
 	public String contactForm(ModelMap map) {
+		map.addAttribute("contact", new Contact());
 		return "Step4Contact";
 	}
 
