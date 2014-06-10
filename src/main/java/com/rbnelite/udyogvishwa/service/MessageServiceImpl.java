@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.rbnelite.udyogvishwa.service;
 
 import java.util.List;
@@ -13,10 +11,6 @@ import com.rbnelite.udyogvishwa.dao.MessageDAO;
 import com.rbnelite.udyogvishwa.dto.MessageDTO;
 import com.rbnelite.udyogvishwa.model.Message;
 
-/**
- * @author PC3
- * 
- */
 @Service
 public class MessageServiceImpl implements MessageService {
 
@@ -25,12 +19,14 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public void addMessage(MessageDTO msgdto,String msgReceiverID) {
+		
 		Message msg = new Message();
 
 		msg.setMsgReceiverID(msgReceiverID);
 		msg.setMsgSenderID(msgdto.getMsgSenderID());
 		msg.setMsgDate(msgdto.getMsgDate());
 		msg.setMyMsgText(msgdto.getMyMsgText());
+		
 		msgDao.insertMessage(msg);
 	}
 
@@ -46,5 +42,4 @@ public class MessageServiceImpl implements MessageService {
 		return msgDao.listMessagedFriends(userMail);
 	}
 
-	
 }

@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.rbnelite.udyogvishwa.dao.ContactDao;
 import com.rbnelite.udyogvishwa.dto.ContactCredential;
 import com.rbnelite.udyogvishwa.model.Contact;
-import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 
 @Service
@@ -21,7 +20,9 @@ public class ContactServiceImpl implements ContactService {
 	
 	@Override
 	public void SaveContact(ContactCredential contactcredential) {
+		
 		Index index=new Index();
+		
 		index.setHomeAddress(contactcredential.getHomeAddress());
 		index.setOfficeAddress(contactcredential.getOfficeAddress());
 		index.setTelephone(contactcredential.getTelephoneNo());
@@ -40,10 +41,9 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void UpdateContact(Contact contact) {
+		
 		contactdao.UpdateContact(contact);
 		
 	}
-
-	
 
 }

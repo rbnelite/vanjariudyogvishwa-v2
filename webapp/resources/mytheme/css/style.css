@@ -10,7 +10,7 @@ root {
 }
 
 body{
-   background-color: #EFCFF0;
+   background-color: #999;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
@@ -128,9 +128,9 @@ cursor: pointer;
     background-color: #fab039;
     width: 1400px;
     height: 40px;
-    margin: 2px 50px 5px 0px;
+    margin: 0px 50px 5px 0px;
     font-size: 150%;
-    border: 1px solid gray; 
+    /* border: 1px solid gray; */ 
     
 }
 .menuContent
@@ -858,4 +858,48 @@ height: 30px
 
 #leftLink:HOVER {
 	background-color: skyblue;
+}
+
+#footer {
+    margin-top:-5px;
+    padding: 0px;
+    width: 100%;
+    height: 100px;
+    background-image: url('../images/f.png');
+    background-repeat: repeat-x;
+}
+#footer-box {
+    margin: 0px auto;
+    padding: 0px;
+    width: 980px;
+    height: 90px;
+}
+.footer_left {
+    float: left;
+    margin: 10px 30px 0px 0px;
+    padding: 0px;
+    width: 302px;
+    height: 80px;
+}
+.divide {
+    border-bottom: 1px dashed #999;
+    height: 1px;
+    width: 302px;
+    margin: 5px 0px;
+}
+
+.foot-links {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
+    font: 12px Trebuchet MS;
+    color: #FFF;
+}
+.footer_right {
+    float: right;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 315px;
+    height: 90px;
 }

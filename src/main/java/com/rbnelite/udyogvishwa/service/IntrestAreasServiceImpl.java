@@ -19,14 +19,12 @@ public class IntrestAreasServiceImpl implements IntrestAreasService {
 	
 	@Override
 	public void insertIntrestAreas(IntrestAreasCredential intrestareascredential) {
-		// TODO Auto-generated method stub
-
+		
 		IntrestAreas intrestareas=new IntrestAreas();
+		
 		intrestareas.setIntrestAreaId(intrestareascredential.getIntrestAreaId());
 		intrestareas.setUserMail(intrestareascredential.getUserMail());
 		intrestareas.setInterestId(intrestareascredential.getInterestId());
-		
-		
 		
 		intresareasdao.insertIntrestAreas(intrestareas);
 	}
@@ -47,9 +45,6 @@ public class IntrestAreasServiceImpl implements IntrestAreasService {
 	public void UpdateIntrestAreas(IntrestAreas intrestAreas) {
 		
 		intresareasdao.UpdateIntrestAreas(intrestAreas);
-		
-		
 	}
 
 }
-

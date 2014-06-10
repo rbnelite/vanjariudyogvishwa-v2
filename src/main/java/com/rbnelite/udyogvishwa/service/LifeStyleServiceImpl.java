@@ -19,9 +19,9 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 
 	@Override
 	public void insertLifeStyle(LifeStyleCredential lifetstylecredential) {
-		// TODO Auto-generated method stub
 
 		LifeStyle lifestyle = new LifeStyle();
+		
 		lifestyle.setDiet(lifetstylecredential.getDiet());
 		lifestyle.setSmoke(lifetstylecredential.getSmoke());
 		lifestyle.setDrink(lifetstylecredential.getDrink());
@@ -30,6 +30,7 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 		lifestyle.setBloodgroup(lifetstylecredential.getBloodgroup());
 		lifestyle.setWeight(lifetstylecredential.getWeight());
 		lifestyle.setUsermail(lifetstylecredential.getUsermail());
+		
 		lifestyledao.insertLifeStyle(lifestyle);
 	}
 
@@ -43,8 +44,7 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 	@Override
 	public void updateLifeStyle(LifeStyle lifeStyle) {
 		
-		lifestyledao.updateLifeStyle(lifeStyle);
-		
+		lifestyledao.updateLifeStyle(lifeStyle);	
 	}
 
 	@Override
@@ -52,5 +52,4 @@ public class LifeStyleServiceImpl implements LifeStyleService {
 		
 		return lifestyledao.getLifeStyleByEmailId(userMail);
 	}
-
 }

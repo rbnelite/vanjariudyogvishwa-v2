@@ -16,21 +16,15 @@ public class EducationWorkServiceImpl implements EducationWorkService {
 
 	@Resource
 	private EducationWorkDao educationworkdao;
-	
-	
-	
+		
 	@Override
 	public EducationWork getByEmailId(String userMail) {
 
 		return educationworkdao.getByEmailId(userMail);
 	}
 	
-	
-	
-	
 	@Override
-	public void insertEducationWork(
-			EducationWorkCredential educationworkcredential) {
+	public void insertEducationWork(EducationWorkCredential educationworkcredential) {
 
 		EducationWork educationwork = new EducationWork();
 
@@ -50,17 +44,11 @@ public class EducationWorkServiceImpl implements EducationWorkService {
 	@Override
 	@Transactional
 	public List<EducationWork> listEducationWork(String userMail) {
-
 		return educationworkdao.listEducationWork(userMail);
 	}
 
 	@Override
 	public void updateEducation(EducationWork educationWork) {
-		
 		educationworkdao.updateEducation(educationWork);
-		
 	}
-
-	
-
 }

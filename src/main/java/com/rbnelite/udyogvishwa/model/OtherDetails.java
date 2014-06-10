@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.rbnelite.udyogvishwa.model;
 
 import javax.persistence.Column;
@@ -13,10 +10,6 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-/**
- * @author PC3
- * 
- */
 @Entity
 @Table(name = "other_details")
 public class OtherDetails {
@@ -46,6 +39,7 @@ public class OtherDetails {
 	@Column(name = "email")
 	private String usermail;
 
+	
 	public long getOtherId() {
 		return otherId;
 	}

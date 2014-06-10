@@ -9,5 +9,4 @@ public interface OcccupationService {
 	
 	public List searchPeopleByProffession(String SearchDatabyprofession);
 	
-
 }

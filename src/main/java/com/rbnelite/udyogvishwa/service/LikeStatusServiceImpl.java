@@ -19,6 +19,7 @@ public class LikeStatusServiceImpl implements LikeStatusService {
 	@Override
 	public void LikeTheStatus(LikeStatus likeStatus) {
 		LikeStatus like_status=new LikeStatus();
+		
 		like_status.setMyReply(likeStatus.getMyReply());
 		like_status.setStatusId(likeStatus.getStatusId());
 		like_status.setWhoLike(likeStatus.getWhoLike());

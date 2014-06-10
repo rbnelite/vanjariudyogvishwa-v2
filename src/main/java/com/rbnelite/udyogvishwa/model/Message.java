@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.rbnelite.udyogvishwa.model;
 
 import java.text.SimpleDateFormat;
@@ -14,10 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-/**
- * @author PC3
- *
- */
 
 @Entity
 @Table(name="messages")
@@ -40,27 +33,36 @@ public class Message {
 	
 	@Column(name="message")
 	private String myMsgText;
+	
+	
 	public long getMsgID() {
 		return msgID;
 	}
+	
 	public void setMsgID(int msgID) {
 		this.msgID = msgID;
 	}
+	
 	public String getMsgSenderID() {
 		return msgSenderID;
 	}
+	
 	public void setMsgSenderID(String msgSenderID) {
 		this.msgSenderID = msgSenderID;
 	}
+	
 	public String getMsgReceiverID() {
 		return msgReceiverID;
 	}
+	
 	public void setMsgReceiverID(String msgReceiverID) {
 		this.msgReceiverID = msgReceiverID;
 	}
+	
 	public String getMsgDate() {
 		return msgDate;
 	}
+	
 	public void setMsgDate(String msgDate) {
 		Date dNow=new Date();
         SimpleDateFormat ft=new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a ");
@@ -68,13 +70,13 @@ public class Message {
         msgDate=now_date;
 		this.msgDate = msgDate;
 	}
+	
 	public String getMyMsgText() {
 		return myMsgText;
 	}
+	
 	public void setMyMsgText(String myMsgText) {
 		this.myMsgText = myMsgText;
 	}
-	
-
 	
 }

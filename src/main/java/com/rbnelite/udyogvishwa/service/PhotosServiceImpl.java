@@ -18,26 +18,26 @@ public class PhotosServiceImpl implements PhotosService {
 
 	@Resource
 	private PhotosDao photosdao;
-	
+
 	@Override
 	@Transactional
-		public void addPhoto(String userMail, String imageName) {
-		
+	public void addPhoto(String userMail, String imageName) {
+
+		Photos photos = new Photos();
+
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-		
-		Photos photos=new Photos();
+
 		photos.setPhotoPath(imageName);
 		photos.setPostdate(dateFormat.format(date));
 		photos.setUserMail(userMail);
-		
+
 		photosdao.addPhoto(photos);
-		System.out.println("--------------service");
 	}
 
 	@Override
 	public List ShowPhotos(String userMail) {
-		// TODO Auto-generated method stub
+
 		return photosdao.ShowPhotos(userMail);
 	}
 

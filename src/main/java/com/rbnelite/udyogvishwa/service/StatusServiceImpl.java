@@ -24,24 +24,28 @@ public class StatusServiceImpl implements StatusService {
 	
 	@Override
 	public void SaveStatusUpdate(StatusCredential statuscredential) {
+		
 		Status status=new Status();
+		Index user = new Index();
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
+		
 		status.setStatus(statuscredential.getStatus());
 		status.setStatusDate(dateFormat.format(date));
-		
-		Index user = new Index();
+				
 		user.setId(RequestContext.getUser().getId());
 		user.setEmailId(statuscredential.getUsermail());
 		
 		status.setUser(user);
+		
 		statusdao.statusUpdate(status);
 	}
 
 	@Override
 	@Transactional
 	public List<Status> listStatus(String userMail) {
+		
 		return statusdao.listStatus(userMail);
 	}
 

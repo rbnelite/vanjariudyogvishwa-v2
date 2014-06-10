@@ -20,24 +20,22 @@ public class HobbiesServiceImpl implements HobbiesService {
 	@Override
 	@Transactional
 	public void saveHobbies(HobbiesCredential hobbiescredential) {
+		
 		Hobbies hobby = new Hobbies();
+		
 		hobby.setHobbiesName(hobbiescredential.getHobbiesName());
 		hobby.setFavouriteMusic(hobbiescredential.getFavouriteMusic());
 		hobby.setFavouriteBooks(hobbiescredential.getFavouriteBooks());
 		hobby.setDressStyletyle(hobbiescredential.getDressStyletyle());
-		System.out.println(" @@ hobbiesServiceImpl"+hobbiescredential.getDressStyletyle());
-		
 		hobby.setFavouritrTvShows(hobbiescredential.getFavouritrTvShows());
 		hobby.setFavouriteMovies(hobbiescredential.getFavouriteMovies());
 		hobby.setSports(hobbiescredential.getSports());
 		hobby.setFoodIcook(hobbiescredential.getFoodIcook());
 		hobby.setVacationDestination(hobbiescredential.getVacationDestination());
 		hobby.setUsermail(hobbiescredential.getUsermail());
-		System.out.println(111111+" hobbies serviceImpl");
-		
-		
+				
 		hobbiesdao.saveHobbies(hobby);
-		System.out.println(2222222+" hobbies serviceImpl");
+
 	}
 
 	@Override
@@ -49,14 +47,11 @@ public class HobbiesServiceImpl implements HobbiesService {
 
 	@Override
 	public Hobbies getHobbiesByEmailId(String userMail) {
-		
 		return hobbiesdao.getHobbiesByEmailId(userMail);
 	}
 
 	@Override
 	public void UpdateHobbies(Hobbies hobbies) {
-		
 		hobbiesdao.UpdateHobbies(hobbies);
 	}
-
 }

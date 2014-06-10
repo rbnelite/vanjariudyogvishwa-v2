@@ -36,8 +36,6 @@ public class Religion {
 	public void setRelCast(String relCast) {
 		this.relCast = relCast;
 	}
-	
-	
 	public int getReligionid() {
 		return religionid;
 	}
@@ -50,12 +48,9 @@ public class Religion {
 	public void setReligionname(String religionname) {
 		this.religionName = religionname;
 	}
-	
 	public String getUsermail() {
 		return userMail;
 	}
 	public void setUsermail(String usermail) {
 		this.userMail = usermail;
-	}
-	
-}
+	}	}

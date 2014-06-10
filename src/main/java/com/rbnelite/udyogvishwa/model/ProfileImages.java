@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name="profile_images")
 public class ProfileImages implements Serializable {
@@ -44,16 +43,14 @@ public class ProfileImages implements Serializable {
 	}
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
-	}
-	
+	}	
 
-public String getDisplayPhoto() {
+	public String getDisplayPhoto() {
 		StringBuilder sb = new StringBuilder();
-		
-		if(this.profileImage != null)
-				sb.append(this.profileImage);
-		
+
+		if (this.profileImage != null)
+			sb.append(this.profileImage);
+
 		return sb.toString();
-}
-	
+	}	
 }

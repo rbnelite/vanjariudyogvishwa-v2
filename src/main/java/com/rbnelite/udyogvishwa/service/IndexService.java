@@ -11,8 +11,5 @@ public interface IndexService {
 	public List searchUserList(String SearchData);
 
 	public List<Index> loginAuthintication(String emailId, String pwd);
-		
-
-	
 	
 }

@@ -8,7 +8,9 @@ import com.rbnelite.udyogvishwa.model.Status;
 public interface StatusService {
 	
 	public void SaveStatusUpdate(StatusCredential statuscredential);
+	
 	public List<Status> listStatus(String userMail);
+	
 	public List searchStatusList(String SearchData);
 
 }

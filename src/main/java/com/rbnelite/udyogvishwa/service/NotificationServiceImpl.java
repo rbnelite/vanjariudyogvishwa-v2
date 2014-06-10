@@ -23,35 +23,32 @@ public class NotificationServiceImpl implements NotificationService {
 	@Override
 	public void insertNotification(CommentCredential commentCredential, Integer CommentId) {
 		
-		System.out.println("from Insert Notification Service Impl"+CommentId);
 		Notification notification=new Notification();
+		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-		
-		
+				
 		String flag="0";
 		
 		notification.setDatetime(dateFormat.format(date));
 		notification.setUsermail(commentCredential.getWhoseComment());
 		notification.setDisplayflag(flag);
 		notification.setStatusId(Integer.parseInt(commentCredential.getStatusIdForComment()));
-	
 		notification.setCommentId(CommentId);
 		
 		notificationdao.insertNotification(notification);
 }
 
 	@Override
-	
 	public List<Notification> listNotification(String userMail) {
-		// TODO Auto-generated method stub
+	
 		return notificationdao.listNotification(userMail);
 	}
 
 	@Override
-		public List<Notification> deleteNotification(Integer notif) {
+	public List<Notification> deleteNotification(Integer notif) {
+	
 		return notificationdao.deleteNotification(notif);
-		
 	}
 
 	@Override
@@ -65,10 +62,4 @@ public class NotificationServiceImpl implements NotificationService {
 		notificationdao.changeNotificationStatus(userMail);
 		
 	}
-
-	
-
-	
-	
-
 }

@@ -26,6 +26,7 @@ public void insertEvents(EventsCredential eventscredential)
 	events.setLocation(eventscredential.getLocation());
 	events.setDatatime(eventscredential.getDatatime());
 	events.setUsermail(eventscredential.getUsermail());
+	
 	eventsdao.insertEvents(events);
 }
 

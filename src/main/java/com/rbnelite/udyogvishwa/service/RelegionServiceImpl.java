@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.rbnelite.udyogvishwa.dao.RelegionDao;
 import com.rbnelite.udyogvishwa.dto.ReligionCredential;
 import com.rbnelite.udyogvishwa.model.Index;
-import com.rbnelite.udyogvishwa.model.Religion;
 
 @Service
 public class RelegionServiceImpl implements RelegionService {
@@ -19,15 +18,13 @@ public class RelegionServiceImpl implements RelegionService {
 
 	@Override
 	public void insertRelegion(ReligionCredential religioncredential) {
-		// TODO Auto-generated method stub
-
+		
 		Index relegion = new Index();
+		
 		relegion.setReligion(religioncredential.getReligionname());
 		relegion.setSubCast(religioncredential.getRelCast());
-		//relegion.setUsermail(religioncredential.getUsermail());
 		relegion.setEmailId(religioncredential.getUsermail());
 		
-
 		relegiondao.insertRelegion(relegion);
 	}
 
@@ -39,8 +36,8 @@ public class RelegionServiceImpl implements RelegionService {
 
 	@Override
 	public void UpdateReligion(Index index) {
-		relegiondao.UpdateReligion(index);
 		
+		relegiondao.UpdateReligion(index);		
 	}
 
 }

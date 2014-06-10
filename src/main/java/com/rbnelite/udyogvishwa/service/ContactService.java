@@ -7,6 +7,7 @@ import com.rbnelite.udyogvishwa.model.Contact;
 
 
 public interface ContactService {
+	
 	public void SaveContact(ContactCredential contactcredential);
 	public List<Contact> listContact(String UserMail);
 	public void UpdateContact(Contact contact);

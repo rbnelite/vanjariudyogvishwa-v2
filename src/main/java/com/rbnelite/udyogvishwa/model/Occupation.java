@@ -42,9 +42,11 @@ public class Occupation {
     @Column(name="email")
     private String usermail;
 	
+    
     public int getOccupationid() {
 		return occupationid;
 	}
+    
 	public void setOccupationid(int occupationid) {
 		this.occupationid = occupationid;
 	}
@@ -52,6 +54,7 @@ public class Occupation {
 	public String getOccupation() {
 		return occupation;
 	}
+	
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
 	}
@@ -59,45 +62,49 @@ public class Occupation {
 	public String getCompanyName() {
 		return companyName;
 	}
+	
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
+	
 	public String getProductdetails() {
 		return productdetails;
 	}
+	
 	public void setProductdetails(String productdetails) {
 		this.productdetails = productdetails;
 	}
+	
 	public String getNumberofemp() {
 		return numberofemp;
 	}
+	
 	public void setNumberofemp(String numberofemp) {
 		this.numberofemp = numberofemp;
 	}
+	
 	public String getEmptype() {
 		return emptype;
 	}
+	
 	public void setEmptype(String emptype) {
 		this.emptype = emptype;
 	}
+	
 	public String getAnnualincome() {
 		return annualincome;
 	}
+	
 	public void setAnnualincome(String annualincome) {
 		this.annualincome = annualincome;
 	}
+	
 	public String getUsermail() {
 		return usermail;
 	}
+	
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
 	}
-
-    
-    
-    
-	
-	
-
 
 }

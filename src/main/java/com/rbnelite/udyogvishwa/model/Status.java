@@ -47,14 +47,10 @@ public class Status {
 	@OneToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "email", referencedColumnName = "email", insertable=false, updatable=false)
 	private ProfileImages profileImages;
-	
-	/*@Column(name = "email")
-	private String usermail;*/
-	
+		
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "email", referencedColumnName = "email")
 	private Index user;
-	
 	
 	
 	public int getId() {
@@ -89,14 +85,6 @@ public class Status {
 		this.comments = comments;
 	}
 
-	/*public String getUsermail() {
-		return usermail;
-	}
-
-	public void setUsermail(String usermail) {
-		this.usermail = usermail;
-	}*/
-
 	public List<LikeStatus> getLikeStatus() {
 		return likeStatus;
 	}
@@ -120,7 +108,5 @@ public class Status {
 	public void setProfileImages(ProfileImages profileImages) {
 		this.profileImages = profileImages;
 	}
-
-	
 
 }

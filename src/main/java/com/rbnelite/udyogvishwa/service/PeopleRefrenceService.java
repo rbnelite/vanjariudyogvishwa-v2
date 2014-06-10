@@ -7,6 +7,5 @@ import com.rbnelite.udyogvishwa.model.IntrestAreas;
 public interface PeopleRefrenceService {
 	
 	public List<IntrestAreas> peopleYouMayKnow(String userMail);
-
 	
 }

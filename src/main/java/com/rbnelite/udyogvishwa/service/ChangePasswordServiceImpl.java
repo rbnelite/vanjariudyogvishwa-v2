@@ -28,8 +28,7 @@ public class ChangePasswordServiceImpl implements ChangePasswordService{
 		String newpass=changepasscred.getNewPassword();
 		String repass=changepasscred.getRePassword();
 		String changePwdMessage="";
-		
-		
+				
 		
 		if(newpass.equals(repass))
 		{
@@ -50,7 +49,6 @@ public class ChangePasswordServiceImpl implements ChangePasswordService{
 			changePwdMessage="New passwords & Conform password are not equal. Please provide equal password.";
 			return changePwdMessage;
 		}
-		
+	
 	}
-
 }
