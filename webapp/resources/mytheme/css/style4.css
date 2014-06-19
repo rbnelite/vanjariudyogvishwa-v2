@@ -205,16 +205,16 @@ cursor: pointer;
 	border: 1px solid gray;
 }
 
-#anchor {
-	margin-right: 30px;
-	font-family: white;
-	text-decoration: none;
-}
-
-#anchor:hover {
-	border-radius: 10px;
-}
-
+#anchor{
+    margin-right: 30px;
+    font:normal 18px Trebuchet MS; color:white;
+    text-decoration: none;
+ }
+ #anchor:hover{
+  	margin-right: 30px;
+    font:normal 18px Trebuchet MS; color:indigo;
+    text-decoration: none;
+ }
 #input_search {
 	margin-top: 10px;
 	margin-left: 400px;
@@ -265,7 +265,7 @@ cursor: pointer;
 	height: 995px;
 	overflow: auto;
 	background-color: bisque;
-	border: 1px solid aqua;
+	/* border: 1px solid aqua; */
 }
 
 #leftMain1 {
@@ -808,7 +808,7 @@ cursor: pointer;
 	height: 505px;
 	overflow: auto;
 	background-color: bisque;
-	border: 1px solid aqua;
+	/* border: 1px solid aqua; */
 }
 
 #leftMainStep3 {
@@ -819,7 +819,7 @@ cursor: pointer;
 	height: 645px;
 	overflow: auto;
 	background-color: bisque;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 }
 
 #leftMainStep10 {
@@ -830,7 +830,7 @@ cursor: pointer;
 	height: 713px;
 	overflow: auto;
 	background-color: bisque;
-	border: 1px solid aqua;
+	/* border: 1px solid aqua; */
 }
 
 #rightMainInterestAreas {

@@ -183,16 +183,13 @@ input[type=text] {
 
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="white">Home</font> </a> <a
-					id="anchor" href="#"><font color="indigo">My Profile</font> </a> <a
-					id="anchor" href="message"><font color="white">Message</font></a> <a
-					id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font>
-				</a> <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font
-					color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
-				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
-					color="white">Setting</font></a>
-					<a id="anchor" style="margin-right: -600px" href="logoutUser"><font color="white">LogOut</font> </a>
+				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="Profile"><font color="indigo">My Profile</font></a>
+				<a id="anchor" href="message">Message</a>
+				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
+				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
+				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
 			</div>
 
 

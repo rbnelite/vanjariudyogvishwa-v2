@@ -204,7 +204,7 @@ height:125px;
 	/* border-radius: 3px; */
 	background-color: bisque;
 	/* border: 1px solid gray; */
-	padding-right: 27px;
+	padding-right: 30px;
 }
 
 #OutsideleftMainHome {
@@ -218,16 +218,12 @@ height:125px;
 }
 
 #ShowStatusUpdet4One{
-    width: 650px;
+    width: 785px;
     margin-top: 10px;
-    margin-left: 75px;
     float: left;
     height: auto;
-    border-top: 4px solid Red;
-    border-right: 4px solid Red;
-    border-bottom: 1px solid Red;
-    border-left: 1px solid Red;
-    background-color: bisque;
+    background-color: rgba(175, 17, 233, 0.22);
+    border: 2px solid red;
    
 }
 #peopleMayKnw
@@ -238,7 +234,7 @@ height:125px;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     overflow: auto;
     padding-right: 40px;
 }
@@ -250,7 +246,7 @@ height:125px;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     overflow: hidden;
 }
 </style>
@@ -263,7 +259,7 @@ height:125px;
 		<div id="main" style="background-color: bisque">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
-				<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 345px; border-right: 5px solid gray;">
+				<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 346px; border-right: 5px solid gray;">
 					<input id="SearchData" type="text" name="SearchData"
 						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
 					<input type="submit" value=" "
@@ -319,23 +315,21 @@ height:125px;
 
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="indigo">Home</font> </a> <a
-					id="anchor" href="Profile"><font color="white">My
-						Profile</font> </a> <a id="anchor" href="message"><font color="white">Message</font></a>
-				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a> <a id="anchor" href="#"
-					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
-				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
-					color="white">Setting</font></a> <a id="anchor" style="margin-right: -800px" href="logoutUser"><font
-					color="white">LogOut</font> </a>
+				<a id="anchor" href="Home"><font color="indigo">Home</font> </a> 
+				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="message">Message</a>
+				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
+				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
+				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
 			</div>
 			
 			<div id="leftMain" style="background-color: bisque">
+				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
-								<th style="background-color: #fab039"><font color="white">Upcoming
-										Events</font></th>
+								
 						<c:if test="${!empty eventstList}">
 
 							
@@ -350,7 +344,7 @@ height:125px;
 						</table>
 					</div>
 				</div>
-
+				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
 				<div id="leftMain2">
 					<table width=100%>
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -778,12 +772,12 @@ height:125px;
 				</div>
 			</div>
 			<div id="rightMain" style="background-color: bisque">
+			<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
 					<table width=100%>
-						<th colspan=3 style="background-color: #fab039"><font
-							color="">People You May Know</th>
+						
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
 
@@ -829,9 +823,10 @@ height:125px;
 				</div>
 				</div>
 				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
+				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
-						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+						
 						<div style="border: 1px solid gray; width: 290px;height: 600px; margin-left: 25px;margin-top: -18px">
 							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="290" height="600"/>
                         </div>

@@ -141,12 +141,13 @@ cursor: pointer;
 
 #anchor{
     margin-right: 30px;
-    font-family: white;
+    font:normal 18px Trebuchet MS; color:white;
     text-decoration: none;
  }
  #anchor:hover{
-    
-    border-radius: 10px;
+  	margin-right: 30px;
+    font:normal 18px Trebuchet MS; color:indigo;
+    text-decoration: none;
  }
 
 #input_search{
@@ -230,7 +231,7 @@ float: left;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 #leftMain1{
@@ -242,7 +243,7 @@ float: left;
     border-radius: 3px;
     margin:0px 2px 0px 7px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 #leftMain2{
@@ -252,7 +253,7 @@ float: left;
     height:323px;
     margin:2px 2px 0px 7px;
     background-color: bisque;
-     border: 1px solid gray;
+     /* border: 1px solid gray; */
 }
 #leftMain3{
     border-radius: 3px;
@@ -262,7 +263,7 @@ float: left;
     overflow: auto;
     margin:2px 2px 0px 7px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 #MiddleTop{
@@ -302,8 +303,9 @@ float: left;
   
     border-radius: 3px;
     width: 790px;
-    height: 1000px;
+    height: 1065px;
     background-color: bisque;
+    /* background-color: #CCC4FF; */
   
     overflow: auto;
     margin-right: 305px;
@@ -314,9 +316,9 @@ float: left;
     margin-top: 5px;
     border-radius: 3px;
     width: 790px;
-    height: 1000px;
+    height: 1065px;
     background-color: bisque;
-    border: 1px solid gray; 
+    /* background-color: #CCC4FF; */
     overflow: hidden;
     margin-right: 305px;
     
@@ -374,12 +376,12 @@ float: left;
     border: 1px solid gray; 
 }
 #ShowStatusUpdet{
-    width: 650px;
+    width: 788px;
     margin-top: 10px;
-    margin-left: 75px;
     float: left;
     height: auto;
-   
+	border: 2px solid gray;
+	background-color: transparent;
 }
 
 #MsgShowArea{
@@ -414,7 +416,7 @@ margin:5px auto auto 5px;
 }
 #rightMain{
     border-radius: 3px;
-    margin-top: -1130px;
+    margin-top: -1190px;
     width: 300px;
     height: 1000px;
     background-color: transparent;
@@ -673,7 +675,7 @@ margin:5px auto auto 5px;
     height:505px;
     overflow: auto;
     background-color: bisque;
-    border: 1px solid aqua; 
+    /* border: 1px solid aqua; */ 
 }
 #leftMainStep3{
     border-radius: 3px;
@@ -683,7 +685,7 @@ margin:5px auto auto 5px;
     height:645px;
     overflow: auto;
     background-color: bisque;
-    border: 1px solid gray; 
+    /* border: 1px solid gray;  */
 }
 #leftMainStep10{
     border-radius: 3px;
@@ -693,7 +695,7 @@ margin:5px auto auto 5px;
     height:713px;
     overflow: auto;
     background-color: bisque;
-    border: 1px solid gray; 
+    /* border: 1px solid gray;  */
 }
 
 #rightMainInterestAreas{
@@ -853,7 +855,7 @@ height: 30px
     overflow: auto;
     margin:2px 2px 0px 7px;
     background-color: bisque;
-     border: 1px solid gray;
+     /* border: 1px solid gray; */
 }
 
 #leftLink:HOVER {

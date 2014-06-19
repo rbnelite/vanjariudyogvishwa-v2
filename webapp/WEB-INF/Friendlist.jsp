@@ -120,7 +120,7 @@ function employee(){
 		<div id="main">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
-					<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 345px; border-right: 5px solid gray;">
+					<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 346px; border-right: 5px solid gray;">
 					<input id="SearchData" type="text" name="SearchData"
 						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
 					<input type="submit" value=" "
@@ -173,16 +173,13 @@ function employee(){
 				</div>
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="white">Home</font> </a> <a
-					id="anchor" href="Profile"><font color="white">My
-						Profile</font> </a> <a id="anchor" href="#"><font color="white">Message</font></a>
-				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font
-					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font>
-				</a> <a id="anchor" href="#" onclick="DisplayRequestBlockPro()"><font
-					color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
-				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
-					color="white">Setting</font></a> 
-					<a id="anchor" style="margin-right: -600px" href="logoutUser"><font color="white">LogOut</font> </a>
+				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="message">Message</a>
+				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
+				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
+				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
+				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
 			</div>
 			<div id="leftMain">
 				<c:if  test="${!empty eventstList}">
