@@ -117,21 +117,20 @@ cursor: pointer;
 #Header{
     border-radius: 3px;
     background-color: #fcca7b;
-    width: 1400px;
+    width: 100%;
     height: 200px;
     margin: 0px 50px 0px 0px;
-    border: 1px solid gray; 
+     
     
 }
 #hiderMenu{
     border-radius: 3px;
-    background-color: #fab039;
-    width: 1400px;
+    background-color: #fcca7b;
+    width: 100%;
     height: 40px;
     margin: 0px 50px 5px 0px;
-    font-size: 150%;
-    /* border: 1px solid gray; */ 
-    
+    font-size: 130%;
+       
 }
 .menuContent
 {
@@ -141,8 +140,9 @@ cursor: pointer;
 
 
 #anchor{
-    margin-left: 80px;
+    margin-right: 30px;
     font-family: white;
+    text-decoration: none;
  }
  #anchor:hover{
     
@@ -801,9 +801,9 @@ height: 30px
 #outsidemiddlechangepwd{
 	 margin-top: 5px;
 	width: 790px;
-    height: 1000px;
+    height: 940px;
     background-color: transparent;
-    margin-right: 305px;
+    margin-right: 5px;
 }
 #MiddleTopchangepwd
 {
@@ -827,7 +827,7 @@ height: 30px
 #rightmainchangepwd
 {
 	 border-radius: 3px;
-    margin-top: -1255px;
+    margin-top: -1198px;
     width: 300px;
     height: 1000px;
     background-color: transparent;
@@ -859,6 +859,8 @@ height: 30px
 #leftLink:HOVER {
 	background-color: skyblue;
 }
+
+/* Style for footer Start here */
 
 #footer {
     margin-top:-5px;
@@ -903,3 +905,11 @@ height: 30px
     width: 315px;
     height: 90px;
 }
+h4 {
+    font: bold 16px/18px Trebuchet MS;
+    color: #030;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+/* Style for footer End here */

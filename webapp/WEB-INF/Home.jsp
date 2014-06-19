@@ -152,20 +152,6 @@ function errorComment()
 cursor: pointer;
 }
 
-
-#anchor {
-	margin-left: 80px;
-	font-family: white;
-	text-decoration: none;
-}
-h4 {
-    font: bold 16px/18px Trebuchet MS;
-    color: #030;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-}
-
 #imgUploadBtn{
 	display: none;
 }
@@ -277,10 +263,12 @@ height:125px;
 		<div id="main" style="background-color: bisque">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
+				<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 345px; border-right: 5px solid gray;">
 					<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search" style="height: 25px; width: 200px;" /> <input
-						type="submit" value=" "
-						style="margin-left :-7px ;height: 30px;width: 40px; background-image: url('${pageContext.request.contextPath}/resources/images/searchlogo.png');">
+						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
+					<input type="submit" value=" "
+						style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');">
+				</div>
 				</form>
 				<label
 					style="margin-left: 110px; margin-right: 5px; margin-top: -30px; float: right;">WelCome
@@ -338,7 +326,7 @@ height:125px;
 					color="white">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a> <a id="anchor" href="#"
 					onclick="DisplayRequestBlockPro()"><font color="white">Requests</font><font color="red">${fn:length(friendRequestList)}</font>
 				</a> <a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font
-					color="white">Setting</font></a> <a id="anchor" href="logoutUser"><font
+					color="white">Setting</font></a> <a id="anchor" style="margin-right: -800px" href="logoutUser"><font
 					color="white">LogOut</font> </a>
 			</div>
 			
