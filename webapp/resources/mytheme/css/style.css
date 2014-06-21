@@ -125,7 +125,7 @@ cursor: pointer;
 }
 #hiderMenu{
     border-radius: 3px;
-    background-color: #fcca7b;
+    background: linear-gradient(to bottom, #FCEABB 0%, #FCCD4D 38%, #F8B500 51%, #FBDF93 100%) repeat scroll 0% 0% transparent;
     width: 100%;
     height: 40px;
     margin: 0px 50px 5px 0px;
@@ -181,9 +181,8 @@ float: left;
 	background-color: #fcca7b;
 	width: 550px;
 	height: 50px;
-	margin-top: 10px;
-	
-	
+	margin-top: 3px;
+	border-radius: 8px;
 }
 
 #Showcomment
@@ -192,14 +191,14 @@ float: left;
 	width: 550px;
 	height: auto;
 	margin-top: -10px;
-	
+	border-radius: 8px;
 }
 
 .commentBoxImage
 {
 	float : left;
-	margin-top: 5px;
-	margin-left: 20px;
+	margin-top: 3px;
+	margin-left: 3px;
 	
 }
 
@@ -217,9 +216,9 @@ float: left;
     border-radius: 3px;
     float: left;
     width: 300px;
-    height:1127px;
+    height:1195px;
     overflow: auto;
-    background-color: transparent;
+    background-color: bisque;
    
 }
 
@@ -249,19 +248,19 @@ float: left;
 #leftMain2{
     border-radius: 3px;
     float: left;
-    width: 290px;
-    height:323px;
-    margin:2px 2px 0px 7px;
+    width: 300px;
+    height:213px;
+    margin: -20px 0px 8px 0px;
     background-color: bisque;
      /* border: 1px solid gray; */
 }
 #leftMain3{
     border-radius: 3px;
     float: left;
-    width: 290px;
-    height:323px;
+    width: 300px;
+    height:590px;
     overflow: auto;
-    margin:2px 2px 0px 7px;
+    margin:-9px 0px 0px 0px;
     background-color: bisque;
     /* border: 1px solid gray; */
 }
@@ -416,7 +415,7 @@ margin:5px auto auto 5px;
 }
 #rightMain{
     border-radius: 3px;
-    margin-top: -1190px;
+    margin-top: -1195px;
     width: 300px;
     height: 1000px;
     background-color: transparent;
@@ -749,16 +748,45 @@ margin:5px auto auto 5px;
 }
 .connectBtn
 {
-	background-color: lime;
+	background-color: rgba(0, 255, 0, 0.33);
+	border-radius:7px;
 	height: 25px;
 	width: 60px;
 }
+.connectBtn:HOVER
+{
+	background-color: rgba(0, 255, 0, 0.99);
+	border-radius:7px;
+	height: 25px;
+	width: 60px;
+}
+
 .LikeUnlikeBtn
 {
-	background: none;
-	border: none;
-	text-decoration: underline;
-	cursor: pointer;
+    background: repeat scroll 0% 0% transparent;
+    border: medium none;
+    cursor: pointer;
+    background-color: rgba(26, 118, 222, 0.62);
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid orange;
+    font-size: 17px;
+    color: black;
+}
+.LikeUnlikeBtn:HOVER
+{
+    background: repeat scroll 0% 0% transparent;
+    border: medium none;
+    cursor: pointer;
+    background-color: rgba(26, 118, 222, 0.99);
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid orange;
+    font-size: 19px;
 }
 
 .savebtn

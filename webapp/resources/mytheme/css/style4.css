@@ -187,7 +187,7 @@ cursor: pointer;
 
 #hiderMenu {
 	border-radius: 3px;
-	background-color: #fcca7b;
+	background: linear-gradient(to bottom, #FCEABB 0%, #FCCD4D 38%, #F8B500 51%, #FBDF93 100%) repeat scroll 0% 0% transparent;
 	width: 100%;
 	height: 40px;
 	margin: 0px 50px 5px 0px;
@@ -197,7 +197,7 @@ cursor: pointer;
 
 #hiderMenuHome {
 	border-radius: 3px;
-	background-color: #fcca7b;
+	background: linear-gradient(to bottom, #FCEABB 0%, #FCCD4D 38%, #F8B500 51%, #FBDF93 100%) repeat scroll 0% 0% transparent;
 	width: 1400px;
 	height: 40px;
 	margin: 0px 50px 0px 0px;

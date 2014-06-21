@@ -95,7 +95,7 @@ function showSpanEdit(id)
 	spanEdit.style.display="block";
 	}
 function emptyEditerror(id1)
-{alert("come");
+{
 	var commenttext=document.getElementById("comment"+id1).value;
 	if(commenttext==null || commenttext=="")
 		{
@@ -175,25 +175,20 @@ height:125px;
 
 }
 #InsideRightMessage {
-	border-radius: 3px;
-	width: 300px;
-	height: 645px;
-	background-color: bisque;
-	float: right;
-	/* border: 1px solid gray; */
-	overflow: auto;
-	padding-right: 20px;
-	padding-bottom: 8px;
+	width: 292px;
+	height: 270px;
+	background-color: yellow;
+	margin-top: -20px;
 }
 
 #OutsideRightMessage {
 	border-radius: 3px;
 	width: 300px;
-	height: 645px;
-	background-color: bisque;
+	height: 830px;
+	background-color: transparent;
 	float: right;
-	/* border: 1px solid gray; */
-	overflow: hidden;
+	
+
 }
 
 #leftMainHome {
@@ -212,8 +207,8 @@ height:125px;
 	width: 300px;
 	height: 350px;
 	overflow: hidden;
-	border-radius: 3px;
 	background-color: bisque;
+	margin-top: -20px;
 	/* border: 1px solid gray; */
 }
 
@@ -249,6 +244,17 @@ height:125px;
     /* border: 1px solid gray; */
     overflow: hidden;
 }
+
+#Shortlinks{
+	font-family: red;
+	text-decoration: none;
+}
+#Shortlinks:HOVER{
+	font-family: sans-serif;
+	text-decoration: none;
+	 /* text-shadow: 1px 1px red; */
+	 
+}
 </style>
 
 </head>
@@ -270,7 +276,7 @@ height:125px;
 					style="margin-left: 110px; margin-right: 5px; margin-top: -30px; float: right;">WelCome
 					!<b> ${loginUser.firstName} ${loginUser.lastName}</b>
 				</label> <br>
-				<div id="profile_photo" style="margin-top: -20px;">
+				<div id="profile_photo" style="margin-top: -30px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
 							<img width="140px" height="140px"
@@ -321,10 +327,10 @@ height:125px;
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
 			</div>
 			
-			<div id="leftMain" style="background-color: bisque">
+			<div id="leftMain">
 				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
@@ -346,30 +352,35 @@ height:125px;
 				</div>
 				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
 				<div id="leftMain2">
-					<table width=100%>
+					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="25" width="30"></td>
-						<td><a style="float: left; text-decoration: none;" href="message"><h4><font color="#00cccc">Message</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="message"><font color="#00cccc">Message</font></a></td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td> <a style="float: left;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> </td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
+						<td width="84%"> <a id="Shortlinks" href="Events"><font color="#00cccc">Events</font></a> </td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
-						<td><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> </td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Photos"><font color="#00cccc">Photos</font></a> </td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
-						<td><a style="float: left;" href="Product"><h4><font color="#00cccc">Products</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Product"><font color="#00cccc">Products</font></a></td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
-						<td><a style="float: left;" href="FriendList"><h4><font color="#00cccc">Friends</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList"><font color="#00cccc">Friends</font></a></td>
 					</tr>
 					</table>
 				</div>
+				
+				<div id="leftMain3">
+					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+				</div>
+				
 
 			</div>
 
@@ -491,7 +502,7 @@ height:125px;
 							
 							
 							<input type="hidden" name="usermail" value="${loginUser.email}">
-							<td><input type="submit" value="POST"
+							<td><input type="submit" value="Post"
 
 								style="margin-right: 30px;" class="buttonclr"
 								onclick="return abc()">
@@ -588,26 +599,43 @@ height:125px;
 										</div>
 										<br>
 										<table align="left" width=50%>
+											<!-- Code for Like Count/Unlike Count Start here -->
+												<c:set var="LikeCount4One" value="0"></c:set>
+												<c:set var="UnLikeCount4One" value="0"></c:set>
+												<c:if test="${!empty notifStatus[0].likeStatus}">
+													<c:forEach items="${notifStatus[0].likeStatus}" var="likeStatus">
+														<c:if test="${notifStatus[0].id==likeStatus.statusId}">
+															<c:if test="${likeStatus.myReply}">
+																<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
+															</c:if>
+															<c:if test="${! likeStatus.myReply}">
+																<c:set var="UnLikeCount" value="${UnLikeCount + 1}"></c:set>
+															</c:if>
+														</c:if>
+														</c:forEach>
+														</c:if>
+										<!-- Code for Like Count/Unlike Count End here -->
+										
 											<tr>
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
 														<input type="hidden" name="statusId" value="${notifStatus[0].id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="true">
-															 <input	type="submit" value="Like" class="LikeUnlikeBtn">
-														0
-													</form>
+															 <table style="margin-top: -10px"><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+														</form>
 												</td>
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
 														<input type="hidden" name="statusId" value="${notifStatus[0].id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="false">
-															 <input	type="submit" value="UnLike" class="LikeUnlikeBtn">
-														 0
+															 <table style="margin-top: -10px"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
 													</form>
 												</td>
-												<td>Comments <font color="blue">${fn:length(notifStatus[0].comments)}</font></td>
+												<td>
+													<table style="margin-top: -10px"><tr><td><input type="submit" value="Comments" class="LikeUnlikeBtn"></td> <td><a>${fn:length(notifStatus[0].comments)}</a></td></tr> </table>
+												</td>
 											</tr>
 										</table>
 									</div>
@@ -653,7 +681,7 @@ height:125px;
 										<c:forEach items="${status11.comments}" var="myComment">
 
 											<div id="Showcomment"
-												style="border: 1px solid bisque; margin-top: 5px">
+												style="border: 1px solid bisque; margin-top: 1px">
 
 												<div class="commentBoxImage">
 													<img
@@ -670,7 +698,7 @@ height:125px;
 																</font>
 																<c:if test="${myComment.user.emailId==loginUser.email}">
 																<input type="button"
-																	style="width: 50px; height: 20px; float: right; margin-top: -4px; background-color: #fab039; border-style: outset;"
+																	style="width: 50px; height: 20px; float: right; margin-top: 10px;cursor: pointer; background-color: transparent; border:none; color: blue; font: 18px cursive MS;"
 																	value="edit" onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
 																	<br> <span id="${myComment.id}">${myComment.comment}</span>
@@ -742,26 +770,24 @@ height:125px;
 														</c:forEach>
 														</c:if>
 										<!-- Code for Like Count/Unlike Count End here -->
-														<input type="hidden" name="statusId" value="${status11.id}">
+															 <input type="hidden" name="statusId" value="${status11.id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="true">
-															 <input	type="submit" value="Like" class="LikeUnlikeBtn">
-														${LikeCount}
-														
+															<table style="margin-top: -10px"><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
 													</form>
 												</td>
 												<td>
 													<form action="/vanjariudyogvishwa-v2/LikeStatus" method="post">
-										<input type="hidden" name="statusId" value="${status11.id}">
+															<input type="hidden" name="statusId" value="${status11.id}">
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="false">
-															 <input	type="submit" value="UnLike" class="LikeUnlikeBtn">
-														 ${UnLikeCount}
+															 <table style="margin-top: -10px"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
 													</form>
 												</td>
 												
-												<td>Comments <font color="blue">${fn:length(status11.comments)}</font></td>
-												
+												<td>
+													<table style="margin-top: -10px"><tr><td><input type="submit" value="Comments" class="LikeUnlikeBtn"></td> <td><a>${fn:length(status11.comments)}</a></td></tr> </table>
+												</td>
 											</tr>
 										</table>
 									</div>
@@ -827,8 +853,8 @@ height:125px;
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						
-						<div style="border: 1px solid gray; width: 290px;height: 600px; margin-left: 25px;margin-top: -18px">
-							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="290" height="600"/>
+						<div style="width: 292px;height: 270px;">
+							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="292" height="270"/>
                         </div>
                         
                             <script>
@@ -857,6 +883,8 @@ height:125px;
 						
 						</div>
 						
+						<!-- <div id="InsideRightMessage" style="background-color: blue;"></div> -->
+						<!-- <div id="InsideRightMessage" style="background-color: pink;"></div> -->
 						
 					</div>
 				</div>
