@@ -15,7 +15,7 @@ body{
 }
 
 #main{
-    background-color: transparent; 
+    background-color: bisque; 
     width: 1400px;
     height: 1440px;
     margin: 10px 50px 10px 50px;
@@ -23,7 +23,7 @@ body{
     border-radius: 3px;
 }
 #mainMsg{
-    background-color: transparent; 
+    background-color: bisque; 
     width: 1400px;
     height: fit-content;
     margin: 10px 50px 10px 50px;
@@ -31,7 +31,7 @@ body{
     border-radius: 3px;
 }
 #mainNoti{
-    background-color: red; 
+    background-color: bisque; 
     width: 1400px;
     height: 1315px;
     margin: 10px 50px 10px 50px;
@@ -141,12 +141,14 @@ cursor: pointer;
 
 #anchor{
     margin-right: 30px;
-    font:normal 18px Trebuchet MS; color:white;
+    font:normal 18px Trebuchet MS;
+    color:Black;
     text-decoration: none;
  }
  #anchor:hover{
   	margin-right: 30px;
-    font:normal 18px Trebuchet MS; color:indigo;
+    font:normal 18px Trebuchet MS;
+    color:green;
     text-decoration: none;
  }
 
@@ -220,6 +222,15 @@ float: left;
     overflow: auto;
     background-color: bisque;
    
+}
+#leftMainNotification{
+    border-radius: 3px;
+    float: left;
+    width: 300px;
+    height:1070px;
+    overflow: auto;
+    background-color: bisque;
+   	margin-top: -5px;
 }
 
 #peopleMayKnw
@@ -742,10 +753,11 @@ margin:5px auto auto 5px;
 
 .buttonclr
 {
-	background-color: #fab039;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
 	height: 30px;
 	width: 60px;
 }
+
 .connectBtn
 {
 	background-color: rgba(0, 255, 0, 0.33);
@@ -943,3 +955,14 @@ h4 {
     padding: 0px;
 }
 /* Style for footer End here */
+
+#Shortlinks{
+	font-family: red;
+	text-decoration: none;
+}
+#Shortlinks:HOVER{
+	font-family: sans-serif;
+	text-decoration: none;
+	 /* text-shadow: 1px 1px red; */
+	 
+}

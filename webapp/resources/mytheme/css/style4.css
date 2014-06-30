@@ -207,12 +207,14 @@ cursor: pointer;
 
 #anchor{
     margin-right: 30px;
-    font:normal 18px Trebuchet MS; color:white;
+    font:normal 18px Trebuchet MS;
+    color:Black;
     text-decoration: none;
  }
  #anchor:hover{
   	margin-right: 30px;
-    font:normal 18px Trebuchet MS; color:indigo;
+    font:normal 18px Trebuchet MS;
+    color:green;
     text-decoration: none;
  }
 #input_search {

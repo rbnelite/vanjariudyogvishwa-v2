@@ -176,7 +176,7 @@
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
-				<a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font color="indigo">Setting</font></a>
+				<a id="anchor" href="#" onclick="return DisplaySettingBlock()"><font color="#E45FF2">Setting</font></a>
 				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
 			</div>
 

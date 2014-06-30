@@ -209,7 +209,7 @@ function validateMsgForm() {
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
 				<a id="anchor" href="Profile">My Profile</a>
-				<a id="anchor" href="message"><font color="indigo">Message</font></a>
+				<a id="anchor" href="message"><font color="#E45FF2">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>

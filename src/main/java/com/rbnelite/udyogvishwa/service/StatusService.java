@@ -12,5 +12,6 @@ public interface StatusService {
 	public List<Status> listStatus(String userMail);
 	
 	public List searchStatusList(String SearchData);
-
+	
+	
 }

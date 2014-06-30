@@ -66,6 +66,22 @@ document.getElementById("notificationId").value=NotificationId;
 		}
 
 </script>
+<script type="text/javascript">
+            
+            var image1=new Image()
+            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
+            var image2=new Image()
+            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg"
+            var image3=new Image()
+            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg"
+            var image4=new Image()
+            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg"
+            var image5=new Image()
+            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg"
+            var image6=new Image()
+            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
+            
+        </script>
 
 <style type="text/css">
 
@@ -74,7 +90,7 @@ document.getElementById("notificationId").value=NotificationId;
     margin-top: 5px;
     border-radius: 3px;
     width: 788px;
-    height: 1000px;
+    height: 1068px;
     background-color: bisque;
     border: 1px solid gray; 
     overflow: hidden;
@@ -87,7 +103,7 @@ document.getElementById("notificationId").value=NotificationId;
 {
 	width: 290px;
     height: auto;
-    max-height: 500px;
+    max-height: 256px;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
@@ -99,13 +115,14 @@ document.getElementById("notificationId").value=NotificationId;
 {
 	width: 303px;
     height: auto;
-    max-height: 500px;
+    max-height: 256px;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     overflow: hidden;
     margin-left: -3px;
+    margin-top: -19px;
 }
 
 
@@ -143,6 +160,21 @@ document.getElementById("notificationId").value=NotificationId;
 	background-color: bisque;
 	/* border: 1px solid gray; */
 }
+
+#InsideRightMessage {
+	width: 292px;
+	height: 270px;
+	background-color: yellow;
+	margin-top: -20px;
+}
+
+#OutsideRightMessage {
+	border-radius: 3px;
+	width: 300px;
+	height: 509px;
+	background-color: transparent;
+	float: right;
+}
 </style>
 
 </head>
@@ -164,7 +196,7 @@ document.getElementById("notificationId").value=NotificationId;
 					style="margin-left: 110px; margin-right: 5px; margin-top: -30px; float: right;">WelCome
 					!<b> ${loginUser.firstName} ${loginUser.lastName}</b>
 				</label> <br>
-				<div id="profile_photo" style="margin-top: -20px;">
+				<div id="profile_photo" style="margin-top: -30px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
 							<img width="140px" height="140px"
@@ -213,60 +245,65 @@ document.getElementById("notificationId").value=NotificationId;
 				<a id="anchor" href="Home">Home</a> 
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message">Message</a>
-				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font color="indigo">Notification</font><font color="red">${fn:length(NotificationList)}</font> </a>
+				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font color="#E45FF2">Notification</font><font color="red"><%-- ${fn:length(NotificationList)} --%></font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
 			</div>
-			<div id="leftMain">
+			<div id="leftMainNotification">
+				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-
+					<table width=100%>
+								
 						<c:if test="${!empty eventstList}">
 
-							<table width=100%>
-								<th style="background-color: #fab039"><font color="white">Upcoming
-										Events</font></th>
+							
 								<c:forEach items="${eventstList}" var="myEvents">
 								
 									<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font>
-											created an event :${myEvents[0]}</td>
+										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
 									</tr>
 								</c:forEach>
-							</table>
+							
 						</c:if>
+						</table>
 					</div>
 				</div>
-
+				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
 				<div id="leftMain2">
-					<table width=100%>
+					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="25" width="30"></td>
-						<td><a style="float: left; text-decoration: none;" href="message"><h4><font color="#00cccc">Message</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="message"><font color="#00cccc">Message</font></a></td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td> <a style="float: left;" href="Events"><h4><font color="#00cccc">Events</font></h4></a> </td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
+						<td width="84%"> <a id="Shortlinks" href="Events"><font color="#00cccc">Events</font></a> </td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
-						<td><a style="float: left;" href="Photos"><h4><font color="#00cccc">Photos</font></h4></a> </td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Photos"><font color="#00cccc">Photos</font></a> </td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
-						<td><a style="float: left;" href="Product"><h4><font color="#00cccc">Products</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Product"><font color="#00cccc">Products</font></a></td>
 					</tr>
-					<tr id="leftLink">
-						<td> <img style="float: left;" src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
-						<td><a style="float: left;" href="FriendList"><h4><font color="#00cccc">Friends</font></h4></a></td>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList"><font color="#00cccc">Friends</font></a></td>
 					</tr>
 					</table>
 				</div>
+				
+				<div id="leftMain3" style="height: 445px;">
+					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+				</div>
+				
 
 			</div>
-			<div id="NotificationTopHome">
+			<%-- <div id="NotificationTopHome">
 				<div id="InsideNotificationTopHome">
 				<table width="100%">
 					<th style="background-color: #fab039"><font color="white">Notification</font>
@@ -294,7 +331,7 @@ document.getElementById("notificationId").value=NotificationId;
 				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
 				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
-			</div>
+			</div> --%>
 			<div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font
@@ -349,7 +386,7 @@ document.getElementById("notificationId").value=NotificationId;
 				<div id="middleHome">
 					
 					<!-- View perticular Notification Start here -->
-					<table width=60%>
+					<table width=90%>
 						<th colspan="3" bgcolor="#fcca7b">Notification List</th>
 						<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 						<c:if test="${!empty NotificationList}">
@@ -384,13 +421,12 @@ document.getElementById("notificationId").value=NotificationId;
 					
 				</div>
 			</div>
-			<div id="rightMain" style="margin-top: -1002px;">
+			<div id="rightMain" style="margin-top: -1072px;">
+				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">People You May Know</h3>
 					<div id="OutsidepeopleMayKnwNoti">
 				<div id="peopleMayKnw">
 
 					<table width=100%>
-						<th colspan=3 style="background-color: #fab039"><font
-							color="">People You May Know</th>
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
 								<c:choose>
@@ -434,11 +470,41 @@ document.getElementById("notificationId").value=NotificationId;
 					</table>
 				</div>
 				</div>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
+				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
-						<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+						
+						<div style="width: 292px;height: 270px;">
+							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="292" height="270"/>
+                        </div>
+                        
+                            <script>
+                                
+                                //variable that will increment through the images
+                                var step=1
+                               
+                                function slideit(){
+                                    //if browser does not support the image object, exit.
+                                    if (!document.images)
+                                        return
+                                    document.images.slide.src=eval("image"+step+".src")
+                                    
+                                    if (step<6 )
+                                       	step++
+                                       
+                                    else
+                                        step=1
+                                        
+                                    //call function "slideit()" every 2.5 seconds
+                                    setTimeout("slideit()",9900)
+                                }
+                                slideit()
+                                
+                            </script>
+						
+						</div>
 					</div>
-				</div>
 			</div>
 			
 		</div>
@@ -486,7 +552,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</div>
 				<!---footer_left2 ends Here--->
 
-				<div class="footer_right" style="margin: -80px -90px 0px 0px">
+				<div class="footer_right">
 					<h4>Contact Us</h4>
 					<div class="divide"></div>
 					<table width="100%" height="41" border="0" cellpadding="0"

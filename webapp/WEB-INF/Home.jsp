@@ -93,7 +93,15 @@ function showSpanEdit(id)
 	spanComment.style.display="none";
 	var spanEdit=document.getElementById("con"+id);
 	spanEdit.style.display="block";
-	}
+}
+function hideSpanEdit(id)
+{
+	var spanComment=document.getElementById(id);
+	spanComment.style.display="block";
+	var spanEdit=document.getElementById("con"+id);
+	spanEdit.style.display="none";
+}
+
 function emptyEditerror(id1)
 {
 	var commenttext=document.getElementById("comment"+id1).value;
@@ -237,24 +245,17 @@ height:125px;
 {
 	width: 290px;
     height: auto;
-    max-height: 500px;
+    max-height: 256px;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
     /* border: 1px solid gray; */
     overflow: hidden;
+    margin-left: -3px;
+    margin-top: -19px;
 }
 
-#Shortlinks{
-	font-family: red;
-	text-decoration: none;
-}
-#Shortlinks:HOVER{
-	font-family: sans-serif;
-	text-decoration: none;
-	 /* text-shadow: 1px 1px red; */
-	 
-}
+
 </style>
 
 </head>
@@ -321,7 +322,7 @@ height:125px;
 
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="indigo">Home</font> </a> 
+				<a id="anchor" href="Home"><font color="#E45FF2">Home</font> </a> 
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
@@ -710,8 +711,9 @@ height:125px;
 																		value="${myComment.comment}"
 																		style="width: 440px; height: 20px; margin-top: 10px; margin-left: 5px" >
 																		<input type="submit"
-																		style="width: 50px; height: 20px; float: right; margin-bottom: -5px; background-color: #fab039; border-style: outset;"
-																		value="post" onclick="return emptyEditerror('${myComment.id}')">
+																		style="width: 50px; height: 20px; margin-bottom: -5px; background-color: #fab039; border-style: outset;"
+																		value="Edit" onclick="return emptyEditerror('${myComment.id}')">
+																		<input type="reset" value="Cancel" onclick="hideSpanEdit('${myComment.id}')" style="width: 50px; height: 20px; float: right; margin-bottom: -5px; background-color: #fab039; border-style: outset;">
 																</span></td>
 															</tr>
 															<tr>
@@ -875,17 +877,13 @@ height:125px;
                                         step=1
                                         
                                     //call function "slideit()" every 2.5 seconds
-                                    setTimeout("slideit()",2500)
+                                    setTimeout("slideit()",9900)
                                 }
                                 slideit()
                                 
                             </script>
 						
 						</div>
-						
-						<!-- <div id="InsideRightMessage" style="background-color: blue;"></div> -->
-						<!-- <div id="InsideRightMessage" style="background-color: pink;"></div> -->
-						
 					</div>
 				</div>
 				

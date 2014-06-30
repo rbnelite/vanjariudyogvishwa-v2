@@ -229,7 +229,7 @@ display: none;
 				</div>
 			</div>
 			<div id="hiderMenu">
-				<a id="anchor" href="Home"><font color="indigo">Home</font> </a> 
+				<a id="anchor" href="Home">Home</a> 
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
