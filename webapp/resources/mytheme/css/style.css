@@ -1,7 +1,7 @@
 /* 
     Document   : style
     Created on : Dec 9, 2013, 1:26:56 PM
-    Author     : ab
+    Author     : rbnelite
     Description: Purpose of the stylesheet follows.
 */
 
@@ -719,10 +719,8 @@ margin:5px auto auto 5px;
     height: 505px;
     width: 790px;
     background-color: bisque;
-    
     margin-top: 5px;
     border-radius: 10px ;
-    border:1px solid aqua;
 }
 #leftMainInterestAreas{
     border-radius: 3px;
@@ -850,8 +848,25 @@ margin:5px auto auto 5px;
 
 .savebtn
 {
-background-color: #fab039;
-height: 30px	
+	background-color: rgba(237, 165, 49, 1);
+	height: 40px;
+	width: 132px;
+	border: 2px solid black;
+	color: black;
+	cursor: pointer;
+	font: 16px/100% Arial,Helvetica,sans-serif;
+	border-radius:5px;
+}
+.savebtn:HOVER
+{
+	background-color:menu;
+	height: 40px;
+	width: 132px;
+	border: 2px solid black;
+	color: black;
+	cursor: pointer;
+	font: 16px/100% Arial,Helvetica,sans-serif;
+	border-radius:5px;
 }
 
 .photoviewer

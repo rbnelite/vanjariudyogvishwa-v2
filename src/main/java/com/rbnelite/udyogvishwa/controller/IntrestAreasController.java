@@ -32,7 +32,7 @@ public class IntrestAreasController {
 	}
 	
 	@RequestMapping(value="/IntrestAreas")
-	public String interestAreasForm()
+	public String interestAreasForm(ModelMap map)
 	{
 		return "Step2InterestArea";
 	}
