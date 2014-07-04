@@ -54,9 +54,8 @@ function validateMsgForm() {
 </script>
 
 <style type="text/css">
-
 #mainMessage {
-	background-color: transparent;
+	background-color: #FFE4C4;
 	width: 1400px;
 	height: 1314px;
 	margin: 10px 50px 10px 50px;
@@ -82,15 +81,13 @@ function validateMsgForm() {
 	border-radius: 20px;
 	
 } */
-
 #InnerleftMainMsg {
 	border-radius: 3px;
 	float: left;
 	width: 300px;
 	height: 645px;
-	margin: 5px 2px 0px 2px;
+	margin: -4px 2px 0px 2px;
 	background-color: bisque;
-	border: 1px solid gray;
 	overflow: auto;
 	padding-right: 20px;
 	padding-bottom: 10px;
@@ -100,9 +97,8 @@ function validateMsgForm() {
 	border-radius: 3px;
 	float: left;
 	width: 300px;
-	height: 649px;
+	height: 1067px;
 	background-color: bisque;
-	border: 1px solid gray;
 	overflow: hidden;
 }
 
@@ -115,38 +111,45 @@ function validateMsgForm() {
 
 #InsideRightMessage {
 	border-radius: 3px;
-	/* margin-top: -648px; */
 	width: 300px;
-	height: 998px;
+	height: 1068px;
 	background-color: bisque;
 	float: right;
 	overflow: auto;
-	padding-right: 20px;
-	padding-bottom: 8px;
+	padding-right: 0px;
+	padding-bottom: 0px;
 }
 
 #OutsideRightMessage {
 	border-radius: 3px;
-	margin-top: -1005px;
+	margin-top: -1072px;
 	width: 300px;
-	height: 998px;
+	height: 1069px;
 	background-color: bisque;
 	float: right;
-	border: 1px solid gray;
 	overflow: hidden;
 }
 
-#ChangePhotoHome{
+#ChangePhotoHome {
 	border-radius: 5px;
-    width: 300px;
-    height:100px;
-    background-color: bisque;
-    display: none;
-    margin-left: 1090px;
-    border: 1px solid gray; 
-    position: absolute;
-    margin-top: 130px;
-    }
+	width: 300px;
+	height: 100px;
+	background-color: bisque;
+	display: none;
+	margin-left: 1090px;
+	border: 1px solid gray;
+	position: absolute;
+	margin-top: 130px;
+}
+
+#middlePhotos {
+	margin-top: -3px;
+	border-radius: 3px;
+	width: 790px;
+	height: 1070px;
+	background-color: #FFE4C4;
+	border: 1px solid gray; 
+}
 </style>
 
 
@@ -301,7 +304,7 @@ function validateMsgForm() {
 			<div id="OutsideleftMainMsg">
 
 				<div id="InnerleftMainMsg">
-					<h3 style="background-color: #FAB039; margin-top: 0px;">Inbox</h3>
+					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Inbox</h3>
 					
 						
 						<table>
@@ -344,7 +347,7 @@ function validateMsgForm() {
 					
 					<c:if test="${! empty msgConversionFrndName}">
 						<a id="MsgTo"> To :<input type="text" id="country" value="${msgConversionFrndName}"
-							name="msgReceiverID" style="width: 725px; height: 22px; border-radius:15px"/>
+							name="msgReceiverID" style="width: 725px; height: 30px; border-radius:5px"/>
 							<script>
 								$("#country").autocomplete("list");
 							</script>
@@ -353,7 +356,7 @@ function validateMsgForm() {
 						
 					<c:if test="${empty msgConversionFrndName}">
 						<a id="MsgTo"> To :<input type="text" id="country"
-							name="msgReceiverID" style="width: 725px; height: 22px; border-radius:15px" contenteditable="true" />
+							name="msgReceiverID" style="width: 725px; height: 30px; border-radius:5px" contenteditable="true" />
 							<script>
 								$("#country").autocomplete("list");
 							</script>
@@ -364,7 +367,7 @@ function validateMsgForm() {
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
 					<div
-						style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 100px; background-color: white; overflow: hidden;">
+						style="margin: 27px auto auto 37px; width: 735px; height: 400px; border-radius: 10px; background-color: white; overflow: hidden;">
 						<div
 							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
@@ -447,7 +450,7 @@ function validateMsgForm() {
 			<div id="OutsideRightMessage">
 				<div id="InsideRightMessage">
 
-					<h3 style="background-color: #FAB039; margin-top: 0px;">AdvertiseMents</h3>
+					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
 
 
 				</div>

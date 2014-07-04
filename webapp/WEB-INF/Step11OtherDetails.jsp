@@ -21,6 +21,16 @@
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <title>Step-8 Other Details Page</title>
+<style type="text/css">
+			#MyOtherDetails {
+				width: 560px;
+				height: 550px;
+				background-color: yellow;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 15px;
+				
+			}
+		</style>
 </head>
 <body>
 	<center>
@@ -33,6 +43,7 @@
 			<div id="leftMainStep3"></div>
 
 			<div id="middleOccupation">
+			<div id="MyOtherDetails">
 			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
 			<form:errors path="*" cssClass="errorblock" element="div"/>
 			<h2>Step-8</h2>
@@ -110,6 +121,7 @@
 					</tr>
 				</table>
 				</form>
+				</div>
 			</div>
 			<div id="rightMainStep3"></div>
 			</div>

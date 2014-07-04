@@ -20,6 +20,17 @@
 
 
 <title>Step-2 Interest Areas page</title>
+	<style type="text/css">
+	 	#MyIntrestAreas{
+	        width: 600px;
+	        height: auto;
+	        background-color: yellow;
+	    	box-shadow: 10px 10px 5px #888888;
+	    	border-radius: 10px;
+	    }
+	        
+	</style>
+
 </head>
 <body>
 
@@ -34,7 +45,7 @@
 
 
 			<div id="info_step2" style="height: auto;">
-
+				<div id="MyIntrestAreas">
 				<h2>Step-2</h2>
 				<form name="IntrestAreasForm" action="/vanjariudyogvishwa-v2/IntrestAreas" method="post">
 					
@@ -129,6 +140,7 @@
 
 					</table>
 				</form>
+				</div>
 			</div>
 		</div>
 		

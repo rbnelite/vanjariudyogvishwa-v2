@@ -4,11 +4,6 @@ var temp1 = null;
 count = 0;
 function submitenter(myfield, e) {
 	
-	
-	alert("Enetred comment text is : ");
-	
-	/*var commentT=document.getElementById("commentt").value;*/
-	
 	var keycode;
 	if (window.event)
 		keycode = window.event.keyCode;
@@ -23,9 +18,10 @@ function submitenter(myfield, e) {
 		return false;
 	if (keycode == 13) {
 		if (temp1 == null || temp1 == "") {
-			/*	alert("please enter the comment");*/
+			
 			return false;
 		} else {
+			alert("Enetred comment text going to be saved is : "+temp1);
 			myfield.submit();
 			return true;
 		}
@@ -33,6 +29,7 @@ function submitenter(myfield, e) {
 		return true;
 	}
 }
+
 
 
 function viewPhoto() {

@@ -107,7 +107,6 @@ document.getElementById("notificationId").value=NotificationId;
     overflow: auto;
     border-radius: 3px;
     background-color: bisque;
-    border: 1px solid gray;
     overflow: auto;
     padding-right: 40px;
 }
@@ -148,7 +147,7 @@ document.getElementById("notificationId").value=NotificationId;
 	/* border-radius: 3px; */
 	background-color: bisque;
 	/* border: 1px solid gray; */
-	padding-right: 27px;
+	padding-right: 30px;
 }
 
 #OutsideleftMainHome {
@@ -297,7 +296,7 @@ document.getElementById("notificationId").value=NotificationId;
 					</table>
 				</div>
 				
-				<div id="leftMain3" style="height: 445px;">
+				<div id="leftMain3" style="height: 444px;">
 					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
 				</div>
 				

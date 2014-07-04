@@ -23,6 +23,16 @@
             return true;
         }
         </script>
+        <style type="text/css">
+		#MyContactDetails {
+			width: 560px;
+			height: 420px;
+			background-color: yellow;
+			box-shadow: 10px 10px 5px #888888;
+			border-radius: 15px;
+			margin-top: 100px;
+		}
+	</style>
     </head>
     <body>
         
@@ -37,6 +47,7 @@
 	<div id="leftMainStep3"></div>
 
             <div id="middleStep4">
+            <div id="MyContactDetails">
             <form:form action="/vanjariudyogvishwa-v2/Contact" method="post" commandName="contact">
             		<h2>Step-4</h2>
                                 <table align="center">
@@ -72,11 +83,12 @@
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${loginUser.email}"></td>
                                         <td align="right">
-                                            <input type="submit" class="savebtn" id="submit" name="save_contact" value="Save & Continue" >
+                                            <input type="submit" class="savebtn" id="submit" name="save_contact" value="Save & Continue" style="margin: 15px 14px 0px 0px;" >
                                         </td>
                                     </tr>
                                 </table>
                                 </form:form>
+                                </div>
                             </div>
                                             
             <div id="rightMainStep3"></div>

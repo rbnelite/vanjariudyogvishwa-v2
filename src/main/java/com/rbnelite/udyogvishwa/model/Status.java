@@ -66,6 +66,11 @@ public class Status {
 	}
 
 	public void setStatus(String status) {
+		/*Code to Store/Display content in same format as entered by user into TextArea*/
+			/*String ques=status;
+			StringBuffer sb=new StringBuffer(); 
+			sb.append("<pre>"+ques+"</pre>"); 
+			String ss=sb.toString();*/
 		this.status = status;
 	}
 

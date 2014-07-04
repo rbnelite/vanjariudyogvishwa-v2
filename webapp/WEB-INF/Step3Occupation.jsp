@@ -15,15 +15,24 @@
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 		<script src="<c:url value="/resources/js/anil.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script>
-function isNumberKey(evt)
-{
-    var charCode=(evt.which) ? evt.which :event.keyCode;
-    if(charCode >31 && (charCode<48 || charCode >57))
-        return false;
-    return true;
-}
-</script>
+	<script>
+		function isNumberKey(evt)
+		{
+		    var charCode=(evt.which) ? evt.which :event.keyCode;
+		    if(charCode >31 && (charCode<48 || charCode >57))
+		        return false;
+		    return true;
+		}
+	</script>
+	<style type="text/css">
+		#MyOccupation {
+			width: 600px;
+			height: 567px;
+			background-color: yellow;
+			box-shadow: 10px 10px 5px #888888;
+			border-radius: 15px;
+		}
+	</style>
 <title>Step-3 Occupation Details Page</title>
 </head>
 <body>
@@ -36,6 +45,7 @@ function isNumberKey(evt)
 			</div>
 			<div id="leftMainStep3"></div>
 			<div id="middleOccupation" style="background-color: bisque;">
+			 <div id="MyOccupation">
 				<h2>Step-3</h2>
 				<form:form action="/vanjariudyogvishwa-v2/Occupation" method="post" commandName="occupation">
 			
@@ -203,6 +213,7 @@ function isNumberKey(evt)
 						</tr>
 					</table>
 				</form:form>
+				</div>
 			</div>
 			<div id="rightMainStep3"></div>
 			

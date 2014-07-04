@@ -28,7 +28,14 @@
 	padding: 8px;
 	margin: 16px;
 }
-</style>
+	#MyEducationDetails {
+		width: 560px;
+		height: 585px;
+		background-color: yellow;
+		box-shadow: 10px 10px 5px #888888;
+		border-radius: 15px;
+	}
+</style>	
     </head>
     <body>
        <center>
@@ -41,6 +48,7 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleOccupation">
+            <div id="MyEducationDetails">
             <h2>Step-6</h2>
                 <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
                           
@@ -151,11 +159,12 @@
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${CurrentEmailId}"></td>
                                         <td align="right">
-                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" >
+                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" style="margin: 7px 5px 0px 0px;">
                                         </td>
                                     </tr>
                                 </table>
-                </form:form >
+                </form:form>
+                </div>
             </div>
             
             

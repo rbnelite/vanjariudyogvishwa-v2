@@ -121,7 +121,7 @@ public class CommentController {
 	}
 	
 	@RequestMapping(value="/Comment")
-	public String astroFormDetails(Map<String, Object> map) {
+	public String getComment(Map<String, Object> map) {
 		
 		return "Home";
 	}

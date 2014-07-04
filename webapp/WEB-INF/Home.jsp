@@ -15,7 +15,10 @@
 <title>Home Page : Vanjari Udyog Vishwa</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
+
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 
@@ -41,7 +44,8 @@ function abc1(evt){
 	
 if(charCode==32 && (flag=="n" || flag==""))
 	{
-	flag="n";}
+		flag="n";
+	}
 else
 	flag="y";
 if(charCode==8) flag="";
@@ -133,6 +137,11 @@ function errorComment()
 	document.getElementById("commentsubmit").click();
 	return true;
 	 }
+	 
+function setbg(color)
+{
+	document.getElementById("styledTextArea").style.background=color;
+}
 </script>
 
 		<script type="text/javascript">
@@ -225,7 +234,7 @@ height:125px;
     margin-top: 10px;
     float: left;
     height: auto;
-    background-color: rgba(175, 17, 233, 0.22);
+    background-color: rgba(175, 17, 233, 0.07);
     border: 2px solid red;
    
 }
@@ -254,7 +263,16 @@ height:125px;
     margin-left: -3px;
     margin-top: -19px;
 }
-
+#styledTextArea{
+	width: 666px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius:8px;
+}
 
 </style>
 
@@ -357,23 +375,23 @@ height:125px;
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
 					<tr>
 						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="message"><font color="#00cccc">Message</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="message">Message</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td width="84%"> <a id="Shortlinks" href="Events"><font color="#00cccc">Events</font></a> </td>
+						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Photos"><font color="#00cccc">Photos</font></a> </td>
+						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Product"><font color="#00cccc">Products</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="FriendList"><font color="#00cccc">Friends</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
 					</tr>
 					</table>
 				</div>
@@ -464,7 +482,7 @@ height:125px;
 					
 				</table>
 			</div>
-			<div id="MiddleTop">
+			<div id="MiddleTop" style="height: 200px">
 			<div id="UpdatePhoto">
 				<table>
 				<tr>
@@ -492,7 +510,7 @@ height:125px;
 						</tr>
 					</table>
 					<br>
-					<textarea name="status" rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)"></textarea>
+					<textarea name="status" id="styledTextArea" placeholder="Enter your Status here..." rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)" onfocus="setbg('rgba(228, 243, 245, 1)');" onblur="setbg('white')"></textarea>
 					<br>
 					<table align="right" width="70%">
 						<tr>
@@ -505,7 +523,7 @@ height:125px;
 							<input type="hidden" name="usermail" value="${loginUser.email}">
 							<td><input type="submit" value="Post"
 
-								style="margin-right: 30px;" class="buttonclr"
+								style="margin-right: -20px;" class="buttonclr"
 								onclick="return abc()">
 
 							</td>
@@ -513,8 +531,8 @@ height:125px;
 					</table>
 				</form>
 			</div>
-			<div id="outsidemiddleHome" style="margin-right: 300px;">
-				<div id="middleHome">
+			<div id="outsidemiddleHome" style="margin-right: 300px; height: 985px">
+				<div id="middleHome" style="height: 985px;">
 					
 					<!-- View perticular Notification Start here -->
 				
@@ -539,7 +557,7 @@ height:125px;
 									<table width=100%>
 
 										<tr>
-											<td align="left">${notifStatus[0].status}</td>
+											<td align="left"><pre style="font-family: Tahoma, sans-serif;">${notifStatus[0].status}</pre></td>
 										</tr>
 										<tr>
 											
@@ -595,7 +613,7 @@ height:125px;
 													name="whoseComment" value="${loginUser.email}"> <input
 													type="text" name="commenttext" id="commentt"
 													placeholder="Write a comment and Press Enter...."
-													style="width: 440px; height: 20px; margin-top: 10px; margin-left: -30px">
+													style="width: 535px; height: 20px; margin-top: 10px; margin-left: -50px">
 											</form>
 										</div>
 										<br>
@@ -671,7 +689,7 @@ height:125px;
 									<table width=100% >
 
 										<tr>
-											<td align="left">${status11.status}</td>
+											<td align="left"><pre style="font-family: Tahoma, sans-serif;">${status11.status}</pre></td>
 										</tr>
 										<tr>
 											
@@ -699,7 +717,7 @@ height:125px;
 																</font>
 																<c:if test="${myComment.user.emailId==loginUser.email}">
 																<input type="button"
-																	style="width: 50px; height: 20px; float: right; margin-top: 10px;cursor: pointer; background-color: transparent; border:none; color: blue; font: 18px cursive MS;"
+																	style="width: 50px; height: 25px; float: right; margin-top: 10px;cursor: pointer; background-color: transparent; border:none; color: rgba(129, 99, 227, 1); font: 22px cursive MS;"
 																	value="edit" onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
 																	<br> <span id="${myComment.id}">${myComment.comment}</span>
@@ -710,10 +728,10 @@ height:125px;
 																		<input type="text" name="commenttext" id="comment${myComment.id}"
 																		value="${myComment.comment}"
 																		style="width: 440px; height: 20px; margin-top: 10px; margin-left: 5px" >
-																		<input type="submit"
-																		style="width: 50px; height: 20px; margin-bottom: -5px; background-color: #fab039; border-style: outset;"
-																		value="Edit" onclick="return emptyEditerror('${myComment.id}')">
-																		<input type="reset" value="Cancel" onclick="hideSpanEdit('${myComment.id}')" style="width: 50px; height: 20px; float: right; margin-bottom: -5px; background-color: #fab039; border-style: outset;">
+																		<div style="float: right; margin:4px 40px -3px 0px">
+																			<input type="submit" value="Edit" id="editCommentBtnHome" onclick="return emptyEditerror('${myComment.id}')">
+																			<input type="reset" value="Cancel" id="editCommentResetBtn" onclick="hideSpanEdit('${myComment.id}')">
+																		</div>
 																</span></td>
 															</tr>
 															<tr>
@@ -725,7 +743,6 @@ height:125px;
 											</div>
 										</c:forEach>
 									</c:if>
-
 									<div id="commentBox">
 										<div class="commentBoxImage">
 											<c:if test="${! empty ProfileImageList}">
@@ -745,7 +762,7 @@ height:125px;
 													name="whoseComment" value="${loginUser.email}"> <input
 													type="text" name="commenttext" id="commentt"
 													placeholder="Write a comment and Press Enter...."
-													style="width: 440px; height: 20px; margin-top: 10px; margin-left: -30px">
+													style="width: 535px; height: 20px; margin-top: 10px; margin-left: -50px">
 													<!-- <input type="submit" id="commentsubmit" style="border: none; background: none; display: none;" > -->
 											</form>
 										</div>

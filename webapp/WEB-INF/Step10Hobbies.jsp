@@ -36,6 +36,16 @@
         	 
         	}
         </script>
+        <style type="text/css">
+        	#MyHobbies{
+        		width: 600px;
+        		height: 678px;
+        		background-color: yellow;
+    			box-shadow: 10px 10px 5px #888888;
+    			border-radius: 10px;
+        	}
+        
+        </style>
     </head>
     <body>
         
@@ -50,6 +60,8 @@
             
             <div id="middleStep10">
             
+            <div id="MyHobbies">
+            
             <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
             	<h2>Step-7</h2>
                 <table align="center">
@@ -63,7 +75,7 @@
                                     </tr>
 
                                     <tr><td colspan="2"><hr/></td></tr>
-                                    <tr><td><br><br></td></tr>
+                                    
 
 
                                     <tr>
@@ -74,7 +86,7 @@
                                     <tr>
                                         <td>Favourite Music</td><td><!-- <textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"> -->
                                         <!-- </textarea> -->
-                                        <select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
+                                        <select name="favouriteMusic" id="fav_music" style="resize: none; width: 215px;" multiple="multiple" size="4">
                                         <option>Blues</option>
                                         <option>Alternative Music</option>
                                         <option>Classical Music</option>
@@ -150,13 +162,13 @@
                                         <td><input type="hidden" name="usermail" value="${loginUser.email}"><a href="OtherDetails"><font color="green"><b>SKIP</b></font></a></td>
                                         <td align="right">
 
-                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" >
+                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" style="margin: 0px 49px 0px 0px;">
                                         </td>
                                     </tr>
                                 </table>
                 
                 </form>
-            
+            	</div>
             </div>
                 
             

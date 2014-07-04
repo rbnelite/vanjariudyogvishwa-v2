@@ -24,8 +24,18 @@
     	            return true;
     	        return false;
         }
-		</script> 
-    </head>
+				</script>
+		<style type="text/css">
+			#MyReligionDetails {
+				width: 560px;
+				height: 420px;
+				background-color: yellow;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 15px;
+				margin-top: 100px;
+			}
+		</style>
+</head>
     <body>
         <center>
         <div id="mainMsg">
@@ -39,6 +49,7 @@
             <div id="leftMainStep3"></div>
             
             <div id="middleStep4">
+            <div id="MyReligionDetails">
             <form:form action="/vanjariudyogvishwa-v2/Religion" method="POST" commandName="religion">
             <h2>Step-5</h2>
                         <table align="center">
@@ -70,7 +81,7 @@
                  <tr><td colspan="2"><br></td></tr>
                 <tr>
                     <td>Caste</td>
-                    <td><form:input path="relCast" onkeypress="return isCharKey(event);"/>
+                    <td><form:input path="relCast" onkeypress="return isCharKey(event);" />
                     <form:errors path="relCast" cssClass="error"/>
                    </td>
                 </tr>
@@ -86,6 +97,7 @@
                         </tr>
                        </table>
            </form:form>
+           </div>
                     </div>
             
             

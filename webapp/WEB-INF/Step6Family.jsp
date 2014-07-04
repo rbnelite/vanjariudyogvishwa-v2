@@ -20,6 +20,16 @@
 
 
 <title>Step-6 Family Details Page</title>
+	<style type="text/css">
+		#MyFamilyDetails {
+			width: 560px;
+			height: 420px;
+			background-color: yellow;
+			box-shadow: 10px 10px 5px #888888;
+			border-radius: 15px;
+			margin-top: 100px;
+		}
+	</style>
 </head>
 <body>
 
@@ -34,6 +44,7 @@
 			<div id="leftMainStep3"></div>
 
 			<div id="middleStep4">
+			<div id="MyFamilyDetails">
 				<form action="/vanjariudyogvishwa-v2/Family" method="post">
 				<h2>Step-6</h2>
 					<table align="center">
@@ -133,7 +144,7 @@
 						</tr>
 					</table>
 				</form>
-
+				</div>
 			</div>
 
 
