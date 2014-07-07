@@ -65,105 +65,135 @@
         }
 		
 	</script>
-	<style type="text/css">
-		
-		.error {
-			color: #ff0000;
-		}
- 
-		.errorblock {
-			color: #000;
-			background-color: #ffEEEE;
-			border: 3px solid #ff0000;
-			padding: 8px;
-			margin: 16px;
-		}
-		
-		#MyIntrestAreas{
-	        width: 740px;
-	        height: 980px;
-	        background-color: #FFE4C4;
-	    	box-shadow: 10px 10px 5px #888888;
-	    	border-radius: 10px;
-	    	border: 1px solid gray;
-	    	margin-bottom: 25px;
-	    	margin-top: 20px;
-	    }
-		
-		#MyOccupation {
-			display:none;
-			width: 600px;
-			height: 567px;
-			background-color: #FFE4C4;
-			box-shadow: 10px 10px 5px #888888;
-			border-radius: 10px;
-			border: 1px solid gray;
-			margin-bottom: 25px;
-			margin-top: 20px;
-		}
-	
-	 	#MyContactDetails {
-	 		display:none;
-			width: 560px;
-			height: 420px;
-			background-color: #FFE4C4;
-			box-shadow: 10px 10px 5px #888888;
-			border-radius: 10px;
-			margin-top: 100px;
-			border: 1px solid gray;
-			margin-bottom: 25px;
-			margin-top: 20px;
-		}
-	    
-	    #MyReligionDetails {
-			display:none;
-			width: 560px;
-			height: 420px;
-			background-color: #FFE4C4;
-			box-shadow: 10px 10px 5px #888888;
-			border-radius: 10px;
-			margin-top: 100px;
-			border: 1px solid gray;
-			margin-bottom: 30px;
-		    margin-top: 20px;
-		}
-	    
-		#MyEducationDetails {
-			display:none;
-			width: 560px;
-			height: 630px;
-			background-color: #FFE4C4;
-			box-shadow: 10px 10px 5px #888888;
-			border-radius: 10px;
-			border: 1px solid gray;
-			margin-bottom: 25px;
-			margin-top: 20px;
-		}
-		
-		#MyHobbies {
-        	display:none;
-        	width: 600px;
-        	height: 705px;
-        	background-color: #FFE4C4;
-    		box-shadow: 10px 10px 5px #888888;
-    		border-radius: 10px;
-    		border: 1px solid gray;
-    		margin-bottom: 25px;
-    		margin-top: 20px;
-        }
-        
-        #MyOtherDetails {
-			display:none;
-			width: 560px;
-			height: 590px;
-			background-color: #FFE4C4;
-			box-shadow: 10px 10px 5px #888888;
-			border-radius: 10px;
-			border: 1px solid gray;
-			margin-bottom: 25px;
-			margin-top: 20px;
-		}
-	</style>
+				<style type="text/css">
+			.error {
+				color: #ff0000;
+			}
+			
+			.errorblock {
+				color: #000;
+				background-color: #ffEEEE;
+				border: 3px solid #ff0000;
+				padding: 8px;
+				margin: 16px;
+			}
+			
+			#MyIntrestAreas {
+				width: 740px;
+				height: 980px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyOccupation {
+				display: none;
+				width: 600px;
+				height: 635px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyContactDetails {
+				display: none;
+				width: 560px;
+				height: 420px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyReligionDetails {
+				display: none;
+				width: 560px;
+				height: 390px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 30px;
+				margin-top: 20px;
+			}
+			
+			#MyEducationDetails {
+				display: none;
+				width: 560px;
+				height: 680px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyHobbies {
+				display: none;
+				width: 600px;
+				height: 745px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyOtherDetails {
+				display: none;
+				width: 560px;
+				height: 645px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border-radius: 10px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+
+		/* CSS for Input, Select and textArea START here...*/
+			input[type="text"], select {
+				width:290px;
+				height:30px;
+				border-radius:5px;
+				background-color:white;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			input[type="text"]:FOCUS, select :FOCUS{
+				width:290px;
+				height:30px;
+				border: 2px solid red;
+				border-radius:5px;
+				background-color:white;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			textarea{
+				resize: none;
+				width:290px;
+				height:50px;
+				font: normal 12px Trebuchet MS;
+				font-family: Verdana;
+			}
+			
+		/* CSS for Input, Select and textArea END here...*/
+</style>
 
 </head>
 <body>
@@ -188,8 +218,7 @@
 					
 					<table>
 						<tr>
-							<td colspan="2"><font size="5">Select Your
-									Interest areas Details</font>
+							<td colspan="2"><font size="5">Select Your Interest areas Details</font>
 							</td>
 						</tr>
 						<tr>
@@ -307,7 +336,7 @@
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><form:input path="companyName" size="30" maxlength="30"/>
+							<td><input type="text" name="companyName" size="30" maxlength="30"/>
 								
 							</td>
 						</tr>
@@ -319,7 +348,7 @@
 						
 						<tr>
 							<td>Occupation <font color="red">*</font> </td>
-							<td> <select id="occupation" name="occupatiuon" style="width: 223px;">
+							<td> <select id="occupation" name="occupatiuon">
 									<option selected value="">--Please select--</option>
 									<option>Admin Professional</option>
 									<option>Actor</option>
@@ -394,10 +423,7 @@
 						</tr>
 						<tr>
 							<td>Product/Manufacturing Details </td>
-							<td><textarea name="productdetils"
-									style="resize: none; font: normal 12px Trebuchet MS; font-family: Verdana; font-size: 12px;"
-									id="product_details" rows="1" cols="25" maxlength="150"
-									style="resize: none;"></textarea>
+							<td><textarea name="productdetils" id="product_details" style="resize: none;"></textarea>
 							
 							</td>
 						</tr>
@@ -417,8 +443,7 @@
 						<tr>
 							<td>Employment Type 
 							</td>
-							<td><select name="emptype" id="emp_type"
-								style="width: 223px;">
+							<td><select name="emptype" id="emp_type">
 									<option selected value="">--Please Select--</option>
 									<option>Permanent</option>
 									<option>Contract</option>
@@ -433,7 +458,7 @@
 						<tr>
 							<td>Annual Income <font color="red">*</font>
 							</td>
-							<td><form:input path="annualincome"	size="30" maxlength="8" onkeypress="return isNumberKey(event)"/>
+							<td><input type="text" name="annualincome"	size="30" maxlength="8" onkeypress="return isNumberKey(event)"/>
 								
 							</td>
 						</tr>
@@ -501,7 +526,7 @@
 
 							<tr>
 								<td>Office Telephone/Mobile</td>
-								<td><input name type="text" ="telephoneNo" maxlength="12"
+								<td><input type="text" name="telephoneNo" maxlength="12"
 									onkeypress="return isNumberKey(event)"></td>
 							</tr>
 							<tr>
@@ -547,7 +572,7 @@
 
 							<tr>
 								<td>Religion <font color="red">*</font></td>
-								<td><select name="religionName" style="width: 223px;">
+								<td><select name="religionName">
 										<option>--Select Religion--</option>
 										<option>Hindu</option>
 										<option>Muslim</option>
@@ -615,7 +640,7 @@
                                     <tr>
                                         <td>Graduation Degree</td>
                                         <td>
-                                            <select name="graduation" id="graduation" style="width: 223px;">
+                                            <select name="graduation" id="graduation">
                                                 <option>--Please select--</option>
                                                 <option>BA</option>
                                                 <option>BBA</option>
@@ -658,7 +683,7 @@
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
                                         <td> PG Degree </td>
-                                        <td><select name="PGDegree"  style="width: 223px;">
+                                        <td><select name="PGDegree">
                                                 <option>--Please select--</option>
                                                 <option>MA</option>
                                                 <option>M.Sc</option>
@@ -728,14 +753,14 @@
 
 
                                     <tr>
-                                        <td> Hobbies </td><td><textarea name="hobbiesName" id="hobbies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td> Hobbies </td><td><textarea name="hobbiesName" id="hobbies" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td>Favourite Music</td><td><!-- <textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"> -->
                                         <!-- </textarea> -->
-                                        <select name="favouriteMusic" id="fav_music" style="resize: none; width: 215px;" multiple="multiple" size="4">
+                                        <select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
                                         <option>Blues</option>
                                         <option>Alternative Music</option>
                                         <option>Classical Music</option>
@@ -758,14 +783,14 @@
                                     <tr><td></td><td><span id="massage" style="color: red;"></span></td></tr>
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books" rows="1" cols="25" maxlength="50" style="resize: none;" onfocus=" return check()"></textarea>
+                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books" style="resize: none;" onfocus=" return check()"></textarea>
                                             </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td> Dress Style </td>
                                         <td>
-                                        <select name="dressStyletyle" id="dress_style" style="width: 219px; height: 35px;">
+                                        <select name="dressStyletyle" id="dress_style">
                                                 <option selected value="">--Please Select --</option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
@@ -777,32 +802,32 @@
                                         </td>
                                     <!--</tr> <tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite TV Shows </td><td><textarea name="favouritrTvShows" id="fav_tvShows" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td>Favourite TV Shows </td><td><textarea name="favouritrTvShows" id="fav_tvShows" style="resize: none;"></textarea>
                                             <div id="fav_tvShowsError" class="red" colspan="2"/></td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     
                                    <tr>
-                                        <td>Favourite Movies </td><td><textarea name="favouriteMovies" id="fav_movies" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td>Favourite Movies </td><td><textarea name="favouriteMovies" id="fav_movies" style="resize: none;"></textarea>
                                         </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td> Sports</td>
-                                        <td><textarea name="sports" id="sports" rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td><textarea name="sports" id="sports" style="resize: none;" ondblclick="return "></textarea>
                                         </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Food I Cook </td><td><textarea name="foodIcook" id="food"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td> Food I Cook </td><td><textarea name="foodIcook" id="food" style="resize: none;"></textarea>
                                             </td>
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td>Favourite Vacation<br> Destination </td>
-                                        <td><textarea name="vacationDestination" id="vac_dest"rows="1" cols="25" maxlength="50" style="resize: none;"></textarea>
+                                        <td><textarea name="vacationDestination" id="vac_dest" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
                                     <tr><td colspan="2"><br></tr>
@@ -848,8 +873,7 @@
 
 					<tr>
 						<td>Social Status</td>
-						<td><textarea name="socialStatus" rows="1" cols="25"
-								maxlength="80" style="resize: none;"></textarea>
+						<td><textarea name="socialStatus" style="resize: none;"></textarea>
 						</td>						
                          <td><form:errors path="socialStatus" cssclass="error"/></td>
 						
@@ -860,8 +884,7 @@
 					</tr>
 					<tr>
 						<td>Political Status/View</td>
-						<td><textarea name="polyticalstatus" rows="1" cols="25"
-								maxlength="80" style="resize: none;"></textarea>
+						<td><textarea name="polyticalstatus" style="resize: none;"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -869,8 +892,7 @@
 					</tr>
 					<tr>
 						<td>Social Activity</td>
-						<td><textarea name="socialact" rows="1" cols="25"
-								maxlength="80" style="resize: none;"></textarea>
+						<td><textarea name="socialact" style="resize: none;"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -878,8 +900,7 @@
 					</tr>
 					<tr>
 						<td>Political Activity</td>
-						<td><textarea name="polyticalact" rows="1" cols="25"
-								maxlength="80" style="resize: none;"></textarea>
+						<td><textarea name="polyticalact" style="resize: none;"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -887,8 +908,7 @@
 					</tr>
 					<tr>
 						<td>Cultural Activity</td>
-						<td><textarea name="culturalact" rows="1" cols="25"
-								maxlength="80" style="resize: none;"></textarea>
+						<td><textarea name="culturalact" style="resize: none;"></textarea>
 						</td>
 					</tr>
 					<tr>
