@@ -67,18 +67,14 @@ public class RelegionController {
 	private NotificationService notificationService;
 	
 	@RequestMapping(value="/Religion",method=RequestMethod.POST)
-	public String RelegionMethod(@Valid Religion religion,BindingResult result,@RequestParam("usermail") String emailId, @ModelAttribute("ReligionCredential") ReligionCredential relegioncredential,ModelMap map){
-		if(result.hasErrors())
-		{
-		return "Step5Religion";	
-		}
-		else
-		{
+	public String RelegionMethod(@RequestParam("usermail") String emailId, @ModelAttribute("ReligionCredential") ReligionCredential relegioncredential,ModelMap map){
+		
 		relegionservice.insertRelegion(relegioncredential);
 		map.put("CurrentEmailId", emailId);
 		map.addAttribute("educationWork", new EducationWork());
-		return "Step8EducationWork";
-		}
+		map.put("ReligionStatus", true);
+		return "Registration";
+		
 	}
 	
 	

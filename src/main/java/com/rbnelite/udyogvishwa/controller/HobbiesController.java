@@ -65,7 +65,8 @@ public class HobbiesController {
 		hobbiesServ.saveHobbies(hobbycredential);
 		map.put("CurrentEmailId", emailId);
 		map.addAttribute("otherdetails", new OtherDetails ());
-		return "Step11OtherDetails";
+		map.put("HobbiesStatus", true);
+		return "Registration";
 	}
 	
 	

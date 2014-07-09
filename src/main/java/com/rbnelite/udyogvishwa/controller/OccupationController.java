@@ -31,14 +31,17 @@ public String insert(@Valid Occupation occupation, BindingResult result,@Request
 	if(result.hasErrors())
 	{
 		map.put("CurrentEmailId", emailId);
-		return "Step3Occupation";	
+		map.addAttribute("occupation", new Occupation());
+		map.put("IAstatus", true);
+		return "Registration";	
 	}
 	else
 	{
 	ocservice.insertOccupation(occredential);
 	map.put("CurrentEmailId", emailId);
 	map.addAttribute("contact", new Contact());
-	return "Step4Contact";
+	map.put("OccupationStatus", true);
+	return "Registration";
 	}
 	
 }

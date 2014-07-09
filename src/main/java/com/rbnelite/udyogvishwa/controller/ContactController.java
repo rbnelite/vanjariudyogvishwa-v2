@@ -71,15 +71,18 @@ public class ContactController {
 			@ModelAttribute("ContactCredential") ContactCredential contactcredential,
 			ModelMap map) {
 		if (result.hasErrors()) {
-			return "Step4Contact";
+			map.put("OccupationStatus", true);
+			map.addAttribute("contact", new Contact());
+			return "Registration";
 
 		}
 
 		else {
 			contactservice.SaveContact(contactcredential);
+			map.put("ContactStatus", true);
 			map.put("CurrentEmailId", emailId);
 			map.addAttribute("religion", new Religion());
-			return "Step5Religion";
+			return "Registration";
 		}
 
 	}

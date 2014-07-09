@@ -65,13 +65,16 @@ public String insert(@RequestParam("userMail") String emailId, @Valid EducationW
 	
 	if(result.hasErrors()) {
 		map.put("CurrentEmailId", emailId);
-        return "Step8EducationWork";
+		map.addAttribute("educationWork", new EducationWork());
+		map.put("ReligionStatus", true);
+		return "Registration";
     }
 	else
 	{
 	educationWorkService.insertEducationWork(educationworkcredential);
 	map.put("CurrentEmailId", emailId);
-	return"Step10Hobbies";
+	map.put("EducationStatus", true);
+	return"Registration";
 	}
 	
 }

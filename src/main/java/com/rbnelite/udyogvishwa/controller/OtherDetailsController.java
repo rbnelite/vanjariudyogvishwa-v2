@@ -72,9 +72,10 @@ public class OtherDetailsController {
 	{
 		 if(result.hasErrors()) 
 		 {
-			 
-			 System.out.println("me hushar aahe");
-	            return "Step11OtherDetails";
+			 map.addAttribute("otherdetails", new OtherDetails ()); 
+			 map.put("HobbiesStatus", true);
+			 System.out.println("from Other Details Controller errorOccured while saving data...");
+	            return "Registration";
 	     }
 		 else
 		 {	 

@@ -1,6 +1,6 @@
 
 <%-- 
-    Document   : InterestAreas
+    Document   : Registration @ Vanjari Udyog Vishwa.
     Created on : Dec 21, 2013, 11:02:28 AM
     Author     : sawantmanojm@gmail.com
 --%>
@@ -65,116 +65,30 @@
         }
 		
 	</script>
-				<style type="text/css">
-			.error {
-				color: #ff0000;
-			}
+	<style type="text/css">
+		.error {
+			color: #ff0000;
+		}
 			
-			.errorblock {
-				color: #000;
-				background-color: #ffEEEE;
-				border: 3px solid #ff0000;
-				padding: 8px;
-				margin: 16px;
-			}
-			
-			#MyIntrestAreas {
-				width: 740px;
-				height: 980px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-			#MyOccupation {
-				display: none;
-				width: 600px;
-				height: 635px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-			#MyContactDetails {
-				display: none;
-				width: 560px;
-				height: 420px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				margin-top: 100px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-			#MyReligionDetails {
-				display: none;
-				width: 560px;
-				height: 390px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				margin-top: 100px;
-				border: 1px solid gray;
-				margin-bottom: 30px;
-				margin-top: 20px;
-			}
-			
-			#MyEducationDetails {
-				display: none;
-				width: 560px;
-				height: 680px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-			#MyHobbies {
-				display: none;
-				width: 600px;
-				height: 745px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-			#MyOtherDetails {
-				display: none;
-				width: 560px;
-				height: 645px;
-				background-color: #FFE4C4;
-				box-shadow: 10px 10px 5px #888888;
-				border-radius: 10px;
-				border: 1px solid gray;
-				margin-bottom: 25px;
-				margin-top: 20px;
-			}
-			
-
-		/* CSS for Input, Select and textArea START here...*/
+		.errorblock {
+			color: #000;
+			background-color: #ffEEEE;
+			border: 3px solid #ff0000;
+			padding: 8px;
+			margin: 16px;
+		}
+			/* CSS for Input, Select and textArea START here...*/
 			input[type="text"], select {
 				width:290px;
 				height:30px;
+				border: 1px solid gray;
 				border-radius:5px;
-				background-color:white;
+				background-color: rgba(246, 212, 212, 0.42);
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			}
 			
-			input[type="text"]:FOCUS, select :FOCUS{
+			input[type="text"]:FOCUS, select :ACTIVE{
 				width:290px;
 				height:30px;
 				border: 2px solid red;
@@ -183,17 +97,31 @@
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			}
-			
+						
 			textarea{
 				resize: none;
 				width:290px;
 				height:50px;
 				font: normal 12px Trebuchet MS;
 				font-family: Verdana;
+				background-color: rgba(246, 212, 212, 0.42);
+				border: 1px solid gray;
+				border-radius:5px;
+			}
+			textarea:FOCUS{
+				resize: none;
+				width:290px;
+				height:50px;
+				font: normal 12px Trebuchet MS;
+				font-family: Verdana;
+				background-color:white;
+				border: 1px solid red;
+				border-radius:5px;
 			}
 			
 		/* CSS for Input, Select and textArea END here...*/
-</style>
+			
+	</style>
 
 </head>
 <body>
@@ -211,9 +139,9 @@
 			<div id="info_step2" style="height: auto;">
 				
 				<!-- Registration Step-2 InterestArea Starts Here -->
-				
-				<div id="MyIntrestAreas">
-				<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 8px;height: 33px;width: 740px;">Step-2</h2>
+				<c:if test="${IndexStatus}">
+				<div id="MyIntrestAreas" style="display: block;">
+				<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 740px;">Step-2</h2>
 				<form name="IntrestAreasForm" action="/vanjariudyogvishwa-v2/IntrestAreas" method="post" onsubmit="return displayMyIntrestAreas();">
 					
 					<table>
@@ -296,7 +224,7 @@
 							<td></td><td></td>
 							<td align="left">
 								<input type="submit" name="save_intrests" value="Save & Continue" class="savebtn"
-								 style="margin-top: 10px" onmouseover="return displayMyOccupation();">
+								 style="margin-top: 10px"> <!-- onmouseover="return displayMyOccupation();" -->
 							</td>
 							<td></td>
 						</tr>
@@ -304,13 +232,13 @@
 					</table>
 				</form>
 				</div>
-				
+				</c:if>
 				<!-- Registration Step-2 InterestArea End Here -->
 				
 				<!-- Registration Step-3 Occupation Start Here -->
-					
-					<div id="MyOccupation">
-				<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 600px;">Step-3</h2>
+					<c:if test="${IAstatus}">
+					<div id="MyOccupation" style="display: block;">
+				<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 600px;">Step-3</h2>
 				<form:form action="/vanjariudyogvishwa-v2/Occupation" method="post" commandName="occupation">
 			
 					<table align="center">
@@ -458,7 +386,7 @@
 						<tr>
 							<td>Annual Income <font color="red">*</font>
 							</td>
-							<td><input type="text" name="annualincome"	size="30" maxlength="8" onkeypress="return isNumberKey(event)"/>
+							<td><input type="text" name="annualincome"	size="30" maxlength="9" onkeypress="return isNumberKey(event)"/>
 								
 							</td>
 						</tr>
@@ -468,24 +396,25 @@
 						</tr>
 						<tr>
 							<td><input type="hidden" name="usermail" value="${CurrentEmailId}">
-								<input type="button" name="PrevInterestArea" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyIntrestAreas();">
+								<!-- <input type="button" name="PrevInterestArea" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyIntrestAreas();"> -->
 							</td>
 							<td align="right">
-								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn" style="margin-top: -10px;" onmouseover="return displayMyContactDetails()">
+								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn" style="margin-top: -10px;">
+								<!-- onmouseover="return displayMyContactDetails()" -->
 							</td>
 						</tr>
 					</table>
 				</form:form>
 				</div>
-					
+				</c:if>
 				<!-- Registration Step-3 Occupation End Here -->
 				
 				<!-- Registration Step-4 Contact Start Here -->
-					
-					<div id="MyContactDetails">
+					<c:if test="${OccupationStatus}">
+					<div id="MyContactDetails" style="display: block;">
 					<form:form action="/vanjariudyogvishwa-v2/Contact" method="post"
 						commandName="contact">
-						<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 560px;">Step-4</h2>
+						<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-4</h2>
 						<table align="center">
 							<tr>
 								<td colspan="2"><br>
@@ -531,24 +460,24 @@
 							</tr>
 							<tr>
 								<td><input type="hidden" name="userMail" value="${loginUser.email}">
-									<input type="button" name="PrevOccupation" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 5px" onmouseover="return displayMyOccupation();">
+									<!-- <input type="button" name="PrevOccupation" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 5px" onmouseover="return displayMyOccupation();"> -->
 								</td>
 								<td align="right"><input type="submit" class="savebtn"
-									id="submit" name="save_contact" value="Save & Continue" onmouseover="return displayMyReligionDetails();"
-									style="margin: 8px 14px 0px 0px;"></td>
+									id="submit" name="save_contact" value="Save & Continue" 
+									style="margin: 8px 14px 0px 0px;"> <!-- onmouseover="return displayMyReligionDetails();" -->
+								</td>
 							</tr>
 						</table>
 					</form:form>
 				</div>
-					
+				</c:if>
 				<!-- Registration Step-4 Contact End Here -->
 				
 				<!-- Registration Step-5 Religion Start Here -->
-					
-					<div id="MyReligionDetails">
-					<form action="/vanjariudyogvishwa-v2/Religion" method="POST"
-						commandName="religion">
-						<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 560px;">Step-5</h2>
+					<c:if test="${ContactStatus}">
+					<div id="MyReligionDetails" style="display: block;">
+					<form action="/vanjariudyogvishwa-v2/Religion" method="POST">
+						<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-5</h2>
 						<table align="center">
 							<tr>
 								<td colspan="2"></td>
@@ -579,16 +508,14 @@
 										<option>Christen</option>
 										<option>Sikh</option>
 										<option>Other</option>
-									</select> <form:errors path="religionname" cssClass="error" /></td>
+									</select> </td>
 							</tr>
 							<tr>
 								<td colspan="2"><br></td>
 							</tr>
 							<tr>
 								<td>Caste</td>
-								<td><input type="text" name="relCast"
-										onkeypress="return isCharKey(event);" /> <form:errors
-										path="relCast" cssClass="error" /></td>
+								<td><input type="text" name="relCast" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 
 							<tr>
@@ -597,21 +524,23 @@
 
 							<tr>
 								<td><input type="hidden" name="usermail" value="${loginUser.email}">
-									<input type="button" name="PrevContact" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyContactDetails();">
+									<!-- <input type="button" name="PrevContact" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyContactDetails();"> -->
 								</td>
 								<td align="right"><input type="submit" name="save_religion" style="margin: 10px 50px 10px 0px;"
-									id="submit" value="Save & Continue" class="savebtn" onmouseover="return displayMyEducationDetails();"></td>
+									id="submit" value="Save & Continue" class="savebtn">
+								<!-- onmouseover="return displayMyEducationDetails();" -->
+								</td>
 							</tr>
 						</table>
 					</form>
 				</div>
-					
+				</c:if>	
 				<!-- Registration Step-5 Religion End Here -->
 				
 				<!-- Registration Step-8 Education Start Here -->
-					
-					<div id="MyEducationDetails">
-            <h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 560px;">Step-6</h2>
+					<c:if test="${ReligionStatus}">
+					<div id="MyEducationDetails" style="display: block;">
+            <h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-6</h2>
                 <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
                           
                 <table align="center">
@@ -720,24 +649,25 @@
 
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${CurrentEmailId}">
-                                        	<input type="button" name="PrevReligion" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 15px" onmouseover="return displayMyReligionDetails();">
+                                        	<!-- <input type="button" name="PrevReligion" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 15px" onmouseover="return displayMyReligionDetails();"> -->
                                         </td>
                                         <td align="right">
-                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" style="margin: 8px 5px 0px 0px;" onmouseover="return displayMyHobbies();">
+                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" style="margin: 8px 5px 0px 0px;">
+                                            <!-- onmouseover="return displayMyHobbies();" -->
                                         </td>
                                     </tr>
                                 </table>
                 </form:form>
                 </div>
-					
+				</c:if>	
 				<!-- Registration Step-8 Education End Here -->
 				
 				<!-- Registration Step-10 Hobbies Start Here -->
-					
-					<div id="MyHobbies">
+					<c:if test="${EducationStatus}">
+					<div id="MyHobbies" style="display: block;">
             
             <form action="/vanjariudyogvishwa-v2/Hobbies" method="post">
-            	<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 600px;">Step-7</h2>
+            	<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 600px;">Step-7</h2>
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
                                     <tr>
@@ -758,9 +688,9 @@
                                     </tr> 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td>Favourite Music</td><td><!-- <textarea name="favouriteMusic" id="fav_music" rows="1" cols="25" maxlength="50" style="resize: none;"> -->
+                                        <td>Favourite Music</td><td>
                                         <!-- </textarea> -->
-                                        <select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
+                                        <select name="favouriteMusic" id="fav_music" style="resize: none;height: 50px; width: 295px" multiple="multiple" size="4">
                                         <option>Blues</option>
                                         <option>Alternative Music</option>
                                         <option>Classical Music</option>
@@ -790,7 +720,7 @@
                                     <tr>
                                         <td> Dress Style </td>
                                         <td>
-                                        <select name="dressStyletyle" id="dress_style">
+                                        <select name="dressStyletyle" id="dress_style" style="width: 295px">
                                                 <option selected value="">--Please Select --</option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
@@ -834,26 +764,27 @@
 
                                     <tr>
                                         <td><input type="hidden" name="usermail" value="${loginUser.email}">
-                                        	<input type="button" name="PrevEducation" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyEducationDetails();">
+                                        	<!-- <input type="button" name="PrevEducation" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyEducationDetails();"> -->
                                         </td>
                                         <td align="right">
 
-                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" style="margin: 0px 49px 0px 0px;" onmouseover="return displayMyOtherDetails();">
+                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" style="margin: 0px 49px 0px 0px;">
+                                            <!-- onmouseover="return displayMyOtherDetails();" -->
                                         </td>
                                     </tr>
                                 </table>
                 
                 </form>
             	</div>
-					
+				</c:if>
 				<!-- Registration Step-10 Hobbies End Here -->
 				
 				<!-- Registration Step-11 OtherDetails Start Here -->
-					
-					<div id="MyOtherDetails">
+					<c:if test="${HobbiesStatus}">
+					<div id="MyOtherDetails" style="display: block;">
 			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
 			<form:errors path="*" cssClass="errorblock" element="div"/>
-			<h2 style="background-color: #FBB819;margin-top: 0px;border-radius: 9px;height: 33px;width: 560px;">Step-8</h2>
+			<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-8</h2>
 				<table align="center">
 					<tr>
 						<td colspan="2"><br>
@@ -916,7 +847,7 @@
 					</tr>
 					<tr>
 						<td><input type="hidden" name="usermail" value="${loginUser.email}">
-							<input type="button" name="PrevHobbies" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyHobbies();">
+							<!-- <input type="button" name="PrevHobbies" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyHobbies();"> -->
 						</td>
 						<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
@@ -926,7 +857,7 @@
 				</table>
 				</form>
 				</div>
-					
+				</c:if>
 				<!-- Registration Step-11 OtherDetails End Here -->
 			</div>
 		</div>

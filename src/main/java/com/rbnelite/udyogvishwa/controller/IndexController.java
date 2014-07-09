@@ -86,7 +86,8 @@ public class IndexController {
 			
 			map.put("CurrentEmailId", emailId);
 			map.addAttribute("occupation", new Occupation());
-			return "Step2InterestArea";
+			map.put("IndexStatus", true);
+			return "Registration";
 		}
 	}
 
@@ -174,6 +175,12 @@ public class IndexController {
 	public String indexForm(ModelMap map) {
 		map.addAttribute("index", new Index());
 		return "Index";
+	}
+	
+	@RequestMapping("/Index2")
+	public String getIndex2(ModelMap map) {
+		map.addAttribute("index", new Index());
+		return "Index2";
 	}
 
 }

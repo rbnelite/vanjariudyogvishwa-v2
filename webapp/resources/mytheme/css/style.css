@@ -189,7 +189,7 @@ float: left;
 
 #Showcomment
 {
-	background-color: rgba(237, 215, 182, 1);
+	background-color: rgba(237, 215, 182, 0.02);
 	width: 666px;
 	height: auto;
 	margin-top: -10px;
@@ -258,7 +258,7 @@ float: left;
 	float: left; 
 	margin-left: 10px;
 
-	width:560px;
+	width:666px;
 	
 }
 
@@ -1026,3 +1026,87 @@ h4 {
 	color: #008000;
 	text-decoration: none;
 }
+
+
+/*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/
+
+			#MyIntrestAreas {
+				width: 740px;
+				height: 980px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyOccupation {
+				display: none;
+				width: 600px;
+				height: 635px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyContactDetails {
+				display: none;
+				width: 560px;
+				height: 420px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyReligionDetails {
+				display: none;
+				width: 560px;
+				height: 390px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 30px;
+				margin-top: 20px;
+			}
+			
+			#MyEducationDetails {
+				display: none;
+				width: 560px;
+				height: 680px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyHobbies {
+				display: none;
+				width: 600px;
+				height: 755px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#MyOtherDetails {
+				display: none;
+				width: 560px;
+				height: 645px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+
+/*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com  End ***********/		

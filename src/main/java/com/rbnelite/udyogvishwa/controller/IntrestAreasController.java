@@ -24,16 +24,17 @@ public class IntrestAreasController {
 	public String insertIntrestAreas(@RequestParam("userMail") String emailId, @ModelAttribute("IntrestAreasCredential") IntrestAreasCredential intrestareascredential,ModelMap map){
 		
 		intrestareasservice.insertIntrestAreas(intrestareascredential);
+		
 		map.put("CurrentEmailId", emailId);
 		map.addAttribute("occupation", new Occupation());
 
-		
-		return "Step2InterestArea";
+		map.put("IAstatus", true);
+		return "Registration";
 	}
 	
 	@RequestMapping(value="/IntrestAreas")
 	public String interestAreasForm(ModelMap map)
 	{
-		return "Step2InterestArea";
+		return "Registration";
 	}
 }

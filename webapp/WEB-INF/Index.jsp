@@ -100,6 +100,27 @@
             		}
             }
     </script>
+    <style type="text/css">
+    	input[type="text"],input[type="password"], select {
+				width:235px;
+				height:30px;
+				border: 1px solid gray;
+				border-radius:5px;
+				background-color: rgba(246, 212, 212, 0.42);
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
+				width:235px;
+				height:30px;
+				border: 2px solid red;
+				border-radius:5px;
+				background-color:white;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+    </style>
 </head>
 <body>
 
@@ -204,8 +225,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 												<table width="327" height="480" align="center">
 
 													<tr>
-														<td width="121" align="left" class="style59">First
-															Name<font color="red">*</font>
+														<td width="121" align="left" class="style59">First Name<font color="red">*</font>
 														</td>
 														<td width="194"><form:input path="firstName" size="30" maxlength="15" onkeypress="return isCharKey(event);" />
 														<form:errors path="firstName" cssClass="error"/></td>
@@ -269,7 +289,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td align="left" class="style46">Confirm Password<font
 															color="red">*</font></td>
-														<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" style="background: white;" title="Type password matches to above" />
+														<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" title="Type password matches to above" />
 														</td>
 													</tr>
 													<tr>
