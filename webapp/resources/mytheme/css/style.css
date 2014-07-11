@@ -52,23 +52,20 @@ body{
 cursor: pointer;
 }
 
-    #logo1
-{
-	width:141px;
-	height:143px;
-	margin-left: -1000px;
-        margin-bottom: -144px;
-        
-}
-
-
-
+		#logo1
+		{
+			width:141px;
+			height:143px;
+			margin-left: -1000px;
+		        margin-bottom: -144px;
+		        
+		}
             .style1 {font-family: "3D LET (BRK)"}
             .style2 {font-family: "Adobe Garamond Pro"}
             .style6 {font-size: 24px}
             .style7 {font-size: 9px}
             .style8 {
-                font-size: 10px;
+                font-size: 16px;
             }
             .style10 {
                 font-family: Arial, Helvetica, sans-serif;

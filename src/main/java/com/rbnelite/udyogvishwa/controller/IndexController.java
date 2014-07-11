@@ -177,10 +177,4 @@ public class IndexController {
 		return "Index";
 	}
 	
-	@RequestMapping("/Index2")
-	public String getIndex2(ModelMap map) {
-		map.addAttribute("index", new Index());
-		return "Index2";
-	}
-
 }

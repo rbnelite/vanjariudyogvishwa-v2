@@ -269,6 +269,7 @@ height:125px;
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
+	background-color:rgba(228, 243, 245, 1);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	border-radius:8px;
@@ -510,7 +511,7 @@ height:125px;
 						</tr>
 					</table>
 					<br>
-					<textarea name="status" id="styledTextArea" placeholder="Enter your Status here..." rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)" onfocus="setbg('rgba(228, 243, 245, 1)');" onblur="setbg('white')"></textarea>
+					<textarea name="status" id="styledTextArea" placeholder="Enter your Status here..." rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea>
 					<br>
 					<table align="right" width="70%">
 						<tr>

@@ -102,8 +102,8 @@
 				resize: none;
 				width:290px;
 				height:50px;
-				font: normal 12px Trebuchet MS;
-				font-family: Verdana;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				background-color: rgba(246, 212, 212, 0.42);
 				border: 1px solid gray;
 				border-radius:5px;
@@ -112,8 +112,8 @@
 				resize: none;
 				width:290px;
 				height:50px;
-				font: normal 12px Trebuchet MS;
-				font-family: Verdana;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				background-color:white;
 				border: 1px solid red;
 				border-radius:5px;

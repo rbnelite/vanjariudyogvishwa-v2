@@ -2,9 +2,10 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +38,7 @@
 		 
 		 if((uName==null || uName=="") && (uPass==null || uPass=="")){
 			 
-			 alert("User name and password can't be null...!!!");
+			 alert("User name and password can't be Blank...!!!");
 			 return false;
 		 }
 		 
@@ -60,7 +61,7 @@
 		        return false;
 		    }
 		    else{
-		        return true
+		        return true;
 		    }
 		}
 	 
@@ -123,17 +124,14 @@
     </style>
 </head>
 <body>
-
-	<div align="center">
-
-		<table align="center" width="1321" height="874">
+<center>
+	<div id="main" style="background-color: bisque; height: 1000px">
+		<div id="Header">
 			<div id="logo1" align="center">
-				<img src="${pageContext.request.contextPath}/resources/images/banner12.png"
+				<img src="/vanjariudyogvishwa-v2/resources/images/banner12.png"
 					width="142" height="150" alt="logo" />
 			</div>
-			<tr>
-				<td height="79" colspan="2" bgcolor="#fab039">
-					<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">
+			<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">
 						<table width="1194" border="0" align="right">
 							<tr>
 								<td width="577" height="21">&nbsp;</td>
@@ -148,17 +146,11 @@
 								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" onfocus="return hideErrorMsg()"/> 
 									<input id="LoginPassword" name="password" type="password" maxlength="20" onfocus="return LoginMailValidation()" /> 
 									<input type="submit" value="" name="login" onfocus="return LoginFormValidation()"
-									style="background-image:url(${pageContext.request.contextPath}/resources/images/login_1.png);width :70px; height: 25px" />
+									style="background-image:url(/vanjariudyogvishwa-v2/resources/images/login_1.png);width :70px; height: 25px" />
 								</td>
 
 							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>
-									<a id="LoginErrorDiv"><marquee><font color="Red" size="5">${LoginError}</font></marquee></a>
-									<a id="LogOutMsgDiv"><marquee><font color="white">${LogOutMsg}</font></marquee></a>
-								</td>
-							</tr>
+							
 							<tr>
 								<td height="22">&nbsp;</td>
 								<td><span class="style7"><span class="style8">
@@ -166,15 +158,22 @@
 											class="style21"><span class="style8">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="#" style="text-decoration: none"
-onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
+												onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
 										</span>
 									</span></span></td>
 							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>
+									<a id="LoginErrorDiv"><marquee><font color="Red" size="3">${LoginError}</font></marquee></a>
+									<a id="LogOutMsgDiv"><marquee><font color="green">${LogOutMsg}</font></marquee></a>
+								</td>
+							</tr>
 						</table>
 					</form>
-
-				</td>
-			</tr>
+		</div>
+		
+		<table>
 			<tr>
 				<td width="639" height="731"><label></label> <span
 					class="style2"><span class="style6"><span
@@ -184,7 +183,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 
 					<p>
 						<img
-							src="${pageContext.request.contextPath}/resources/images/world mapu.png"
+							src="/vanjariudyogvishwa-v2/resources/images/worldMap.png"
 							alt="network" align="middle" width="500" height="400" />
 					</p>
 					<p>&nbsp;</p>
@@ -193,19 +192,19 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 						<tr>
 							<td width="207" height="117"><p class="style75">
 									<img
-										src="${pageContext.request.contextPath}/resources/images/1.png"><span
+										src="/vanjariudyogvishwa-v2/resources/images/1.png"><span
 										class="style74">Get the Latest</span>
 								</p>
 								<p class="style77">Update with ur latest activity</p></td>
 							<td width="217"><p>
 									<img
-										src="${pageContext.request.contextPath}/resources/images/2.png"><span
+										src="/vanjariudyogvishwa-v2/resources/images/2.png"><span
 										class="style76">Connect and share</span>
 								</p>
 								<p class="style77">Share the moments with us</p></td>
 							<td width="201"><p>
 									<img
-										src="${pageContext.request.contextPath}/resources/images/3.png"><span
+										src="/vanjariudyogvishwa-v2/resources/images/3.png"><span
 										class="style76">Add photos</span>
 								</p>
 								<p class="style77">share photo and videos</p></td>
@@ -214,7 +213,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 				<td width="670">
 					<form:form action="/vanjariudyogvishwa-v2/Index" method="post" commandName="index">
 						<table width="493" align="top" height="678" border="0"
-							style="background-image:url(${pageContext.request.contextPath}/resources/images/Untitled-2.png);">
+							style="background-image:url(/vanjariudyogvishwa-v2/resources/images/Untitled-2.png);">
 							<tr>
 								<td width="10"><div>
 										<th width="473" height="600" class="style27"><span
@@ -299,7 +298,7 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 													<tr>
 														<td height="96"></td>
 														<td align="right">
-														<input name="Register" type="submit" value="" id="submit"  onclick="return passwordNotSame()" style="background-image: url(${pageContext.request.contextPath}/resources/images/signup.png); width:72px; height:27px;" />
+														<input name="Register" type="submit" value="" id="submit"  onclick="return passwordNotSame()" style="background-image: url(/vanjariudyogvishwa-v2/resources/images/signup.png); width:72px; height:27px;" />
 														</td>
 													</tr>
 													
@@ -315,19 +314,10 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 				</td>
 
 			</tr>
-			<!-- <tr>
-				<td height="45" colspan="2" bgcolor="#fab039" align="center"><span
-					class="style10"> About | Developers | Create Ad | Music |
-						Games | Apps | Privacy | Help</span>
-
-					<p class="style8">
-						<u>All Right Reserved</u>
-					</p></td>
-			</tr> -->
 		</table>
+		
+		
 	</div>
-	</form>
-	
 	<div id="footer">
 			<div id="footer-box">
 				<div class="footer_left">
@@ -381,15 +371,17 @@ onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500
 							<td width="66%">020 27658554</td>
 						</tr>
 						<tr>
-							<td height="23"><div align="right">Email -</div></td>
-							<td>&nbsp;</td>
-							<td>Services@vanjariudyogvishwa.org</td>
-						</tr>
-					</table>
-				</div>
-
+						<td height="23"><div align="right">Email -</div></td>
+						<td>&nbsp;</td>
+						<td>Services@vanjariudyogvishwa.org</td>
+					</tr>
+				</table>
 			</div>
-		</div>
-	
+			</div>
+	</div>
+
+</center>
+
+
 </body>
 </html>

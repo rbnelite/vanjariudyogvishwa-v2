@@ -19,14 +19,18 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 			HttpServletResponse response, Object handler) throws Exception {
 
 		String uri = request.getRequestURI();
-		if (!uri.endsWith("loginAuthentication") && !uri.endsWith("logoutUser") && !uri.endsWith("Index")&&!uri.endsWith("ForgotPassword")) {
+		if (!uri.endsWith("loginAuthentication") && !uri.endsWith("logoutUser") && !uri.endsWith("Index")&&!uri.endsWith("ForgotPassword")
+				&&!uri.endsWith("resources/images/worldMap.png")&&!uri.endsWith("resources/images/1.png")&&!uri.endsWith("resources/images/2.png")
+				&&!uri.endsWith("resources/images/3.png")&&!uri.endsWith("resources/images/Untitled-2.png")&&!uri.endsWith("resources/images/signup.png")
+				&&!uri.endsWith("resources/images/banner12.png")&&!uri.endsWith("resources/images/login_1.png")&&!uri.endsWith("resources/images/f.png")
+				&&!uri.endsWith("resources/css/style.css")&&!uri.endsWith("resources/js/RBNelite.js")) {
 			LoginUser loginUser = (LoginUser) request.getSession().getAttribute(Constants.LOGGEDIN_USER);
 			
 			if (loginUser == null) {
 				response.sendRedirect("Index");
 				return false;
 			}
-
+						
 			RequestContext.setUser(loginUser);
 		}
 		
