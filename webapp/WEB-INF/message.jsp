@@ -304,7 +304,7 @@ function validateMsgForm() {
 			<div id="OutsideleftMainMsg">
 
 				<div id="InnerleftMainMsg">
-					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Inbox</h3>
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Inbox</h3>
 					
 						
 						<table>
@@ -450,7 +450,7 @@ function validateMsgForm() {
 			<div id="OutsideRightMessage">
 				<div id="InsideRightMessage">
 
-					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">AdvertiseMents</h3>
 
 
 				</div>

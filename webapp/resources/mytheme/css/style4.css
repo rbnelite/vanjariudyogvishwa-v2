@@ -15,7 +15,7 @@ body {
 }
 
 #main {
-	background-color: transparent;
+	background-color: bisque;
 	width: 1400px;
 	height: 1440px;
 	margin: 10px 50px 10px 50px;
@@ -339,6 +339,7 @@ cursor: pointer;
 	background-color: bisque;
 	border: 1px solid aqua;
 	display: none;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 #middle {

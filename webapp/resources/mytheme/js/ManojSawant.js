@@ -95,3 +95,100 @@ function hideMyOtherDetails() {
 }
 
 /*.......Mmethods to hide dives in registration steps END....... */
+
+/*********************************View Previous Registration Step's Div START here **************************************/
+
+
+/*.......Mmethods to Show Previous div in registration steps START.......*/
+
+function displayPrevMyIntrestAreas() {
+	var IA=document.getElementById("PrevMyIntrestAreas");
+	hidePrevMyOccupation();
+	IA.style.display='block';
+}
+
+function displayPrevMyOccupation() {
+	var occ=document.getElementById("PrevMyOccupation");
+	hidePrevMyIntrestAreas();
+	hidePrevMyContactDetails();
+	occ.style.display='block';
+}
+
+function displayPrevMyContactDetails() {
+	var contactDetails=document.getElementById("PrevMyContactDetails");
+	hidePrevMyOccupation();
+	hidePrevMyReligionDetails();
+	contactDetails.style.display='block';
+}
+
+function displayPrevMyReligionDetails() {
+	var relig=document.getElementById("PrevMyReligionDetails");
+	hidePrevMyContactDetails();
+	hidePrevMyEducationDetails();
+	relig.style.display='block';
+}
+
+function displayPrevMyEducationDetails() {
+	var eduDet=document.getElementById("PrevMyEducationDetails");
+	hidePrevMyReligionDetails();
+	hidePrevMyHobbies();
+	eduDet.style.display='block';
+}
+
+function displayPrevMyHobbies() {
+	var hobbiesDet=document.getElementById("PrevMyHobbies");
+	hidePrevMyEducationDetails();
+	hidePrevMyOtherDetails();
+	hobbiesDet.style.display='block';
+}
+
+function displayPrevMyOtherDetails() {
+	var otherDet=document.getElementById("PrevMyOtherDetails");
+	hidePrevMyHobbies();
+	otherDet.style.display='block';
+}
+
+/*.......Mmethods to Show Previous div in registration steps END.......*/
+
+
+
+/*.......Mmethods to hide Previous div in registration steps START.......*/
+
+function hidePrevMyIntrestAreas() {
+	var IA=document.getElementById("PrevMyIntrestAreas");
+	IA.style.display='none';
+}
+
+function hidePrevMyOccupation() {
+	var occ=document.getElementById("PrevMyOccupation");
+	occ.style.display='none';
+}
+
+function hidePrevMyContactDetails() {
+	var contactDetails=document.getElementById("PrevMyContactDetails");
+	contactDetails.style.display='none';
+}
+
+function hidePrevMyReligionDetails() {
+	var relig=document.getElementById("PrevMyReligionDetails");
+	relig.style.display='none';
+}
+
+function hidePrevMyEducationDetails() {
+	var eduDet=document.getElementById("PrevMyEducationDetails");
+	eduDet.style.display='none';
+}
+
+function hidePrevMyHobbies() {
+	var hobbiesDet=document.getElementById("PrevMyHobbies");
+	hobbiesDet.style.display='none';
+}
+
+function hidePrevMyOtherDetails() {
+	var otherDet=document.getElementById("PrevMyOtherDetails");
+	otherDet.style.display='none';
+}
+
+/*.......Mmethods to hide Previous div in registration steps END....... */
+
+/*********************************View Previous Registration Step's Div START here **************************************/

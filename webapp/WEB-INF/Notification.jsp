@@ -250,7 +250,7 @@ document.getElementById("notificationId").value=NotificationId;
 				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
 			</div>
 			<div id="leftMainNotification">
-				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Upcoming Events</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
@@ -269,7 +269,7 @@ document.getElementById("notificationId").value=NotificationId;
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -297,7 +297,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</div>
 				
 				<div id="leftMain3" style="height: 444px;">
-					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
 				</div>
 				
 
@@ -396,7 +396,7 @@ document.getElementById("notificationId").value=NotificationId;
 										src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
 										height="80" width="80"></td>
 									<td>
-									&nbsp;<span id="${notification[3]}" onclick="return jumpcomment('${notification[3]}')">
+									&nbsp;<span id="${notification[3]}" onclick="return jumpcomment('${notification[3]}')" style="cursor: pointer;">
 										<b style="color: purple;">${notification[1]}&nbsp;${notification[2]} </b>  comment on status :<br/>
 										<font style=" color:green; font-size:medium;  margin-left: 7px;"> ${notification[0]}</font>
 										<input type="submit" id="submit1" style="display: none"></span></td>
@@ -421,7 +421,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</div>
 			</div>
 			<div id="rightMain" style="margin-top: -1072px;">
-				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">People You May Know</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
 					<div id="OutsidepeopleMayKnwNoti">
 				<div id="peopleMayKnw">
 
@@ -470,7 +470,7 @@ document.getElementById("notificationId").value=NotificationId;
 				</div>
 				</div>
 				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
-				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

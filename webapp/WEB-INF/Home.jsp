@@ -204,8 +204,6 @@ height:125px;
 	height: 830px;
 	background-color: transparent;
 	float: right;
-	
-
 }
 
 #leftMainHome {
@@ -351,7 +349,7 @@ height:125px;
 			</div>
 			
 			<div id="leftMain">
-				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Upcoming Events</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
@@ -370,7 +368,7 @@ height:125px;
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -398,7 +396,7 @@ height:125px;
 				</div>
 				
 				<div id="leftMain3">
-					<h3 style="background-color: #FAB039; margin-top: 0px; font-family: vardana; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">Links</h3>
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
 
@@ -818,7 +816,7 @@ height:125px;
 				</div>
 			</div>
 			<div id="rightMain" style="background-color: bisque">
-			<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">People You May Know</h3>
+			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
@@ -861,7 +859,9 @@ height:125px;
 										</tr>
 
 								</c:when>
-
+								<c:otherwise>
+									
+								</c:otherwise>
 								</c:choose>
 							</c:forEach>
 						</c:if>
@@ -869,7 +869,7 @@ height:125px;
 				</div>
 				</div>
 				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
-				<h3 style="background-color: #FAB039; font-family: vardana; margin-top: 0px; background-image: url('${pageContext.request.contextPath}/resources/images/heading_bg.png');">AdvertiseMents</h3>
+				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

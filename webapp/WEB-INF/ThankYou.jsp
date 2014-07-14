@@ -32,27 +32,27 @@
 				
 			</div>
 
-			<div id="leftMainStep3"></div>
+			
 
 			<div id="middleStep4">
-
-				
-					<h2 style="color: blue">${CurrentEmailId} ! </h2>
-					<h3>Thank you for Registration on</h3>
+				<div id="ThankYouMsg">
+					<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 740px;">Thank you for Registration</h2>
+					<h2 style="color: blue"></h2>
+					<h3>${CurrentEmailId} ! Welcome to</h3>
 					<h5>www.vanjariudyogvishwa.com</h5>
 					
 					
 					
-					<a href="Index">click here to Get Started..........</a>
+					<a href="Profile">click here to Get Started..........</a>
 					
-					
+				</div>
 
 				
 
 			</div>
 
 
-			<div id="rightMainStep3"></div>
+			
 			</div>
 			
 			<div id="footer">

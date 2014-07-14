@@ -344,6 +344,8 @@ float: left;
     height: 300px;
     background-color: bisque;
     border: 1px solid gray;
+    margin-top: 15px;
+    box-shadow: 10px 10px 5px #888888;
 }
 #middle{
     margin-top: 5px;
@@ -802,17 +804,19 @@ margin:5px auto auto 5px;
 
 .connectBtn
 {
-	background-color: rgba(0, 255, 0, 0.33);
-	border-radius:7px;
-	height: 25px;
-	width: 60px;
+	height: 30px;
+	width: 67px;
+	font-size: 15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(206, 138, 224, 0.80);
 }
 .connectBtn:HOVER
 {
-	background-color: rgba(0, 255, 0, 0.99);
-	border-radius:7px;
-	height: 25px;
-	width: 60px;
+	height: 30px;
+	width: 67px;
+	font-size: 15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(206, 138, 224, 0.25);
 }
 
 .LikeUnlikeBtn
@@ -1104,6 +1108,97 @@ h4 {
 				margin-bottom: 25px;
 				margin-top: 20px;
 			}
+			#ThankYouMsg{
+				width: 560px;
+				height: 645px;
+				background-color: red;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+	
+	/***** View Previous Registration Step div *****/
 			
+			#PrevMyIntrestAreas {
+				display:none;
+				width: 740px;
+				height: 980px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyOccupation {
+				display: none;
+				width: 600px;
+				height: 635px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyContactDetails {
+				display: none;
+				width: 560px;
+				height: 420px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyReligionDetails {
+				display: none;
+				width: 560px;
+				height: 390px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				margin-top: 100px;
+				border: 1px solid gray;
+				margin-bottom: 30px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyEducationDetails {
+				display: none;
+				width: 560px;
+				height: 680px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyHobbies {
+				display: none;
+				width: 600px;
+				height: 755px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+			#PrevMyOtherDetails {
+				display: none;
+				width: 560px;
+				height: 645px;
+				background-color: #FFE4C4;
+				box-shadow: 10px 10px 5px #888888;
+				border: 1px solid gray;
+				margin-bottom: 25px;
+				margin-top: 20px;
+			}
+			
+	/***** View Previous Registration Step div END *****/
 
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com  End ***********/		
