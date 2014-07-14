@@ -17,7 +17,6 @@ import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
-import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
@@ -27,7 +26,6 @@ import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
-import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -55,8 +53,6 @@ public class FriendProfileController {
 	@Resource
 	private HobbiesService hobbiesservice;
 	
-	@Resource
-	private LifeStyleService lifestyleservice;
 	@Resource
 	private FriendRequestService friendrequestservice;
 	@Resource
@@ -88,9 +84,6 @@ public class FriendProfileController {
 
 	map.put("FriendshobbiesDetails", new Hobbies());
 	map.put("FriendshobbiesList", hobbiesservice.listHobbies(friendsMail));
-
-	map.put("FriendslifeStyleDetails", new LifeStyle());
-	map.put("FriendsLifeStylelist", lifestyleservice.listLifeStyle(friendsMail));
 	
 	map.put("FriendsproductNAME", new Product());
 	map.put("FriendsProductList", productservice.listProduct(friendsMail));

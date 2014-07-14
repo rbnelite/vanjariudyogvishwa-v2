@@ -43,12 +43,6 @@ public String insert(@Valid Occupation occupation, BindingResult result,@Request
 	map.put("OccupationStatus", true);
 	return "Registration";
 	}
-	
-}
-@RequestMapping(value="/Occupation")
-public String OccupationForm(ModelMap map){
-	map.addAttribute("occupation", new Occupation());
-	return "Step3Occupation";
-}
+  }
 }
 

@@ -18,7 +18,6 @@ import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
-import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
@@ -28,7 +27,6 @@ import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
-import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -50,8 +48,7 @@ public class ProfileController {
 
 	@Resource
 	private HobbiesService hobbiesServ;
-	@Resource
-	private LifeStyleService lifeStyleServ;
+
 	@Resource
 	private ProductService productservice;
 	
@@ -99,11 +96,7 @@ public class ProfileController {
 			map.put("religionList", relegionservice.listReligion(userMail));
 		}
 		
-		if (!map.containsKey("editLifeStyleDetails")) {
-		map.put("lifeStyleDetails", new LifeStyle());
-		map.put("LifeStylelist", lifeStyleServ.listLifeStyle(userMail));
-		}
-		
+				
 		if (!map.containsKey("editProductDetails")) {
 		map.put("productNAME", new Product());
 		map.put("ProductList", productservice.listProduct(userMail));
@@ -185,18 +178,6 @@ public class ProfileController {
 		ProfileOperation(map,emailId);
 		return "Profile";
 	}
-	
-	
-	
-	@RequestMapping(value = "/EditLifeStyleDetails")
-	public String editLifeStyle(@RequestParam("usermail") String emailId, Map<String, Object> map) throws ServletException {
-
-		map.put("editLifeStyleDetails", new LifeStyle());
-		map.put("editLifeStyleList", lifeStyleServ.listLifeStyle(emailId));
-		ProfileOperation(map,emailId);
-		return "Profile";
-	}
-	
 	
 	@RequestMapping(value = "/EditProductDetails")
 	public String editProductDetails(@RequestParam("usermail") String emailId,Map<String, Object> map)  throws ServletException {

@@ -6,7 +6,6 @@ import java.util.List;
 
 
 
-import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 
 public interface OtherDetailsDao {

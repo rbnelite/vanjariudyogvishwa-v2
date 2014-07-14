@@ -474,7 +474,7 @@ function employee(){
 								</form>
 										<td>
 									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
-										<input type="hidden" name="JspPageName" value="Home">
+										<input type="hidden" name="JspPageName" value="Friendlist">
 										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
 										<input type="hidden" name="requestFrom" value="${loginUser.email}">
 										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">

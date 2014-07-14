@@ -22,7 +22,6 @@ import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
-import com.rbnelite.udyogvishwa.model.LifeStyle;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
@@ -31,7 +30,6 @@ import com.rbnelite.udyogvishwa.service.EducationWorkService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
-import com.rbnelite.udyogvishwa.service.LifeStyleService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -50,8 +48,6 @@ public class OtherDetailsController {
 	private EducationWorkService educationWorkService;
 	@Resource
 	private HobbiesService hobbiesServ;
-	@Resource
-	private LifeStyleService lifeStyleServ;
 	@Resource
 	private ProductService productservice;
 	
@@ -103,9 +99,6 @@ public class OtherDetailsController {
 		
 		map.put("hobbiesDetails", new Hobbies());
 		map.put("hobbiesList", hobbiesServ.listHobbies(emailId));
-	
-		map.put("lifeStyleDetails", new LifeStyle());
-		map.put("LifeStylelist", lifeStyleServ.listLifeStyle(emailId));
 		
 		map.put("productNAME", new Product());
 		map.put("ProductList", productservice.listProduct(emailId));
@@ -128,12 +121,4 @@ public class OtherDetailsController {
 		return "Profile";
 		
 	}
-	
-	@RequestMapping(value="/OtherDetails")
-	public String FamilyTempMethod(ModelMap map) {
-		map.addAttribute("otherdetails", new OtherDetails ());
-		
-		return "Step11OtherDetails";
-	}
-	
 }
