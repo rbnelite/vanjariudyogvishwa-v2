@@ -331,13 +331,23 @@ p a:hover
 					<table width=100%>
 								
 						<c:if test="${!empty eventstList}">
-
+								<c:set var="eventCount" value="0"></c:set>
 							
 								<c:forEach items="${eventstList}" var="myEvents">
-								
-									<tr>
+									<c:set var="eventCount" value="${eventCount + 1}"></c:set>
+									<c:choose>
+										<c:when test="${eventCount % 2==0}">
+									<tr style="background-color: rgba(243, 183, 111, 0.89)">
+									
 										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
 									</tr>
+									</c:when>
+									<c:otherwise>
+										<tr style="background-color: bisque">
+											<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
+										</tr>
+									</c:otherwise>
+									</c:choose>
 								</c:forEach>
 							
 						</c:if>
@@ -483,26 +493,15 @@ p a:hover
 						
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-
-								<c:choose>
-								<c:when test="${loginUser.email != knownPeople[0]}">
+								<c:if test="${loginUser.email != knownPeople[0]}">
 								<tr>
 								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
 									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
-									
-									
-										<td>
-										
+									<td>
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
-										</td>
-										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
-											<font size="2" color="gray">
-												
-											</font>
-										</td>	
-									
-									
+									</td>
+									<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
 								</form>
 										<td>
 									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
@@ -516,12 +515,8 @@ p a:hover
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-
-								</c:when>
-								<c:otherwise>
-									
-								</c:otherwise>
-								</c:choose>
+									</c:if>
+								
 							</c:forEach>
 						</c:if>
 					</table>

@@ -1,6 +1,8 @@
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -138,7 +140,8 @@ public class IndexController {
 			map.put("ProfileImageList", profileImageService.getProfileImage(userName));
 
 			map.put("knownPeople", new IntrestAreas());
-			map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userName));
+			Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userName));
+			map.put("knownPeopleList", knowPeopleSet);
 			/*View perticular status Start here*/
 			map.put("Notification",new Notification());
 			map.put("NotificationList", notificationService.listNotification(loginUser.getEmail()));

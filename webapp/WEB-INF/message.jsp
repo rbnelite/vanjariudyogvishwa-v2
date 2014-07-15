@@ -73,6 +73,9 @@ function validateMsgForm() {
 	border: none;
 	border-color: bisque;
 	border-radius: 20px;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* #showFrndConversionName:hover {
 	background: none;

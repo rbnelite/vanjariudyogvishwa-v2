@@ -509,26 +509,15 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
-
-								<c:choose>
-								<c:when test="${loginUser.email != knownPeople[0]}">
+								<c:if test="${loginUser.email != knownPeople[0]}">
 								<tr>
 								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
 									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
-									
-									
-										<td>
-										
+									<td>
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
-										</td>
-										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
-											<font size="2" color="gray">
-												
-											</font>
-										</td>	
-									
-									
+									</td>
+									<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
 								</form>
 										<td>
 									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
@@ -542,12 +531,8 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 										<tr>
 											<td colspan="2"></td>
 										</tr>
-
-								</c:when>
-								<c:otherwise>
-									
-								</c:otherwise>
-								</c:choose>
+									</c:if>
+								
 							</c:forEach>
 						</c:if>
 					</table>

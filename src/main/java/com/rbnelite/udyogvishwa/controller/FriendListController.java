@@ -3,8 +3,10 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -77,7 +79,8 @@ public class FriendListController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
 		
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
@@ -121,7 +124,8 @@ public class FriendListController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
 		
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));

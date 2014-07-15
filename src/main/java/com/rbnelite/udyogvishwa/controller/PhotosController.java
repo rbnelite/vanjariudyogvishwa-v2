@@ -1,7 +1,9 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -74,7 +76,8 @@ public class PhotosController {
 		map.put("eventstList", eventService.listEvents());
 		
 		map.put("knownPeople", new IntrestAreas());
-		map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
 		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
@@ -119,7 +122,8 @@ public class PhotosController {
 				map.put("userPhotosList", photoservice.ShowPhotos(userMail));
 				
 				map.put("knownPeople", new IntrestAreas());
-				map.put("knownPeopleList", peoplerefservice.peopleYouMayKnow(userMail));
+				Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+				map.put("knownPeopleList", knowPeopleSet);
 				
 				map.put("myEvents", new Event());
 				map.put("eventstList", eventService.listEvents());
