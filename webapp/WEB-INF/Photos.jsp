@@ -496,7 +496,7 @@ p a:hover
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
 										</td>
-										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
 											<font size="2" color="gray">
 												
 											</font>

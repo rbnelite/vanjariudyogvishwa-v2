@@ -49,19 +49,7 @@ function abc(){
 	    }
 	    document.getElementById("error").innerHTML="";   
 }
-/* function validateDate(){
 
-    var dob = document.getElementById("datatime").value;
-    alert(dob);
-    var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
-    if (dob == null || dob == "" || !pattern.test(dob))
-    {
-         return false;
-    }
-    else{
-        return true
-    }
-} */
 
 function DisplayChangePhotoBlock(){
     var dispPhoto=document.getElementById("ChangePhotoHome");
@@ -206,6 +194,25 @@ display: none;
     overflow: hidden;
     margin-left: -3px;
     margin-top: -19px;
+}
+input[type="text"],input[type="password"], select {
+	width:235px;
+	height:30px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+			
+input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
+	width:235px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 </style>
 
@@ -515,7 +522,7 @@ display: none;
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
 										</td>
-										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
 											<font size="2" color="gray">
 												
 											</font>

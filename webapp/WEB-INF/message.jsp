@@ -150,6 +150,46 @@ function validateMsgForm() {
 	background-color: #FFE4C4;
 	border: 1px solid gray; 
 }
+
+input[type="text"],input[type="password"], select {
+	width:235px;
+	height:30px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(133, 219, 237, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+			
+input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
+	width:235px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+} 
+textarea{
+	resize: none;
+	width:290px;
+	height:50px;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(133, 219, 237, 0.42);
+	border: 1px solid gray;
+	border-radius:5px;
+}
+textarea:FOCUS{
+	resize: none;
+	width:290px;
+	height:50px;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color:white;
+	border: 1px solid red;
+	border-radius:5px;
+}
 </style>
 
 
@@ -367,9 +407,9 @@ function validateMsgForm() {
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
 					<div
-						style="margin: 27px auto auto 37px; width: 735px; height: 400px; border-radius: 10px; background-color: white; overflow: hidden;">
+						style="margin: 27px auto auto 37px; width: 735px; height: 400px; border-radius: 10px; background-color: transparent; overflow: hidden;">
 						<div
-							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: white; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
+							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 							<table>
 								<c:if test="${! empty ProfileImageListMsgFrnd}">
@@ -399,7 +439,7 @@ function validateMsgForm() {
               height="18" width="20"></td>
              <td><font color="purple" size="4">
                ${msgConversion[3] }</font> <br> <a
-              style="float: left;"><font color="gray" size="1">
+              style="float: left;"><font color="gray" size="2">
                 ${msgConversion[2]}</font></a><br> <hr>
              </td>
                 
@@ -416,7 +456,7 @@ function validateMsgForm() {
               height="18" width="20"></td>
              <td><font color="sky blue" size="4">
                ${msgConversion[3]} </font> <br> <a
-              style="float: left;"><font color="gray" size="1">
+              style="float: left;"><font color="gray" size="2">
                 ${msgConversion[2]}</font></a><br> <hr color="sky blue">
              </td>
             </tr>

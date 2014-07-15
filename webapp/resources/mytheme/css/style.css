@@ -523,9 +523,7 @@ margin:5px auto auto 5px;
     border-style: solid;
     border-color: azure;
     
-    
 }
-
 #rightMainMSG{
     border-radius: 3px;
     margin-top: -1002px;
@@ -547,7 +545,7 @@ margin:5px auto auto 5px;
     background-color: whitesmoke;
     border: 1px solid aqua;
     
-}
+} 
 #Products{
     border-radius: 3px;
     border: 1px solid aqua;
@@ -559,7 +557,7 @@ margin:5px auto auto 5px;
     border-radius: 35px;
     border: 1px solid aqua;
     background-color: whitesmoke;
-}
+} 
 #Friends{
     float: right;
     border-radius: 3px;
@@ -573,7 +571,7 @@ margin:5px auto auto 5px;
     border-radius: 35px;
     border: 1px solid aqua;
     background-color: whitesmoke;
-}
+} 
 #ProfileDetails{
     margin-top: 5px;
     float: left;
@@ -809,6 +807,7 @@ margin:5px auto auto 5px;
 	font-size: 15px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: rgba(206, 138, 224, 0.80);
+	cursor: pointer;
 }
 .connectBtn:HOVER
 {
@@ -817,6 +816,7 @@ margin:5px auto auto 5px;
 	font-size: 15px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: rgba(206, 138, 224, 0.25);
+	cursor: pointer;
 }
 
 .LikeUnlikeBtn
@@ -1027,7 +1027,13 @@ h4 {
 	color: #008000;
 	text-decoration: none;
 }
-
+#MayKnowUserName{
+	background: none;
+	border: none;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
 
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/
 

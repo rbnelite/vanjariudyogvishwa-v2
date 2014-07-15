@@ -266,7 +266,9 @@ height:125px;
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
-	font-family: Tahoma, sans-serif;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* font-family: Tahoma, sans-serif; */
 	background-color:rgba(228, 243, 245, 1);
 	background-position: bottom right;
 	background-repeat: no-repeat;
@@ -837,7 +839,7 @@ height:125px;
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
 										</td>
-										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
 											<font size="2" color="gray">
 												
 											</font>

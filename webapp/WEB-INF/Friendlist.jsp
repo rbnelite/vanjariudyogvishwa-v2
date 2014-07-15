@@ -82,29 +82,6 @@ function employee(){
 	margin-top: 130px;
 }
 
-/* #peopleMayKnw {
-	width: 290px;
-	height: auto;
-	max-height: 500px;
-	overflow: auto;
-	border-radius: 3px;
-	background-color: bisque;
-	border: 1px solid gray;
-	overflow: auto;
-	padding-right: 40px;
-}
-
-#OutsidepeopleMayKnw {
-	width: 290px;
-	height: auto;
-	max-height: 500px;
-	overflow: auto;
-	border-radius: 3px;
-	background-color: bisque;
-	border: 1px solid gray;
-	overflow: hidden;
-} */
-
 #peopleMayKnw
 {
 	width: 290px;
@@ -135,9 +112,7 @@ function employee(){
 	width: 290px;
 	height: 350px;
 	overflow: auto;
-	/* border-radius: 3px; */
 	background-color: bisque;
-	/* border: 1px solid gray; */
 	padding-right: 30px;
 }
 
@@ -148,7 +123,6 @@ function employee(){
 	overflow: hidden;
 	background-color: bisque;
 	margin-top: -20px;
-	/* border: 1px solid gray; */
 }
 #leftMain1{
     float: left;
@@ -464,7 +438,7 @@ function employee(){
 										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
 												height="30" width="30">
 										</td>
-										<td><input type="submit" value="${knownPeople[1]} ${knownPeople[2]}" style="background: none;border: none;"><br>
+										<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br>
 											<font size="2" color="gray">
 												
 											</font>

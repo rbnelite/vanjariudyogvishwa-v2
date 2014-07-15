@@ -89,14 +89,14 @@
             	var pass1=document.getElementById("password2");
             	if(pass==null || pass=="")
             			{
-            		pass1.style.background='red';
+            		alert("Confirm password should not be Blank !");
             		return false;
             			}
             	
             	var pass2=document.getElementById("password").value;
             	if(pass2!=pass)
             		{
-            		alert("both password not same");
+            			alert("Password and Confirm Password must be equal");
             		return false;
             		}
             }
@@ -136,15 +136,15 @@
 							<tr>
 								<td width="577" height="21">&nbsp;</td>
 								<td width="607"><span class="style8"><span
-										class="style16"><span class="style8">Email</span></span></span><span
+										class="style16"><span class="style8" style="margin-left: 5px">Email</span></span></span><span
 									class="style8 style8"></span><span class="style8"></span><span
-									class="style8"><span class="style16" class="password">&nbsp;&nbsp;&nbsp;Password:
+									class="style8"><span class="style16" class="password" style="margin-left: 85px">&nbsp;&nbsp;&nbsp;Password:
 									</span></span></td>
 							</tr>
 							<tr>
 								<td height="26"></td>
-								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" onfocus="return hideErrorMsg()"/> 
-									<input id="LoginPassword" name="password" type="password" maxlength="20" onfocus="return LoginMailValidation()" /> 
+								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Write Registered Email ID" onfocus="return hideErrorMsg()"/> 
+									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Write your Valid password" onfocus="return LoginMailValidation()" /> 
 									<input type="submit" value="" name="login" onfocus="return LoginFormValidation()"
 									style="background-image:url(/vanjariudyogvishwa-v2/resources/images/login_1.png);width :70px; height: 25px" />
 								</td>
@@ -226,7 +226,7 @@
 													<tr>
 														<td width="121" align="left" class="style59">First Name<font color="red">*</font>
 														</td>
-														<td width="194"><form:input path="firstName" size="30" maxlength="15" onkeypress="return isCharKey(event);" />
+														<td width="194"><form:input path="firstName" size="30" maxlength="15" placeholder="Write Your First Name Here" onkeypress="return isCharKey(event);" />
 														<form:errors path="firstName" cssClass="error"/></td>
 													</tr>
 
@@ -234,27 +234,27 @@
 														<td align="left"><span class="style34"><span
 																class="style46">Middle Name<font color="red">*</font></span></span>
 														</td>
-														<td><form:input path="middleName"	size="30" maxlength="15" onkeypress="return isCharKey(event);"/>
+														<td><form:input path="middleName"	size="30" maxlength="15" placeholder="Write Your Middle Name Here" onkeypress="return isCharKey(event);"/>
 														<form:errors path="middleName" cssClass="error" /></td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Last Name<font
 															color="red">*</font></td>
-														<td><form:input path="lastName" size="30" maxlength="15" onkeypress="return isCharKey(event);" />
+														<td><form:input path="lastName" size="30" maxlength="15" placeholder="Write Your Last Name Here" onkeypress="return isCharKey(event);" />
 														<form:errors path="lastName" cssClass="error" /></td>
 													</tr>
 													<tr>
 														<td align="left" class="style46">Email Id<font
 															color="red">*</font></td>
-														<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="write valid EmailId" />
+														<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="Write a Valid EmailId" />
 														<form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
 													</tr>
 
 													<tr>
 														<td align="left" class="style46">Contact No.<font
 															color="red">*</font></td>
-														<td><form:input path="contactNo" size="30" maxlength="10" onkeypress="return isNumberKey(event)" />
+														<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Write Your Valid Mobile Number Here" onkeypress="return isNumberKey(event)" />
 														<form:errors path="contactNo" cssClass="error" /></td>
 													</tr>
 													<tr>
@@ -271,10 +271,10 @@
 												</tr>
 													<tr>
 														<td align="left" class="style46">Gender<font color="red">*</font></td>
-														<td><form:radiobutton path="gender" value="male"/>
+														<td><form:radiobutton path="gender" value="male" style="width: 19px; height: 25px;" />
 																<span class="style46">Male</span><span class="style24">&nbsp;</span>&nbsp;
 
-																<form:radiobutton path="gender" value="female"/>
+																<form:radiobutton path="gender" value="female" style="width: 19px; height: 25px;"/>
 																	<span class="style46">Female</span><br>
 																	<form:errors path="gender" cssClass="error"/></td>
 													</tr>
