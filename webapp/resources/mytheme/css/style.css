@@ -60,6 +60,12 @@ cursor: pointer;
 		        margin-bottom: -144px;
 		        
 		}
+		
+		.RegistrationCredentials{
+			color:black;
+			font-size: 16px;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
             .style1 {font-family: "3D LET (BRK)"}
             .style2 {font-family: "Adobe Garamond Pro"}
             .style6 {font-size: 24px}
@@ -194,7 +200,7 @@ float: left;
 }
 #Showcomment:HOVER
 {
-	background-color: #fcca7b;
+	background-color: rgba(237, 215, 182, 0.70);
 	width: 666px;
 	height: auto;
 	margin-top: -10px;
@@ -890,6 +896,7 @@ margin:5px auto auto 5px;
 }
 .error {
 	color: #ff0000;
+	font:15px arial,sans-serif;
 }
  
 .errorblock {
