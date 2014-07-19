@@ -17,7 +17,6 @@ import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
-import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.IndexService;
@@ -65,8 +64,8 @@ public class SearchResultController {
 		
 		System.out.println("from search controller after Index and comment search");
 		
-		map.put("searchStatus", new Status());
-		map.put("SearchStatusList", statusservice.searchStatusList(searchstrHome));
+		/*map.put("searchStatus", new Status());
+		map.put("SearchStatusList", statusservice.searchStatusList(searchstrHome));*/
 					
 		map.put("knownPeople", new IntrestAreas());
 		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));

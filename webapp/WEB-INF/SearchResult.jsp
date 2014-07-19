@@ -1,7 +1,7 @@
 <%-- 
     Document   : Home
     Created on : Dec 9, 2013, 1:27:15 PM
-    Author     : Anil
+    Author     : Manoj Sawant (sawantmanojm@gmail.com)
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -310,115 +310,93 @@ function HideChangePhotoBlock(){
 			<div id="outsidemiddleHome" style="margin-right: 300px; height: 1195px">
 				<div id="middleHome" style="height: 1195px">
 				
-				<table width=60%>
-						<th colspan="3" bgcolor="#fcca7b">People By Profession</th>
-						<c:if test="${!empty searchSByProfList}">
-
-							<c:forEach items="${searchSByProfList}" var="searchSByProf">
-								<tr style="background-color: #fab039">
-									<td width="40px;"><img
-										src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}"
-										height="80" width="80"></td>
-									<td>&nbsp; ${searchSByProf[0]}&nbsp;${searchSByProf[1]}
-										</td>
-
-								</tr>
-								<tr></tr>
-								<tr></tr>
-								<tr>
-									<td colspan="3" bgcolor="#fcca7b"><center>
-											<!-- <b>Status/Need</b> -->
-										</center></td>
-								</tr>
-							</c:forEach>
-						</c:if>
-						
-
-					</table>
 				
-					<table width=60%>
-						<th colspan="3" bgcolor="#fcca7b">Users List</th>
+					<c:if test="${!empty searchSByProfList}">
+						<c:forEach items="${searchSByProfList}" var="searchSByProf">
+						  <c:if test="${searchSByProf[5] != loginUser.email}">
+							<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+								<table width=96%>
+								<tr>
+									<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}" height="80" width="80"></td>
+									<td><a style="font-size: 27px;color: black;">${searchSByProf[0]}&nbsp;${searchSByProf[1]}</a></td>
+								</tr>
+								
+								<tr>
+									<td></td>
+									<td><a style="font-size: 16px;color: red; float: left;">${searchSByProf[3]}</a><br>
+										<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Work Location</b> @ ${searchSByProf[6]}</a>
+									</td>
+								</tr>
+								<tr>
+									<td><input type="hidden" name="friendsEmailId" value="${searchSByProf[5]}"></td>
+									<td><input id="ViewProDetailsBtn" type="submit"  value="View Details" style="float: right;"></td>
+								</tr>
+								</table>
+								</form>
+							</c:if>
+						</c:forEach>
+					</c:if>
+				
+				
+					
 						<c:if test="${!empty SearchUserList}">
 
 							<c:forEach items="${SearchUserList}" var="searchUser">
-									<c:if test="${searchUser.emailId != loginUser.email}">
-								<tr style="background-color: #fab039">
-									<td width="40px;"><img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-										height="80" width="80"></td>
-										<td width="100px;">
-									<center>
-										
-											
+								<c:if test="${searchUser.emailId != loginUser.email}">
 									<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-										<input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
-										<a>${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
-										<br>
-										<input type="submit"  value="View Profile">
+										<table width=96%>
+										<tr>
+										<td colspan="2">
+											<input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
+											<a style="font-size: 27px;color: black;">${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
+										</td>
+										</tr>
+										<tr>
+											<td><img src="${pageContext.request.contextPath}/resources/icons/House.png" title="Home Address" style="opacity: 0.5;" height="45" width="45"></td>
+											<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);"> ${searchUser.homeAddress} </a></td>
+										</tr>
+										<tr>
+											<td><img src="${pageContext.request.contextPath}/resources/icons/office-building-icon.png" title="Office Address" style="opacity: 0.7;" height="45" width="45"></td>
+											<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);">Works @ ${searchUser.officeAddress} </a>
+										</tr>
+										<tr>
+											<td></td>
+											<td><input id="ViewProDetailsBtn" type="submit"  value="View Details" style="float: right;"></td>
+										</tr>
+										</table>
 									</form>
-										
-										
-										
-										
-									</center>
-									</td>
-								</tr>
+									
+								
 								</c:if>
-								<tr></tr>
+								
 							</c:forEach>
 
 						</c:if>
-						<c:if test="${empty SearchUserList}">
-							<table>
+						<c:if test="${empty SearchUserList && empty searchSByProfList}">
+							<table width=96%>
 								<tr>
 									<td>There is no user with name you searched.</td>
 								</tr>
 							</table>
 						</c:if>
-					</table>
+					
 
-					<table width=60%>
-						<th colspan="3" bgcolor="#fcca7b">Product List</th>
+					<table width=96%>
 						<c:if test="${!empty SearchProductList}">
 
 							<c:forEach items="${SearchProductList}" var="searchProduct">
-								<tr style="background-color: #fab039">
-									<td width="40px;"><img
-										src="${pageContext.request.contextPath}/resources/images/ashok.jpg"
-										height="80" width="80"></td>
-									<td>&nbsp; ${searchProduct.productName}&nbsp;Owners Name :
+								<tr>
+									<td width="40px;">
+									<img src="${pageContext.request.contextPath}/resources/images/ashok.jpg" height="80" width="80"></td>
+									<td>&nbsp; ${searchProduct.productName}&nbsp; By :
 										${searchProduct.userMail}</td>
 
 								</tr>
-								<tr></tr>
-								<tr></tr>
-								<tr>
-									<td colspan="3" bgcolor="#fcca7b"><center>
-											<b>Status</b>
-										</center></td>
-								</tr>
 							</c:forEach>
 						</c:if>
-						<c:if test="${empty SearchProductList}">
-							<table width=60%>
-								<tr>
-									<td><center>There is no any Product with name you searched.</center></td>
-								</tr>
-								<tr></tr>
-								<tr></tr>
-								<tr>
-									<td bgcolor="#fcca7b"><center>
-											<b>Status</b>
-										</center></td>
-								</tr>
-							</table>
-						</c:if>
-
 					</table>
 					
-					
-					
-					<c:if test="${!empty SearchStatusList}">
+					<%-- <c:if test="${!empty SearchStatusList}">
 						<c:forEach items="${SearchStatusList}" var="searchStatus">
 							<div id="ShowStatusUpdet"  style="border: 1px solid gray;">
 								<div class="userStatusImage">
@@ -428,7 +406,7 @@ function HideChangePhotoBlock(){
 								</div>
 								<div class="statusUserName"
 									style="float: left; margin-left: 10px;">
-									<%-- <font color="green">${searchStatus.usermail}</font> --%>
+									<font color="green">${searchStatus.usermail}</font>
 								</div>
 								<div class="StatusContent">
 									<table width=100%>
@@ -473,12 +451,8 @@ function HideChangePhotoBlock(){
 								</div>
 							</div>
 						</c:forEach>
-					</c:if>
+					</c:if> --%>
 				</div>
-
-
-
-
 			</div>
 			
 			<div id="rightMain" style="background-color: bisque;margin-top: -1200px;border: none;">

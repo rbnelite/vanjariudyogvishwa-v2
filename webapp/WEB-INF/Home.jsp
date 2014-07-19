@@ -188,7 +188,7 @@ display: none;
 background-color:#fab039;
 width:790px;	
 position: absolute;
-height:125px;	
+height:199px;	
 
 }
 #InsideRightMessage {
@@ -274,8 +274,90 @@ height:125px;
 	background-repeat: no-repeat;
 	border-radius:8px;
 }
-
+#SearchByProTxt{
+	width:200px;
+	height:30px;
+	margin-top:10px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#SearchByProTxt:HOVER{
+	width:200px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 </style>
+<style type="text/css">
+    	 input[type="text"]{
+				width:235px;
+				height:30px;
+				border: 1px solid gray;
+				border-radius:5px;
+				background-color: rgba(246, 212, 212, 0.42);
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			input[type="text"]:FOCUS{
+				width:235px;
+				height:30px;
+				border: 2px solid red;
+				border-radius:5px;
+				background-color:white;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			}
+			
+			textarea{
+				resize: none;
+				width:540px;
+				height:50px;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				background-color: rgba(246, 212, 212, 0.42);
+				border: 1px solid gray;
+				border-radius:5px;
+			}
+			textarea:FOCUS{
+				resize: none;
+				width:540px;
+				height:50px;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				background-color:white;
+				border: 1px solid red;
+				border-radius:5px;
+			}
+			 
+			#VUVloginBtn{
+				height: 35px;
+				width: 80px;
+				color:white;
+				background-color: green;
+				font-size: 20px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				border-radius: 6px;
+				border: none;
+			}
+			#VUVloginBtn:HOVER{
+				height: 35px;
+				width: 80px;
+				color:black;
+				background-color: rgba(188, 26, 249, 0.75);
+				font-size: 20px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				border-radius: 6px;
+				border: none;
+				cursor: pointer;
+			}
+    </style>
 
 </head>
 
@@ -285,11 +367,11 @@ height:125px;
 		<div id="main" style="background-color: bisque">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
-				<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 346px; border-right: 5px solid gray;">
+				<div style="">
 					<input id="SearchData" type="text" name="SearchData"
 						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
-					<input type="submit" value=" "
-						style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');">
+					<input id="VUVloginBtn" type="submit" value="Search">
+						<%-- style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');"> --%>
 				</div>
 				</form>
 				<label
@@ -501,14 +583,14 @@ height:125px;
 				<a
 							onclick="return HideUpdatePhotoBlock()"> <img
 							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							id="close"  style="width: 40px; height: 40px; float: right; margin-right: -220px; margin-top: 5px;"></a>
+							id="close"  style="width: 40px; height: 40px; float: right; margin-right: -270px;"></a>
 				</td>
 				</tr>
 					<tr>
 						<td><form action="/vanjariudyogvishwa-v2/AddPhotos"
 								method="POST" enctype="multipart/form-data">
-								<input type="file" name="photoPath" onclick="return dispimgUploadBtn()">
-								<input id="imgUploadBtn" type="submit" value="Upload">
+								<input id="VUVloginBtn" type="file" name="photoPath" onclick="return dispimgUploadBtn()">
+								<input id="imgUploadBtn" id="VUVloginBtn" type="submit" value="Upload">
 							</form></td>
 					</tr>
 				</table>
@@ -736,9 +818,9 @@ height:125px;
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">
 
-																		<input type="text" name="commenttext" id="comment${myComment.id}"
-																		value="${myComment.comment}"
-																		style="width: 440px; height: 20px; margin-top: 10px; margin-left: 5px" >
+																		<textarea name="commenttext" id="comment${myComment.id}" style="height: auto;" >
+																			<c:out value="${myComment.comment}"/>
+																		</textarea>
 																		<div style="float: right; margin:4px 40px -3px 0px">
 																			<input type="submit" value="Edit" id="editCommentBtnHome" onclick="return emptyEditerror('${myComment.id}')">
 																			<input type="reset" value="Cancel" id="editCommentResetBtn" onclick="hideSpanEdit('${myComment.id}')">
@@ -865,7 +947,14 @@ height:125px;
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+					<table>
+						<tr>
+							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
+							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+					</table>
+				</form>
 				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">

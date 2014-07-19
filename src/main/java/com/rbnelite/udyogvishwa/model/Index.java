@@ -68,7 +68,8 @@ public class Index implements Serializable {
 
 	@Column(name = "home_address")
 	private String homeAddress;
-
+	
+	@Column
 	private String religion;
 
 	@Column(name = "subcast")
