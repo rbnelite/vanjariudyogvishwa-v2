@@ -1093,6 +1093,29 @@ h4 {
 	margin-top: 7px;
 	cursor: pointer;
 }
+
+#SearchByProTxt{
+	width:200px;
+	height:30px;
+	margin-top:10px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#SearchByProTxt:HOVER{
+	width:200px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/
 
 			#MyIntrestAreas {

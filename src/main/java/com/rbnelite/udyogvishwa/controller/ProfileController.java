@@ -3,7 +3,9 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.EducationWork;
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
@@ -24,11 +27,13 @@ import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.ContactService;
 import com.rbnelite.udyogvishwa.service.EducationWorkService;
+import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.RelegionService;
@@ -65,6 +70,11 @@ public class ProfileController {
 	private ContactService contactServ;
 	@Resource
 	private RelegionService relegionservice;
+	@Resource
+	private EventsService eventService;
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
+	
 	
 	@RequestMapping(value = "/Profile")
 	public String ProfileOperation(Map<String, Object> map, String userMail) throws ServletException {
@@ -128,6 +138,13 @@ public class ProfileController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
 				
 		return "Profile";
 	}

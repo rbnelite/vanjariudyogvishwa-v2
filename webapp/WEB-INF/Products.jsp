@@ -188,6 +188,11 @@ textarea:FOCUS{
 	border: 1px solid red;
 	border-radius:5px;
 }
+#middleProduct{
+    
+    width: 790px;
+    height: 1163px;
+}
 </style>
 
         <title>Products Page</title>
@@ -307,7 +312,7 @@ textarea:FOCUS{
 					</table>
 				</div>
 				
-				<div id="leftMain3">
+				<div id="leftMain3" style="height: 588px">
 					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
@@ -402,12 +407,12 @@ textarea:FOCUS{
             
             
             <div id="middleProduct">
-            <div id="outsideShowStatusUpdetProduct">
-                <div id="ShowStatusUpdetProduct">
-                <div id="ProductInfoheading">
+            <div id="ProductInfoheading">
                 <font color="blue;"><a><b>Products Information</b></a></font>
                <input type="button" name="" value="Add Product" id="addProduct" onclick="return addProductUnable()" >
-                </div>
+            </div>
+            <div id="outsideShowStatusUpdetProduct">
+                <div id="ShowStatusUpdetProduct">
                 <!-- <div id="productsearch">
                 <input id="input_searchProduct" type="search" name="ProductSearchName" placeholder="Search Product here....">
                 <input type="submit" value="Search">
@@ -415,7 +420,7 @@ textarea:FOCUS{
                 
                 
                 
-                <div id="MiddleTopProduct" style="width: 715px">
+                <div id="MiddleTopProduct" style="width: 715px;position: absolute">
             <form action="/vanjariudyogvishwa-v2/AddProduct", method="POST" enctype="multipart/form-data">
             <a onclick="return DisableaddProductUnable()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" id="close" style="width: 40px;height: 40px; float: right;"></a>
             <input type="hidden" name="userMail"
@@ -451,40 +456,39 @@ textarea:FOCUS{
                 
                 <c:if  test="${!empty ProductList}">
                     
-                    
+                    <table width=100%>
                     <c:forEach items="${ProductList}" var="productNAME">
-                    <div id="ShowProductInfoMain">
-                        <div id="ShowProductUpdetImage">
-                        		<%-- ${productNAME.imgPath} --%>
-                                <img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="100" width="120">
-                         </div>
-                         <div id="ShowProductInfo">
-                            <table width=100%>
+                    <!-- <div id="ShowProductInfoMain"> -->
+                        
+                         <!-- <div id="ShowProductInfo"> -->
+                            
                             <tr>
-                            <td>.
-                            <a style="float: left;"><font color="Purple"><b> ${productNAME.productName}:</b></font></a>
+                            <td>
+                            	<div id="ShowProductUpdetImage">
+                            		<img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="100" width="120">
+                            	</div>
                             </td>
-                            </tr>
-                            <br>
-                            <tr>
-                            <td align="left">
-                            <a style="float: left;">
+                            <td>.
+                            <a ><font color="Purple"><b> ${productNAME.productName}:</b></font></a>
+                            </td>
+                            <td>
+                            <a>
                             ${productNAME.productDetails}
                             </a>
                             </td>
                              </tr>
-                             </table>
-                        </div>
-                        </div>
+                             
+                        <!-- </div> -->
+                        <!-- </div> -->
                         </c:forEach>
-                    
+                    	</table>
                     </c:if>
                 </div>
                 </div>
             </div>
 
 
-            <div id="rightMain" style="background-color: bisque;margin-top: 0px;border: none;">
+            <div id="rightMain" style="background-color: bisque;margin-top: -1163px;border: none;">
 			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
@@ -522,7 +526,18 @@ textarea:FOCUS{
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+					<table>
+						<tr>
+							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
+							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="SearchPeopleByProfession">more.....</a></td>
+						</tr>
+					</table>
+				</form>
 				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">

@@ -458,7 +458,18 @@ document.getElementById("notificationId").value=NotificationId;
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion"><table><tr><td><input type="text" name="SearchDatabyprofession" size=30 placeholder="Search People By Profession"></td><td><input type="submit" value="search"></td></tr></table></form>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+					<table>
+						<tr>
+							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
+							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="SearchPeopleByProfession">more.....</a></td>
+						</tr>
+					</table>
+				</form>
 				<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">

@@ -35,7 +35,7 @@ body {
 #mainProfile {
 	background-color:bisque;
 	width: 1400px;
-	height: 2270px;
+	height: 1500px;
 	margin: 10px 50px 10px 50px;
 	/* border: 3px solid gray; */
 	border-radius: 3px;
@@ -357,7 +357,7 @@ cursor: pointer;
 	width: 790px;
 	height: 893px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	/* border: 1px solid aqua; */
 }
 
 #middleMsg {
@@ -440,7 +440,6 @@ cursor: pointer;
 	height: 1000px;
 	background-color: bisque;
 	float: right;
-	border: 1px solid aqua;
 }
 
 #rightMainHome {
@@ -551,9 +550,8 @@ cursor: pointer;
 }
 #ProfileProducts {
 	border-radius: 3px;
-	margin-right:465px;
-	border: 1px solid gray;
-	width: 462px;
+	/* margin-right:465px; */
+	width: 760px;
 	height: 300px;
 	background-color: bisque;
 	margin-bottom: 1px;
@@ -563,9 +561,9 @@ cursor: pointer;
 }
 #OutsideProfileProducts {
 	border-radius: 3px;
-	margin-right:465px;
+	/* margin-right:465px; */
 	border: 1px solid gray;
-	width: 462px;
+	width: 760px;
 	height: 300px;
 	background-color: bisque;
 	margin-bottom: 1px;
@@ -578,14 +576,13 @@ cursor: pointer;
 } */
 
 #Friends {
-	float: right;
+	/* float: right; */
 	border-radius: 3px;
 	border: 1px solid gray;
 	background-color: bisque;
 	margin-top: -303px;
 	width: 466px;
 	height: 300px;
-	margin-right: -2px;
 }
 
 /* #Friends:hover {
@@ -600,7 +597,7 @@ cursor: pointer;
 	border-radius: 3px;
 	border: 1px solid gray;
 	background-color: bisque;
-	width: 930px;
+	width: 760px;
 	height: auto;
 	overflow: auto;
 	padding-right: 20px;
@@ -613,16 +610,17 @@ cursor: pointer;
 	border-radius: 3px;
 	border: 1px solid gray;
 	background-color: bisque;
-	width: 930px;
+	width: 760px;
 	height: auto;
 	overflow: hidden;
+	margin-left: 10px;
 	
 }
 #InsideProfileDetails{
 	
-	width: 800px;
+	width: 760px;
 	height: auto;
-	margin-left: 20px;
+	/* margin-left: 20px; */
 	margin-right: 10px;
 }
 
@@ -881,7 +879,7 @@ cursor: pointer;
 
 #ShowStatusUpdetProduct{
 	width: 780px;
-	height:690px;
+	height:1130px;
     margin-top: 10px;
     float: left;
 	overflow: auto;
@@ -893,7 +891,7 @@ cursor: pointer;
 #outsideShowStatusUpdetProduct
 {
 	width:780px;
-	height:690px;
+	height:1130px;
 	margin-top: 10px;
 	float: left;
 	overflow: hidden;
@@ -1019,4 +1017,151 @@ h4 {
 #Shortlinks:HOVER{
 	color: #008000;
 	text-decoration: none;
+}
+
+
+#middleHome{
+    border-radius: 3px;
+    width: 790px;
+    height: 1065px;
+    background-color: bisque;
+    overflow: auto;
+    margin-right: 305px;
+    padding-right: 20px;
+}
+
+#outsidemiddleHome{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 1065px;
+    background-color: bisque;
+    /* background-color: #CCC4FF; */
+    overflow: hidden;
+    margin-right: 305px;
+}
+.connectBtn
+{
+	height: 30px;
+	width: 67px;
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(188, 26, 249, 0.45);
+	color:white;
+	cursor: pointer;
+	border-radius:5px;
+	border: 1px solid rgba(251, 157, 9, 1);
+}
+.connectBtn:HOVER
+{
+	height: 30px;
+	width: 67px;
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: rgba(21, 245, 21, 0.59);
+	color:black;
+	cursor: pointer;
+	border-radius:5px;
+	border: 1px solid rgba(251, 157, 9, 1);
+}
+
+.LikeUnlikeBtn
+{
+    background: repeat scroll 0% 0% transparent;
+    border: medium none;
+    cursor: pointer;
+    background-color: rgba(26, 118, 222, 0.62);
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid orange;
+    font-size: 17px;
+    color: black;
+}
+.LikeUnlikeBtn:HOVER
+{
+    background: repeat scroll 0% 0% transparent;
+    border: medium none;
+    cursor: pointer;
+    background-color: rgba(26, 118, 222, 0.99);
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid orange;
+    font-size: 19px;
+}
+#MayKnowUserName{
+	background: none;
+	border: none;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
+#VUVsearchByProBtn{
+	height: 38px;
+	width: 80px;
+	color:white;
+	background-color: green;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 6px;
+	border: none;
+	margin-top: 7px;
+}
+#VUVsearchByProBtn:HOVER{
+	height: 38px;
+	width: 80px;
+	color:black;
+	background-color: rgba(188, 26, 249, 0.75);
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 6px;
+	border: none;
+	margin-top: 7px;
+	cursor: pointer;
+}
+#ViewProDetailsBtn{
+	height: 35px;
+	width: 110px;
+	color:white;
+	background-color:rgba(188, 26, 249, 0.75);
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 6px;
+	border: none;
+	margin-top: 7px;
+}
+#ViewProDetailsBtn:HOVER{
+	height: 35px;
+	width: 110px;
+	color:black;
+	background-color: rgba(21, 245, 21, 0.59);
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 6px;
+	border: none;
+	margin-top: 7px;
+	cursor: pointer;
+}
+
+#SearchByProTxt{
+	width:200px;
+	height:30px;
+	margin-top:10px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#SearchByProTxt:HOVER{
+	width:200px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

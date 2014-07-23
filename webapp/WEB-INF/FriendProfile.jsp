@@ -22,9 +22,26 @@
 			var temp = document.getElementById("submit1").click();
 		}
 	   </script>
-	<style>
+	   
+		<script type="text/javascript">
+            
+            var image1=new Image();
+            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg";
+            var image2=new Image();
+            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg";
+            var image3=new Image();
+            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg";
+            var image4=new Image();
+            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg";
+            var image5=new Image();
+            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg";
+            var image6=new Image();
+            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg";
+            
+		</script>
+<style>
 h3 {
-	background-color: transparent;
+	background-color: rgba(236, 198, 124, 1);
 	/* background-color:#00FF00; */
 	margin-top: 0px;
 }
@@ -54,33 +71,31 @@ h3 {
 
 #Friends {
 	border-radius: 3px;
-	border: 1px solid gray;
 	background-color: bisque;
-	margin-top: 0.1px;
-	width: 466px;
+	margin-top: -18px;
+	width: 760px;
 	height: 300px;
-	 margin-right: -18px; 
 	overflow: auto;
 	padding-left: 20px;
 }
+
 #OutsideFriends {
-	float: right;
+	/* float: right; */
 	border-radius: 3px;
 	border: 1px solid gray;
 	background-color: bisque;
-	margin-top: -303px;
-	width: 466px;
+	/* margin-top: -303px; */
+	width: 760px;
 	height: 300px;
-	margin-right: -2px;
 	overflow: hidden;
 }
 
 #ProfileProducts {
 	padding-right: 30px;
 	border-radius: 3px;
-	margin-right: 465px;
+	/* margin-right: 465px; */
 	border: 1px solid gray;
-	width: 462px;
+	width: 760px;
 	height: 300px;
 	overflow: auto;
 	background-color: bisque;
@@ -89,9 +104,9 @@ h3 {
 
 #OutsideProfileProducts {
 	border-radius: 3px;
-	margin-right: 465px;
+	/* margin-right: 465px; */
 	border: 1px solid gray;
-	width: 462px;
+	width: 760px;
 	height: 300px;
 	overflow: hidden;
 	background-color: bisque;
@@ -128,6 +143,91 @@ h3 {
 	width: 60px;
 	float: left;
 }
+
+#leftMain {
+	border-radius: 3px;
+	float: left;
+	width: 300px;
+	height: 1127px;
+	overflow: auto;
+	background-color: transparent;
+}
+#leftMainHome {
+	float: left;
+	width: 290px;
+	height: 350px;
+	overflow: auto;
+	/* border-radius: 3px; */
+	background-color: bisque;
+	/* border: 1px solid gray; */
+	padding-right: 30px;
+}
+
+#OutsideleftMainHome {
+	float: left;
+	width: 300px;
+	height: 350px;
+	overflow: hidden;
+	background-color: bisque;
+	margin-top: -20px;
+	/* border: 1px solid gray; */
+}
+#leftMain2{
+    border-radius: 3px;
+    float: left;
+    width: 300px;
+    height:213px;
+    margin: -20px 0px 8px 0px;
+    background-color: bisque;
+     /* border: 1px solid gray; */
+}
+#rightMain{
+    border-radius: 3px;
+    margin-top: -1250px;
+    width: 300px;
+    height: 1000px;
+    background-color: transparent;
+    float: right;
+  
+}
+#peopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    /* border: 1px solid gray; */
+    overflow: auto;
+    padding-right: 40px;
+}
+#OutsidepeopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 256px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    /* border: 1px solid gray; */
+    overflow: hidden;
+    margin-left: -3px;
+    margin-top: -19px;
+}
+#InsideRightMessage {
+	width: 292px;
+	height: 270px;
+	background-color: yellow;
+	margin-top: -20px;
+}
+#OutsideRightMessage {
+	border-radius: 3px;
+	width: 300px;
+	height: 830px;
+	background-color: transparent;
+	float: right;
+}
 </style>
 <title>FriendsProfilePage</title>
     </head>
@@ -135,7 +235,7 @@ h3 {
     <center>
         <div id="mainProfile">
             <div id="Header">
-				<input id="FrndReqBtn" type="submit" value="Connect"/>
+				<!-- <input id="FrndReqBtn" type="submit" value="Connect"/> -->
                <label style="margin-left: 110px; margin-right: 5px; float: right;">
 					<c:if test="${!empty contactInfoList}">
 						<c:forEach items="${contactInfoList}" var="contactInfo">
@@ -165,7 +265,57 @@ h3 {
 				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
 			</div>
             
-            
+            <div id="leftMain">
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
+				<div id="OutsideleftMainHome">
+					<div id="leftMainHome">
+					<table width=100%>
+								
+						<c:if test="${!empty eventstList}">
+
+							
+								<c:forEach items="${eventstList}" var="myEvents">
+								
+									<tr>
+										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
+									</tr>
+								</c:forEach>
+							
+						</c:if>
+						</table>
+					</div>
+				</div>
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<div id="leftMain2">
+					<table width=100% >
+						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
+					<tr>
+						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="message">Message</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
+						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
+					</tr>
+					</table>
+				</div>
+				
+				<div id="leftMain3">
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+				</div>
+			</div>
             
                         
             <div id="NotificationTopHome">
@@ -245,7 +395,7 @@ h3 {
 					
 				</table>
 			</div>
-            <div style="height: 300px;width: 1400px;">
+            <%-- <div style="height: 300px;width: 1400px;">
             
             <div id="OutsideInterestAreas">
             <div id="InterestAreas">
@@ -337,28 +487,45 @@ h3 {
              </c:if>
             </div>
             </div>
-            <div id="OutsideProfileProducts">
-            <div id="ProfileProducts"><h3> Products</h3>
-            <c:if test="${!empty FriendsProductList}">
-            <c:forEach items="${FriendsProductList}" var="FriendsproductNAME">
-            <table>
-            <tr>
-	        <td>
-				<img src="${pageContext.request.contextPath}/resources/images/product1.png" title="${FriendsproductNAME.productName}" style="width: 70px; height: 60px;">
-		    </td>
-		    <td>
-				<h4 style="margin-top:-5px">${FriendsproductNAME.productName}</h4>
-		  </td>
-		  </tr> 
-          </table>
-           </c:forEach>
-            </c:if>
+            
+           
+            </div> --%>
+            
+            
+            <div id="outsidemiddleHome" style="margin-right: 300px; height: 1250px">
+				<div id="middleHome" style="height: 1250px;">
+            	
+            	
+            	
+            	
+            	
+            	 <div id="OutsideProfileProducts">
+            	 <h3> Products</h3>
+            	<div id="ProfileProducts">
+							<c:if test="${!empty FriendsProductList}">
+								<table>
+									<c:forEach items="${FriendsProductList}"
+										var="FriendsproductNAME">
+
+										<tr>
+											<td><img
+												src="${pageContext.request.contextPath}/resources/images/product1.png"
+												title="${FriendsproductNAME.productName}"
+												style="width: 70px; height: 60px;"></td>
+											<td>
+												<h4 style="margin-top: -5px">${FriendsproductNAME.productName}</h4>
+											</td>
+										</tr>
+
+									</c:forEach>
+								</table>
+							</c:if>
+						</div>
             </div>
-            </div>
-            <div id="OutsideFriends">
-            <div id="Friends">
-					<h3><img src="${pageContext.request.contextPath}/resources/images/friends1.png" style="width: 70px; height: 60px;"> Friend's</h3>
-					
+            	 
+            	 <div id="OutsideFriends">
+            	 	<h3>Friend's</h3>
+            		<div id="Friends">
 					<table width=90% >
 							<c:if test="${!empty userFriendsList}">
 								<c:forEach items="${userFriendsList}" var="userFriends">
@@ -407,38 +574,30 @@ h3 {
 					
 					</div>
 					</div>
-            </div>
             
             <div id="OutsideProfileDetails">
-            <div id="ProfileDetails">
+            	<div id="ProfileDetails">
             	<h3>Education Details</h3>
             	<c:if test="${!empty FriendseducationworkList}">
-                  <c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
-                  <table>
-                  <tr>
-                  <td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
-                  <tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
-                  <tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
-                   <tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
-                    <tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
-                     <tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
-                     
-                    <tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherPG}</td></tr>
-                      <tr><td><b>Email-Id:</b></td><td>${FriendseducationWORK.userMail}</td></tr> 
-                      </table>
-                  </c:forEach>
+                	<c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
+					  <table>
+                  		<tr><td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
+                  		<tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
+                  		<tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
+                  		<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
+                    	<tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
+						<tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
+                    	<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherPG}</td></tr>
+                    	<tr><td><b>Email-Id:</b></td><td>${FriendseducationWORK.userMail}</td></tr> 
+					  </table>
+                	</c:forEach>
                  </c:if>
-            </div>
+            	</div>
             </div>
             
            <div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-					<h3>
-						<img
-							src="${pageContext.request.contextPath}/resources/images/ContactDetails.jpg"
-							style="float: left; width: 70px; height: 60px;">Contact
-						Details
-					</h3>
+					<h3>Contact Details</h3>
 					<c:if test="${!empty contactInfoList}">
 									<table>
 										<c:forEach items="${contactInfoList}" var="contactInfo">
@@ -547,7 +706,9 @@ h3 {
              </c:if>
             </div>
             </div>
-            <div id="RightProfile">
+            </div>
+            </div>
+            <%-- <div id="RightProfile">
 				<div id="outside_Photos">
 					<div id="Photos">
 						<h3><img src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png" style="width: 30px; height: 30px;"> Photos </h3>
@@ -563,11 +724,99 @@ h3 {
 							@@@@@@@@@@@ @@@@ @@@@@@@@@ @@@@@ @@@@@@@@@@@@
 							@@@@@@@ @@@@@@@@ @@@@@@@@@@@ @@@@@@@@@ @@@@@@@ @@@@@@@@@@@ </a>
  
-						<%-- <img src="${pageContext.request.contextPath}/resources/images/photo.png" style=" margin-left:-400px; width: 70px; height: 60px;"> --%>
+						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style=" margin-left:-400px; width: 70px; height: 60px;">
 					</div>
 				</div>
 
-			</div>
+			</div> --%>
+			
+			<div id="rightMain" style="background-color: bisque;border: none;">
+			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<div id="OutsidepeopleMayKnw">
+				<div id="peopleMayKnw">
+
+					<table width=100%>
+						
+						<c:if test="${!empty knownPeopleList}">
+							<c:forEach items="${knownPeopleList}" var="knownPeople">
+								<c:if test="${loginUser.email != knownPeople[0]}">
+								<tr>
+								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+									<td>
+										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30">
+									</td>
+									<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
+								</form>
+										<td>
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="Products">
+										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
+									</form>
+										</td>
+										</tr>
+										<tr>
+											<td colspan="2"></td>
+										</tr>
+									</c:if>
+								
+							</c:forEach>
+						</c:if>
+					</table>
+				</div>
+				</div>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+					<table>
+						<tr>
+							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
+							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="SearchPeopleByProfession">more.....</a></td>
+						</tr>
+					</table>
+				</form>
+				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				<div id="OutsideRightMessage">
+					<div id="InsideRightMessage">
+						
+						<div style="width: 292px;height: 270px;">
+							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="292" height="270"/>
+                        </div>
+                        
+                            <script>
+                                
+                                //variable that will increment through the images
+                                var step=1
+                               
+                                function slideit(){
+                                    //if browser does not support the image object, exit.
+                                    if (!document.images)
+                                        return
+                                    document.images.slide.src=eval("image"+step+".src")
+                                    
+                                    if (step<6 )
+                                       	step++
+                                       
+                                    else
+                                        step=1
+                                        
+                                    //call function "slideit()" every 2.5 seconds
+                                    setTimeout("slideit()",9900)
+                                }
+                                slideit()
+                                
+                            </script>
+						
+						</div>
+					</div>
+				</div>
+			
+			
 		</div>
 		
 		

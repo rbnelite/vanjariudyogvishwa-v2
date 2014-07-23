@@ -381,7 +381,7 @@ height:199px;
 				<div id="profile_photo" style="margin-top: -30px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
-							<img width="140px" height="140px"
+							<img width="140px" height="140px" style="border-radius: 100px;"
 								src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 							<br>&nbsp;&nbsp;&nbsp; <a href="#"
 								onclick="return DisplayChangePhotoBlock()">Change Photo</a>
@@ -952,6 +952,10 @@ height:199px;
 						<tr>
 							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
 							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="SearchPeopleByProfession">more.....</a></td>
 						</tr>
 					</table>
 				</form>
