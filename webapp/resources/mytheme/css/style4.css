@@ -561,13 +561,13 @@ cursor: pointer;
 }
 #OutsideProfileProducts {
 	border-radius: 3px;
-	/* margin-right:465px; */
 	border: 1px solid gray;
 	width: 760px;
 	height: 300px;
 	background-color: bisque;
 	margin-bottom: 1px;
 	overflow: hidden;
+	margin-left: 10px;
 }
 /* #Products:hover {
 	border-radius: 3px;
@@ -1046,8 +1046,8 @@ h4 {
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(188, 26, 249, 0.45);
-	color:white;
+	background-color: rgba(216, 21, 245, 0.13);
+	color:black;
 	cursor: pointer;
 	border-radius:5px;
 	border: 1px solid rgba(251, 157, 9, 1);
@@ -1058,8 +1058,8 @@ h4 {
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(21, 245, 21, 0.59);
-	color:black;
+	background-color: rgba(216, 21, 245, 0.33);
+	color:white;
 	cursor: pointer;
 	border-radius:5px;
 	border: 1px solid rgba(251, 157, 9, 1);

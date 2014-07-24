@@ -317,12 +317,12 @@ function HideChangePhotoBlock(){
 
 			<div id="outsidemiddleHome" style="margin-right: 300px; height: 1195px">
 				<div id="middleHome" style="height: 1195px">
-				<a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a><br>
+				<%-- <a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a><br>
 				<input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');">
 				
 				
 				<br>
-				<a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a>
+				<a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</a> --%>
 				
 				<table>
 				<tr>
@@ -332,81 +332,81 @@ function HideChangePhotoBlock(){
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Admin Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/AdminProfessional.gif');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Actor"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Actor.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Advertising Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Advertising Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Agricultural Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Air Hostes"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/airhostess.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Architect"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/architecture.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Airforce"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/airforce.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Army"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Agent/Broker"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/broker.png');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Animator"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/animator.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Banking Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Banking.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Businessman"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/businessman.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Charted Accountant"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Company Secretory"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Civil Engineer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Catering Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/catering.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Commercial Artist"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/artist_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Customer Support/BPO/KPO"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Doctor"></td>
@@ -416,199 +416,199 @@ function HideChangePhotoBlock(){
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Defence Services"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Dentist"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/dentist.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Entertainment Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Entertainment Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Event Manager"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Event Manager.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Electronics/Telecom Engineer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Telecom Engineer.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Finance Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Finance Professional.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Fashion Designer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/fashion designer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Farming"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/farmer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Human Resource Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Human Resource.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Horticulturist"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Hardware Network Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Hardware Network Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Investment Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Interior Designer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Interior Designer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="IAS/IES/IRS/IFS"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Indian Police Service(IPS)"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Jewellary Designer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Jewellary Designer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Journalist"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/journalist.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Lawyer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/lawyer_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Lecturer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/teacher_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Landscape Architect"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Landscape Architect.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Media Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Media Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Marketing Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Marketing Professional.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Mechanical/Production Engineer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Sr.Manager/Manager"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Navy"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/navy.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Nurse"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/nurse.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Other Airline Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Airline Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Pilot"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/pilot_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Professor"></td>
-					<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+					<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Poet"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/writer_icon.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Politician"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/politician_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Research Asst."></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Research Asst.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Software Developer/Programmer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/softwareengineer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Software Consultant"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Singer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/singer-icon.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Surgeon"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Science Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Science Professional.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Social Worker"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Sportsman"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/tennis_player_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Student"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/student_icon.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				<tr>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Teacher"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/teacher_icon.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Training Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Writer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Writer_Male_Light.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Web Designer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Web Designer.jpg');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Not Working"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Doctor-Male-icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" style="width: 105px; height: 130px; background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Not Working.jpg');"></td></tr></table>
 					</form></td>
 				</tr>
 				</table>

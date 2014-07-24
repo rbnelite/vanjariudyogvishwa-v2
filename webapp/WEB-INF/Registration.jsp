@@ -501,13 +501,13 @@
 
 							<tr>
 								<td>Religion <font color="red">*</font></td>
-								<td><select name="religionName">
+								<td><select name="religionname">
 										<option>--Select Religion--</option>
-										<option>Hindu</option>
-										<option>Muslim</option>
-										<option>Christen</option>
-										<option>Sikh</option>
-										<option>Other</option>
+										<option value="Hindu">Hindu</option>
+										<option value="Muslim">Muslim</option>
+										<option value="Christen">Christen</option>
+										<option value="Sikh">Sikh</option>
+										<option value="Other">Other</option>
 									</select> </td>
 							</tr>
 							<tr>

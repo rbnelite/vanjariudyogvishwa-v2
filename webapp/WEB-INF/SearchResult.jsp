@@ -315,17 +315,22 @@ function HideChangePhotoBlock(){
 						<c:forEach items="${searchSByProfList}" var="searchSByProf">
 						  <c:if test="${searchSByProf[5] != loginUser.email}">
 							<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-								<table width=96%>
+								<table width=96% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
 								<tr>
 									<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}" height="80" width="80"></td>
-									<td><a style="font-size: 27px;color: black;">${searchSByProf[0]}&nbsp;${searchSByProf[1]}</a></td>
+									<td><a style="font-size: 27px;color: black;">${searchSByProf[0]}&nbsp;${searchSByProf[1]}</a><br>
+										<a style="font-size: 16px;color: blue; float: left;">${searchSByProf[3]}</a>
+									</td>
 								</tr>
-								
 								<tr>
 									<td></td>
-									<td><a style="font-size: 16px;color: red; float: left;">${searchSByProf[3]}</a><br>
-										<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Work Location</b> @ ${searchSByProf[6]}</a>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Education:</b> ${searchSByProf[7]}</a><br>
+										<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Specialization in</b> @ ${searchSByProf[8]}</a>
 									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Work Location</b> @ ${searchSByProf[6]}</a></td>
 								</tr>
 								<tr>
 									<td><input type="hidden" name="friendsEmailId" value="${searchSByProf[5]}"></td>
@@ -344,20 +349,24 @@ function HideChangePhotoBlock(){
 							<c:forEach items="${SearchUserList}" var="searchUser">
 								<c:if test="${searchUser.emailId != loginUser.email}">
 									<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-										<table width=96%>
+										<table width=96% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
 										<tr>
-										<td colspan="2">
-											<input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
-											<a style="font-size: 27px;color: black;">${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
-										</td>
+											<td width="40"></td>
+											<td><input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
+												<a style="font-size: 27px;color: black;">${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
+											</td>
 										</tr>
 										<tr>
-											<td><img src="${pageContext.request.contextPath}/resources/icons/House.png" title="Home Address" style="opacity: 0.5;" height="45" width="45"></td>
-											<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);"> ${searchUser.homeAddress} </a></td>
+											<td></td>
+											<td><img src="${pageContext.request.contextPath}/resources/icons/House.png" title="Home Address" style="opacity: 0.5; float: left;" height="30" width="30">
+												<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Home Address:</b> ${searchUser.homeAddress} </a>
+											</td>
 										</tr>
 										<tr>
-											<td><img src="${pageContext.request.contextPath}/resources/icons/office-building-icon.png" title="Office Address" style="opacity: 0.7;" height="45" width="45"></td>
-											<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);">Works @ ${searchUser.officeAddress} </a>
+											<td></td>
+											<td><img src="${pageContext.request.contextPath}/resources/icons/office-building-icon.png" title="Office Address" style="opacity: 0.7; float: left;" height="30" width="30">
+												<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Office Address:</b> ${searchUser.officeAddress} </a>
+											</td>
 										</tr>
 										<tr>
 											<td></td>

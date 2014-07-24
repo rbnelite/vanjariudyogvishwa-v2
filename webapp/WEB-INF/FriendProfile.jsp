@@ -80,14 +80,13 @@ h3 {
 }
 
 #OutsideFriends {
-	/* float: right; */
 	border-radius: 3px;
 	border: 1px solid gray;
 	background-color: bisque;
-	/* margin-top: -303px; */
 	width: 760px;
 	height: 300px;
 	overflow: hidden;
+	margin-left: 10px;
 }
 
 #ProfileProducts {
@@ -499,81 +498,7 @@ h3 {
             	
             	
             	
-            	 <div id="OutsideProfileProducts">
-            	 <h3> Products</h3>
-            	<div id="ProfileProducts">
-							<c:if test="${!empty FriendsProductList}">
-								<table>
-									<c:forEach items="${FriendsProductList}"
-										var="FriendsproductNAME">
-
-										<tr>
-											<td><img
-												src="${pageContext.request.contextPath}/resources/images/product1.png"
-												title="${FriendsproductNAME.productName}"
-												style="width: 70px; height: 60px;"></td>
-											<td>
-												<h4 style="margin-top: -5px">${FriendsproductNAME.productName}</h4>
-											</td>
-										</tr>
-
-									</c:forEach>
-								</table>
-							</c:if>
-						</div>
-            </div>
             	 
-            	 <div id="OutsideFriends">
-            	 	<h3>Friend's</h3>
-            		<div id="Friends">
-					<table width=90% >
-							<c:if test="${!empty userFriendsList}">
-								<c:forEach items="${userFriendsList}" var="userFriends">
-									
-											<tr>
-												<td style="border: 1px solid gray;">
-													
-											<form action="/vanjariudyogvishwa-v2/FriendProfile"
-												method="post">
-
-												<table>
-													<tr>
-														<td rowspan="2">
-														<img
-															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
-															height="72" width="70">
-														</td>
-													</tr>
-													<tr>
-														<td><input type="hidden" name="friendsEmailId" value="${userFriends[2]}"> 
-															<c:if test="${userFriends[2]!=loginUser.email}">
-															<input type="submit" style="background: none; border: none;"
-															value="${userFriends[0]} ${userFriends[1]}"> 
-															</c:if>
-															<c:if test="${userFriends[2]==loginUser.email}">
-																<script type="text/javascript">
-																	function showFrndReqBtn(){
-																		
-																		
-																	}
-																</script>
-																
-																<a href="Profile">${userFriends[0]} ${userFriends[1]}</a>
-															</c:if>
-															<br>
-															<a><font color="gray" size="2">Works @ ${userFriends[5]}</font></a>
-												</table>
-											</form>
-
-
-										</td>
-												</tr>
-										</c:forEach>
-							</c:if>
-						</table>
-					
-					</div>
-					</div>
             
             <div id="OutsideProfileDetails">
             	<div id="ProfileDetails">
@@ -706,6 +631,85 @@ h3 {
              </c:if>
             </div>
             </div>
+            
+            
+            <div id="OutsideProfileProducts">
+            	 <h3> Products</h3>
+            	<div id="ProfileProducts">
+							<c:if test="${!empty FriendsProductList}">
+								<table>
+									<c:forEach items="${FriendsProductList}"
+										var="FriendsproductNAME">
+
+										<tr>
+											<td><img
+												src="${pageContext.request.contextPath}/resources/images/product1.png"
+												title="${FriendsproductNAME.productName}"
+												style="width: 70px; height: 60px;"></td>
+											<td>
+												<h4 style="margin-top: -5px">${FriendsproductNAME.productName}</h4>
+											</td>
+										</tr>
+
+									</c:forEach>
+								</table>
+							</c:if>
+						</div>
+            </div>
+            	 
+            	 <div id="OutsideFriends">
+            	 	<h3>Friend's</h3>
+            		<div id="Friends">
+					<table width=90% >
+							<c:if test="${!empty userFriendsList}">
+								<c:forEach items="${userFriendsList}" var="userFriends">
+									
+											<tr>
+												<td style="border: 1px solid gray;">
+													
+											<form action="/vanjariudyogvishwa-v2/FriendProfile"
+												method="post">
+
+												<table>
+													<tr>
+														<td rowspan="2">
+														<img
+															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
+															height="72" width="70">
+														</td>
+													</tr>
+													<tr>
+														<td><input type="hidden" name="friendsEmailId" value="${userFriends[2]}"> 
+															<c:if test="${userFriends[2]!=loginUser.email}">
+															<input type="submit" style="background: none; border: none;"
+															value="${userFriends[0]} ${userFriends[1]}"> 
+															</c:if>
+															<c:if test="${userFriends[2]==loginUser.email}">
+																<script type="text/javascript">
+																	function showFrndReqBtn(){
+																		
+																		
+																	}
+																</script>
+																
+																<a href="Profile">${userFriends[0]} ${userFriends[1]}</a>
+															</c:if>
+															<br>
+															<a><font color="gray" size="2">Works @ ${userFriends[5]}</font></a>
+												</table>
+											</form>
+
+
+										</td>
+												</tr>
+										</c:forEach>
+							</c:if>
+						</table>
+					
+					</div>
+					</div>
+            
+            
             </div>
             </div>
             <%-- <div id="RightProfile">
