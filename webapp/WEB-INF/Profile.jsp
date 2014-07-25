@@ -89,7 +89,28 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
+input[value="Edit"], input[type="reset"]{
+	width: 90px;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.25);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-top: 30px;
+}
+input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
+	width: 90px;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.45);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
 #IntrestAreaImages {
 	width: 100px;
 	height: 50px;
@@ -915,8 +936,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 
 						<c:if test="${!empty educationworkList}">
 							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editEducationReqBtn"
+								<input id="EditProfileDetails" type="submit" value="" name="editEducationReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 
@@ -1059,7 +1079,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editEducationBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -1082,9 +1102,8 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						<c:if test="${!empty contactInfoList}">
 
 							<form action="/vanjariudyogvishwa-v2/EditContactDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editContactReqBtn"
-									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+								<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn"
+								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 
 								<div id="InsideProfileDetails">
@@ -1144,7 +1163,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editContactBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -1166,9 +1185,8 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 
 						<c:if test="${!empty hobbiesList}">
 							<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editHobbiesReqBtn"
-									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+								<input id="EditProfileDetails" type="submit" value="" name="editHobbiesReqBtn"
+								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 
 								<div id="InsideProfileDetails">
@@ -1311,7 +1329,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editHobbiesBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -1337,8 +1355,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 					<div id="ProfileDetails">
 						<c:if test="${!empty religionList}">
 							<form action="/vanjariudyogvishwa-v2/EditReligionDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editOtherReqBtn"
+								<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 
@@ -1390,7 +1407,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editReligionBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
 											<tr>
 												<td><br></td>
@@ -1411,8 +1428,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 
 						<c:if test="${!empty otherDetailsList}">
 							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
-								<input id="EditProfileDetails" type="submit" value=""
-									name="editOtherReqBtn"
+								<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
 								<input type="hidden" name="usermail" value="${loginUser.email}">
 
@@ -1489,7 +1505,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 											<tr>
 												<td colspan="1"><input type="submit" value="Edit"
 													name="editOtherBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
 											<tr>
 												<td><br></td>

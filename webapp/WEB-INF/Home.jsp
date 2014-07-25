@@ -335,28 +335,7 @@ height:199px;
 				border: 1px solid red;
 				border-radius:5px;
 			}
-			 
-			#VUVloginBtn{
-				height: 35px;
-				width: 80px;
-				color:white;
-				background-color: green;
-				font-size: 20px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				border-radius: 6px;
-				border: none;
-			}
-			#VUVloginBtn:HOVER{
-				height: 35px;
-				width: 80px;
-				color:black;
-				background-color: rgba(188, 26, 249, 0.75);
-				font-size: 20px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				border-radius: 6px;
-				border: none;
-				cursor: pointer;
-			}
+
     </style>
 
 </head>
