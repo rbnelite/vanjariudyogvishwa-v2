@@ -1210,3 +1210,19 @@ h4 {
 	border: none;
 	cursor: pointer;
 }
+#FriendsName{
+	background: none;
+	border: none;
+	cursor:pointer;
+	color:rgba(23, 21, 22, 0.57);
+	font-size: 30px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#FriendsName:HOVER{
+	background: none;
+	border: none;
+	cursor:pointer;
+	color:black;
+	font-size: 30px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

@@ -670,7 +670,7 @@ h3 {
 											<form action="/vanjariudyogvishwa-v2/FriendProfile"
 												method="post">
 
-												<table>
+												<table style="margin-bottom: 30px;">
 													<tr>
 														<td rowspan="2">
 														<img
@@ -681,7 +681,7 @@ h3 {
 													<tr>
 														<td><input type="hidden" name="friendsEmailId" value="${userFriends[2]}"> 
 															<c:if test="${userFriends[2]!=loginUser.email}">
-															<input type="submit" style="background: none; border: none;"
+															<input type="submit" id="FriendsName"
 															value="${userFriends[0]} ${userFriends[1]}"> 
 															</c:if>
 															<c:if test="${userFriends[2]==loginUser.email}">
@@ -695,7 +695,12 @@ h3 {
 																<a href="Profile">${userFriends[0]} ${userFriends[1]}</a>
 															</c:if>
 															<br>
-															<a><font color="gray" size="2">Works @ ${userFriends[5]}</font></a>
+															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${userFriends[6]} </a><br>
+															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Works At :</b> ${userFriends[5]} </a><br>
+															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Home Address :</b> ${userFriends[7]} </a>
+															<%-- <a><font color="">Works At :</font><font color="gray" size="2"> ${userFriends[5]}</font></a> --%>
+														</td>
+													</tr>
 												</table>
 											</form>
 

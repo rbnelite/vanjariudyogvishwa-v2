@@ -319,7 +319,7 @@ function HideChangePhotoBlock(){
 								<tr>
 									<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}" height="80" width="80"></td>
 									<td><a style="font-size: 27px;color: black;">${searchSByProf[0]}&nbsp;${searchSByProf[1]}</a><br>
-										<a style="font-size: 16px;color: blue; float: left;">${searchSByProf[3]}</a>
+										<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${searchSByProf[3]}</a>
 									</td>
 								</tr>
 								<tr>
@@ -330,7 +330,7 @@ function HideChangePhotoBlock(){
 								</tr>
 								<tr>
 									<td></td>
-									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Work Location</b> @ ${searchSByProf[6]}</a></td>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Home Address</b> @ ${searchSByProf[6]}</a></td>
 								</tr>
 								<tr>
 									<td><input type="hidden" name="friendsEmailId" value="${searchSByProf[5]}"></td>

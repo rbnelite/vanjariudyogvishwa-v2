@@ -1562,24 +1562,31 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<form action="/vanjariudyogvishwa-v2/FriendProfile"
 												method="post">
 
-												<table>
+												<table style="margin-bottom: 30px;">
 													<tr>
 														<td rowspan="2"><img
 															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
 															height="72" width="70"></td>
 													</tr>
 													<tr>
-														<td><c:if test="${loginUser.email== userFriends[2]}">
+														<td>
+															<c:if test="${loginUser.email== userFriends[2]}">
 																<input type="hidden" name="friendsEmailId"
 																	value="${userFriends[3]}">
-															</c:if> <c:if test="${loginUser.email== userFriends[3]}">
+															</c:if>
+															<c:if test="${loginUser.email== userFriends[3]}">
 																<input type="hidden" name="friendsEmailId"
 																	value="${userFriends[2]}">
-															</c:if> <input type="submit"
-															style="background: none; border: none;"
-															value="${userFriends[0]} ${userFriends[1]}"> <br>
-															<a><font color="gray" size="2">Works @
-																	${userFriends[5]}</font></a>
+															</c:if>
+															<input type="submit" id="FriendsName"
+																value="${userFriends[0]} ${userFriends[1]}"> <br>
+															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${userFriends[6]} </a><br>
+															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Works At :</b> ${userFriends[5]} </a><br>
+															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Home Address :</b> ${userFriends[7]} </a>
+															<%-- <a><font color="">Works At :</font><font color="gray" size="2"> ${userFriends[5]}</font></a> --%>
+														</td>
+													</tr>
+													
 												</table>
 											</form>
 
@@ -1597,35 +1604,6 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				
 			</div>
 			</div>
-			
-			<%-- <div id="RightProfile">
-				<div id="outside_Photos">
-					<div id="Photos">
-						<h3>
-							<img
-								src="${pageContext.request.contextPath}/resources/images/PhotoGallary.png"
-								style="width: 30px; height: 30px;"> Photos
-						</h3>
-
-
-
-					</div>
-				</div>
-				<div id="OuterRightStatusProfile">
-					<div id="RightUpdatedStatusProfile">
-						<h3>Updated Status</h3>
-						<a>@@@@@@@@@@ @@@@@@@@@ @@@@@@@@ @@@@@@@@@@@@@ @@@@@@@@@@
-							@@@@@@@@@@@@ @@@@@@@@@ @@@@ @@@@@@@@@@@ @@@@ @@@@@@@@@ @@@@@
-							@@@@@@@@@@@@ @@@@@@@ @@@@@@@@ @@@@@@@@@@@ @@@@@@@@@ @@@@@@@
-							@@@@@@@@@@@ </a>
-
-						<img src="${pageContext.request.contextPath}/resources/images/photo.png" style=" margin-left:-400px; width: 70px; height: 60px;">
-					</div>
-				</div>
-
-			</div> --%>
-			
-			
 			
 			<div id="rightMain" style="background-color: bisque;border: none;">
 			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
