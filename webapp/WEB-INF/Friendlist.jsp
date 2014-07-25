@@ -156,7 +156,7 @@ function employee(){
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
 					<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 346px; border-right: 5px solid gray;">
 					<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
+						placeholder="Search for people, Place, Events....." style="height: 25px; width: 350px; border-radius:5px; border: none;background-color: white;"/>
 					<input type="submit" value=" "
 						style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');">
 					</div>

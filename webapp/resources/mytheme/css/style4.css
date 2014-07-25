@@ -1165,3 +1165,26 @@ h4 {
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.savebtn
+{
+	background-color: rgba(237, 165, 49, 1);
+	height: 40px;
+	width: 132px;
+	border: 2px solid black;
+	color: black;
+	cursor: pointer;
+	font: 16px/100% Arial,Helvetica,sans-serif;
+	border-radius:5px;
+}
+.savebtn:HOVER
+{
+	background-color:menu;
+	height: 40px;
+	width: 132px;
+	border: 2px solid black;
+	color: black;
+	cursor: pointer;
+	font: 16px/100% Arial,Helvetica,sans-serif;
+	border-radius:5px;
+}

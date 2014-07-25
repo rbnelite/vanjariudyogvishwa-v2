@@ -369,7 +369,7 @@ height:199px;
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
 				<div style="">
 					<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
+						placeholder="Search for people, Place, Events....." style="height: 25px; width: 350px; border-radius:5px; border: none;background-color: white;"/>
 					<input id="VUVloginBtn" type="submit" value="Search">
 						<%-- style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');"> --%>
 				</div>
@@ -818,9 +818,12 @@ height:199px;
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">
 
-																		<textarea name="commenttext" id="comment${myComment.id}" style="height: auto;" >
+																		<%-- <textarea name="commenttext" id="comment${myComment.id}" style="height: auto;" >
 																			<c:out value="${myComment.comment}"/>
-																		</textarea>
+																		</textarea> --%>
+																		<input type="text" name="commenttext" id="comment${myComment.id}" value="${myComment.comment}" 
+																			style="width: 440px; height: 20px; margin-top: 10px; margin-left: 5px" >
+																		
 																		<div style="float: right; margin:4px 40px -3px 0px">
 																			<input type="submit" value="Edit" id="editCommentBtnHome" onclick="return emptyEditerror('${myComment.id}')">
 																			<input type="reset" value="Cancel" id="editCommentResetBtn" onclick="hideSpanEdit('${myComment.id}')">

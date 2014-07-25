@@ -207,7 +207,7 @@ textarea:FOCUS{
                <form action="/vanjariudyogvishwa-v2/SearchResult">
 					<div style="background-color: white; border-bottom: 5px solid gray; border-radius:3px; width: 346px; border-right: 5px solid gray;">
 					<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search for people, Place, Events....." style="height: 25px; width: 250px; border-radius:5px; border: none;"/>
+						placeholder="Search for people, Place, Events....." style="height: 25px; width: 350px; border-radius:5px; border: none;background-color: white;"/>
 					<input type="submit" value=" "
 						style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');">
 					</div>
@@ -408,8 +408,8 @@ textarea:FOCUS{
             
             <div id="middleProduct">
             <div id="ProductInfoheading">
-                <font color="blue;"><a><b>Products Information</b></a></font>
-               <input type="button" name="" value="Add Product" id="addProduct" onclick="return addProductUnable()" >
+                
+               <input type="button" name="" value="Add Product" id="ViewProDetailsBtn" onclick="return addProductUnable()" >
             </div>
             <div id="outsideShowStatusUpdetProduct">
                 <div id="ShowStatusUpdetProduct">
@@ -426,7 +426,7 @@ textarea:FOCUS{
             <input type="hidden" name="userMail"
 								value="${loginUser.email}">
                 <table>
-                    <label><font color="purple">Add Product</font></label>
+                    <b><font color="purple">Add Product</font></b>
 
                     <tr>
                         <td>Product Name :</td>
@@ -439,14 +439,11 @@ textarea:FOCUS{
                     
                     <tr>
                         <td>Product Image :</td>
-                        <td>
-                            <input type="file"  name="imgPath" placeholder="Upload Your Product Image" style="width: 400px; height: 30px;margin-left: -100px;">
-                            
-                        </td>
+                        <td><input type="file" name="imgPath" style="width: 400px; height: 30px;margin-left: -100px;"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Add Product" style="margin-left: 290px;"></td>
-                        <td><input type="reset" value="Cancel" style="margin-left: 100px;"></td>
+                        <td><input type="submit" value="Add Product" class="connectBtn" style="margin-left: 290px; width: 100px"></td>
+                        <td><input type="reset" value="Cancel" class="connectBtn" style="margin-left: 100px;"></td>
                     </tr>
                 </table>
                 </form>
@@ -455,8 +452,13 @@ textarea:FOCUS{
                 
                 
                 <c:if  test="${!empty ProductList}">
-                    
-                    <table width=100%>
+                    <font color="blue;"><b>Products List & Information</b></font>
+                    <table width=100% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-left: 15px;">
+                    <!-- <tr>
+                    	<td style="background-color: blue;color: white"><b>Product Image</b></td>
+                    	<td style="background-color: blue;color: white"><b>Product Name</b></td>
+                    	<td style="background-color: blue;color: white"><b>Product Details</b></td>
+                    </tr> -->
                     <c:forEach items="${ProductList}" var="productNAME">
                     <!-- <div id="ShowProductInfoMain"> -->
                         
@@ -468,7 +470,7 @@ textarea:FOCUS{
                             		<img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="100" width="120">
                             	</div>
                             </td>
-                            <td>.
+                            <td>
                             <a ><font color="Purple"><b> ${productNAME.productName}:</b></font></a>
                             </td>
                             <td>
