@@ -12,6 +12,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/SawantManojM.css" />" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
@@ -52,7 +53,22 @@ function validateMsgForm() {
 	}
 }
 </script>
-
+<script type="text/javascript">
+            
+            var image1=new Image();
+            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg";
+            var image2=new Image();
+            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg";
+            var image3=new Image();
+            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg";
+            var image4=new Image();
+            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg";
+            var image5=new Image();
+            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg";
+            var image6=new Image();
+            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg";
+            
+</script>
 <style type="text/css">
 #mainMessage {
 	background-color: #FFE4C4;
@@ -110,27 +126,6 @@ function validateMsgForm() {
 	height: 645px;
 	background-color: red;
 	float: right;
-}
-
-#InsideRightMessage {
-	border-radius: 3px;
-	width: 300px;
-	height: 1068px;
-	background-color: bisque;
-	float: right;
-	overflow: auto;
-	padding-right: 0px;
-	padding-bottom: 0px;
-}
-
-#OutsideRightMessage {
-	border-radius: 3px;
-	margin-top: -1072px;
-	width: 300px;
-	height: 1069px;
-	background-color: bisque;
-	float: right;
-	overflow: hidden;
 }
 
 #ChangePhotoHome {
@@ -194,7 +189,92 @@ textarea:FOCUS{
 	border-radius:5px;
 }
 </style>
+<style type="text/css">
+#leftMain {
+	border-radius: 3px;
+	float: left;
+	width: 300px;
+	height: 1070px;
+	overflow: auto;
+	background-color: transparent;
+}
+#leftMainHome {
+	float: left;
+	width: 290px;
+	height: 350px;
+	overflow: auto;
+	/* border-radius: 3px; */
+	background-color: bisque;
+	/* border: 1px solid gray; */
+	padding-right: 30px;
+}
 
+#OutsideleftMainHome {
+	float: left;
+	width: 300px;
+	height: 350px;
+	overflow: hidden;
+	background-color: bisque;
+	margin-top: -20px;
+	/* border: 1px solid gray; */
+}
+#leftMain2{
+    border-radius: 3px;
+    float: left;
+    width: 300px;
+    height:213px;
+    margin: -20px 0px 8px 0px;
+    background-color: bisque;
+     /* border: 1px solid gray; */
+}
+#rightMain{
+    border-radius: 3px;
+    margin-top: -1073px;
+    width: 300px;
+    height: 1070px;
+    background-color: transparent;
+    float: right;
+  
+}
+#peopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    /* border: 1px solid gray; */
+    overflow: auto;
+    padding-right: 40px;
+}
+#OutsidepeopleMayKnw
+{
+	width: 290px;
+    height: auto;
+    max-height: 256px;
+    overflow: auto;
+    border-radius: 3px;
+    background-color: bisque;
+    /* border: 1px solid gray; */
+    overflow: hidden;
+    margin-left: -3px;
+    margin-top: -19px;
+}
+#InsideRightMessage {
+	width: 292px;
+	height: 270px;
+	background-color: yellow;
+	margin-top: -20px;
+}
+#OutsideRightMessage {
+	border-radius: 3px;
+	width: 300px;
+	height: 675px;
+	background-color: transparent;
+	float: right;
+}
+</style>
 
 </head>
 <body>
@@ -344,45 +424,66 @@ textarea:FOCUS{
 				</table>
 			</div>
 
-			<div id="OutsideleftMainMsg">
-
-				<div id="InnerleftMainMsg">
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Inbox</h3>
-					
-						
-						<table>
+			<div id="leftMain">
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Recent Messages</h3>
+				<div id="OutsideleftMainHome">
+					<div id="leftMainHome">
+					<table>
 							<c:if test="${!empty msgFriendsList}">
 								<c:forEach items="${msgFriendsList}" var="msgFriends">
-									
-									<form action="/vanjariudyogvishwa-v2/viewConversion" ,  method="post">
-										
+									<form action="/vanjariudyogvishwa-v2/viewConversion" , method="post">
 										<tr>
 											<td>
 												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}"
 												height="30" width="30">
 											</td>
-									<td>
-										<input type="hidden" name="msgSenderID" value="${loginUser.email}">
-										 <input type="hidden" name="msgReceiverID" 
-										 value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
-										<input id="showFrndConversionName" type="submit"
-										value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" style="color:">
-									</td>
-
-								</tr>
-										</form>
-										
-										
+											<td>
+												<input type="hidden" name="msgSenderID" value="${loginUser.email}">
+												<input type="hidden" name="msgReceiverID"
+												value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
+												<input id="showFrndConversionName" type="submit" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" style="color:">
+											</td>
+										</tr>
+									</form>
 								</c:forEach>
 
 							</c:if>
 
 						</table>
-					
-
+					</div>
 				</div>
-
+				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<div id="leftMain2">
+					<table width=100% >
+						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
+					<tr>
+						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="message">Message</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
+						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
+					</tr>
+					</table>
+				</div>
+				
+				<div id="leftMain3" style="height: 463px;">
+					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+				</div>
 			</div>
+
 
 			<div id="middlePhotos">
 				<form action="/vanjariudyogvishwa-v2/message", method="post" onsubmit="return validateMsgForm()">
@@ -409,10 +510,8 @@ textarea:FOCUS{
 					
 						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
-					<div
-						style="margin: 27px auto auto 37px; width: 735px; height: 400px; border-radius: 10px; background-color: transparent; overflow: hidden;">
-						<div
-							style="margin: 20px auto auto 37px; width: 735px; height: 400px; border-radius: 5px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
+					<div style="margin: 27px auto auto 5px; width: 735px; height: 760px; background-color: transparent; overflow: hidden;">
+						<div style="margin: 20px auto auto 37px; width: 735px; height: 760px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 							<table>
 								<c:if test="${! empty ProfileImageListMsgFrnd}">
@@ -427,7 +526,9 @@ textarea:FOCUS{
 									</c:forEach>
 								</c:if>
 							</table>
-								<table align="center" style="float: left;">
+		
+		
+		<%-- <table align="center" style="float: left;">
        			
          <c:forEach items="${msgConversionList}" var="msgConversion">
 
@@ -437,13 +538,10 @@ textarea:FOCUS{
 
             <tr style="border: 1px solid gray">
              <td><font color="purple" size="4">You&nbsp;</font></td>
-             <td><img
-              src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png"
-              height="18" width="20"></td>
-             <td><font color="purple" size="4">
-               ${msgConversion[3] }</font> <br> <a
-              style="float: left;"><font color="gray" size="2">
-                ${msgConversion[2]}</font></a><br> <hr>
+             <td><img src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png" height="18" width="20"></td>
+             <td><font color="purple" size="4">${msgConversion[3] }</font> <br>
+             	<a style="float: left;"><font color="gray" size="2">${msgConversion[2]}</font></a><br>
+             	<hr>
              </td>
                 
             </tr>
@@ -452,15 +550,11 @@ textarea:FOCUS{
            <c:otherwise>
 
             <tr style="border: 1px solid gray">
-             <td><font color="sky blue" size="4">${msgConversion[4]} ${msgConversion[5]}</font>
-             </td>
-             <td><img
-              src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png"
-              height="18" width="20"></td>
-             <td><font color="sky blue" size="4">
-               ${msgConversion[3]} </font> <br> <a
-              style="float: left;"><font color="gray" size="2">
-                ${msgConversion[2]}</font></a><br> <hr color="sky blue">
+             <td><font color="sky blue" size="4">${msgConversion[4]} ${msgConversion[5]}</font></td>
+             <td><img src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png" height="18" width="20"></td>
+             <td><font color="sky blue" size="4">${msgConversion[3]} </font> <br>
+             	<a style="float: left;"><font color="gray" size="2"> ${msgConversion[2]}</font></a><br>
+             	<hr color="sky blue">
              </td>
             </tr>
 
@@ -470,8 +564,32 @@ textarea:FOCUS{
          </c:forEach>
          <tr><td></td><td></td><td></td></tr>
          
-        </table>
-
+        </table> --%>
+        
+        
+        
+        <c:forEach items="${msgConversionList}" var="msgConversion">
+			<c:choose>
+	        	<c:when test="${msgConversion[0]==loginUser.email}">
+			        <div class="bubble">
+			        	<font color="red">You :</font><br>
+			        	<font color="purple">${msgConversion[3] }</font> <br>
+			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
+			        </div>
+	        	</c:when>
+	           	<c:otherwise>
+					<div class="bubble bubble--alt">
+						<font color="red">${msgConversion[4]} ${msgConversion[5]}</font><br>
+			        	<font color="purple">${msgConversion[3] }</font> <br>
+			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
+			        </div>
+	        	</c:otherwise>
+        	</c:choose>
+         </c:forEach>
+        
+        
+        
+        
        </c:if>
 
 
@@ -479,26 +597,99 @@ textarea:FOCUS{
 						
 					</div>
 					
-					<input type="text" id="MsgToArea" name="myMsgText"
-						style="resize: none; border-radius: 5px;"
-						placeholder="Write your message here..."> <a id="anchor">Text</a>
-					<a id="anchor">Photos</a> <a id="anchor">Link</a> <a id="anchor">Videos</a>
-					<a id="anchor"><input type="submit" name="SubmitMsg"
-						value="Send" style="margin-top: 5px;"></a>
-					
-				</form>
+					<input type="text" id="MsgToArea" name="myMsgText" style="resize: none; border-radius: 5px;"
+						placeholder="Write your message here...">
+					<input id="VUVloginBtn" type="submit" name="SubmitMsg" value="Send" style="float:right; margin-top: 20px; margin-right: 18px">
+			</form>
 			</div>
 
-			<!-- <div id="RightMainMessage"> -->
-			<div id="OutsideRightMessage">
-				<div id="InsideRightMessage">
+			<div id="rightMain" style="background-color: bisque;border: none;">
+			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<div id="OutsidepeopleMayKnw">
+				<div id="peopleMayKnw">
 
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">AdvertiseMents</h3>
-
-
+					<table width=100%>
+						
+						<c:if test="${!empty knownPeopleList}">
+							<c:forEach items="${knownPeopleList}" var="knownPeople">
+								<c:if test="${loginUser.email != knownPeople[0]}">
+								<tr>
+								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+									<td>
+										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+												height="30" width="30">
+									</td>
+									<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
+								</form>
+										<td>
+									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+										<input type="hidden" name="JspPageName" value="Products">
+										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
+										<input type="hidden" name="requestFrom" value="${loginUser.email}">
+										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
+									</form>
+										</td>
+										</tr>
+										<tr>
+											<td colspan="2"></td>
+										</tr>
+									</c:if>
+								
+							</c:forEach>
+						</c:if>
+					</table>
 				</div>
-			</div>
-			<!-- </div> -->
+				</div>
+				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+					<table>
+						<tr>
+							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
+							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="SearchPeopleByProfession">more.....</a></td>
+						</tr>
+					</table>
+				</form>
+				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				<div id="OutsideRightMessage">
+					<div id="InsideRightMessage">
+						
+						<div style="width: 292px;height: 270px;">
+							<img src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 1.jpg" name="slide" width="292" height="270"/>
+                        </div>
+                        
+                            <script>
+                                
+                                //variable that will increment through the images
+                                var step=1
+                               
+                                function slideit(){
+                                    //if browser does not support the image object, exit.
+                                    if (!document.images)
+                                        return
+                                    document.images.slide.src=eval("image"+step+".src")
+                                    
+                                    if (step<6 )
+                                       	step++
+                                       
+                                    else
+                                        step=1
+                                        
+                                    //call function "slideit()" every 2.5 seconds
+                                    setTimeout("slideit()",9900)
+                                }
+                                slideit()
+                                
+                            </script>
+						
+						</div>
+					</div>
+				</div>
+			
+			
 			
 		</div>
 		

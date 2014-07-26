@@ -987,8 +987,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 								<div id="InsideProfileDetails">
 
 									<table>
-										<c:forEach items="${EditEducationDetailsList}"
-											var="EditEducationDetails">
+										<c:forEach items="${EditEducationDetailsList}" var="EditEducationDetails">
 											<tr>
 												<td style="width: 200px;"><b>Name of School :</b></td>
 												<td><input type="text" name="school"

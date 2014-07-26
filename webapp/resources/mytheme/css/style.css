@@ -1136,6 +1136,33 @@ h4 {
 	cursor: pointer;
 }
 
+#MsgFromFriendDetails{
+	max-width:600px;
+	width: 600px;
+	height: auto;
+	background-color: yellow;
+	border: 2px solid green;
+	border-radius:50px;
+	float: left;
+	clear: right;
+	margin: 0px 0px 30px 2px;
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#msgToFriendDetails{
+	max-width:600px;
+	width: 600px;
+	height: auto;
+	background-color: pink;
+	border: 2px solid blue;
+	border-radius:50px;
+	float: right;
+	clear: left;
+	margin: 0px 40px 30px 0px ;
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/
 
 			#MyIntrestAreas {

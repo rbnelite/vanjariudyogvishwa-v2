@@ -157,8 +157,29 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 	background-color:white;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+input[value="Save Changes"], input[type="reset"]{
+	width: auto;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.25);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
+	width: auto;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.45);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
 } 
-    </style>
+</style>
 </head>
 
 <body>
@@ -370,7 +391,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 					<input type="hidden" name="user_email" value="${loginUser.email}">
 					<center>
 					<h5><font color="blue">${changePwdMessage}</font></h5>
-						<table width=40% style="margin-top: 10px">
+						<table width=70% style="margin-top: 10px">
 							<tr>
 								<th colspan="2">Change Password</th>
 							</tr>
@@ -391,7 +412,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 								<td><form:errors path="RePassword"/></td>
 							</tr>
 							<tr>
-								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value=" Save Changes"></center></td>
+								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value="Save Changes"></center></td>
 								<td style="padding-top: 15px;padding-bottom: -6px;"><input type="reset" value="Cancel"></td>
 							</tr>
 

@@ -3,7 +3,9 @@
  */
 package com.rbnelite.udyogvishwa.controller;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -18,7 +20,9 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.MessageDTO;
 
 
+import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
+import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Message;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -27,6 +31,7 @@ import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.MessageService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.service.StatusService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -53,6 +58,9 @@ public class MessageController {
 	private ProfileImageService profileImageService;
 	@Resource
 	private NotificationService notificationService;
+	@Resource
+	private PeopleRefrenceService peoplerefservice;
+	
 
 	@RequestMapping(value = "/message", method = RequestMethod.POST)
 	public String messageMethod(@RequestParam("msgSenderID") String msgSenderID,
@@ -89,6 +97,13 @@ public class MessageController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
 
 		return "message";
 	}
@@ -129,6 +144,13 @@ public class MessageController {
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
 		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
+		
 		return "message";
 		
 	}
@@ -151,7 +173,13 @@ public class MessageController {
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
 		
-
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
+		
 		return "message";
 	}
 
