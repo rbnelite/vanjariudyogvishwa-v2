@@ -925,7 +925,7 @@ margin:5px auto auto 5px;
 }
 #MiddleTopchangepwd
 {
-	 margin-left:303px;
+	 margin-left:298px;
 	border-radius: 5px;
     width: 790px;
     height: 250px;
@@ -1079,7 +1079,7 @@ h4 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
 	border: none;
-	margin-top: 7px;
+	margin: 7px 10px 10px 2px;
 }
 #ViewProDetailsBtn:HOVER{
 	height: 35px;
@@ -1090,7 +1090,7 @@ h4 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
 	border: none;
-	margin-top: 7px;
+	margin: 7px 10px 10px 2px;
 	cursor: pointer;
 }
 
@@ -1161,6 +1161,10 @@ h4 {
 	margin: 0px 40px 30px 0px ;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#NotiTRdiv:HOVER{
+	background-color: rgba(196, 255, 224, 0.52);
 }
 
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/

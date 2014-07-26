@@ -302,6 +302,8 @@ document.getElementById("notificationId").value=NotificationId;
 				
 
 			</div>
+			
+			
 			<%-- <div id="NotificationTopHome">
 				<div id="InsideNotificationTopHome">
 				<table width="100%">
@@ -331,6 +333,9 @@ document.getElementById("notificationId").value=NotificationId;
 				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
 			</div>
 			</div> --%>
+			
+			
+			
 			<div id="RequestTopHome">
 				<table width=100%>
 					<th colspan=3 style="background-color: #fab039"><font
@@ -385,16 +390,16 @@ document.getElementById("notificationId").value=NotificationId;
 				<div id="middleHome">
 					
 					<!-- View perticular Notification Start here -->
-					<table width=90%>
+					<table width=100% style="margin-left: 10px">
 						<th colspan="3" bgcolor="#fcca7b">Notification List</th>
 						<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 						<c:if test="${!empty NotificationList}">
 							<c:forEach items="${NotificationList}" var="notification">
 								
-								<tr style="background-color: #fab039">
-									<td width="40px;"><img
-										src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
-										height="80" width="80"></td>
+								<tr id="NotiTRdiv">
+									<td width="40px;">
+									<img src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
+										height="80" width="80"; style="border-radius:30px;border: 2px dashed red;" ></td>
 									<td>
 									&nbsp;<span id="${notification[3]}" onclick="return jumpcomment('${notification[3]}')" style="cursor: pointer;">
 										<b style="color: purple;">${notification[1]}&nbsp;${notification[2]} </b>  comment on status :<br/>

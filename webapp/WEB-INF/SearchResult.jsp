@@ -91,7 +91,7 @@ function HideChangePhotoBlock(){
 
 #leftMainHome {
 	float: left;
-	width: 290px;
+	width: 293px;
 	height: 350px;
 	overflow: auto;
 	/* border-radius: 3px; */
@@ -221,7 +221,7 @@ function HideChangePhotoBlock(){
 					</table>
 				</div>
 				
-				<div id="leftMain3" style="height: 570px">
+				<div id="leftMain3" style="height: 567px">
 					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
@@ -308,16 +308,16 @@ function HideChangePhotoBlock(){
 			</div>
 
 			<div id="outsidemiddleHome" style="margin-right: 300px; height: 1195px">
-				<div id="middleHome" style="height: 1195px">
+				<div id="middleHome" style="height: 1195px;width: 802px;">
 				
 				
 					<c:if test="${!empty searchSByProfList}">
 						<c:forEach items="${searchSByProfList}" var="searchSByProf">
 						  <c:if test="${searchSByProf[5] != loginUser.email}">
 							<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-								<table width=96% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
+								<table width=96% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
 								<tr>
-									<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}" height="80" width="80"></td>
+									<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${searchSByProf[2]}" height="80" width="80" style="margin: 4px auto auto 4px;"></td>
 									<td><a style="font-size: 27px;color: black;">${searchSByProf[0]}&nbsp;${searchSByProf[1]}</a><br>
 										<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${searchSByProf[3]}</a>
 									</td>
@@ -349,7 +349,7 @@ function HideChangePhotoBlock(){
 							<c:forEach items="${SearchUserList}" var="searchUser">
 								<c:if test="${searchUser.emailId != loginUser.email}">
 									<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-										<table width=96% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
+										<table width=96% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px">
 										<tr>
 											<td width="40"></td>
 											<td><input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">

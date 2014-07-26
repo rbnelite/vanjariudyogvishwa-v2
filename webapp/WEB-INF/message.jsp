@@ -527,48 +527,7 @@ textarea:FOCUS{
 								</c:if>
 							</table>
 		
-		
-		<%-- <table align="center" style="float: left;">
-       			
-         <c:forEach items="${msgConversionList}" var="msgConversion">
-
-
-          <c:choose>
-           <c:when test="${msgConversion[0]==loginUser.email}">
-
-            <tr style="border: 1px solid gray">
-             <td><font color="purple" size="4">You&nbsp;</font></td>
-             <td><img src="${pageContext.request.contextPath}/resources/images/msg_Outbox.png" height="18" width="20"></td>
-             <td><font color="purple" size="4">${msgConversion[3] }</font> <br>
-             	<a style="float: left;"><font color="gray" size="2">${msgConversion[2]}</font></a><br>
-             	<hr>
-             </td>
-                
-            </tr>
-            
-           </c:when>
-           <c:otherwise>
-
-            <tr style="border: 1px solid gray">
-             <td><font color="sky blue" size="4">${msgConversion[4]} ${msgConversion[5]}</font></td>
-             <td><img src="${pageContext.request.contextPath}/resources/images/msg_Inbox.png" height="18" width="20"></td>
-             <td><font color="sky blue" size="4">${msgConversion[3]} </font> <br>
-             	<a style="float: left;"><font color="gray" size="2"> ${msgConversion[2]}</font></a><br>
-             	<hr color="sky blue">
-             </td>
-            </tr>
-
-           </c:otherwise>
-
-          </c:choose>
-         </c:forEach>
-         <tr><td></td><td></td><td></td></tr>
-         
-        </table> --%>
-        
-        
-        
-        <c:forEach items="${msgConversionList}" var="msgConversion">
+		<c:forEach items="${msgConversionList}" var="msgConversion">
 			<c:choose>
 	        	<c:when test="${msgConversion[0]==loginUser.email}">
 			        <div class="bubble">
