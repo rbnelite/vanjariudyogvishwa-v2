@@ -148,22 +148,20 @@
 <center>
 	<div id="main" style="background-color: bisque; height: 1000px">
 		<div id="Header">
-			<div id="logo1" align="center">
+			<!-- <div id="logo1" align="center">
 				<img src="/vanjariudyogvishwa-v2/resources/images/banner12.png"
 					width="142" height="150" alt="logo" />
-			</div>
+			</div> -->
 			<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">
-						<table width="1194" border="0" align="right">
+						<table width="600" border="0" align="right" style="margin-top: 15px">
 							<tr>
-								<td width="577" height="21">&nbsp;</td>
-								<td width="607"><span class="style8"><span
+								<td><span class="style8"><span
 										class="style16"><span class="style8" style="margin-left: 5px">Email</span></span></span><span
 									class="style8 style8"></span><span class="style8"></span><span
 									class="style8"><span class="style16" class="password" style="margin-left: 85px">&nbsp;&nbsp;&nbsp;Password:
 									</span></span></td>
 							</tr>
 							<tr>
-								<td height="26"></td>
 								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Write Registered Email ID" onfocus="return hideErrorMsg()"/> 
 									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Write your Valid password" onfocus="return LoginMailValidation()" /> 
 									<input id="VUVloginBtn" type="submit" value="Log In" name="login" onfocus="return LoginFormValidation()"/>
@@ -172,7 +170,6 @@
 							</tr>
 							
 							<tr>
-								<td height="22">&nbsp;</td>
 								<td><span class="style7"><span class="style8">
 											<input name="" type="checkbox" value="" /> <span
 											class="style21"><span class="style8">Remember
@@ -183,7 +180,6 @@
 									</span></span></td>
 							</tr>
 							<tr>
-								<td>&nbsp;</td>
 								<td>
 									<a id="LoginErrorDiv"><marquee><font color="Red" size="3">${LoginError}</font></marquee></a>
 									<a id="LogOutMsgDiv"><marquee><font color="green">${LogOutMsg}</font></marquee></a>
@@ -193,22 +189,31 @@
 					</form>
 		</div>
 		
-		<table>
+		
+				
+		
+		
+		<div id="leftMiddleIndex">
+			
+			<table>
 			<tr>
-				<td width="639" height="731"><label></label> <span
-					class="style2"><span class="style6"><span
-							class="style42">&nbsp;<span class="style71"> <span
-									class="style72">Stay Connected and Share</span></span></span></span></span><span
-					class="style36"> ..... </span>
-
-					<p>
+				<td width="639" height="731">
+							<span class="style42">&nbsp;
+								<span class="style72">Stay Connected and Share</span>
+							</span>
+						<p>
 						<img
 							src="/vanjariudyogvishwa-v2/resources/images/worldMap.png"
 							alt="network" align="middle" width="500" height="400" />
 					</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<table width="639" height="121" border="0">
+				</td>
+			</tr>
+			</table>
+			
+			
+		
+		
+			<table width="639" height="121" border="0" style="margin-top: -50px">
 						<tr>
 							<td width="207" height="117"><p class="style75">
 									<img
@@ -229,135 +234,137 @@
 								</p>
 								<p class="style77">share photo and videos</p></td>
 						</tr>
-					</table></td>
-				<td width="670">
+					</table>
+		</div>
+		
+		<div id="rightMiddleIndex">
+			
+			<span class="style42">&nbsp;
+				<span class="style72">
+					Create Your Account...
+				</span>
+			</span>
 					<form:form action="/vanjariudyogvishwa-v2/Index" method="post" commandName="index">
-						<table width="493" align="top" height="678" border="0"
-							style="margin-left: 140px; background-image:url(/vanjariudyogvishwa-v2/resources/images/Untitled-2.png);">
+						
+						<table id="MyRegistrationTable">
+							<!-- <tr >
+								<td colspan="3" rowspan="18" width="20"></td>
+							</tr> -->
 							<tr>
-								<td width="10"><div>
-										<th width="473" height="600" class="style27"><span
-											class="style64">Create Your Account...</span>
-
-											<div align="top">
-
-												<p>&nbsp;</p>
-												<table width="400" height="480" align="center">
-
-													<tr>
-														<td></td>
-														<td width="121" align="left" class="RegistrationCredentials">First Name<font color="red">*</font></td>
-														<td width="194"><form:input path="firstName" size="30" maxlength="15" placeholder="Write Your First Name Here" onkeypress="return isCharKey(event);" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="firstName" cssClass="error"/></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Middle Name<font color="red">*</font></td>
-														<td><form:input path="middleName"	size="30" maxlength="15" placeholder="Write Your Middle Name Here" onkeypress="return isCharKey(event);"/></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="middleName" cssClass="error" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Last Name<font color="red">*</font></td>
-														<td><form:input path="lastName" size="30" maxlength="15" placeholder="Write Your Last Name Here" onkeypress="return isCharKey(event);" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="lastName" cssClass="error" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Email Id<font color="red">*</font></td>
-														<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="Write a Valid EmailId" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Contact No.<font color="red">*</font></td>
-														<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Write Your Valid Mobile No." onkeypress="return isNumberKey(event)" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="contactNo" cssClass="error" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Birth Date<font color="red">*</font></td>
-														<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="dd/mm/yyyy"/></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="birthDate" cssClass="error" /></td>
-													</tr>
-													<%-- <tr>
-														
-														<td colspan="2"><font Class="error">${requestScope.message11}</font>
-													</tr> --%>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Gender<font color="red">*</font></td>
-														<td><form:radiobutton path="gender" value="male" style="width: 19px; height: 25px;" />
-																<span>Male</span>&nbsp;&nbsp;
-
-																<form:radiobutton path="gender" value="female" style="width: 19px; height: 25px;"/>
-																	<span>Female</span><br>
-														</td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td><form:errors path="gender" cssClass="error"/></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Password<font color="red">*</font></td>
-														<td><form:password path="password" id="password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td></td>
-														<td colspan="2"><form:errors path="password" cssClass="error" /></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td align="left" class="RegistrationCredentials">Confirm Password<font color="red">*</font></td>
-														<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" title="Type password matches to above" /></td>
-													</tr>
-													
-													<tr>
-														<td></td>
-														<td></td>
-														<td align="right"><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn"  onclick="return passwordNotSame()"/></td>
-													</tr>
-													
-												</table>
-											</div>
-											</th>
-											</div></td>
+								<td width="20"></td>
+								<td width="170" class="RegistrationCredentials">First Name<font color="red">*</font></td>
+								<td><form:input path="firstName" size="30" maxlength="15" placeholder="Write Your First Name Here" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="firstName" cssClass="error"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Middle Name<font color="red">*</font></td>
+								<td><form:input path="middleName"	size="30" maxlength="15" placeholder="Write Your Middle Name Here" onkeypress="return isCharKey(event);"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="middleName" cssClass="error" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Last Name<font color="red">*</font></td>
+								<td><form:input path="lastName" size="30" maxlength="15" placeholder="Write Your Last Name Here" onkeypress="return isCharKey(event);" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="lastName" cssClass="error" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Email Id<font color="red">*</font></td>
+								<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="Write a Valid EmailId" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Contact No.<font color="red">*</font></td>
+								<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Write Your Valid Mobile No." onkeypress="return isNumberKey(event)" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="contactNo" cssClass="error" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Birth Date<font color="red">*</font></td>
+								<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="dd/mm/yyyy"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="birthDate" cssClass="error" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2"><font Class="error">${requestScope.message11}</font>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Gender<font color="red">*</font></td>
+								<td><form:radiobutton path="gender" value="male" style="width: 19px; height: 25px;" />
+									<span>Male</span>&nbsp;&nbsp;
+									<form:radiobutton path="gender" value="female" style="width: 19px; height: 25px;"/>
+									<span>Female</span><br>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><form:errors path="gender" cssClass="error"/></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Password<font color="red">*</font></td>
+								<td><form:password path="password" id="password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
+							</tr>
+							<%-- <tr>
+								<td colspan="2"><form:errors path="password" cssClass="error" /></td>
+							</tr> --%>
+							<tr>
+								<td></td>
+								<td class="RegistrationCredentials">Confirm Password<font color="red">*</font></td>
+								<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" title="Type password matches to above" /></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn"  onclick="return passwordNotSame()"/></td>
 							</tr>
 						</table>
+											
+							<form:errors path="password" cssClass="error" />				
+							
+						<%-- <table>
+							<tr><form:errors path="password" cssClass="error" /><br></tr>
+							<tr><form:errors path="gender" cssClass="error"/><br></tr>
+							<tr><form:errors path="birthDate" cssClass="error" /><br></tr>
+							<tr><form:errors path="contactNo" cssClass="error" /><br></tr>
+							<tr><form:errors path="emailId" cssClass="error" />${requestScope.message_email}<br></tr>
+							<tr><form:errors path="lastName" cssClass="error" /><br></tr>
+							<tr><form:errors path="middleName" cssClass="error" /><br></tr>
+							<tr><form:errors path="firstName" cssClass="error"/><br></tr>
+						</table> --%>
 					</form:form>
-				</td>
-
-			</tr>
-		</table>
+				
+			
+			
+		</div>
 		
 		
 	</div>

@@ -63,7 +63,7 @@ cursor: pointer;
 		
 		.RegistrationCredentials{
 			color:black;
-			font-size: 16px;
+			font-size: 20px;
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
             .style1 {font-family: "3D LET (BRK)"}
@@ -1165,6 +1165,28 @@ h4 {
 
 #NotiTRdiv:HOVER{
 	background-color: rgba(196, 255, 224, 0.52);
+}
+
+#rightMiddleIndex{
+	width: 50%;
+	height: 800px;
+	/* background-color: yellow; */
+	float: right;
+}
+#leftMiddleIndex{
+	width: 50%;
+	height: 800px;
+	/* background-color: red; */
+	float: left;
+}
+#MyRegistrationTable{
+	width: 70%;
+	height: 678px;
+	margin-left: 5%;
+	margin-top:50px;
+	background-color: rgba(245, 159, 58, 0.72);
+	box-shadow: 15px 10px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
 }
 
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/
