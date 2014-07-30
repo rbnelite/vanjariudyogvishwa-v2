@@ -513,20 +513,17 @@ textarea:FOCUS{
 					<div style="margin: 27px auto auto 5px; width: 735px; height: 760px; background-color: transparent; overflow: hidden;">
 						<div style="margin: 20px auto auto 37px; width: 735px; height: 760px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
-							<table>
+							
 								<c:if test="${! empty ProfileImageListMsgFrnd}">
-									<c:forEach items="${ProfileImageListMsgFrnd}"
-										var="ProfileImageMsgFrnd">
-										<tr>
-											<td></td>
-											<td><img width="60px" height="60px"
+									<c:forEach items="${ProfileImageListMsgFrnd}" var="ProfileImageMsgFrnd">
+										<div id="ProfileImageMsgFrnd">
+										
+										<img width="80px" height="70px"
 												src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImageMsgFrnd.profileImage}">
-											</td>
-										</tr>
+										</div>
 									</c:forEach>
 								</c:if>
-							</table>
-		
+								
 		<c:forEach items="${msgConversionList}" var="msgConversion">
 			<c:choose>
 	        	<c:when test="${msgConversion[0]==loginUser.email}">

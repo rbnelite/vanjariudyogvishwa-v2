@@ -69,20 +69,45 @@ function jumpcomment(NotificationId) {
 }
 
 </script>
+
+<script>
+function loadXMLDoc()
+{
+	alert("Useing Ajax to load part of page without reloding of complete paje");
+	
+	myfirstReq=new XMLHttpRequest();
+	
+	myfirstReq.onreadystatechange=function()
+	  {
+	  if (myfirstReq.readyState==4 && myfirstReq.status==200)
+	    {
+	    document.getElementById("middleEvent").innerHTML=myfirstReq.responseText;
+	    }
+	  };
+	alert("step2");
+	myfirstReq.open("POST", "http://localhost:7080/vanjariudyogvishwa-v2/Events", true);
+	alert("step3");
+	myfirstReq.send();
+	
+	return false;
+}
+</script>
+
+
 <script type="text/javascript">
             
-            var image1=new Image()
-            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
-            var image2=new Image()
-            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg"
-            var image3=new Image()
-            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg"
-            var image4=new Image()
-            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg"
-            var image5=new Image()
-            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg"
-            var image6=new Image()
-            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
+            var image1=new Image();
+            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg";
+            var image2=new Image();
+            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg";
+            var image3=new Image();
+            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg";
+            var image4=new Image();
+            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg";
+            var image5=new Image();
+            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg";
+            var image6=new Image();
+            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg";
             
         </script>
 <style type="text/css">
@@ -422,7 +447,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						<h3><font color="purple">Create Event</font></h3>
 						
 						<tr>
-							<td>Event Name :</td>
+							<td>Event Name <font color="red">*</font> :</td>
 							<td><form:input path="name" id="name"
 								placeholder="Write Event Name...."
 								style="width: 400px; height: 30px; margin-left: -100px;"/>
@@ -433,7 +458,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						</tr>
 						<tr><td> <form:errors path="name" cssClass="error"/></td></tr>
 						<tr>
-							<td>Event Details :</td>
+							<td>Event Details <font color="red">*</font> :</td>
 							<td>
 							<form:input path="details" id="details"
 									placeholder="Write Event Details with time...."
@@ -443,7 +468,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						</tr>
 						<tr><td>  <form:errors path="details" cssClass="error"/> </td></tr>
 						<tr>
-							<td>Event Location :</td>
+							<td>Event Location <font color="red">*</font> :</td>
 							<td><form:input path="location" id="location"
 								placeholder="Write Location of Event...."
 								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
@@ -452,7 +477,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						</tr>
 						<tr><td>  <form:errors path="location" cssClass="error"/> </td></tr>
 						<tr>
-							<td>Date :</td>
+							<td>Date <font color="red">*</font> :</td>
 							<td><form:input path="datatime" id="datatime"
 								placeholder="dd/mm/yyyy"
 								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
@@ -461,8 +486,10 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						</tr>
 						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
-							<td><input type="submit" value="Create Event" onclick="return abc()"
+							<td><input type="submit" value="Create Event"  onclick="loadXMLDoc()"
 								style="margin-left: 290px; height: 40px;" >
+									<!-- onclick="return abc()" -->
+								
 							</td>
 							<td>
 								<input type="hidden" name="usermail" value="${loginUser.email}">
