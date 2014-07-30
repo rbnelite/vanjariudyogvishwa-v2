@@ -41,6 +41,9 @@ public class Occupation {
     
     @Column(name="email")
     private String usermail;
+    
+    @Column(name="web_address")
+    private String webAddress;
 	
     
     public int getOccupationid() {
@@ -105,6 +108,14 @@ public class Occupation {
 	
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
+	}
+
+	public String getWebAddress() {
+		return webAddress;
+	}
+
+	public void setWebAddress(String webAddress) {
+		this.webAddress = webAddress;
 	}
 
 }

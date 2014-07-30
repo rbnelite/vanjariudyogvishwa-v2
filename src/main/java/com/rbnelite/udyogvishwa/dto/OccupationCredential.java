@@ -9,6 +9,7 @@ public class OccupationCredential {
 	private String emptype;
 	private String annualincome;
 	private String usermail;
+	private String webAddress;
 	
 	public String getCompanyName() {
 		return companyName;
@@ -51,6 +52,12 @@ public class OccupationCredential {
 	}
 	public void setUsermail(String usermail) {
 		this.usermail = usermail;
+	}
+	public String getWebAddress() {
+		return webAddress;
+	}
+	public void setWebAddress(String webAddress) {
+		this.webAddress = webAddress;
 	}
 	
 	

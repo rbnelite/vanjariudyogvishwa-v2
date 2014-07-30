@@ -39,7 +39,7 @@ public class OccupationDaoImpl extends BaseDao<Occupation> implements
 		Session session=sessionFactory.openSession();
 		/*"from Occupation where occupation like concat('%','"+SearchDatabyprofession+"','%')"*/
 		try{
-		return session.createQuery("select i.firstName, i.lastName,pi.profileImage,o.occupation,o.companyName,i.emailId,i.homeAddress, E.PGDegree,E.otherPG from Occupation o, Index i,ProfileImages pi,EducationWork E where o.occupation like concat('%','"+SearchDatabyprofession+"','%') and i.emailId=o.usermail and pi.userMail=o.usermail and i.emailId=E.userMail").list();
+		return session.createQuery("select i.firstName, i.lastName,pi.profileImage,o.occupation,o.companyName,i.emailId,i.homeAddress, E.PGDegree,E.otherPG,o.webAddress,i.contactNo from Occupation o, Index i,ProfileImages pi,EducationWork E where o.occupation like concat('%','"+SearchDatabyprofession+"','%') and i.emailId=o.usermail and pi.userMail=o.usermail and i.emailId=E.userMail").list();
 		}
 		finally
 		{

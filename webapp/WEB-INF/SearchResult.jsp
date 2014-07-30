@@ -330,7 +330,15 @@ function HideChangePhotoBlock(){
 								</tr>
 								<tr>
 									<td></td>
-									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Home Address</b> @ ${searchSByProf[6]}</a></td>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Mobile :</b> ${searchSByProf[10]}</a></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Home Address</b> ${searchSByProf[6]}</a></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Web Address</b> ${searchSByProf[9]}</a></td>
 								</tr>
 								<tr>
 									<td><input type="hidden" name="friendsEmailId" value="${searchSByProf[5]}"></td>
@@ -354,6 +362,12 @@ function HideChangePhotoBlock(){
 											<td width="40"></td>
 											<td><input type="hidden" name="friendsEmailId" value="${searchUser.emailId}">
 												<a style="font-size: 27px;color: black;">${searchUser.firstName} ${searchUser.middleName} ${searchUser.lastName}</a>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td><img src="${pageContext.request.contextPath}/resources/icons/House.png" title="Home Address" style="opacity: 0.5; float: left;" height="30" width="30">
+												<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Mobile:</b> ${searchUser.contactNo} </a>
 											</td>
 										</tr>
 										<tr>

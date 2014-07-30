@@ -29,7 +29,8 @@ public class OccupationServiceImpl implements OcccupationService {
 		oc.setEmptype(occredential.getEmptype());
 		oc.setAnnualincome(occredential.getAnnualincome());
 		oc.setUsermail(occredential.getUsermail());
-
+		oc.setWebAddress(occredential.getWebAddress());
+		
 		ocdao.insertOccupation1(oc);
 	}
 

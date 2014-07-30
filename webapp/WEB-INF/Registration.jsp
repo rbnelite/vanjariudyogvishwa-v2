@@ -395,6 +395,12 @@
 							<td colspan="2"><form:errors path="annualincome" cssClass="error"/><br></td>
 						</tr>
 						<tr>
+							<td>Web Address :</td>
+							<td><input type="text" name="webAddress" size="30" maxlength="200"/>
+								
+							</td>
+						</tr>
+						<tr>
 							<td><input type="hidden" name="usermail" value="${CurrentEmailId}">
 								<!-- <input type="button" name="PrevInterestArea" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyIntrestAreas();"> -->
 							</td>
