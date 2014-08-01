@@ -41,7 +41,7 @@
 		</script>
 <style>
 h3 {
-	background-color: rgba(236, 198, 124, 1);
+	background-color: rgba(236, 198, 124, 0.5);
 	/* background-color:#00FF00; */
 	margin-top: 0px;
 }
@@ -81,19 +81,20 @@ h3 {
 
 #OutsideFriends {
 	border-radius: 3px;
-	border: 1px solid gray;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	background-color: bisque;
 	width: 760px;
 	height: 300px;
 	overflow: hidden;
 	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 #ProfileProducts {
 	padding-right: 30px;
 	border-radius: 3px;
 	/* margin-right: 465px; */
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	width: 760px;
 	height: 300px;
 	overflow: auto;
@@ -104,7 +105,7 @@ h3 {
 #OutsideProfileProducts {
 	border-radius: 3px;
 	/* margin-right: 465px; */
-	border: 1px solid gray;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	width: 760px;
 	height: 300px;
 	overflow: hidden;
@@ -246,7 +247,7 @@ h3 {
                 <div id="profile_photo">
                     <c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
-							<img width="140px" height="140px"
+							<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
 								src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 							<br>&nbsp;&nbsp;&nbsp;
 
@@ -256,16 +257,17 @@ h3 {
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -800px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -750px" href="logoutUser">LogOut</a>
 			</div>
             
             <div id="leftMain">
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
@@ -284,7 +286,7 @@ h3 {
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -312,7 +314,7 @@ h3 {
 				</div>
 				
 				<div id="leftMain3">
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 			</div>
             
@@ -599,7 +601,8 @@ h3 {
 			
 			
 			<div id="OutsideProfileDetails">
-            <div id="ProfileDetails">Other Details
+            <div id="ProfileDetails">
+            <h3>Other Details</h3>
             <c:if test="${!empty FriendsotherDetailsList}">
             <c:forEach items="${FriendsotherDetailsList}" var="FriendsotherDetailsList">
             <table>
@@ -740,7 +743,7 @@ h3 {
 			</div> --%>
 			
 			<div id="rightMain" style="background-color: bisque;border: none;">
-			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
@@ -777,7 +780,8 @@ h3 {
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+				
+				<%-- <form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 					<table>
 						<tr>
 							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
@@ -788,8 +792,9 @@ h3 {
 							<td><a href="SearchPeopleByProfession">more.....</a></td>
 						</tr>
 					</table>
-				</form>
-				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				</form> --%>
+				
+				<h3 style="background-color:#FF6300; font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

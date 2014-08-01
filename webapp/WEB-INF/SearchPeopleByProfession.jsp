@@ -145,7 +145,7 @@ function HideChangePhotoBlock(){
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
-					<img width="140px" height="140px"
+					<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
 						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
 					</c:forEach>
@@ -184,16 +184,17 @@ function HideChangePhotoBlock(){
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="SearchPeopleByProfession"><font color="#E45FF2">Members</font></a>
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -550px" href="logoutUser">LogOut</a>
 			</div>
 
 			<div id="leftMain">
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
@@ -212,7 +213,7 @@ function HideChangePhotoBlock(){
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -240,7 +241,7 @@ function HideChangePhotoBlock(){
 				</div>
 				
 				<div id="leftMain3" style="height: 570px">
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
 
@@ -684,7 +685,7 @@ function HideChangePhotoBlock(){
 			</div>
 			
 			<div id="rightMain" style="background-color: bisque;margin-top: -1200px;border: none;">
-			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
@@ -721,7 +722,8 @@ function HideChangePhotoBlock(){
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+				
+				<%-- <form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 					<table>
 						<tr>
 							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
@@ -732,8 +734,9 @@ function HideChangePhotoBlock(){
 							<td><a href="SearchPeopleByProfession">more.....</a></td>
 						</tr>
 					</table>
-				</form>
-				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				</form> --%>
+				
+				<h3 style="background-color:#FF6300; font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

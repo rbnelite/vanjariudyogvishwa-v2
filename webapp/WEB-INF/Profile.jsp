@@ -56,7 +56,7 @@
 
 <style type="text/css">
 h3 {
-	background-color: rgba(236, 198, 124, 1);
+	background-color: rgba(236, 198, 124, 0.5);
 	/* background-color:#00FF00; */
 	margin-top: 0px;
 }
@@ -140,12 +140,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 
 #OutsideFriends {
 	border-radius: 3px;
-	border: 1px solid gray;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	background-color: bisque;
 	width: 760px;
 	height: 300px;
 	overflow: hidden;
 	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 #NotificationTopHome {
@@ -275,7 +276,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				<div id="profile_photo" style="margin-top: -20px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
-							<img width="140px" height="140px"
+							<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
 								src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 							<br>&nbsp;&nbsp;&nbsp; <a href="#"
 								onclick="return DisplayChangePhotoBlock()">Change Photo</a>
@@ -319,16 +320,17 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile"><font color="#E45FF2">My Profile</font></a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -550px" href="logoutUser">LogOut</a>
 			</div>
 			
 			<div id="leftMain">
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table width=100%>
@@ -347,7 +349,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -375,7 +377,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				</div>
 				
 				<div id="leftMain3">
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 			</div>
 			
@@ -1605,7 +1607,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 			</div>
 			
 			<div id="rightMain" style="background-color: bisque;border: none;">
-			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
@@ -1642,7 +1644,8 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+				
+				<%-- <form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 					<table>
 						<tr>
 							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
@@ -1653,8 +1656,9 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 							<td><a href="SearchPeopleByProfession">more.....</a></td>
 						</tr>
 					</table>
-				</form>
-				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				</form> --%>
+				
+				<h3 style="background-color:#FF6300; font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

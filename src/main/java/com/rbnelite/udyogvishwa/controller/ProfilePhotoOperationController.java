@@ -54,7 +54,7 @@ public class ProfilePhotoOperationController {
 	@Resource
 	private FriendRequestService friendrequestservice;
 	
-	 private String saveDirectory = "F:/team/anil/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
+	 private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
      
 	    @RequestMapping(value="/uploadFile", method = RequestMethod.POST)
 	    public String handleFileUpload(HttpServletRequest request, @RequestParam("userMail")String userMail, @RequestParam CommonsMultipartFile[] profileImage) throws Exception {

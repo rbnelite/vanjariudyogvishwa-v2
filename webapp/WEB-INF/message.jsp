@@ -207,6 +207,7 @@ textarea:FOCUS{
 	background-color: bisque;
 	/* border: 1px solid gray; */
 	padding-right: 30px;
+	padding-bottom: 20px;
 }
 
 #OutsideleftMainHome {
@@ -293,7 +294,7 @@ textarea:FOCUS{
 				<div id="profile_photo" style="margin-top: -25px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
-					<img width="140px" height="140px"
+					<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
 						src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 					<br>&nbsp;&nbsp;&nbsp; <a href="#" onclick="return DisplayChangePhotoBlock()">Change Photo</a>
 					</c:forEach>
@@ -334,12 +335,13 @@ textarea:FOCUS{
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile">My Profile</a>
 				<a id="anchor" href="message"><font color="#E45FF2">Message</font></a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
 				<a id="anchor" href="#" onclick="return DisplaySettingBlock()">Setting</a>
-				<a id="anchor" style="margin-right: -600px" href="logoutUser">LogOut</a>
+				<a id="anchor" style="margin-right: -550px" href="logoutUser">LogOut</a>
 			</div>
 
 
@@ -425,7 +427,7 @@ textarea:FOCUS{
 			</div>
 
 			<div id="leftMain">
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Recent Messages</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Recent Messages</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
 					<table>
@@ -452,7 +454,7 @@ textarea:FOCUS{
 						</table>
 					</div>
 				</div>
-				<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana;">Links</h3>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
 				<div id="leftMain2">
 					<table width=100% >
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
@@ -480,7 +482,7 @@ textarea:FOCUS{
 				</div>
 				
 				<div id="leftMain3" style="height: 463px;">
-					<h3 style="background-color: rgba(143, 250, 57, 0.60); margin-top: 0px; font-family: vardana; ">Links</h3>
+					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 			</div>
 
@@ -506,12 +508,9 @@ textarea:FOCUS{
 							</script>
 						</a>
 					</c:if>	
-					
-					
-						 <input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<br>
-					<div style="margin: 27px auto auto 5px; width: 735px; height: 760px; background-color: transparent; overflow: hidden;">
-						<div style="margin: 20px auto auto 37px; width: 735px; height: 760px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
+					<div style="margin: 7px auto auto 5px; width: 735px; height: 360px; background-color: transparent; overflow: hidden;">
+						<div style="margin: 5px auto auto 37px; width: 735px; height: 355px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 							
 								<c:if test="${! empty ProfileImageListMsgFrnd}">
@@ -552,7 +551,7 @@ textarea:FOCUS{
 						</div>
 						
 					</div>
-					
+					<input	type="hidden" name="msgSenderID" value="${loginUser.email}">
 					<input type="text" id="MsgToArea" name="myMsgText" style="resize: none; border-radius: 5px;"
 						placeholder="Write your message here...">
 					<input id="VUVloginBtn" type="submit" name="SubmitMsg" value="Send" style="float:right; margin-top: 20px; margin-right: 18px">
@@ -560,7 +559,7 @@ textarea:FOCUS{
 			</div>
 
 			<div id="rightMain" style="background-color: bisque;border: none;">
-			<h3 style="background-color: rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">People You May Know</h3>
+			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">
 
@@ -597,7 +596,8 @@ textarea:FOCUS{
 					</table>
 				</div>
 				</div>
-				<form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
+				
+				<!-- <form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 					<table>
 						<tr>
 							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
@@ -608,8 +608,9 @@ textarea:FOCUS{
 							<td><a href="SearchPeopleByProfession">more.....</a></td>
 						</tr>
 					</table>
-				</form>
-				<h3 style="background-color:rgba(143, 250, 57, 0.60); font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
+				</form> -->
+				
+				<h3 style="background-color:#FF6300; font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">
 					<div id="InsideRightMessage">
 						

@@ -27,7 +27,7 @@
                 <label style="margin-left: 470px;">WelCome ! ${loginUser.firstName} ${loginUser.lastName}</label>
                 <br>
                 <div id="profile_photo">
-                    <img  src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
+                    <img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red" src="${pageContext.request.contextPath}/resources/images/dummy_male_ic.png">
                     <br>
                    
                 </div>

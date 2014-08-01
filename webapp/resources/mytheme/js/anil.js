@@ -21,7 +21,6 @@ function submitenter(myfield, e) {
 			
 			return false;
 		} else {
-			alert("Enetred comment text going to be saved is : "+temp1);
 			myfield.submit();
 			return true;
 		}

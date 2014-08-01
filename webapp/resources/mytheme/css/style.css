@@ -176,9 +176,9 @@ cursor: pointer;
 
 .userStatusImage
 {
-
-float: left;
-
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
 }
 
 #commentBox
@@ -333,7 +333,7 @@ float: left;
     width: 790px;
     height: 120px;
     background-color: bisque;
-    border: 1px solid gray; 
+    border: 1px solid rgba(245, 186, 118, 0.8); 
    
 }
 #MiddleTopEvent{
@@ -442,8 +442,9 @@ float: left;
     margin-top: 10px;
     float: left;
     height: auto;
-	border: 2px solid gray;
+	border: 2px solid rgba(245, 186, 118, 0.8);
 	background-color: transparent;
+	border-radius:5px;
 }
 
 #MsgShowArea{
@@ -812,7 +813,7 @@ margin:5px auto auto 5px;
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(216, 21, 245, 0.13);
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
 	color:black;
 	cursor: pointer;
 	border-radius:5px;
@@ -824,8 +825,8 @@ margin:5px auto auto 5px;
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(216, 21, 245, 0.33);
-	color:white;
+	background: rgba(137, 134, 129, 0.52);
+	color:black;
 	cursor: pointer;
 	border-radius:5px;
 	border: 1px solid rgba(251, 157, 9, 1);
@@ -833,15 +834,15 @@ margin:5px auto auto 5px;
 
 .LikeUnlikeBtn
 {
-    background: repeat scroll 0% 0% transparent;
+    background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
     border: medium none;
     cursor: pointer;
-    background-color: rgba(26, 118, 222, 0.62);
-    width: 110px;
+    background-color: orange;
+    width: 90px;
     height: 30px;
     border-radius: 5px;
     text-decoration: none;
-    border: 1px solid orange;
+    border: 1px solid rgba(17, 196, 245, 1);
     font-size: 17px;
     color: black;
 }
@@ -850,13 +851,14 @@ margin:5px auto auto 5px;
     background: repeat scroll 0% 0% transparent;
     border: medium none;
     cursor: pointer;
-    background-color: rgba(26, 118, 222, 0.99);
-    width: 110px;
+    background-color: rgba(26, 118, 222, 0.43);
+    width: 90px;
     height: 30px;
     border-radius: 5px;
     text-decoration: none;
     border: 1px solid orange;
-    font-size: 19px;
+    font-size: 17px;
+    color: rgba(216, 241, 242, 1);
 }
 
 .savebtn
@@ -937,7 +939,7 @@ margin:5px auto auto 5px;
 {
 	width: 790px;
     height: 250px;
-	 margin-right: 305px;
+	margin-right: 305px;
     border-radius: 3px;
     background-color: bisque;
     border: 1px solid gray;
@@ -1046,6 +1048,7 @@ h4 {
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
+	max-width: 175px;
 }
 #VUVsearchByProBtn{
 	height: 38px;

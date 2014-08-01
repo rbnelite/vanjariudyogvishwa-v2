@@ -304,7 +304,7 @@ cursor: pointer;
 	width: 790px;
 	height: 100px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 }
 
 #MiddleTopHome {
@@ -312,7 +312,7 @@ cursor: pointer;
 	width: 790px;
 	height: 100px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 }
 
 #MiddleTopEvent {
@@ -320,7 +320,7 @@ cursor: pointer;
 	width: 790px;
 	height: 350px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 }
 
 #MiddleTopEvent:hover {
@@ -328,7 +328,7 @@ cursor: pointer;
 	width: 790px;
 	height: 350px;
 	background-color: whitesmoke;
-	border: 1px solid aqua;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 }
 
 #MiddleTopProduct {
@@ -337,7 +337,7 @@ cursor: pointer;
 	height: 300px;
 	margin-left:20px;
 	background-color: bisque;
-	border: 1px solid aqua;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	display: none;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -561,11 +561,11 @@ cursor: pointer;
 }
 #OutsideProfileProducts {
 	border-radius: 3px;
-	border: 1px solid gray;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	width: 760px;
 	height: 300px;
 	background-color: bisque;
-	margin-bottom: 1px;
+	margin-bottom: 5px;
 	overflow: hidden;
 	margin-left: 10px;
 }
@@ -578,7 +578,7 @@ cursor: pointer;
 #Friends {
 	/* float: right; */
 	border-radius: 3px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	background-color: bisque;
 	margin-top: -303px;
 	width: 466px;
@@ -595,7 +595,7 @@ cursor: pointer;
 	/* margin-top: 1px; */
 	float: left;
 	border-radius: 3px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
 	background-color: bisque;
 	width: 760px;
 	height: auto;
@@ -605,10 +605,10 @@ cursor: pointer;
 }
 
 #OutsideProfileDetails{
-	margin-top: 1px;
+	margin-bottom: 5px;
 	float: left;
-	border-radius: 3px;
-	border: 1px solid gray;
+	border-radius: 5px;
+	border: 1px solid rgba(245, 186, 118, 0.8);
 	background-color: bisque;
 	width: 760px;
 	height: auto;
@@ -1046,7 +1046,7 @@ h4 {
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(216, 21, 245, 0.13);
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
 	color:black;
 	cursor: pointer;
 	border-radius:5px;
@@ -1058,8 +1058,8 @@ h4 {
 	width: 67px;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(216, 21, 245, 0.33);
-	color:white;
+	background: rgba(137, 134, 129, 0.52);
+	color:black;
 	cursor: pointer;
 	border-radius:5px;
 	border: 1px solid rgba(251, 157, 9, 1);
@@ -1067,7 +1067,7 @@ h4 {
 
 .LikeUnlikeBtn
 {
-    background: repeat scroll 0% 0% transparent;
+    background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
     border: medium none;
     cursor: pointer;
     background-color: rgba(26, 118, 222, 0.62);
@@ -1098,6 +1098,7 @@ h4 {
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
+	max-width: 175px;
 }
 #VUVsearchByProBtn{
 	height: 38px;
