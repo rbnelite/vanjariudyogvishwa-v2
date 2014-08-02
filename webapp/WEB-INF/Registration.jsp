@@ -405,7 +405,7 @@
 								<!-- <input type="button" name="PrevInterestArea" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyIntrestAreas();"> -->
 							</td>
 							<td align="right">
-								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn" style="margin-top: -10px;">
+								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn" style="margin-top: 10px;">
 								<!-- onmouseover="return displayMyContactDetails()" -->
 							</td>
 						</tr>
