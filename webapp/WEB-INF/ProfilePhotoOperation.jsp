@@ -1,7 +1,7 @@
 <%-- 
     Document   : ProfilePhotoOperation
     Created on : Dec 10, 2013, 6:22:25 PM
-    Author     : vishal
+    Author     : sawantmanojm@gmail.com
 --%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

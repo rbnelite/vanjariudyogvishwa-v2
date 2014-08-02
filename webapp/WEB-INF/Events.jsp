@@ -85,7 +85,7 @@ function loadXMLDoc()
 	    }
 	  };
 	alert("step2");
-	myfirstReq.open("POST", "http://localhost:7080/vanjariudyogvishwa-v2/Events", true);
+	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/InsertEvents", true);
 	alert("step3");
 	myfirstReq.send();
 	
@@ -300,8 +300,8 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
-				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>

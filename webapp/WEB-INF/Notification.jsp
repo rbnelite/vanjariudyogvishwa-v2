@@ -1,7 +1,7 @@
 <%-- 
     Document   : Notification
     Created on : Dec 9, 2013, 1:27:15 PM
-    Author     : Anil
+    Author     : sawantmanojm@gmail.com
 --%>
 <%@ page import="java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -242,8 +242,8 @@ document.getElementById("notificationId").value=NotificationId;
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
-				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()"><font color="#E45FF2">Notification</font><font color="red"><%-- ${fn:length(NotificationList)} --%></font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>

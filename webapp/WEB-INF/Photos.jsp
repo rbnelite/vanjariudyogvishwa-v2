@@ -1,7 +1,7 @@
 <%-- 
     Document   : Photos
     Created on : Dec 10, 2013, 6:18:04 PM
-    Author     : anil
+    Author     : sawantmanojm@gmail.com
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -316,8 +316,8 @@ p a:hover
             </div>
             <div id="hiderMenu">
 				<a id="anchor" href="Home">Home</a> 
-				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>

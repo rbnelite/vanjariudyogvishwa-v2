@@ -263,7 +263,7 @@ height:199px;
 }
 #styledTextArea{
 	width: 666px;
-	height: 120px;
+	height: 110px;
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-size: 18px;
@@ -403,8 +403,8 @@ height:199px;
 			</div>
 			<div id="hiderMenu">
 				<a id="anchor" href="Home"><font color="#E45FF2">Home</font> </a>
-				<a id="anchor" href="SearchPeopleByProfession">Members</a> 
 				<a id="anchor" href="Profile">My Profile</a>
+				<a id="anchor" href="SearchPeopleByProfession">Members</a>
 				<a id="anchor" href="message">Message</a>
 				<a id="anchor" href="#" onclick="DisplayNotificationBlockPro()">Notification<font color="red">${fn:length(NotificationList)}</font> </a>
 				<a id="anchor" href="#" onclick="DisplayRequestBlockPro()">Requests<font color="red">${fn:length(friendRequestList)}</font></a>
@@ -469,7 +469,7 @@ height:199px;
 					</table>
 				</div>
 				
-				<div id="leftMain3">
+				<div id="leftMain3" style="height: 585px">
 					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
@@ -605,7 +605,7 @@ height:199px;
 				</form>
 			</div>
 			<div id="outsidemiddleHome" style="margin-right: 300px; margin-top:0px; height: 985px">
-				<div id="middleHome" style="height: 985px;">
+				<div id="middleHome" style="height: 985px;padding-bottom: 25px">
 					
 					<!-- View perticular Notification Start here -->
 				

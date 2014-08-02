@@ -446,12 +446,12 @@ jQuery.autocomplete = function(input, options) {
 		var curleft = obj.offsetLeft || 0;
 		var curtop = obj.offsetTop || 0;
 		while (obj = obj.offsetParent) {
-			curleft += obj.offsetLeft
-			curtop += obj.offsetTop
+			curleft += obj.offsetLeft;
+			curtop += obj.offsetTop;
 		}
 		return {x:curleft,y:curtop};
 	}
-}
+};
 
 jQuery.fn.autocomplete = function(url, options, data) {
 	// Make sure options exists
