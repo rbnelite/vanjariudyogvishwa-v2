@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.model.Contact;
-import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Index;
 
 @Repository
@@ -60,9 +59,13 @@ public class ContactDaoImpl extends BaseDao<Index> implements ContactDao {
 
 	@Override
 	public List<Contact> listContact(String UserMail) {
-					
-			return sessionFactory.getCurrentSession().createQuery("from Index where emailId='"+UserMail+"'").list();
-		
+		Session session = sessionFactory.openSession();
+		try {	
+			return session.createQuery("from Index where emailId='"+UserMail+"'").list();
+		}
+		finally{
+			session.close();
+		}
 	}
 
 	@Override

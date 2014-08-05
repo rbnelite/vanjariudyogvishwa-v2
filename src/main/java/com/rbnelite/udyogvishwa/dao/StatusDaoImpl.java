@@ -4,23 +4,17 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.Status;
-import com.rbnelite.udyogvishwa.utils.RequestContext;
+
 
 @Repository
 public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 
-	@Autowired
-	private SessionFactory sessionFactory;
-
+	
 	public StatusDaoImpl() {
 		super(Status.class);
 	}

@@ -3,8 +3,6 @@ package com.rbnelite.udyogvishwa.dao;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,9 +12,6 @@ import com.rbnelite.udyogvishwa.model.Hobbies;
 @Repository
 public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 
-	@Autowired
-	private SessionFactory sessionFactory;
-
 	public HobbiesDaoImpl() {
 		super(Hobbies.class);
 	}
@@ -24,16 +19,6 @@ public class HobbiesDaoImpl extends BaseDao<Hobbies> implements HobbiesDao {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void saveHobbies(Hobbies hobbies) {
-
-		/*
-		 * System.out.println(" ##### hobbiesDAOImpl"); Session session =
-		 * sessionFactory.openSession(); System.out.println(" #mrk");
-		 * session.getTransaction().begin(); System.out.println(" #mrk2");
-		 * session.save(hobbies); System.out.println(" #mrk3");
-		 * session.getTransaction().commit(); System.out.println(" #mrk4");
-		 * session.flush(); System.out.println(" #mrk5");
-		 * System.out.println(" @@ hobbiesDAOImpl");
-		 */
 
 		Session session = sessionFactory.openSession();
 		try {
