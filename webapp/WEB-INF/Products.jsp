@@ -310,7 +310,7 @@ textarea:FOCUS{
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
+						<td width="84%"><a id="Shortlinks" href="Product" style="color: #E45FF2;">Products</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
@@ -460,38 +460,23 @@ textarea:FOCUS{
                 
                 <c:if  test="${!empty ProductList}">
                     <font color="blue;"><b>Products List & Information</b></font>
-                    <table width=100% style="border: 4px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-left: 15px;">
-                    <!-- <tr>
-                    	<td style="background-color: blue;color: white"><b>Product Image</b></td>
-                    	<td style="background-color: blue;color: white"><b>Product Name</b></td>
-                    	<td style="background-color: blue;color: white"><b>Product Details</b></td>
-                    </tr> -->
+                    
                     <c:forEach items="${ProductList}" var="productNAME">
-                    <!-- <div id="ShowProductInfoMain"> -->
-                        
-                         <!-- <div id="ShowProductInfo"> -->
-                            
-                            <tr>
-                            <td>
-                            	<div id="ShowProductUpdetImage">
-                            		<img style="float: left;" src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="100" width="120">
-                            	</div>
-                            </td>
-                            <td>
-                            <a ><font color="Purple"><b> ${productNAME.productName}:</b></font></a>
-                            </td>
-                            <td>
-                            <a>
-                            ${productNAME.productDetails}
-                            </a>
-                            </td>
-                             </tr>
-                             
-                        <!-- </div> -->
-                        <!-- </div> -->
+                    	<table width=98% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-bottom: 5px;">
+							<tr>
+								<td width="40"><img src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="80" width="80" style="margin: 4px auto auto 4px;border-radius: 50px;border: 3px solid #F00;"></td>
+								<td><a style="font-size: 22px;color: rgba(42, 163, 240, 0.68);">${productNAME.productName}</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Product Details :</b> ${productNAME.productDetails}</a></td>
+							</tr>
+						</table>
+                       
                         </c:forEach>
-                    	</table>
+                    	
                     </c:if>
+                    <div style="width: 90%;height: 40px;"></div>
                 </div>
                 </div>
             </div>

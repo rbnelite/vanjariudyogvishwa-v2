@@ -365,7 +365,7 @@ p a:hover
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
+						<td width="84%"><a id="Shortlinks" href="Photos" style="color: #E45FF2;">Photos</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>

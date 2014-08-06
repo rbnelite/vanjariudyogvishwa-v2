@@ -182,7 +182,9 @@ cursor: pointer;
 
 #Header {
 	border-radius: 3px;
-	background-color: #fcca7b;
+	background-image: url('../images/hederBg.png');
+    background-repeat: repeat-y;
+    /* background-color: #fcca7b; */
 	width: 100%;
 	height: 200px;
 	margin: 0px 50px 0px 0px;
@@ -910,21 +912,7 @@ cursor: pointer;
     background-color: white;
     border-radius:5px;
 }
-#ShowProductInfo{
-    width: 600px;
-    height:100px;
-    margin-top: 10px;
-    /* margin-left: 5px; */
-    float: right;
-    background-color: #fcca7b;
-    border-radius:5px;
-}
-#ShowProductInfoMain{
-	width: 720px;
-	height: 102px;
-	margin-top: 10px;
-	
-}
+
 #ProductInfoheading{
 	margin-left: -400px;
 	
@@ -1136,7 +1124,7 @@ h4 {
 	height: 35px;
 	width: 110px;
 	color:white;
-	background-color:rgba(188, 26, 249, 0.75);
+	background-color:rgba(188, 26, 249, 0.25);
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
@@ -1147,7 +1135,7 @@ h4 {
 	height: 35px;
 	width: 110px;
 	color:black;
-	background-color: rgba(21, 245, 21, 0.59);
+	background-color:rgba(188, 26, 249, 0.35);
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;

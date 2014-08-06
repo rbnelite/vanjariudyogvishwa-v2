@@ -32,7 +32,7 @@ function employee(){
 		dispPhoto.style.display = 'none';
 	}
 
-	function underscoreName() {
+	/* function underscoreName() {
 		var nameButton = document.getElementById("nameButton");
 		nameButton.style.background = 'orange';
 
@@ -42,7 +42,7 @@ function employee(){
 		var nameButton = document.getElementById("nameButton");
 		nameButton.style.background = 'none';
 
-	}
+	} */
 
 	function jumpcomment(NotificationId) {
 		/* alert(NotificationId); */
@@ -267,12 +267,12 @@ function employee(){
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList" style="color: #E45FF2;">Friends</a></td>
 					</tr>
 					</table>
 				</div>
 				
-				<div id="leftMain3">
+				<div id="leftMain3" style="height: 580px;">
 					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
@@ -371,58 +371,56 @@ function employee(){
 
 			<div id="outsidemiddleHome" style="margin-right: 300px;height: 1195px">
 				<div id="middleHome" style="height: 1195px">
-					<div id="userStatusImage">
-						<table width=90% style="margin-top: 5px;">
-							<c:if test="${!empty userFriendsList}">
-								<c:forEach items="${userFriendsList}" var="userFriends">
-
-
+					<c:if test="${!empty userFriendsList}">
+						<c:forEach items="${userFriendsList}" var="userFriends">
+							<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+								<table width=100% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-bottom: 5px;">
+									
 									<tr>
-										<td>
-											<table style="border: 1px solid gray; border-radius: 5px;">
-												<tr>
-													<td rowspan="3"><img
-														src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
-														style="height: 150px; width: 140px;"></td>
-													<td align="left">
-														<form action="/vanjariudyogvishwa-v2/FriendProfile"
-															method="post">
-															<c:choose>
-																<c:when test="${userFriends[2]==loginUser.email}">
-																	<input type="hidden" name="friendsEmailId"
-																		value="${userFriends[3]}">
-
-																</c:when>
-																<c:otherwise>
-																	<input type="hidden" name="friendsEmailId"
-																		value="${userFriends[2]}">
-
-																</c:otherwise>
-															</c:choose>
-															<input type="submit" id="nameButton"
-																style="background: none; margin-right: 10px; border: none; font-size: 30px; font-family: monospace; font-weight: bold;"
-																value="${userFriends[0]} ${userFriends[1]}"
-																onmouseover="return underscoreName();"
-																onmouseout="return NounderscoreName();">
-														</form>
-													</td>
-													<td width="100%"></td>
-												</tr>
-												<tr>
-													<td><a> <font color="gray" size="2">Works @
-																${userFriends[5]}</font></a></td>
-												</tr>
-												<tr>
-													<td><a> <font color="gray" size="2">As
-																${userFriends[6]} </font></a></td>
-												</tr>
-											</table>
+										<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}" height="80" width="80" style="margin: 4px auto auto 4px;border-radius: 50px;border: 3px solid #F00;"></td>
+										<td><a style="font-size: 27px;color: black;">${userFriends[0]}&nbsp;${userFriends[1]}</a><br>
+										<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${userFriends[6]}</a>
 										</td>
 									</tr>
+									<tr>
+										<td></td>
+										<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Education:</b> ${userFriends[10]}</a><br>
+										<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Specialization in</b> @ ${userFriends[11]}</a>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Mobile :</b> ${userFriends[8]}</a></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Home Address</b> ${userFriends[7]}</a></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Web Address</b> ${userFriends[9]}</a></td>
+									</tr>
+									<tr>
+										<td>
+											<c:choose>
+												<c:when test="${userFriends[2]==loginUser.email}">
+													<input type="hidden" name="friendsEmailId" value="${userFriends[3]}">
+												</c:when>
+												<c:otherwise>
+													<input type="hidden" name="friendsEmailId" value="${userFriends[2]}">
+												</c:otherwise>
+											</c:choose>
+										</td>
+										<td><input id="ViewProDetailsBtn" type="submit"  value="View Details" style="float: right;"></td>
+									</tr>
+								</table>
+							</form>
+									
 								</c:forEach>
 							</c:if>
-						</table>
-					</div>
+						
+					
+					
 				</div>
 			</div>
 

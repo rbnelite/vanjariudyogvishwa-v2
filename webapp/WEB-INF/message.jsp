@@ -454,7 +454,7 @@ textarea:FOCUS{
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
 					<tr>
 						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="message">Message</a></td>
+						<td width="84%"><a id="Shortlinks" href="message" style="color: #E45FF2;">Message</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>

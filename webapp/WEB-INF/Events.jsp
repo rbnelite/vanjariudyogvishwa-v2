@@ -112,13 +112,24 @@ function loadXMLDoc()
         </script>
 <style type="text/css">
 
-#ShowEventsUpdet{
-    width: 650px;
-    margin-top: 10px;
-    margin-left: 75px;
+#OutsideShowEventsUpdet{
+    width: 775px;
+    /* margin-top: 10px; */
+    margin-left: 5px;
     float: left;
-    height: 600px;
+    height: 629px;
     overflow: auto;
+	padding-bottom: 10px;
+	padding-right: 35px;
+   
+}
+
+#ShowEventsUpdet{
+    width: 775px;
+    float: left;
+    height: auto;
+    overflow: hidden;
+       
    
 }
 
@@ -237,6 +248,29 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+#newEventBtn{
+	width: auto;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.25);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+}
+#newEventBtn:HOVER{
+	width: auto;
+	height: 40px;
+	background-color: rgba(240, 59, 59, 0.45);
+	color:black;
+	border-radius: 6px;
+	border: 1px solid black;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
 </style>
 
 </head>
@@ -346,7 +380,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
+						<td width="84%"> <a id="Shortlinks" href="Events" style="color: #E45FF2;">Events</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
@@ -458,7 +492,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							<td>Event Name <font color="red">*</font> :</td>
 							<td><form:input path="name" id="name"
 								placeholder="Write Event Name...."
-								style="width: 400px; height: 30px; margin-left: -100px;"/>
+								style="width: 400px; height: 30px;"/>
 								
 								
 							</td>
@@ -470,7 +504,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							<td>
 							<form:input path="details" id="details"
 									placeholder="Write Event Details with time...."
-									style="width: 400px; height: 100px; resize: none; margin-left: -100px;"/><br>
+									style="width: 400px; height: 100px; resize: none;"/><br>
 								
 							</td>
 						</tr>
@@ -479,7 +513,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							<td>Event Location <font color="red">*</font> :</td>
 							<td><form:input path="location" id="location"
 								placeholder="Write Location of Event...."
-								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
+								style="width: 400px; height: 30px;"/><br>
 								
 							</td>
 						</tr>
@@ -488,20 +522,18 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							<td>Date <font color="red">*</font> :</td>
 							<td><form:input path="datatime" id="datatime"
 								placeholder="dd/mm/yyyy"
-								style="width: 400px; height: 30px; margin-left: -100px;"/><br>
+								style="width: 400px; height: 30px;"/><br>
 								
 							</td>
 						</tr>
 						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
-							<td><input type="submit" value="Create Event" 
-								style="margin-left: 290px; height: 40px;" >
-									<!-- onclick="return abc()" -->
-									 <!-- onclick="loadXMLDoc()" -->
-								
-							</td>
 							<td>
 								<input type="hidden" name="usermail" value="${loginUser.email}">
+							</td>
+							<td><input id="newEventBtn" type="submit" value="Create Event">
+									<!-- onclick="return abc()" -->
+									 <!-- onclick="loadXMLDoc()" -->
 							</td>
 						</tr>
 					</table>
@@ -509,17 +541,18 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 			</div>
 
 			<div id="middleEvent">
+				<div id="OutsideShowEventsUpdet">
 				<div id="ShowEventsUpdet">
 				<span id="massage" style="color: green;">${massage}</span>
-					<h3>List of Events</h3>
+					<h3 style="background-color:#FF6300;">List of Events</h3>
 					<c:if test="${!empty eventstList}">
-						<table border=1 width=100%>
-							<tr>
-								<th>Photo</th>
-								<th>Event Name</th>
-								<th>Location</th>
-								<th>Date/Time</th>
-								<th>Event Details</th>
+						<table border="1" width=100%; style="margin-bottom: 15px;">
+							<tr style="width: 100%">
+								<th style="width: 10%">Photo</th>
+								<th style="width: 25%">Event Name</th>
+								<th style="width: 20%">Location</th>
+								<th style="width: 10%">Date/Time</th>
+								<th style="width: 35%">Event Details</th>
 							</tr>
 							<c:forEach items="${eventstList}" var="myEvents">
 								<tr>
@@ -532,6 +565,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							</c:forEach>
 						</table>
 					</c:if>
+				</div>
 				</div>
 			</div>
 

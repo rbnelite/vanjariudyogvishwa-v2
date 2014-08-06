@@ -78,11 +78,11 @@ public class FriendRequestDaoImpl extends BaseDao<FriendRequest>implements Frien
 		Session session=sessionFactory.openSession();
 		try{
 	
-		return session.createQuery("select I.firstName, I.lastName,F.requestFrom,F.requestTo,Pi.profileImage, O.companyName,O.occupation,I.homeAddress"
-				+ " from FriendRequest F, Index I, ProfileImages Pi,Occupation O where F.requestFrom = '"+userMail+"' and "
-						+ " F.requestStatus = 'Accept' and F.requestTo = I.emailId and I.emailId = Pi.userMail and I.emailId=O.usermail or"
+		return session.createQuery("select I.firstName, I.lastName,F.requestFrom,F.requestTo,Pi.profileImage, O.companyName,O.occupation,I.homeAddress,I.contactNo,O.webAddress,E.PGDegree,E.otherPG"
+				+ " from FriendRequest F, Index I, ProfileImages Pi,Occupation O,EducationWork E where F.requestFrom = '"+userMail+"' and "
+						+ " F.requestStatus = 'Accept' and F.requestTo = I.emailId and I.emailId = Pi.userMail and I.emailId=O.usermail and I.emailId=E.userMail or"
 						+ " F.requestTo = '"+userMail+"' and F.requestStatus = 'Accept' and F.requestFrom = I.emailId and "
-								+ "I.emailId = Pi.userMail and I.emailId=O.usermail").list();
+								+ "I.emailId = Pi.userMail and I.emailId=O.usermail and I.emailId=E.userMail").list();
 		}finally{
 			session.close();
 		}
