@@ -109,11 +109,11 @@ function employee(){
 }
 #leftMainHome {
 	float: left;
-	width: 290px;
+	width: 300px;
 	height: 350px;
 	overflow: auto;
 	background-color: bisque;
-	padding-right: 30px;
+	margin-left: 20px;
 }
 
 #OutsideleftMainHome {
@@ -220,20 +220,29 @@ function employee(){
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-					<table width=100%>
-								
 						<c:if test="${!empty eventstList}">
-
-							
 								<c:forEach items="${eventstList}" var="myEvents">
-								
-									<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
-									</tr>
+									<table width=100%>
+										<tr>
+											<td align="center" width="100%"><a id="showEventUserName">${myEvents[1]} ${myEvents[2]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">Title :</font> <a id="showEventCred">${myEvents[0]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">At : </font><a id="showEventCred">${myEvents[4]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">On : </font><a id="showEventCred">${myEvents[5]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">Details : </font><a id="showEventCred">${myEvents[3]}</a></td>
+										</tr>
+									</table>
+									<hr>
 								</c:forEach>
-							
-						</c:if>
-						</table>
+								
+							</c:if>
 					</div>
 				</div>
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>

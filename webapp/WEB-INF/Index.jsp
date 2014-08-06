@@ -1,3 +1,10 @@
+
+<%-- 
+    Document   : Index page For Vanjari Udyog Vishwa
+    Created on : Dec 3, 2013, 4:00:34 PM
+    Author     : Manoj Sawant (sawantmanojm@gmail.com)
+--%>
+
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -435,3 +442,9 @@
 
 </body>
 </html>
+
+<%-- 
+    Document   : Index page For Vanjari Udyog Vishwa
+    Created on : Dec 9, 2013, 6:10:34 PM
+    Author     : Manoj Sawant (sawantmanojm@gmail.com)
+--%>

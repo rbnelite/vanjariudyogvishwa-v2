@@ -208,13 +208,11 @@ height:199px;
 
 #leftMainHome {
 	float: left;
-	width: 290px;
+	width: 300px;
 	height: 350px;
 	overflow: auto;
-	/* border-radius: 3px; */
 	background-color: bisque;
-	/* border: 1px solid gray; */
-	padding-right: 30px;
+	margin-left: 20px;
 }
 
 #OutsideleftMainHome {
@@ -416,30 +414,32 @@ height:199px;
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-					<table width=100%>
+					
 								
 						<c:if test="${!empty eventstList}">
-								<c:set var="eventCount" value="0"></c:set>
-							
-								<c:forEach items="${eventstList}" var="myEvents">
-									<c:set var="eventCount" value="${eventCount + 1}"></c:set>
-									<c:choose>
-										<c:when test="${eventCount % 2==0}">
+							<c:forEach items="${eventstList}" var="myEvents">
+								<table width=100%>
 									<tr>
-									
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
+										<td align="center" width="100%"><a id="showEventUserName">${myEvents[1]} ${myEvents[2]}</a></td>
 									</tr>
-									</c:when>
-									<c:otherwise>
-										<tr>
-											<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
-										</tr>
-									</c:otherwise>
-									</c:choose>
-								</c:forEach>
+									<tr>
+										<td align="left" width="100%"><font color="orange">Title :</font> <a id="showEventCred">${myEvents[0]}</a></td>
+									</tr>
+									<tr>
+										<td align="left" width="100%"><font color="orange">At : </font><a id="showEventCred">${myEvents[4]}</a></td>
+									</tr>
+									<tr>
+										<td align="left" width="100%"><font color="orange">On : </font><a id="showEventCred">${myEvents[5]}</a></td>
+									</tr>
+									<tr>
+										<td align="left" width="100%"><font color="orange">Details : </font><a id="showEventCred">${myEvents[3]}</a></td>
+									</tr>
+								</table>
+								<hr>
+							</c:forEach>
 							
 						</c:if>
-						</table>
+						
 					</div>
 				</div>
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>

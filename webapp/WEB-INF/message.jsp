@@ -203,9 +203,7 @@ textarea:FOCUS{
 	width: 290px;
 	height: 350px;
 	overflow: auto;
-	/* border-radius: 3px; */
 	background-color: bisque;
-	/* border: 1px solid gray; */
 	padding-right: 30px;
 	padding-bottom: 20px;
 }
@@ -430,27 +428,23 @@ textarea:FOCUS{
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Recent Messages</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-					<table>
+						<table>
 							<c:if test="${!empty msgFriendsList}">
 								<c:forEach items="${msgFriendsList}" var="msgFriends">
 									<form action="/vanjariudyogvishwa-v2/viewConversion" , method="post">
 										<tr>
 											<td>
-												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}"
-												height="30" width="30">
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}" height="30" width="30">
 											</td>
 											<td>
 												<input type="hidden" name="msgSenderID" value="${loginUser.email}">
-												<input type="hidden" name="msgReceiverID"
-												value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
+												<input type="hidden" name="msgReceiverID" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
 												<input id="showFrndConversionName" type="submit" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" style="color:">
 											</td>
 										</tr>
 									</form>
 								</c:forEach>
-
-							</c:if>
-
+ 							</c:if>
 						</table>
 					</div>
 				</div>

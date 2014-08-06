@@ -70,7 +70,7 @@ function jumpcomment(NotificationId) {
 
 </script>
 
-<script>
+<!-- <script>
 function loadXMLDoc()
 {
 	alert("Useing Ajax to load part of page without reloding of complete paje");
@@ -91,7 +91,7 @@ function loadXMLDoc()
 	
 	return false;
 }
-</script>
+</script> -->
 
 
 <script type="text/javascript">
@@ -177,13 +177,11 @@ display: none;
 }
 #leftMainHome {
 	float: left;
-	width: 290px;
+	width: 300px;
 	height: 350px;
 	overflow: auto;
-	/* border-radius: 3px; */
 	background-color: bisque;
-	/* border: 1px solid gray; */
-	padding-right: 30px;
+	margin-left: 20px;
 }
 
 #OutsideleftMainHome {
@@ -313,20 +311,29 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Upcoming Events</h3>
 				<div id="OutsideleftMainHome">
 					<div id="leftMainHome">
-					<table width=100%>
-								
 						<c:if test="${!empty eventstList}">
-
-							
 								<c:forEach items="${eventstList}" var="myEvents">
-								
-									<tr>
-										<td align="left"><font color="orange">${myEvents[1]} ${myEvents[2]}</font> : ${myEvents[0]}</td>
-									</tr>
+									<table width=100%>
+										<tr>
+											<td align="center" width="100%"><a id="showEventUserName">${myEvents[1]} ${myEvents[2]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">Title :</font> <a id="showEventCred">${myEvents[0]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">At : </font><a id="showEventCred">${myEvents[4]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">On : </font><a id="showEventCred">${myEvents[5]}</a></td>
+										</tr>
+										<tr>
+											<td align="left" width="100%"><font color="orange">Details : </font><a id="showEventCred">${myEvents[3]}</a></td>
+										</tr>
+									</table>
+									<hr>
 								</c:forEach>
-							
-						</c:if>
-						</table>
+								
+							</c:if>
 					</div>
 				</div>
 				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
@@ -487,9 +494,10 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						</tr>
 						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
-							<td><input type="submit" value="Create Event"  onclick="loadXMLDoc()"
+							<td><input type="submit" value="Create Event" 
 								style="margin-left: 290px; height: 40px;" >
 									<!-- onclick="return abc()" -->
+									 <!-- onclick="loadXMLDoc()" -->
 								
 							</td>
 							<td>
