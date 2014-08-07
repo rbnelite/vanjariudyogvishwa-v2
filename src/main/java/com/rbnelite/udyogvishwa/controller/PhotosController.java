@@ -1,6 +1,9 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -17,14 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Photos;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
-import com.rbnelite.udyogvishwa.model.Status;
 import com.rbnelite.udyogvishwa.service.CommentService;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
@@ -108,9 +109,14 @@ public class PhotosController {
                 System.out.println("Saving file: " + aFile.getOriginalFilename());
                  
                 if (!aFile.getOriginalFilename().equals("")) {
-                	 aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
                 	
-                	 String fileName=aFile.getOriginalFilename();
+                	DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
+            		Date date = new Date();
+            		String fileName="RBNelitePro"+dateFormat.format(date);
+            		        		
+                	 aFile.transferTo(new File(saveDirectory + fileName));
+                	
+                	 
                 	
                 	 photoservice.addPhoto(userMail,fileName);
                 	 

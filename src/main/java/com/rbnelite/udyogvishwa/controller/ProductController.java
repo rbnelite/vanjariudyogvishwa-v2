@@ -1,6 +1,9 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -68,16 +71,16 @@ public class ProductController {
             for (CommonsMultipartFile aFile : imgPath){
                  
                 System.out.println("Saving file: " + aFile.getOriginalFilename());
+                
+                DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
+        		Date date = new Date();
+        		String fileName="RBNelitePro"+dateFormat.format(date);
                  
                 if (!aFile.getOriginalFilename().equals("")) {
-                	 aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
-                 
+                	 aFile.transferTo(new File(saveDirectory + fileName));
+                	 
+                	 productservice.insertProduct(pname, pdetail,fileName,userMail);
                 	
-             		        	 
-             	
-                	productservice.insertProduct(pname, pdetail,aFile.getOriginalFilename(),userMail);
-                	
-                
                 }
                 
             }
