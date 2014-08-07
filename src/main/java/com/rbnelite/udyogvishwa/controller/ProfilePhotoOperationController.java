@@ -1,6 +1,9 @@
 package com.rbnelite.udyogvishwa.controller;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -72,7 +75,7 @@ public class ProfilePhotoOperationController {
 	                	
 	                	HttpSession session = request.getSession(true);
 	            		/*String userMail=(String)session.getAttribute("CurrentEmailId");*/
-	                	userMail="sawantmanojm@gmail.com";
+	                	/*userMail="sawantmanojm@gmail.com";*/
 	                	
 	                	profileImageService.insertProfileImage(fileName, userMail);
 	                	
@@ -96,6 +99,7 @@ public class ProfilePhotoOperationController {
 	    	HttpSession session=request.getSession(true);
         	LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
         	String userMail=loginUser.getEmail();
+        	String loginFLname=loginUser.getFirstName()+loginUser.getLastName();
 	         
 	        if (updateProfileImage != null && updateProfileImage.length > 0) {
 	            for (CommonsMultipartFile aFile : updateProfileImage){
@@ -103,11 +107,15 @@ public class ProfilePhotoOperationController {
 	                System.out.println("Saving/Updating Profile Image file: " + aFile.getOriginalFilename());
 	                 
 	                if (!aFile.getOriginalFilename().equals("")) {
-	                	String fileName=aFile.getOriginalFilename();
+	                	
+	                	DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
+	            		Date date = new Date();
+	            		String fileName=loginFLname+dateFormat.format(date);
+	            		
 	                	
 	                	profileImageService.UpdateProfileImage(fileName, userMail);
 	                	
-	                    aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
+	                    aFile.transferTo(new File(saveDirectory + fileName));
 
 	                    map.put("ProfileImage", new ProfileImages());
 	            		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
@@ -129,7 +137,6 @@ public class ProfilePhotoOperationController {
 	            		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
 	            		map.put("knownPeopleList", knowPeopleSet);
 	            		
-
 	            		map.put("friendRequest", new FriendRequest());
 	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 
