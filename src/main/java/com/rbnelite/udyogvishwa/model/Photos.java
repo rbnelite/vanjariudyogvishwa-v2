@@ -28,6 +28,12 @@ public class Photos {
 	@Column(name="postdate")
 	private String postdate;
 	
+	@Column(name="photo_title")
+	private String photoTitle;
+	
+	@Column(name="photo_desc")
+	private String photoDescription;
+	
 	
 	public int getId() {
 		return id;
@@ -52,5 +58,17 @@ public class Photos {
 	}
 	public void setPostdate(String postdate) {
 		this.postdate = postdate;
+	}
+	public String getPhotoTitle() {
+		return photoTitle;
+	}
+	public void setPhotoTitle(String photoTitle) {
+		this.photoTitle = photoTitle;
+	}
+	public String getPhotoDescription() {
+		return photoDescription;
+	}
+	public void setPhotoDescription(String photoDescription) {
+		this.photoDescription = photoDescription;
 	}	
 }

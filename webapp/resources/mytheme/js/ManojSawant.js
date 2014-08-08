@@ -1,10 +1,11 @@
 
-/*  Document   : ManojSawant.js 
-    Created on : July 4, 2014, 04:02:28 PM
-    Author     : sawantmanojm@gmail.com
+/*  Document   	 : ManojSawant.js 
+    Created on 	 : July 4, 2014, 04:02:28 PM
+    Organization : RBNelite IT Solutions Pvt.Ltd
+    Author       : Manoj Sawant sawantmanojm@gmail.com
 */
 
-/*.......Mmethods to Show dives in registration steps START.......*/
+/*.......Methods to Show dives in registration steps START.......*/
 
 function displayMyIntrestAreas() {
 	var IA=document.getElementById("MyIntrestAreas");
@@ -53,11 +54,11 @@ function displayMyOtherDetails() {
 	otherDet.style.display='block';
 }
 
-/*.......Mmethods to Show dives in registration steps END.......*/
+/*.......Methods to Show dives in registration steps END.......*/
 
 
 
-/*.......Mmethods to hide dives in registration steps START.......*/
+/*.......Methods to hide dives in registration steps START.......*/
 
 function hideMyIntrestAreas() {
 	var IA=document.getElementById("MyIntrestAreas");
@@ -94,12 +95,12 @@ function hideMyOtherDetails() {
 	otherDet.style.display='none';
 }
 
-/*.......Mmethods to hide dives in registration steps END....... */
+/*.......Methods to hide dives in registration steps END....... */
 
 /*********************************View Previous Registration Step's Div START here **************************************/
 
 
-/*.......Mmethods to Show Previous div in registration steps START.......*/
+/*.......Methods to Show Previous div in registration steps START.......*/
 
 function displayPrevMyIntrestAreas() {
 	var IA=document.getElementById("PrevMyIntrestAreas");
@@ -148,11 +149,11 @@ function displayPrevMyOtherDetails() {
 	otherDet.style.display='block';
 }
 
-/*.......Mmethods to Show Previous div in registration steps END.......*/
+/*.......Methods to Show Previous div in registration steps END.......*/
 
 
 
-/*.......Mmethods to hide Previous div in registration steps START.......*/
+/*.......Methods to hide Previous div in registration steps START.......*/
 
 function hidePrevMyIntrestAreas() {
 	var IA=document.getElementById("PrevMyIntrestAreas");
@@ -189,6 +190,34 @@ function hidePrevMyOtherDetails() {
 	otherDet.style.display='none';
 }
 
-/*.......Mmethods to hide Previous div in registration steps END....... */
+/*.......Methods to hide Previous div in registration steps END....... */
 
-/*********************************View Previous Registration Step's Div START here **************************************/
+/*********************************View Previous Registration Step's Div End here **************************************/
+
+
+/*.......Photo Upload form Validation Start Here........ */
+function validatePhotoUploadForm(){
+	alert("Validating...");
+	var pName=document.getElementById("myPhotoTitle").value;
+	alert("1");
+	var pDetails=document.getElementById("myPhotoDetails");
+	alert("2");
+	var newPhoto=document.getElementById("myPhotobrowsBtn").value;
+	alert("3");
+	
+	
+	if(pName==null && pDetails==null && newPhoto==null){
+		alert("Please provide all necessary fields...!!! ");
+		return false;	
+	}
+	if (pName=="" && pDetails=="" && newPhoto=="") {
+		alert("Please provide all necessary fields...!!! ");
+		return false;
+	}
+	if((pName!=null && pDetails!=null && newPhoto!=null)(pName!="" && pDetails!="" && newPhoto!="")){
+		alert("Saving...!!!");
+		return true;
+	}
+}
+
+/*.......Photo Upload form Validation End Here........ */

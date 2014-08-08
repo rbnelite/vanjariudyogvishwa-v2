@@ -97,7 +97,7 @@ public class PhotosController {
 	
 	@RequestMapping(value = "/AddPhotos", method = RequestMethod.POST)
 	public String insertProduct(HttpServletRequest request,@RequestParam CommonsMultipartFile[] photoPath, 
-			ModelMap map) throws Exception {
+			@RequestParam ("photoTitle") String pTitle,@RequestParam ("photoDescription") String pDesc,  ModelMap map) throws Exception {
   
     LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
@@ -112,13 +112,13 @@ public class PhotosController {
                 	
                 	DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd HHmmss");
             		Date date = new Date();
-            		String fileName="RBNelitePro"+dateFormat.format(date);
+            		String fileName="RBNelitePhoto"+dateFormat.format(date);
             		        		
                 	 aFile.transferTo(new File(saveDirectory + fileName));
                 	
                 	 
                 	
-                	 photoservice.addPhoto(userMail,fileName);
+                	 photoservice.addPhoto(userMail,fileName,pTitle,pDesc);
                 	 
                 }
                 

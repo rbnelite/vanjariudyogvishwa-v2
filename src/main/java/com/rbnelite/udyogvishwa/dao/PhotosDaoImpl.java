@@ -39,10 +39,13 @@ public class PhotosDaoImpl extends BaseDao<Photos> implements PhotosDao {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public List ShowPhotos(String userMail) {
+	public List<Photos> ShowPhotos(String userMail) {
 		Session session=sessionFactory.openSession();
 		try{
-		return session.createQuery("from Photos P where P.userMail='"+userMail+"'").list();
+			
+			List<Photos> l1 = session.createQuery("from Photos P order by P.id desc").list();
+			
+			return l1;
 		}
 		finally{
 			session.close();

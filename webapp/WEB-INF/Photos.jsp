@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+        <script src="<c:url value="/resources/js/ManojSawant.js" />"></script>
 		<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 		<script src="<c:url value="/resources/js/anil.js" />"></script>
 <script type="text/javascript">
@@ -31,7 +32,10 @@ function jumpcomment(NotificationId) {
 
 	var temp = document.getElementById("submit1").click();
 }
-
+function dispimgUploadBtn(){
+	var btn=document.getElementById("imgUploadBtn");
+	btn.style.display='block';
+}
 </script>		
 <script type="text/javascript">
             
@@ -51,7 +55,9 @@ function jumpcomment(NotificationId) {
 </script>
 <style type="text/css">
 
-
+#imgUploadBtn {
+    display: none;
+}
 #ChangePhotoHome{
 	border-radius: 5px;
     width: 300px;
@@ -65,7 +71,7 @@ function jumpcomment(NotificationId) {
     }
     
 #rightMain{
-    margin-top: -1005px;
+    margin-top: -1195px;
     width: 300px;
     height: 1000px;
     background-color: #FFE4C4;
@@ -253,6 +259,70 @@ p a:hover
 {
 	position: static;
 }
+
+#styledTextArea{
+	width: 666px;
+	height: 110px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* font-family: Tahoma, sans-serif; */
+	background-color:rgba(228, 243, 245, 1);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius:8px;
+}
+input[type="text"]{
+	width:235px;
+	height:30px;
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+			
+input[type="text"]:FOCUS{
+	width:235px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:5px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#UpdatePhoto{
+	width:790px;	
+	height:210px;
+	background-color:#FFE4C4;
+	border: 1px solid rgba(245, 186, 118, 0.8);
+	border-radius: 7px;
+}
+#MyUploadedPhotoUi{
+	width:500px;
+	height:500px;
+	border: 1px solid red;
+	border-radius:10px;
+}
+#insideShowPhoto{
+	/* background-color: aqua; */
+	height: 960px;
+	width: 100%;
+	overflow: auto;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+#outsideShowPhoto{
+	/* background-color: blue; */
+	height: 960px;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 5px;
+	border: 1px solid rgba(245, 186, 118, 0.8);
+	border-radius: 7px;
+}
 </style>
 		
         <title>Vanjari Udyog Vishwa | Photos</title>
@@ -378,7 +448,7 @@ p a:hover
 					</table>
 				</div>
 				
-				<div id="leftMain3">
+				<div id="leftMain3" style="height: 585px;">
 					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
 				</div>
 				
@@ -463,24 +533,55 @@ p a:hover
 					
 				</table>
 			</div>
-            <div id="middlePhotos">
+            
+            <div id="middlePhotos" style="height: 1195px;">
               
-             
-            <table><tr><td><form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data"><input type="file" name="photoPath"><input type="submit" value="Upload"></form></td></tr></table>
-                	<c:if test="${!empty userPhotosList}">
-
+             <div id="UpdatePhoto">
+				<form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data">
+					<table>
+				
+					<img onclick="return HideUpdatePhotoBlock()"
+						src="${pageContext.request.contextPath}/resources/images/close (3).png"
+						id="close"  style="width: 40px; height: 40px; float: right;">
+				
+						<tr>
+							<td><input id="myPhotoTitle" type="text" name="photoTitle" style="width: 444px;margin-top: 4px;border-radius:7px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 95px;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input class="LikeUnlikeBtn" id="myPhotobrowsBtn" type="file" name="photoPath" onclick="return dispimgUploadBtn()">
+								<input id="imgUploadBtn" class="LikeUnlikeBtn" id="VUVloginBtn" type="submit" value="Upload" style="float: right;" onclick="return validatePhotoUploadForm()">
 							
-								<c:forEach items="${userPhotosList}" var="userPhotos">           
-<ul class="hoverbox">
-<li>
-<a href="#"><img src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description" /><img src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description" class="preview" /></a>
-</li>
-</ul>
-</c:forEach>
-						
-						</c:if>
-               
-            </div>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		
+		<div id="outsideShowPhoto">
+		<div id="insideShowPhoto">
+			<c:if test="${!empty userPhotosList}">
+
+
+					<c:forEach items="${userPhotosList}" var="userPhotos">
+						<table>
+								<tr><td>
+									<img id="MyUploadedPhotoUi" src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description"/>
+								</td></tr>
+						</table>
+							
+					</c:forEach>
+
+				</c:if>
+			</div>
+			</div>
+			
+			</div>
            <div id="rightMain" style="background-color: bisque">
 			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">

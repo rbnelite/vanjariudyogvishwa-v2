@@ -8,6 +8,6 @@ public interface PhotosDao {
 	
 	public void addPhoto(Photos photos);
 	
-	public List ShowPhotos(String userMail);
+	public List<Photos> ShowPhotos(String userMail);
 
 }

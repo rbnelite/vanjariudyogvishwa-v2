@@ -21,7 +21,7 @@ public class PhotosServiceImpl implements PhotosService {
 
 	@Override
 	@Transactional
-	public void addPhoto(String userMail, String imageName) {
+	public void addPhoto(String userMail, String imageName,String photoTitle, String photoDescription) {
 
 		Photos photos = new Photos();
 
@@ -31,12 +31,14 @@ public class PhotosServiceImpl implements PhotosService {
 		photos.setPhotoPath(imageName);
 		photos.setPostdate(dateFormat.format(date));
 		photos.setUserMail(userMail);
-
+		photos.setPhotoTitle(photoTitle);
+		photos.setPhotoDescription(photoDescription);
+		
 		photosdao.addPhoto(photos);
 	}
 
 	@Override
-	public List ShowPhotos(String userMail) {
+	public List<Photos> ShowPhotos(String userMail) {
 
 		return photosdao.ShowPhotos(userMail);
 	}

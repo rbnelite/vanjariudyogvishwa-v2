@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
-
+<script src="<c:url value="/resources/js/ManojSawant.js" />"></script>
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
@@ -185,10 +185,10 @@ cursor: pointer;
 }
 #UpdatePhoto{
 display: none;
-background-color:#fab039;
+background-color:#FFE4C4;
 width:790px;	
 position: absolute;
-height:199px;	
+height:197px;	
 
 }
 #InsideRightMessage {
@@ -556,25 +556,36 @@ height:199px;
 				</table>
 			</div>
 			<div id="MiddleTop" style="height: 200px">
+			
+			
 			<div id="UpdatePhoto">
-				<table>
-				<tr>
-				<td>
-				<a
-							onclick="return HideUpdatePhotoBlock()"> <img
-							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							id="close"  style="width: 40px; height: 40px; float: right; margin-right: -270px;"></a>
-				</td>
-				</tr>
-					<tr>
-						<td><form action="/vanjariudyogvishwa-v2/AddPhotos"
-								method="POST" enctype="multipart/form-data">
-								<input id="VUVloginBtn" type="file" name="photoPath" onclick="return dispimgUploadBtn()">
-								<input id="imgUploadBtn" id="VUVloginBtn" type="submit" value="Upload">
-							</form></td>
-					</tr>
-				</table>
+				<form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data">
+					<table>
+				
+					<img onclick="return HideUpdatePhotoBlock()"
+						src="${pageContext.request.contextPath}/resources/images/close (3).png"
+						id="close"  style="width: 40px; height: 40px; float: right;">
+				
+						<tr>
+							<td><input id="myPhotoTitle" type="text" name="photoTitle" style="width: 444px;margin-top: 4px;border-radius:7px;"></td>
+						</tr>
+						<tr>
+							<td>
+								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 95px;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="file" id="myPhotobrowsBtn" name="photoPath" onclick="return dispimgUploadBtn()">
+								<input id="imgUploadBtn" class="LikeUnlikeBtn" id="VUVloginBtn" type="submit" value="Upload" style="float: right;" onclick="return validatePhotoUploadForm()">
+							
+							</td>
+						</tr>
+					</table>
+				</form>
 			</div>
+			
+			
 				<form name="myform" action="/vanjariudyogvishwa-v2/Status"
 					method="post">
 					<table align="left">
