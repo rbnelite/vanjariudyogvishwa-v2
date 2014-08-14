@@ -219,7 +219,7 @@ cursor: pointer;
  }
  #anchor:hover{
   	margin-right: 30px;
-    font:normal 18px Trebuchet MS;
+    font:normal 20px Trebuchet MS;
     color:green;
     text-decoration: none;
  }
@@ -755,6 +755,7 @@ cursor: pointer;
 	margin-left: 650px;
 	border: 1px solid gray;
 	position: absolute;
+	z-index: 1;
 }
 
 #RequestTopHome {
@@ -766,6 +767,7 @@ cursor: pointer;
 	margin-left: 820px;
 	border: 1px solid gray;
 	position: absolute;
+	z-index: 1;
 }
 
 #SettingTopHome {
@@ -777,6 +779,7 @@ cursor: pointer;
 	margin-left: 950px;
 	border: 1px solid gray;
 	position: absolute;
+	z-index: 1;
 }
 
 #NeedRightMain {

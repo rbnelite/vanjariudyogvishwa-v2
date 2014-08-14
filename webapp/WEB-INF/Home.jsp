@@ -161,6 +161,35 @@ function setbg(color)
             
         </script>
 
+<script type="text/javascript">
+function validatePhotoUploadForm(){
+	alert("Validating...");
+	var pName=document.getElementById("myPhotoTitle").value;
+	alert("1"+pName);
+	var pDetails=document.getElementById("myPhotoDetails").valueOf();
+	alert("2"+pDetails);
+	var newPhoto=document.getElementById("myPhotobrowsBtn").value;
+	alert("3"+newPhoto);
+	
+	
+	if(pName==null || pName==""){
+		alert("Please provide all necessary fields...!!! ");
+		return false;	
+	}
+	if ( pDetails==null || pDetails=="") {
+		alert("Please provide all necessary fields...!!! ");
+		return false;
+	}
+	if(newPhoto==null || newPhoto!=""){
+		alert("Please provide all necessary fields...!!! ");
+		return false;
+	}
+	else {
+		alert("Saving Photo...");
+		return true;
+	}
+}
+</script>
 
 <style type="text/css">
 
@@ -892,7 +921,7 @@ height:197px;
 												</td>
 												
 												<td>
-													<table style="margin-top: -10px"><tr><td><input type="submit" value="Comments" class="LikeUnlikeBtn"></td> <td><a>${fn:length(status11.comments)}</a></td></tr> </table>
+													<table style="margin-top: -10px"><tr><td><input type="submit" value="Comments" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${fn:length(status11.comments)}</a></td></tr> </table>
 												</td>
 											</tr>
 										</table>

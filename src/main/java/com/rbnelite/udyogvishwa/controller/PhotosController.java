@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +24,7 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.LikePhoto;
 import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Photos;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -92,6 +94,9 @@ public class PhotosController {
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
+		map.put("likePhoto", new LikePhoto());
+		map.put("likePhotoList", photoservice.listLikePhoto());
+		
 		return "Photos";
 	}
 	
@@ -143,7 +148,46 @@ public class PhotosController {
 				map.put("friendRequest", new FriendRequest());
 				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 				
+				map.put("likePhoto", new LikePhoto());
+				map.put("likePhotoList", photoservice.listLikePhoto());
+				
 		return "Photos";
+	}
+	
+	
+	@RequestMapping(value="/LikePhoto",method=RequestMethod.POST)
+	public String likePhoto(@ModelAttribute LikePhoto likePhoto, Map<String, Object> map){
+		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+		System.out.println("@@@"+userMail);
+
+		photoservice.LikeThePhoto(likePhoto);
+		
+		map.put("likePhoto", new LikePhoto());
+		map.put("likePhotoList", photoservice.listLikePhoto());
+		
+		map.put("myEvents", new Event());
+		map.put("eventstList", eventService.listEvents());
+		
+		map.put("knownPeople", new IntrestAreas());
+		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+		map.put("knownPeopleList", knowPeopleSet);
+		
+		map.put("ProfileImage", new ProfileImages());
+		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+		
+		map.put("userPhotos", new Photos());
+		map.put("userPhotosList", photoservice.ShowPhotos(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
+		
+		map.put("friendRequest", new FriendRequest());
+		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+	
+		return "Photos";
+		
 	}
 
 }

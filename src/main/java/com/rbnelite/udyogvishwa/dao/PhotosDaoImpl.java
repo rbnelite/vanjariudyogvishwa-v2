@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.rbnelite.udyogvishwa.model.LikePhoto;
 import com.rbnelite.udyogvishwa.model.Photos;
 
 @Repository
@@ -43,7 +44,7 @@ public class PhotosDaoImpl extends BaseDao<Photos> implements PhotosDao {
 		Session session=sessionFactory.openSession();
 		try{
 			
-			List<Photos> l1 = session.createQuery("from Photos P order by P.id desc").list();
+			List<Photos> l1 = session.createQuery("select P.photoTitle, P.photoDescription,P.postdate, P.photoPath, I.firstName,I.lastName,P.id from Photos P,Index I where P.userMail=I.emailId order by P.id desc").list();
 			
 			return l1;
 		}
@@ -51,5 +52,32 @@ public class PhotosDaoImpl extends BaseDao<Photos> implements PhotosDao {
 			session.close();
 		}
 		}
+
+	@Override
+	@Transactional
+	public void LikeThePhoto(LikePhoto likePhoto) {
+		
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(likePhoto);
+			session.getTransaction().commit();
+			session.flush();
+		} finally {
+			session.close();
+		}
+		
+	}
+
+	@Override
+	@Transactional
+	public List<LikePhoto> listLikePhoto() {
+		Session session = sessionFactory.openSession();
+		try {
+			return session.createQuery("from LikePhoto").list();
+		} finally {
+			session.close();
+		}
+	}
 
 }

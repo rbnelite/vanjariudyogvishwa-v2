@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rbnelite.udyogvishwa.dao.PhotosDao;
+import com.rbnelite.udyogvishwa.model.LikePhoto;
 import com.rbnelite.udyogvishwa.model.Photos;
 
 @Service
@@ -41,6 +42,18 @@ public class PhotosServiceImpl implements PhotosService {
 	public List<Photos> ShowPhotos(String userMail) {
 
 		return photosdao.ShowPhotos(userMail);
+	}
+
+	@Override
+	public void LikeThePhoto(LikePhoto likePhoto) {
+		photosdao.LikeThePhoto(likePhoto);
+		
+	}
+
+	@Override
+	public List<LikePhoto> listLikePhoto() {
+		
+		return photosdao.listLikePhoto();
 	}
 
 }

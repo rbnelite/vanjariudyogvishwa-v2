@@ -53,6 +53,37 @@ function dispimgUploadBtn(){
             image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
             
 </script>
+
+<script type="text/javascript">
+function validatePhotoUploadForm(){
+	alert("Validating...");
+	var pName=document.getElementById("myPhotoTitle").value;
+	alert("1"+pName);
+	var pDetails=document.getElementById("myPhotoDetails").valueOf();
+	alert("2"+pDetails);
+	var newPhoto=document.getElementById("myPhotobrowsBtn").value;
+	alert("3"+newPhoto);
+	
+	
+	if(pName==null || pName==""){
+		alert("Please provide all necessary fields...!!! ");
+		return false;	
+	}
+	if ( pDetails==null || pDetails=="") {
+		alert("Please provide all necessary fields...!!! ");
+		return false;
+	}
+	if(newPhoto==null || newPhoto!=""){
+		alert("Please provide all necessary fields...!!! ");
+		return false;
+	}
+	else {
+		alert("Saving Photo...");
+		return true;
+	}
+}
+</script>
+
 <style type="text/css">
 
 #imgUploadBtn {
@@ -293,6 +324,27 @@ input[type="text"]:FOCUS{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+textarea{
+				resize: none;
+				width:540px;
+				height:50px;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				background-color: rgba(246, 212, 212, 0.42);
+				border: 1px solid gray;
+				border-radius:5px;
+			}
+			textarea:FOCUS{
+				resize: none;
+				width:540px;
+				height:50px;
+				font-size: 18px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				background-color:white;
+				border: 1px solid red;
+				border-radius:5px;
+			}
+			
 #UpdatePhoto{
 	width:790px;	
 	height:210px;
@@ -320,7 +372,7 @@ input[type="text"]:FOCUS{
 	width: 100%;
 	overflow: hidden;
 	margin-top: 5px;
-	border: 1px solid rgba(245, 186, 118, 0.8);
+	/* border: 1px solid rgba(245, 186, 118, 0.8); */
 	border-radius: 7px;
 }
 </style>
@@ -569,12 +621,63 @@ input[type="text"]:FOCUS{
 
 
 					<c:forEach items="${userPhotosList}" var="userPhotos">
-						<table>
-								<tr><td>
-									<img id="MyUploadedPhotoUi" src="${pageContext.request.contextPath}/resources/photos/${userPhotos.photoPath}" alt="description"/>
-								</td></tr>
+						<table width=98% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-bottom: 5px;">
+							<tr>
+								<td width="40"><img src="${pageContext.request.contextPath}/resources/ProfileImages/DefaultProfileImg.png"height="80" width="80" style="margin: 4px auto auto 4px;border-radius: 20px;border: 3px solid #F00;"></td>
+								<td><a style="font-size: 27px;color: black;"> ${userPhotos[4]} ${userPhotos[5]} </a><br>
+									<a style="font-size: 22px;color: rgba(42, 163, 240, 0.68);">${userPhotos[0]}</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Photo Description :</b> ${userPhotos[1]}</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><font color="gray" size="2" style="float: right;margin-right: 25px;margin-bottom: 10px;">${userPhotos[2]}</font></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<img id="MyUploadedPhotoUi" src="${pageContext.request.contextPath}/resources/photos/${userPhotos[3]}" alt="description"/>
+								</td>
+							</tr>
+							<!-- Like Unlike Photo Start Here -->
+							<tr>
+								<td></td>
+								<td>
+								<form action="/vanjariudyogvishwa-v2/LikePhoto" method="post">
+									<c:set var="LikeCount" value="0"></c:set>
+									<c:set var="UnLikeCount" value="0"></c:set>
+									
+									<c:if test="${!empty likePhotoList}">
+										<c:forEach items="${likePhotoList}" var="likePhoto">
+											<c:if test="${userPhotos[6]==likePhoto.photoId}">
+												<c:if test="${likePhoto.myReply}">
+													<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
+												</c:if>
+												<c:if test="${! likePhoto.myReply}">
+													<c:set var="UnLikeCount" value="${UnLikeCount + 1}"></c:set>
+												</c:if>
+											</c:if>
+										</c:forEach>
+									</c:if>
+									
+									
+										<input type="hidden" name="photoId" value="${userPhotos[6]}">
+										<input type="hidden" name="whoLike" value="${loginUser.email}">
+										<input type="hidden" name="myReply" value="true">
+										<table style=""><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+									</form>
+									<form action="/vanjariudyogvishwa-v2/LikePhoto" method="post">
+										<input type="hidden" name="photoId" value="${userPhotos[6]}">
+										<input type="hidden" name="whoLike" value="${loginUser.email}">
+										<input type="hidden" name="myReply" value="false">
+										<table style="margin-top: -34px;margin-left: 120px;"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
+									</form>
+								</td>												
+							</tr>
+							<!-- Like Unlike Photo End Here -->
 						</table>
-							
 					</c:forEach>
 
 				</c:if>

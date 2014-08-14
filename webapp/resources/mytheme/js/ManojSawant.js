@@ -196,28 +196,6 @@ function hidePrevMyOtherDetails() {
 
 
 /*.......Photo Upload form Validation Start Here........ */
-function validatePhotoUploadForm(){
-	alert("Validating...");
-	var pName=document.getElementById("myPhotoTitle").value;
-	alert("1");
-	var pDetails=document.getElementById("myPhotoDetails");
-	alert("2");
-	var newPhoto=document.getElementById("myPhotobrowsBtn").value;
-	alert("3");
-	
-	
-	if(pName==null && pDetails==null && newPhoto==null){
-		alert("Please provide all necessary fields...!!! ");
-		return false;	
-	}
-	if (pName=="" && pDetails=="" && newPhoto=="") {
-		alert("Please provide all necessary fields...!!! ");
-		return false;
-	}
-	if((pName!=null && pDetails!=null && newPhoto!=null)(pName!="" && pDetails!="" && newPhoto!="")){
-		alert("Saving...!!!");
-		return true;
-	}
-}
+
 
 /*.......Photo Upload form Validation End Here........ */
