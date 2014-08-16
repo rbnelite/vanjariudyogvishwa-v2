@@ -3,7 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -27,12 +27,12 @@
 		<font color="blue">${forgotPassMessage}</font>
 	</h3>
 	<c:if test="${empty forgotPassMessage}">
-		<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post">
+		<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post" style="width: 500px;height: 305px;margin-left: 600px;">
 			<table
-				style="border: 1px solid gray; border-radius: 5px; margin-top: 80px;"
+				style="border: 1px solid gray; border-radius: 5px; margin-top: 80px; width: 400px;height: 300px;"
 				align="center">
 				<tr>
-					<td></td>
+					<td style="background-color: orange;text-align: center;">Forgot Password Form</td>
 				</tr>
 
 				<tr>
@@ -45,7 +45,7 @@
 				</tr>
 				<tr>
 
-					<td align="right"><input type="submit" value="Send Password"
+					<td align="right"><input type="submit" value="Send Request"
 						class="savebtn" onclick="return isBlank()"></td>
 				</tr>
 			</table>

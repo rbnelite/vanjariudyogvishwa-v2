@@ -11,7 +11,7 @@ root {
 }
 
 body{
-   background-color: #999;
+   background-color: #684D1D;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
@@ -1177,9 +1177,9 @@ h4 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#NotiTRdiv:HOVER{
+/* #NotiTRdiv:HOVER{
 	background-color: rgba(196, 255, 224, 0.52);
-}
+} */
 
 #rightMiddleIndex{
 	width: 50%;
