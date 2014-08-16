@@ -84,7 +84,7 @@ public class ProfileController {
 		userMail=loginUser.getEmail();
 		/*userMail=(String) session.getAttribute("loginUser");*/
 		
-		System.out.println("from profile Controller() get method.");
+		System.out.println("from profile Controller() get method.\n currently loged in user is : "+userMail);
 
 		if (!map.containsKey("EditOtherDetails")) {
 			map.put("otherDetails", new OtherDetails());

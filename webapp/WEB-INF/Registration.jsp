@@ -131,7 +131,7 @@
 		<div id="mainInterestAreas" style="height: auto;">
 
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				<label style="margin-left: 470px;">WelCome ! ${loginUser.firstName} ${loginUser.lastName}</label> <br>
 				
 			</div>
 

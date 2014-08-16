@@ -20,6 +20,17 @@
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
 <title>Thank You! - RBNelite IT Solutions</title>
+
+<style type="text/css">
+	#ThankYouMsg {
+    width: 742px;
+    height: 250px;
+    background-color: bisque;
+    border: 1px solid orange;
+    margin-top: 161px;
+}
+</style>
+
 </head>
 <body>
 
@@ -28,13 +39,13 @@
 	<center>
 		<div id="mainMsg">
 			<div id="Header">
-				<label style="margin-left: 470px;">WelCome ! ${CurrentEmailId}</label> <br>
+				<label style="margin-left: 470px;">WelCome ! ${loginUser.firstName} ${loginUser.lastName}</label> <br>
 				
 			</div>
 
 			
 
-			<div id="middleStep4">
+			<div id="middleStep4" style="width: 100%;height: 1000px;">
 				<div id="ThankYouMsg">
 					<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 740px;">Thank you for Registration</h2>
 					<h2 style="color: blue"></h2>

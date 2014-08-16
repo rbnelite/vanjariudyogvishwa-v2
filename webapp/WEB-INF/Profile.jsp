@@ -476,462 +476,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				</table>
 			</div>
 			
-			 <!-- <div style="height: 300px; width: 1400px;">
-				
-
-				<div id="OutsideInterestAreas">
-					<div id="InterestAreas">
-						<h3>IntrestAreas Details</h3>
-						<c:if test="${!empty intrestAreasList}">
-							<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<table>
-									<c:forEach items="${intrestAreasList}"
-										var="intrestAreasDetails">
-
-										<c:set var="tempStr"
-											value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
-
-										<c:forEach items="${tempStr}" var="intrestAreaNumber">
-
-											<c:if test="${intrestAreaNumber=='1'}">
-												<tr>
-													<td><div id="IntrestAreaImageProfile">
-															<img
-																src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
-																title="Sports" style="width: 50px; height: 50px;">
-															<h4 style="margin-top: -5px; fo">Sports</h4>
-														</div></td>
-												</tr>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='2'}">
-												<tr>
-													<td><div id="IntrestAreaImageProfile">
-															<img
-																src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png"
-																title="Drawing" style="width: 50px; height: 50px;">
-															<h4 style="margin-top: -5px">Drawing</h4>
-														</div></td>
-												</tr>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='3'}">
-												<div style="width: 120px; float: left;">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png"
-														title="PhotoGraphy" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">PhotoGraphy</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='4'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png"
-														title="Travelling">
-													<h4 style="margin-top: -5px">Travelling</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='5'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/5-musics.png"
-														title="Music" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Music</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='6'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/6-READING.png"
-														title="Reading" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Reading</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='7'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png"
-														title="Browsing" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Browsing</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='8'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png"
-														title="Bike Riding" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Bike Riding</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='9'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png"
-														title="Car Riding" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Car Riding</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='10'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png"
-														title="Tracking" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Trekking</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='11'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png"
-														title="Watching Movies" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Movies</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='12'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg"
-														title="Social Work" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Social Work</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='13'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png"
-														title="Politics" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Politics</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='14'}">
-												<div style="width: 140px; float: left;">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/14-parties.png"
-														title="Friends/Parties/dating"
-														style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Friends/Parties/dating</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='15'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"
-														title="Shopping" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Shopping</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='16'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/16-business.png"
-														title="Business" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Business</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='17'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/17-drama.png"
-														title="Drama" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Drama</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='18'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png"
-														title="Circus" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Circus</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='19'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png"
-														title="Dance Show" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Dance Show</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='20'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png"
-														title="Cultural Activities"
-														style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Cultural Activities</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='21'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png"
-														title="Speech" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Speech</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='22'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/22-gym.png"
-														title="Gym/Health Club" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Gym/Health Club</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='23'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/23-teaching.png"
-														title="Teaching" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Teaching</h4>
-												</div>
-											</c:if>
-											<c:if test="${intrestAreaNumber=='24'}">
-												<div id="IntrestAreaImageProfile">
-													<img
-														src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png"
-														title="Spirituality" style="width: 50px; height: 50px;">
-													<h4 style="margin-top: -5px">Spirituality</h4>
-												</div>
-											</c:if>
-
-										</c:forEach>
-
-
-									</c:forEach>
-								</table>
-
-
-							</form>
-						</c:if>
-						<c:if test="${!empty editIntrestAreasDetailsList}">
-							<h3>Edit IntrestAreas Details</h3>
-							<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<c:forEach items="${editIntrestAreasDetailsList}"
-									var="editIntrestAreasDetails">
-
-									<c:set var="tempStr"
-										value="${fn: split(editIntrestAreasDetails.interestId,',')}"></c:set>
-
-
-
-									<c:forEach items="${tempStr}" var="intrestAreaNumber">
-
-										<c:if test="${intrestAreaNumber=='1'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
-													title="Sports" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Sports</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='2'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png"
-													title="Drawing" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Drawing</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='3'}">
-											<div style="width: 120px; float: left;">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png"
-													title="PhotoGraphy" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">PhotoGraphy</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='4'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png"
-													title="Travelling">
-												<h4 style="margin-top: -5px">Travelling</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='5'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/5-musics.png"
-													title="Music" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Music</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='6'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/6-READING.png"
-													title="Reading" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Reading</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='7'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png"
-													title="Browsing" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Browsing</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='8'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png"
-													title="Bike Riding" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Bike Riding</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='9'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png"
-													title="Car Riding" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Car Riding</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='10'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png"
-													title="Trekking" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Trekking</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='11'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png"
-													title="Watching Movies" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Movies</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='12'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg"
-													title="Social Work" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Social Work</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='13'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png"
-													title="Politics" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Politics</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='14'}">
-											<div style="width: 140px; float: left;">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/14-parties.png"
-													title="Friends/Parties/dating"
-													style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Friends/Parties/dating</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='15'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"
-													title="Shopping" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Shopping</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='16'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/16-business.png"
-													title="Business" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Business</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='17'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/17-drama.png"
-													title="Drama" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Drama</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='18'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png"
-													title="Circus" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Circus</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='19'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png"
-													title="Dance Show" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Dance Show</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='20'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png"
-													title="Cultural Activities"
-													style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Cultural Activities</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='21'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png"
-													title="Speech" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Speech</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='22'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/22-gym.png"
-													title="Gym/Health Club" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Gym/Health Club</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='23'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/23-teaching.png"
-													title="Teaching" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Teaching</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='24'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png"
-													title="Spirituality" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Spirituality</h4>
-											</div>
-										</c:if>
-
-									</c:forEach>
-
-
-
-								</c:forEach>
-
-
-
-							</form>
-						</c:if>
-
-
-					</div>
-				</div>
-				
-				
-			</div>  -->
+			  
 			
 			
 			
@@ -1587,7 +1132,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 															</c:if>
 															<input type="submit" id="FriendsName"
 																value="${userFriends[0]} ${userFriends[1]}"> <br>
-															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.99); float: left;">${userFriends[6]} </a><br>
+															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.50); float: left;">${userFriends[6]} </a><br>
 															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Works At :</b> ${userFriends[5]} </a><br>
 															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Home Address :</b> ${userFriends[7]} </a>
 															<%-- <a><font color="">Works At :</font><font color="gray" size="2"> ${userFriends[5]}</font></a> --%>
@@ -1607,7 +1152,463 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 					</div>
 				</div>
 				
+				<!-- <div style="height: 300px; width: 1400px;"> -->
 				
+
+				<div id="OutsideInterestAreas" style="width: 760px;border: 1px solid rgba(245, 186, 118, 0.8);margin: -15px auto 20px 10px;">
+					<h3>IntrestAreas Details</h3>
+					<div id="InterestAreas" style="width: 730px;border: none;">
+						
+						<c:if test="${!empty intrestAreasList}">
+							<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
+
+								<input type="hidden" name="usermail" value="${loginUser.email}">
+
+								<table>
+									<c:forEach items="${intrestAreasList}"
+										var="intrestAreasDetails">
+
+										<c:set var="tempStr"
+											value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
+
+										<c:forEach items="${tempStr}" var="intrestAreaNumber">
+
+											<c:if test="${intrestAreaNumber=='1'}">
+												<tr>
+													<td><div id="IntrestAreaImageProfile">
+															<img
+																src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
+																title="Sports" style="width: 50px; height: 50px;">
+															<h4 style="margin-top: -5px; fo">Sports</h4>
+														</div></td>
+												</tr>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='2'}">
+												<tr>
+													<td><div id="IntrestAreaImageProfile">
+															<img
+																src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png"
+																title="Drawing" style="width: 50px; height: 50px;">
+															<h4 style="margin-top: -5px">Drawing</h4>
+														</div></td>
+												</tr>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='3'}">
+												<div style="width: 120px; float: left;">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png"
+														title="PhotoGraphy" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">PhotoGraphy</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='4'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png"
+														title="Travelling">
+													<h4 style="margin-top: -5px">Travelling</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='5'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/5-musics.png"
+														title="Music" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Music</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='6'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/6-READING.png"
+														title="Reading" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Reading</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='7'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png"
+														title="Browsing" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Browsing</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='8'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png"
+														title="Bike Riding" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Bike Riding</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='9'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png"
+														title="Car Riding" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Car Riding</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='10'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png"
+														title="Tracking" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Trekking</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='11'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png"
+														title="Watching Movies" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Movies</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='12'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg"
+														title="Social Work" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Social Work</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='13'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png"
+														title="Politics" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Politics</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='14'}">
+												<div style="width: 140px; float: left;">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/14-parties.png"
+														title="Friends/Parties/dating"
+														style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Friends/Parties/dating</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='15'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"
+														title="Shopping" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Shopping</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='16'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/16-business.png"
+														title="Business" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Business</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='17'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/17-drama.png"
+														title="Drama" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Drama</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='18'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png"
+														title="Circus" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Circus</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='19'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png"
+														title="Dance Show" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Dance Show</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='20'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png"
+														title="Cultural Activities"
+														style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Cultural Activities</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='21'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png"
+														title="Speech" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Speech</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='22'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/22-gym.png"
+														title="Gym/Health Club" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Gym/Health Club</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='23'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/23-teaching.png"
+														title="Teaching" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Teaching</h4>
+												</div>
+											</c:if>
+											<c:if test="${intrestAreaNumber=='24'}">
+												<div id="IntrestAreaImageProfile">
+													<img
+														src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png"
+														title="Spirituality" style="width: 50px; height: 50px;">
+													<h4 style="margin-top: -5px">Spirituality</h4>
+												</div>
+											</c:if>
+
+										</c:forEach>
+
+
+									</c:forEach>
+								</table>
+
+
+							</form>
+						</c:if>
+						<c:if test="${!empty editIntrestAreasDetailsList}">
+							<h3>Edit IntrestAreas Details</h3>
+							<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
+
+								<input type="hidden" name="usermail" value="${loginUser.email}">
+
+								<c:forEach items="${editIntrestAreasDetailsList}"
+									var="editIntrestAreasDetails">
+
+									<c:set var="tempStr"
+										value="${fn: split(editIntrestAreasDetails.interestId,',')}"></c:set>
+
+
+
+									<c:forEach items="${tempStr}" var="intrestAreaNumber">
+
+										<c:if test="${intrestAreaNumber=='1'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
+													title="Sports" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Sports</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='2'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png"
+													title="Drawing" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Drawing</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='3'}">
+											<div style="width: 120px; float: left;">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png"
+													title="PhotoGraphy" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">PhotoGraphy</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='4'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png"
+													title="Travelling">
+												<h4 style="margin-top: -5px">Travelling</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='5'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/5-musics.png"
+													title="Music" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Music</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='6'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/6-READING.png"
+													title="Reading" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Reading</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='7'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png"
+													title="Browsing" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Browsing</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='8'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png"
+													title="Bike Riding" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Bike Riding</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='9'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png"
+													title="Car Riding" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Car Riding</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='10'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png"
+													title="Trekking" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Trekking</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='11'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png"
+													title="Watching Movies" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Movies</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='12'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg"
+													title="Social Work" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Social Work</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='13'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png"
+													title="Politics" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Politics</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='14'}">
+											<div style="width: 140px; float: left;">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/14-parties.png"
+													title="Friends/Parties/dating"
+													style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Friends/Parties/dating</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='15'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"
+													title="Shopping" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Shopping</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='16'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/16-business.png"
+													title="Business" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Business</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='17'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/17-drama.png"
+													title="Drama" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Drama</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='18'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png"
+													title="Circus" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Circus</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='19'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png"
+													title="Dance Show" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Dance Show</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='20'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png"
+													title="Cultural Activities"
+													style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Cultural Activities</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='21'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png"
+													title="Speech" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Speech</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='22'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/22-gym.png"
+													title="Gym/Health Club" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Gym/Health Club</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='23'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/23-teaching.png"
+													title="Teaching" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Teaching</h4>
+											</div>
+										</c:if>
+										<c:if test="${intrestAreaNumber=='24'}">
+											<div id="IntrestAreaImageProfile">
+												<img
+													src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png"
+													title="Spirituality" style="width: 50px; height: 50px;">
+												<h4 style="margin-top: -5px">Spirituality</h4>
+											</div>
+										</c:if>
+
+									</c:forEach>
+
+
+
+								</c:forEach>
+
+
+
+							</form>
+						</c:if>
+
+
+					</div>
+				</div>
+				
+				
+			<!-- </div> -->
 				
 			</div>
 			</div>

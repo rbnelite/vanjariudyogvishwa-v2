@@ -82,6 +82,8 @@ public class IndexController {
 			
 			LoginUser loginUser = new LoginUser();
 			loginUser.setEmail(emailId);
+			loginUser.setFirstName(indexcredential.getFirstName());
+			loginUser.setLastName(indexcredential.getLastName());
 			map.put("loginUser", loginUser);
 			request.getSession().setAttribute(Constants.LOGGEDIN_USER,
 					loginUser);
