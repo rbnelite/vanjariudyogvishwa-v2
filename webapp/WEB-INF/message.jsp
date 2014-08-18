@@ -19,7 +19,7 @@
 <link href="<c:url value="/resources/css/autocomplete.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js"/>"></script>
 <script src="<c:url value="/resources/js/jquery.autocomplete.js" />"></script>
-<title>Vanjari Udyog Vishwa | Message</title>
+<title>Message | Vanjari Udyog Vishwa</title>
 
 <script type="text/javascript">
 function DisplayChangePhotoBlock(){
@@ -92,14 +92,11 @@ function validateMsgForm() {
 	cursor: pointer;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
 }
-/* #showFrndConversionName:hover {
-	background: none;
-	border: none;
-	border-color: yellow;
-	border-radius: 20px;
-	
-} */
+#showFrndConversionName:hover {
+color:rgba(171, 139, 139, 1);
+} 
 #InnerleftMainMsg {
 	border-radius: 3px;
 	float: left;
@@ -521,15 +518,15 @@ textarea:FOCUS{
 			<c:choose>
 	        	<c:when test="${msgConversion[0]==loginUser.email}">
 			        <div class="bubble">
-			        	<font color="red">You :</font><br>
-			        	<font color="purple">${msgConversion[3] }</font> <br>
+			        	<font color="red" style="font-size: 24px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">You :</font><br>
+			        	<font color="black" style="font-size: 18px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
 			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
 			        </div>
 	        	</c:when>
 	           	<c:otherwise>
 					<div class="bubble bubble--alt">
-						<font color="red">${msgConversion[4]} ${msgConversion[5]}</font><br>
-			        	<font color="purple">${msgConversion[3] }</font> <br>
+						<font color="red" style="font-size: 24px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[4]} ${msgConversion[5]}</font><br>
+			        	<font color="black" style="font-size: 18px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
 			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
 			        </div>
 	        	</c:otherwise>

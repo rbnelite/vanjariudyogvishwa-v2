@@ -23,7 +23,7 @@
 <script src="<c:url value="/resources/js/ManojSawant.js"/>"></script>
 
 
-<title>Step-2 Interest Areas page</title>
+<title>Registration | Vanjari Udyog Vishwa</title>
 	<script>
 		function isNumberKey(evt)
 		{

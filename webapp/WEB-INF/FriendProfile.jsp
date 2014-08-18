@@ -227,7 +227,7 @@ h3 {
 	float: right;
 }
 </style>
-<title>FriendsProfilePage</title>
+<title>Friends Profile | Vanjari Udyog Vishwa</title>
     </head>
     <body>
     <center>

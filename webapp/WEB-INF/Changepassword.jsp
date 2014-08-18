@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Account Setting : Vanjari Udyog Vishwa</title>
+<title>Account Setting | Vanjari Udyog Vishwa</title>
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>

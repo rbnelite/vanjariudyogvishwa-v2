@@ -257,8 +257,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 }
 </style>
 
-<title>${loginUser.firstName}${loginUser.lastName}'s Profile
-	Page</title>
+<title>${loginUser.firstName}${loginUser.lastName}'s Profile Page</title>
 
 </head>
 <body>

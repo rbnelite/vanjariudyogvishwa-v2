@@ -10,7 +10,7 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link rel="shortcut icon"
 	href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
-<title>,m mVanjari Udyog Vishwa | Forgot Password</title>
+<title>Forgot My Password | Vanjari Udyog Vishwa</title>
 
 <script>
 	function isBlank() {

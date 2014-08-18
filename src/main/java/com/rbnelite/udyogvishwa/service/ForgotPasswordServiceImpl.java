@@ -40,7 +40,7 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 		  Session session = Session.getDefaultInstance(props,
 		   new javax.mail.Authenticator() {
 		   protected PasswordAuthentication getPasswordAuthentication() {
-		   return new PasswordAuthentication("anilbudge@gmail.com","9850153492");//change accordingly
+		   return new PasswordAuthentication("sawantmanojm@gmail.com","missuMUNNABHAI");//change accordingly
 		   }
 		  });
 		 
@@ -48,7 +48,7 @@ public class ForgotPasswordServiceImpl implements ForgetPasswordService {
 		  try {
 			  
 		   MimeMessage message = new MimeMessage(session);
-		   message.setFrom(new InternetAddress("anilbudge@gmail.com"));//change accordingly
+		   message.setFrom(new InternetAddress("sawantmanojm@gmail.com"));//change accordingly
 		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
 		   message.setSubject("Password of Vanjari Udyog Vishwa");
 		   message.setText("Your Password is : "+pass);

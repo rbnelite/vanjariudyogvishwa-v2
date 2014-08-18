@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Search Reslt | Vanjari Udyog Vishwa</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>

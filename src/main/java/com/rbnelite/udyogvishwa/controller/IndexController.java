@@ -70,15 +70,18 @@ public class IndexController {
 			@ModelAttribute("IndexCredential") IndexCredential indexcredential,
 			HttpServletRequest request,ModelMap map) {
 		if (result.hasErrors()) {
+			
 			return "Index";
+			
 		} else {
 			indexservice.saveRegistration(indexcredential);
 			
-			/***********For Profile Image Default**********/
-			String fileName="DefaultProfileImg.png";
-			profileImageService.insertProfileImage(fileName, emailId);
+				/***********For Default Profile Image **********/
 			
-			/***********For Profile Image Default**********/
+					String fileName="DefaultProfileImg.png";
+					profileImageService.insertProfileImage(fileName, emailId);
+			
+				/***********For Default Profile Image **********/
 			
 			LoginUser loginUser = new LoginUser();
 			loginUser.setEmail(emailId);

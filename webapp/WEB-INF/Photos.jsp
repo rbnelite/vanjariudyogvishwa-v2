@@ -377,7 +377,7 @@ textarea{
 }
 </style>
 		
-        <title>Vanjari Udyog Vishwa | Photos</title>
+        <title>Photos | Vanjari Udyog Vishwa</title>
          </head>
     <body>
       <center>

@@ -16,7 +16,7 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
-<title>Events Page</title>
+<title>Events Page | Vanjari Udyog Vishwa</title>
 
 <script type="text/javascript">
 

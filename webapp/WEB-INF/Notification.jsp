@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Notifications | Vanjari Udyog Vishwa</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.4.4.min.js" />"></script>

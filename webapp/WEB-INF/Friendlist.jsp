@@ -146,7 +146,7 @@ function employee(){
 }
 </style>
 
-<title>Vanjari Udyog Vishwa | Home</title>
+<title>Friends List | Vanjari Udyog Vishwa</title>
 </head>
 
 <body>

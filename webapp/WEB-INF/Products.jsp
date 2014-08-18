@@ -193,7 +193,7 @@ textarea:FOCUS{
 }
 </style>
 
-        <title>Products Page</title>
+        <title>Products | Vanjari Udyog Vishwa</title>
        
     </head>
     <body>
