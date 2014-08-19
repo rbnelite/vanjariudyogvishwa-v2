@@ -860,8 +860,8 @@ margin:5px auto auto 5px;
 .LikeUnlikeBtn:HOVER
 {
     background: repeat scroll 0% 0% transparent;
-    background-color: rgba(26, 118, 222, 0.43);
-    color: rgba(216, 241, 242, 1);
+    background-color: rgba(243, 246, 249, 0.43);
+    color: black;
     border: 1px solid orange;
     border-radius: 5px;
     cursor: pointer;
