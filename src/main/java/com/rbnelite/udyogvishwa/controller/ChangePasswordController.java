@@ -55,10 +55,31 @@ public class ChangePasswordController{
 	@RequestMapping(value="/ChangePassword",method=RequestMethod.POST)
 	public String changepassform1(@Valid ChangePassword changepwd,BindingResult res,@ModelAttribute("ChangePasswordCredential")ChangePasswordCredential changepasscred,ModelMap map,String userMail)
 	{
+		
+		LoginUser loginUser = RequestContext.getUser();
+		userMail=loginUser.getEmail();
+		
 		if(res.hasErrors())
 		{
 			System.out.println(res.getErrorCount()+" Errors found inchange password Mobel insert");
 			map.addAttribute("changepwd", new ChangePassword());
+			
+			map.put("ProfileImage", new ProfileImages());
+			map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
+			
+			map.put("myEvents", new Event());
+			map.put("eventstList", eventService.listEvents());
+			
+			map.put("knownPeople", new IntrestAreas());
+			Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
+			map.put("knownPeopleList", knowPeopleSet);
+			
+			map.put("friendRequest", new FriendRequest());
+			map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+			
+			map.put("Notification",new Notification());
+			map.put("NotificationList", notificationService.listNotification(userMail));
+			
 			return "Changepassword";	
 		}
 		else{
@@ -66,10 +87,7 @@ public class ChangePasswordController{
 			
 		}
 		
-		
-		LoginUser loginUser = RequestContext.getUser();
-		userMail=loginUser.getEmail();
-		
+				
 		map.addAttribute("changepwd", new ChangePassword());
 		
 		map.put("ProfileImage", new ProfileImages());

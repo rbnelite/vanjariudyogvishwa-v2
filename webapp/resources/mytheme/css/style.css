@@ -930,23 +930,26 @@ margin:5px auto auto 5px;
 /*Change Password*/
 
 #outsidemiddlechangepwd{
-	 margin-top: 5px;
-	width: 790px;
-    height: 940px;
+	 margin-top: 10px;
+	width: 780px;
+    height: 890px;
     background-color: transparent;
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    border: 1px solid orange;
+    border-radius:6px;
 }
 #MiddleTopchangepwd
 {
 	 margin-left:298px;
 	border-radius: 5px;
     width: 790px;
-    height: 250px;
+    height: 295px;
     background-color: transparent;
     margin-right: 305px;
-    
+  /*   border: 1px solid orange;
+    border-radius:6px; */
 }
-#changepwd
+#changeMyPwd
 {
 	width: 790px;
     height: 250px;
@@ -1223,6 +1226,14 @@ h4 {
 	text-decoration:none;
 	font-size: 16px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#InstructionChangePwd{
+	width: 550px;
+	height: 170px;
+	margin-top: 50px;
+	border: 1px solid gray;
+	border-radius:2px;
+	background-color: rgba(255, 255, 255, 0.63);
 }
 
 /*********** CSS properties for Registration Steps By-Sawantmanojm@gmail.com ***********/

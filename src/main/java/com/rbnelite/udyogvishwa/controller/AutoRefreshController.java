@@ -26,7 +26,7 @@ public class AutoRefreshController {
 	}
 	
 	@RequestMapping(value="/AutoRefresh", method=RequestMethod.POST)
-	public String setAutoRefresh(@RequestParam("name") String eventname,
+	public void setAutoRefresh(@RequestParam("name") String eventname,
 			@RequestParam("details") String eventdetails,
 			@RequestParam("location") String eventlocation,
 			@RequestParam("datatime") String eventdate,
@@ -58,7 +58,7 @@ public class AutoRefreshController {
 		
 		map.put("myEventData", e1);
 		
-		return "AutoRefreshDemo";
+		/*return "AutoRefreshDemo";*/
 	}
 	
 }

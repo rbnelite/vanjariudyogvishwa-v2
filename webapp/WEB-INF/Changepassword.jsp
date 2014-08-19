@@ -176,7 +176,27 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
+}
+#changeMyPwd2 {
+    width: 780px;
+    height: 295px;
+    /* margin-right: 305px; */
+    border-radius: 3px;
+    background-color: #FFE4C4;
+    border: 1px solid orange;
+    border-radius:6px;
 } 
+.error {
+	color: #ff0000;
+}
+			
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
 </style>
 </head>
 
@@ -196,7 +216,7 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 					style="margin-left: 110px; margin-right: 5px; margin-top: -30px; float: right;">WelCome
 					!<b> ${loginUser.firstName} ${loginUser.lastName}</b>
 				</label> <br>
-				<div id="profile_photo" style="margin-top: -37px;">
+				<div id="profile_photo" style="margin-top: -30px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
 							<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
@@ -391,9 +411,9 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 					
 				</table>
 			</div>
-			<div id="MiddleTopchangepwd">
+			<div id="MiddleTopchangepwd" style="margin-left: 305px;">
 			
-				<div id="changepwd">
+				<div id="changeMyPwd2">
 					<form:form action="/vanjariudyogvishwa-v2/ChangePassword" method="post" commandName="changepwd">
 						<form:errors cssClass="errorblock"/>
 					<input type="hidden" name="user_email" value="${loginUser.email}">
@@ -412,12 +432,12 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 							<tr >
 								<td style="padding-top: 7px;padding-bottom: -6px;">New password:</td>
 								<td style="padding-top: 7px;padding-bottom: -6px;"><form:password path="NewPassword"/></td>
-								<td><form:errors path="NewPassword"/></td>
+								<td><form:errors path="NewPassword" cssClass="error"/></td>
 							</tr>
 							<tr>
 								<td style="padding-top: 7px;padding-bottom: -6px;">Confirm password:</td>
 								<td style="padding-top: 7px;padding-bottom: -6px;"><form:password path="RePassword"/></td>
-								<td><form:errors path="RePassword"/></td>
+								<td><form:errors path="RePassword" cssClass="error"/></td>
 							</tr>
 							<tr>
 								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value="Save Changes"></center></td>
@@ -431,12 +451,20 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 			</div>
 			
 			<div id="outsidemiddlechangepwd">
-				
+				<div id="InstructionChangePwd" >
+					<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">To change Your password you must follow these steps:</h3>
+					<ol style="text-align: left;">
+						<li>Enter your Current password in 1st text box.</li>
+						<li>Enter your New password in 2nd text box.</li>
+						<li>Re-Enter your New password in 3nd text box.</li>
+						<li>Click on Save Changes button to Change your New password.</li>
+					</ol>
+				</div>
 			</div>
 			
 			
 			
-			<div id="rightMain" style="background-color: bisque">
+			<div id="rightMain" style="background-color: bisque;margin-top: -1200px">
 			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
 			<div id="OutsidepeopleMayKnw">
 				<div id="peopleMayKnw">

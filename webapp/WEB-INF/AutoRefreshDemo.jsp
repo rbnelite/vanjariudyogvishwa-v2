@@ -17,7 +17,7 @@
 #Lower{
 	width: 100%;
 	height: 300px;
-	background: red;
+	background: white;
 	color: yellow;
 }
 </style>
