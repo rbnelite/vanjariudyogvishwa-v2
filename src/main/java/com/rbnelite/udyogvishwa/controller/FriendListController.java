@@ -130,6 +130,8 @@ public class FriendListController {
 		map.put("userFriends", new FriendRequest());
 		map.put("userFriendsList", friendrequestservice.listFriends(userMail));
 		
+		System.out.println("From Friend List Controller My friends List contains: "+friendrequestservice.listFriends(userMail).size());
+		
 		map.put("ProfileImage", new ProfileImages());
 		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 		

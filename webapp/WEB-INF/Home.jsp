@@ -325,9 +325,8 @@ input[type="button"][value="Like"]
    	background: repeat scroll 0% 0% transparent;
     background-color: rgba(243, 246, 249, 0.43);
     color: black;
-    border: 1px solid orange;
+    border: 1px solid rgba(255, 165, 0, 0.57);
     border-radius: 5px;
-    cursor: pointer;
     width: 90px;
     height: 30px;
     text-decoration: none;
@@ -339,9 +338,8 @@ input[type="button"][value="UnLike"]
     background: repeat scroll 0% 0% transparent;
     background-color: rgba(243, 246, 249, 0.43);
     color: black;
-    border: 1px solid orange;
+    border: 1px solid rgba(255, 165, 0, 0.57);
     border-radius: 5px;
-    cursor: pointer;
     width: 90px;
     height: 30px;
     text-decoration: none;
@@ -353,9 +351,8 @@ input[type="button"][value="Comments"]
     background: repeat scroll 0% 0% transparent;
     background-color: rgba(243, 246, 249, 0.43);
     color: black;
-    border: 1px solid orange;
+    border: 1px solid rgba(255, 165, 0, 0.57);
     border-radius: 5px;
-    cursor: pointer;
     width: 90px;
     height: 30px;
     text-decoration: none;
@@ -807,11 +804,11 @@ input[type="button"][value="Comments"]
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="true">
 															 
-															 <c:if test="${DispLike4One=='0'}">	
-															 	<table style="margin-top: -10px"><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+															 <c:if test="${DispLike4One=='0' && DispUnLike4One =='0'}}">	
+															 	<table><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
 															 </c:if>
-															 <c:if test="${DispLike4One=='1'}">	
-															 	<table style="margin-top: -10px"><tr><td><input type="button" value="Like" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${LikeCount}</a></td></tr> </table>
+															 <c:if test="${DispLike4One=='1' || DispUnLike4One=='1'}">	
+															 	<table><tr><td><input type="button" value="Like" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${LikeCount}</a></td></tr> </table>
 															 </c:if>
 														</form>
 												</td>
@@ -821,18 +818,18 @@ input[type="button"][value="Comments"]
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="false">
 															 
-															 <c:if test="${DispUnLike4One=='0'}">	
-															 	<table style="margin-top: -10px"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
+															 <c:if test="${DispUnLike4One=='0' && DispLike4One=='0'}">	
+															 	<table><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
 															 </c:if>
-															 <c:if test="${DispUnLike4One=='1'}">	
-															 	<table style="margin-top: -10px"><tr><td><input type="button" value="UnLike" class="LikeUnlikeBtn" disabled="disabled"></td><td><a>${UnLikeCount}</a></td></tr></table>
+															 <c:if test="${DispUnLike4One=='1' || DispLike4One=='1'}">	
+															 	<table><tr><td><input type="button" value="UnLike" class="LikeUnlikeBtn" disabled="disabled"></td><td><a>${UnLikeCount}</a></td></tr></table>
 															 </c:if>
 															 
 													</form>
 												</td>
 												<td style="min-width: 100px;">
 													
-													<table style="margin-top: -10px"><tr><td><input type="button" value="Comments" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${fn:length(notifStatus[0].comments)}</a></td></tr> </table>
+													<table><tr><td><input type="button" value="Comments" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${fn:length(notifStatus[0].comments)}</a></td></tr> </table>
 													
 												</td>
 											</tr>
@@ -987,11 +984,11 @@ input[type="button"][value="Comments"]
 															 <input type="hidden" name="whoLike" value="${loginUser.email}">
 															 <input type="hidden" name="myReply" value="true">
 															
-															 <c:if test="${DispLike=='0'}">														
-																<table style="margin-top: -10px"><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+															 <c:if test="${DispLike=='0' && DispUnLike =='0'}">														
+																<table><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
 															 </c:if>
-															 <c:if test="${DispLike=='1'}">														
-																<table style="margin-top: -10px"><tr><td><input type="button" value="Like" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${LikeCount}</a></td></tr> </table>
+															 <c:if test="${DispLike=='1' || DispUnLike=='1'}">														
+																<table><tr><td><input type="button" value="Like" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${LikeCount}</a></td></tr> </table>
 															 </c:if>		
 															
 															
@@ -1003,17 +1000,17 @@ input[type="button"][value="Comments"]
 														<input type="hidden" name="whoLike" value="${loginUser.email}">
 														<input type="hidden" name="myReply" value="false">
 														
-														<c:if test="${DispUnLike=='0'}">	
-															<table style="margin-top: -10px"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
+														<c:if test="${DispUnLike=='0' && DispLike =='0'}">	
+															<table><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
 														</c:if>
-														<c:if test="${DispUnLike=='1'}">	
-															<table style="margin-top: -10px"><tr><td><input type="button" value="UnLike" class="LikeUnlikeBtn" disabled="disabled"></td><td><a>${UnLikeCount}</a></td></tr></table>
+														<c:if test="${DispUnLike=='1' || DispLike=='1'}">	
+															<table><tr><td><input type="button" value="UnLike" class="LikeUnlikeBtn" disabled="disabled"></td><td><a>${UnLikeCount}</a></td></tr></table>
 														</c:if>
 													</form>
 												</td>
 												
 												<td style="min-width: 100px;">
-													<table style="margin-top: -10px"><tr><td><input type="button" value="Comments" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${fn:length(status11.comments)}</a></td></tr> </table>
+													<table><tr><td><input type="button" value="Comments" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${fn:length(status11.comments)}</a></td></tr> </table>
 												</td>
 											</tr>
 										</table>
