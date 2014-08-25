@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
+import com.rbnelite.udyogvishwa.dto.LoginDemo;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
@@ -161,6 +163,17 @@ public class IndexController {
 
 	}
 
+	/*@RequestMapping(value = "/loginAuthentication", method = RequestMethod.POST)
+	public @ResponseBody LoginDemo initLogin(@RequestParam("user_name") String userName,
+			@RequestParam("password") String passWord
+			) {
+		LoginDemo login = new LoginDemo();
+		login.setEmail(userName);
+		login.setLastName(passWord);
+		
+		return login;
+	}*/
+	
 	@RequestMapping(value = "/logoutUser")
 	public String logOutOperation(HttpServletRequest request,
 			HttpServletResponse response, ModelMap map) throws ServletException {

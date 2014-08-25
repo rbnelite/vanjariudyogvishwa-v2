@@ -50,41 +50,11 @@ public class EventsController {
 	private NotificationService notificationService;
 
 	@RequestMapping(value = "/Events", method = RequestMethod.POST)
-	public String insert(@Valid Event myEvents, BindingResult result,@RequestParam("usermail") String user_name,
-			@ModelAttribute("EventsCredential") EventsCredential eventscredential,
+	public String insertEvents(@ModelAttribute EventsCredential eventscredential,
 			ModelMap map,String userMail) {
-		 if(result.hasErrors())
-		 {
-			 
-			 LoginUser loginUser = RequestContext.getUser();
-				
-				userMail=loginUser.getEmail();
-			 map.put("myEvents", new Event());
-				map.put("eventstList", eventsservice.listEvents());
-				
-				map.put("ProfileImage", new ProfileImages());
-				map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
-				
-				map.put("friendRequest", new FriendRequest());
-				map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
-				
-				map.put("knownPeople", new IntrestAreas());
-				Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
-				map.put("knownPeopleList", knowPeopleSet);
-				
-				map.put("Notification",new Notification());
-				map.put("NotificationList", notificationService.listNotification(userMail));
-
 			
-			 	return "Events";
-		 }
-		 else
-		 {
-			 
-		 eventsservice.insertEvents(eventscredential);
-		
-
-		listEvents(userMail, map);
+				 
+		eventsservice.insertEvents(eventscredential);
 		
 		LoginUser loginUser = RequestContext.getUser();
 	
@@ -106,15 +76,13 @@ public class EventsController {
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));
 		map.put("massage","Event Created Successfully");
-		return "Events";
-		 }
+		
+		return "Events";	
 	}
 	
 	
 	@RequestMapping("/Events")
 	public String listEvents(String userMail,Map<String, Object> map) {
-
-		 
 		
 		LoginUser loginUser = RequestContext.getUser();
 	

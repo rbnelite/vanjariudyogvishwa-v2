@@ -18,33 +18,33 @@
 	width: 100%;
 	height: 300px;
 	background: white;
-	color: yellow;
+	color: black;
 }
 </style>
 
 <script>
 function loadXMLDoc()
 {
-	alert("Useing Ajax to load part of page without reloding of complete paje");
+	alert("Useing Ajax to load part of page without reloding of complete page");
 	
-	var EventName=document.getElementById("EventName").value;
-	var EventDetails=document.getElementById("EventDetails").value;
-	var EventLocation=document.getElementById("EventLocation").value;
-	var EventDate=document.getElementById("EventDate").value;
-	var EventUserMail=document.getElementById("EventUserMail").value;
+	var EventName=document.getElementById("name").value;
+	var EventDetails=document.getElementById("details").value;
+	var EventLocation=document.getElementById("location").value;
+	var EventDate=document.getElementById("datatime").value;
+	var EventUserMail=document.getElementById("MyUsermail").value;
 	
 	var parameters = "name="+EventName+"&details="+EventDetails+"&location="+EventLocation+"&datatime="+EventDate+"&usermail="+EventUserMail+"";
 	
-	alert("**"+parameters+"**");
+	/* alert("**"+parameters+"**"); */
 	
 	/* var parameters = "name=Manoj&details=123&location=Pune&date=02-0802014&usermail=sawantmanojm@gmail.com" */
 	
 	
-	alert(EventName);
+	/* alert(EventName);
 	alert(EventDetails);
 	alert(EventLocation);
 	alert(EventDate);
-	alert(EventUserMail);
+	alert(EventUserMail); */
 	
 	myfirstReq=new XMLHttpRequest();
 	
@@ -61,7 +61,8 @@ function loadXMLDoc()
 	  {
 	  if (myfirstReq.readyState==4)
 	    {
-	    document.getElementById("Lower").innerHTML=myfirstReq.responseText;
+		  alert(myfirstReq.responseText);
+	    	document.getElementById("Lower").innerHTML=myfirstReq.responseText;
 	    }
 	  };
 	
@@ -71,6 +72,41 @@ function loadXMLDoc()
 	
 }
 </script>
+
+
+<!-- <script type="text/javascript">
+	function loadXMLDoc() {
+		alert("Useing Ajax to load part of page without reloding of complete page");
+		
+		// get the form values
+		var EventName=document.getElementById("name").value;
+		alert(1);
+		var EventDetails=document.getElementById("details").value;
+		alert(2);
+		var EventLocation=document.getElementById("location").value;
+		alert(3);
+		var EventDate=document.getElementById("datatime").value;
+		alert(4);
+		var EventUserMail=document.getElementById("MyUsermail").value;
+		alert(5);
+		$.ajax({
+			type : "POST",
+			url : "/vanjariudyogvishwa-v2/AutoRefresh",
+			data : "name=" +EventName+ "&details=" +EventDetails+"&location="+EventLocation+"&date="+EventDate+"&usermail="+EventUserMail,
+			success : function(response) {
+				alert(6);
+				// we have the response
+				$('#Lower').html(response);
+				/* $('#name').val('');
+				$('#education').val(''); */
+				alert(7);
+			},
+			error : function(e) {
+				alert('Error: ' + e);
+			}
+		});
+	}
+</script> -->
 
 </head>
 <body>
@@ -86,11 +122,11 @@ function loadXMLDoc()
 <div id="Lower">
 
 <!-- <form action="/vanjariudyogvishwa-v2/AutoRefresh" method="post"> -->
-	<input id="EventName" type="text" name="name" placeholder="Enter Event Name">
-	<input id="EventDetails" type="text" name="details" placeholder="Enter Event details">
-	<input id="EventLocation" type="text" name="location" placeholder="Enter Event Location">
-	<input id="EventDate" type="text" name="datatime" placeholder="Enter Event Date">
-	<input id="EventUserMail" type="text" name="usermail" placeholder="Enter Event usermail">
+	<input id="name" type="text" name="name" placeholder="Enter Event Name">
+	<input id="details" type="text" name="details" placeholder="Enter Event details">
+	<input id="location" type="text" name="location" placeholder="Enter Event Location">
+	<input id="datatime" type="text" name="datatime" placeholder="Enter Event Date">
+	<input id="MyUsermail" type="text" name="usermail" placeholder="Enter Event usermail">
 	<input type="submit" value="send" onclick="loadXMLDoc()">
 <!-- </form> -->
 
@@ -111,17 +147,7 @@ function loadXMLDoc()
 	</table>
 	</c:if>
 	
-	<c:if test="${ empty myEventData }">
-	<table border="2">
-		<tr>
-			<td>A</td>
-			<td>B</td>
-			<td>C</td>
-			<td>D</td>
-			<td>E</td>
-		</tr>
-	</table>
-	</c:if>
+	
 	
 	
 

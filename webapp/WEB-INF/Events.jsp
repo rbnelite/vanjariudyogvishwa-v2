@@ -75,7 +75,33 @@ function loadXMLDoc()
 {
 	alert("Useing Ajax to load part of page without reloding of complete paje");
 	
+	var EventName=document.getElementById("name").value;
+	var EventDetails=document.getElementById("details").value;
+	var EventLocation=document.getElementById("location").value;
+	var EventDate=document.getElementById("datatime").value;
+	var EventUserMail=document.getElementById("MyUsermail").value;
+	
+	var parameters = "name="+EventName+"&details="+EventDetails+"&location="+EventLocation+"&datatime="+EventDate+"&usermail="+EventUserMail+"";
+	
+	alert("**"+parameters+"**");
+	
+	/* var parameters = "name=Manoj&details=123&location=Pune&date=02-0802014&usermail=sawantmanojm@gmail.com" */
+	
+	
+	alert(EventName);
+	alert(EventDetails);
+	alert(EventLocation);
+	alert(EventDate);
+	alert(EventUserMail);
+	
 	myfirstReq=new XMLHttpRequest();
+	alert("step2");
+	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/Events", true);
+	
+	//Send the proper header information along with the request
+	myfirstReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	myfirstReq.setRequestHeader("Content-length", parameters .length);
+	myfirstReq.setRequestHeader("Connection", "close");
 	
 	myfirstReq.onreadystatechange=function()
 	  {
@@ -84,12 +110,10 @@ function loadXMLDoc()
 	    document.getElementById("middleEvent").innerHTML=myfirstReq.responseText;
 	    }
 	  };
-	alert("step2");
-	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/InsertEvents", true);
-	alert("step3");
-	myfirstReq.send();
 	
-	return false;
+	  alert("step3");
+		myfirstReq.send(parameters);
+		alert("step4");
 }
 </script> -->
 
@@ -111,7 +135,14 @@ function loadXMLDoc()
             
         </script>
 <style type="text/css">
-
+#middleEvent{
+    margin-top: 5px;
+    border-radius: 3px;
+    width: 790px;
+    height: 645px;
+    background-color: bisque;
+    border: 1px solid gray; 
+}
 #OutsideShowEventsUpdet{
     width: 775px;
     /* margin-top: 10px; */
@@ -529,9 +560,9 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
 							<td>
-								<input type="hidden" name="usermail" value="${loginUser.email}">
+								<input type="hidden" id="MyUsermail" name="usermail" value="${loginUser.email}">
 							</td>
-							<td><input id="newEventBtn" type="submit" value="Create Event">
+							<td><input id="newEventBtn" type="submit" value="Create Event" onclick="return abc()">
 									<!-- onclick="return abc()" -->
 									 <!-- onclick="loadXMLDoc()" -->
 							</td>
