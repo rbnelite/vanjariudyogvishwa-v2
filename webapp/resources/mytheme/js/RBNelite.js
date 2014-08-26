@@ -71,9 +71,6 @@
         dispReq.style.display='none';
     }
      
-    function abc(){
-       alert("hiiii");
-    }
 
     /********************* For Products.jsp Page *********************/
     

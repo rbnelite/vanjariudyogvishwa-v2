@@ -9,6 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,33 +22,36 @@
 <script type="text/javascript">
 
 function abc(){
-	 var name=document.getElementById("name").value;
-	 var details=document.getElementById("details").value;
-	 var location=document.getElementById("location").value;
-	 var datatime=document.getElementById("datatime").value;
-	 		if(name.length==0)
+	 var name=document.getElementById("EventName").value;
+	 var details=document.getElementById("EventDetails").value;
+	 var location=document.getElementById("EventLocation").value;
+	 var datatime=document.getElementById("EventDatatime").value;
+	 
+	 	if(name.length==0)
 		{
-			
-		document.getElementById("error").innerHTML="please provide proper name"; 
-	     return false;		
+			document.getElementById("error").innerHTML="please provide proper name"; 
+	     	return false;		
 		}
-		if(details.length==0)
+	 	else if(details.length==0)
 	    {
-			
 			document.getElementById("error").innerHTML="please provide proper details";    
-		   return false;	
+			return false;	
 	    }
-	    if(location.length==0) 
+	 	else if(location.length==0) 
 		{
 	    	document.getElementById("error").innerHTML="please provide proper location";
 	    	return false;
 		} 
-	    if(datatime.length==0)
+	 	else if(datatime.length==0)
 	    {
 	    	document.getElementById("error").innerHTML="please provide proper datetime";
 	    	return false;
 	    }
-	    document.getElementById("error").innerHTML="";   
+	 	else{
+	 		saveMyEvent();
+	 		return false;
+	 	}
+	      
 }
 
 
@@ -68,34 +72,26 @@ function jumpcomment(NotificationId) {
 	var temp = document.getElementById("submit1").click();
 }
 
-</script>
-
-<!-- <script>
-function loadXMLDoc()
-{
-	alert("Useing Ajax to load part of page without reloding of complete paje");
+function saveMyEvent(){
 	
-	var EventName=document.getElementById("name").value;
-	var EventDetails=document.getElementById("details").value;
-	var EventLocation=document.getElementById("location").value;
-	var EventDate=document.getElementById("datatime").value;
+	var EventName=document.getElementById("EventName").value;
+	var EventDetails=document.getElementById("EventDetails").value;
+	var EventLocation=document.getElementById("EventLocation").value;
+	var EventDate=document.getElementById("EventDatatime").value;
 	var EventUserMail=document.getElementById("MyUsermail").value;
 	
 	var parameters = "name="+EventName+"&details="+EventDetails+"&location="+EventLocation+"&datatime="+EventDate+"&usermail="+EventUserMail+"";
 	
-	alert("**"+parameters+"**");
-	
-	/* var parameters = "name=Manoj&details=123&location=Pune&date=02-0802014&usermail=sawantmanojm@gmail.com" */
-	
-	
-	alert(EventName);
-	alert(EventDetails);
-	alert(EventLocation);
-	alert(EventDate);
-	alert(EventUserMail);
-	
-	myfirstReq=new XMLHttpRequest();
-	alert("step2");
+	if (window.XMLHttpRequest)
+	{
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		myfirstReq=new XMLHttpRequest();
+	}
+	else
+	  {
+		// code for IE6, IE5
+		myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
 	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/Events", true);
 	
 	//Send the proper header information along with the request
@@ -107,15 +103,44 @@ function loadXMLDoc()
 	  {
 	  if (myfirstReq.readyState==4 && myfirstReq.status==200)
 	    {
-	    document.getElementById("middleEvent").innerHTML=myfirstReq.responseText;
-	    }
+		  	 var table = document.getElementById("MyEventTable");
+		  	
+		 	// Create an empty <tr> element and add it to the 1st position of the table:
+		  	var row = table.insertRow(1);
+		  	
+		  	// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+		  		var cell1 = row.insertCell(0);
+		  		var cell2 = row.insertCell(1);
+		  		var cell3 = row.insertCell(2);
+		  		var cell4 = row.insertCell(3);
+		  		var cell5 = row.insertCell(4);
+		  		
+		  		var EventName=document.getElementById("EventName").value;
+		  		var EventDetails=document.getElementById("EventDetails").value;
+		  		var EventLocation=document.getElementById("EventLocation").value;
+		  		var EventDate=document.getElementById("EventDatatime").value;
+		  		
+		  		
+		  	// Add some text to the new cells:
+		  		cell1.innerHTML ="<img title='"+EventDate+"' src='${pageContext.request.contextPath}/resources/images/event.png' width='52' height='50' /> &nbsp;";
+		  		cell2.innerHTML = EventName;
+		  		cell3.innerHTML = EventLocation;
+		  		cell4.innerHTML = EventDate;
+		  		cell5.innerHTML = EventDetails;
+		  	
+		  		
+		  		
+		  	// document.getElementById("middleEvent").innerHTML=myfirstReq.responseText;
+		 /* */
+	    } 
 	  };
 	
-	  alert("step3");
 		myfirstReq.send(parameters);
-		alert("step4");
+
 }
-</script> -->
+
+</script>
+
 
 
 <script type="text/javascript">
@@ -303,7 +328,12 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 	cursor: pointer;
 }
 </style>
-
+<!-- <style type="text/css">
+	#MyNewEventDesc{
+		display: none;
+		background-color: pink;
+	}
+</style> -->
 </head>
 <body>
 	<center>
@@ -411,7 +441,7 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td width="84%"> <a id="Shortlinks" href="Events" style="color: #E45FF2;">Events</a> </td>
+						<td width="84%"> <a id="Shortlinks" style="color: #E45FF2; cursor: pointer;">Events</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
@@ -515,13 +545,13 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 			</div>
 
 			<div id="MiddleTopEvent">
-				<form:form action="/vanjariudyogvishwa-v2/Events" method="post" commandName="myEvents">
+				<form action="/vanjariudyogvishwa-v2/Events" method="post">
 					<table>
 						<h3><font color="purple">Create Event</font></h3>
 						
 						<tr>
 							<td>Event Name <font color="red">*</font> :</td>
-							<td><form:input path="name" id="name"
+							<td><input type="text" name ="name" id="EventName"
 								placeholder="Write Event Name...."
 								style="width: 400px; height: 30px;"/>
 								
@@ -529,29 +559,29 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							</td>
 							
 						</tr>
-						<tr><td> <form:errors path="name" cssClass="error"/></td></tr>
+						<%-- <tr><td> <form:errors path="name" cssClass="error"/></td></tr> --%>
 						<tr>
 							<td>Event Details <font color="red">*</font> :</td>
 							<td>
-							<form:input path="details" id="details"
+							<input type="text" name ="details" id="EventDetails"
 									placeholder="Write Event Details with time...."
 									style="width: 400px; height: 100px; resize: none;"/><br>
 								
 							</td>
 						</tr>
-						<tr><td>  <form:errors path="details" cssClass="error"/> </td></tr>
+						<%-- <tr><td>  <form:errors path="details" cssClass="error"/> </td></tr> --%>
 						<tr>
 							<td>Event Location <font color="red">*</font> :</td>
-							<td><form:input path="location" id="location"
+							<td><input type="text" name ="location" id="EventLocation"
 								placeholder="Write Location of Event...."
 								style="width: 400px; height: 30px;"/><br>
 								
 							</td>
 						</tr>
-						<tr><td>  <form:errors path="location" cssClass="error"/> </td></tr>
+						<%-- <tr><td>  <form:errors path="location" cssClass="error"/> </td></tr> --%>
 						<tr>
 							<td>Date <font color="red">*</font> :</td>
-							<td><form:input path="datatime" id="datatime"
+							<td><input type="text" name ="datatime" id="EventDatatime"
 								placeholder="dd/mm/yyyy"
 								style="width: 400px; height: 30px;"/><br>
 								
@@ -562,32 +592,39 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
 							<td>
 								<input type="hidden" id="MyUsermail" name="usermail" value="${loginUser.email}">
 							</td>
-							<td><input id="newEventBtn" type="submit" value="Create Event" onclick="return abc()">
+							<td><input id="newEventBtn" type="submit" value="Create Event" onclick="return abc();">
 									<!-- onclick="return abc()" -->
 									 <!-- onclick="loadXMLDoc()" -->
 							</td>
 						</tr>
 					</table>
-				</form:form>
+				</form>
 			</div>
 
 			<div id="middleEvent">
 				<div id="OutsideShowEventsUpdet">
 				<div id="ShowEventsUpdet">
 				<span id="massage" style="color: green;">${massage}</span>
-					<h3 style="background-color:#FF6300;">List of Events</h3>
+					<h3 style="background-color:#FF6300; background-color: #FF6300;position: absolute;width: 790px;margin-top: 0px;margin-left: -5px;">List of Events</h3>
 					<c:if test="${!empty eventstList}">
-						<table border="1" width=100%; style="margin-bottom: 15px;">
+						<table id="MyEventTable" border="1" width=100%; style="margin-bottom: 15px;margin-top: 45px;">
 							<tr style="width: 100%">
-								<th style="width: 10%">Photo</th>
-								<th style="width: 25%">Event Name</th>
-								<th style="width: 20%">Location</th>
-								<th style="width: 10%">Date/Time</th>
-								<th style="width: 35%">Event Details</th>
+								<td style="width: 10%"><b>Photo</b></td>
+								<td style="width: 25%"><b>Event Name</b></td>
+								<td style="width: 20%"><b>Location</b></td>
+								<td style="width: 10%"><b>Date/Time</b></td>
+								<td style="width: 35%"><b>Event Details</b></td>
 							</tr>
+							<!-- <tr style="min-width: 100%" id="MyNewEventDesc">
+								<td style="min-width: 10%;" id="MyNewEventPhoto"></td>
+								<td style="min-width: 25%" id="MyNewEventName"></td>
+								<td style="min-width: 20%" id="MyNewEventLocation"></td>
+								<td style="min-width: 10%" id="MyNewEventDateTime"></td>
+								<td style="min-width: 35%" id="MyNewEventDetails"></td>
+							</tr> -->
 							<c:forEach items="${eventstList}" var="myEvents">
-								<tr>
-									<td><img src="${pageContext.request.contextPath}/resources/images/event.png" height="50" width="52"></td>
+								<tr title="${myEvents[5]}">
+									<td><img src="${pageContext.request.contextPath}/resources/images/event.png" title="${myEvents[5]}" height="50" width="52"></td>
 									<td>${myEvents[0]}<br></td>
 									<td>${myEvents[4]}<br></td>
 									<td>${myEvents[5]}<br></td>

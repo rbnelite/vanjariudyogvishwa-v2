@@ -71,6 +71,3 @@
         dispReq.style.display='none';
     }
      
-    function abc(){
-       alert("hiiii");
-    }

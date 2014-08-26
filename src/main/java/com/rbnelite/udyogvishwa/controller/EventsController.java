@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rbnelite.udyogvishwa.dto.EventsCredential;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
@@ -50,34 +51,12 @@ public class EventsController {
 	private NotificationService notificationService;
 
 	@RequestMapping(value = "/Events", method = RequestMethod.POST)
-	public String insertEvents(@ModelAttribute EventsCredential eventscredential,
-			ModelMap map,String userMail) {
-			
-				 
+	public @ResponseBody EventsCredential insertEvents(@ModelAttribute EventsCredential eventscredential,
+			ModelMap map) {
+		
 		eventsservice.insertEvents(eventscredential);
 		
-		LoginUser loginUser = RequestContext.getUser();
-	
-		userMail=loginUser.getEmail();
-		
-		map.put("myEvents", new Event());
-		map.put("eventstList", eventsservice.listEvents());
-		
-		map.put("ProfileImage", new ProfileImages());
-		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
-		
-		map.put("friendRequest", new FriendRequest());
-		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
-		
-		map.put("knownPeople", new IntrestAreas());
-		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
-		map.put("knownPeopleList", knowPeopleSet);
-		
-		map.put("Notification",new Notification());
-		map.put("NotificationList", notificationService.listNotification(userMail));
-		map.put("massage","Event Created Successfully");
-		
-		return "Events";	
+		return eventscredential;	
 	}
 	
 	
@@ -108,7 +87,5 @@ public class EventsController {
 
 		return "Events";
 	}
-
-	
 
 }
