@@ -27,8 +27,10 @@
 	<script>
 	 function LoginMailValidation(){
 		 var uName=document.getElementById("LoginUserName").value;
-		 if(uName==null || uName==""){
-			 alert("user name can't be blank.");
+		 if(uName==null || uName=="" || uName.length<10){
+			 document.getElementById("EmailNullErrorDiv").innerHTML="Valid User Name";
+			 document.getElementById("LoginUserName").focus();
+			return false;
 		 }
 	 }
 	 function hideErrorMsg(){
@@ -45,18 +47,26 @@
 		 
 		 if((uName==null || uName=="") && (uPass==null || uPass=="")){
 			 
-			 alert("User name and password can't be Blank...!!!");
+			document.getElementById("EmailNullErrorDiv").innerHTML="please provide User Name & Password";
+			document.getElementById("LoginUserName").focus();
 			 return false;
 		 }
 		 
-		 if(uName==null || uName==""){
-			 alert("user name can't be blank.");
+		 if(uName==null || uName=="" || uName.length<10){
+			 document.getElementById("EmailNullErrorDiv").innerHTML="please provide Valid User Name";
+			 document.getElementById("LoginUserName").focus();
+			 return false;
 		 }
-		 if(uPass==null || uPass==""){
-			 alert("password cant be blank.");
+		 if(uPass==null || uPass=="" || uPass.length<6){
+			 document.getElementById("PasswordNullErrorDiv").innerHTML="please provide Password";
+			 document.getElementById("LoginPassword").focus();
+			 return false;
 		 }
 	 }
-	 
+	function hideEmailError(){
+		document.getElementById("EmailNullErrorDiv").innerHTML="";
+		document.getElementById("PasswordNullErrorDiv").innerHTML="";
+	 }
 	 function validateDOB(){
 
 		    var dob = document.getElementById("txtDOB").value;
@@ -117,6 +127,7 @@
 				background-color: rgba(246, 212, 212, 0.42);
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				padding: 0px 8px;
 			}
 			
 			input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
@@ -127,6 +138,7 @@
 				background-color:white;
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				padding: 0px 8px;
 			}
 			#VUVloginBtn{
 				height: 35px;
@@ -149,18 +161,23 @@
 				border: none;
 				cursor: pointer;
 			}
+			#EmailNullErrorDiv{
+				color:#F80CAA;
+				font-size: 18px;
+			}
+			#PasswordNullErrorDiv{
+				color:#F80CAA;
+				font-size: 18px;
+			}
     </style>
 </head>
 <body>
 <center>
 	<div id="main" style="background-color: bisque; height: 1000px">
 		<div id="Header">
-			<!-- <div id="logo1" align="center">
-				<img src="/vanjariudyogvishwa-v2/resources/images/banner12.png"
-					width="142" height="150" alt="logo" />
-			</div> -->
+			
 			<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">
-						<table width="600" border="0" align="right" style="margin-top: 15px">
+						<table width="616" border="0" align="right" style="margin-top: 15px">
 							<tr>
 								<td><span class="style8"><span
 										class="style16"><span class="style8" style="margin-left: 5px">Email</span></span></span><span
@@ -169,8 +186,8 @@
 									</span></span></td>
 							</tr>
 							<tr>
-								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Write Registered Email ID" onfocus="return hideErrorMsg()"/> 
-									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Write your Valid password" onfocus="return LoginMailValidation()" /> 
+								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Email ID" onfocus="return hideErrorMsg()" onkeypress="return hideEmailError();"/> 
+									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Password" onfocus="return LoginMailValidation()" onkeypress="return hideEmailError();"/> 
 									<input id="VUVloginBtn" type="submit" value="Log In" name="login" onfocus="return LoginFormValidation()"/>
 								</td>
 
@@ -186,12 +203,17 @@
 										</span>
 									</span></span></td>
 							</tr>
+							
+							<tr><td><a id="EmailNullErrorDiv"></a></td></tr>
+							<tr><td><a id="PasswordNullErrorDiv"></a></td></tr>
+							
 							<tr>
 								<td>
-									<a id="LoginErrorDiv"><marquee><font color="Red" size="3">${LoginError}</font></marquee></a>
-									<a id="LogOutMsgDiv"><marquee><font color="green">${LogOutMsg}</font></marquee></a>
+									<a id="LoginErrorDiv"><font color="#F80CAA" style="font-size: 18px;">${LoginError}</font></a>
+									<a id="LogOutMsgDiv"><font color="green" style="font-size: 18px;">${LogOutMsg}</font></a>
 								</td>
 							</tr>
+							
 						</table>
 					</form>
 		</div>
@@ -211,7 +233,7 @@
 						<p>
 						<img
 							src="/vanjariudyogvishwa-v2/resources/images/worldMap.png"
-							alt="network" align="middle" width="500" height="400" />
+							alt="network" align="middle" width="800" height="600" />
 					</p>
 				</td>
 			</tr>
@@ -260,7 +282,7 @@
 							<tr>
 								<td width="20"></td>
 								<td width="170" class="RegistrationCredentials">First Name<font color="red">*</font></td>
-								<td><form:input path="firstName" size="30" maxlength="15" placeholder="Write Your First Name Here" onkeypress="return isCharKey(event);" /></td>
+								<td><form:input path="firstName" size="30" maxlength="15" placeholder="First Name" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -270,7 +292,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Middle Name<font color="red">*</font></td>
-								<td><form:input path="middleName"	size="30" maxlength="15" placeholder="Write Your Middle Name Here" onkeypress="return isCharKey(event);"/></td>
+								<td><form:input path="middleName" size="30" maxlength="15" placeholder="Middle Name" onkeypress="return isCharKey(event);"/></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -280,7 +302,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Last Name<font color="red">*</font></td>
-								<td><form:input path="lastName" size="30" maxlength="15" placeholder="Write Your Last Name Here" onkeypress="return isCharKey(event);" /></td>
+								<td><form:input path="lastName" size="30" maxlength="15" placeholder="Last Name" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -290,7 +312,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Email Id<font color="red">*</font></td>
-								<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="Write a Valid EmailId" /></td>
+								<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="EmailId" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -300,7 +322,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Contact No.<font color="red">*</font></td>
-								<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Write Your Valid Mobile No." onkeypress="return isNumberKey(event)" /></td>
+								<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Mobile No." onkeypress="return isNumberKey(event)" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -338,7 +360,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Password<font color="red">*</font></td>
-								<td><form:password path="password" id="password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
+								<td><form:password path="password" id="password" placeholder="New Password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
 							</tr>
 							<%-- <tr>
 								<td colspan="2"><form:errors path="password" cssClass="error" /></td>
@@ -346,7 +368,7 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Confirm Password<font color="red">*</font></td>
-								<td><input type="password" name="password2" id="password2" class="password2" size="30" maxlength="20" title="Type password matches to above" /></td>
+								<td><input type="password" name="password2" id="password2" class="password2" placeholder="Confirm Password" size="30" maxlength="20" title="Type password matches to above" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -377,7 +399,7 @@
 	</div>
 	<div id="footer">
 			<div id="footer-box">
-				<div class="footer_left">
+				<div class="footer_left" style="margin-left: -200px;">
 					<h4>Links</h4>
 					<div class="divide"></div>
 					<table width="92%" height="40" border="0" cellpadding="0"
@@ -428,7 +450,7 @@
 							<td width="66%">020 27658554</td>
 						</tr>
 						<tr>
-						<td height="23"><div align="right">Email -</div></td>
+						<td height="23"><div align="right">Email &nbsp-</div></td>
 						<td>&nbsp;</td>
 						<td>Services@vanjariudyogvishwa.org</td>
 					</tr>
