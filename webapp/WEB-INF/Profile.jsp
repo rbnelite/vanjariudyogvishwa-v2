@@ -1705,7 +1705,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 		
 		<div id="footer">
 			<div id="footer-box">
-				<div class="footer_left">
+				<div class="footer_left" style="margin-left: -200px;">
 					<h4>Links</h4>
 					<div class="divide"></div>
 					<table width="92%" height="40" border="0" cellpadding="0"
@@ -1756,7 +1756,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 							<td width="66%">020 27658554</td>
 						</tr>
 						<tr>
-							<td height="23"><div align="right">Email -</div></td>
+							<td height="23"><div align="right">Email &nbsp-</div></td>
 							<td>&nbsp;</td>
 							<td>Services@vanjariudyogvishwa.org</td>
 						</tr>
