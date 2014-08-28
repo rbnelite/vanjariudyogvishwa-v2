@@ -15,10 +15,10 @@ body{
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
-input[type="text"],input[type="password"]{
+input[type="text"],input[type="password"],input[type="email"]{
 	padding: 0px 8px;
 }
-input[type="text"]:FOCUS, input[type="password"]:FOCUS{
+input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS{
 	padding: 0px 8px;
 }
 #main{
@@ -1035,8 +1035,8 @@ margin:5px auto auto 5px;
     margin: 0px;
     padding: 0px;
     vertical-align: middle;
-    font: 20px Trebuchet MS;
-    color: #FFF;
+    font: 18px Trebuchet MS;
+    color: #474242;
 }
 .footer_right {
     float: right;

@@ -13,35 +13,71 @@
 <title>Forgot My Password | Vanjari Udyog Vishwa</title>
 
 <script>
+	
 	function isBlank() {
 		var email = document.getElementById("emailAddress").value;
 		if (email == null || email == "") {
-			alert("email Address field can't be blank");
+			
+			document.getElementById("EmailError").innerHTML="Enter Email Address.";
+			document.getElementById("ValidEmailerror").innerHTML="";
+			document.getElementById("emailAddress").focus();
 			return false;
 		}
 	}
+	
+	function onloadChangePwd(){
+		document.getElementById("emailAddress").focus();
+	}
+	
+	function hideEmailError() {
+		document.getElementById("EmailError").innerHTML="";
+		document.getElementById("ValidEmailerror").innerHTML="";
+		
+	}
 </script>
+<style type="text/css">
+input[type="email"]{
+	width:235px;
+	height:30px;
+	border: 1px solid gray;
+	border-radius:3px;
+	background-color: rgba(246, 212, 212, 0.42);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0px 8px;
+}
+			
+input[type="email"]:FOCUS{
+	width:235px;
+	height:30px;
+	border: 2px solid red;
+	border-radius:3px;
+	background-color:white;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0px 8px;
+}
+</style>
 </head>
-<body style="background-color: bisque">
-	<h3>
-		<font color="blue">${forgotPassMessage}</font>
-	</h3>
-	<c:if test="${empty forgotPassMessage}">
-		<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post" style="width: 500px;height: 305px;margin-left: 600px;">
-			<table
-				style="border: 1px solid gray; border-radius: 5px; margin-top: 80px; width: 400px;height: 300px;"
-				align="center">
+<body style="background-color: bisque" onload="return onloadChangePwd();">
+	
+	<div id="InstructionChangePwd" style="text-align: center;width: 525px;height: 200px;margin-left: 100px;" >
+		<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">Forgot Password Form:</h3>
+		<form action="/vanjariudyogvishwa-v2/ForgotPassword" method="post" >
+			<table style="width: 500px;">
 				<tr>
-					<td style="background-color: orange;text-align: center;">Forgot Password Form</td>
-				</tr>
-
-				<tr>
-					<td>Email Address :-</td>
+					<td><a style="float: left;margin-left: 88px;"><b>Email Address :-</b></a></td>
 				</tr>
 				<tr>
-					<td><input type="text" name="emailAddress" id="emailAddress"
-						placeholder="please write your Registered EmailId"
+					<td><input type="email" name="emailAddress" id="emailAddress"
+						placeholder="Registered Email Id" onkeypress="return hideEmailError();"
 						style="height: 25px; width: 300px;"/></td>
+				</tr>
+				<tr height="25px;">
+					<td>
+						<a id="EmailError" style="color: red;"></a>
+						<a id="ValidEmailerror" style="color: red;">${forgotPassMessage}</a>
+					</td>
 				</tr>
 				<tr>
 
@@ -50,6 +86,17 @@
 				</tr>
 			</table>
 		</form>
-	</c:if>
+	</div>
+	
+	<div id="InstructionChangePwd" style="text-align: center;width: 525px;height: 200px;margin-left: 100px;" >
+		<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">Instructions:</h3>
+		<ol style="text-align: left;">
+			<li>Enter your Registered Email ID in above TextBox.</li>
+			<li>Click on Send Request Button to get password.</li>
+			<li>Check your MailBox containing Vanjari Udyog Vishwa Password</li>
+			<li>Also Look in your Spam Mail or Junk Mail folder</li>
+			<li>For any Help: +91 99-70-71-61-41. OR www.rbnelite.com</li>
+		</ol>
+	</div>
 </body>
 </html>

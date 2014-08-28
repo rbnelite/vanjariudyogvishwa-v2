@@ -82,4 +82,10 @@
     	var dispProduct=document.getElementById("MiddleTopProduct");
     	dispProduct.style.display="block";
     }
-   
+    /********************* For Trimmed Output of String *********************/
+    function trimfield(str) 
+    { 
+    	alert("From Trim Method"+str.replace(/^\s+|\s+$/g,''));
+        return str.replace(/^\s+|\s+$/g,''); 
+    }
+    

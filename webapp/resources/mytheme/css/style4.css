@@ -18,10 +18,10 @@ body {
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
-input[type="text"],input[type="password"]{
+input[type="text"],input[type="password"],input[type="email"]{
 	padding: 0px 8px;
 }
-input[type="text"]:FOCUS, input[type="password"]:FOCUS{
+input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS{
 	padding: 0px 8px;
 }
 
@@ -993,8 +993,8 @@ cursor: pointer;
     margin: 0px;
     padding: 0px;
     vertical-align: middle;
-    font: 20px Trebuchet MS;
-    color: #FFF;
+    font: 18px Trebuchet MS;
+    color: #474242;
 }
 .footer_right {
     float: right;
@@ -1246,4 +1246,12 @@ h4 {
 	text-decoration:none;
 	font-size: 16px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#InstructionChangePwd{
+	width: 550px;
+	height: 170px;
+	margin-top: 50px;
+	border: 1px solid gray;
+	border-radius:2px;
+	background-color: rgba(255, 255, 255, 0.63);
 }

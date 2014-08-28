@@ -56,7 +56,7 @@ function abc(){
 	 var status1=document.myform.status.value;
 		 if(status1.length==0|| flag=="n")
 		 {
-		   /* alert("please enter something");   */
+		   alert("please enter something");
 		 return false;
 		 }	
 }
@@ -163,25 +163,21 @@ function setbg(color)
 
 <script type="text/javascript">
 function validatePhotoUploadForm(){
-	alert("Validating...");
 	var pName=document.getElementById("myPhotoTitle").value;
-	alert("1"+pName);
-	var pDetails=document.getElementById("myPhotoDetails").valueOf();
-	alert("2"+pDetails);
-	var newPhoto=document.getElementById("myPhotobrowsBtn").value;
-	alert("3"+newPhoto);
-	
+	var pDetails=document.MyPhotoForm.photoDescription.value;
+	var newPhoto=document.MyPhotoForm.photoPath.value;
 	
 	if(pName==null || pName==""){
-		alert("Please provide all necessary fields...!!! ");
+		alert("Photo Name is Required...!!! ");
+		document.getElementById("myPhotoTitle").focus();
 		return false;	
 	}
-	if ( pDetails==null || pDetails=="") {
-		alert("Please provide all necessary fields...!!! ");
+	else if (pDetails==null || pDetails=="") {
+		alert("Photo Description is Required...!!! ");
 		return false;
 	}
-	if(newPhoto==null || newPhoto!=""){
-		alert("Please provide all necessary fields...!!! ");
+	else if(newPhoto==null || newPhoto==""){
+		alert("Select Photo to Upload...!!! ");
 		return false;
 	}
 	else {
@@ -627,7 +623,7 @@ input[type="button"][value="Comments"]
 			
 			
 			<div id="UpdatePhoto">
-				<form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data">
+				<form action="/vanjariudyogvishwa-v2/AddPhotos" method="POST" enctype="multipart/form-data" name="MyPhotoForm">
 					<table>
 				
 					<img onclick="return HideUpdatePhotoBlock()"
@@ -645,7 +641,7 @@ input[type="button"][value="Comments"]
 						<tr>
 							<td>
 								<input type="file" id="myPhotobrowsBtn" name="photoPath" onclick="return dispimgUploadBtn()">
-								<input id="imgUploadBtn" class="LikeUnlikeBtn" id="VUVloginBtn" type="submit" value="Upload" style="float: right;" onclick="return validatePhotoUploadForm()">
+								<input id="imgUploadBtn" class="LikeUnlikeBtn" id="VUVloginBtn" type="submit" value="Upload" style="float: right;" onclick="return validatePhotoUploadForm();">
 							
 							</td>
 						</tr>

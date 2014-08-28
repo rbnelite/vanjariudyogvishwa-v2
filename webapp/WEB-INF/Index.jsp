@@ -28,7 +28,7 @@
 	 function LoginMailValidation(){
 		 var uName=document.getElementById("LoginUserName").value;
 		 if(uName==null || uName=="" || uName.length<10){
-			 document.getElementById("EmailNullErrorDiv").innerHTML="Valid User Name";
+			 document.getElementById("EmailNullErrorDiv").innerHTML=" Enter Valid User Name";
 			 document.getElementById("LoginUserName").focus();
 			return false;
 		 }
@@ -47,18 +47,18 @@
 		 
 		 if((uName==null || uName=="") && (uPass==null || uPass=="")){
 			 
-			document.getElementById("EmailNullErrorDiv").innerHTML="please provide User Name & Password";
+			document.getElementById("EmailNullErrorDiv").innerHTML="Enter Valid User Name & Password";
 			document.getElementById("LoginUserName").focus();
 			 return false;
 		 }
 		 
 		 if(uName==null || uName=="" || uName.length<10){
-			 document.getElementById("EmailNullErrorDiv").innerHTML="please provide Valid User Name";
+			 document.getElementById("EmailNullErrorDiv").innerHTML="Enter Valid User Name";
 			 document.getElementById("LoginUserName").focus();
 			 return false;
 		 }
 		 if(uPass==null || uPass=="" || uPass.length<6){
-			 document.getElementById("PasswordNullErrorDiv").innerHTML="please provide Password";
+			 document.getElementById("PasswordNullErrorDiv").innerHTML="Enter Valid Password";
 			 document.getElementById("LoginPassword").focus();
 			 return false;
 		 }
@@ -193,19 +193,23 @@
 
 							</tr>
 							
+							<tr style="height: 23px;">
+								<td>
+									<a id="EmailNullErrorDiv"></a>
+									<a id="PasswordNullErrorDiv" style="float: right;margin-right: 140px;"></a>
+								</td>
+							</tr>
+							
 							<tr>
 								<td><span class="style7"><span class="style8">
 											<input name="" type="checkbox" value="" /> <span
 											class="style21"><span class="style8">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="#" style="text-decoration: none; cursor: help;"
-												onclick="javascript:void window.open('ForgotPassword','1364071233609','width=500,height=300,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
+												onclick="javascript:void window.open('ForgotPassword','1364071233609','width=700,height=550,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
 										</span>
 									</span></span></td>
 							</tr>
-							
-							<tr><td><a id="EmailNullErrorDiv"></a></td></tr>
-							<tr><td><a id="PasswordNullErrorDiv"></a></td></tr>
 							
 							<tr>
 								<td>
@@ -362,33 +366,22 @@
 								<td class="RegistrationCredentials">Password<font color="red">*</font></td>
 								<td><form:password path="password" id="password" placeholder="New Password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
 							</tr>
-							<%-- <tr>
-								<td colspan="2"><form:errors path="password" cssClass="error" /></td>
-							</tr> --%>
+							
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Confirm Password<font color="red">*</font></td>
 								<td><input type="password" name="password2" id="password2" class="password2" placeholder="Confirm Password" size="30" maxlength="20" title="Type password matches to above" /></td>
 							</tr>
 							<tr>
+								<td colspan="3"><form:errors path="password" cssClass="error" /></td>
+							</tr>
+							
+							<tr>
 								<td></td>
 								<td></td>
 								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn"  onclick="return passwordNotSame()"/></td>
 							</tr>
 						</table>
-											
-							<form:errors path="password" cssClass="error" />				
-							
-						<%-- <table>
-							<tr><form:errors path="password" cssClass="error" /><br></tr>
-							<tr><form:errors path="gender" cssClass="error"/><br></tr>
-							<tr><form:errors path="birthDate" cssClass="error" /><br></tr>
-							<tr><form:errors path="contactNo" cssClass="error" /><br></tr>
-							<tr><form:errors path="emailId" cssClass="error" />${requestScope.message_email}<br></tr>
-							<tr><form:errors path="lastName" cssClass="error" /><br></tr>
-							<tr><form:errors path="middleName" cssClass="error" /><br></tr>
-							<tr><form:errors path="firstName" cssClass="error"/><br></tr>
-						</table> --%>
 					</form:form>
 				
 			
