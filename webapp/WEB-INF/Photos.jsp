@@ -371,6 +371,32 @@ textarea{
 	/* border: 1px solid rgba(245, 186, 118, 0.8); */
 	border-radius: 7px;
 }
+input[type="button"][value="Like"]
+{
+   	background: repeat scroll 0% 0% transparent;
+    background-color: rgba(243, 246, 249, 0.43);
+    color: black;
+    border: 1px solid rgba(255, 165, 0, 0.57);
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: default;
+}
+input[type="button"][value="UnLike"]
+{
+    background: repeat scroll 0% 0% transparent;
+    background-color: rgba(243, 246, 249, 0.43);
+    color: black;
+    border: 1px solid rgba(255, 165, 0, 0.57);
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: default;
+}
 </style>
 		
         <title>Photos | Vanjari Udyog Vishwa</title>
@@ -644,15 +670,23 @@ textarea{
 								<form action="/vanjariudyogvishwa-v2/LikePhoto" method="post">
 									<c:set var="LikeCount" value="0"></c:set>
 									<c:set var="UnLikeCount" value="0"></c:set>
+									<c:set var="DispLike" value="0"></c:set>
+									<c:set var="DispUnLike" value="0"></c:set>
 									
 									<c:if test="${!empty likePhotoList}">
 										<c:forEach items="${likePhotoList}" var="likePhoto">
 											<c:if test="${userPhotos[6]==likePhoto.photoId}">
 												<c:if test="${likePhoto.myReply}">
 													<c:set var="LikeCount" value="${LikeCount + 1}"></c:set>
+													<c:if test="${likePhoto.whoLike==loginUser.email}">
+														<c:set var="DispLike" value="1"></c:set>
+													</c:if>
 												</c:if>
 												<c:if test="${! likePhoto.myReply}">
 													<c:set var="UnLikeCount" value="${UnLikeCount + 1}"></c:set>
+													<c:if test="${likePhoto.whoLike==loginUser.email}">
+														<c:set var="DispUnLike" value="1"></c:set>
+													</c:if>
 												</c:if>
 											</c:if>
 										</c:forEach>
@@ -662,13 +696,30 @@ textarea{
 										<input type="hidden" name="photoId" value="${userPhotos[6]}">
 										<input type="hidden" name="whoLike" value="${loginUser.email}">
 										<input type="hidden" name="myReply" value="true">
-										<table style=""><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+										<%-- <table style=""><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table> --%>
+										
+										<c:if test="${DispLike=='0' && DispUnLike =='0'}">														
+											<table><tr><td><input type="submit" value="Like" class="LikeUnlikeBtn"></td> <td><a>${LikeCount}</a></td></tr> </table>
+										</c:if>
+										<c:if test="${DispLike=='1' || DispUnLike=='1'}">														
+											<table><tr><td><input type="button" value="Like" class="LikeUnlikeBtn" disabled="disabled"></td> <td><a>${LikeCount}</a></td></tr> </table>
+										</c:if>
+										
 									</form>
 									<form action="/vanjariudyogvishwa-v2/LikePhoto" method="post">
 										<input type="hidden" name="photoId" value="${userPhotos[6]}">
 										<input type="hidden" name="whoLike" value="${loginUser.email}">
 										<input type="hidden" name="myReply" value="false">
-										<table style="margin-top: -34px;margin-left: 120px;"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
+										
+										<%-- <table style="margin-top: -34px;margin-left: 120px;"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table> --%>
+										
+										<c:if test="${DispUnLike=='0' && DispLike =='0'}">	
+											<table style="margin-top: -34px;margin-left: 120px;"><tr><td><input type="submit" value="UnLike" class="LikeUnlikeBtn"></td><td><a>${UnLikeCount}</a></td></tr></table>
+										</c:if>
+										<c:if test="${DispUnLike=='1' || DispLike=='1'}">	
+											<table style="margin-top: -34px;margin-left: 120px;"><tr><td><input type="button" value="UnLike" class="LikeUnlikeBtn" disabled="disabled"></td><td><a>${UnLikeCount}</a></td></tr></table>
+										</c:if>
+										
 									</form>
 								</td>												
 							</tr>

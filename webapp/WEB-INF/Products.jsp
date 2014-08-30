@@ -427,7 +427,7 @@ textarea:FOCUS{
                 
                 
                 
-                <div id="MiddleTopProduct" style="width: 715px;position: absolute">
+                <div id="MiddleTopProduct" style="width: 733px;margin-top: 2px;margin-bottom: 20px; margin-left: 0px;">
             <form action="/vanjariudyogvishwa-v2/AddProduct", method="POST" enctype="multipart/form-data">
             <a onclick="return DisableaddProductUnable()"> <img src="${pageContext.request.contextPath}/resources/images/close.png" id="close" style="width: 40px;height: 40px; float: right;"></a>
             <input type="hidden" name="userMail"
@@ -441,7 +441,7 @@ textarea:FOCUS{
                     </tr>
                     <tr>
                         <td>Products Details :</td>
-                        <td><textarea type="text"  name="productDetails" maxlength="200" placeholder="Write Product's Details...." style="width: 400px; height: 100px; resize: none;margin-left: -100px;"></textarea></td>
+                        <td><textarea type="text"  name="productDetails" maxlength="200" placeholder="Write Product's Details...." style="width: 400px; height: 100px; resize: none;margin-left: -100px;padding: 0px 8px;"></textarea></td>
                     </tr>
                     
                     <tr>
@@ -450,7 +450,7 @@ textarea:FOCUS{
                     </tr>
                     <tr>
                         <td><input type="submit" value="Add Product" class="connectBtn" style="margin-left: 290px; width: 100px"></td>
-                        <td><input type="reset" value="Cancel" class="connectBtn" style="margin-left: 100px;"></td>
+                        <td><input type="reset" value="Cancel" class="connectBtn" style="margin-left: 100px;" onclick="return DisableaddProductUnable()"></td>
                     </tr>
                 </table>
                 </form>

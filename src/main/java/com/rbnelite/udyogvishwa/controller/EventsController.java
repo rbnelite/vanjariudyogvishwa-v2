@@ -61,11 +61,11 @@ public class EventsController {
 	
 	
 	@RequestMapping("/Events")
-	public String listEvents(String userMail,Map<String, Object> map) {
+	public String listEvents(ModelMap map) {
 		
 		LoginUser loginUser = RequestContext.getUser();
 	
-		userMail=loginUser.getEmail();
+		String userMail=loginUser.getEmail();
 		
 		map.put("myEvents1", new Event());
 		

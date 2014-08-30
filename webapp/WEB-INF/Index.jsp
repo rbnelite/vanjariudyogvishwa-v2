@@ -33,6 +33,14 @@
 			return false;
 		 }
 	 }
+	 function LoginPasswordValidation(){
+		 var uPass=document.getElementById("LoginPassword").value;
+		 if(uPass==null || uPass=="" || uPass.length<6){
+			 document.getElementById("PasswordNullErrorDiv").innerHTML="Enter Valid Password";
+			 document.getElementById("LoginPassword").focus();
+			return false;
+		 }
+	 }
 	 function hideErrorMsg(){
 		 var xyz=document.getElementById("LoginErrorDiv");
 		 xyz.style.display='none';
@@ -40,6 +48,7 @@
 		 xyz.style.display='none';
 	 }
 	 function LoginFormValidation(){
+		 
 		 var uName=document.getElementById("LoginUserName").value;
 		 var uPass=document.getElementById("LoginPassword").value;
 		 
@@ -187,8 +196,8 @@
 							</tr>
 							<tr>
 								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Email ID" onfocus="return hideErrorMsg()" onkeypress="return hideEmailError();"/> 
-									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Password" onfocus="return LoginMailValidation()" onkeypress="return hideEmailError();"/> 
-									<input id="VUVloginBtn" type="submit" value="Log In" name="login" onfocus="return LoginFormValidation()"/>
+									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Password" onfocus="return LoginMailValidation()" onkeypress="return hideEmailError();" onblur="return LoginPasswordValidation();"/> 
+									<input id="VUVloginBtn" type="submit" value="Log In" name="login" onclick="return LoginFormValidation();"/>
 								</td>
 
 							</tr>

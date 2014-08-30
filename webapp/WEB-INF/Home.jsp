@@ -327,7 +327,7 @@ input[type="button"][value="Like"]
     height: 30px;
     text-decoration: none;
     font-size: 17px;
-    
+    cursor: default;
 }
 input[type="button"][value="UnLike"]
 {
@@ -340,7 +340,7 @@ input[type="button"][value="UnLike"]
     height: 30px;
     text-decoration: none;
     font-size: 17px;
-    
+    cursor: default;
 }
 input[type="button"][value="Comments"]
 {
@@ -353,7 +353,7 @@ input[type="button"][value="Comments"]
     height: 30px;
     text-decoration: none;
     font-size: 17px;
-    
+    cursor: default;
 }
 </style>
 <style type="text/css">
@@ -761,7 +761,7 @@ input[type="button"][value="Comments"]
 													name="whoseComment" value="${loginUser.email}"> <input
 													type="text" name="commenttext" id="commentt"
 													placeholder="Write a comment and Press Enter...."
-													style="width: 535px; height: 20px; margin-top: 10px; margin-left: -50px">
+													style="width: 535px; height: 30px; margin-top: 10px; margin-left: -50px">
 											</form>
 										</div>
 										<br>
@@ -902,7 +902,7 @@ input[type="button"][value="Comments"]
 																			<c:out value="${myComment.comment}"/>
 																		</textarea> --%>
 																		<input type="text" name="commenttext" id="comment${myComment.id}" value="${myComment.comment}" 
-																			style="width: 440px; height: 20px; margin-top: 10px; margin-left: 5px" >
+																			style="width: 440px; height: 30px; margin-top: 10px; margin-left: 5px" >
 																		
 																		<div style="float: right; margin:4px 40px -3px 0px">
 																			<input type="submit" value="Edit" id="editCommentBtnHome" onclick="return emptyEditerror('${myComment.id}')">
@@ -938,7 +938,7 @@ input[type="button"][value="Comments"]
 													name="whoseComment" value="${loginUser.email}"> <input
 													type="text" name="commenttext" id="commentt"
 													placeholder="Write a comment and Press Enter...."
-													style="width: 535px; height: 20px; margin-top: 10px; margin-left: -50px">
+													style="width: 535px; height: 30px; margin-top: 10px; margin-left: -50px">
 													<!-- <input type="submit" id="commentsubmit" style="border: none; background: none; display: none;" > -->
 											</form>
 										</div>

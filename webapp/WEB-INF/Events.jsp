@@ -30,21 +30,25 @@ function abc(){
 	 	if(name.length==0)
 		{
 			document.getElementById("error").innerHTML="please provide proper name"; 
+			document.getElementById("EventName").focus();
 	     	return false;		
 		}
 	 	else if(details.length==0)
 	    {
-			document.getElementById("error").innerHTML="please provide proper details";    
+			document.getElementById("error").innerHTML="please provide proper details"; 
+			document.getElementById("EventDetails").focus();
 			return false;	
 	    }
 	 	else if(location.length==0) 
 		{
 	    	document.getElementById("error").innerHTML="please provide proper location";
+	    	document.getElementById("EventLocation").focus();
 	    	return false;
 		} 
 	 	else if(datatime.length==0)
 	    {
 	    	document.getElementById("error").innerHTML="please provide proper datetime";
+	    	document.getElementById("EventDatatime").focus();
 	    	return false;
 	    }
 	 	else{
@@ -128,6 +132,7 @@ function saveMyEvent(){
 		  		cell4.innerHTML = EventDate;
 		  		cell5.innerHTML = EventDetails;
 		  	
+		  		document.getElementById("massage").innerHTML="Event created Successfully";
 		  		
 		  		
 		  	// document.getElementById("middleEvent").innerHTML=myfirstReq.responseText;
