@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 
 import com.rbnelite.udyogvishwa.dao.FriendRequestDao;
 import com.rbnelite.udyogvishwa.dto.FriendRequestCredential;
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Service
 public class FriendRequestServiceImpl implements FriendRequestService{
@@ -24,10 +26,14 @@ public class FriendRequestServiceImpl implements FriendRequestService{
 	
 		FriendRequest friendrequest=new FriendRequest();
 		
+		LoginUser loginUser = RequestContext.getUser();
+		
+		String userMail=loginUser.getEmail();
+		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 		
-	    friendrequest.setRequestFrom(friendRequestCredential.getRequestFrom());
+	    friendrequest.setRequestFrom(userMail);
 	    friendrequest.setRequestTo(friendRequestCredential.getRequestTo());
 	    friendrequest.setRequestStatus("Pending");
 		friendrequest.setRequestDate(dateFormat.format(date));

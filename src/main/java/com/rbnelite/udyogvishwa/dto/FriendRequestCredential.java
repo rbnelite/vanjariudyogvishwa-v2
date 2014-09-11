@@ -1,5 +1,9 @@
 package com.rbnelite.udyogvishwa.dto;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class FriendRequestCredential {
 
 	private String requestFrom;
@@ -14,6 +18,7 @@ public class FriendRequestCredential {
 		return requestFrom;
 	}
 
+	@XmlElement
 	public void setRequestFrom(String requestFrom) {
 		this.requestFrom = requestFrom;
 	}
@@ -22,6 +27,7 @@ public class FriendRequestCredential {
 		return requestTo;
 	}
 
+	@XmlElement
 	public void setRequestTo(String requestTo) {
 		this.requestTo = requestTo;
 	}
@@ -30,6 +36,7 @@ public class FriendRequestCredential {
 		return requestStatus;
 	}
 
+	@XmlElement
 	public void setRequestStatus(String requestStatus) {
 		this.requestStatus = requestStatus;
 	}
@@ -38,6 +45,7 @@ public class FriendRequestCredential {
 		return requestDate;
 	}
 
+	@XmlElement
 	public void setRequestDate(String requestDate) {
 		this.requestDate = requestDate;
 	}

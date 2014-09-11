@@ -51,6 +51,49 @@
 	}
 </script>
 <script type="text/javascript">
+function sendRequest(RequestTo){
+	
+	sendFriendRequest(RequestTo);
+	return false;
+}
+
+function sendFriendRequest(RequestTo){
+	RequestFrom="";
+	requestStatus="";
+	reqDate="";
+	var parameters = "requestTo="+RequestTo+"&requestFrom="+RequestFrom+"&requestDate="+reqDate+"&requestStatus="+requestStatus+"";
+	
+	if (window.XMLHttpRequest)
+	{
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		myfirstReq=new XMLHttpRequest();
+	}
+	else
+	  {
+		// code for IE6, IE5
+		myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/sendFriendRequest", true);
+	
+	//Send the proper header information along with the request
+	myfirstReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	myfirstReq.setRequestHeader("Content-length", parameters .length);
+	myfirstReq.setRequestHeader("Connection", "close");
+	
+	myfirstReq.onreadystatechange=function()
+	  {
+	  if (myfirstReq.readyState==4 && myfirstReq.status==200)
+	    {
+		  		document.getElementById("people"+RequestTo).style.display='none';
+	    } 
+	  };
+		myfirstReq.send(parameters);
+	
+}
+</script>
+
+
+<script type="text/javascript">
             
             var image1=new Image()
             image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
@@ -474,28 +517,24 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 						<c:if test="${!empty knownPeopleList}">
 							<c:forEach items="${knownPeopleList}" var="knownPeople">
 								<c:if test="${loginUser.email != knownPeople[0]}">
-								<tr>
-								<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
-									<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
-									<td>
-										<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
-												height="30" width="30">
-									</td>
-									<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
-								</form>
-										<td>
-									<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
-										<input type="hidden" name="JspPageName" value="Changepassword">
-										<input type="hidden" name="requestTo" value="${knownPeople[0]}">
-										<input type="hidden" name="requestFrom" value="${loginUser.email}">
-										<input type="submit" value="Connect" class="connectBtn"	style="float: right;">
-									</form>
-										</td>
-										</tr>
-										<tr>
-											<td colspan="2"></td>
-										</tr>
-									</c:if>
+									<tr id="people${knownPeople[0]}">
+										<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+											<input type="hidden" name="friendsEmailId" value="${knownPeople[0]}">
+											<td>
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${knownPeople[3]}"
+														height="30" width="30">
+											</td>
+											<td><input id="MayKnowUserName" title="View Profile of ${knownPeople[1]} ${knownPeople[2]}" type="submit" value="${knownPeople[1]} ${knownPeople[2]}"><br></td>	
+										</form>
+										<form action="/vanjariudyogvishwa-v2/sendFriendRequest"method="post">
+											<td>
+												<input type="hidden" id="sendRequestToId" name="requestTo" value="${knownPeople[0]}">
+												<input type="hidden" id="sendRequestFromId" name="requestFrom" value="${loginUser.email}">
+												<input type="submit" value="Connect" class="connectBtn"	style="float: right;" onclick="return sendRequest('${knownPeople[0]}');">
+											</td>
+										</form>
+									</tr>
+								</c:if>
 								
 							</c:forEach>
 						</c:if>

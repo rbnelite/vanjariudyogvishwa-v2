@@ -20,7 +20,7 @@ public class RequestInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if (!uri.endsWith("loginAuthentication") && !uri.endsWith("logoutUser") && !uri.endsWith("Index")&&!uri.endsWith("ForgotPassword")
-				&&!uri.endsWith(".png")	&&!uri.endsWith(".css")&&!uri.endsWith(".js")) {
+				&&!uri.endsWith(".png")	&&!uri.endsWith(".jpg")	&&!uri.endsWith(".css")&&!uri.endsWith(".js")) {
 			LoginUser loginUser = (LoginUser) request.getSession().getAttribute(Constants.LOGGEDIN_USER);
 			
 			if (loginUser == null) {

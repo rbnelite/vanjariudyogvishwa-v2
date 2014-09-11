@@ -14,7 +14,7 @@ root {
 }
 
 body {
-	background-color: #684D1D;
+	background-color: #EAE4E4;
 	font-family: "Verdana" /* , "Trebuchet MS", "Arial", "Helvetica",  "sans-serif" */;
 }
 
@@ -189,7 +189,7 @@ cursor: pointer;
 
 #Header {
 	border-radius: 3px;
-	background-image: url('../images/hederBg.png');
+	background-image: url('../images/banner.jpg');
     background-repeat: repeat-y;
     /* background-color: #fcca7b; */
 	width: 100%;
