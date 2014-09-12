@@ -102,26 +102,42 @@ function validatePhotoUploadForm(){
 	var newPhoto=document.MyPhotoForm.photoPath.value;
 	
 	if(pName==null || pName==""){
-		alert("Photo Name is Required...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Photo Name is Required...!!!";
 		document.getElementById("myPhotoTitle").focus();
 		return false;	
 	}
 	else if (pDetails==null || pDetails=="") {
-		alert("Photo Description is Required...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Photo Description is Required...!!! ";
 		return false;
 	}
 	else if(newPhoto==null || newPhoto==""){
-		alert("Select Photo to Upload...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Select Photo to Upload...!!! ";
 		return false;
 	}
 	else {
-		alert("Saving Photo...");
 		return true;
 	}
+}
+function hideMyPhotoError() {
+	document.getElementById("myPhotoError").innerHTML="";
+}
+function hideMyStatusError() {
+	document.getElementById("MyStatusError").innerHTML="";
 }
 </script>
 
 <style type="text/css">
+#MyStatusError{
+	color: red;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#myPhotoError{
+	color: red;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 #imgUploadBtn {
     display: none;
@@ -337,6 +353,19 @@ p a:hover
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/* font-family: Tahoma, sans-serif; */
 	background-color:rgba(228, 243, 245, 1);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius:8px;
+}
+#styledTextArea:FOCUS{
+	width: 666px;
+	height: 110px;
+	border: 2px solid red;
+	padding: 5px;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* font-family: Tahoma, sans-serif; */
+	background-color:white;
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	border-radius:8px;
@@ -660,11 +689,12 @@ input[type="button"][value="UnLike"]
 						id="close"  style="width: 40px; height: 40px; float: right;">
 				
 						<tr>
-							<td><input id="myPhotoTitle" type="text" name="photoTitle" style="width: 444px;margin-top: 4px;border-radius:7px;"></td>
+							<td><input id="myPhotoTitle" type="text" name="photoTitle" placeholder="Enter Photo Title here..." style="width: 444px;margin-top: 4px;border-radius:7px;" onkeypress="return hideMyPhotoError();"></td>
 						</tr>
+						<tr><td id="myPhotoError"></td></tr>
 						<tr>
 							<td>
-								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 95px;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea><br>
+								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 72px;" onkeypress="return hideMyPhotoError();"></textarea><br>
 							</td>
 						</tr>
 						<tr>

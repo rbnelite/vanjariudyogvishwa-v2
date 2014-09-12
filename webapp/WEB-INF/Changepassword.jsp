@@ -91,7 +91,56 @@ function sendFriendRequest(RequestTo){
 	
 }
 </script>
-
+<script type="text/javascript">
+function preChangeProImage(){
+	alert("From pre 1");
+	changeProImage();
+	alert("From pre 2");
+	return false;
+}
+function changeProImage(){
+	alert("1");
+	UProImg=document.getElementById("myNewProImg").src;
+	var parameters = "updateProfileImage="+UProImg;
+	alert("2)- Parameters are : "+parameters);
+	
+	if (window.XMLHttpRequest)
+	{
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		myfirstReq=new XMLHttpRequest();
+	}
+	else
+	  {
+		// code for IE6, IE5
+		myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	alert("3");
+	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/UpdateProfileImage", true);
+	alert("4");	
+	//Send the proper header information along with the request
+	myfirstReq.setRequestHeader("Content-type", "multipart/form-data");
+	alert("After multipart/form-data");
+	myfirstReq.setRequestHeader("Content-length", parameters .length);
+	myfirstReq.setRequestHeader("Connection", "close");
+	alert("5");
+	myfirstReq.onreadystatechange=function()
+	  {
+		alert("State Changed");
+	  if (myfirstReq.readyState==4)
+	    {
+			alert("**** Wait wait **** Check first Change to Do");
+			filePath="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg";
+			alert("wain again");
+			alert("@#@#@#@# : "+document.getElementById("myProImg").src);
+			document.getElementById("myProImg").src=filePath;
+			alert("8");
+		} 
+	  };
+		alert("6");
+		myfirstReq.send(parameters);
+		alert("7");
+}
+</script>
 
 <script type="text/javascript">
             
@@ -262,7 +311,7 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 				<div id="profile_photo" style="margin-top: -30px;">
 					<c:if test="${! empty ProfileImageList}">
 						<c:forEach items="${ProfileImageList}" var="ProfileImage">
-							<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
+							<img width="140px" height="140px" id="myProImg" style="border-radius: 50px;border: 3px solid red"
 								src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImage.profileImage}">
 							<br>&nbsp;&nbsp;&nbsp; <a href="#"
 								onclick="return DisplayChangePhotoBlock()">Change Photo</a>
@@ -280,21 +329,22 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 				<div id="ChangePhotoHome">
 					<form action="/vanjariudyogvishwa-v2/UpdateProfileImage"
 						method="post" enctype="multipart/form-data">
-						<input type="hidden" name="JspPageName" value="Changepassword"> <a
-							onclick="return HideChangePhotoBlock()"> <img
-							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							id="close" style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;"></a>
+						<!-- <input type="hidden" name="JspPageName" value="Changepassword"> -->
+						<a onclick="return HideChangePhotoBlock()"> 
+							<img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+								id="close" style="width: 40px; height: 40px; float: right; margin-right: 10px; margin-top: 5px;">
+						</a>
 
 						<table>
 							<tr>
-								<td>Pick file : <input type="file"
+								<td>Pick file : <input type="file" id="myNewProImg"
 									name="updateProfileImage" size="50" /></td>
 							</tr>
 							<tr>
 								<td colspan="2"><br>
 							</tr>
 							<tr>
-								<td><input type="submit" value="Upload" name=""></td>
+								<td><input type="submit" value="Upload" name="" onclick="return preChangeProImage()"></td>
 								<td></td>
 							</tr>
 						</table>

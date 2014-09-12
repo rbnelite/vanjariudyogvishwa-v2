@@ -21,9 +21,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
+import com.rbnelite.udyogvishwa.dto.ProfileImageCredential;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
@@ -92,15 +94,16 @@ public class ProfilePhotoOperationController {
 	    
 	    
 	    @RequestMapping(value="/UpdateProfileImage" , method=RequestMethod.POST)
-	    public String updateProfileImage(HttpServletRequest request,HttpServletResponse response,@RequestParam("JspPageName") String JspPageName,@RequestParam CommonsMultipartFile[] updateProfileImage, ModelMap map)throws Exception{
+	    public @ResponseBody ProfileImageCredential updateProfileImage(HttpServletRequest request,@RequestParam CommonsMultipartFile[] updateProfileImage, ModelMap map)throws Exception{
 	    	
-	    	System.out.println("frome upload file controller");
+	    	System.out.println("************ From Update Profile Image ************");
 	       
 	    	HttpSession session=request.getSession(true);
         	LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
         	String userMail=loginUser.getEmail();
         	String loginFLname=loginUser.getFirstName()+loginUser.getLastName();
-	         
+        	ProfileImageCredential pic = new ProfileImageCredential();
+        	
 	        if (updateProfileImage != null && updateProfileImage.length > 0) {
 	            for (CommonsMultipartFile aFile : updateProfileImage){
 	                 
@@ -116,8 +119,9 @@ public class ProfilePhotoOperationController {
 	                	profileImageService.UpdateProfileImage(fileName, userMail);
 	                	
 	                    aFile.transferTo(new File(saveDirectory + fileName));
+	                    pic.setProfileImage(fileName);
 
-	                    map.put("ProfileImage", new ProfileImages());
+	                    /*map.put("ProfileImage", new ProfileImages());
 	            		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 	            		
 	            		map.put("status11", new Status());
@@ -138,7 +142,7 @@ public class ProfilePhotoOperationController {
 	            		map.put("knownPeopleList", knowPeopleSet);
 	            		
 	            		map.put("friendRequest", new FriendRequest());
-	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));*/
 
 	            		map.put("ab", "your profile picture changed sucessfully");
 
@@ -148,7 +152,7 @@ public class ProfilePhotoOperationController {
 	        
 	      
 	                
-	    	return JspPageName;
+	    	return pic ;
 	    	
 	    }
 	    

@@ -38,27 +38,18 @@ setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
 <script type="text/javascript">
 //code for validation status post for blank code
 var flag="";
-function abc1(evt){
-	
-	 var charCode=(evt.which) ? evt.which :event.keyCode;
-	
-if(charCode==32 && (flag=="n" || flag==""))
-	{
-		flag="n";
-	}
-else
-	flag="y";
-if(charCode==8) flag="";
-}
 
-
-function abc(){
-	 var status1=document.myform.status.value;
-		 if(status1.length==0|| flag=="n")
+function validateMyStatus(){
+	var mystatus=document.myform.status.value;
+	 
+		 if(mystatus==null || mystatus=="")
 		 {
-		   alert("please enter something");
-		 return false;
-		 }	
+			document.getElementById("MyStatusError").innerHTML="Please Enter Your Status...!";
+		 	return false;
+		 }
+		 else{
+			 return true;
+		 }
 }
 
 function dispimgUploadBtn(){
@@ -138,10 +129,7 @@ function errorComment()
 	return true;
 	 }
 	 
-function setbg(color)
-{
-	document.getElementById("styledTextArea").style.background=color;
-}
+
 </script>
 <script type="text/javascript">
 function sendRequest(RequestTo){
@@ -208,23 +196,29 @@ function validatePhotoUploadForm(){
 	var newPhoto=document.MyPhotoForm.photoPath.value;
 	
 	if(pName==null || pName==""){
-		alert("Photo Name is Required...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Photo Name is Required...!!!";
 		document.getElementById("myPhotoTitle").focus();
 		return false;	
 	}
 	else if (pDetails==null || pDetails=="") {
-		alert("Photo Description is Required...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Photo Description is Required...!!! ";
 		return false;
 	}
 	else if(newPhoto==null || newPhoto==""){
-		alert("Select Photo to Upload...!!! ");
+		document.getElementById("myPhotoError").innerHTML="Select Photo to Upload...!!! ";
 		return false;
 	}
 	else {
-		alert("Saving Photo...");
 		return true;
 	}
 }
+function hideMyPhotoError() {
+	document.getElementById("myPhotoError").innerHTML="";
+}
+function hideMyStatusError() {
+	document.getElementById("MyStatusError").innerHTML="";
+}
+
 </script>
 
 <style type="text/css">
@@ -233,7 +227,16 @@ function validatePhotoUploadForm(){
 {
 cursor: pointer;
 }
-
+#MyStatusError{
+	color: red;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#myPhotoError{
+	color: red;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 #imgUploadBtn{
 	display: none;
 }
@@ -333,6 +336,19 @@ height:197px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/* font-family: Tahoma, sans-serif; */
 	background-color:rgba(228, 243, 245, 1);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	border-radius:8px;
+}
+#styledTextArea:FOCUS{
+	width: 666px;
+	height: 110px;
+	border: 2px solid red;
+	padding: 5px;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* font-family: Tahoma, sans-serif; */
+	background-color:white;
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	border-radius:8px;
@@ -671,11 +687,12 @@ input[type="button"][value="Comments"]
 						id="close"  style="width: 40px; height: 40px; float: right;">
 				
 						<tr>
-							<td><input id="myPhotoTitle" type="text" name="photoTitle" style="width: 444px;margin-top: 4px;border-radius:7px;"></td>
+							<td><input id="myPhotoTitle" type="text" name="photoTitle" placeholder="Enter Photo Title here..." style="width: 444px;margin-top: 4px;border-radius:7px;" onkeypress="return hideMyPhotoError();"></td>
 						</tr>
+						<tr><td id="myPhotoError"></td></tr>
 						<tr>
 							<td>
-								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 95px;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea><br>
+								<textarea name="photoDescription" id="styledTextArea" id="myPhotoDetails" placeholder="Enter Photos details here..." rows="2" cols="95" style="resize: none;height: 72px;" onkeypress="return hideMyPhotoError();"></textarea><br>
 							</td>
 						</tr>
 						<tr>
@@ -692,13 +709,14 @@ input[type="button"][value="Comments"]
 			
 				<form name="myform" action="/vanjariudyogvishwa-v2/Status"
 					method="post">
-					<table align="left">
+					<table align="left" style="width: 90%;margin-left: 2%;">
 						<tr>
 							<td>Update Status/Photo</td>
+							<td id="MyStatusError"></td>
 						</tr>
 					</table>
 					<br>
-					<textarea name="status" id="styledTextArea" placeholder="Enter your Status here..." rows="2" cols="95" style="resize: none;" onkeypress="return abc1(event)" onfocus="setbg('white');" onblur="setbg('rgba(228, 243, 245, 1)')"></textarea>
+					<textarea name="status" id="styledTextArea" id="myNewStatus" placeholder="Enter your Status here..." rows="2" cols="95" style="resize: none;" onkeypress="return hideMyStatusError();"></textarea>
 					<br>
 					<table align="right" width="70%">
 						<tr>
@@ -709,11 +727,8 @@ input[type="button"][value="Comments"]
 							
 							
 							<input type="hidden" name="usermail" value="${loginUser.email}">
-							<td><input type="submit" value="Post"
-
-								style="margin-right: -20px;border-radius:6px;width: 75px;height: 40px;" class="buttonclr"
-								onclick="return abc()">
-
+							<td><input type="submit" value="Post" style="margin-right: -20px;
+									border-radius:6px;width: 75px;height: 40px;" class="buttonclr"onclick="return validateMyStatus();">
 							</td>
 						</tr>
 					</table>
