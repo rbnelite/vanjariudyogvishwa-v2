@@ -86,5 +86,27 @@ public class StatusDaoImpl extends BaseDao<Status> implements StatusDao {
 			session.close();
 		}
 	}
+	
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void updateStatus(String myStatus, String statusId) {
+		Session session = sessionFactory.openSession();
+		try{
+		session.getTransaction().begin();
+
+		Integer id1 = Integer.parseInt(statusId);
+		Query query = session
+				.createQuery("update Status set status = :status1 where id = :id");
+		query.setParameter("status1", myStatus);
+		query.setParameter("id", id1);
+		query.executeUpdate();
+		session.getTransaction().commit();
+		session.flush();
+	}
+	finally
+		{
+	    	session.close();
+		}
+	}
 
 }

@@ -172,6 +172,74 @@ function sendFriendRequest(RequestTo){
 	
 }
 </script>
+<script type="text/javascript">
+	function editMyStatusReq(statusId){
+		document.getElementById("VUVStatus"+statusId).style.display='none';
+		document.getElementById("EditVUVStatus"+statusId).style.display='block';
+	}
+	function cancelEditMyStatus(statusId){
+		document.getElementById("VUVStatus"+statusId).style.display='block';
+		document.getElementById("EditVUVStatus"+statusId).style.display='none';
+	}
+	</script>
+	<script type="text/javascript">
+		function goEditStatus(statusId){
+			goEditMyStatusNow(statusId);
+			return false;
+		}
+	</script>
+	<script type="text/javascript">
+	
+	function goEditMyStatusNow(statusId){
+		var tempStat=document.getElementById("newVuvStatus"+statusId).value;
+		var statusDate="";
+		var usermail="";
+		var parameters = "status="+tempStat+"&id="+statusId+"&statusDate="+statusDate+"&usermail="+usermail+"";
+		
+		if (window.XMLHttpRequest)
+		{
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			myfirstReq=new XMLHttpRequest();
+		}
+		else
+		  {
+			// code for IE6, IE5
+			myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		myfirstReq.open("POST", "/vanjariudyogvishwa-v2/updateStatus", true);
+		
+		//Send the proper header information along with the request
+		myfirstReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		myfirstReq.setRequestHeader("Content-length", parameters .length);
+		myfirstReq.setRequestHeader("Connection", "close");
+		
+		myfirstReq.onreadystatechange=function()
+		  {		
+		  if (myfirstReq.readyState==4 && myfirstReq.status==200)
+		    {	
+		    	document.getElementById("VUVStatus"+statusId).style.display='block';
+			  	document.getElementById("vuvStatusStatus"+statusId).innerHTML=tempStat;
+				document.getElementById("EditVUVStatus"+statusId).style.display='none';
+		    } 
+		  };
+			myfirstReq.send(parameters);
+	}
+</script>
+<style type="text/css">
+	#editStatusBtn{
+		width: 33px;
+		height: 30px;
+		float: right;
+		margin-top: -75px;
+		margin-right:15px;
+		cursor: pointer;
+		background-image: url('${pageContext.request.contextPath}/resources/images/edit2.png');
+		background-color: transparent;
+		border:none;
+		color: rgba(129, 99, 227, 1);
+		font: 22px cursive MS;"
+	}
+</style>
 		<script type="text/javascript">
             
             var image1=new Image()
@@ -760,7 +828,20 @@ input[type="button"][value="Comments"]
 									<table width=100%>
 
 										<tr>
-											<td align="left"><pre style="font-family: Tahoma, sans-serif;">${notifStatus[0].status}</pre></td>
+											<td align="left" id="VUVStatus${notifStatus[0].id}">
+												<pre id="vuvStatusStatus${notifStatus[0].id}" style="font-family: Tahoma, sans-serif;">${notifStatus[0].status}</pre>
+												<c:if test="${notifStatus[0].user.emailId==loginUser.email}">
+													<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${notifStatus[0].id}');">
+												</c:if>
+											</td>
+											<td align="left" id="EditVUVStatus${notifStatus[0].id}" style="display: none;">
+											<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
+												<textarea id="newVuvStatus${notifStatus[0].id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${notifStatus[0].status}</textarea><br>
+												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');">
+												<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatus('${notifStatus[0].id}');">
+											</form>
+											</td>
+											
 										</tr>
 										<tr>
 											
@@ -917,12 +998,27 @@ input[type="button"][value="Comments"]
 									<table width=100% >
 
 										<tr>
-											<td align="left"><pre style="font-family: Tahoma, sans-serif;">${status11.status}</pre></td>
+											<td align="left" id="VUVStatus${status11.id}">
+												<pre id="vuvStatusStatus${status11.id}" style="font-family: Tahoma, sans-serif;">${status11.status}</pre>
+												<c:if test="${status11.user.emailId==loginUser.email}">
+													<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${status11.id}');">
+												</c:if>
+											</td>
+											
+												<td align="left" id="EditVUVStatus${status11.id}" style="display: none;">
+												<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
+													<textarea id="newVuvStatus${status11.id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${status11.status}</textarea><br>
+													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');">
+													<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatus('${status11.id}');">
+												</form>
+												</td>
+											
 										</tr>
 										<tr>
 											
 											<td align="right" colspan="2"><font color="gray" size="2">${status11.statusDate}</font></td>
 										</tr>
+										
 									</table>
 									<c:if test="${!empty status11.comments}">
 										<c:forEach items="${status11.comments}" var="myComment">

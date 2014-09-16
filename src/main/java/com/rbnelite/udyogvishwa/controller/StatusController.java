@@ -6,9 +6,6 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,13 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
-
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.dto.StatusCredential;
+import com.rbnelite.udyogvishwa.dto.StatusDTO;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
@@ -94,5 +89,15 @@ public class StatusController {
 	{
 		
 		return "Home";
+	}
+	
+	@RequestMapping(value="/updateStatus", method=RequestMethod.POST)
+	public @ResponseBody StatusDTO updateStatus(@ModelAttribute StatusDTO statusDto,ModelMap map){
+		
+		String statusId=""+statusDto.getId();
+
+		statusservice.updateStatus(statusDto.getStatus(), statusId);
+		
+		return statusDto; 
 	}
 }

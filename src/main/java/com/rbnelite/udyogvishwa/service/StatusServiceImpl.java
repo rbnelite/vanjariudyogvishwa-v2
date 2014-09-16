@@ -54,4 +54,10 @@ public class StatusServiceImpl implements StatusService {
 		
 		return statusdao.searchStatusList(SearchData);
 	}
+
+	@Override
+	public void updateStatus(String myStatus, String statusId) {
+		statusdao.updateStatus(myStatus, statusId);
+		
+	}
 }

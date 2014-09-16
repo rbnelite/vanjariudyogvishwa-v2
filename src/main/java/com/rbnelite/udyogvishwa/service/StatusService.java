@@ -13,5 +13,7 @@ public interface StatusService {
 	
 	public List searchStatusList(String SearchData);
 	
+	public void updateStatus(String myStatus, String statusId);
+	
 	
 }
