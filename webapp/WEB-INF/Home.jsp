@@ -177,11 +177,17 @@ function sendFriendRequest(RequestTo){
 		document.getElementById("VUVStatus"+statusId).style.display='none';
 		document.getElementById("EditVUVStatus"+statusId).style.display='block';
 	}
-	function cancelEditMyStatus(statusId){
+	function cancelEditMyStatusReq(statusId){
 		document.getElementById("VUVStatus"+statusId).style.display='block';
 		document.getElementById("EditVUVStatus"+statusId).style.display='none';
 	}
-	</script>
+	function deleteMyStatusReq(sIdToDel){
+		document.getElementById("deleteStatusConfirmBox"+sIdToDel).style.display='block';
+	}
+	function canceldeleteMyStatusReq(sIdToDel){
+		document.getElementById("deleteStatusConfirmBox"+sIdToDel).style.display='none';
+	}
+</script>
 	<script type="text/javascript">
 		function goEditStatus(statusId){
 			goEditMyStatusNow(statusId);
@@ -229,8 +235,6 @@ function sendFriendRequest(RequestTo){
 	#editStatusBtn{
 		width: 33px;
 		height: 30px;
-		float: right;
-		margin-top: -75px;
 		margin-right:15px;
 		cursor: pointer;
 		background-image: url('${pageContext.request.contextPath}/resources/images/edit2.png');
@@ -238,6 +242,15 @@ function sendFriendRequest(RequestTo){
 		border:none;
 		color: rgba(129, 99, 227, 1);
 		font: 22px cursive MS;"
+	}
+	
+	#InstructionDeleteStatus {
+	    width: 550px;
+	    height: 190px;
+	    margin-top: 50px;
+	    border: 1px solid #808080;
+	    border-radius: 2px;
+	    background-color: white;
 	}
 </style>
 		<script type="text/javascript">
@@ -502,24 +515,32 @@ input[type="button"][value="Comments"]
 			}
 			
 			textarea{
-				resize: none;
-				width:540px;
-				height:50px;
+				resize: vertical;
+				width:650px;
+				height:inherit;
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				background-color: rgba(246, 212, 212, 0.42);
-				border: 1px solid gray;
+				background-color: rgba(228, 243, 245, 1);
+				border: 1px solid #cccccc;
 				border-radius:5px;
+				padding-top: 0px;
+			    padding-right: 10px;
+			    padding-bottom: 0px;
+			    padding-left: 10px;
 			}
 			textarea:FOCUS{
-				resize: none;
-				width:540px;
-				height:50px;
+				resize: vertical;
+				width:650px;
+				height:inherit;
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				background-color:white;
 				border: 1px solid red;
 				border-radius:5px;
+				padding-top: 0px;
+			    padding-right: 10px;
+			    padding-bottom: 0px;
+			    padding-left: 10px;
 			}
 
     </style>
@@ -818,36 +839,53 @@ input[type="button"][value="Comments"]
 										height="72" width="70">
 								</div>
 
-								<div class="statusUserName"
-									style="float: left; margin-left: 10px;">
+								<div class="statusUserName" style="float: left; margin-left: 10px;">
 									<font color="green">${notifStatus[0].user.getDisplayName()}</font>
 								</div>
-								<br>
-
+								<div style="width: 120px; float: right;">
+									<c:if test="${notifStatus[0].user.emailId==loginUser.email}"> 
+										<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${notifStatus[0].id}');">
+										<input type="button" title="Delete This Status" value="" id="editStatusBtn" onclick="return deleteMyStatusReq('${notifStatus[0].id}');"
+												style="background-image:url('${pageContext.request.contextPath}/resources/icons/trash-empty-icon.png'); ">
+									</c:if>
+								</div>
+								
+								<div id="deleteStatusConfirmBox${notifStatus[0].id}" style="display: none; position: absolute;margin-left: 130px;">
+									<div id="InstructionDeleteStatus">
+										<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">Alert...!!! ${notifStatus[0].id}</h3>
+										<ol style="text-align: left;">
+											<li>Are you Sure ?</li>
+											<li> All Comments as well as Like/Unlike Counts related to this Status will be delete... </li>
+											<li>If you Don't want to delete then Click calcel Button.</li>
+										</ol>
+										<%-- <form action="/vanjariudyogvishwa-v2/deleteStatus" method="post"> --%>
+											<input type="submit" value="Delete" class="connectBtn" onclick="return goDeleteStatus('${notifStatus[0].id}');">
+											<input type="button" value="Cancel" class="connectBtn" onclick="return canceldeleteMyStatusReq('${notifStatus[0].id}');">
+										<%-- </form> --%>
+									</div>
+								</div>
+								
 								<div class="StatusContent">
 									<table width=100%>
 
 										<tr>
 											<td align="left" id="VUVStatus${notifStatus[0].id}">
 												<pre id="vuvStatusStatus${notifStatus[0].id}" style="font-family: Tahoma, sans-serif;">${notifStatus[0].status}</pre>
-												<c:if test="${notifStatus[0].user.emailId==loginUser.email}">
-													<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${notifStatus[0].id}');">
-												</c:if>
 											</td>
 											<td align="left" id="EditVUVStatus${notifStatus[0].id}" style="display: none;">
 											<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 												<textarea id="newVuvStatus${notifStatus[0].id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${notifStatus[0].status}</textarea><br>
 												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');">
-												<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatus('${notifStatus[0].id}');">
+												<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${notifStatus[0].id}');">
 											</form>
 											</td>
 											
 										</tr>
 										<tr>
-											
 											<td align="right" colspan="2"><font color="gray" size="2">${notifStatus[0].statusDate}</font></td>
 										</tr>
 									</table>
+									
 									<c:if test="${!empty notifStatus[0].comments}">
 										<c:forEach items="${notifStatus[0].comments}" var="myComment">
 
@@ -987,39 +1025,55 @@ input[type="button"][value="Comments"]
 										height="72" width="70">
 								</div>
 
-								<div class="statusUserName"
-									style="float: left; margin-left: 10px;">
-									
+								<div class="statusUserName" style="float: left; margin-left: 10px;">
 									<font color="green">${status11.user.getDisplayName()}</font>
 								</div>
-								<br>
-
+								
+								<div style="width: 120px; float: right;">
+									<c:if test="${status11.user.emailId==loginUser.email}">
+										<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${status11.id}');">
+										<input type="button" title="Delete This Status" value="" id="editStatusBtn" onclick="return deleteMyStatusReq('${status11.id}');"
+												style="background-image:url('${pageContext.request.contextPath}/resources/icons/trash-empty-icon.png'); ">
+									</c:if>
+								</div>
+								
+								<div id="deleteStatusConfirmBox${status11.id}" style="display: none; position: absolute;margin-left: 130px;">
+									<div id="InstructionDeleteStatus">
+										<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">Alert...!!! ${status11.id}</h3>
+										<ol style="text-align: left;">
+											<li>Are you Sure ?</li>
+											<li> All Comments as well as Like/Unlike Counts related to this Status will be delete... </li>
+											<li>If you Don't want to delete then Click calcel Button.</li>
+										</ol>
+										<%-- <form action="/vanjariudyogvishwa-v2/deleteStatus" method="post"> --%>
+											<input type="submit" value="Delete" class="connectBtn" onclick="return goDeleteStatus('${status11.id}');">
+											<input type="button" value="Cancel" class="connectBtn" onclick="return canceldeleteMyStatusReq('${status11.id}');">
+										<%-- </form> --%>
+									</div>
+								</div>
+								
 								<div class="StatusContent">
 									<table width=100% >
 
 										<tr>
 											<td align="left" id="VUVStatus${status11.id}">
 												<pre id="vuvStatusStatus${status11.id}" style="font-family: Tahoma, sans-serif;">${status11.status}</pre>
-												<c:if test="${status11.user.emailId==loginUser.email}">
-													<input type="button" title="Edit This Status" value="" id="editStatusBtn" onclick="return editMyStatusReq('${status11.id}');">
-												</c:if>
 											</td>
 											
 												<td align="left" id="EditVUVStatus${status11.id}" style="display: none;">
 												<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 													<textarea id="newVuvStatus${status11.id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${status11.status}</textarea><br>
 													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');">
-													<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatus('${status11.id}');">
+													<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${status11.id}');">
 												</form>
 												</td>
 											
 										</tr>
 										<tr>
-											
 											<td align="right" colspan="2"><font color="gray" size="2">${status11.statusDate}</font></td>
 										</tr>
-										
 									</table>
+									
 									<c:if test="${!empty status11.comments}">
 										<c:forEach items="${status11.comments}" var="myComment">
 
