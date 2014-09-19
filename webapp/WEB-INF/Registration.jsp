@@ -83,7 +83,7 @@
 				height:30px;
 				border: 1px solid gray;
 				border-radius:5px;
-				background-color: rgba(246, 212, 212, 0.42);
+				background-color: rgba(255, 255, 255, 0.09);
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			}
@@ -104,7 +104,7 @@
 				height:50px;
 				font-size: 18px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				background-color: rgba(246, 212, 212, 0.42);
+				background-color: rgba(255, 255, 255, 0.09);
 				border: 1px solid gray;
 				border-radius:5px;
 			}

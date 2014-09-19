@@ -1255,3 +1255,24 @@ h4 {
 	border-radius:2px;
 	background-color: rgba(255, 255, 255, 0.63);
 }
+
+
+input[type="text"],input[type="password"],input[type="email"], select {
+	width:235px;
+	height:30px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius:5px;
+	background-color: transparent;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+			
+input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS, select :ACTIVE{
+	width:235px;
+	height:30px;
+	border: 1px solid rgba(28, 87, 227, 0.28);
+	border-radius:5px;
+	background-color: rgba(255, 255, 255, 0.69);
+	font-size: 18px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

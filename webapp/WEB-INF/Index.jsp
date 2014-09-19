@@ -128,27 +128,6 @@
             }
     </script>
     <style type="text/css">
-    	input[type="text"],input[type="password"], select {
-				width:235px;
-				height:30px;
-				border: 1px solid gray;
-				border-radius:5px;
-				background-color: rgba(246, 212, 212, 0.42);
-				font-size: 18px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				padding: 0px 8px;
-			}
-			
-			input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
-				width:235px;
-				height:30px;
-				border: 2px solid red;
-				border-radius:5px;
-				background-color:white;
-				font-size: 18px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-				padding: 0px 8px;
-			}
 			#VUVloginBtn{
 				height: 35px;
 				width: 80px;

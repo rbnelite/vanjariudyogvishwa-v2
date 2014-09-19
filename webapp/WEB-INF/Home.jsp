@@ -444,25 +444,7 @@ height:197px;
 	background-repeat: no-repeat;
 	border-radius:8px;
 }
-#SearchByProTxt{
-	width:200px;
-	height:30px;
-	margin-top:10px;
-	border: 1px solid gray;
-	border-radius:5px;
-	background-color: rgba(246, 212, 212, 0.42);
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-#SearchByProTxt:HOVER{
-	width:200px;
-	height:30px;
-	border: 2px solid red;
-	border-radius:5px;
-	background-color:white;
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
 input[type="button"][value="Like"]
 {
    	background: repeat scroll 0% 0% transparent;
@@ -504,26 +486,7 @@ input[type="button"][value="Comments"]
 }
 </style>
 <style type="text/css">
-    	 input[type="text"]{
-				width:235px;
-				height:30px;
-				border: 1px solid gray;
-				border-radius:5px;
-				background-color: rgba(246, 212, 212, 0.42);
-				font-size: 18px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			}
-			
-			input[type="text"]:FOCUS{
-				width:235px;
-				height:30px;
-				border: 2px solid red;
-				border-radius:5px;
-				background-color:white;
-				font-size: 18px;
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			}
-			
+    	 	
 			textarea{
 				resize: vertical;
 				width:650px;
@@ -1268,19 +1231,6 @@ input[type="button"][value="Comments"]
 					</table>
 				</div>
 				</div>
-				
-				<%-- <form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
-					<table>
-						<tr>
-							<td><input id="SearchByProTxt" type="text" name="SearchDatabyprofession" placeholder="Search People By Profession"></td>
-							<td><input id="VUVsearchByProBtn" type="submit" value="search"></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><a href="SearchPeopleByProfession">more.....</a></td>
-						</tr>
-					</table>
-				</form> --%>
 				
 				<h3 style="background-color:#FF6300; font-family: vardana; margin-top: 0px;">AdvertiseMents</h3>
 				<div id="OutsideRightMessage">

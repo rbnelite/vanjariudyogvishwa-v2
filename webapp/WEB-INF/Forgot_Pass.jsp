@@ -35,29 +35,6 @@
 		
 	}
 </script>
-<style type="text/css">
-input[type="email"]{
-	width:235px;
-	height:30px;
-	border: 1px solid gray;
-	border-radius:3px;
-	background-color: rgba(246, 212, 212, 0.42);
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 0px 8px;
-}
-			
-input[type="email"]:FOCUS{
-	width:235px;
-	height:30px;
-	border: 2px solid red;
-	border-radius:3px;
-	background-color:white;
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 0px 8px;
-}
-</style>
 </head>
 <body style="background-color: bisque" onload="return onloadChangePwd();">
 	
