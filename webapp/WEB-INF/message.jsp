@@ -187,33 +187,14 @@ color:rgba(171, 139, 139, 1);
 	border: 1px solid gray; 
 }
 
-input[type="text"],input[type="password"], select {
-	width:235px;
-	height:30px;
-	border: 1px solid gray;
-	border-radius:5px;
-	background-color: rgba(133, 219, 237, 0.42);
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-			
-input[type="text"]:FOCUS, input[type="password"]:FOCUS, select :ACTIVE{
-	width:235px;
-	height:30px;
-	border: 2px solid red;
-	border-radius:5px;
-	background-color:white;
-	font-size: 18px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-} 
 textarea{
 	resize: none;
 	width:290px;
 	height:50px;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: rgba(133, 219, 237, 0.42);
-	border: 1px solid gray;
+	background-color: rgba(255, 255, 255, 0.69);
+	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius:5px;
 }
 textarea:FOCUS{
@@ -222,8 +203,8 @@ textarea:FOCUS{
 	height:50px;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color:white;
-	border: 1px solid red;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(28, 87, 227, 0.28);
 	border-radius:5px;
 }
 </style>

@@ -113,26 +113,29 @@ h4{
 } */
 
 input[value="Edit"], input[type="reset"]{
-	width: 90px;
-	height: 40px;
-	background-color: rgba(240, 59, 59, 0.25);
-	color:black;
-	border-radius: 6px;
-	border: 1px solid black;
-	font-size: 20px;
+	height: 30px;
+	width: 67px;
+	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	cursor: pointer;
+	border-radius:5px;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
+    background-color: orange;
+    color: black;
+    border: 1px solid rgba(17, 196, 245, 0.56);
 	margin-top: 30px;
 }
 input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
-	width: 90px;
-	height: 40px;
-	background-color: rgba(240, 59, 59, 0.45);
-	color:black;
-	border-radius: 6px;
-	border: 1px solid black;
-	font-size: 20px;
+	height: 30px;
+	width: 67px;
+	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
+	border-radius:5px;
+	background: repeat scroll 0% 0% transparent;
+    background-color: rgba(26, 118, 222, 0.43);
+    color: rgba(216, 241, 242, 1);
+    border: 1px solid orange;
 }
 #IntrestAreaImages {
 	width: 100px;
@@ -280,7 +283,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 }
 </style>
 
-<title>${loginUser.firstName}${loginUser.lastName}'s Profile Page</title>
+<title>${loginUser.firstName}${loginUser.lastName}'s Profile Page on Vanjari Udyog Vishwa</title>
 
 </head>
 <body>

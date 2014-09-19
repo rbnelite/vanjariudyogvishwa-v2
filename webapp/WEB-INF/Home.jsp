@@ -421,12 +421,12 @@ height:197px;
 #styledTextArea{
 	width: 666px;
 	height: 110px;
-	border: 3px solid #cccccc;
+	border: 1px solid rgba(0, 0, 0, 0.3);
 	padding: 5px;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/* font-family: Tahoma, sans-serif; */
-	background-color:rgba(228, 243, 245, 1);
+	background-color: rgba(255, 255, 255, 0.69);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	border-radius:8px;
@@ -434,12 +434,12 @@ height:197px;
 #styledTextArea:FOCUS{
 	width: 666px;
 	height: 110px;
-	border: 2px solid red;
+	border: 1px solid rgba(28, 87, 227, 0.28);
 	padding: 5px;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	/* font-family: Tahoma, sans-serif; */
-	background-color:white;
+	background-color: rgba(255, 255, 255, 0.9);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	border-radius:8px;
