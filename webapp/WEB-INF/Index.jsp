@@ -223,7 +223,7 @@
 							<tr>
 								<td>
 									<a id="LoginErrorDiv"><font color="#F80CAA" style="font-size: 18px;">${LoginError}</font></a>
-									<a id="LogOutMsgDiv"><font color="green" style="font-size: 18px;">${LogOutMsg}</font></a>
+									<a id="LogOutMsgDiv"><font color="green" style="font-size: 18px;">${LogOutMsg} ${changePwdMessage}</font></a>
 								</td>
 							</tr>
 							

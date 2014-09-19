@@ -17,20 +17,80 @@
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <script type="text/javascript">
-	//code for validation status post for blank code
-	function abc1() {
-		var status1 = document.myform.status.value;
-
-		if (status1.length == 0) {
-			alert("please enter something");
-			return false;
-		}
-
-	}
-	
 	function validateChangePassword()
 	{
+		var oldPwd=document.getElementById("OldPassword").value;
+		var newPwd=document.getElementById("NewPassword").value;
+		var reNewPwd=document.getElementById("ReNewPassword").value;
 		
+		
+		if (oldPwd=="" && newPwd=="" && reNewPwd=="" ) {
+			document.getElementById("ChangePwdError").innerHTML="All Fields Marked with (*) are mandetary...!!!";
+			document.getElementById("OldPassword").focus();
+				return false;
+		}
+		
+		else if (oldPwd==null || oldPwd=="") {
+			document.getElementById("ChangePwdError").innerHTML="You Must Provide Old Password.";
+			document.getElementById("OldPassword").focus();
+				return false;
+		}
+		
+		else if (newPwd==null || newPwd=="") {
+			document.getElementById("ChangePwdError").innerHTML="You Must Provide New Password.";
+			document.getElementById("NewPassword").focus();
+				return false;
+		}
+		else if (reNewPwd==null || reNewPwd=="") {
+			document.getElementById("ChangePwdError").innerHTML="Provide New Password Again.";
+			document.getElementById("ReNewPassword").focus();
+				return false;
+		}
+		else if(newPwd!=reNewPwd)
+		{
+			document.getElementById("ChangePwdError").innerHTML="New Password & Confirm Password are not same.";
+			document.getElementById("ReNewPassword").focus();
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	function checkOldPwdNull(){
+		var oldPwd=document.getElementById("OldPassword").value;
+		if (oldPwd==null || oldPwd=="") {
+			document.getElementById("ChangePwdError").innerHTML="You Must Provide Old Password.";
+			document.getElementById("OldPassword").focus();
+				return false;
+		}
+	}
+	function checkNewPwdNull(){
+		var newPwd=document.getElementById("NewPassword").value;
+		if (newPwd==null || newPwd=="" ) {
+			document.getElementById("ChangePwdError").innerHTML="You Must Provide New Password.";
+			document.getElementById("NewPassword").focus();
+				return false;
+		}
+		if ( newPwd.length<6) {
+			document.getElementById("ChangePwdError").innerHTML="Password must contain 1 digit, 1 Character, and Length must be 6 to 16.";
+			document.getElementById("NewPassword").focus();
+				return false;
+		}
+	}
+	function checkEqualityPwd(){
+		var newPwd=document.getElementById("NewPassword").value;
+		var reNewPwd=document.getElementById("ReNewPassword").value;
+		if(newPwd!=reNewPwd)
+		{
+			document.getElementById("ChangePwdError").innerHTML="New Password & Confirm Password are not same.";
+			document.getElementById("NewPassword").focus();
+			return false;
+		}
+	}
+	
+	function clearChangePwdError(){
+		document.getElementById("ChangePwdError").innerHTML="";
 	}
 	
 	function DisplayChangePhotoBlock(){
@@ -50,6 +110,7 @@
 		var temp = document.getElementById("submit1").click();
 	}
 </script>
+
 <script type="text/javascript">
 function sendRequest(RequestTo){
 	
@@ -507,39 +568,38 @@ input[value="Save Changes"]:HOVER, input[type="reset"]:HOVER{
 			<div id="MiddleTopchangepwd" style="margin-left: 305px;">
 			
 				<div id="changeMyPwd2">
-					<form:form action="/vanjariudyogvishwa-v2/ChangePassword" method="post" commandName="changepwd">
-						<form:errors cssClass="errorblock"/>
-					<input type="hidden" name="user_email" value="${loginUser.email}">
+					<form action="/vanjariudyogvishwa-v2/ChangePassword" method="post" commandName="changepwd">
+					<input type="hidden" id="NewPasswordUserMail" name="user_email" value="${loginUser.email}">
 					<center>
-					<h5><font color="blue">${changePwdMessage}</font></h5>
 						<table width=70% style="margin-top: 10px">
 							<tr>
 								<th colspan="2">Change Password</th>
 							</tr>
 							<tr>
-								<td style="padding-top: 15px;padding-bottom: -6px;">Old password:</td>
-								<td style="padding-top: 15px;padding-bottom: -6px;"><form:password path="Password"/>
-								
-								</td><td><form:errors path="Password" cssClass="error"/></td>
+								<td style="padding-top: 15px;padding-bottom: -6px;">Old password: (<font color="red">*</font>)</td>
+								<td style="padding-top: 15px;padding-bottom: -6px;"><input id="OldPassword" type="password" name="password" placeholder="Old Password" size="30" maxlength="16"
+								 		title="Type Your Currend password" onkeypress="return clearChangePwdError();"/></td>
 							</tr>
 							<tr >
-								<td style="padding-top: 7px;padding-bottom: -6px;">New password:</td>
-								<td style="padding-top: 7px;padding-bottom: -6px;"><form:password path="NewPassword"/></td>
-								<td><form:errors path="NewPassword" cssClass="error"/></td>
+								<td style="padding-top: 7px;padding-bottom: -6px;">New password: (<font color="red">*</font>)</td>
+								<td style="padding-top: 7px;padding-bottom: -6px;"><input id="NewPassword" type="password" name="newPassword" placeholder="New Password" size="30" maxlength="16" 
+										title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." onfocus="return checkOldPwdNull();" onkeypress="return clearChangePwdError();"/></td>
 							</tr>
 							<tr>
-								<td style="padding-top: 7px;padding-bottom: -6px;">Confirm password:</td>
-								<td style="padding-top: 7px;padding-bottom: -6px;"><form:password path="RePassword"/></td>
-								<td><form:errors path="RePassword" cssClass="error"/></td>
+								<td style="padding-top: 7px;padding-bottom: -6px;">Confirm password: (<font color="red">*</font>)</td>
+								<td style="padding-top: 7px;padding-bottom: -6px;"><input id="ReNewPassword" type="password" name="rePassword" placeholder="Confirm Password" size="30" maxlength="16"
+										title="Type password matches to above" onfocus="return checkNewPwdNull();" onkeypress="return clearChangePwdError();" onblur="checkEqualityPwd();"/></td>
 							</tr>
 							<tr>
-								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value="Save Changes"></center></td>
+								<td style="padding-top: 15px;padding-bottom: -6px;"><center><input type="submit" value="Save Changes" onclick="return validateChangePassword();"></center></td>
 								<td style="padding-top: 15px;padding-bottom: -6px;"><input type="reset" value="Cancel"></td>
 							</tr>
-
+							<tr>
+								<td colspan="2" id="ChangePwdError" style="color: red"><h5><font color="blue">${changePwdMessage}</font></h5></td>
+							</tr>
 						</table>
 					</center>
-				</form:form>
+				</form>
 				</div>
 			</div>
 			

@@ -4,5 +4,5 @@ import com.rbnelite.udyogvishwa.dto.ChangePasswordCredential;
 
 public interface ChangePasswordService {
 
-	public String savePassword(ChangePasswordCredential changepasscred);
+	public Boolean savePassword(ChangePasswordCredential changepasscred);
 }

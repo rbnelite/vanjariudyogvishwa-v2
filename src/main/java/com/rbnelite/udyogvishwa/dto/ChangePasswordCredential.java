@@ -3,9 +3,9 @@ package com.rbnelite.udyogvishwa.dto;
 
 public class ChangePasswordCredential {
 
-	private String Password;
-	private String NewPassword;
-	private String RePassword;
+	private String password;
+	private String newPassword;
+	private String rePassword;
 	private String user_email;
 	
 	public String getUser_email() {
@@ -15,22 +15,22 @@ public class ChangePasswordCredential {
 		this.user_email = user_email;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getNewPassword() {
-		return NewPassword;
+		return newPassword;
 	}
 	public void setNewPassword(String newPassword) {
-		NewPassword = newPassword;
+		this.newPassword = newPassword;
 	}
 	public String getRePassword() {
-		return RePassword;
+		return rePassword;
 	}
 	public void setRePassword(String rePassword) {
-		RePassword = rePassword;
+		this.rePassword = rePassword;
 	}
 	
 	

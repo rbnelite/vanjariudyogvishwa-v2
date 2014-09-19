@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import com.rbnelite.udyogvishwa.dao.ChangePasswordDao;
 import com.rbnelite.udyogvishwa.dao.IndexDao;
 import com.rbnelite.udyogvishwa.dto.ChangePasswordCredential;
+import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.ChangePassword;
 import com.rbnelite.udyogvishwa.model.Index;
+import com.rbnelite.udyogvishwa.utils.RequestContext;
 
 @Service
 public class ChangePasswordServiceImpl implements ChangePasswordService{
@@ -21,34 +23,25 @@ public class ChangePasswordServiceImpl implements ChangePasswordService{
 	private IndexDao indexdao;
 	
 	@Override
-	public String savePassword(ChangePasswordCredential changepasscred) {
+	public Boolean savePassword(ChangePasswordCredential changepasscred) {
 		
+		LoginUser loginUser = RequestContext.getUser();
+		String userMail=loginUser.getEmail();
+
 		ChangePassword cp=new ChangePassword();
 		
-		String newpass=changepasscred.getNewPassword();
-		String repass=changepasscred.getRePassword();
-		String changePwdMessage="";
-				
+		cp.setUser_email(userMail);
+		cp.setNewPassword(changepasscred.getNewPassword());
+		cp.setPassword(changepasscred.getPassword());
 		
-		if(newpass.equals(repass))
-		{
-			cp.setUser_email(changepasscred.getUser_email());
-			cp.setNewPassword(changepasscred.getNewPassword());
-			cp.setPassword(changepasscred.getPassword());
-			
-			List<Index> OldList= indexdao.loginAuthintication(changepasscred.getUser_email(), changepasscred.getPassword());
-			if(!OldList.isEmpty()){
-				changepassdao.changePassword(cp);
-				changePwdMessage="password changed successfully. Please log out and then logIn again";
-				return changePwdMessage;
-			}else{
-				changePwdMessage="Old pasword is not Correct.";
-				return changePwdMessage;
-			}
-		}else{
-			changePwdMessage="New passwords & Conform password are not equal. Please provide equal password.";
-			return changePwdMessage;
+		List<Index> OldList= indexdao.loginAuthintication(cp.getUser_email(), cp.getPassword());
+		
+		if(!OldList.isEmpty()){
+			changepassdao.changePassword(cp);
+			return true;
 		}
-	
+		else{
+			return false;
+		}
 	}
 }
