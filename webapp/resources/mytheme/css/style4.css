@@ -1176,10 +1176,10 @@ h4 {
 
 .savebtn
 {
-	background-color: rgba(237, 165, 49, 1);
+	background-color: rgba(237, 165, 49, 0.31);
 	height: 40px;
 	width: 132px;
-	border: 2px solid black;
+	border: 1px solid #87CEEB;
 	color: black;
 	cursor: pointer;
 	font: 16px/100% Arial,Helvetica,sans-serif;
@@ -1187,10 +1187,10 @@ h4 {
 }
 .savebtn:HOVER
 {
-	background-color:menu;
+	background-color: rgba(243, 246, 249, 0.43);
 	height: 40px;
 	width: 132px;
-	border: 2px solid black;
+	border: 1px solid #87CEEB;
 	color: black;
 	cursor: pointer;
 	font: 16px/100% Arial,Helvetica,sans-serif;
