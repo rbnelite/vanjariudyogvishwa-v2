@@ -54,6 +54,7 @@
 					<td>
 						<a id="EmailError" style="color: red;"></a>
 						<a id="ValidEmailerror" style="color: red;">${forgotPassMessage}</a>
+						<!-- <a id="ValidEmailerror" style="color: red;">If the email address you entered, sawantmanojm@gmail.com, is associated with an account in our records, you will receive an email from us with instructions for resetting your password.If you don't receive this email, please check your junk mail folder.</a> -->
 					</td>
 				</tr>
 				<tr>

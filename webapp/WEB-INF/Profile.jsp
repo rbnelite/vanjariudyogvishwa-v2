@@ -79,6 +79,34 @@ function sendFriendRequest(RequestTo){
 }
 </script>
 <script type="text/javascript">
+	function dispEditEdu(){
+		document.getElementById("EducationDetailsTbl2").style.display='block';
+		document.getElementById("EducationDetailsTbl1").style.display='none';
+		
+	}
+	function dispEditContact(){
+		document.getElementById("ContactDetailsTbl2").style.display='block';
+		document.getElementById("ContactDetailsTbl1").style.display='none';
+		
+		
+	}
+	function dispEditHobbies(){
+		document.getElementById("HobbiesDetailsTbl2").style.display='block';
+		document.getElementById("HobbiesDetailsTbl1").style.display='none';
+		
+	}
+	function dispEditReligion(){
+		document.getElementById("ReligionDetailsTbl2").style.display='block';
+		document.getElementById("ReligionDetailsTbl1").style.display='none';
+		
+	}
+	function dispEditOtherDetails(){
+		document.getElementById("OtherDetailsTbl2").style.display='block';
+		document.getElementById("OtherDetailsTbl1").style.display='none';
+		
+	}
+</script>
+<script type="text/javascript">
             
             var image1=new Image()
             image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
@@ -106,12 +134,13 @@ h4{
     font-size: 12px;
 }
 
-/* input[type=text] {
-	width: 400px;
-	height: auto;
-	font-size: large;
-} */
-
+input[type="text"], select {
+	margin-bottom: 10px;
+}
+select{
+	width: 255px;
+	height: 35px;
+}
 input[value="Edit"], input[type="reset"]{
 	height: 30px;
 	width: 67px;
@@ -123,7 +152,7 @@ input[value="Edit"], input[type="reset"]{
     background-color: orange;
     color: black;
     border: 1px solid rgba(17, 196, 245, 0.56);
-	margin-top: 30px;
+	margin-top: 10px;
 }
 input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	height: 30px;
@@ -513,15 +542,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 					<div id="ProfileDetails">
 
 						<c:if test="${!empty educationworkList}">
-							<form action="/vanjariudyogvishwa-v2/EditEducationDetails">
-								<input id="EditProfileDetails" type="submit" value="" name="editEducationReqBtn"
+							<input id="EditProfileDetails" type="submit" value="" name="editEducationReqBtn" onclick="return dispEditEdu();"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
+								
 								<div id="InsideProfileDetails">
 									<h3>Education Details</h3>
-									<table>
-										<c:forEach items="${educationworkList}" var="educationWORK">
+									<c:forEach items="${educationworkList}" var="educationWORK">
+										<table id="EducationDetailsTbl1" style="display: block;">
 											<tr>
 												<td style="width: 200px;"><b>Name of School :</b></td>
 												<td>${educationWORK.school}</td>
@@ -550,125 +577,104 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 												<td><b>Specialization :</b></td>
 												<td>${educationWORK.otherPG}</td>
 											</tr>
+										</table>
 
+										<form action="/vanjariudyogvishwa-v2/EditEducation" method="post">
+											<input type="hidden" name="userMail" value="${loginUser.email}">
+											<table id="EducationDetailsTbl2" style="display: none;">
+												<tr>
+													<td style="width: 200px;"><b>Name of School :</b></td>
+													<td><input type="text" name="school"
+														value="${educationWORK.school}"></td>
+												</tr>
+												<tr>
+													<td><b>Name of College :</b></td>
+													<td><input type="text" name="collage"
+														value="${educationWORK.collage}"></td>
+												</tr>
+												<tr>
+													<td><b>Graduation Degree :</b></td>
+													<td><select name="graduation">
+															<option selected="selected">${educationWORK.graduation}</option>
+															<option>BA</option>
+															<option>BBA</option>
+															<option>B.B.M.</option>
+															<option>BCA</option>
+															<option>B.Com</option>
+															<option>B.D.S</option>
+															<option>B.Sc</option>
+															<option>B.Sc.HS</option>
+															<option>B.E</option>
+															<option>B.Tech</option>
+															<option>B.Ed.</option>
+															<option>BHMCT</option>
+															<option>B.Pharm</option>
+															<option>D.T.L</option>
+															<option>Diploma in Journalism</option>
+															<option>Diploma in Philosophy</option>
+															<option>Diploma in Social Work</option>
+															<option>DM</option>
+															<option>D.Ed</option>
+															<option>GNM</option>
+															<option>LLB</option>
+															<option>LLM</option>
+													</select></td>
+												</tr>
+												<tr>
+													<td><b>Specialization :</b></td>
+													<td><input type="text" name="otherGraduation"
+														value="${educationWORK.otherGraduation}"></td>
+												</tr>
+												<tr>
+													<td><b>PG College Name :</b></td>
+													<td><input type="text" name="PGCollege"
+														value="${educationWORK.PGCollege}"></td>
+												</tr>
+												<tr>
+													<td><b>PG Degree:</b></td>
+													<td><select name="PGDegree">
+															<option selected="selected">${educationWORK.PGDegree}</option>
+															<option>MA</option>
+															<option>M.Sc</option>
+															<option>MCA</option>
+															<option>MBA</option>
+															<option>M.Tech</option>
+															<option>M.E</option>
+															<option>M.Com</option>
+															<option>MD</option>
+															<option>MS</option>
+															<option>MBBS</option>
+															<option>M.CH</option>
+															<option>M.D.S</option>
+															<option>M.PhT.</option>
+															<option>M.Arch.</option>
+															<option>M.Ed</option>
+															<option>M.Phil</option>
+															<option>M.P.Ed.</option>
+															<option>M.P.E.</option>
+															<option>M.Pharm</option>
+															<option>PGICVTCA</option>
+															<option>Ph.D</option>
+															<option>Other</option>
+															<option>none</option>
+													</select></td>
+												</tr>
+												<tr>
+													<td><b>Specialization :</b></td>
+													<td><input type="text" name="otherPG"
+														value="${educationWORK.otherPG}"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit"
+														name="editEducationBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+											</form>
 										</c:forEach>
-									</table>
+									
 								</div>
-							</form>
 						</c:if>
-						<c:if test="${!empty EditEducationDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/EditEducation" method="post">
-								<input type="hidden" name="userMail" value="${loginUser.email}">
-								<h3>Edit Education Details</h3>
-
-
-								<div id="InsideProfileDetails">
-
-									<table>
-										<c:forEach items="${EditEducationDetailsList}" var="EditEducationDetails">
-											<tr>
-												<td style="width: 200px;"><b>Name of School :</b></td>
-												<td><input type="text" name="school"
-													value="${EditEducationDetails.school}"></td>
-											</tr>
-											<tr>
-												<td><b>Name of College :</b></td>
-												<td><input type="text" name="collage"
-													value="${EditEducationDetails.collage}"></td>
-											</tr>
-											<tr>
-												<td><b>Graduation Degree :</b></td>
-												<td><select name="graduation"
-													style="width: 400px; height: auto;">
-														<option selected="selected">${EditEducationDetails.graduation}</option>
-														<option>BA</option>
-														<option>BBA</option>
-														<option>B.B.M.</option>
-														<option>BCA</option>
-														<option>B.Com</option>
-														<option>B.D.S</option>
-														<option>B.Sc</option>
-														<option>B.Sc.HS</option>
-														<option>B.E</option>
-														<option>B.Tech</option>
-														<option>B.Ed.</option>
-														<option>BHMCT</option>
-														<option>B.Pharm</option>
-														<option>D.T.L</option>
-														<option>Diploma in Journalism</option>
-														<option>Diploma in Philosophy</option>
-														<option>Diploma in Social Work</option>
-														<option>DM</option>
-														<option>D.Ed</option>
-														<option>GNM</option>
-														<option>LLB</option>
-														<option>LLM</option>
-												</select></td>
-											</tr>
-											<tr>
-												<td><b>Specialization :</b></td>
-												<td><input type="text" name="otherGraduation"
-													value="${EditEducationDetails.otherGraduation}"></td>
-											</tr>
-											<tr>
-												<td><b>PG College Name :</b></td>
-												<td><input type="text" name="PGCollege"
-													value="${EditEducationDetails.PGCollege}"></td>
-											</tr>
-											<tr>
-												<td><b>PG Degree:</b></td>
-												<%-- <td><input type="text" name="PGDegree"
-													value="${EditEducationDetails.PGDegree}">
-											</td> --%>
-												<td><select name="PGDegree"
-													style="width: 400px; height: auto;">
-														<option selected="selected">${EditEducationDetails.PGDegree}</option>
-														<option>MA</option>
-														<option>M.Sc</option>
-														<option>MCA</option>
-														<option>MBA</option>
-														<option>M.Tech</option>
-														<option>M.E</option>
-														<option>M.Com</option>
-														<option>MD</option>
-														<option>MS</option>
-														<option>MBBS</option>
-														<option>M.CH</option>
-														<option>M.D.S</option>
-														<option>M.PhT.</option>
-														<option>M.Arch.</option>
-														<option>M.Ed</option>
-														<option>M.Phil</option>
-														<option>M.P.Ed.</option>
-														<option>M.P.E.</option>
-														<option>M.Pharm</option>
-														<option>PGICVTCA</option>
-														<option>Ph.D</option>
-														<option>Other</option>
-														<option>none</option>
-												</select></td>
-											</tr>
-											<tr>
-												<td><b>Specialization :</b></td>
-												<td><input type="text" name="otherPG"
-													value="${EditEducationDetails.otherPG}"></td>
-											</tr>
-											<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editEducationBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-										</c:forEach>
-									</table>
-								</div>
-							</form>
-						</c:if>
-
-
 					</div>
 
 				</div>
@@ -677,16 +683,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
 						<c:if test="${!empty contactInfoList}">
-
-							<form action="/vanjariudyogvishwa-v2/EditContactDetails">
-								<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn"
+							<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn" onclick="return dispEditContact();"
 								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail" value="${loginUser.email}">
 
 								<div id="InsideProfileDetails">
 									<h3>Contact Details</h3>
-									<table>
-										<c:forEach items="${contactInfoList}" var="contactInfo">
+									<c:forEach items="${contactInfoList}" var="contactInfo">
+										<table id="ContactDetailsTbl1" style="display: block;">
 											<tr>
 												<td><b>Home Address :</b></td>
 												<td>${contactInfo.homeAddress}</td>
@@ -701,57 +704,31 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 												<td>${contactInfo.contactNo}</td>
 
 											</tr>
-
-										</c:forEach>
-
-									</table>
+										</table>
+									
+										<form action="/vanjariudyogvishwa-v2/editContact" method="post">
+											<input type="hidden" name="userMail" value="${loginUser.email}">
+											<table id="ContactDetailsTbl2" style="display: none;">
+												<tr>
+													<td><b>Home Address :</b></td>
+													<td><input type="text" name="homeAddress"value="${contactInfo.homeAddress}"></td>
+												</tr>
+												<tr>
+													<td><b>Office Address :</b></td>
+													<td><input type="text" name="officeAddress" value="${contactInfo.officeAddress}"></td>
+												</tr>
+												<tr>
+													<td><b>Telephone No. :</b></td>
+													<td><input type="text" name="telephone" value="${contactInfo.contactNo}"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+										</form>
+									</c:forEach>
 								</div>
-							</form>
-						</c:if>
-
-
-						<c:if test="${!empty EditContactDetailsList}">
-
-							<form action="/vanjariudyogvishwa-v2/editContact" method="post">
-
-								<input type="hidden" name="userMail" value="${loginUser.email}">
-
-								<h3>Edit Contact Details</h3>
-								<div id="InsideProfileDetails">
-
-									<table>
-										<c:forEach items="${EditContactDetailsList}"
-											var="EditContactDetails">
-											<tr>
-												<td><b>Home Address :</b></td>
-												<td><input type="text" name="homeAddress"
-													value="${EditContactDetails.homeAddress}"></td>
-											</tr>
-											<tr>
-												<td><b>Office Address :</b></td>
-												<td><input type="text" name="officeAddress"
-													value="${EditContactDetails.officeAddress}"></td>
-											</tr>
-											<tr>
-												<td><b>Telephone No. :</b></td>
-												<td><input type="text" name="telephone"
-													value="${EditContactDetails.contactNo}"></td>
-											</tr>
-											<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editContactBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-										</c:forEach>
-
-
-									</table>
-								</div>
-							</form>
 						</c:if>
 
 					</div>
@@ -759,17 +736,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-
 						<c:if test="${!empty hobbiesList}">
-							<form action="/vanjariudyogvishwa-v2/EditHobbiesDetails">
-								<input id="EditProfileDetails" type="submit" value="" name="editHobbiesReqBtn"
+							<input id="EditProfileDetails" type="submit" value="" name="editHobbiesReqBtn" onclick="return dispEditHobbies();"
 								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<div id="InsideProfileDetails">
-									<h3>Hobbies</h3>
-									<table>
-										<c:forEach items="${hobbiesList}" var="hobbiesDetails">
+							<div id="InsideProfileDetails">
+								<h3>Hobbies Details</h3>
+									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
+										<table id="HobbiesDetailsTbl1" style="display: block;" >
 											<tr>
 												<td style="width: 200px;"><b>Hobbies :</b></td>
 												<td>${hobbiesDetails.hobbiesName}</td>
@@ -783,19 +756,17 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 												<td>${hobbiesDetails.favouriteBooks}</td>
 											</tr>
 											<tr>
-								<td><b>Dress Style :</b>
-								</td>
-								<td>${hobbiesDetails.dressStyletyle}</td>
-							</tr>
+												<td><b>Dress Style :</b></td>
+												<td>${hobbiesDetails.dressStyletyle}</td>
+											</tr>
 											<tr>
 												<td><b>Favourite TV show :</b></td>
 												<td>${hobbiesDetails.favouritrTvShows}</td>
 											</tr>
 											<tr>
-								<td><b>Favourite Movie :</b>
-								</td>
-								<td>${hobbiesDetails.favouriteMovies}</td>
-							</tr>
+												<td><b>Favourite Movie :</b></td>
+												<td>${hobbiesDetails.favouriteMovies}</td>
+											</tr>
 											<tr>
 												<td><b>Favourite Sport :</b></td>
 												<td>${hobbiesDetails.sports}</td>
@@ -805,218 +776,147 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 												<td>${hobbiesDetails.foodIcook}</td>
 											</tr>
 											<tr>
-								<td><b>Vacation Destination :</b>
-								</td>
-								<td>${hobbiesDetails.vacationDestination}</td>
-							</tr>
-										</c:forEach>
-									</table>
-								</div>
-							</form>
-						</c:if>
-
-						<c:if test="${!empty editHobbiesList}">
-							<form action="/vanjariudyogvishwa-v2/editHobbies" method="post">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<h3>Edit Hobbies</h3>
-								<div id="InsideProfileDetails">
-
-									<table>
-										<c:forEach items="${editHobbiesList}" var="editHobbiesDetails">
-											<tr>
-												<td style="width: 200px;"><b>Hobbies :</b></td>
-												<td><input type="text" name="hobbiesName"
-													value="${editHobbiesDetails.hobbiesName}"></td>
+												<td><b>Vacation Destination :</b></td>
+												<td>${hobbiesDetails.vacationDestination}</td>
 											</tr>
-											<tr>
-												<td><b>Favourite Music :</b></td>
-												<td>
-										<select name="favouriteMusic" id="fav_music" style="resize: none;" multiple="multiple" size="4">
-                                        <option selected="selected">${editHobbiesDetails.favouriteMusic}</option>
-                                        <option>Blues</option>
-                                        <option>Alternative Music</option>
-                                        <option>Classical Music</option>
-                                        <option>Country Music</option>
-                                        <option>Dance Music</option>
-                                        <option>Easy Listening</option>
-                                        <option>Electronic Music</option>
-                                        <option>European Music</option>
-                                        <option>Indie Pop</option>
-                                        <option>Hip Hop / Rap</option>
-                                        <option>Jazz</option>
-                                        <option>Latin Music</option>
-                                        <option>Pop</option>
-                                        <option>Rock</option>
-                                         <option>World Music / Beats</option>
-                                        <option>Soul</option>
-                                           </select>	
-												</td>
-											</tr>
-											<tr>
-												<td><b>Favourite Book :</b></td>
-												<td><input type="text" name="favouriteBooks"
-													value="${editHobbiesDetails.favouriteBooks}"></td>
-											</tr>
+										</table>
+								
+										<form action="/vanjariudyogvishwa-v2/editHobbies" method="post">
+											<input type="hidden" name="usermail" value="${loginUser.email}">
+											<table id="HobbiesDetailsTbl2" style="display: none;">
 												<tr>
-								<td><b>Dress Style :</b>
-								</td>
-								<td>
-									<select name="dressStyletyle"  style="width: 407px; height: 30px;">
-                                                <option selected="selected" value="${editHobbiesDetails.dressStyletyle}"></option>
-                                                <option>Indian</option>
-                                                <option>Western</option>
-                                                <option>Sports</option>
-                                                <option>Formal</option>
-                                                <option>Casual</option>
-                                                <option>Not particular</option>
-                                        </select>
-								</td>
-							</tr>
-											<tr>
-												<td><b>Favourite TV show :</b></td>
-												<td><input type="text" name="favouritrTvShows"
-													value="${editHobbiesDetails.favouritrTvShows}"></td>
-											</tr>
-											<tr>
-								<td><b>Favourite Movie :</b>
-								</td>
-								<td><input type="text" name="favouriteMovies"
-													value="${editHobbiesDetails.favouriteMovies}"></td>
-							</tr>
-											<tr>
-												<td><b>Favourite Sport :</b></td>
-												<td><input type="text" name="sports"
-													value="${editHobbiesDetails.sports}"></td>
-											</tr>
-											<tr>
-												<td><b>Food I Cook :</b></td>
-												<td><input type="text" name="foodIcook"
-													value="${editHobbiesDetails.foodIcook}"></td>
-											</tr>
-											<tr>
-								<td><b>Vacation Destination :</b>
-								</td>
-								<td><input type="text" name="vacationDestination"
-													value="${editHobbiesDetails.vacationDestination}">
-								</td>
-							</tr>
-
-											<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editHobbiesBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-
-
-										</c:forEach>
-									</table>
+													<td style="width: 200px;"><b>Hobbies :</b></td>
+													<td><input type="text" name="hobbiesName"value="${hobbiesDetails.hobbiesName}"></td>
+												</tr>
+												<tr>
+													<td><b>Favourite Music :</b></td>
+													<td>
+														<select name="favouriteMusic" id="fav_music" style="resize: none;height: 70px;" multiple="multiple" size="4">
+				                                        <%-- <option selected="selected">${editHobbiesDetails.favouriteMusic}</option> --%>
+				                                        <option>Blues</option>
+				                                        <option>Alternative Music</option>
+				                                        <option>Classical Music</option>
+				                                        <option>Country Music</option>
+				                                        <option>Dance Music</option>
+				                                        <option>Easy Listening</option>
+				                                        <option>Electronic Music</option>
+				                                        <option>European Music</option>
+				                                        <option>Indie Pop</option>
+				                                        <option>Hip Hop / Rap</option>
+				                                        <option>Jazz</option>
+				                                        <option>Latin Music</option>
+				                                        <option>Pop</option>
+				                                        <option>Rock</option>
+				                                         <option>World Music / Beats</option>
+				                                        <option>Soul</option>
+				                                           </select>	
+														</td>
+												</tr>
+												<tr>
+													<td><b>Favourite Book :</b></td>
+													<td><input type="text" name="favouriteBooks" value="${hobbiesDetails.favouriteBooks}"></td>
+												</tr>
+												<tr>
+													<td><b>Dress Style :</b></td>
+													<td>
+														<select name="dressStyletyle">
+			                                                <option selected="selected" value="${hobbiesDetails.dressStyletyle}"></option>
+			                                                <option>Indian</option>
+			                                                <option>Western</option>
+			                                                <option>Sports</option>
+			                                                <option>Formal</option>
+			                                                <option>Casual</option>
+			                                                <option>Not particular</option>
+			                                        	</select>
+													</td>
+												</tr>
+												<tr>
+													<td><b>Favourite TV show :</b></td>
+													<td><input type="text" name="favouritrTvShows" value="${hobbiesDetails.favouritrTvShows}"></td>
+												</tr>
+												<tr>
+													<td><b>Favourite Movie :</b></td>
+													<td><input type="text" name="favouriteMovies" value="${hobbiesDetails.favouriteMovies}"></td>
+												</tr>
+												<tr>
+													<td><b>Favourite Sport :</b></td>
+													<td><input type="text" name="sports" value="${hobbiesDetails.sports}"></td>
+												</tr>
+												<tr>
+													<td><b>Food I Cook :</b></td>
+													<td><input type="text" name="foodIcook" value="${hobbiesDetails.foodIcook}"></td>
+												</tr>
+												<tr>
+													<td><b>Vacation Destination :</b></td>
+													<td><input type="text" name="vacationDestination" value="${hobbiesDetails.vacationDestination}"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit" name="editHobbiesBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+										</form>
+									</c:forEach>
 								</div>
-
-
-
-
-							</form>
-						</c:if>
-
-
-					</div>
+							</c:if>
+						</div>
 				</div>
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
 						<c:if test="${!empty religionList}">
-							<form action="/vanjariudyogvishwa-v2/EditReligionDetails">
-								<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn"
+							<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn" onclick="return dispEditReligion();"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-
-								<div id="InsideProfileDetails">
-									<h3>Religion Details</h3>
-
-									<table>
-										<c:forEach items="${religionList}" var="religionDetails">
-											<tr>
-												<td><b>Religion :</b></td>
-												<td>${religionDetails.religion}</td>
-											</tr>
-											<tr>
-												<td><b>Cast :</b></td>
-												<td>${religionDetails.subCast}</td>
-											</tr>
-
-
-										</c:forEach>
+							<div id="InsideProfileDetails">
+								<h3>Religion Details</h3>
+								<c:forEach items="${religionList}" var="religionDetails">
+									<table id="ReligionDetailsTbl1" style="display: block;">
+										<tr>
+											<td><b>Religion :</b></td>
+											<td>${religionDetails.religion}</td>
+										</tr>
+										<tr>
+											<td><b>Cast :</b></td>
+											<td>${religionDetails.subCast}</td>
+										</tr>
 									</table>
-								</div>
-							</form>
-						</c:if>
-
-
-						<c:if test="${!empty EditReligionList}">
-							<form action="/vanjariudyogvishwa-v2/editReligion" method="post">
-
-								<input type="hidden" name="emailId" value="${loginUser.email}">
-
-								<h3>Edit Religion Details</h3>
-								<div id="InsideProfileDetails">
-
-									<table>
-										<c:forEach items="${EditReligionList}"
-											var="EditReligionDetails">
+						
+									<form action="/vanjariudyogvishwa-v2/editReligion" method="post">
+										<input type="hidden" name="emailId" value="${loginUser.email}">
+										<table id="ReligionDetailsTbl2" style="display: none;">
 											<tr>
 												<td><b>Religion :</b></td>
-												<td><input type="text" name="religion"
-													value="${EditReligionDetails.religion}"></td>
+												<td><input type="text" name="religion" value="${religionDetails.religion}"></td>
 											</tr>
 											<tr>
 												<td><b>Cast :</b></td>
-												<td><input type="text" name="subCast"
-													value="${EditReligionDetails.subCast}"></td>
+												<td><input type="text" name="subCast" value="${religionDetails.subCast}"></td>
 											</tr>
-
 											<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editReligionBtn" style="float: right;"></td>
+												<td colspan="1"><input type="submit" value="Edit" name="editReligionBtn" style="float: right;"></td>
 												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
 											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-										</c:forEach>
-									</table>
-								</div>
-							</form>
+										</table>
+									</form>
+								</c:forEach>
+							</div>
 						</c:if>
-
 					</div>
-
 				</div>
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
 
 						<c:if test="${!empty otherDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/EditOtherDetails">
-								<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn"
+								<input id="EditProfileDetails" type="submit" value="" name="editOtherReqBtn"  onclick="return dispEditOtherDetails();"
 									style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-
 								<div id="InsideProfileDetails">
 									<h3>Other Details</h3>
-									<table>
-										<c:forEach items="${otherDetailsList}" var="otherDetails">
+									<c:forEach items="${otherDetailsList}" var="otherDetails">
+										<table id="OtherDetailsTbl1" style="display: block;">
 											<tr>
 												<td style="width: 200px"><b>Social Status :</b></td>
-												<td style="width: 590px;">${otherDetails.socialStatus}</td>
+												<td>${otherDetails.socialStatus}</td>
 											</tr>
 											<tr>
 												<td><b>Polytical Status :</b></td>
@@ -1034,72 +934,42 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 												<td><b>Cultural activities :</b></td>
 												<td>${otherDetails.culturalact}</td>
 											</tr>
+										</table>
 
-
-										</c:forEach>
-									</table>
+										<form action="/vanjariudyogvishwa-v2/editOther" method="post">
+											<input type="hidden" name="usermail" value="${loginUser.email}">
+											<table id="OtherDetailsTbl2" style="display: none;">
+												<tr>
+													<td style="width: 200px"><b>Social Status :</b></td>
+													<td><input type="text" name="socialStatus" value="${otherDetails.socialStatus}"></td>
+												</tr>
+												<tr>
+													<td><b>Polytical Status :</b></td>
+													<td><input type="text" name="polyticalstatus" value="${otherDetails.polyticalstatus}"></td>
+												</tr>
+												<tr>
+													<td><b>Social Activities :</b></td>
+													<td><input type="text" name="socialact" value="${otherDetails.socialact}"></td>
+												</tr>
+												<tr>
+													<td><b>Polytical Activities :</b></td>
+													<td><input type="text" name="polyticalact" value="${otherDetails.polyticalact}"></td>
+												</tr>
+												<tr>
+													<td><b>Cultural activities :</b></td>
+													<td><input type="text" name="culturalact" value="${otherDetails.culturalact}"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit" name="editOtherBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+										</form>
+									</c:forEach>
 								</div>
-							</form>
-						</c:if>
-
-						<c:if test="${!empty EditOtherDetailsList}">
-							<form action="/vanjariudyogvishwa-v2/editOther" method="post">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<h3>Edit Other Details</h3>
-								<div id="InsideProfileDetails">
-									<table>
-										<c:forEach items="${EditOtherDetailsList}"
-											var="EditOtherDetails">
-											<tr>
-												<td style="width: 200px"><b>Social Status :</b></td>
-												<td style="width: 590px;"><input type="text"
-													name="socialStatus"
-													value="${EditOtherDetails.socialStatus}"></td>
-											</tr>
-											<tr>
-												<td><b>Polytical Status :</b></td>
-												<td><input type="text" name="polyticalstatus"
-													value="${EditOtherDetails.polyticalstatus}"></td>
-											</tr>
-											<tr>
-												<td><b>Social Activities :</b></td>
-												<td><input type="text" name="socialact"
-													value="${EditOtherDetails.socialact}"></td>
-											</tr>
-											<tr>
-												<td><b>Polytical Activities :</b></td>
-												<td><input type="text" name="polyticalact"
-													value="${EditOtherDetails.polyticalact}"></td>
-											</tr>
-											<tr>
-												<td><b>Cultural activities :</b></td>
-												<td><input type="text" name="culturalact"
-													value="${EditOtherDetails.culturalact}"></td>
-											</tr>
-
-											<tr>
-												<td colspan="1"><input type="submit" value="Edit"
-													name="editOtherBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
-											</tr>
-											<tr>
-												<td><br></td>
-												<td></td>
-											</tr>
-										</c:forEach>
-									</table>
-								</div>
-							</form>
-
-						</c:if>
-
-
-
+							</c:if>
+						</div>
 					</div>
-
-				</div>
 				
 				
 				<div id="OutsideProfileProducts">
@@ -1177,27 +1047,15 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 					</div>
 				</div>
 				
-				<!-- <div style="height: 300px; width: 1400px;"> -->
-				
-
 				<div id="OutsideInterestAreas" style="width: 760px;border: 1px solid rgba(245, 186, 118, 0.8);margin: -15px auto 20px 10px;">
 					<h3>IntrestAreas Details</h3>
 					<div id="InterestAreas" style="width: 730px;border: none;">
 						
 						<c:if test="${!empty intrestAreasList}">
-							<form action="/vanjariudyogvishwa-v2/EditIntrestAreasDetails">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<table>
-									<c:forEach items="${intrestAreasList}"
-										var="intrestAreasDetails">
-
-										<c:set var="tempStr"
-											value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
-
+							<table id="InterestAreasDetailsTbl1" style="display: block;">
+								<c:forEach items="${intrestAreasList}" var="intrestAreasDetails">
+										<c:set var="tempStr" value="${fn: split(intrestAreasDetails.interestId,',')}"></c:set>
 										<c:forEach items="${tempStr}" var="intrestAreaNumber">
-
 											<c:if test="${intrestAreaNumber=='1'}">
 												<tr>
 													<td><div id="IntrestAreaImageProfile">
@@ -1396,247 +1254,16 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 													<h4 style="margin-top: -5px">Spirituality</h4>
 												</div>
 											</c:if>
-
 										</c:forEach>
-
-
 									</c:forEach>
 								</table>
-
-
-							</form>
 						</c:if>
-						<c:if test="${!empty editIntrestAreasDetailsList}">
-							<h3>Edit IntrestAreas Details</h3>
-							<form action="/vanjariudyogvishwa-v2/EditIntrestAreas">
-
-								<input type="hidden" name="usermail" value="${loginUser.email}">
-
-								<c:forEach items="${editIntrestAreasDetailsList}"
-									var="editIntrestAreasDetails">
-
-									<c:set var="tempStr"
-										value="${fn: split(editIntrestAreasDetails.interestId,',')}"></c:set>
-
-
-
-									<c:forEach items="${tempStr}" var="intrestAreaNumber">
-
-										<c:if test="${intrestAreaNumber=='1'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/1-SPORTS.png"
-													title="Sports" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Sports</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='2'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/2-DRAWING.png"
-													title="Drawing" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Drawing</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='3'}">
-											<div style="width: 120px; float: left;">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/3-PhotoGraphy.png"
-													title="PhotoGraphy" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">PhotoGraphy</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='4'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/4-TRAVELLING.png"
-													title="Travelling">
-												<h4 style="margin-top: -5px">Travelling</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='5'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/5-musics.png"
-													title="Music" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Music</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='6'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/6-READING.png"
-													title="Reading" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Reading</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='7'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/7-BROWSING.png"
-													title="Browsing" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Browsing</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='8'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/8-BIKE RIDING.png"
-													title="Bike Riding" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Bike Riding</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='9'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/9-CAR_RIDING.png"
-													title="Car Riding" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Car Riding</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='10'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/10-TRACKING.png"
-													title="Trekking" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Trekking</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='11'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/11-Movies-.png"
-													title="Watching Movies" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Movies</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='12'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/12-SocialWork.jpg"
-													title="Social Work" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Social Work</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='13'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/13-POLITICAL.png"
-													title="Politics" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Politics</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='14'}">
-											<div style="width: 140px; float: left;">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/14-parties.png"
-													title="Friends/Parties/dating"
-													style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Friends/Parties/dating</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='15'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/15-shopping-bag.png"
-													title="Shopping" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Shopping</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='16'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/16-business.png"
-													title="Business" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Business</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='17'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/17-drama.png"
-													title="Drama" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Drama</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='18'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/18-CIRCUS.png"
-													title="Circus" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Circus</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='19'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/19-DanceShow.png"
-													title="Dance Show" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Dance Show</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='20'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/PhotoGallary.png"
-													title="Cultural Activities"
-													style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Cultural Activities</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='21'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/21-SPEEECH.png"
-													title="Speech" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Speech</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='22'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/22-gym.png"
-													title="Gym/Health Club" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Gym/Health Club</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='23'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/23-teaching.png"
-													title="Teaching" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Teaching</h4>
-											</div>
-										</c:if>
-										<c:if test="${intrestAreaNumber=='24'}">
-											<div id="IntrestAreaImageProfile">
-												<img
-													src="${pageContext.request.contextPath}/resources/icons/24-SPIRTUALITY.png"
-													title="Spirituality" style="width: 50px; height: 50px;">
-												<h4 style="margin-top: -5px">Spirituality</h4>
-											</div>
-										</c:if>
-
-									</c:forEach>
-
-
-
-								</c:forEach>
-
-
-
-							</form>
-						</c:if>
-
-
 					</div>
 				</div>
 				
 				
-			<!-- </div> -->
-				
 			</div>
-			</div>
+		</div>
 			
 			<div id="rightMain" style="background-color: bisque;border: none;">
 			<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px;">People You May Know</h3>
