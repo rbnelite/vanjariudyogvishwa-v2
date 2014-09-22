@@ -11,7 +11,7 @@ public interface ContactDao {
 	
 	public void saveContact(Index index);
 	public List<Contact> listContact(String UserMail);
-	public void UpdateContact(Contact contact);
+	public void UpdateContact(Index indexContact);
 	public Index getContactByEmailId(String userMail);
 
 	

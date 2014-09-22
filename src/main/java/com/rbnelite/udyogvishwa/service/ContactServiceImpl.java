@@ -40,9 +40,9 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Override
-	public void UpdateContact(Contact contact) {
+	public void UpdateContact(Index indexContact) {
 		
-		contactdao.UpdateContact(contact);
+		contactdao.UpdateContact(indexContact);
 		
 	}
 

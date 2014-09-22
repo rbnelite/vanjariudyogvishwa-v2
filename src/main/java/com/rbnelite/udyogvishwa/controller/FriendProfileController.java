@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rbnelite.udyogvishwa.dto.LoginUser;
-import com.rbnelite.udyogvishwa.model.Contact;
 import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
@@ -22,6 +21,7 @@ import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
+import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -32,6 +32,7 @@ import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.OcccupationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -42,29 +43,26 @@ import com.rbnelite.udyogvishwa.utils.RequestContext;
 @Controller
 public class FriendProfileController {
 
-	
-	
 	@Resource
-	private IntrestAreasService intrestAreasService;
+	private OcccupationService ocservice;
+	@Resource
+	private EducationWorkService educationWorkService;
+	@Resource
+	private ContactService contactServ;
+	@Resource
+	private HobbiesService hobbiesServ;
+	@Resource
+	private RelegionService relegionservice;
+	@Resource
+	private OtherDetailsService otherDetailsServ;
 	
 	@Resource
 	private ProductService productservice;
-	
-	@Resource
-	private EducationWorkService educationWorkService;
-	
-	@Resource
-	private OtherDetailsService otherDetailsService;
-	
-	@Resource
-	private HobbiesService hobbiesservice;
-	
 	@Resource
 	private FriendRequestService friendrequestservice;
 	@Resource
-	private ContactService contactservice;
-	@Resource
-	private RelegionService relegionservice;
+	private IntrestAreasService intrestAreasService;
+	
 	@Resource
 	private ProfileImageService profileImageService; 
 	@Resource
@@ -87,14 +85,17 @@ public class FriendProfileController {
 		LoginUser loginUser = RequestContext.getUser();
 		String userMail=loginUser.getEmail();
 		
+	map.put("occupation", new Occupation());
+	map.put("occupationList", ocservice.listOccupation(userMail));
+	
 	map.put("FriendsotherDetailsList", new OtherDetails());
-	map.put("FriendsotherDetailsList", otherDetailsService.listOtherDetails(friendsMail));	
+	map.put("FriendsotherDetailsList", otherDetailsServ.listOtherDetails(friendsMail));	
  
 	map.put("FriendseducationWORK", new EducationWork());
 	map.put("FriendseducationworkList", educationWorkService.listEducationWork(friendsMail));
 
 	map.put("FriendshobbiesDetails", new Hobbies());
-	map.put("FriendshobbiesList", hobbiesservice.listHobbies(friendsMail));
+	map.put("FriendshobbiesList", hobbiesServ.listHobbies(friendsMail));
 	
 	map.put("FriendsproductNAME", new Product());
 	map.put("FriendsProductList", productservice.listProduct(friendsMail));
@@ -103,7 +104,7 @@ public class FriendProfileController {
 	map.put("FriendsintrestAreasList", intrestAreasService.listIntrestAreas(friendsMail));
 	
 	map.put("contactInfo", new Index());
-	map.put("contactInfoList", contactservice.listContact(friendsMail));
+	map.put("contactInfoList", contactServ.listContact(friendsMail));
 	
 	map.put("religionDetails", new Index());
 	map.put("religionList", relegionservice.listReligion(friendsMail));

@@ -69,13 +69,18 @@ public class ContactDaoImpl extends BaseDao<Index> implements ContactDao {
 	}
 
 	@Override
-	public void UpdateContact(Contact contact) {
+	public void UpdateContact(Index indexContact) {
 				
-		Index contactToUpdate=getContactByEmailId(contact.getUserMail());
+		Index contactToUpdate=getContactByEmailId(indexContact.getEmailId());
 		
-		contactToUpdate.setHomeAddress(contact.getHomeAddress());
-		contactToUpdate.setOfficeAddress(contact.getOfficeAddress());
-		contactToUpdate.setTelephone(contact.getTelephone());
+		
+		contactToUpdate.setFirstName(indexContact.getFirstName());
+		contactToUpdate.setMiddleName(indexContact.getMiddleName());
+		contactToUpdate.setLastName(indexContact.getLastName());
+		contactToUpdate.setBirthDate(indexContact.getBirthDate());
+		contactToUpdate.setHomeAddress(indexContact.getHomeAddress());
+		contactToUpdate.setOfficeAddress(indexContact.getOfficeAddress());
+		contactToUpdate.setTelephone(indexContact.getTelephone());
 		
 		Session session=sessionFactory.openSession();
 		try{

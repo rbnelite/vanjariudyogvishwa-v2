@@ -1421,6 +1421,8 @@ input[type="text"],input[type="password"],input[type="email"], select {
 	background-color: transparent;
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 3px 8px 3px 8px;
+	color: black;
 }
 			
 input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS, select :ACTIVE{
@@ -1431,5 +1433,6 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS
 	background-color: rgba(255, 255, 255, 0.69);
 	font-size: 18px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 3px 8px 3px 8px;
+	color: black;
 }
-		

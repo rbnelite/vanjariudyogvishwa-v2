@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.rbnelite.udyogvishwa.model.EducationWork;
 import com.rbnelite.udyogvishwa.model.Occupation;
 
 @Repository
@@ -46,5 +47,56 @@ public class OccupationDaoImpl extends BaseDao<Occupation> implements
 			session.close();
 		}
 		
+	}
+
+	@Override
+	public List<Occupation> listOccupation(String userMail) {
+		Session session=sessionFactory.openSession();
+		try{
+			return session.createQuery("from Occupation where usermail='"+userMail+"' ").list();
+		}finally{
+			session.close();
+		}
+	}
+
+	@Override
+	public void updateOccupation(Occupation occupation) {
+		Occupation occupationToUpdate=getByEmailId(occupation.getUsermail());
+		System.out.println("1) UserMail, 2)- CompanyName: $$$"+occupation.getUsermail()+" %%%"+occupation.getCompanyName());
+		
+		occupationToUpdate.setCompanyName(occupation.getCompanyName());
+		occupationToUpdate.setOccupation(occupation.getOccupation());
+		occupationToUpdate.setAnnualincome(occupation.getAnnualincome());
+		occupationToUpdate.setEmptype(occupation.getEmptype());
+		occupationToUpdate.setNumberofemp(occupation.getNumberofemp());
+		occupationToUpdate.setProductdetails(occupation.getProductdetails());
+		occupationToUpdate.setWebAddress(occupation.getWebAddress());
+		
+		Session session=sessionFactory.openSession();
+		try{
+			session.getTransaction().begin();
+			session.update(occupationToUpdate);
+			session.getTransaction().commit();
+			session.flush();
+			
+		}
+		finally
+		
+		{ 
+			session.close();
+		}
+		
+	}
+
+	@Override
+	public Occupation getByEmailId(String userMail) {
+		Session session=sessionFactory.openSession();
+		try{
+			return (Occupation) session.createQuery("from Occupation where usermail='"+userMail+"' ").uniqueResult();
+		}
+		finally
+		{
+			session.close();
+		}
 	}
 }

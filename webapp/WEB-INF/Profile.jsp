@@ -36,6 +36,21 @@
 
 		var temp = document.getElementById("submit1").click();
 	}
+	function isCharKey(evt)
+    {
+		 var charCode=(evt.which) ? evt.which :event.keyCode;
+		 
+	        if(charCode >64 && charCode<123 || charCode==8)
+	            return true;
+	        return false;
+    }
+	function isNumberKey(evt)
+	{
+	    var charCode=(evt.which) ? evt.which :event.keyCode;
+	    if(charCode >31 && (charCode<48 || charCode >57))
+	        return false;
+	    return true;
+	}
 </script>
 <script type="text/javascript">
 function sendRequest(RequestTo){
@@ -67,6 +82,7 @@ function sendFriendRequest(RequestTo){
 	myfirstReq.setRequestHeader("Content-length", parameters .length);
 	myfirstReq.setRequestHeader("Connection", "close");
 	
+	
 	myfirstReq.onreadystatechange=function()
 	  {
 	  if (myfirstReq.readyState==4 && myfirstReq.status==200)
@@ -87,6 +103,12 @@ function sendFriendRequest(RequestTo){
 	function dispEditContact(){
 		document.getElementById("ContactDetailsTbl2").style.display='block';
 		document.getElementById("ContactDetailsTbl1").style.display='none';
+		
+		
+	}
+	function dispEditOccupation(){
+		document.getElementById("EmployementDetailsTbl2").style.display='block';
+		document.getElementById("EmployementDetailsTbl1").style.display='none';
 		
 		
 	}
@@ -540,6 +562,190 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
+						<c:if test="${!empty contactInfoList}">
+							<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn" onclick="return dispEditContact();"
+								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+
+								<div id="InsideProfileDetails">
+									<h3>User Details</h3>
+									<c:forEach items="${contactInfoList}" var="contactInfo">
+										<table id="ContactDetailsTbl1" style="display: block;">
+											<tr>
+												<td><b>Name :</b></td>
+												<td>${contactInfo.firstName} ${contactInfo.middleName} ${contactInfo.lastName}</td>
+											</tr>
+											<tr>
+												<td><b>Email ID :</b></td>
+												<td>${contactInfo.emailId}</td>
+											</tr>
+											<tr>
+												<td><b>Gender :</b></td>
+												<td>${contactInfo.gender}</td>
+											</tr>
+											<tr>
+												<td><b>BirthDate :</b></td>
+												<td>${contactInfo.birthDate}</td>
+											</tr>
+											<tr>
+												<td><b>Home Address :</b></td>
+												<td>${contactInfo.homeAddress}</td>
+											</tr>
+											<tr>
+												<td><b>Office Address :</b></td>
+												<td>${contactInfo.officeAddress}</td>
+											</tr>
+											<tr>
+												<td><b>Mobile No. :</b></td>
+												<td>${contactInfo.contactNo}</td>
+
+											</tr>
+										</table>
+									
+										<form action="/vanjariudyogvishwa-v2/editContact" method="post">
+											<input type="hidden" name="emailId" value="${loginUser.email}">
+											<table id="ContactDetailsTbl2" style="display: none;">
+												<tr>
+													<td><b>First Name :</b></td>
+													<td>
+														<input type="text" name="firstName" value="${contactInfo.firstName}" size="30" maxlength="15" placeholder="First Name" onkeypress="return isCharKey(event);">
+													</td>
+												</tr>
+												<tr>
+													<td><b>Middle Name :</b></td>
+													<td>
+														<input type="text" name="middleName" value="${contactInfo.middleName}" size="30" maxlength="15" placeholder="Middle Name" onkeypress="return isCharKey(event);">
+													</td>
+												</tr>
+												<tr>
+													<td><b>Last Name :</b></td>
+													<td>
+														<input type="text" name="lastName" value="${contactInfo.lastName}" size="30" maxlength="15" placeholder="Last Name" onkeypress="return isCharKey(event);">
+													</td>
+												</tr>
+												<tr>
+													<td><b>BirthDate :</b></td>
+													<td><input type="text" name="birthDate"value="${contactInfo.birthDate}"></td>
+												</tr>
+												<tr>
+													<td><b>Home Address :</b></td>
+													<td><input type="text" name="homeAddress"value="${contactInfo.homeAddress}"></td>
+												</tr>
+												<tr>
+													<td><b>Office Address :</b></td>
+													<td><input type="text" name="officeAddress" value="${contactInfo.officeAddress}"></td>
+												</tr>
+												<tr>
+													<td><b>Mobile No. :</b></td>
+													<td><input type="text" name="telephone" value="${contactInfo.contactNo}" maxlength="10" placeholder="Mobile No." onkeypress="return isNumberKey(event)"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+										</form>
+									</c:forEach>
+								</div>
+						</c:if>
+
+					</div>
+				</div>
+				
+				
+				<div id="OutsideProfileDetails">
+					<div id="ProfileDetails">
+						<c:if test="${!empty occupationList}">
+							<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn" onclick="return dispEditOccupation();"
+								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
+
+								<div id="InsideProfileDetails">
+									<h3>Employement Details</h3>
+									<c:forEach items="${occupationList}" var="occupation">
+										<table id="EmployementDetailsTbl1" style="display: block;">
+											<tr>
+												<td><b>Company Name :</b></td>
+												<td>${occupation.companyName}</td>
+											</tr>
+											<tr>
+												<td><b>Occupation :</b></td>
+												<td>${occupation.occupation}</td>
+											</tr>
+											<tr>
+												<td><b>Annual Incom :</b></td>
+												<td>${occupation.annualincome}</td>
+											</tr>
+											<tr>
+												<td><b>Employement Type :</b></td>
+												<td>${occupation.emptype}</td>
+											</tr>
+											<tr>
+												<td><b>No of Employees :</b></td>
+												<td>${occupation.numberofemp}</td>
+											</tr>
+											<tr>
+												<td><b>Product Details :</b></td>
+												<td>${occupation.productdetails}</td>
+											</tr>
+											<tr>
+												<td><b>Web Address :</b></td>
+												<td>${occupation.webAddress}</td>
+
+											</tr>
+										</table>
+									
+										<form action="/vanjariudyogvishwa-v2/editOccupation" method="post">
+											<input type="hidden" name="usermail" value="${loginUser.email}">
+											<table id="EmployementDetailsTbl2" style="display: none;">
+												<tr>
+													<td><b>Company Name :</b></td>
+													<td>
+														<input type="text" name="companyName" value="${occupation.companyName}" >
+													</td>
+												</tr>
+												<tr>
+													<td><b>Occupation :</b></td>
+													<td>
+														<input type="text" name="occupation" value="${occupation.occupation}">
+													</td>
+												</tr>
+												<tr>
+													<td><b>Annual Incom :</b></td>
+													<td>
+														<input type="text" name="annualincome" value="${occupation.annualincome}" maxlength="9" onkeypress="return isNumberKey(event)">
+													</td>
+												</tr>
+												<tr>
+													<td><b>Employement Type :</b></td>
+													<td><input type="text" name="emptype" value="${occupation.emptype}"></td>
+												</tr>
+												<tr>
+													<td><b>No of Employees :</b></td>
+													<td><input type="text" name="numberofemp" value="${occupation.numberofemp}" maxlength="6" onkeypress="return isNumberKey(event)"></td>
+												</tr>
+												<tr>
+													<td><b>Product Details :</b></td>
+													<td><input type="text" name="productdetails" value="${occupation.productdetails}"></td>
+												</tr>
+												<tr>
+													<td><b>Web Address :</b></td>
+													<td><input type="text" name="webAddress" value="${occupation.webAddress}"></td>
+												</tr>
+												<tr>
+													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												</tr>
+											</table>
+										</form>
+									</c:forEach>
+								</div>
+						</c:if>
+
+					</div>
+				</div>
+				
+				
+				<div id="OutsideProfileDetails">
+					<div id="ProfileDetails">
 
 						<c:if test="${!empty educationworkList}">
 							<input id="EditProfileDetails" type="submit" value="" name="editEducationReqBtn" onclick="return dispEditEdu();"
@@ -680,59 +886,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				</div>
 
 
-				<div id="OutsideProfileDetails">
-					<div id="ProfileDetails">
-						<c:if test="${!empty contactInfoList}">
-							<input id="EditProfileDetails" type="submit" value="" name="editContactReqBtn" onclick="return dispEditContact();"
-								style="background-image: url('${pageContext.request.contextPath}/resources/images/edit1.png');">
-
-								<div id="InsideProfileDetails">
-									<h3>Contact Details</h3>
-									<c:forEach items="${contactInfoList}" var="contactInfo">
-										<table id="ContactDetailsTbl1" style="display: block;">
-											<tr>
-												<td><b>Home Address :</b></td>
-												<td>${contactInfo.homeAddress}</td>
-											</tr>
-											<tr>
-												<td><b>Office Address :</b></td>
-												<td>${contactInfo.officeAddress}</td>
-											</tr>
-											<tr>
-
-												<td><b>Telephone No. :</b></td>
-												<td>${contactInfo.contactNo}</td>
-
-											</tr>
-										</table>
-									
-										<form action="/vanjariudyogvishwa-v2/editContact" method="post">
-											<input type="hidden" name="userMail" value="${loginUser.email}">
-											<table id="ContactDetailsTbl2" style="display: none;">
-												<tr>
-													<td><b>Home Address :</b></td>
-													<td><input type="text" name="homeAddress"value="${contactInfo.homeAddress}"></td>
-												</tr>
-												<tr>
-													<td><b>Office Address :</b></td>
-													<td><input type="text" name="officeAddress" value="${contactInfo.officeAddress}"></td>
-												</tr>
-												<tr>
-													<td><b>Telephone No. :</b></td>
-													<td><input type="text" name="telephone" value="${contactInfo.contactNo}"></td>
-												</tr>
-												<tr>
-													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
-												</tr>
-											</table>
-										</form>
-									</c:forEach>
-								</div>
-						</c:if>
-
-					</div>
-				</div>
+				
 
 				<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">

@@ -21,6 +21,7 @@ import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
+import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -31,6 +32,7 @@ import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.OcccupationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -46,25 +48,25 @@ import com.rbnelite.udyogvishwa.utils.RequestContext;
 public class ProfileController {
 
 	@Resource
+	private OcccupationService ocservice;
+	@Resource
 	private OtherDetailsService otherDetailsServ;
 	@Resource
 	private EducationWorkService educationWorkService;
-
 	@Resource
 	private HobbiesService hobbiesServ;
 
 	@Resource
 	private ProductService productservice;
-	
 	@Resource
 	private IntrestAreasService intrestAreasService;
-	
 	@Resource
 	private ProfileImageService profileImageService; 
 	@Resource
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private NotificationService notificationService;
+	
 	@Resource
 	private ContactService contactServ;
 	@Resource
@@ -76,13 +78,15 @@ public class ProfileController {
 	
 	
 	@RequestMapping(value = "/Profile")
-	public String ProfileOperation(Map<String, Object> map, String userMail) throws ServletException {
+	public String ProfileOperation(Map<String, Object> map) throws ServletException {
 		
 		LoginUser loginUser = RequestContext.getUser();
 		
-		userMail=loginUser.getEmail();
+		String userMail = loginUser.getEmail();
 		/*userMail=(String) session.getAttribute("loginUser");*/
 		
+		map.put("occupation", new Occupation());
+		map.put("occupationList", ocservice.listOccupation(userMail));
 
 		map.put("educationWORK", new EducationWork());
 		map.put("educationworkList", educationWorkService.listEducationWork(userMail));

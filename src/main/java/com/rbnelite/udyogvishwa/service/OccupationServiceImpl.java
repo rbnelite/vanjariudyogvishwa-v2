@@ -41,4 +41,22 @@ public class OccupationServiceImpl implements OcccupationService {
 		return ocdao.searchPeopleByProffession(SearchDatabyprofession);
 	}
 
+	@Override
+	public List<Occupation> listOccupation(String userMail) {
+		
+		return ocdao.listOccupation(userMail);
+	}
+
+	@Override
+	public void updateOccupation(Occupation occupation) {
+		ocdao.updateOccupation(occupation);
+		
+	}
+
+	@Override
+	public Occupation getByEmailId(String userMail) {
+		
+		return ocdao.getByEmailId(userMail);
+	}
+
 }

@@ -828,8 +828,8 @@ input[type="button"][value="Comments"]
 										<h3 style="background-color: #FF6300; font-family: vardana; margin-top: 0px; font-size: 21px">Alert...!!! ${notifStatus[0].id}</h3>
 										<ol style="text-align: left;">
 											<li>Are you Sure ?</li>
-											<li> All Comments as well as Like/Unlike Counts related to this Status will be delete... </li>
-											<li>If you Don't want to delete then Click calcel Button.</li>
+											<li> All Comments as well as Like/Unlike Counts related to this Status will be deleted... </li>
+											<li>If you Don't want to delete then Click cancel Button.</li>
 										</ol>
 										<%-- <form action="/vanjariudyogvishwa-v2/deleteStatus" method="post"> --%>
 											<input type="submit" value="Delete" class="connectBtn" onclick="return goDeleteStatus('${notifStatus[0].id}');">

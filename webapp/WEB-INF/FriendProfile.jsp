@@ -448,64 +448,108 @@ h3 {
             
             <div id="outsidemiddleHome" style="margin-right: 300px; height: 1250px">
 				<div id="middleHome" style="height: 1250px;">
-            	
-            	
-            	
-            	
-            	
-            	 
-            
-            <div id="OutsideProfileDetails">
-            	<div id="ProfileDetails">
-            	<h3>Education Details</h3>
-            	<c:if test="${!empty FriendseducationworkList}">
-                	<c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
-					  <table>
-                  		<tr><td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
-                  		<tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
-                  		<tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
-                  		<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
-                    	<tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
-						<tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
-                    	<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherPG}</td></tr>
-                    	<tr><td><b>Email-Id:</b></td><td>${FriendseducationWORK.userMail}</td></tr> 
-					  </table>
-                	</c:forEach>
-                 </c:if>
-            	</div>
-            </div>
-            
-           <div id="OutsideProfileDetails">
+
+	            	<div id="OutsideProfileDetails">
 					<div id="ProfileDetails">
-					<h3>Contact Details</h3>
-					<c:if test="${!empty contactInfoList}">
-									<table>
-										<c:forEach items="${contactInfoList}" var="contactInfo">
-											<tr>
-												<td><b>Home Address :</b></td>
-												<td>${contactInfo.homeAddress}</td>
-											</tr>
-											<tr>
-												<td><b>Office Address :</b></td>
-												<td>${contactInfo.officeAddress}</td>
-											</tr>
-											<tr>
-
-												<td><b>Telephone No. :</b></td>
-												<td>${contactInfo.contactNo}</td>
-
-											</tr>
-
-										</c:forEach>
-
-									</table>
-								
-							</c:if>
+						<h3>User Details</h3>
+						<c:if test="${!empty contactInfoList}">
+							<table>
+								<c:forEach items="${contactInfoList}" var="contactInfo">
+									<tr>
+										<td><b>Name :</b></td>
+										<td>${contactInfo.firstName} ${contactInfo.middleName} ${contactInfo.lastName}</td>
+									</tr>
+									<tr>
+										<td><b>Email ID :</b></td>
+										<td>${contactInfo.emailId}</td>
+									</tr>
+									<tr>
+										<td><b>Gender :</b></td>
+										<td>${contactInfo.gender}</td>
+									</tr>
+									<tr>
+										<td><b>BirthDate :</b></td>
+										<td>${contactInfo.birthDate}</td>
+									</tr>
+									<tr>
+										<td><b>Home Address :</b></td>
+										<td>${contactInfo.homeAddress}</td>
+									</tr>
+									<tr>
+										<td><b>Office Address :</b></td>
+										<td>${contactInfo.officeAddress}</td>
+									</tr>
+									<tr>
+										<td><b>Mobile No. :</b></td>
+										<td>${contactInfo.contactNo}</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</c:if>
+					</div>
+				</div>
+				
+				<div id="OutsideProfileDetails">
+					<div id="ProfileDetails">
+						<h3>Employement Details</h3>
+						<c:if test="${!empty occupationList}">
+							<table>
+								<c:forEach items="${occupationList}" var="occupation">
+									<tr>
+										<td><b>Company Name :</b></td>
+										<td>${occupation.companyName}</td>
+									</tr>
+									<tr>
+										<td><b>Occupation :</b></td>
+										<td>${occupation.occupation}</td>
+									</tr>
+									<tr>
+										<td><b>Annual Incom :</b></td>
+										<td>${occupation.annualincome}</td>
+									</tr>
+									<tr>
+										<td><b>Employement Type :</b></td>
+										<td>${occupation.emptype}</td>
+									</tr>
+									<tr>
+										<td><b>No of Employees :</b></td>
+										<td>${occupation.numberofemp}</td>
+									</tr>
+									<tr>
+										<td><b>Product Details :</b></td>
+										<td>${occupation.productdetails}</td>
+									</tr>
+									<tr>
+										<td><b>Web Address :</b></td>
+										<td>${occupation.webAddress}</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</c:if>
 					</div>
 				</div>
             
-          
-             <div id="OutsideProfileDetails">
+	            <div id="OutsideProfileDetails">
+	            	<div id="ProfileDetails">
+	            	<h3>Education Details</h3>
+	            	<c:if test="${!empty FriendseducationworkList}">
+	                	<c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
+						  <table>
+	                  		<tr><td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
+	                  		<tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
+	                  		<tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
+	                  		<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
+	                    	<tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
+							<tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
+	                    	<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherPG}</td></tr>
+	                    	<tr><td><b>Email-Id:</b></td><td>${FriendseducationWORK.userMail}</td></tr> 
+						  </table>
+	                	</c:forEach>
+	                 </c:if>
+	            	</div>
+	            </div>
+            
+            <div id="OutsideProfileDetails">
             <div id="ProfileDetails">
              <h3>Hobbies Details</h3>
              <c:if test="${!empty FriendshobbiesList}">

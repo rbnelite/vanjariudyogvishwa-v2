@@ -25,6 +25,7 @@ import com.rbnelite.udyogvishwa.model.Hobbies;
 import com.rbnelite.udyogvishwa.model.Index;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
 import com.rbnelite.udyogvishwa.model.Notification;
+import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.OtherDetails;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
@@ -36,6 +37,7 @@ import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.HobbiesService;
 import com.rbnelite.udyogvishwa.service.IntrestAreasService;
 import com.rbnelite.udyogvishwa.service.NotificationService;
+import com.rbnelite.udyogvishwa.service.OcccupationService;
 import com.rbnelite.udyogvishwa.service.OtherDetailsService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -46,6 +48,8 @@ import com.rbnelite.udyogvishwa.utils.RequestContext;
 @Controller
 public class ContactController {
 
+	@Resource
+	private OcccupationService ocservice;
 	@Resource
 	private EducationWorkService educationWorkService;
 	@Resource
@@ -99,13 +103,16 @@ public class ContactController {
 	
 	
 	@RequestMapping(value="/editContact", method=RequestMethod.POST)
-	public String editContact(@ModelAttribute Contact contact, Map<String, Object> map)
+	public String editContact(@ModelAttribute Index indexContact, Map<String, Object> map)
 	{
 			
 		LoginUser loginUser = RequestContext.getUser();
 		String emailId=loginUser.getEmail();
 		
-		contactServ.UpdateContact(contact);
+		contactServ.UpdateContact(indexContact);
+		
+		map.put("occupation", new Occupation());
+		map.put("occupationList", ocservice.listOccupation(emailId));
 		
 		map.put("educationWORK", new EducationWork());
 		map.put("educationworkList", educationWorkService.listEducationWork(emailId));
