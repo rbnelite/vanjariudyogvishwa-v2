@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rbnelite.udyogvishwa.dto.IndexCredential;
-import com.rbnelite.udyogvishwa.dto.LoginDemo;
 import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Comment;
 import com.rbnelite.udyogvishwa.model.Event;

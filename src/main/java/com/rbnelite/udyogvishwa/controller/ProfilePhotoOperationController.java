@@ -61,37 +61,6 @@ public class ProfilePhotoOperationController {
 	
 	 private String saveDirectory = "F:/team/Manoj/project/vanjariudyogvishwa-v2/webapp/resources/mytheme/ProfileImages/";
      
-	    @RequestMapping(value="/uploadFile", method = RequestMethod.POST)
-	    public String handleFileUpload(HttpServletRequest request, @RequestParam("userMail")String userMail, @RequestParam CommonsMultipartFile[] profileImage) throws Exception {
-	         System.out.println("frome upload file controller");
-	       
-	         
-	        if (profileImage != null && profileImage.length > 0) {
-	            for (CommonsMultipartFile aFile : profileImage){
-	                 
-	                System.out.println("Saving file: " + aFile.getOriginalFilename());
-	                 
-	                if (!aFile.getOriginalFilename().equals("")) {
-	                	String fileName=aFile.getOriginalFilename();
-	                	
-	                	
-	                	HttpSession session = request.getSession(true);
-	            		/*String userMail=(String)session.getAttribute("CurrentEmailId");*/
-	                	/*userMail="sawantmanojm@gmail.com";*/
-	                	
-	                	profileImageService.insertProfileImage(fileName, userMail);
-	                	
-	                    aFile.transferTo(new File(saveDirectory + aFile.getOriginalFilename()));
-	                   
-	                    return "ThankYou";
-	                }
-	            }
-	        }
-	 
-	        // returns to the view "Result"
-	        return "ProfilePhotoOperation";
-	    }
-	    
 	    
 	    @RequestMapping(value="/UpdateProfileImage" , method=RequestMethod.POST)
 	    public @ResponseBody ProfileImageCredential updateProfileImage(HttpServletRequest request,@RequestParam CommonsMultipartFile[] updateProfileImage, ModelMap map)throws Exception{
@@ -155,10 +124,5 @@ public class ProfilePhotoOperationController {
 	    	return pic ;
 	    	
 	    }
-	    
-	    @RequestMapping(value = "/uploadFile")
-		public String ProfilePhotoOperationForm( ModelMap map) {
-	    	
-			return "ProfilePhotoOperation";
-		}
+	   
 }
