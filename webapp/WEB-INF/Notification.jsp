@@ -59,12 +59,8 @@ function emptyEditerror(id1)
 	}
 function jumpcomment(NotificationId)
 {
-/* alert(NotificationId); */
-document.getElementById("notificationId").value=NotificationId;
-
-
-	var temp=document.getElementById("submit1").click();
-		}
+	document.getElementById("submit"+NotificationId).click();
+}
 
 </script>
 <script type="text/javascript">
@@ -348,42 +344,7 @@ function sendFriendRequest(RequestTo){
 				<div id="leftMain3" style="height: 444px;">
 					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
 				</div>
-				
-
 			</div>
-			
-			
-			<%-- <div id="NotificationTopHome">
-				<div id="InsideNotificationTopHome">
-				<table width="100%">
-					<th style="background-color: #fab039"><font color="white">Notification</font>
-						<a onclick="return DisableNotificBlock()"> <img
-							src="${pageContext.request.contextPath}/resources/images/close (3).png"
-							id="close" style="width: 40px; height: 40px; float: right;"></a></th>
-					<form action="/vanjariudyogvishwa-v2/Notification" method="post">
-											<c:if test="${!empty NotificationList}">
-						<c:forEach items="${NotificationList}" var="note">
-						<tr><td colspan=2 align="left">
-						<div class="userStatusImage">
-									<img
-										src="${pageContext.request.contextPath}/resources/ProfileImages/${note[4]}"
-										height="20" width="20">
-								</div><h7 id="${note[3]}" onclick="jumpcomment('${note[3]}')"><b style="color: red;">${note[1]} ${note[2]}</b> commented on status: <i style="color: gray;">${note[0]}</i></h7>
-						
-						<input type="submit" id="submit1" style="display: none">
-						</td></tr>						
-						</c:forEach>
-						<input type="hidden" id="notificationId" name="notificationId">
-						</c:if>
-						
-					</form>
-				</table>
-				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
-				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
-			</div>
-			</div> --%>
-			
-			
 			
 			<div id="RequestTopHome">
 				<table width=100%>
@@ -439,36 +400,45 @@ function sendFriendRequest(RequestTo){
 				<div id="middleHome">
 					
 					<!-- View perticular Notification Start here -->
-					<table width=100% style="margin-left: 10px">
-						<th colspan="3" bgcolor="#fcca7b">Notification List</th>
-						<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+					
+						
+						
 						<c:if test="${!empty NotificationList}">
-							<c:forEach items="${NotificationList}" var="notification">
-								
-								<tr id="NotiTRdiv">
-									<td width="40px;">
-									<img src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
-										height="80" width="80"; style="border-radius:30px;border: 2px dashed red;" ></td>
-									<td>
-									&nbsp;<span id="${notification[3]}" onclick="return jumpcomment('${notification[3]}')" style="cursor: pointer;">
-										<b style="color: purple;">${notification[1]}&nbsp;${notification[2]} </b>  comment on status :<br/>
-										<font style=" color:green; font-size:medium;  margin-left: 7px;"> ${notification[0]}</font>
-										<input type="submit" id="submit1" style="display: none"></span></td>
-									
+							<table width=100% style="margin-left: 10px">
+								<tr>
+									<td>Notification List</td>
 								</tr>
-								<tr></tr>
+							</table>
+							<c:forEach items="${NotificationList}" var="notification">
+								<form action="/vanjariudyogvishwa-v2/Notification" method="post">
+									<table width=100% style="margin-left: 10px">
+										<tr id="NotiTRdiv">
+											<td width="40px;">
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${notification[4]}"
+													height="80" width="80"; style="border-radius:30px;border: 2px dashed red;" >
+											</td>
+											<td>
+												<span id="${notification[3]}" onclick="jumpcomment('${notification[3]}');" style="cursor: pointer;">
+													<b style="color: purple;">${notification[1]}&nbsp;${notification[2]} </b>  commented on status :<br/>
+													<font style=" color:green; font-size:medium;  margin-left: 7px;"> ${notification[0]}</font>
+												</span>
+												<input type="submit" id="submit${notification[3]}" style="display: none">
+												<input type="hidden" id="notificationId" name="notificationId" value="${notification[3]}">
+											</td>
+										</tr>
+									</table>
+								</form>
 							</c:forEach>
-							<input type="hidden" id="notificationId" name="notificationId">
 						</c:if>
-						</form>
+						
 						<c:if test="${empty NotificationList}">
-							<table>
+							<table width=100% style="margin-left: 10px">
 								<tr>
 									<td>There is no Notification for display</td>
 								</tr>
 							</table>
 						</c:if>
-					</table>
+					
 					
 					<!-- View perticular Notification End here -->
 					

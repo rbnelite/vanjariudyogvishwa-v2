@@ -683,8 +683,11 @@ input[type="button"][value="Comments"]
 						
 					</form>
 				</table>
-				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
-				<table style="float: right;"><tr><td><input type="submit"  id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+				<table style="float: right;">
+					<tr><td>
+						<a href="Notificationjsp"> See All Notification....</a>
+					</td></tr>
+				</table>
 			</div>
 			</div>
 			<div id="RequestTopHome">
@@ -848,7 +851,7 @@ input[type="button"][value="Comments"]
 											<td align="left" id="EditVUVStatus${notifStatus[0].id}" style="display: none;">
 											<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 												<textarea id="newVuvStatus${notifStatus[0].id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${notifStatus[0].status}</textarea><br>
-												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');">
+												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');" style="margin: 15px 15px 10px 500px;">
 												<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${notifStatus[0].id}');">
 											</form>
 											</td>
@@ -909,6 +912,7 @@ input[type="button"][value="Comments"]
 													type="text" name="commenttext" id="commentt"
 													placeholder="Write a comment and Press Enter...."
 													style="width: 535px; height: 30px; margin-top: 10px; margin-left: -50px">
+													<input type="hidden" name="whoseStatus" value="${notifStatus[0].user.emailId}">
 											</form>
 										</div>
 										<br>
@@ -1037,7 +1041,7 @@ input[type="button"][value="Comments"]
 												<td align="left" id="EditVUVStatus${status11.id}" style="display: none;">
 												<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 													<textarea id="newVuvStatus${status11.id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${status11.status}</textarea><br>
-													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');">
+													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');" style="margin: 15px 15px 10px 500px;">
 													<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${status11.id}');">
 												</form>
 												</td>
@@ -1069,8 +1073,8 @@ input[type="button"][value="Comments"]
 																</font>
 																<c:if test="${myComment.user.emailId==loginUser.email}">
 																<input type="button"
-																	style="width: 50px; height: 25px; float: right; margin-top: 10px;cursor: pointer; background-color: transparent; border:none; color: rgba(129, 99, 227, 1); font: 22px cursive MS;"
-																	value="edit" onclick="showSpanEdit('${myComment.id}')">
+																	style="width: 35px; height: 25px; float: right; margin-top: 8px; cursor: pointer; background-color: transparent; border: none; color: rgba(129, 99, 227, 1); font: 18px cursive MS;"
+																	value="edit" title="Click to Edit this comment..." onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
 																	<br> <span id="${myComment.id}">${myComment.comment}</span>
 																	<%-- <br><span>${myComment.date}</span> --%>
@@ -1119,6 +1123,7 @@ input[type="button"][value="Comments"]
 													placeholder="Write a comment and Press Enter...."
 													style="width: 535px; height: 30px; margin-top: 10px; margin-left: -50px">
 													<!-- <input type="submit" id="commentsubmit" style="border: none; background: none; display: none;" > -->
+													<input type="hidden" name="whoseStatus" value="${status11.user.emailId}">
 											</form>
 										</div>
 										<br>

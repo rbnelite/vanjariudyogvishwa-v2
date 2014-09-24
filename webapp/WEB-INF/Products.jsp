@@ -376,8 +376,11 @@ textarea:FOCUS{
 						
 					</form>
 				</table>
-				<form action="/vanjariudyogvishwa-v2/Notificationjsp" method="post">
-				<table style="float: right;"><tr><td><input type="submit" id="oldnotification" style="border: none; background: none;" value="See Old Notifications"></td></tr></table></form>
+				<table style="float: right;">
+					<tr><td>
+						<a href="Notificationjsp"> See All Notification....</a>
+					</td></tr>
+				</table>
 			</div>
 			</div>
             <div id="RequestTopHome">

@@ -87,7 +87,7 @@ public class CommentController {
 	
 	
 	@RequestMapping(value="/Comment", method=RequestMethod.POST)
-	public String addComment(HttpServletRequest request, @ModelAttribute("CommentCredential")CommentCredential commentcredential,ModelMap map)
+	public String addComment(HttpServletRequest request,@RequestParam("whoseStatus") String whoseStatus, @ModelAttribute("CommentCredential")CommentCredential commentcredential,ModelMap map)
 	{
 		
 		HttpSession session=request.getSession(true);
@@ -95,8 +95,11 @@ public class CommentController {
     	String userMail=loginUser.getEmail();
     	
 		Integer CommentId=commentservice.saveComment(commentcredential);
-				
-		notificationService.insertNotification(commentcredential, CommentId);
+		
+		if(! commentcredential.getWhoseComment().equals(whoseStatus))
+		{
+			notificationService.insertNotification(commentcredential, CommentId);
+		}
 		
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotification(userMail));

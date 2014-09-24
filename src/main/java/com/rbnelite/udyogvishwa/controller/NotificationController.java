@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -106,7 +104,7 @@ public class NotificationController {
 		return "Home";
 	}
 	
-	@RequestMapping(value="/Notificationjsp", method=RequestMethod.POST)
+	@RequestMapping(value="/Notificationjsp")
 	public String seenotification(ModelMap map)
 	{
 		LoginUser loginUser = RequestContext.getUser();
@@ -114,30 +112,6 @@ public class NotificationController {
 				
 		notificationService.changeNotificationStatus(userMail);
 		
-		map.put("Notification",new Notification());
-		map.put("NotificationList", notificationService.listNotificationAll(userMail));	
-		
-		map.put("knownPeople", new IntrestAreas());
-		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
-		map.put("knownPeopleList", knowPeopleSet);
-		
-		map.put("friendRequest", new FriendRequest());
-		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
-
-		map.put("ProfileImage", new ProfileImages());
-		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
-		
-		map.put("myEvents", new Event());
-		map.put("eventstList", eventService.listEvents());
-		
-		return "Notification";
-	}
-	
-	@RequestMapping(value="/Notificationjsp")
-	public String notificationform(ModelMap map)
-	{
-		LoginUser loginUser = RequestContext.getUser();
-		String userMail=loginUser.getEmail();
 		map.put("Notification",new Notification());
 		map.put("NotificationList", notificationService.listNotificationAll(userMail));	
 		
