@@ -132,7 +132,7 @@
 				height: 35px;
 				width: 80px;
 				color:white;
-				background-color: green;
+				background-color: #7AD77A;
 				font-size: 20px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-radius: 6px;
@@ -141,8 +141,8 @@
 			#VUVloginBtn:HOVER{
 				height: 35px;
 				width: 80px;
-				color:black;
-				background-color: rgba(188, 26, 249, 0.75);
+				color: white;
+				background-color: #CD95E3;
 				font-size: 20px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-radius: 6px;

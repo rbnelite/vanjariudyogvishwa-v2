@@ -136,7 +136,7 @@ function sendFriendRequest(RequestTo){
 	color: black;
 }
 #showFrndConversionName:hover {
-color:rgba(171, 139, 139, 1);
+	color: #008000;
 } 
 #InnerleftMainMsg {
 	border-radius: 3px;
@@ -456,12 +456,12 @@ textarea:FOCUS{
 									<form action="/vanjariudyogvishwa-v2/viewConversion" , method="post">
 										<tr>
 											<td>
-												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}" height="30" width="30">
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}" height="37" width="37">
 											</td>
 											<td>
 												<input type="hidden" name="msgSenderID" value="${loginUser.email}">
 												<input type="hidden" name="msgReceiverID" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
-												<input id="showFrndConversionName" type="submit" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" style="color:">
+												<input id="showFrndConversionName" type="submit" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" title=" Start messaging with ${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}">
 											</td>
 										</tr>
 									</form>
@@ -529,7 +529,7 @@ textarea:FOCUS{
 						<div style="margin: 5px auto auto 37px; width: 735px; height: 355px; background-color: transparent; overflow: auto; padding-right: 20px; padding-bottom: 8px;">
 							<c:if test="${!empty msgConversionList}">
 							
-								<c:if test="${! empty ProfileImageListMsgFrnd}">
+								<%-- <c:if test="${! empty ProfileImageListMsgFrnd}">
 									<c:forEach items="${ProfileImageListMsgFrnd}" var="ProfileImageMsgFrnd">
 										<div id="ProfileImageMsgFrnd">
 										
@@ -537,22 +537,22 @@ textarea:FOCUS{
 												src="${pageContext.request.contextPath}/resources/ProfileImages/${ProfileImageMsgFrnd.profileImage}">
 										</div>
 									</c:forEach>
-								</c:if>
+								</c:if> --%>
 								
 		<c:forEach items="${msgConversionList}" var="msgConversion">
 			<c:choose>
 	        	<c:when test="${msgConversion[0]==loginUser.email}">
 			        <div class="bubble">
-			        	<font color="red" style="font-size: 24px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">You :</font><br>
-			        	<font color="black" style="font-size: 18px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
-			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
+			        	<font color="red" style="font-size: 20px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">You :</font><br>
+			        	<font color="black" style="font-size: 16px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
+			             	<a><font color="gray" size="1">${msgConversion[2]}</font></a>
 			        </div>
 	        	</c:when>
 	           	<c:otherwise>
 					<div class="bubble bubble--alt">
-						<font color="red" style="font-size: 24px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[4]} ${msgConversion[5]}</font><br>
-			        	<font color="black" style="font-size: 18px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
-			             	<a><font color="gray" size="2">${msgConversion[2]}</font></a>
+						<font color="red" style="font-size: 20px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[4]} ${msgConversion[5]}</font><br>
+			        	<font color="black" style="font-size: 16px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">${msgConversion[3] }</font> <br>
+			             	<a><font color="gray" size="1">${msgConversion[2]}</font></a>
 			        </div>
 	        	</c:otherwise>
         	</c:choose>
@@ -562,7 +562,7 @@ textarea:FOCUS{
         
         
        </c:if>
-
+					<a style="color:red;">${SenderReceiverSameError}</a>
 
 						</div>
 						

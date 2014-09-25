@@ -320,23 +320,23 @@ function sendFriendRequest(RequestTo){
 						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
 					<tr>
 						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="message"><font color="#00cccc">Message</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="message">Message</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
-						<td width="84%"> <a id="Shortlinks" href="Events"><font color="#00cccc">Events</font></a> </td>
+						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Photos"><font color="#00cccc">Photos</font></a> </td>
+						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="Product"><font color="#00cccc">Products</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
 					</tr>
 					<tr>
 						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
-						<td width="84%"><a id="Shortlinks" href="FriendList"><font color="#00cccc">Friends</font></a></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
 					</tr>
 					</table>
 				</div>

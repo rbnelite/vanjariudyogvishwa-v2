@@ -214,44 +214,54 @@ cursor: pointer;
 }
 
 #editCommentBtnHome{
-	width: 70px;
+	width: 50px;
 	height: 25px; 
 	margin-bottom: -5px;
-	background: none repeat scroll 0% 0% rgba(26, 118, 222, 0.62);
-	border-radius:10px;
-	border: 1px solid #FFA500;
 	font-size: 16px;
-	border: 0px 0px 0px 350px;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
+    background-color: orange;
+    color: black;
+    border: 1px solid rgba(17, 196, 245, 0.56);
+    border-radius: 5px;
+    cursor: pointer;
 	
 }
 #editCommentBtnHome:HOVER{
-	width: 70px;
+	width: 50px;
 	height: 25px; 
 	margin-bottom: -5px;
-	background: none repeat scroll 0% 0% rgba(26, 118, 222, 0.99);
-	border-radius:10px;
-	border: 1px solid #FFA500;
 	font-size: 16px;
 	border: 0px 0px 0px 350px;
-	
+	background: repeat scroll 0% 0% transparent;
+    background-color: rgba(243, 246, 249, 0.43);
+    color: black;
+    border: 1px solid orange;
+    border-radius: 5px;
+    cursor: pointer;
 }
 #editCommentResetBtn{
-	width: 70px;
+	width: 50px;
 	height: 25px;
 	margin-bottom: -5px;
-	background: none repeat scroll 0% 0% rgba(26, 118, 222, 0.62);
-	border-radius:10px;
-	border: 1px solid #FFA500;
 	font-size: 16px;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
+    background-color: orange;
+    color: black;
+    border: 1px solid rgba(17, 196, 245, 0.56);
+    border-radius: 5px;
+    cursor: pointer;
 }
 #editCommentResetBtn:HOVER{
-	width: 70px;
+	width: 50px;
 	height: 25px;
 	margin-bottom: -5px;
-	background: none repeat scroll 0% 0% rgba(26, 118, 222, 0.99);
-	border-radius:10px;
-	border: 1px solid #FFA500;
 	font-size: 16px;
+	background: repeat scroll 0% 0% transparent;
+    background-color: rgba(243, 246, 249, 0.43);
+    color: black;
+    border: 1px solid orange;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .commentBoxImage
 {
@@ -1137,8 +1147,8 @@ h4 {
 #VUVloginBtn{
 	height: 35px;
 	width: 80px;
-	color:white;
-	background-color: green;
+	color: black;
+	background-color: rgba(122, 215, 122, 1);
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
@@ -1147,8 +1157,8 @@ h4 {
 #VUVloginBtn:HOVER{
 	height: 35px;
 	width: 80px;
-	color:black;
-	background-color: rgba(188, 26, 249, 0.75);
+	color: white;
+	background-color: rgba(122, 215, 122, 1);
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;

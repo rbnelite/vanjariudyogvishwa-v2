@@ -542,7 +542,7 @@ cursor: pointer;
 	border: 1px solid gray;
 	float: left;
 	width: 468px;
-	height: 300px;
+	height: auto;
 	background-color: bisque;
 	overflow: hidden;
 }
@@ -576,7 +576,7 @@ cursor: pointer;
 	border-radius: 3px;
 	border: 1px solid rgba(245, 186, 118, 0.8);
 	width: 760px;
-	height: 300px;
+	height: auto;
 	background-color: bisque;
 	margin-bottom: 5px;
 	overflow: hidden;
@@ -1200,8 +1200,8 @@ h4 {
 #VUVloginBtn{
 	height: 35px;
 	width: 80px;
-	color:white;
-	background-color: green;
+	color: white;
+	background-color: rgba(122, 215, 122, 1);
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
@@ -1210,8 +1210,8 @@ h4 {
 #VUVloginBtn:HOVER{
 	height: 35px;
 	width: 80px;
-	color:black;
-	background-color: rgba(188, 26, 249, 0.75);
+	color: black;
+	background-color: rgba(122, 215, 122, 1);
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;

@@ -148,14 +148,14 @@ function sendFriendRequest(RequestTo){
 #VUVsearchByProBtn2{
 	width: 130px;
 	height: 130px;
-	background-color: green;
+	background-color: transparent;
 	border-radius: 6px;
 	border: none;
 }
 #VUVsearchByProBtn2:HOVER{
 	width: 130px;
 	height: 130px;
-	background-color: rgba(188, 26, 249, 0.75);
+	background-color: rgba(237, 137, 19, 0.29);
 	border-radius: 6px;
 	border: none;
 	cursor: pointer;

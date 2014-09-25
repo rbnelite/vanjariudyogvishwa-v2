@@ -880,7 +880,7 @@ input[type="button"][value="Comments"]
 															<tr>
 																<td align="left"><font color="green">${myComment.user.displayName}
 																</font>
-																	<br> ${myComment.comment}</td>
+																	<br> <pre>${myComment.comment}</pre></td>
 															</tr>
 															<tr>
 																<td><font color="blue" size="0.5"></font></td>
@@ -1076,20 +1076,18 @@ input[type="button"][value="Comments"]
 																	style="width: 35px; height: 25px; float: right; margin-top: 8px; cursor: pointer; background-color: transparent; border: none; color: rgba(129, 99, 227, 1); font: 18px cursive MS;"
 																	value="edit" title="Click to Edit this comment..." onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
-																	<br> <span id="${myComment.id}">${myComment.comment}</span>
+																	<br> <span id="${myComment.id}"><pre>${myComment.comment}</pre></span>
 																	<%-- <br><span>${myComment.date}</span> --%>
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">
 
-																		<%-- <textarea name="commenttext" id="comment${myComment.id}" style="height: auto;" >
-																			<c:out value="${myComment.comment}"/>
-																		</textarea> --%>
-																		<input type="text" name="commenttext" id="comment${myComment.id}" value="${myComment.comment}" 
-																			style="width: 440px; height: 30px; margin-top: 10px; margin-left: 5px" >
+																		<textarea name="commenttext" id="comment${myComment.id}" style="height: auto; width: 560px;" >${myComment.comment}</textarea>
+																		<%-- <input type="text" name="commenttext" id="comment${myComment.id}" value="${myComment.comment}" 
+																			style="width: 100%; height: 30px; margin-top: 10px; margin-left: 5px" > --%>
 																		
-																		<div style="float: right; margin:4px 40px -3px 0px">
+																		<div style="float: right; margin:10px -20px 0px 0px;">
 																			<input type="submit" value="Edit" id="editCommentBtnHome" onclick="return emptyEditerror('${myComment.id}')">
-																			<input type="reset" value="Cancel" id="editCommentResetBtn" onclick="hideSpanEdit('${myComment.id}')">
+																			<input type="reset" value="Exit" id="editCommentResetBtn" onclick="hideSpanEdit('${myComment.id}')">
 																		</div>
 																</span></td>
 															</tr>

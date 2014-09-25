@@ -77,7 +77,11 @@ public class MessageController {
 			System.out.println(s1[1]+"&&&&&&&&&&&&&");
 		}
 		
-		ObjmsgService.addMessage(msgdto,s1[1]);
+		if(! s1[1].equals(userMail)){
+			ObjmsgService.addMessage(msgdto,s1[1]);
+		}else{
+			map.put("SenderReceiverSameError", "You can't send message to your Self");
+		}
 		map.put("ProfileImageMsgFrnd", new ProfileImages());
 		map.put("ProfileImageListMsgFrnd", profileImageService.getProfileImage(s1[1]));
 		
