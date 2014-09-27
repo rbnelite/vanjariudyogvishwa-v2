@@ -129,7 +129,7 @@
     </script>
     <style type="text/css">
 			#VUVloginBtn{
-				height: 35px;
+				height: 40px;
 				width: 80px;
 				color:white;
 				background-color: #7AD77A;
@@ -138,11 +138,11 @@
 				border-radius: 6px;
 				border: none;
 			}
-			#VUVloginBtn:HOVER{
-				height: 35px;
+			#VUVloginBtn:HOVER,#VUVloginBtn:FOCUS{
+				height: 40px;
 				width: 80px;
 				color: white;
-				background-color: #CD95E3;
+				background-color: #DFBBED;
 				font-size: 20px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-radius: 6px;
@@ -161,11 +161,11 @@
 </head>
 <body>
 <center>
-	<div id="main" style="background-color: bisque; height: 1000px">
+	<div id="main" style="background-color: transparent; height: 1000px">
 		<div id="Header">
 			
 			<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">
-						<table width="616" border="0" align="right" style="margin-top: 15px">
+						<table width="636" border="0" align="right" style="margin-top: 15px">
 							<tr>
 								<td><span class="style8"><span
 										class="style16"><span class="style8" style="margin-left: 5px">Email</span></span></span><span
@@ -176,7 +176,7 @@
 							<tr>
 								<td><input id="LoginUserName" name="user_name" type="text" maxlength="40" placeholder="Email ID" onfocus="return hideErrorMsg()" onkeypress="return hideEmailError();"/> 
 									<input id="LoginPassword" name="password" type="password" maxlength="20" placeholder="Password" onfocus="return LoginMailValidation()" onkeypress="return hideEmailError();"/> 
-									<input id="VUVloginBtn" type="submit" value="Log In" name="login" onclick="return LoginFormValidation();" onfocus="return LoginPasswordValidation();"/>
+									<input id="VUVloginBtn" type="submit" value="Log In" name="login" style="width: 100px;" onclick="return LoginFormValidation();" onfocus="return LoginPasswordValidation();"/>
 								</td>
 
 							</tr>
@@ -193,7 +193,7 @@
 											<input name="" type="checkbox" value="" /> <span
 											class="style21"><span class="style8">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="#" style="text-decoration: none; cursor: help;"
+												<a href="#" style="text-decoration: none; cursor: help;" title="If you dont know your password then click here..."
 												onclick="javascript:void window.open('ForgotPassword','1364071233609','width=700,height=550,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
 										</span>
 									</span></span></td>
@@ -367,7 +367,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn"  onclick="return passwordNotSame()"/></td>
+								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn" style="width: 200px;"  onclick="return passwordNotSame()"/></td>
 							</tr>
 						</table>
 					</form:form>

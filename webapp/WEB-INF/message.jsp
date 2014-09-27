@@ -300,15 +300,14 @@ textarea:FOCUS{
 		<div id="mainMessage">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
-				<div style="">
+					<div>
 						<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search for people, Place, Events....." style="height: 25px; width: 350px; border-radius:5px; border: none;background-color: white;"/>
-						<input id="VUVloginBtn" type="submit" value="Search">
-						<%-- style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');"> --%>
+						placeholder="Search for people, Place, Events....." style="height: 35px; width: 350px; border-radius:5px; border: none;background-color: white; margin-top: 10px;"/>
+						<input id="VUVloginBtn" type="submit" value="Search" style="height: 42px;">
 					</div>
 				</form>
-					 <label style="margin-left: 110px; margin-right:5px; margin-top: -30px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
-				<div id="profile_photo" style="margin-top: -25px;">
+				<label style="margin-right:5px; margin-top: -42px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
+				<div id="profile_photo" style="margin-top: -40px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
 					<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"

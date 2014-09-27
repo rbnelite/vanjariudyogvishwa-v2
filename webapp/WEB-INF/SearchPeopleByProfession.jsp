@@ -155,7 +155,7 @@ function sendFriendRequest(RequestTo){
 #VUVsearchByProBtn2:HOVER{
 	width: 130px;
 	height: 130px;
-	background-color: rgba(237, 137, 19, 0.29);
+	background-color: rgba(35, 240, 59, 0.33);
 	border-radius: 6px;
 	border: none;
 	cursor: pointer;
@@ -173,15 +173,14 @@ function sendFriendRequest(RequestTo){
 		<div id="main">
 			<div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
-					<div style="">
+					<div>
 						<input id="SearchData" type="text" name="SearchData"
-						placeholder="Search for people, Place, Events....." style="height: 25px; width: 350px; border-radius:5px; border: none;background-color: white;"/>
-						<input id="VUVloginBtn" type="submit" value="Search">
-						<%-- style="margin-left :-7px ;height: 36px;width: 94px; background-image: url('${pageContext.request.contextPath}/resources/icons/search-Button-Logo.png');"> --%>
+						placeholder="Search for people, Place, Events....." style="height: 35px; width: 350px; border-radius:5px; border: none;background-color: white; margin-top: 10px;"/>
+						<input id="VUVloginBtn" type="submit" value="Search" style="height: 42px;">
 					</div>
 				</form>
-					<label style="margin-left:110px; margin-right:5px;margin-top: -30px; float: right;">WelCome!<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
-				<div id="profile_photo" style="margin-top: -25px;">
+				<label style="margin-right:5px;margin-top: -42px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
+				<div id="profile_photo" style="margin-top: -40px;">
 					<c:if test="${! empty ProfileImageList}">
 				<c:forEach items="${ProfileImageList}" var="ProfileImage">
 					<img width="140px" height="140px" style="border-radius: 50px;border: 3px solid red"
@@ -387,19 +386,19 @@ function sendFriendRequest(RequestTo){
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Admin Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Admin Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/AdminProfessional.gif');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Admin Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/admin.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Actor"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Actor" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Actor.jpg');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Actor" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Actor-Male.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Advertising Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Advertising Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Advertising Professional.jpg');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Advertising Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/advertising.png');"></td></tr></table>
 					</form></td>
 					<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 						<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Agricultural Professional"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Agricultural Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Agricultural Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Ford-Tractor-icon.png');"></td></tr></table>
 					</form></td>
 				</tr>
 				
