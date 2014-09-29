@@ -1214,8 +1214,8 @@ h4 {
 	height: 678px;
 	margin-left: 5%;
 	margin-top:50px;
-	background-color: rgba(195, 222, 233, 1);
-	box-shadow: 20px 15px rgba(0, 0, 0, 0.16);
+	background-color: rgba(195, 222, 233, 0.33);
+	box-shadow: 15px 10px rgba(0, 0, 0, 0.16);
 	border-radius: 10px;
 }
 
@@ -1429,10 +1429,11 @@ input[type="text"],input[type="password"],input[type="email"], select {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius:5px;
 	background-color: transparent;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 3px 8px 3px 8px;
 	color: black;
+	transition: all 1s cubic-bezier(0,0,0.79,0.27) 0s;
 }
 			
 input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS, select :ACTIVE{
@@ -1441,8 +1442,9 @@ input[type="text"]:FOCUS, input[type="password"]:FOCUS,input[type="email"]:FOCUS
 	border: 1px solid rgba(28, 87, 227, 0.28);
 	border-radius:5px;
 	background-color: rgba(255, 255, 255, 0.69);
-	font-size: 18px;
+	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 3px 8px 3px 8px;
-	color: black;
+	color: rgba(68, 140, 70, 1);
+	transition: all 1s cubic-bezier(0,0,0.79,0.27) 0s;
 }
