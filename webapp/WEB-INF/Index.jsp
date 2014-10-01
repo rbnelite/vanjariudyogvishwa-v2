@@ -6,7 +6,6 @@
 --%>
 
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -19,11 +18,13 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 	<script src="<c:url value="/resources/js/RBNelite.js" />"></script>
+	<script src="<c:url value="/resources/js/VUVRregistrationValidation.js" />"></script>
 	<title>Vanjari Udyog Vishwa</title>
 	
 	<style type="text/css">
 		
 	</style>
+
 	<script>
 	 function LoginMailValidation(){
 		 var uName=document.getElementById("LoginUserName").value;
@@ -76,23 +77,10 @@
 		document.getElementById("EmailNullErrorDiv").innerHTML="";
 		document.getElementById("PasswordNullErrorDiv").innerHTML="";
 	 }
-	 function validateDOB(){
-
-		    var dob = document.getElementById("txtDOB").value;
-		    alert(dob);
-		    var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
-		    if (dob == null || dob == "" || !pattern.test(dob))
-		    {
-		        errMessage += "Invalid date of birth\n"; 
-		        return false;
-		    }
-		    else{
-		        return true;
-		    }
-		}
-	 
+	 	 
 	 function isNumberKey(evt)
             {
+		 		clearRegiError();
                 var charCode=(evt.which) ? evt.which :event.keyCode;
                 if(charCode >31 && (charCode<48 || charCode >57))
                     return false;
@@ -101,31 +89,100 @@
             
             function isCharKey(evt)
             {
+            	clearRegiError();
         		 var charCode=(evt.which) ? evt.which :event.keyCode;
         		 
         	        if(charCode >64 && charCode<123 || charCode==8)
         	            return true;
         	        return false;
             }
+            function isValidDOB(evt){
+            	clearRegiError();
+            	var charCode=(evt.which) ? evt.which :event.keyCode;
+                if((charCode >46 && charCode<58) || charCode==8)
+                    return true;
+                return false;
+            }
             
-            function passwordNotSame()
+            function validateRegiForm()
             {
             	
-            	var pass=document.getElementById("password2").value;
-            	var pass1=document.getElementById("password2");
-            	if(pass==null || pass=="")
-            			{
-            		alert("Confirm password should not be Blank !");
-            		return false;
-            			}
+            	var fname=document.getElementById("myFName");
+            	var mname=document.getElementById("myMName");
+            	var lname=document.getElementById("myLName");
+            	var myemail=document.getElementById("myEmailId");
+            	var mycontactNo=document.getElementById("myContactNo");
+            	var mydob=document.getElementById("txtDOB");
+            	var pass=document.getElementById("password");
+            	var pass2=document.getElementById("password2");
             	
-            	var pass2=document.getElementById("password").value;
-            	if(pass2!=pass)
-            		{
-            			alert("Password and Confirm Password must be equal");
+            	if(fname.value == "" ){ 
+            		fname.focus();
+            		document.getElementById("myFNameError").innerHTML="First Name Required.";
+            		return false; 
+            	}
+            	else if(mname.value == ""){ 
+            		mname.focus(); 
+            		document.getElementById("myMNameError").innerHTML="Middle Name Required.";
+            		return false;
+            	}
+            	else if(lname.value == ""){
+            		lname.focus();
+            		document.getElementById("myLNameError").innerHTML="Last Name Required.";
             		return false;
             		}
+            	else if( myemail.value=="") { 
+            		myemail.focus();
+            		document.getElementById("myEmailIdError").innerHTML="Email ID Required.";
+            		return false;
+            		}
+            	else if( mycontactNo.value=="") { 
+            		mycontactNo.focus();
+            		document.getElementById("myContactNoError").innerHTML="10 Digits Mobile No is Required.";
+            		return false; 
+            		}
+            	else if( mydob.value=="") { 
+            		mydob.focus();
+            		/* document.getElementById("txtDOBError").innerHTML="Birth Date is Required."; */
+            		return false; 
+            		}
+            	
+            	else if(ValidateMyDobForm(mydob.value))
+            	{
+            		document.getElementById("myBDError").innerHTML="";
+            		
+            		if( pass.value=="") { 
+            			pass.focus();
+            			document.getElementById("passwordError").innerHTML="Password Is Required.";
+            			return false; 
+            		}
+                 	else if( pass2.value=="") { 
+                 		pass2.focus();
+                 		document.getElementById("password2Error").innerHTML="Re-Enter Password.";
+                 		return false;
+                 	}
+            		 
+	            	if(pass.value != pass2.value)
+	            	{
+	            		pass2.focus();
+	            		document.getElementById("password2Error").innerHTML="Confirm Password not matching.";
+	            		return false;
+	            	}
+	            }
+            	else
+            	{
+	            	return false;
+	            }
             }
+            function clearRegiError() {
+            	document.getElementById("myFNameError").innerHTML="";
+            	document.getElementById("myMNameError").innerHTML="";
+            	document.getElementById("myLNameError").innerHTML="";
+            	document.getElementById("myEmailIdError").innerHTML="";
+            	document.getElementById("myContactNoError").innerHTML="";
+            	document.getElementById("passwordError").innerHTML="";
+            	document.getElementById("password2Error").innerHTML="";
+			}
     </script>
     <style type="text/css">
 			#VUVloginBtn{
@@ -191,7 +248,7 @@
 							<tr>
 								<td><span class="style7"><span class="style8">
 											<input name="" type="checkbox" value="" /> <span
-											class="style21"><span class="style8">Remember
+											class="style21"><span class="style8" style="background-image: url('/vanjariudyogvishwa-v2/resources/images/tick.ico');">Remember
 													Me</span>&nbsp;</span><span class="style7"></span><span class="style16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<a href="#" style="text-decoration: none; cursor: help;" title="If you dont know your password then click here..."
 												onclick="javascript:void window.open('ForgotPassword','1364071233609','width=700,height=550,toolbar=0,menubar=0,location=100,status=0,scrollbars=1,resizable=0,left=450,top=250', focus());return false;">Forgot	your Password ?</a>
@@ -265,7 +322,7 @@
 					Create Your Account...
 				</span>
 			</span>
-					<form:form action="/vanjariudyogvishwa-v2/Index" method="post" commandName="index">
+					<form action="/vanjariudyogvishwa-v2/Index" method="post">
 						
 						<table id="MyRegistrationTable">
 							<!-- <tr >
@@ -274,62 +331,64 @@
 							<tr>
 								<td width="20"></td>
 								<td width="170" class="RegistrationCredentials">First Name<font color="red">*</font></td>
-								<td><form:input path="firstName" size="30" maxlength="15" placeholder="First Name" onkeypress="return isCharKey(event);" /></td>
+								<td><input type="text" name="firstName" id="myFName" size="30" maxlength="15" placeholder="First Name" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="firstName" cssClass="error"/></td>
+								<td id="myFNameError" style="color: red;"></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Middle Name<font color="red">*</font></td>
-								<td><form:input path="middleName" size="30" maxlength="15" placeholder="Middle Name" onkeypress="return isCharKey(event);"/></td>
+								<td><input type="text" name="middleName" id="myMName" size="30" maxlength="15" placeholder="Middle Name" onkeypress="return isCharKey(event);"/></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="middleName" cssClass="error" /></td>
+								<td id="myMNameError" style="color: red;"></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Last Name<font color="red">*</font></td>
-								<td><form:input path="lastName" size="30" maxlength="15" placeholder="Last Name" onkeypress="return isCharKey(event);" /></td>
+								<td><input type="text" name="lastName" id="myLName" size="30" maxlength="15" placeholder="Last Name" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="lastName" cssClass="error" /></td>
+								<td id="myLNameError" style="color: red;"></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Email Id<font color="red">*</font></td>
-								<td><form:input path="emailId" 	size="30" maxlength="30" placeholder="EmailId" /></td>
+								<td><input name="emailId" type="email" id="myEmailId"	size="30" maxlength="30" placeholder="EmailId" /></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="emailId" cssClass="error" />${requestScope.message_email}</td>
+								<td id="myEmailIdError" style="color: red;">${requestScope.message_email}</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Contact No.<font color="red">*</font></td>
-								<td><form:input path="contactNo" size="30" maxlength="10" placeholder="Mobile No." onkeypress="return isNumberKey(event)" /></td>
+								<td><input type="text" name="contactNo" id="myContactNo" size="30" maxlength="10" placeholder="Mobile No." onkeypress="return isNumberKey(event)" /></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="contactNo" cssClass="error" /></td>
+								<td id="myContactNoError" style="color: red;"></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Birth Date<font color="red">*</font></td>
-								<td><form:input path="birthDate" name="txtDOB" onblur="return validateDOB();" size="30" placeholder="dd/mm/yyyy"/></td>
+								<td><input type="text" name="birthDate" name="txtDOB" id="txtDOB" maxlength="10" onkeypress="return isValidDOB(event);" size="30" placeholder="dd/mm/yyyy"/></td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td><form:errors path="birthDate" cssClass="error" /></td>
+								<!-- <td></td>
+								<td></td> -->
+								<td colspan="3">
+									<div id="myBDError" style="color: red"></div>
+								</td>
 							</tr>
 							<tr>
 								<td></td>
@@ -338,39 +397,45 @@
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Gender<font color="red">*</font></td>
-								<td><form:radiobutton path="gender" value="male" style="width: 19px; height: 25px;" />
+								<td><input type="radio"  name="gender" checked="checked" value="male" style="width: 19px; height: 25px;" />
 									<span>Male</span>&nbsp;&nbsp;
-									<form:radiobutton path="gender" value="female" style="width: 19px; height: 25px;"/>
+									<input type="radio"  name="gender" value="female" style="width: 19px; height: 25px;"/>
 									<span>Female</span><br>
 								</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
-								<td><form:errors path="gender" cssClass="error"/></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Password<font color="red">*</font></td>
-								<td><form:password path="password" id="password" placeholder="New Password" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
+								<td><input type="password" name="password" id="password" placeholder="New Password" onkeypress="return clearRegiError();" size="30" maxlength="20" title="Password must contain 1 digit, 1 Character, and Length must be 6 to 16." /></td>
 							</tr>
-							
+							<tr>
+								<td></td>
+								<td></td>
+								<td id="passwordError" style="color: red;"></td>
+							</tr>
 							<tr>
 								<td></td>
 								<td class="RegistrationCredentials">Confirm Password<font color="red">*</font></td>
-								<td><input type="password" name="password2" id="password2" class="password2" placeholder="Confirm Password" size="30" maxlength="20" title="Type password matches to above" /></td>
+								<td><input type="password" name="password2" id="password2" class="password2" placeholder="Confirm Password" onkeypress="return clearRegiError();" size="30" maxlength="20" title="Type password matches to above" /></td>
 							</tr>
 							<tr>
-								<td colspan="3"><form:errors path="password" cssClass="error" /></td>
+								<td></td>
+								<td></td>
+								<td id="password2Error" style="color: red;"></td>
 							</tr>
 							
 							<tr>
 								<td></td>
 								<td></td>
-								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn" style="width: 200px;"  onclick="return passwordNotSame()"/></td>
+								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn" style="width: 200px;"  onclick="return validateRegiForm()"/></td>
 							</tr>
 						</table>
-					</form:form>
+					</form>
 				
 			
 			
@@ -438,9 +503,8 @@
 				</table>
 			</div>
 			</div>
-	</div>
-
-</center>
+		</div>
+	</center>
 
 
 </body>

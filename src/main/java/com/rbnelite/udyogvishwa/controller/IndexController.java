@@ -65,15 +65,10 @@ public class IndexController {
 	private FriendRequestService friendrequestservice;
 
 	@RequestMapping(value = "/Index", method = RequestMethod.POST)
-	public String registration(@Valid Index index, BindingResult result,
-			@RequestParam("emailId") String emailId,
+	public String registration(@RequestParam("emailId") String emailId,
 			@ModelAttribute("IndexCredential") IndexCredential indexcredential,
 			HttpServletRequest request,ModelMap map) {
-		if (result.hasErrors()) {
-			
-			return "Index";
-			
-		} else {
+	
 			indexservice.saveRegistration(indexcredential);
 			
 				/***********For Default Profile Image **********/
@@ -95,7 +90,7 @@ public class IndexController {
 			map.addAttribute("occupation", new Occupation());
 			map.put("IndexStatus", true);
 			return "Registration";
-		}
+		
 	}
 
 	@RequestMapping(value = "/loginAuthentication", method = RequestMethod.POST)
