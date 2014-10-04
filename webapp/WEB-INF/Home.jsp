@@ -791,7 +791,7 @@ input[type="button"][value="Comments"]
 
 										<tr>
 											<td align="left" id="VUVStatus${notifStatus[0].id}">
-												<pre id="vuvStatusStatus${notifStatus[0].id}" style="font-family: Tahoma, sans-serif;">${notifStatus[0].status}</pre>
+												<pre id="vuvStatusStatus${notifStatus[0].id}" style="font-family: Tahoma, sans-serif; font-size: 18px;color: #741818">${notifStatus[0].status}</pre>
 											</td>
 											<td align="left" id="EditVUVStatus${notifStatus[0].id}" style="display: none;">
 											<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
@@ -825,7 +825,7 @@ input[type="button"][value="Comments"]
 															<tr>
 																<td align="left"><font color="green">${myComment.user.displayName}
 																</font>
-																	<br> <pre>${myComment.comment}</pre></td>
+																	<br> <pre style="font-family: Tahoma, sans-serif;color: #605A5A;">${myComment.comment}</pre></td>
 															</tr>
 															<tr>
 																<td><font color="blue" size="0.5"></font></td>
@@ -980,7 +980,7 @@ input[type="button"][value="Comments"]
 
 										<tr>
 											<td align="left" id="VUVStatus${status11.id}">
-												<pre id="vuvStatusStatus${status11.id}" style="font-family: Tahoma, sans-serif;">${status11.status}</pre>
+												<pre id="vuvStatusStatus${status11.id}" style="font-family: Tahoma, sans-serif; font-size: 18px;color: #741818">${status11.status}</pre>
 											</td>
 											
 												<td align="left" id="EditVUVStatus${status11.id}" style="display: none;">
@@ -1021,7 +1021,7 @@ input[type="button"][value="Comments"]
 																	style="width: 35px; height: 25px; float: right; margin-top: 8px; cursor: pointer; background-color: transparent; border: none; color: rgba(129, 99, 227, 1); font: 18px cursive MS;"
 																	value="edit" title="Click to Edit this comment..." onclick="showSpanEdit('${myComment.id}')">
 																</c:if>
-																	<br> <span id="${myComment.id}"><pre>${myComment.comment}</pre></span>
+																	<br> <span id="${myComment.id}"><pre style="font-family: Tahoma, sans-serif;color: #605A5A;">${myComment.comment}</pre></span>
 																	<%-- <br><span>${myComment.date}</span> --%>
 																	<span id="con${myComment.id}" style="display: none;">
 																		<input type="hidden" name="id" value="${myComment.id}">
