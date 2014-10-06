@@ -23,17 +23,6 @@
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<!-- <script type="text/javascript">
-$(function() {
-	
-setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
-
-$('#btnclick').click(function() {
-$('#testdiv').show();
-setTimeout(function() { $("#testdiv").fadeOut(1500); }, 3000)
-})
-})
-</script> -->
 
 <script type="text/javascript">
 //code for validation status post for blank code
@@ -263,22 +252,6 @@ function goDeleteMyStatusNow(statusId){
 	    background-color: white;
 	}
 </style>
-		<script type="text/javascript">
-            
-            var image1=new Image()
-            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
-            var image2=new Image()
-            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg"
-            var image3=new Image()
-            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg"
-            var image4=new Image()
-            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg"
-            var image5=new Image()
-            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg"
-            var image6=new Image()
-            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
-            
-        </script>
 
 <script type="text/javascript">
 function validatePhotoUploadForm(){

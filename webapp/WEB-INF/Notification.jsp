@@ -104,22 +104,6 @@ function sendFriendRequest(RequestTo){
 	
 }
 </script>
-<script type="text/javascript">
-            
-            var image1=new Image()
-            image1.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg"
-            var image2=new Image()
-            image2.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 3.jpg"
-            var image3=new Image()
-            image3.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 4.jpg"
-            var image4=new Image()
-            image4.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 5.jpg"
-            var image5=new Image()
-            image5.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 6.jpg"
-            var image6=new Image()
-            image6.src="${pageContext.request.contextPath}/resources/Advertisement/Advertise 7.jpg"
-            
-        </script>
 
 <style type="text/css">
 
