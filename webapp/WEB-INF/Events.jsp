@@ -20,42 +20,48 @@
 <title>Events Page | Vanjari Udyog Vishwa</title>
 
 <script type="text/javascript">
-
+function isValidEvtDate(evt){
+	var charCode=(evt.which) ? evt.which :event.keyCode;
+    if((charCode >46 && charCode<58) || charCode==8)
+        return true;
+    return false;
+}
 function abc(){
-	 var name=document.getElementById("EventName").value;
-	 var details=document.getElementById("EventDetails").value;
-	 var location=document.getElementById("EventLocation").value;
-	 var datatime=document.getElementById("EventDatatime").value;
+	 var name=document.getElementById("EventName");
+	 var details=document.getElementById("EventDetails");
+	 var location=document.getElementById("EventLocation");
+	 var datatime=document.getElementById("EventDatatime");
+	 var eventError=document.getElementById("error");
 	 
-	 	if(name.length==0)
+	 	if(name.value.length==0)
 		{
-			document.getElementById("error").innerHTML="please provide proper name"; 
-			document.getElementById("EventName").focus();
+	 		eventError.innerHTML="please provide Event name"; 
+			name.focus();
 	     	return false;		
 		}
-	 	else if(details.length==0)
+	 	else if(details.value.length==0)
 	    {
-			document.getElementById("error").innerHTML="please provide proper details"; 
-			document.getElementById("EventDetails").focus();
+	 		eventError.innerHTML="please provide Event details"; 
+			details.focus();
 			return false;	
 	    }
-	 	else if(location.length==0) 
+	 	else if(location.value.length==0) 
 		{
-	    	document.getElementById("error").innerHTML="please provide proper location";
-	    	document.getElementById("EventLocation").focus();
+	 		eventError.innerHTML="please provide Event location";
+	    	location.focus();
 	    	return false;
 		} 
-	 	else if(datatime.length==0)
+	 	else if(datatime.value.length<10)
 	    {
-	    	document.getElementById("error").innerHTML="please provide proper datetime";
-	    	document.getElementById("EventDatatime").focus();
+	 		eventError.innerHTML="please provide Event datetime";
+	    	datatime.focus();
 	    	return false;
 	    }
 	 	else{
+	 		eventError.innerHTML="";
 	 		saveMyEvent();
 	 		return false;
 	 	}
-	      
 }
 
 
@@ -218,16 +224,14 @@ function sendFriendRequest(RequestTo){
    
 }
 
-
-
-#errortr{
-display: none;
+input[type="text"], select {
+	margin-bottom: 5px;
 }
 
 #mainEvents {
     background-color: bisque;
     width: 1400px;
-    height: 1250px;
+    height: 1310px;
     margin: 10px 50px;
     border-radius: 3px;
 }
@@ -451,11 +455,11 @@ display: none;
 				</table>
 			</div>
 
-			<div id="MiddleTopEvent">
+			<div id="MiddleTopEvent" style="height: 410px;">
 				<form action="/vanjariudyogvishwa-v2/Events" method="post">
 					<table>
 						<h3><font color="purple">Create Event</font></h3>
-						
+						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
 						<tr>
 							<td>Event Name <font color="red">*</font> :</td>
 							<td><input type="text" name ="name" id="EventName"
@@ -488,13 +492,14 @@ display: none;
 						<%-- <tr><td>  <form:errors path="location" cssClass="error"/> </td></tr> --%>
 						<tr>
 							<td>Date <font color="red">*</font> :</td>
-							<td><input type="text" name ="datatime" id="EventDatatime"
-								placeholder="dd/mm/yyyy"
-								style="width: 400px; height: 30px;"/><br>
+							<td>
+								<input type="text" name ="datatime" id="EventDatatime" placeholder="dd/mm/yyyy" 
+									onkeypress="return isValidEvtDate(event);" maxlength="10"
+									style="width: 400px; height: 30px;"/><br>
 								
 							</td>
 						</tr>
-						<tr><td></td><td><span id="error" style="color:red;"></span></td></tr>
+						
 						<tr>
 							<td>
 								<input type="hidden" id="MyUsermail" name="usermail" value="${loginUser.email}">
@@ -530,7 +535,7 @@ display: none;
 								<td style="min-width: 35%" id="MyNewEventDetails"></td>
 							</tr> -->
 							<c:forEach items="${eventstList}" var="myEvents">
-								<tr title="${myEvents[5]}">
+								<tr title="${myEvents[5]}-${myEvents[1]} ${myEvents[2]}">
 									<td><img src="${pageContext.request.contextPath}/resources/images/event.png" title="${myEvents[5]}" height="50" width="52"></td>
 									<td>${myEvents[0]}<br></td>
 									<td>${myEvents[4]}<br></td>
@@ -545,7 +550,7 @@ display: none;
 			</div>
 
 
-			<div id="rightMain" style="background-color: bisque;margin-top: -1007px;">
+			<div id="rightMain" style="background-color: bisque;margin-top: -1067px; height: 1070px;">
 				<%@include file="RightContainer.jsp" %>
 			</div>
 				
