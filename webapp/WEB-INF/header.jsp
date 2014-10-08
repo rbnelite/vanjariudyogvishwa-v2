@@ -1,9 +1,27 @@
+
+<script type="text/javascript">
+function validateSearchForm(){
+    	alert("from validateSearchForm()");
+    	var srchStr=document.getElementById("SearchData");
+    	if(srchStr.value.length==0)
+    	{
+    		srchStr.focus();
+    		srchStr.style.border='2px solid red';
+    		return false;
+    	}
+    	else{
+    		srchStr.style.border='none';
+    		return true;
+    	}
+    }
+</script>
+
 <div id="Header">
 				<form action="/vanjariudyogvishwa-v2/SearchResult">
 					<div>
 						<input id="SearchData" type="text" name="SearchData"
 						placeholder="Search for people, Place, Events....." style="height: 35px; width: 350px; border-radius:5px; border: none;background-color: white; margin-top: 10px; margin-bottom: 0px;"/>
-						<input id="VUVloginBtn" type="submit" value="Search" style="height: 42px;">
+						<input id="VUVloginBtn" type="submit" value="Search" style="height: 42px;" onclick="return validateSearchForm();">
 					</div>
 				</form>
 				<label style="margin-right: 5px; margin-top: -42px; float: right;">WelCome !<b> ${loginUser.firstName} ${loginUser.lastName}</b></label> <br>
