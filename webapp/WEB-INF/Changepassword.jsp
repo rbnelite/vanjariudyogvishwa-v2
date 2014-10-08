@@ -16,6 +16,7 @@
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite.js" />"></script>
 <script src="<c:url value="/resources/js/anil.js" />"></script>
+<script src="<c:url value="/resources/js/AsyncFriendRequest.js" />"></script>
 <script type="text/javascript">
 	function validateChangePassword()
 	{
@@ -109,98 +110,6 @@
 
 		var temp = document.getElementById("submit1").click();
 	}
-</script>
-
-<script type="text/javascript">
-function sendRequest(RequestTo){
-	
-	sendFriendRequest(RequestTo);
-	return false;
-}
-
-function sendFriendRequest(RequestTo){
-	RequestFrom="";
-	requestStatus="";
-	reqDate="";
-	var parameters = "requestTo="+RequestTo+"&requestFrom="+RequestFrom+"&requestDate="+reqDate+"&requestStatus="+requestStatus+"";
-	
-	if (window.XMLHttpRequest)
-	{
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		myfirstReq=new XMLHttpRequest();
-	}
-	else
-	  {
-		// code for IE6, IE5
-		myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/sendFriendRequest", true);
-	
-	//Send the proper header information along with the request
-	myfirstReq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	myfirstReq.setRequestHeader("Content-length", parameters .length);
-	myfirstReq.setRequestHeader("Connection", "close");
-	
-	myfirstReq.onreadystatechange=function()
-	  {
-	  if (myfirstReq.readyState==4 && myfirstReq.status==200)
-	    {
-		  		document.getElementById("people"+RequestTo).style.display='none';
-	    } 
-	  };
-		myfirstReq.send(parameters);
-	
-}
-</script>
-<script type="text/javascript">
-function preChangeProImage(){
-	alert("From pre 1");
-	changeProImage();
-	alert("From pre 2");
-	return false;
-}
-function changeProImage(){
-	alert("1");
-	UProImg=document.getElementById("myNewProImg").src;
-	var parameters = "updateProfileImage="+UProImg;
-	alert("2)- Parameters are : "+parameters);
-	
-	if (window.XMLHttpRequest)
-	{
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		myfirstReq=new XMLHttpRequest();
-	}
-	else
-	  {
-		// code for IE6, IE5
-		myfirstReq=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	alert("3");
-	myfirstReq.open("POST", "/vanjariudyogvishwa-v2/UpdateProfileImage", true);
-	alert("4");	
-	//Send the proper header information along with the request
-	myfirstReq.setRequestHeader("Content-type", "multipart/form-data");
-	alert("After multipart/form-data");
-	myfirstReq.setRequestHeader("Content-length", parameters .length);
-	myfirstReq.setRequestHeader("Connection", "close");
-	alert("5");
-	myfirstReq.onreadystatechange=function()
-	  {
-		alert("State Changed");
-	  if (myfirstReq.readyState==4)
-	    {
-			alert("**** Wait wait **** Check first Change to Do");
-			filePath="${pageContext.request.contextPath}/resources/Advertisement/Advertise 2.jpg";
-			alert("wain again");
-			alert("@#@#@#@# : "+document.getElementById("myProImg").src);
-			document.getElementById("myProImg").src=filePath;
-			alert("8");
-		} 
-	  };
-		alert("6");
-		myfirstReq.send(parameters);
-		alert("7");
-}
 </script>
 
 <style type="text/css">

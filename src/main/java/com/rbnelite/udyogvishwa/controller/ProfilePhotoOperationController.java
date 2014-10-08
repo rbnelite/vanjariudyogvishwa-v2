@@ -63,7 +63,7 @@ public class ProfilePhotoOperationController {
      
 	    
 	    @RequestMapping(value="/UpdateProfileImage" , method=RequestMethod.POST)
-	    public @ResponseBody ProfileImageCredential updateProfileImage(HttpServletRequest request,@RequestParam CommonsMultipartFile[] updateProfileImage, ModelMap map)throws Exception{
+	    public String updateProfileImage(HttpServletRequest request,@RequestParam("JspPageName") String JspPageName,@RequestParam CommonsMultipartFile[] updateProfileImage, ModelMap map)throws Exception{
 	    	
 	    	System.out.println("************ From Update Profile Image ************");
 	       
@@ -71,7 +71,6 @@ public class ProfilePhotoOperationController {
         	LoginUser loginUser=(LoginUser) session.getAttribute("loginUser");
         	String userMail=loginUser.getEmail();
         	String loginFLname=loginUser.getFirstName()+loginUser.getLastName();
-        	ProfileImageCredential pic = new ProfileImageCredential();
         	
 	        if (updateProfileImage != null && updateProfileImage.length > 0) {
 	            for (CommonsMultipartFile aFile : updateProfileImage){
@@ -88,9 +87,8 @@ public class ProfilePhotoOperationController {
 	                	profileImageService.UpdateProfileImage(fileName, userMail);
 	                	
 	                    aFile.transferTo(new File(saveDirectory + fileName));
-	                    pic.setProfileImage(fileName);
 
-	                    /*map.put("ProfileImage", new ProfileImages());
+	                    map.put("ProfileImage", new ProfileImages());
 	            		map.put("ProfileImageList", profileImageService.getProfileImage(userMail));
 	            		
 	            		map.put("status11", new Status());
@@ -111,7 +109,7 @@ public class ProfilePhotoOperationController {
 	            		map.put("knownPeopleList", knowPeopleSet);
 	            		
 	            		map.put("friendRequest", new FriendRequest());
-	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));*/
+	            		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 
 	            		map.put("ab", "your profile picture changed sucessfully");
 
@@ -121,7 +119,7 @@ public class ProfilePhotoOperationController {
 	        
 	      
 	                
-	    	return pic ;
+	    	return JspPageName ;
 	    	
 	    }
 	   
