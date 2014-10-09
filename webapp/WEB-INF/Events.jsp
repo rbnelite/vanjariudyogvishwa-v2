@@ -284,24 +284,27 @@ input[type="text"], select {
 #newEventBtn{
 	width: auto;
 	height: 40px;
-	background-color: rgba(240, 59, 59, 0.25);
-	color:black;
-	border-radius: 6px;
-	border: 1px solid black;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
+    background-color: orange;
+    color: black;
+	border-radius: 4px;
+	border: 1px solid orange;
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	
+	transition: all 1s;
 }
 #newEventBtn:HOVER{
 	width: auto;
 	height: 40px;
-	background-color: rgba(240, 59, 59, 0.45);
-	color:black;
-	border-radius: 6px;
-	border: 1px solid black;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
+    background-color: orange;
+    color: white;
+	border-radius: 4px;
+	border: 1px solid orange;
 	font-size: 20px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
+	transition: all 1s;
 }
 </style>
 <!-- <style type="text/css">

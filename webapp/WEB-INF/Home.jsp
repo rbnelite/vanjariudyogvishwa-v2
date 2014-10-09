@@ -621,7 +621,7 @@ input[type="button"][value="Comments"]
 				</form>
 			</div>
 			<div id="outsidemiddleHome" style="margin-right: 300px; margin-top:0px; height: 985px">
-				<div id="middleHome" style="height: 985px;padding-bottom: 25px">
+				<div id="middleHome" style="height: 985px;padding-bottom: 55px;padding-right: 55px;">
 					
 					<!-- View perticular Notification Start here -->
 				
@@ -672,7 +672,7 @@ input[type="button"][value="Comments"]
 											<td align="left" id="EditVUVStatus${notifStatus[0].id}" style="display: none;">
 											<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 												<textarea id="newVuvStatus${notifStatus[0].id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${notifStatus[0].status}</textarea><br>
-												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');" style="margin: 15px 15px 10px 500px;">
+												<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${notifStatus[0].id}');" style="margin: 15px 15px 10px 480px;">
 												<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${notifStatus[0].id}');">
 											</form>
 											</td>
@@ -862,7 +862,7 @@ input[type="button"][value="Comments"]
 												<td align="left" id="EditVUVStatus${status11.id}" style="display: none;">
 												<form action="/vanjariudyogvishwa-v2/updateStatus" method="post">
 													<textarea id="newVuvStatus${status11.id}" name="status" id="styledTextArea" rows="2" cols="95" style="resize: none;">${status11.status}</textarea><br>
-													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');" style="margin: 15px 15px 10px 500px;">
+													<input type="submit" value="Save" class="connectBtn" onclick="return goEditStatus('${status11.id}');" style="margin: 15px 15px 10px 480px;">
 													<input type="button" value="Cancel" class="connectBtn" onclick="return cancelEditMyStatusReq('${status11.id}');">
 												</form>
 												</td>

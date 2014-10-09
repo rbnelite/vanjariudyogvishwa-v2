@@ -194,17 +194,19 @@
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-radius: 6px;
 				border: none;
+				transition: all 1s;
 			}
 			#VUVloginBtn:HOVER,#VUVloginBtn:FOCUS{
 				height: 40px;
 				width: 80px;
 				color: white;
-				background-color: #DFBBED;
+				background-color: #87CEEB;
 				font-size: 20px;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				border-radius: 6px;
 				border: none;
 				cursor: pointer;
+				transition: all 1s;
 			}
 			#EmailNullErrorDiv{
 				color:#F80CAA;
@@ -430,9 +432,7 @@
 							</tr>
 							
 							<tr>
-								<td></td>
-								<td></td>
-								<td ><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn" style="width: 200px;"  onclick="return validateRegiForm()"/></td>
+								<td colspan="3"><input name="Register" type="submit" value="Sign Up" id="VUVloginBtn" style="width: 200px;margin-left: 35%;"  onclick="return validateRegiForm()"/></td>
 							</tr>
 						</table>
 					</form>

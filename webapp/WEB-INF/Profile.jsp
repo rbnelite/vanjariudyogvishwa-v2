@@ -117,8 +117,9 @@ input[value="Edit"], input[type="reset"]{
 	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
     background-color: orange;
     color: black;
-    border: 1px solid rgba(17, 196, 245, 0.56);
+    border: 1px solid orange;
 	margin-top: 10px;
+	transition: all 1s;
 }
 input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	height: 30px;
@@ -127,10 +128,11 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	cursor: pointer;
 	border-radius:5px;
-	background: repeat scroll 0% 0% transparent;
+	background: -moz-linear-gradient(center top , #FAA51A, #F47A20) repeat scroll 0% 0% transparent;
     background-color: rgba(26, 118, 222, 0.43);
     color: rgba(216, 241, 242, 1);
     border: 1px solid orange;
+    transition: all 1s;
 }
 #IntrestAreaImages {
 	width: 100px;
@@ -208,7 +210,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	height: 350px;
 	overflow: auto;
 	background-color: bisque;
-	margin-left: 20px;
+	margin-left: 23px;
 }
 
 #OutsideleftMainHome {
@@ -391,7 +393,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 			
 			
 			<div id="outsidemiddleHome" style="margin-right: 300px; height: 1250px">
-				<div id="middleHome" style="height: 1250px;">
+				<div id="middleHome" style="height: 1250px; padding-right: 55px;">
 				
 				
 				<div id="OutsideProfileDetails">
