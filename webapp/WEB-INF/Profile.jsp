@@ -19,7 +19,7 @@
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 <script src="<c:url value="/resources/js/AsyncFriendRequest.js" />"></script>
-
+<script src="<c:url value="/resources/js/VUVProfileUpdate.js" />"></script>
 <script type="text/javascript">
 	function DisplayChangePhotoBlock() {
 		var dispPhoto = document.getElementById("ChangePhotoHome");
@@ -51,41 +51,6 @@
 	    if(charCode >31 && (charCode<48 || charCode >57))
 	        return false;
 	    return true;
-	}
-</script>
-
-<script type="text/javascript">
-	function dispEditEdu(){
-		document.getElementById("EducationDetailsTbl2").style.display='block';
-		document.getElementById("EducationDetailsTbl1").style.display='none';
-		
-	}
-	function dispEditContact(){
-		document.getElementById("ContactDetailsTbl2").style.display='block';
-		document.getElementById("ContactDetailsTbl1").style.display='none';
-		
-		
-	}
-	function dispEditOccupation(){
-		document.getElementById("EmployementDetailsTbl2").style.display='block';
-		document.getElementById("EmployementDetailsTbl1").style.display='none';
-		
-		
-	}
-	function dispEditHobbies(){
-		document.getElementById("HobbiesDetailsTbl2").style.display='block';
-		document.getElementById("HobbiesDetailsTbl1").style.display='none';
-		
-	}
-	function dispEditReligion(){
-		document.getElementById("ReligionDetailsTbl2").style.display='block';
-		document.getElementById("ReligionDetailsTbl1").style.display='none';
-		
-	}
-	function dispEditOtherDetails(){
-		document.getElementById("OtherDetailsTbl2").style.display='block';
-		document.getElementById("OtherDetailsTbl1").style.display='none';
-		
 	}
 </script>
 
@@ -278,6 +243,17 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	background-color: transparent;
 	float: right;
 }
+#InsideProfileDetails table{
+	float: left;
+	margin-left: 10px;
+}
+#InsideProfileDetails table tr td {
+	text-align: left;
+}
+#InsideProfileDetails table tr td b{
+	font-size: 17px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 
 <title>${loginUser.firstName}${loginUser.lastName}'s Profile Page on Vanjari Udyog Vishwa</title>
@@ -407,31 +383,38 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 									<c:forEach items="${contactInfoList}" var="contactInfo">
 										<table id="ContactDetailsTbl1" style="display: block;">
 											<tr>
-												<td><b>Name :</b></td>
+												<td style="width: 200px;"><b>Name</b></td>
+												<td>:</td>
 												<td>${contactInfo.firstName} ${contactInfo.middleName} ${contactInfo.lastName}</td>
 											</tr>
 											<tr>
-												<td><b>Email ID :</b></td>
+												<td><b>Email ID</b></td>
+												<td>:</td>
 												<td>${contactInfo.emailId}</td>
 											</tr>
 											<tr>
-												<td><b>Gender :</b></td>
+												<td><b>Gender</b></td>
+												<td>:</td>
 												<td>${contactInfo.gender}</td>
 											</tr>
 											<tr>
-												<td><b>BirthDate :</b></td>
+												<td><b>BirthDate</b></td>
+												<td>:</td>
 												<td>${contactInfo.birthDate}</td>
 											</tr>
 											<tr>
-												<td><b>Home Address :</b></td>
+												<td><b>Home Address</b></td>
+												<td>:</td>
 												<td>${contactInfo.homeAddress}</td>
 											</tr>
 											<tr>
-												<td><b>Office Address :</b></td>
+												<td><b>Office Address</b></td>
+												<td>:</td>
 												<td>${contactInfo.officeAddress}</td>
 											</tr>
 											<tr>
-												<td><b>Mobile No. :</b></td>
+												<td><b>Mobile No.</b></td>
+												<td>:</td>
 												<td>${contactInfo.contactNo}</td>
 
 											</tr>
@@ -441,42 +424,49 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<input type="hidden" name="emailId" value="${loginUser.email}">
 											<table id="ContactDetailsTbl2" style="display: none;">
 												<tr>
-													<td><b>First Name :</b></td>
+													<td style="width: 200px;"><b>First Name</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="firstName" value="${contactInfo.firstName}" size="30" maxlength="15" placeholder="First Name" onkeypress="return isCharKey(event);">
 													</td>
 												</tr>
 												<tr>
-													<td><b>Middle Name :</b></td>
+													<td><b>Middle Name</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="middleName" value="${contactInfo.middleName}" size="30" maxlength="15" placeholder="Middle Name" onkeypress="return isCharKey(event);">
 													</td>
 												</tr>
 												<tr>
-													<td><b>Last Name :</b></td>
+													<td><b>Last Name</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="lastName" value="${contactInfo.lastName}" size="30" maxlength="15" placeholder="Last Name" onkeypress="return isCharKey(event);">
 													</td>
 												</tr>
 												<tr>
-													<td><b>BirthDate :</b></td>
+													<td><b>BirthDate</b></td>
+													<td>:</td>
 													<td><input type="text" name="birthDate"value="${contactInfo.birthDate}"></td>
 												</tr>
 												<tr>
-													<td><b>Home Address :</b></td>
+													<td><b>Home Address</b></td>
+													<td>:</td>
 													<td><input type="text" name="homeAddress"value="${contactInfo.homeAddress}"></td>
 												</tr>
 												<tr>
-													<td><b>Office Address :</b></td>
+													<td><b>Office Address</b></td>
+													<td>:</td>
 													<td><input type="text" name="officeAddress" value="${contactInfo.officeAddress}"></td>
 												</tr>
 												<tr>
-													<td><b>Mobile No. :</b></td>
+													<td><b>Mobile No.</b></td>
+													<td>:</td>
 													<td><input type="text" name="telephone" value="${contactInfo.contactNo}" maxlength="10" placeholder="Mobile No." onkeypress="return isNumberKey(event)"></td>
 												</tr>
 												<tr>
-													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+													<td colspan="2"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditContact();"></td>
 												</tr>
 											</table>
 										</form>
@@ -499,31 +489,38 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 									<c:forEach items="${occupationList}" var="occupation">
 										<table id="EmployementDetailsTbl1" style="display: block;">
 											<tr>
-												<td><b>Company Name :</b></td>
+												<td style="width: 200px;"><b>Company Name</b></td>
+												<td>:</td>
 												<td>${occupation.companyName}</td>
 											</tr>
 											<tr>
-												<td><b>Occupation :</b></td>
+												<td><b>Occupation</b></td>
+												<td>:</td>
 												<td>${occupation.occupation}</td>
 											</tr>
 											<tr>
-												<td><b>Annual Incom :</b></td>
+												<td><b>Annual Incom</b></td>
+												<td>:</td>
 												<td>${occupation.annualincome}</td>
 											</tr>
 											<tr>
-												<td><b>Employement Type :</b></td>
+												<td><b>Employement Type</b></td>
+												<td>:</td>
 												<td>${occupation.emptype}</td>
 											</tr>
 											<tr>
-												<td><b>No of Employees :</b></td>
+												<td><b>No of Employees</b></td>
+												<td>:</td>
 												<td>${occupation.numberofemp}</td>
 											</tr>
 											<tr>
-												<td><b>Product Details :</b></td>
+												<td><b>Product Details</b></td>
+												<td>:</td>
 												<td>${occupation.productdetails}</td>
 											</tr>
 											<tr>
-												<td><b>Web Address :</b></td>
+												<td><b>Web Address</b></td>
+												<td>:</td>
 												<td>${occupation.webAddress}</td>
 
 											</tr>
@@ -533,42 +530,49 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<input type="hidden" name="usermail" value="${loginUser.email}">
 											<table id="EmployementDetailsTbl2" style="display: none;">
 												<tr>
-													<td><b>Company Name :</b></td>
+													<td style="width: 200px;"><b>Company Name</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="companyName" value="${occupation.companyName}" >
 													</td>
 												</tr>
 												<tr>
-													<td><b>Occupation :</b></td>
+													<td><b>Occupation</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="occupation" value="${occupation.occupation}">
 													</td>
 												</tr>
 												<tr>
-													<td><b>Annual Incom :</b></td>
+													<td><b>Annual Incom</b></td>
+													<td>:</td>
 													<td>
 														<input type="text" name="annualincome" value="${occupation.annualincome}" maxlength="9" onkeypress="return isNumberKey(event)">
 													</td>
 												</tr>
 												<tr>
-													<td><b>Employement Type :</b></td>
+													<td><b>Employement Type</b></td>
+													<td>:</td>
 													<td><input type="text" name="emptype" value="${occupation.emptype}"></td>
 												</tr>
 												<tr>
-													<td><b>No of Employees :</b></td>
+													<td><b>No of Employees</b></td>
+													<td>:</td>
 													<td><input type="text" name="numberofemp" value="${occupation.numberofemp}" maxlength="6" onkeypress="return isNumberKey(event)"></td>
 												</tr>
 												<tr>
-													<td><b>Product Details :</b></td>
+													<td><b>Product Details</b></td>
+													<td>:</td>
 													<td><input type="text" name="productdetails" value="${occupation.productdetails}"></td>
 												</tr>
 												<tr>
-													<td><b>Web Address :</b></td>
+													<td><b>Web Address</b></td>
+													<td>:</td>
 													<td><input type="text" name="webAddress" value="${occupation.webAddress}"></td>
 												</tr>
 												<tr>
-													<td colspan="1"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+													<td colspan="2"><input type="submit" value="Edit" name="editContactBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditOccupation();"></td>
 												</tr>
 											</table>
 										</form>
@@ -592,31 +596,38 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 									<c:forEach items="${educationworkList}" var="educationWORK">
 										<table id="EducationDetailsTbl1" style="display: block;">
 											<tr>
-												<td style="width: 200px;"><b>Name of School :</b></td>
+												<td style="width: 200px;"><b>Name of School</b></td>
+												<td>:</td>
 												<td>${educationWORK.school}</td>
 											</tr>
 											<tr>
-												<td><b>Name of College :</b></td>
+												<td><b>Name of College</b></td>
+												<td>:</td>
 												<td>${educationWORK.collage}</td>
 											</tr>
 											<tr>
-												<td><b>Graduation Degree :</b></td>
+												<td><b>Graduation Degree</b></td>
+												<td>:</td>
 												<td>${educationWORK.graduation}</td>
 											</tr>
 											<tr>
-												<td><b>Specialization :</b></td>
+												<td><b>Specialization</b></td>
+												<td>:</td>
 												<td>${educationWORK.otherGraduation}</td>
 											</tr>
 											<tr>
-												<td><b>PG College Name :</b></td>
+												<td><b>PG College Name</b></td>
+												<td>:</td>
 												<td>${educationWORK.PGCollege}</td>
 											</tr>
 											<tr>
-												<td><b>PG Degree:</b></td>
+												<td><b>PG Degree</b></td>
+												<td>:</td>
 												<td>${educationWORK.PGDegree}</td>
 											</tr>
 											<tr>
-												<td><b>Specialization :</b></td>
+												<td><b>Specialization</b></td>
+												<td>:</td>
 												<td>${educationWORK.otherPG}</td>
 											</tr>
 										</table>
@@ -625,17 +636,20 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<input type="hidden" name="userMail" value="${loginUser.email}">
 											<table id="EducationDetailsTbl2" style="display: none;">
 												<tr>
-													<td style="width: 200px;"><b>Name of School :</b></td>
+													<td style="width: 200px;"><b>Name of School</b></td>
+													<td>:</td>
 													<td><input type="text" name="school"
 														value="${educationWORK.school}"></td>
 												</tr>
 												<tr>
-													<td><b>Name of College :</b></td>
+													<td><b>Name of College</b></td>
+													<td>:</td>
 													<td><input type="text" name="collage"
 														value="${educationWORK.collage}"></td>
 												</tr>
 												<tr>
-													<td><b>Graduation Degree :</b></td>
+													<td><b>Graduation Degree</b></td>
+													<td>:</td>
 													<td><select name="graduation">
 															<option selected="selected">${educationWORK.graduation}</option>
 															<option>BA</option>
@@ -663,17 +677,20 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 													</select></td>
 												</tr>
 												<tr>
-													<td><b>Specialization :</b></td>
+													<td><b>Specialization</b></td>
+													<td>:</td>
 													<td><input type="text" name="otherGraduation"
 														value="${educationWORK.otherGraduation}"></td>
 												</tr>
 												<tr>
-													<td><b>PG College Name :</b></td>
+													<td><b>PG College Name</b></td>
+													<td>:</td>
 													<td><input type="text" name="PGCollege"
 														value="${educationWORK.PGCollege}"></td>
 												</tr>
 												<tr>
-													<td><b>PG Degree:</b></td>
+													<td><b>PG Degree</b></td>
+													<td>:</td>
 													<td><select name="PGDegree">
 															<option selected="selected">${educationWORK.PGDegree}</option>
 															<option>MA</option>
@@ -702,14 +719,15 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 													</select></td>
 												</tr>
 												<tr>
-													<td><b>Specialization :</b></td>
+													<td><b>Specialization</b></td>
+													<td>:</td>
 													<td><input type="text" name="otherPG"
 														value="${educationWORK.otherPG}"></td>
 												</tr>
 												<tr>
-													<td colspan="1"><input type="submit" value="Edit"
+													<td colspan="2"><input type="submit" value="Edit"
 														name="editEducationBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditEdu();"></td>
 												</tr>
 											</table>
 											</form>
@@ -734,39 +752,48 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 									<c:forEach items="${hobbiesList}" var="hobbiesDetails">
 										<table id="HobbiesDetailsTbl1" style="display: block;" >
 											<tr>
-												<td style="width: 200px;"><b>Hobbies :</b></td>
+												<td style="width: 200px;"><b>Hobbies</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.hobbiesName}</td>
 											</tr>
 											<tr>
-												<td><b>Favourite Music :</b></td>
+												<td><b>Favourite Music</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.favouriteMusic}</td>
 											</tr>
 											<tr>
-												<td><b>Favourite Book :</b></td>
+												<td><b>Favourite Book</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.favouriteBooks}</td>
 											</tr>
 											<tr>
-												<td><b>Dress Style :</b></td>
+												<td><b>Dress Style</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.dressStyletyle}</td>
 											</tr>
 											<tr>
-												<td><b>Favourite TV show :</b></td>
+												<td><b>Favourite TV show</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.favouritrTvShows}</td>
 											</tr>
 											<tr>
-												<td><b>Favourite Movie :</b></td>
+												<td><b>Favourite Movie</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.favouriteMovies}</td>
 											</tr>
 											<tr>
-												<td><b>Favourite Sport :</b></td>
+												<td><b>Favourite Sport</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.sports}</td>
 											</tr>
 											<tr>
-												<td><b>Food I Cook :</b></td>
+												<td><b>Food I Cook</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.foodIcook}</td>
 											</tr>
 											<tr>
-												<td><b>Vacation Destination :</b></td>
+												<td><b>Vacation Destination</b></td>
+												<td>:</td>
 												<td>${hobbiesDetails.vacationDestination}</td>
 											</tr>
 										</table>
@@ -775,11 +802,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<input type="hidden" name="usermail" value="${loginUser.email}">
 											<table id="HobbiesDetailsTbl2" style="display: none;">
 												<tr>
-													<td style="width: 200px;"><b>Hobbies :</b></td>
+													<td style="width: 200px;"><b>Hobbies</b></td>
+													<td>:</td>
 													<td><input type="text" name="hobbiesName"value="${hobbiesDetails.hobbiesName}"></td>
 												</tr>
 												<tr>
-													<td><b>Favourite Music :</b></td>
+													<td><b>Favourite Music</b></td>
+													<td>:</td>
 													<td>
 														<select name="favouriteMusic" id="fav_music" style="resize: none;height: 70px;" multiple="multiple" size="4">
 				                                        <%-- <option selected="selected">${editHobbiesDetails.favouriteMusic}</option> --%>
@@ -803,11 +832,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 														</td>
 												</tr>
 												<tr>
-													<td><b>Favourite Book :</b></td>
+													<td><b>Favourite Book</b></td>
+													<td>:</td>
 													<td><input type="text" name="favouriteBooks" value="${hobbiesDetails.favouriteBooks}"></td>
 												</tr>
 												<tr>
-													<td><b>Dress Style :</b></td>
+													<td><b>Dress Style</b></td>
+													<td>:</td>
 													<td>
 														<select name="dressStyletyle">
 			                                                <option selected="selected" value="${hobbiesDetails.dressStyletyle}"></option>
@@ -821,28 +852,33 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 													</td>
 												</tr>
 												<tr>
-													<td><b>Favourite TV show :</b></td>
+													<td><b>Favourite TV show</b></td>
+													<td>:</td>
 													<td><input type="text" name="favouritrTvShows" value="${hobbiesDetails.favouritrTvShows}"></td>
 												</tr>
 												<tr>
-													<td><b>Favourite Movie :</b></td>
+													<td><b>Favourite Movie</b></td>
+													<td>:</td>
 													<td><input type="text" name="favouriteMovies" value="${hobbiesDetails.favouriteMovies}"></td>
 												</tr>
 												<tr>
-													<td><b>Favourite Sport :</b></td>
+													<td><b>Favourite Sport</b></td>
+													<td>:</td>
 													<td><input type="text" name="sports" value="${hobbiesDetails.sports}"></td>
 												</tr>
 												<tr>
-													<td><b>Food I Cook :</b></td>
+													<td><b>Food I Cook</b></td>
+													<td>:</td>
 													<td><input type="text" name="foodIcook" value="${hobbiesDetails.foodIcook}"></td>
 												</tr>
 												<tr>
-													<td><b>Vacation Destination :</b></td>
+													<td><b>Vacation Destination</b></td>
+													<td>:</td>
 													<td><input type="text" name="vacationDestination" value="${hobbiesDetails.vacationDestination}"></td>
 												</tr>
 												<tr>
-													<td colspan="1"><input type="submit" value="Edit" name="editHobbiesBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+													<td colspan="2"><input type="submit" value="Edit" name="editHobbiesBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditHobbies();"></td>
 												</tr>
 											</table>
 										</form>
@@ -862,11 +898,13 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 								<c:forEach items="${religionList}" var="religionDetails">
 									<table id="ReligionDetailsTbl1" style="display: block;">
 										<tr>
-											<td><b>Religion :</b></td>
+											<td style="width: 200px;"><b>Religion</b></td>
+											<td>:</td>
 											<td>${religionDetails.religion}</td>
 										</tr>
 										<tr>
-											<td><b>Cast :</b></td>
+											<td><b>Cast</b></td>
+											<td>:</td>
 											<td>${religionDetails.subCast}</td>
 										</tr>
 									</table>
@@ -875,16 +913,18 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 										<input type="hidden" name="emailId" value="${loginUser.email}">
 										<table id="ReligionDetailsTbl2" style="display: none;">
 											<tr>
-												<td><b>Religion :</b></td>
+												<td style="width: 200px;"><b>Religion</b></td>
+												<td>:</td>
 												<td><input type="text" name="religion" value="${religionDetails.religion}"></td>
 											</tr>
 											<tr>
-												<td><b>Cast :</b></td>
+												<td><b>Cast</b></td>
+												<td>:</td>
 												<td><input type="text" name="subCast" value="${religionDetails.subCast}"></td>
 											</tr>
 											<tr>
-												<td colspan="1"><input type="submit" value="Edit" name="editReligionBtn" style="float: right;"></td>
-												<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+												<td colspan="2"><input type="submit" value="Edit" name="editReligionBtn" style="float: right;"></td>
+												<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditReligion();"></td>
 											</tr>
 										</table>
 									</form>
@@ -905,23 +945,28 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 									<c:forEach items="${otherDetailsList}" var="otherDetails">
 										<table id="OtherDetailsTbl1" style="display: block;">
 											<tr>
-												<td style="width: 200px"><b>Social Status :</b></td>
+												<td style="width: 200px"><b>Social Status</b></td>
+												<td>:</td>
 												<td>${otherDetails.socialStatus}</td>
 											</tr>
 											<tr>
-												<td><b>Polytical Status :</b></td>
+												<td><b>Polytical Status</b></td>
+												<td>:</td>
 												<td>${otherDetails.polyticalstatus}</td>
 											</tr>
 											<tr>
-												<td><b>Social Activities :</b></td>
+												<td><b>Social Activities</b></td>
+												<td>:</td>
 												<td>${otherDetails.socialact}</td>
 											</tr>
 											<tr>
-												<td><b>Polytical Activities :</b></td>
+												<td><b>Polytical Activities</b></td>
+												<td>:</td>
 												<td>${otherDetails.polyticalact}</td>
 											</tr>
 											<tr>
-												<td><b>Cultural activities :</b></td>
+												<td><b>Cultural activities</b></td>
+												<td>:</td>
 												<td>${otherDetails.culturalact}</td>
 											</tr>
 										</table>
@@ -930,28 +975,33 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<input type="hidden" name="usermail" value="${loginUser.email}">
 											<table id="OtherDetailsTbl2" style="display: none;">
 												<tr>
-													<td style="width: 200px"><b>Social Status :</b></td>
+													<td style="width: 200px"><b>Social Status</b></td>
+													<td>:</td>
 													<td><input type="text" name="socialStatus" value="${otherDetails.socialStatus}"></td>
 												</tr>
 												<tr>
-													<td><b>Polytical Status :</b></td>
+													<td><b>Polytical Status</b></td>
+													<td>:</td>
 													<td><input type="text" name="polyticalstatus" value="${otherDetails.polyticalstatus}"></td>
 												</tr>
 												<tr>
-													<td><b>Social Activities :</b></td>
+													<td><b>Social Activities</b></td>
+													<td>:</td>
 													<td><input type="text" name="socialact" value="${otherDetails.socialact}"></td>
 												</tr>
 												<tr>
-													<td><b>Polytical Activities :</b></td>
+													<td><b>Polytical Activities</b></td>
+													<td>:</td>
 													<td><input type="text" name="polyticalact" value="${otherDetails.polyticalact}"></td>
 												</tr>
 												<tr>
-													<td><b>Cultural activities :</b></td>
+													<td><b>Cultural activities</b></td>
+													<td>:</td>
 													<td><input type="text" name="culturalact" value="${otherDetails.culturalact}"></td>
 												</tr>
 												<tr>
-													<td colspan="1"><input type="submit" value="Edit" name="editOtherBtn" style="float: right;"></td>
-													<td><input type="reset" value="Cancel" style="margin-left: 55px;"></td>
+													<td colspan="2"><input type="submit" value="Edit" name="editOtherBtn" style="float: right;"></td>
+													<td><input type="reset" value="Cancel" style="margin-left: 55px;" onclick="return hideEditOtherDetails();"></td>
 												</tr>
 											</table>
 										</form>
@@ -964,22 +1014,20 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				
 				<div id="OutsideProfileProducts">
 					<h3>Products</h3>
-					<div id="ProfileProducts">
+					<div id="ProfileProducts" style="padding-right: 55px;">
 						<c:if test="${!empty ProductList}">
-							<table>
 							<c:forEach items="${ProductList}" var="productNAME">
-								
+								<table width=98% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-bottom: 5px;">
 									<tr>
-										<td>
-											<img src="${pageContext.request.contextPath}/resources/images/product1.png"
-												title="${productNAME.productName}" style="width: 70px; height: 60px;">
-										</td>
-										<td>
-												<h4 style="margin-top: -5px">${productNAME.productName}</h4>
-										</td>
-										</tr>
+										<td width="40"><img src="${pageContext.request.contextPath}/resources/ProductImages/${productNAME.imgPath}" title="${productNAME.productName}" height="80" width="80" style="margin: 4px auto auto 4px;border-radius: 50px;border: 3px solid #F00;"></td>
+										<td><a style="font-size: 22px;color: rgba(42, 163, 240, 0.68);">${productNAME.productName}</a></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Product Details :</b> ${productNAME.productDetails}</a></td>
+									</tr>
+								</table>
 							</c:forEach>
-							</table>
 						</c:if>
 
 
@@ -988,18 +1036,16 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 				
 				<div id="OutsideFriends">
 					<h3>Friend's</h3>
-					<div id="Friends">
-						<table width=90%>
-							<c:if test="${!empty userFriendsList}">
-								<c:forEach items="${userFriendsList}" var="userFriends">
-
+					<div id="Friends" style="padding-right: 55px;">
+						
+						<c:if test="${!empty userFriendsList}">
+							<c:forEach items="${userFriendsList}" var="userFriends">
+								<table style="width:50%;border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px;margin-top: 10px;margin-bottom: 35px;">
 									<tr>
-										<td style="border: 1px solid gray;">
+										<td>
 
-											<form action="/vanjariudyogvishwa-v2/FriendProfile"
-												method="post">
-
-												<table style="margin-bottom: 30px;">
+											<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+												<table>
 													<tr>
 														<td rowspan="2"><img
 															src="${pageContext.request.contextPath}/resources/ProfileImages/${userFriends[4]}"
@@ -1015,7 +1061,7 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 																<input type="hidden" name="friendsEmailId"
 																	value="${userFriends[2]}">
 															</c:if>
-															<input type="submit" id="FriendsName"
+															<input type="submit" id="FriendsName" style="font-size: 22px;"
 																value="${userFriends[0]} ${userFriends[1]}"> <br>
 															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.50); float: left;">${userFriends[6]} </a><br>
 															<a style="font-size: 16px;color: rgba(59, 79, 105, 0.62); float: left;"><b style="color: green;">Works At :</b> ${userFriends[5]} </a><br>
@@ -1030,16 +1076,17 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 
 										</td>
 									</tr>
+									</table>
 								</c:forEach>
 							</c:if>
-						</table>
+						
 
 					</div>
 				</div>
 				
 				<div id="OutsideInterestAreas" style="width: 760px;border: 1px solid rgba(245, 186, 118, 0.8);margin: -15px auto 20px 10px;">
 					<h3>IntrestAreas Details</h3>
-					<div id="InterestAreas" style="width: 730px;border: none;">
+					<div id="InterestAreas" style="width: 730px;border: none;padding-right: 55px;">
 						
 						<c:if test="${!empty intrestAreasList}">
 							<table id="InterestAreasDetailsTbl1" style="display: block;">
