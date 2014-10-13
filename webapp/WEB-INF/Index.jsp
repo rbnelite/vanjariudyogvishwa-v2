@@ -220,7 +220,7 @@
 </head>
 <body>
 <center>
-	<div id="main" style="background-color: transparent; height: 1000px">
+	<div id="main" style="background-color: transparent; height: 1000px; border: 1px dotted;">
 		<div id="Header">
 			
 			<form action="/vanjariudyogvishwa-v2/loginAuthentication" method="post">

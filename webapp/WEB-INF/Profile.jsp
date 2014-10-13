@@ -56,7 +56,7 @@
 
 <style type="text/css">
 h3 {
-	background-color: rgba(236, 198, 124, 0.5);
+	background-color: coral;
 	/* background-color:#00FF00; */
 	margin-top: 0px;
 }
