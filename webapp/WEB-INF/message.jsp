@@ -343,10 +343,64 @@ textarea:FOCUS{
 				</table>
 			</div>
 
-			<div id="leftMain">
+			<%-- <div id="leftMain">
 				<%@include file="LeftContainer.jsp" %>
+			</div> --%>
+			<div id="leftMain">
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Recent Messages</h3>
+				<div id="OutsideleftMainHome">
+					<div id="leftMainHome">
+						<table>
+							<c:if test="${!empty msgFriendsList}">
+								<c:forEach items="${msgFriendsList}" var="msgFriends">
+									<form action="/vanjariudyogvishwa-v2/viewConversion" , method="post">
+										<tr>
+											<td>
+												<img src="${pageContext.request.contextPath}/resources/ProfileImages/${msgFriends[4]}" height="37" width="37">
+											</td>
+											<td>
+												<input type="hidden" name="msgSenderID" value="${loginUser.email}">
+												<input type="hidden" name="msgReceiverID" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]} '${msgFriends[0]}'">
+												<input id="showFrndConversionName" type="submit" value="${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}" title=" Start messaging with ${msgFriends[1]} ${msgFriends[2]} ${msgFriends[3]}">
+											</td>
+										</tr>
+									</form>
+								</c:forEach>
+ 							</c:if>
+						</table>
+					</div>
+				</div>
+				<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana;">Links</h3>
+				<div id="leftMain2">
+					<table width=100% >
+						<!-- <th style="background-color: #fab039"><font color="white">Links</font></th> -->
+					<tr>
+						<td width="16%"> <img  src="${pageContext.request.contextPath}/resources/images/message-1.png" title="Message" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="message" style="color: #E45FF2;">Message</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/event.png" title="Events" height="32" width="32"></td>
+						<td width="84%"> <a id="Shortlinks" href="Events">Events</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/photo.png" title="Photos" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Photos">Photos</a> </td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/product1.png" title="My Products" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="Product">Products</a></td>
+					</tr>
+					<tr>
+						<td width="16%"> <img src="${pageContext.request.contextPath}/resources/images/friends1.png" title="Friend's" height="32" width="32"></td>
+						<td width="84%"><a id="Shortlinks" href="FriendList">Friends</a></td>
+					</tr>
+					</table>
+				</div>
+				
+				<div id="leftMain3" style="height: 463px;">
+					<h3 style="background-color: #FF6300; margin-top: 0px; font-family: vardana; ">Links</h3>
+				</div>
 			</div>
-
 
 			<div id="middlePhotos">
 				<form action="/vanjariudyogvishwa-v2/message", method="post" onsubmit="return validateMsgForm()">

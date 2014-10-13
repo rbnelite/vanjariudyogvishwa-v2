@@ -211,6 +211,17 @@ h3 {
 	background-color: transparent;
 	float: right;
 }
+#ProfileDetails table{
+	float: left;
+	margin-left: 10px;
+}
+#ProfileDetails table tr td {
+	text-align: left;
+}
+#ProfileDetails table tr td b{
+	font-size: 17px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 </style>
 <title>Friends Profile | Vanjari Udyog Vishwa</title>
     </head>
@@ -347,31 +358,31 @@ h3 {
 							<table>
 								<c:forEach items="${contactInfoList}" var="contactInfo">
 									<tr>
-										<td><b>Name :</b></td>
+										<td style="width: 200px;"><b>Name </b></td><td>:</td>
 										<td>${contactInfo.firstName} ${contactInfo.middleName} ${contactInfo.lastName}</td>
 									</tr>
 									<tr>
-										<td><b>Email ID :</b></td>
+										<td><b>Email ID </b></td><td>:</td>
 										<td>${contactInfo.emailId}</td>
 									</tr>
 									<tr>
-										<td><b>Gender :</b></td>
+										<td><b>Gender </b></td><td>:</td>
 										<td>${contactInfo.gender}</td>
 									</tr>
 									<tr>
-										<td><b>BirthDate :</b></td>
+										<td><b>BirthDate </b></td><td>:</td>
 										<td>${contactInfo.birthDate}</td>
 									</tr>
 									<tr>
-										<td><b>Home Address :</b></td>
+										<td><b>Home Address </b></td><td>:</td>
 										<td>${contactInfo.homeAddress}</td>
 									</tr>
 									<tr>
-										<td><b>Office Address :</b></td>
+										<td><b>Office Address </b></td><td>:</td>
 										<td>${contactInfo.officeAddress}</td>
 									</tr>
 									<tr>
-										<td><b>Mobile No. :</b></td>
+										<td><b>Mobile No. </b></td><td>:</td>
 										<td>${contactInfo.contactNo}</td>
 									</tr>
 								</c:forEach>
@@ -387,31 +398,31 @@ h3 {
 							<table>
 								<c:forEach items="${occupationList}" var="occupation">
 									<tr>
-										<td><b>Company Name :</b></td>
+										<td style="width: 200px;"><b>Company Name </b></td><td>:</td>
 										<td>${occupation.companyName}</td>
 									</tr>
 									<tr>
-										<td><b>Occupation :</b></td>
+										<td><b>Occupation </b></td><td>:</td>
 										<td>${occupation.occupation}</td>
 									</tr>
 									<tr>
-										<td><b>Annual Incom :</b></td>
+										<td><b>Annual Incom </b></td><td>:</td>
 										<td>${occupation.annualincome}</td>
 									</tr>
 									<tr>
-										<td><b>Employement Type :</b></td>
+										<td><b>Employement Type </b></td><td>:</td>
 										<td>${occupation.emptype}</td>
 									</tr>
 									<tr>
-										<td><b>No of Employees :</b></td>
+										<td><b>No of Employees </b></td><td>:</td>
 										<td>${occupation.numberofemp}</td>
 									</tr>
 									<tr>
-										<td><b>Product Details :</b></td>
+										<td><b>Product Details </b></td><td>:</td>
 										<td>${occupation.productdetails}</td>
 									</tr>
 									<tr>
-										<td><b>Web Address :</b></td>
+										<td><b>Web Address </b></td><td>:</td>
 										<td>${occupation.webAddress}</td>
 									</tr>
 								</c:forEach>
@@ -426,14 +437,14 @@ h3 {
 	            	<c:if test="${!empty FriendseducationworkList}">
 	                	<c:forEach items="${FriendseducationworkList}" var="FriendseducationWORK">
 						  <table>
-	                  		<tr><td style="width: 200px;"><b>Name of School :</b></td><td>${FriendseducationWORK.school}</td></tr>
-	                  		<tr><td><b>Name of College :</b></td><td>${FriendseducationWORK.collage}</td></tr>
-	                  		<tr><td><b>Graduation Degree :</b></td><td>${FriendseducationWORK.graduation}</td></tr>
-	                  		<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherGraduation}</td></tr>
-	                    	<tr><td><b>PG College Name :</b></td><td>${FriendseducationWORK.PGCollege}</td></tr>
-							<tr><td><b>PG Degree:</b></td><td>${FriendseducationWORK.PGDegree}</td></tr>
-	                    	<tr><td><b>Specialization :</b></td><td>${FriendseducationWORK.otherPG}</td></tr>
-	                    	<tr><td><b>Email-Id:</b></td><td>${FriendseducationWORK.userMail}</td></tr> 
+	                  		<tr><td style="width: 200px;"><b>Name of School </b></td><td>:</td><td>${FriendseducationWORK.school}</td></tr>
+	                  		<tr><td><b>Name of College </b></td><td>:</td><td>${FriendseducationWORK.collage}</td></tr>
+	                  		<tr><td><b>Graduation Degree </b></td><td>:</td><td>${FriendseducationWORK.graduation}</td></tr>
+	                  		<tr><td><b>Specialization </b></td><td>:</td><td>${FriendseducationWORK.otherGraduation}</td></tr>
+	                    	<tr><td><b>PG College Name </b></td><td>:</td><td>${FriendseducationWORK.PGCollege}</td></tr>
+							<tr><td><b>PG Degree</b></td><td>:</td><td>${FriendseducationWORK.PGDegree}</td></tr>
+	                    	<tr><td><b>Specialization </b></td><td>:</td><td>${FriendseducationWORK.otherPG}</td></tr>
+	                    	<tr><td><b>Email-Id</b></td><td>:</td><td>${FriendseducationWORK.userMail}</td></tr> 
 						  </table>
 	                	</c:forEach>
 	                 </c:if>
@@ -447,15 +458,15 @@ h3 {
              <c:forEach items="${FriendshobbiesList}" var="FriendshobbiesDetails">
              <table>
              
-             <tr><td style="width: 200px;"><b>Hobbies :</b></td><td>${FriendshobbiesDetails.hobbiesName}</td></tr>
-             <tr><td><b>Favourite Music :</b></td><td>${FriendshobbiesDetails.favouriteMusic}</td></tr>
-             <tr><td><b>Favourite Book :</b></td><td>${FriendshobbiesDetails.favouriteBooks}</td></tr>
-             <tr><td><b>Dress Style :</b></td><td>${FriendshobbiesDetails.dressStyletyle}</td></tr>
-             <tr><td><b>Favourite TV show :</b></td><td>${FriendshobbiesDetails.favouritrTvShows}</td></tr>
-             <tr><td><b>Favourite Movie :</b></td><td>${FriendshobbiesDetails.favouriteMovies}</td></tr>
-             <tr><td><b>Favourite Sport :</b></td><td>${FriendshobbiesDetails.sports}</td></tr>
-             <tr><td><b>Food I Cook :</b></td><td>${FriendshobbiesDetails.foodIcook}</td></tr>
-             <tr><td><b>Vacation Destination :</b></td><td>${FriendshobbiesDetails.vacationDestination}</td></tr>  
+             <tr><td style="width: 200px;"><b>Hobbies </b></td><td>:</td><td>${FriendshobbiesDetails.hobbiesName}</td></tr>
+             <tr><td><b>Favourite Music </b></td><td>:</td><td>${FriendshobbiesDetails.favouriteMusic}</td></tr>
+             <tr><td><b>Favourite Book </b></td><td>:</td><td>${FriendshobbiesDetails.favouriteBooks}</td></tr>
+             <tr><td><b>Dress Style </b></td><td>:</td><td>${FriendshobbiesDetails.dressStyletyle}</td></tr>
+             <tr><td><b>Favourite TV show </b></td><td>:</td><td>${FriendshobbiesDetails.favouritrTvShows}</td></tr>
+             <tr><td><b>Favourite Movie </b></td><td>:</td><td>${FriendshobbiesDetails.favouriteMovies}</td></tr>
+             <tr><td><b>Favourite Sport </b></td><td>:</td><td>${FriendshobbiesDetails.sports}</td></tr>
+             <tr><td><b>Food I Cook </b></td><td>:</td><td>${FriendshobbiesDetails.foodIcook}</td></tr>
+             <tr><td><b>Vacation Destination </b></td><td>:</td><td>${FriendshobbiesDetails.vacationDestination}</td></tr>  
              </table>
              </c:forEach>
              </c:if>
@@ -470,11 +481,11 @@ h3 {
 									<table>
 										<c:forEach items="${religionList}" var="religionDetails">
 											<tr>
-												<td><b>Religion :</b></td>
+												<td style="width: 200px;"><b>Religion </b></td><td>:</td>
 												<td>${religionDetails.religion}</td>
 											</tr>
 											<tr>
-												<td><b>Cast :</b></td>
+												<td><b>Cast </b></td><td>:</td>
 												<td>${religionDetails.subCast}</td>
 											</tr>
 
@@ -495,23 +506,23 @@ h3 {
             <c:forEach items="${FriendsotherDetailsList}" var="FriendsotherDetailsList">
             <table>
             <tr>
-			  <td style="width: 200px"><b>Social Status :</b></td>
+			  <td style="width: 200px"><b>Social Status </b></td><td>:</td>
 			  <td style="width: 590px;">${FriendsotherDetailsList.socialStatus}</td>
 			</tr>
 			<tr>
-				<td><b>Polytical Status :</b></td>
+				<td><b>Polytical Status </b></td><td>:</td>
 			    <td>${FriendsotherDetailsList.polyticalstatus}</td>
 		   </tr>
 			<tr>
-				<td><b>Social Activities :</b></td>
+				<td><b>Social Activities </b></td><td>:</td>
 			    <td>${FriendsotherDetailsList.socialact}</td>
 			</tr>
 			<tr>
-				<td><b>Polytical Activities :</b></td>
+				<td><b>Polytical Activities </b></td><td>:</td>
 			    <td>${FriendsotherDetailsList.polyticalact}</td>
 			</tr>
 			<tr>
-				<td><b>Cultural activities :</b></td>
+				<td><b>Cultural activities </b></td><td>:</td>
 			    <td>${FriendsotherDetailsList.culturalact}</td>
 		   </tr>
             
@@ -526,42 +537,34 @@ h3 {
             
             <div id="OutsideProfileProducts">
             	 <h3> Products</h3>
-            	<div id="ProfileProducts">
+            	<div id="ProfileProducts" style="padding-right: 55px;">
 							<c:if test="${!empty FriendsProductList}">
-								<table>
-									<c:forEach items="${FriendsProductList}"
-										var="FriendsproductNAME">
-
+								<c:forEach items="${FriendsProductList}" var="FriendsproductNAME">
+									<table width=98% style="border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px; margin-top: 10px;margin-bottom: 5px;">
 										<tr>
-											<td><img
-												src="${pageContext.request.contextPath}/resources/images/product1.png"
-												title="${FriendsproductNAME.productName}"
-												style="width: 70px; height: 60px;"></td>
-											<td>
-												<h4 style="margin-top: -5px">${FriendsproductNAME.productName}</h4>
-											</td>
+											<td width="40"><img src="${pageContext.request.contextPath}/resources/ProductImages/${FriendsproductNAME.imgPath}" title="${FriendsproductNAME.productName}" height="80" width="80" style="margin: 4px auto auto 4px;border-radius: 50px;border: 3px solid #F00;"></td>
+											<td><a style="font-size: 22px;color: rgba(42, 163, 240, 0.68);">${FriendsproductNAME.productName}</a></td>
 										</tr>
-
-									</c:forEach>
-								</table>
+										<tr>
+											<td></td>
+											<td><a style="font-size: 16px;color: rgba(59, 79, 105, 0.62);float: left;"><b style="color: green;">Product Details :</b> ${FriendsproductNAME.productDetails}</a></td>
+										</tr>
+									</table>
+								</c:forEach>
 							</c:if>
 						</div>
             </div>
             	 
             	 <div id="OutsideFriends">
             	 	<h3>Friend's</h3>
-            		<div id="Friends">
-					<table width=90% >
-							<c:if test="${!empty userFriendsList}">
-								<c:forEach items="${userFriendsList}" var="userFriends">
-									
-											<tr>
-												<td style="border: 1px solid gray;">
-													
-											<form action="/vanjariudyogvishwa-v2/FriendProfile"
-												method="post">
-
-												<table style="margin-bottom: 30px;">
+            		<div id="Friends" style="padding-right: 55px;">
+						<c:if test="${!empty userFriendsList}">
+							<c:forEach items="${userFriendsList}" var="userFriends">
+								<table style="width:50%;border: 2px solid rgba(243, 174, 9, 0.99);border-radius: 15px;margin-top: 10px;margin-bottom: 35px;">									
+									<tr>
+										<td>
+											<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
+												<table>
 													<tr>
 														<td rowspan="2">
 														<img
@@ -572,18 +575,10 @@ h3 {
 													<tr>
 														<td><input type="hidden" name="friendsEmailId" value="${userFriends[2]}"> 
 															<c:if test="${userFriends[2]!=loginUser.email}">
-															<input type="submit" id="FriendsName"
-															value="${userFriends[0]} ${userFriends[1]}"> 
+															<input type="submit" id="FriendsName" style="font-size: 22px;" value="${userFriends[0]} ${userFriends[1]}"> 
 															</c:if>
 															<c:if test="${userFriends[2]==loginUser.email}">
-																<script type="text/javascript">
-																	function showFrndReqBtn(){
-																		
-																		
-																	}
-																</script>
-																
-																<a href="Profile">${userFriends[0]} ${userFriends[1]}</a>
+																<a href="Profile">${userFriends[0]} ${userFriends[1]} (You)</a>
 															</c:if>
 															<br>
 															<a style="font-size: 16px;color: rgba(249, 35, 9, 0.50); float: left;">${userFriends[6]} </a><br>
@@ -598,9 +593,10 @@ h3 {
 
 										</td>
 												</tr>
+											</table>
 										</c:forEach>
 							</c:if>
-						</table>
+						
 					
 					</div>
 					</div>

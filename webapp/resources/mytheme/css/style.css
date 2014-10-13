@@ -126,7 +126,7 @@ cursor: pointer;
 
 #Header{
     border-radius: 3px;
-    background-image: url('../images/banner.jpg');
+    background-image: url('../images/header_bg.png');
     background-repeat: repeat-y;
     /* background-color: #fcca7b; */
     width: 100%;
@@ -1106,18 +1106,19 @@ h4 {
 #ViewProDetailsBtn{
 	height: 35px;
 	width: 110px;
-	color:white;
+	color:black;
 	background-color:rgba(188, 26, 249, 0.25);
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-radius: 6px;
 	border: none;
 	margin: 7px 10px 10px 2px;
+	transition:all 1s;
 }
 #ViewProDetailsBtn:HOVER{
 	height: 35px;
 	width: 110px;
-	color:black;
+	color: #D9F6C2;
 	background-color:rgba(188, 26, 249, 0.35);
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1125,6 +1126,7 @@ h4 {
 	border: none;
 	margin: 7px 10px 10px 2px;
 	cursor: pointer;
+	transition:all 1s;
 }
 
 #SearchByProTxt{

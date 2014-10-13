@@ -247,6 +247,10 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 	float: left;
 	margin-left: 10px;
 }
+#InsideProfileDetails form table{
+	float:none;
+	margin-left: 10px;
+}
 #InsideProfileDetails table tr td {
 	text-align: left;
 }
