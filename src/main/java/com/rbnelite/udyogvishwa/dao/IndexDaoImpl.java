@@ -47,7 +47,7 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		
 		Session session=sessionFactory.openSession();
 		try{
-		Criteria criteria=session.createCriteria(Index.class);
+		/*Criteria criteria=session.createCriteria(Index.class);
 				
 		Criterion firstName=Restrictions.ilike("firstName", SearchData,MatchMode.ANYWHERE);
 		Criterion middleName=Restrictions.ilike("middleName",SearchData,MatchMode.ANYWHERE);
@@ -57,7 +57,7 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 		LogicalExpression orExp1=Restrictions.or(orExp, lastName);
 		LogicalExpression orExp2=Restrictions.or(orExp1, emailId);
 		
-		criteria.add(orExp2);
+		criteria.add(orExp2);*/
 			
 				
 		/* Criteria criteria2=session.createCriteria(ProfileImages.class);
@@ -71,8 +71,10 @@ public class IndexDaoImpl extends BaseDao<Index> implements IndexDao {
 			criteria2.add(Restrictions.eq("userMail", index.getEmailId()));
 		}*/
 		
+		return session.createQuery("select i.firstName, i.lastName,pi.profileImage,o.occupation,o.companyName,i.emailId,i.homeAddress, E.PGDegree,E.otherPG,o.webAddress,i.contactNo,i.middleName from Occupation o, Index i,ProfileImages pi,EducationWork E "
+				+ "where ( i.firstName like concat('%','"+SearchData+"','%') or i.middleName like concat('%','"+SearchData+"','%') or i.lastName like concat('%','"+SearchData+"','%') or i.emailId like concat('%','"+SearchData+"','%') or i.contactNo like concat('%','"+SearchData+"','%') or i.homeAddress like concat('%','"+SearchData+"','%') ) "
+						+ "and i.emailId=o.usermail and pi.userMail=o.usermail and i.emailId=E.userMail").list();
 		
-		return criteria.list();
 		}finally{
 			session.close();
 		}

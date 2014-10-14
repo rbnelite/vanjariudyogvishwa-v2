@@ -64,9 +64,11 @@ public class SearchResultController {
 		
 		System.out.println("from search controller after Index and comment search");
 		
+		map.put("searchSByProf", new Occupation());
+		map.put("searchSByProfList", occupationservice.searchPeopleByProffession(searchstrHome));
+		
 		/*map.put("searchStatus", new Status());
 		map.put("SearchStatusList", statusservice.searchStatusList(searchstrHome));*/
-					
 		map.put("knownPeople", new IntrestAreas());
 		Set<IntrestAreas> knowPeopleSet = new HashSet<IntrestAreas>(peoplerefservice.peopleYouMayKnow(userMail));
 		map.put("knownPeopleList", knowPeopleSet);
