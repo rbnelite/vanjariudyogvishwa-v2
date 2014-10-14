@@ -48,9 +48,9 @@
 	function isNumberKey(evt)
 	{
 	    var charCode=(evt.which) ? evt.which :event.keyCode;
-	    if(charCode >31 && (charCode<48 || charCode >57))
-	        return false;
-	    return true;
+	    if((charCode>47 && charCode<58) || charCode ==8)
+	        return true;
+	    return false;
 	}
 </script>
 

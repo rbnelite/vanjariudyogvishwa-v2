@@ -42,14 +42,16 @@ function jumpcomment(NotificationId) {
 /******************For Message Form Validation ******************/
 
 function validateMsgForm() {
-	var msgToId=document.getElementById("country").value;
-	var msgToArea=document.getElementById("MsgToArea").value;
-	if(msgToId==null || msgToId==""){
+	var msgToId=document.getElementById("country");
+	var msgToArea=document.getElementById("MsgToArea");
+	if(msgToId.value==null || msgToId.value==""){
 		alert("Receiver's Name is required. Write receivers name.");
+		msgToId.focus();
 		return false;
 	}
-	if (msgToArea==null || msgToArea=="") {
+	if (msgToArea.value==null || msgToArea.value=="") {
 		alert("If you want to send any message then, Write your message.");
+		msgToArea.focus();
 		return false;
 	}
 }
