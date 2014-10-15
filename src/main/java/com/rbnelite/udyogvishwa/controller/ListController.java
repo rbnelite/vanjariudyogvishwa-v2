@@ -27,9 +27,8 @@ public class ListController {
 	@RequestMapping(value="/list")
 	public String initlist(@RequestParam("q") String searchstrHome, ModelMap map){
 		
-		
 		map.put("SearchUserList", indexService.searchUserList(searchstrHome));
-		System.out.println("@@@@@@@7777");
+		
 		return "list";
 		
 	}
@@ -39,7 +38,6 @@ public class ListController {
 		
 		
 		map.put("ReceiverMailList", indexService.searchUserList(searchstrHome));
-		System.out.println("@@@@@@@88888");
 		
 		return "searchReceiverMail";
 		
