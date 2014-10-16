@@ -751,19 +751,29 @@ cursor: pointer;
 	position: absolute;
 }
 
-#NotificationTopHome { /*float: right;*/
-	/*margin-right: 305px;*/
-	border-radius: 15px;
-	width: 350px;
-	height: auto;
-	background-color: bisque;
-	display: none;
-	/*margin-bottom: 35px;*/
-	margin-left: 650px;
-	border: 1px solid gray;
-	position: absolute;
-	z-index: 1;
-}
+#NotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    display: none;
+    margin-left: 650px;
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    /* style="height: auto ;overflow:auto" */
+ }
+#InsideNotificationTopHome{
+    border-radius: 5px;
+    width: 350px;
+    height: 300px;
+    background-color: bisque;
+    /* margin-left: 650px; */
+    border: 1px solid gray; 
+    position: absolute;
+    overflow: auto;
+ }
 
 #RequestTopHome {
 	border-radius: 15px;

@@ -14,12 +14,14 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.Occupation;
 import com.rbnelite.udyogvishwa.model.Product;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
 import com.rbnelite.udyogvishwa.service.IndexService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.OcccupationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProductService;
@@ -46,6 +48,8 @@ public class SearchResultController {
 	private FriendRequestService friendrequestservice;
 	@Resource
 	private OcccupationService occupationservice;
+	@Resource
+	private NotificationService notificationService;
 	
 	@RequestMapping(value="/SearchResult")
 	public String searchForm(@RequestParam("SearchData") String searchstrHome,  Map<String, Object> map)
@@ -79,6 +83,8 @@ public class SearchResultController {
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
 		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "SearchResult";
 	}
@@ -107,6 +113,9 @@ public class SearchResultController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "SearchResult";
 	}

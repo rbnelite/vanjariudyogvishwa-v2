@@ -16,9 +16,11 @@ import com.rbnelite.udyogvishwa.dto.LoginUser;
 import com.rbnelite.udyogvishwa.model.Event;
 import com.rbnelite.udyogvishwa.model.FriendRequest;
 import com.rbnelite.udyogvishwa.model.IntrestAreas;
+import com.rbnelite.udyogvishwa.model.Notification;
 import com.rbnelite.udyogvishwa.model.ProfileImages;
 import com.rbnelite.udyogvishwa.service.EventsService;
 import com.rbnelite.udyogvishwa.service.FriendRequestService;
+import com.rbnelite.udyogvishwa.service.NotificationService;
 import com.rbnelite.udyogvishwa.service.PeopleRefrenceService;
 import com.rbnelite.udyogvishwa.service.ProfileImageService;
 import com.rbnelite.udyogvishwa.utils.RequestContext;
@@ -38,6 +40,8 @@ public class SearchByProfController {
 	private ProfileImageService profileImageService;
 	@Resource
 	private FriendRequestService friendrequestservice;
+	@Resource
+	private NotificationService notificationService;
 	
 	@RequestMapping(value="SearchPeopleByProfession")
 	public String getSearchProfession(ModelMap map) {
@@ -57,6 +61,9 @@ public class SearchByProfController {
 		
 		map.put("friendRequest", new FriendRequest());
 		map.put("friendRequestList", friendrequestservice.listFriendRequest(userMail));
+		
+		map.put("Notification",new Notification());
+		map.put("NotificationList", notificationService.listNotification(userMail));
 		
 		return "SearchPeopleByProfession";
 	}
