@@ -5,12 +5,13 @@
 <div id="NotificationTopHome">
 	<div id="InsideNotificationTopHome">
 		
-		<table width="100%">
-			<th style="background-color: #fab039"><font color="white">Notification</font>
+		
+			<h3 style="background-color: #fab039"><font color="white">Notification</font>
 				<a onclick="return DisableNotificBlock()"> 
 					<img src="${pageContext.request.contextPath}/resources/images/close (3).png"
 						id="close"  style="width: 40px; height: 40px; float: right;"></a>
-			</th>
+			</h3>
+			<table width="100%">
 			<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 				<c:if test="${!empty NotificationList}">
 					<c:forEach items="${NotificationList}" var="note">
