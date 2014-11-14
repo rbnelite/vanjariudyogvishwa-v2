@@ -243,11 +243,11 @@ function HideChangePhotoBlock(){
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Journalist"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for Journalist" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/journalist.jpg');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for Journalist" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/journalist.png');"></td></tr></table>
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Lawyer"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for Lawyer" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/lawyer_icon.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for Lawyer" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/lawyer.png');"></td></tr></table>
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Nurse"></td>
@@ -365,7 +365,7 @@ function HideChangePhotoBlock(){
 					<tr>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="IAS/IES/IRS/IFS"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for IAS/IES/IRS/IFS" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title="Search for IAS/IES/IRS/IFS" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/IAS.png');"></td></tr></table>
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Indian Police Service(IPS)"></td>
@@ -469,7 +469,7 @@ function HideChangePhotoBlock(){
 					<tr>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Advertising Professional"></td>
-							<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Advertising Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/advertising.png');"></td></tr></table>
+							<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Advertising Professional" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/Advartising-Professional.png');"></td></tr></table>
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Businessman"></td>
@@ -481,7 +481,7 @@ function HideChangePhotoBlock(){
 						</form></td>
 						<td><form action="/vanjariudyogvishwa-v2/SearchResultForProffestion">
 							<table><tr><td><input type="hidden" name="SearchDatabyprofession" value="Army"></td>
-								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Army" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/aaaaa.png');"></td></tr></table>
+								<td><input id="VUVsearchByProBtn2" type="submit" value="" title=" Search for Army" style="background-image: url('${pageContext.request.contextPath}/resources/icons/occupation/defence-service.png');"></td></tr></table>
 						</form></td>
 					</tr>
 					<tr id="SearchOccupationName"><td>Advertising Professional</td><td>Businessman</td><td>Actor</td><td>Army</td></tr>

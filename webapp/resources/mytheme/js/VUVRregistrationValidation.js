@@ -100,3 +100,27 @@ function ValidateMyDobForm(dt){
 }
  
 /*.......Birth Date Validation End Here........ */
+
+
+/*.......Multi-Select Validation Start Here........ */
+
+	function checkMultiSelectList(){
+		alert("@@@@@"+" checkMultiSelectList()");
+		var maxNum=4;
+	 	oSelect=document.getElementById("fav_music");
+	 	var count=0;
+	 	for(var i=0;i<oSelect.options.length;i++){
+	    	if(oSelect.options[i].selected)
+	             count++;
+	       	if(count>maxNum){
+	       		document.getElementById("fav_music_err_msg").innerHTML="You can't check more than 4 options";
+	            return false;
+	       	}
+	 	}
+	 	if(count<1){
+	 		document.getElementById("fav_music_err_msg").innerHTML="Must Select at least one item.";
+	 		return false;
+	 	}
+	 	return true;
+	}
+/*.......Multi-Select Validation End Here........ */

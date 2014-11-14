@@ -21,6 +21,7 @@
 <script src="<c:url value="/resources/js/anil.js" />"></script>
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 <script src="<c:url value="/resources/js/ManojSawant.js"/>"></script>
+<script src="<c:url value="/resources/js/VUVRregistrationValidation.js"/>"></script>
 
 
 <title>Registration | Vanjari Udyog Vishwa</title>
@@ -41,29 +42,6 @@
     	            return true;
     	        return false;
         }
-		
-		function check()
-        {
-        	
-        	var temp=document.getElementById("fav_music");
-        
-        	var totalChecked = 0;
-        	 for (i = 0; i < temp.options.length; i++) {
-                 if (temp.options[i].selected) {
-                     totalChecked++;
-                 }
-             }
-        	 
-        	 if(totalChecked > 4)
-        		 {
-        		 document.getElementById("massage").innerHTML="You can't check more than 4 options";
-        		 return false;
-        		 }
-        	 document.getElementById("massage").innerHTML="";
-        	 return true;
-        	 
-        }
-		
 	</script>
 	<style type="text/css">
 		.error {
@@ -696,7 +674,7 @@
                                     <tr>
                                         <td>Favourite Music</td><td>
                                         <!-- </textarea> -->
-                                        <select name="favouriteMusic" id="fav_music" style="resize: none;height: 50px; width: 295px" multiple="multiple" size="4">
+                                        <select name="favouriteMusic" id="fav_music" style="resize: none;height: 50px; width: 295px" multiple="multiple" size="4" onclick="return checkMultiSelectList();">
                                         <option>Blues</option>
                                         <option>Alternative Music</option>
                                         <option>Classical Music</option>
@@ -716,7 +694,7 @@
                                            </select>
                                             </td>
                                     </tr> 
-                                    <tr><td></td><td><span id="massage" style="color: red;"></span></td></tr>
+                                    <tr><td></td><td><span id="fav_music_err_msg" style="color: red;"></span></td></tr>
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
                                         <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books" style="resize: none;" onfocus=" return check()"></textarea>

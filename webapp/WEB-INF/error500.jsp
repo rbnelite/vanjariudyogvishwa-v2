@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Page Not Found Vanjari Udyog Vishwa</title>
+<title>Error 500 - Vanjari Udyog Vishwa</title>
 <style type="text/css" media="screen">
       body {
         background-color: #f1f1f1;
