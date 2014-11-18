@@ -3,15 +3,15 @@
 
 
 <div id="NotificationTopHome">
-	<div id="InsideNotificationTopHome">
+	
+	<a onclick="return DisableNotificBlock()" style="font-size: 20px;">Notifications
+			<img src="${pageContext.request.contextPath}/resources/images/close (3).png"
+				id="close"  style="width: 40px; height: 40px; float: right;"></a>
+				
+	<div id="InsideNotificationTopHome" style="height: 250px;">
 		
-		
-			<h3 style="background-color: #fab039"><font color="white">Notification</font>
-				<a onclick="return DisableNotificBlock()"> 
-					<img src="${pageContext.request.contextPath}/resources/images/close (3).png"
-						id="close"  style="width: 40px; height: 40px; float: right;"></a>
-			</h3>
-			<table width="100%">
+				
+		<table width="100%">
 			<form action="/vanjariudyogvishwa-v2/Notification" method="post">
 				<c:if test="${!empty NotificationList}">
 					<c:forEach items="${NotificationList}" var="note">
@@ -29,11 +29,10 @@
 			</form>
 		</table>
 		
-		<table style="float: right;">
-			<tr><td>
-				<a href="Notificationjsp"> All Notifications....</a></td>
-			</tr>
-		</table>
-		
 	</div>
+	<table style="float: right;height: 30px;margin-top: 230px;width: 100%; background-color: #EFBC80;">
+		<tr><td align="center">
+			<a href="Notificationjsp" style="font-size: 20px;">See All Notifications....</a>
+		</td></tr>
+	</table>
 </div>
