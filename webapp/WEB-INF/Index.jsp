@@ -136,7 +136,7 @@
             		document.getElementById("myEmailIdError").innerHTML="Email ID Required.";
             		return false;
             		}
-            	else if( mycontactNo.value=="") { 
+            	else if( mycontactNo.value=="" || mycontactNo.value.length<10) { 
             		mycontactNo.focus();
             		document.getElementById("myContactNoError").innerHTML="10 Digits Mobile No is Required.";
             		return false; 

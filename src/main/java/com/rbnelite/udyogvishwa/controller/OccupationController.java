@@ -79,26 +79,16 @@ private PeopleRefrenceService peoplerefservice;
 
 
 @RequestMapping(value="/Occupation", method=RequestMethod.POST)
-public String insert(@Valid Occupation occupation, BindingResult result,@RequestParam("usermail") String emailId, @ModelAttribute("OccupationCredential") OccupationCredential occredential,ModelMap map){
+public String insert(@RequestParam("usermail") String emailId, @ModelAttribute("OccupationCredential") OccupationCredential occredential,ModelMap map){
 	
 	
-	System.out.println("!!!!!"+emailId);
-	if(result.hasErrors())
-	{
-		map.put("CurrentEmailId", emailId);
-		map.addAttribute("occupation", new Occupation());
-		map.put("IAstatus", true);
-		return "Registration";	
-	}
-	else
-	{
+	
 	ocservice.insertOccupation(occredential);
 	map.put("CurrentEmailId", emailId);
 	map.addAttribute("contact", new Contact());
 	map.put("OccupationStatus", true);
 	return "Registration";
-	}
-  }
+}
 
 
 @RequestMapping(value = "/editOccupation", method=RequestMethod.POST)

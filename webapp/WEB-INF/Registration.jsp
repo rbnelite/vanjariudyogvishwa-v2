@@ -7,7 +7,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -217,7 +217,7 @@
 					<c:if test="${IAstatus}">
 					<div id="MyOccupation" style="display: block;">
 				<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 600px;">Step-3</h2>
-				<form:form action="/vanjariudyogvishwa-v2/Occupation" method="post" commandName="occupation">
+				<form action="/vanjariudyogvishwa-v2/Occupation" method="post">
 			
 					<table align="center">
 						<tr>
@@ -242,20 +242,16 @@
 						</tr>
 						<tr>
 							<td>Currently Working <font color="red">*</font></td>
-							<td><input type="text" name="companyName" size="30" maxlength="30"/>
-								
-							</td>
+							<td><input type="text" name="companyName" id="companyNameRegi" size="30" maxlength="30"/></td>
 						</tr>
 						<tr>
-						<td></td>
-							<td colspan="2"><form:errors path="companyName" cssClass="error"/><br></td>
-
-					</tr>
+							<td colspan="2" id="companyNameRegiError" Class="error"></td>
+						</tr>
 						
 						<tr>
 							<td>Occupation <font color="red">*</font> </td>
-							<td> <select id="occupation" name="occupatiuon">
-									<option>--Please select--</option>
+							<td> <select id="occupationRegi" name="occupatiuon" id="occupation">
+									<option value=""></option>
 									<option>Admin Professional</option>
 									<option>Actor</option>
 									<option>Advertising Professional</option>
@@ -325,7 +321,7 @@
 								</td>
 						</tr>
 						<tr>
-							<td colspan="2"><br></td>
+							<td colspan="2" id="occupationRegiError" Class="error"></td>
 						</tr>
 						<tr>
 							<td>Product/Manufacturing Details </td>
@@ -364,13 +360,12 @@
 						<tr>
 							<td>Annual Income <font color="red">*</font>
 							</td>
-							<td><input type="text" name="annualincome"	size="30" maxlength="9" onkeypress="return isNumberKey(event)"/>
+							<td><input type="text" name="annualincome" id="annualincomeRegi" size="30" maxlength="9" onkeypress="return isNumberKey(event)"/>
 								
 							</td>
 						</tr>
 						<tr>
-							<td></td>
-							<td colspan="2"><form:errors path="annualincome" cssClass="error"/><br></td>
+							<td colspan="2" id="annualincomeRegiError" Class="error"></td>
 						</tr>
 						<tr>
 							<td>Web Address :</td>
@@ -383,12 +378,13 @@
 								<!-- <input type="button" name="PrevInterestArea" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyIntrestAreas();"> -->
 							</td>
 							<td align="right">
-								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" class="savebtn" style="margin-top: 10px;">
+								<input type="submit" name="save_occupation" id="submit" value="Save & Continue" 
+									class="savebtn" style="margin-top: 10px;" onclick="return occupationValidationRegi();">
 								<!-- onmouseover="return displayMyContactDetails()" -->
 							</td>
 						</tr>
 					</table>
-				</form:form>
+				</form>
 				</div>
 				</c:if>
 				<!-- Registration Step-3 Occupation End Here -->
@@ -396,9 +392,8 @@
 				<!-- Registration Step-4 Contact Start Here -->
 					<c:if test="${OccupationStatus}">
 					<div id="MyContactDetails" style="display: block;">
-					<form:form action="/vanjariudyogvishwa-v2/Contact" method="post"
-						commandName="contact">
-						<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-4</h2>
+					<form action="/vanjariudyogvishwa-v2/Contact" method="post">
+						<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 620px;">Step-4</h2>
 						<table align="center">
 							<tr>
 								<td colspan="2"><br>
@@ -421,38 +416,39 @@
 
 							<tr>
 								<td>Permanent Home Address <font color="red">*</font></td>
-								<td><input type="text" name="homeAddress" maxlength="200" /> <form:errors
-										path="homeAddress" cssClass="error" /></td>
+								<td><input type="text" name="homeAddress" id="homeAddressRegi" maxlength="200" /></td>
 							</tr>
 							<tr>
-								<td colspan="2"><br>
+								<td colspan="2" id="homeAddressRegiError" class="error"><br>
 							</tr>
 							<tr>
 								<td>Office Location <font color="red">*</font></td>
-								<td><input type="text" name="officeAddress" id="off_ad"
-										maxlength="200" /> <form:errors path="officeAddress"
-										cssClass="error" /></td>
+								<td><input type="text" name="officeAddress"  id="officeAddressRegi"
+										maxlength="200" /></td>
 							</tr>
 							<tr>
-								<td colspan="2"><br>
+								<td colspan="2" id="officeAddressRegiError" class="error"><br>
 							</tr>
 
 							<tr>
 								<td>Office Telephone/Mobile</td>
-								<td><input type="text" name="telephoneNo" maxlength="12"
+								<td><input type="text" name="telephoneNo" id="OfficeTelephoneNoRegi" maxlength="12"
 									onkeypress="return isNumberKey(event)"></td>
+							</tr>
+							<tr>
+								<td colspan="2" id="OfficeTelephoneNoRegiError" class="error"><br>
 							</tr>
 							<tr>
 								<td><input type="hidden" name="userMail" value="${loginUser.email}">
 									<!-- <input type="button" name="PrevOccupation" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 5px" onmouseover="return displayMyOccupation();"> -->
 								</td>
-								<td align="right"><input type="submit" class="savebtn"
+								<td align="right"><input type="submit" class="savebtn" onclick="return contactValidationRegi();"
 									id="submit" name="save_contact" value="Save & Continue" 
 									style="margin: 8px 14px 0px 0px;"> <!-- onmouseover="return displayMyReligionDetails();" -->
 								</td>
 							</tr>
 						</table>
-					</form:form>
+					 </form>
 				</div>
 				</c:if>
 				<!-- Registration Step-4 Contact End Here -->

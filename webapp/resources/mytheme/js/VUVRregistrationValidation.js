@@ -124,3 +124,70 @@ function ValidateMyDobForm(dt){
 	 	return true;
 	}
 /*.......Multi-Select Validation End Here........ */
+	
+/*.......Occupation Validation Start Here........ */
+
+	function occupationValidationRegi(){
+		
+		var s1=document.getElementById("companyNameRegi");
+		var s2=document.getElementById("occupationRegi");
+		var s3=document.getElementById("annualincomeRegi");
+				
+		if(s1.value==""){
+			s1.focus();
+			document.getElementById("companyNameRegiError").innerHTML="Company Name is Required.";
+			return false;
+		}
+		else if(s2.value==""){
+			s2.focus();
+			document.getElementById("occupationRegiError").innerHTML="occupation is Required.";
+			return false;
+		}
+		else if(s3.value==""){
+			s3.focus();
+			document.getElementById("annualincomeRegiError").innerHTML="Annual Income is Required.";
+			return false;
+		}
+		else if(s1.value!="" && s2.value!="" && s3.value!=""){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+/*.......Occupation Validation End Here........ */
+
+/*.......Contact Validation Start Here........ */
+
+
+	function contactValidationRegi(){
+		alert("contactValidationRegi()");
+		var s4=document.getElementById("homeAddressRegi");
+		var s5=document.getElementById("officeAddressRegi");
+		var s6=document.getElementById("OfficeTelephoneNoRegi");
+				
+		if(s4.value==""){
+			s4.focus();
+			document.getElementById("homeAddressRegiError").innerHTML="Company Name is Required.";
+			return false;
+		}
+		else if(s5.value==""){
+			s5.focus();
+			document.getElementById("officeAddressRegiError").innerHTML="occupation is Required.";
+			return false;
+		}
+		else if(s6.value==""){
+			s6.focus();
+			document.getElementById("OfficeTelephoneNoRegiError").innerHTML="Annual Income is Required.";
+			return false;
+		}
+		else if(s4.value!="" && s5.value!="" && s6.value!=""){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+/*.......Contact Validation End Here........ */

@@ -78,27 +78,15 @@ public class ContactController {
 	private PeopleRefrenceService peoplerefservice;
 
 	@RequestMapping(value = "/Contact", method = RequestMethod.POST)
-	public String contact(
-			@Valid Contact contact,
-			BindingResult result,
-			@RequestParam("userMail") String emailId,
+	public String contact( @RequestParam("userMail") String emailId,
 			@ModelAttribute("ContactCredential") ContactCredential contactcredential,
 			ModelMap map) {
-		if (result.hasErrors()) {
-			map.put("OccupationStatus", true);
-			map.addAttribute("contact", new Contact());
-			return "Registration";
-
-		}
-
-		else {
+		
 			contactServ.SaveContact(contactcredential);
 			map.put("ContactStatus", true);
 			map.put("CurrentEmailId", emailId);
 			map.addAttribute("religion", new Religion());
 			return "Registration";
-		}
-
 	}
 	
 	

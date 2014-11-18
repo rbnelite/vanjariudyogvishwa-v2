@@ -17,7 +17,7 @@ public class Hobbies {
 	@Id
 	@Column(name = "hobbies_id")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_sequence_id")
-	@SequenceGenerator(name = "history_sequence_id", sequenceName = "lifestyle_sequence", allocationSize = 1)
+	@SequenceGenerator(name = "history_sequence_id", sequenceName = "hobbies_sequence", allocationSize = 1)
 	private int id;
 
 	@Column(name="hobbies")

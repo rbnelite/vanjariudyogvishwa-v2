@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="employment")
@@ -20,7 +19,6 @@ public class Occupation {
 	private int occupationid;
 	
 	@Column(name="company_name")
-	@NotEmpty
 	private String companyName;
     
 	@Column
@@ -36,7 +34,6 @@ public class Occupation {
     private String emptype;
    
     @Column(name="annual_income")
-    @NotEmpty
     private String annualincome;
     
     @Column(name="email")
