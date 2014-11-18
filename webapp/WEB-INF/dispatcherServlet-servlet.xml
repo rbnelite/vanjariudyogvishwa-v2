@@ -20,20 +20,8 @@
     <mvc:annotation-driven />
     
 	<tx:annotation-driven transaction-manager="transactionManager"/>    
-    <bean id="dataSource"
-        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/vvishwa"/>
-        <property name="username" value="postgres"/>
-        <property name="password" value="rbnelite"/>
-    </bean>
- 
-    <bean class="org.springframework.context.support.ResourceBundleMessageSource"
-		id="messageSource">
-		<property name="basename" value="messages" />
-	</bean>
- 
-    <bean id="transactionManager"
+	
+	<bean id="transactionManager"
         class="org.springframework.orm.hibernate4.HibernateTransactionManager"
         p:sessionFactory-ref="sessionFactory"/>
  	
@@ -50,6 +38,18 @@
        </property>
     </bean>
     
+    <bean id="dataSource"
+        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/vvishwa"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="rbnelite"/>
+    </bean>
+ 
+    <mvc:interceptors>
+		<bean class="com.rbnelite.udyogvishwa.interceptor.RequestInterceptor"/>
+	</mvc:interceptors>
+    
     <mvc:resources mapping="/resources/**" location="/resources/mytheme/"/>
         
     <bean id="viewResolver"
@@ -59,6 +59,11 @@
     	<property name="suffix" value=".jsp"/>
     </bean>
     
+    <bean class="org.springframework.context.support.ResourceBundleMessageSource"
+		id="messageSource">
+		<property name="basename" value="messages" />
+	</bean>
+	
     <bean id="multipartResolver"
     	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
@@ -66,7 +71,4 @@
     	<property name="maxUploadSize" value="9999999"/>
 	</bean>
 	
-	<mvc:interceptors>
-		<bean class="com.rbnelite.udyogvishwa.interceptor.RequestInterceptor"/>
-	</mvc:interceptors>
 </beans>
