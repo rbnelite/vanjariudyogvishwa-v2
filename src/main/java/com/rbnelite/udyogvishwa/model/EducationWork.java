@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "education")
@@ -21,7 +20,6 @@ public class EducationWork {
 	private int educationid;
 
 	@Column
-	@NotEmpty
 	private String school;
 
 	@Column

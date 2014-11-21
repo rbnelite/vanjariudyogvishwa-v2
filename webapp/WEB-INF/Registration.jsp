@@ -38,7 +38,7 @@
         {
     		 var charCode=(evt.which) ? evt.which :event.keyCode;
     		 
-    	        if(charCode >64 && charCode<123)
+    	        if(charCode >64 && charCode<123 || charCode==8)
     	            return true;
     	        return false;
         }
@@ -431,7 +431,7 @@
 							</tr>
 
 							<tr>
-								<td>Office Telephone/Mobile</td>
+								<td>Office Telephone/Mobile <font color="red">*</font></td>
 								<td><input type="text" name="telephoneNo" id="OfficeTelephoneNoRegi" maxlength="12"
 									onkeypress="return isNumberKey(event)"></td>
 							</tr>
@@ -481,8 +481,8 @@
 
 							<tr>
 								<td>Religion <font color="red">*</font></td>
-								<td><select name="religionname">
-										<option>--Select Religion--</option>
+								<td><select name="religionname" id="religionnameRegi">
+										<option></option>
 										<option value="Hindu">Hindu</option>
 										<option value="Muslim">Muslim</option>
 										<option value="Christen">Christen</option>
@@ -491,15 +491,15 @@
 									</select> </td>
 							</tr>
 							<tr>
-								<td colspan="2"><br></td>
+								<td colspan="2" id="religionnameRegiError" class="error"><br></td>
 							</tr>
 							<tr>
-								<td>Caste</td>
-								<td><input type="text" name="relCast" onkeypress="return isCharKey(event);" /></td>
+								<td>Caste <font color="red">*</font></td>
+								<td><input type="text" name="relCast" id="relCastRegi" onkeypress="return isCharKey(event);" /></td>
 							</tr>
 
 							<tr>
-								<td colspan="2"><br></td>
+								<td colspan="2" id="relCastRegiError" class="error"><br></td>
 							</tr>
 
 							<tr>
@@ -507,7 +507,7 @@
 									<!-- <input type="button" name="PrevContact" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyContactDetails();"> -->
 								</td>
 								<td align="right"><input type="submit" name="save_religion" style="margin: 10px 50px 10px 0px;"
-									id="submit" value="Save & Continue" class="savebtn">
+									id="submit" value="Save & Continue" class="savebtn" onclick="return religionValidationRegi();">
 								<!-- onmouseover="return displayMyEducationDetails();" -->
 								</td>
 							</tr>
@@ -520,8 +520,8 @@
 				<!-- Registration Step-8 Education Start Here -->
 					<c:if test="${ReligionStatus}">
 					<div id="MyEducationDetails" style="display: block;">
-            <h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-6</h2>
-                <form:form action="/vanjariudyogvishwa-v2/educationwork" method="POST" commandName="educationWork">
+            <h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 600px;">Step-6</h2>
+                <form action="/vanjariudyogvishwa-v2/educationwork" method="POST">
                           
                 <table align="center">
                                     <tr><td colspan="2"><br></tr>
@@ -536,21 +536,20 @@
                                     <tr><td><br><br></td></tr>
                                     <tr>
                                         <td> Name of School <font color="red">*</font></td>
-                                        <td><input type="text" name="school" size="30" maxlength="100"/>
-                                            <form:errors path="school" cssClass="error"/></td>
+                                        <td><input type="text" name="school" id="schoolRegi" size="30" maxlength="100"/></td>
                                     </tr>
-                                    <tr><td colspan="2"><br></tr>
+                                    <tr><td colspan="2" id="schoolRegiError" class="error"></tr>
                                     <tr>
                                         <td>Name of Graduation College</td> 
-                                        <td><input type="text" name="collage" size="30" maxlength="100"/>
+                                        <td><input type="text" name="collage" id="collageRegi" size="30" maxlength="100"/>
                                            </td>
                                     </tr>
-                                    <tr><td colspan="2"><br></tr>
+                                    <tr><td colspan="2" id="collageRegiError" class="error"></tr>
                                     <tr>
                                         <td>Graduation Degree</td>
                                         <td>
-                                            <select name="graduation" id="graduation">
-                                                <option>--Please select--</option>
+                                            <select name="graduation" id="graduationRegi">
+                                                <option></option>
                                                 <option>BA</option>
                                                 <option>BBA</option>
                                                 <option>B.B.M.</option>
@@ -577,23 +576,23 @@
                                             </select>
                                             </td>
                                     </tr>
-                                    <tr><td colspan="2" ><br></tr>
+                                    <tr><td colspan="2" id="graduationRegiError" class="error"><br></tr>
                                     <tr>
                                         <td> Specialization 
-                                        </td><td><input type="text" name="otherGraduation" size="30" maxlength="50"/>
+                                        </td><td><input type="text" name="otherGraduation" id="otherGraduationRegi" size="30" maxlength="50"/>
                                        
                                         </td>
-                                    </tr><tr><td colspan="2"><br></tr>
+                                    </tr><tr><td colspan="2" id="otherGraduationRegiError" class="error"></tr>
                                     <tr>
                                         <td>PG College Name </td>
-                                        <td><input type="text" name="PGCollege" size="30" maxlength="100"/>
+                                        <td><input type="text" name="PGCollege" id="PGCollegeRegi" size="30" maxlength="100"/>
                                             </td>
                                     </tr>
-                                    <tr><td colspan="2"><br></tr>
+                                    <tr><td colspan="2" id="PGCollegeRegiError" class="error"></tr>
                                     <tr>
                                         <td> PG Degree </td>
-                                        <td><select name="PGDegree">
-                                                <option>--Please select--</option>
+                                        <td><select name="PGDegree" id="PGDegreeRegi">
+                                                <option></option>
                                                 <option>MA</option>
                                                 <option>M.Sc</option>
                                                 <option>MCA</option>
@@ -618,26 +617,27 @@
                                                 <option>Other</option>
 												<option>none</option>	
                                             </select>
-                                            <div id="pg_degreeError" class="red" colspan="2"/>
                                         </td>
                                     </tr>
-                                    <tr><td colspan="2"><br></tr>
+                                    <tr><td colspan="2" id="PGDegreeRegiError" class="error"></tr>
                                     <tr>
                                         <td>Specialization</td><td>
-                                        <input type="text" name="otherPG" size="30" maxlength="50"/></td>
+                                        <input type="text" name="otherPG" id="otherPGRegi" size="30" maxlength="50"/></td>
                                     </tr>
+                                    <tr><td colspan="2" id="otherPGRegiError" class="error"></tr>
 
                                     <tr>
                                         <td><input type="hidden" name="userMail" value="${CurrentEmailId}">
                                         	<!-- <input type="button" name="PrevReligion" id="submit" value="Previous" class="savebtn" style="width: 100px;margin-top: 15px" onmouseover="return displayMyReligionDetails();"> -->
                                         </td>
                                         <td align="right">
-                                            <input type="submit" class="savebtn" name="SaveEducation" id="submit" value="Save & Continue" style="margin: 8px 5px 0px 0px;">
+                                            <input type="submit" class="savebtn" name="SaveEducation" onclick="return educationValidationRegi();" 
+                                            	id="submit" value="Save & Continue" style="margin: 8px 5px 0px 0px;">
                                             <!-- onmouseover="return displayMyHobbies();" -->
                                         </td>
                                     </tr>
                                 </table>
-                </form:form>
+                </form>
                 </div>
 				</c:if>	
 				<!-- Registration Step-8 Education End Here -->

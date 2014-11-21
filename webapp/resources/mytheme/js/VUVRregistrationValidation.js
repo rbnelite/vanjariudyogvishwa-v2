@@ -132,7 +132,9 @@ function ValidateMyDobForm(dt){
 		var s1=document.getElementById("companyNameRegi");
 		var s2=document.getElementById("occupationRegi");
 		var s3=document.getElementById("annualincomeRegi");
-				
+		
+		hideErrorMsgOccupationRegi();
+		
 		if(s1.value==""){
 			s1.focus();
 			document.getElementById("companyNameRegiError").innerHTML="Company Name is Required.";
@@ -156,17 +158,24 @@ function ValidateMyDobForm(dt){
 		}
 	}
 	
+	function hideErrorMsgOccupationRegi(){
+		document.getElementById("companyNameRegiError").innerHTML="";
+		document.getElementById("occupationRegiError").innerHTML="";
+		document.getElementById("annualincomeRegiError").innerHTML="";
+	}
+	
 /*.......Occupation Validation End Here........ */
 
 /*.......Contact Validation Start Here........ */
 
 
 	function contactValidationRegi(){
-		alert("contactValidationRegi()");
 		var s4=document.getElementById("homeAddressRegi");
 		var s5=document.getElementById("officeAddressRegi");
 		var s6=document.getElementById("OfficeTelephoneNoRegi");
-				
+		
+		hideErrorMsgContactRegi();
+		
 		if(s4.value==""){
 			s4.focus();
 			document.getElementById("homeAddressRegiError").innerHTML="Company Name is Required.";
@@ -189,5 +198,123 @@ function ValidateMyDobForm(dt){
 			return false;
 		}
 	}
+	
+	function hideErrorMsgContactRegi(){
+		document.getElementById("homeAddressRegiError").innerHTML="";
+		document.getElementById("officeAddressRegiError").innerHTML="";
+		document.getElementById("OfficeTelephoneNoRegiError").innerHTML="";
+		
+	}
 
 /*.......Contact Validation End Here........ */
+	
+		
+		
+/*.......Religion Validation Start Here........ */
+
+
+		function religionValidationRegi(){
+			var s7=document.getElementById("religionnameRegi");
+			var s8=document.getElementById("relCastRegi");
+			
+			hideErrorMsgReligionRegi();
+			
+			if(s7.value==""){
+				s7.focus();
+				document.getElementById("religionnameRegiError").innerHTML="Religion Name is Required.";
+				return false;
+			}
+			else if(s8.value==""){
+				s8.focus();
+				document.getElementById("relCastRegiError").innerHTML="Sub-Cast is Required.";
+				return false;
+			}
+			else if(s7.value!="" && s8.value!=""){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		
+		function hideErrorMsgReligionRegi(){
+			document.getElementById("religionnameRegiError").innerHTML="";
+			document.getElementById("relCastRegiError").innerHTML="";
+		}
+
+	/*.......Religion Validation End Here........ */
+		
+/*.......Education Validation Start Here........ */
+
+
+		function educationValidationRegi(){
+			var s9=document.getElementById("schoolRegi");
+			var s10=document.getElementById("collageRegi");
+			var s11=document.getElementById("graduationRegi");
+			var s12=document.getElementById("otherGraduationRegi");
+			var s13=document.getElementById("PGCollegeRegi");
+			var s14=document.getElementById("PGDegreeRegi");
+			var s15=document.getElementById("otherPGRegi");
+			
+			hideErrorMsgEduRegi();
+			
+			if(s9.value==""){
+				s9.focus();
+				document.getElementById("schoolRegiError").innerHTML="School Name is Required.";
+				return false;
+			}
+			if(s11.value!="" || s12.value!=""){
+				if(s10.value==""){
+					s10.focus();
+					document.getElementById("collageRegiError").innerHTML="Graduation College Name is Required.";
+					return false;
+				}
+			}
+			if(s10.value!="" || s12.value!=""){ 
+				if(s11.value==""){
+					s11.focus();
+					document.getElementById("graduationRegiError").innerHTML="Graduation Degree Name is Required.";
+					return false;
+				}
+			}
+			if(s10.value!="" || s11.value!=""){
+				if(s12.value==""){
+					s12.focus();
+					document.getElementById("otherGraduationRegiError").innerHTML="What Specialization you did in graduation.";
+					return false;
+				}
+			}
+			if(s14.value!="" || s15.value!=""){
+				if(s13.value==""){
+					s13.focus();
+					document.getElementById("PGCollegeRegiError").innerHTML="Post-Graduation college name is Required.";
+					return false;
+				}
+			}
+			if(s13.value!="" || s15.value!=""){ 
+				if(s14.value==""){
+					s14.focus();
+					document.getElementById("PGDegreeRegiError").innerHTML="Post-Graduation Degree Name is Required.";
+					return false;
+				}
+			}
+			if(s13.value!="" || s14.value!=""){ 
+				if(s15.value==""){
+					s15.focus();
+					document.getElementById("otherPGRegiError").innerHTML="What Specialization you did in Post-Graduation";
+					return false;
+				}
+			}
+		}
+		
+		function hideErrorMsgEduRegi(){
+			document.getElementById("schoolRegiError").innerHTML="";
+			document.getElementById("collageRegiError").innerHTML="";
+			document.getElementById("graduationRegiError").innerHTML="";
+			document.getElementById("otherGraduationRegiError").innerHTML="";
+			document.getElementById("PGCollegeRegiError").innerHTML="";
+			document.getElementById("PGDegreeRegiError").innerHTML="";
+			document.getElementById("otherPGRegiError").innerHTML="";
+		}
+
+/*.......Education Validation End Here........ */

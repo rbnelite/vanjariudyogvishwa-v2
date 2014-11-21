@@ -77,22 +77,14 @@ public class EducationWorkController {
 	private PeopleRefrenceService peoplerefservice;
 
 	@RequestMapping(value="/educationwork", method=RequestMethod.POST)
-public String insert(@RequestParam("userMail") String emailId, @Valid EducationWork educationWork, BindingResult result, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
+public String insert(@RequestParam("userMail") String emailId, @ModelAttribute("EducationWorkCredential") EducationWorkCredential educationworkcredential, ModelMap map){
 	
-	if(result.hasErrors()) {
-		map.put("CurrentEmailId", emailId);
-		map.addAttribute("educationWork", new EducationWork());
-		map.put("ReligionStatus", true);
-		return "Registration";
-    }
-	else
-	{
+	
 	educationWorkService.insertEducationWork(educationworkcredential);
 	map.put("CurrentEmailId", emailId);
 	map.put("EducationStatus", true);
 	return"Registration";
-	}
-	
+
 }
 
 
