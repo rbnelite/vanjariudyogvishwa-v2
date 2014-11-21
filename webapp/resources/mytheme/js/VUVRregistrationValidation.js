@@ -105,23 +105,27 @@ function ValidateMyDobForm(dt){
 /*.......Multi-Select Validation Start Here........ */
 
 	function checkMultiSelectList(){
-		alert("@@@@@"+" checkMultiSelectList()");
 		var maxNum=4;
 	 	oSelect=document.getElementById("fav_music");
+	 	document.getElementById("fav_music_err_msg").innerHTML="";
 	 	var count=0;
 	 	for(var i=0;i<oSelect.options.length;i++){
 	    	if(oSelect.options[i].selected)
 	             count++;
 	       	if(count>maxNum){
 	       		document.getElementById("fav_music_err_msg").innerHTML="You can't check more than 4 options";
+	       		oSelect.focus();
 	            return false;
 	       	}
 	 	}
 	 	if(count<1){
 	 		document.getElementById("fav_music_err_msg").innerHTML="Must Select at least one item.";
+	 		oSelect.focus();
 	 		return false;
 	 	}
-	 	return true;
+	 	else{
+	 		return true;
+	 	}
 	}
 /*.......Multi-Select Validation End Here........ */
 	
@@ -318,3 +322,81 @@ function ValidateMyDobForm(dt){
 		}
 
 /*.......Education Validation End Here........ */
+		
+		/*======================================================================================*/
+		
+		/*.......Hobbies Validation Start Here........ */
+
+
+		function hobbiesValidationRegi(){
+			var s16=document.getElementById("hobbiesRegi");
+			/*var s17=document.getElementById("fav_music");*/
+			var s18=document.getElementById("fav_booksRegi");
+			var s19=document.getElementById("dress_styleRegi");
+			var s20=document.getElementById("fav_tvShowsRegi");
+			var s21=document.getElementById("fav_moviesRegi");
+			var s22=document.getElementById("sportsRegi");
+			var s23=document.getElementById("foodRegi");
+			var s24=document.getElementById("vac_destRegi");
+			
+			hideErrorMsgHobbiesRegi();
+			
+			if(s16.value==""){
+				s16.focus();
+				document.getElementById("hobbiesRegiError").innerHTML="Provide your Hobbies";
+				return false;
+			}
+			else if(checkMultiSelectList()){
+				alert("Fine very good");
+				document.getElementById("fav_music_err_msg").innerHTML="";
+			}
+			else if(s18.value==""){
+				s18.focus();
+				document.getElementById("fav_booksRegiError").innerHTML="Provide name of Your Favourite book.";
+				return false;
+			}
+			else if(s19.value==""){
+				s19.focus();
+				document.getElementById("dress_styleRegiError").innerHTML="Provide your favourite Dress Style.";
+				return false;
+			}
+			else if(s20.value==""){
+				s20.focus();
+				document.getElementById("fav_tvShowsRegiError").innerHTML="Provide your favourite TV-Show name.";
+				return false;
+			}
+			else if(s21.value==""){
+				s21.focus();
+				document.getElementById("fav_moviesRegiError").innerHTML="Provide your favourite Movie name.";
+				return false;
+			}
+			else if(s22.value==""){
+				s22.focus();
+				document.getElementById("sportsRegiError").innerHTML="What is your favourite Sport? ";
+				return false;
+			}
+			else if(s23.value==""){
+				s23.focus();
+				document.getElementById("foodRegiError").innerHTML="Are you a good cook? ";
+				return false;
+			}
+			else if(s24.value==""){
+				s24.focus();
+				document.getElementById("vac_destRegiError").innerHTML="What is your favourite Vacation Destination? ";
+				return false;
+			}
+		}
+		
+		function hideErrorMsgHobbiesRegi(){
+			document.getElementById("hobbiesRegiError").innerHTML="";
+			/*document.getElementById("fav_music_err_msg").innerHTML="";*/
+			document.getElementById("fav_booksRegiError").innerHTML="";
+			document.getElementById("dress_styleRegiError").innerHTML="";
+			document.getElementById("fav_tvShowsRegiError").innerHTML="";
+			document.getElementById("fav_moviesRegiError").innerHTML="";
+			document.getElementById("sportsRegiError").innerHTML="";
+			document.getElementById("foodRegiError").innerHTML="";
+			document.getElementById("vac_destRegiError").innerHTML="";
+		}
+
+/*.......Hobbies Validation End Here........ */

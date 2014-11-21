@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "hobbies")
@@ -21,7 +20,6 @@ public class Hobbies {
 	private int id;
 
 	@Column(name="hobbies")
-	@NotEmpty
 	private String hobbiesName;
 
 	@Column(name = "favourite_music")

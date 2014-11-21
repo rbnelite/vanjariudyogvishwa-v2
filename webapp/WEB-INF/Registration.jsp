@@ -663,14 +663,14 @@
 
 
                                     <tr>
-                                        <td> Hobbies </td><td><textarea name="hobbiesName" id="hobbies" style="resize: none;"></textarea>
+                                        <td> Hobbies </td><td><textarea name="hobbiesName" id="hobbiesRegi" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="hobbiesRegiError" class="error"></tr>
                                     <tr>
                                         <td>Favourite Music</td><td>
-                                        <!-- </textarea> -->
                                         <select name="favouriteMusic" id="fav_music" style="resize: none;height: 50px; width: 295px" multiple="multiple" size="4" onclick="return checkMultiSelectList();">
+                                        <option></option>
                                         <option>Blues</option>
                                         <option>Alternative Music</option>
                                         <option>Classical Music</option>
@@ -690,18 +690,20 @@
                                            </select>
                                             </td>
                                     </tr> 
-                                    <tr><td></td><td><span id="fav_music_err_msg" style="color: red;"></span></td></tr>
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <!-- <tr><td></td><td><span ></span></td></tr> -->
+                                    <tr><td colspan="2" id="fav_music_err_msg" class="error"></tr>
                                     <tr>
-                                        <td> Favourite Books </td><td><textarea name="favouriteBooks" id="fav_books" style="resize: none;" onfocus=" return check()"></textarea>
-                                            </td>
+                                        <td> Favourite Books </td>
+                                        <td>
+                                        	<textarea name="favouriteBooks" id="fav_booksRegi" style="resize: none;"></textarea>
+                                        </td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="fav_booksRegiError" class="error"></tr>
                                     <tr>
                                         <td> Dress Style </td>
                                         <td>
-                                        <select name="dressStyletyle" id="dress_style" style="width: 295px">
-                                                <option selected value="">--Please Select --</option>
+                                        <select name="dressStyletyle" id="dress_styleRegi" style="width: 295px">
+                                                <option selected value=""></option>
                                                 <option>Indian</option>
                                                 <option>Western</option>
                                                 <option>Sports</option>
@@ -710,37 +712,40 @@
                                                 <option>Not particular</option>
                                         </select>
                                         </td>
-                                    <!--</tr> <tr><td colspan="2"><br></tr>-->
+                                    </tr> <tr><td colspan="2" id="dress_styleRegiError" class="error"></tr>
                                     <tr>
-                                        <td>Favourite TV Shows </td><td><textarea name="favouritrTvShows" id="fav_tvShows" style="resize: none;"></textarea>
-                                            <div id="fav_tvShowsError" class="red" colspan="2"/></td>
+                                        <td>Favourite TV Shows </td>
+                                        <td><textarea name="favouritrTvShows" id="fav_tvShowsRegi" style="resize: none;"></textarea></td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="fav_tvShowsRegiError" class="error"></tr>
                                     
                                    <tr>
-                                        <td>Favourite Movies </td><td><textarea name="favouriteMovies" id="fav_movies" style="resize: none;"></textarea>
+                                        <td>Favourite Movies </td>
+                                        <td>
+                                        	<textarea name="favouriteMovies" id="fav_moviesRegi" style="resize: none;"></textarea>
                                         </td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="fav_moviesRegiError" class="error"></tr>
                                     <tr>
                                         <td> Sports</td>
-                                        <td><textarea name="sports" id="sports" style="resize: none;" ondblclick="return "></textarea>
+                                        <td>
+                                        	<textarea name="sports" id="sportsRegi" style="resize: none;"></textarea>
                                         </td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="sportsRegiError" class="error"></tr>
 
                                     <!--<tr><td colspan="2"><br></tr>-->
                                     <tr>
-                                        <td> Food I Cook </td><td><textarea name="foodIcook" id="food" style="resize: none;"></textarea>
+                                        <td> Food I Cook </td><td><textarea name="foodIcook" id="foodRegi" style="resize: none;"></textarea>
                                             </td>
                                     </tr> 
-                                    <!--<tr><td colspan="2"><br></tr>-->
+                                    <tr><td colspan="2" id="foodRegiError" class="error"></tr>
                                     <tr>
                                         <td>Favourite Vacation<br> Destination </td>
-                                        <td><textarea name="vacationDestination" id="vac_dest" style="resize: none;"></textarea>
+                                        <td><textarea name="vacationDestination" id="vac_destRegi" style="resize: none;"></textarea>
                                            </td>
                                     </tr> 
-                                    <tr><td colspan="2"><br></tr>
+                                    <tr><td colspan="2" id="vac_destRegiError" class="error"></tr>
 
                                     <tr>
                                         <td><input type="hidden" name="usermail" value="${loginUser.email}">
@@ -748,7 +753,8 @@
                                         </td>
                                         <td align="right">
 
-                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit" value="Save & Continue" style="margin: 0px 49px 0px 0px;">
+                                            <input type="submit" class="savebtn" name="save_hobbies" id="submit"
+                                            	value="Save & Continue" style="margin: 0px 49px 0px 0px;" onclick="return hobbiesValidationRegi();">
                                             <!-- onmouseover="return displayMyOtherDetails();" -->
                                         </td>
                                     </tr>
