@@ -72,8 +72,10 @@ public class IndexController {
 			indexservice.saveRegistration(indexcredential);
 			
 				/***********For Default Profile Image **********/
-			
 					String fileName="DefaultProfileImg.png";
+					if(indexcredential.getGender()=="female"){
+						fileName="DefaultProfileImg-Female.png";
+					}
 					profileImageService.insertProfileImage(fileName, emailId);
 			
 				/***********For Default Profile Image **********/

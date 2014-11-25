@@ -177,7 +177,7 @@ function HideChangePhotoBlock(){
 				
 										
 					<c:if test="${!empty searchSByProfList}">
-						<h3 style="background-color: orange;"> Search Result matched with Profession/Occupation.....</h3>
+						<h3 style="background-color: orange; margin-top: 0px;"> Search Result matched with Profession/Occupation.....</h3>
 						<c:forEach items="${searchSByProfList}" var="searchSByProf">
 						  <c:if test="${searchSByProf[5] != loginUser.email}">
 							<form action="/vanjariudyogvishwa-v2/FriendProfile" method="post">
@@ -356,7 +356,7 @@ function HideChangePhotoBlock(){
 				</div>
 			</div>
 			
-			<div id="rightMain" style="background-color: bisque;margin-top: -1200px;border: none;">
+			<div id="rightMain" style="background-color: bisque;margin-top: -1195px;border: none;">
 				<%@include file="RightContainer.jsp" %>
 			</div>
 		</div>

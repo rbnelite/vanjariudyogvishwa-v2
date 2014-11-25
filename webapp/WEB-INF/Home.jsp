@@ -29,11 +29,12 @@
 var flag="";
 
 function validateMyStatus(){
-	var mystatus=document.myform.status.value;
+	var mystatus=document.myform.status;
 	 
-		 if(mystatus==null || mystatus=="")
+		 if(mystatus.value==null || mystatus.value=="")
 		 {
 			document.getElementById("MyStatusError").innerHTML="Please Enter Your Status...!";
+			mystatus.focus();
 		 	return false;
 		 }
 		 else{

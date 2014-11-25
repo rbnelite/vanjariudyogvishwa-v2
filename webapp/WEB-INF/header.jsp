@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 function validateSearchForm(){
-    	alert("from validateSearchForm()");
+    	/* alert("from validateSearchForm()"); */
     	var srchStr=document.getElementById("SearchData");
     	if(srchStr.value.length==0)
     	{

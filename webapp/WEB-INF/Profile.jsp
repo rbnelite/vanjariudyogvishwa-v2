@@ -487,7 +487,75 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 													<td><b>Occupation</b></td>
 													<td>:</td>
 													<td>
-														<input type="text" name="occupation" value="${occupation.occupation}">
+														<%-- <input type="text" name="occupation" value="${occupation.occupation}"> --%>
+														<select name="occupation" style="width: 380px; height: 50px;">
+															<%-- <option value="${occupation.occupation}">${occupation.occupation}</option> --%>
+															<option>Admin Professional</option>
+															<option>Actor</option>
+															<option>Advertising Professional</option>
+															<option>Agricultural Professional</option>
+															<option>Air Hostes</option>
+															<option>Architect</option>
+															<option>Airforce</option>
+															<option>Army</option>
+															<option>Agent/Broker</option>
+															<option>Animator</option>
+															<option>Banking Professional</option>
+															<option>Businessman</option>
+															<option>Charted Accountant</option>
+															<option>Company Secretory</option>
+															<option>Civil Engineer</option>
+															<option>Catering Professional</option>
+															<option>Commercial Artist</option>
+															<option>Customer Support/BPO/KPO</option>
+															<option>Doctor</option>
+															<option>Defence Services</option>
+															<option>Dentist</option>
+															<option>Entertainment Professional</option>
+															<option>Event Manager</option>
+															<option>Electronics/Telecom Engineer</option>
+															<option>Finance Professional</option>
+															<option>Fashion Designer</option>
+															<option>Farming</option>
+															<option>Human Resource Professional</option>
+															<option>Horticulturist</option>
+															<option>Hardware Network Professional</option>
+															<option>Investment Professional</option>
+															<option>Interior Designer</option>
+															<option>IAS/IES/IRS/IFS</option>
+															<option>Indian Police Service(IPS)</option>
+															<option>Jewellary Designer</option>
+															<option>Journalist</option>
+															<option>Lawyer</option>
+															<option>Lecturer</option>
+															<option>Landscape Architect</option>
+															<option>Media Professional</option>
+															<option>Marketing Professional</option>
+															<option>Mechanical/Production Engineer</option>
+															<option>Sr.Manager/Manager</option>
+															<option>Navy</option>
+															<option>Nurse</option>
+															<option>Other Airline Professional</option>
+															<option>Pilot</option>
+															<option>Professor</option>
+															<option>Poet</option>
+															<option>Politician</option>
+															<option>Research Asst.</option>
+															<option>Software Developer/Programmer</option>
+															<option>Software Consultant</option>
+															<option>Singer</option>
+															<option>Surgeon</option>
+															<option>Science Professional</option>
+															<option>Social Worker</option>
+															<option>Sportsman</option>
+															<option>Student</option>
+															<option>Teacher</option>
+															<option>Training Professional</option>
+															<option>Writer</option>
+															<option>Web Designer</option>
+															<option>Not Working</option>
+															<option>Other</option>
+														</select>
 													</td>
 												</tr>
 												<tr>
@@ -862,7 +930,17 @@ input[value="Edit"]:HOVER, input[type="reset"]:HOVER{
 											<tr>
 												<td style="width: 200px;"><b>Religion</b></td>
 												<td>:</td>
-												<td><input type="text" name="religion" value="${religionDetails.religion}"></td>
+												<td>
+													<%-- <input type="text" name="religion" value="${religionDetails.religion}"> --%>
+													<select name="religion">
+														<%-- <option value="${religionDetails.religion}">${religionDetails.religion}</option> --%>
+														<option value="Hindu">Hindu</option>
+														<option value="Muslim">Muslim</option>
+														<option value="Christen">Christen</option>
+														<option value="Sikh">Sikh</option>
+														<option value="Other">Other</option>
+													</select>
+												</td>
 											</tr>
 											<tr>
 												<td><b>Cast</b></td>
