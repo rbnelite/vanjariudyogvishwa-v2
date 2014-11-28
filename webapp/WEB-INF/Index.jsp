@@ -156,12 +156,16 @@
             			document.getElementById("passwordError").innerHTML="Password Is Required.";
             			return false; 
             		}
+            		else if( pass.value.length<6 || pass.value.length>20) { 
+                 		pass.focus();
+                 		document.getElementById("passwordError").innerHTML="Password length must be 6 to 20 characters.";
+                 		return false;
+                 	}
                  	else if( pass2.value=="") { 
                  		pass2.focus();
                  		document.getElementById("password2Error").innerHTML="Re-Enter Password.";
                  		return false;
                  	}
-            		 
 	            	if(pass.value != pass2.value)
 	            	{
 	            		pass2.focus();

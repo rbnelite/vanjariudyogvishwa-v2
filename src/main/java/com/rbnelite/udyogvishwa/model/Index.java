@@ -11,8 +11,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -25,40 +23,27 @@ public class Index implements Serializable {
 	private long id;
 
 	@Column(name = "first_name")
-	@NotEmpty
 	private String firstName;
 
 	@Column(name = "middle_name")
-	@NotEmpty
 	private String middleName;
 
 	@Column(name = "last_name")
-	@NotEmpty
 	private String lastName;
 
 	@Column(name = "email")
-	@NotEmpty
-	@Email
 	private String emailId;
 
 	@Column(name = "contact_no")
-	@NotEmpty
 	private String contactNo;
 
 	@Column(name = "birthdate")
-	@NotEmpty
 	private String birthDate;
 
 	@Column
-	@NotEmpty
 	private String gender;
 
 	@Column(name = "password")
-	@NotEmpty
-	@Pattern.List({
-	    @Pattern(regexp = "((?=.*[a-z])(?=.*\\d).{6,16})", 
-	    message = "Password must contain at least 1 digit, 1 Character & Password length Must be 6 to 16"),
-	 })
 	private String password;
 
 	private String telephone;

@@ -21,11 +21,6 @@ public class IndexServiceImpl implements IndexService {
 		
 		Index index = new Index();
 		
-		String pass1 = indexcredential.getPassword();
-		String pass2 = indexcredential.getPassword2();
-		
-		if (pass1.equals(pass2)) {
-			
 			index.setFirstName(indexcredential.getFirstName());
 			
 			index.setMiddleName(indexcredential.getMiddleName());
@@ -54,14 +49,9 @@ public class IndexServiceImpl implements IndexService {
 			
 			index.setTelephone(indexcredential.getTelephone());
 
-			indexdao.saveRegistration(index);
+		indexdao.saveRegistration(index);
 
-		} 
-		else
-			{
-				System.out.println("password is not same");
-			}
-	}
+	} 
 
 	@Override
 	public List searchUserList(String SearchData) {
