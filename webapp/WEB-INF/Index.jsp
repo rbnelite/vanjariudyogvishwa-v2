@@ -338,7 +338,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="myFNameError" style="color: red;"></td>
+								<td id="myFNameError" class="error"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -348,7 +348,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="myMNameError" style="color: red;"></td>
+								<td id="myMNameError" class="error"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -358,7 +358,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="myLNameError" style="color: red;"></td>
+								<td id="myLNameError" class="error"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -368,7 +368,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="myEmailIdError" style="color: red;">${requestScope.message_email}</td>
+								<td id="myEmailIdError" class="error">${requestScope.message_email}</td>
 							</tr>
 							<tr>
 								<td></td>
@@ -378,7 +378,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="myContactNoError" style="color: red;"></td>
+								<td id="myContactNoError" class="error"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -418,7 +418,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="passwordError" style="color: red;"></td>
+								<td id="passwordError" class="error"></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -428,7 +428,7 @@
 							<tr>
 								<td></td>
 								<td></td>
-								<td id="password2Error" style="color: red;"></td>
+								<td id="password2Error" class="error"></td>
 							</tr>
 							
 							<tr>

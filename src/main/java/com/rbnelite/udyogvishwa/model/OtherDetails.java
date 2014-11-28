@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "other_details")
@@ -21,7 +20,6 @@ public class OtherDetails {
 	private long otherId;
 
 	@Column(name = "social_status")
-	@NotEmpty
 	private String socialStatus;
 
 	@Column(name = "polytical_status")

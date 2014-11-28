@@ -754,7 +754,7 @@
                                         <td align="right">
 
                                             <input type="submit" class="savebtn" name="save_hobbies" id="submit"
-                                            	value="Save & Continue" style="margin: 0px 49px 0px 0px;" onclick="return hobbiesValidationRegi();">
+                                            	value="Save & Continue" style="margin: 10px 0px 0px 0px;" onclick="return hobbiesValidationRegi();">
                                             <!-- onmouseover="return displayMyOtherDetails();" -->
                                         </td>
                                     </tr>
@@ -766,83 +766,74 @@
 				<!-- Registration Step-10 Hobbies End Here -->
 				
 				<!-- Registration Step-11 OtherDetails Start Here -->
-					<c:if test="${HobbiesStatus}">
+				<c:if test="${HobbiesStatus}">
 					<div id="MyOtherDetails" style="display: block;">
-			<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post"  commandName="otherdetails">
-			<form:errors path="*" cssClass="errorblock" element="div"/>
-			<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-8</h2>
-				<table align="center">
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td colspan="2"><font size="5">Fill Your Other
-								Details</font>
-						</td>
-					</tr>
-
-					<tr>
-						<td colspan="2">This Information will helps us to Create Your
-							Profile</td>
-					</tr>
-					
-				 <tr><td colspan="2"><hr/></td></tr>
-
-					<tr>
-						<td>Social Status</td>
-						<td><textarea name="socialStatus" style="resize: none;"></textarea>
-						</td>						
-                         <td><form:errors path="socialStatus" cssclass="error"/></td>
-						
-						
-					</tr>
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td>Political Status/View</td>
-						<td><textarea name="polyticalstatus" style="resize: none;"></textarea>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td>Social Activity</td>
-						<td><textarea name="socialact" style="resize: none;"></textarea>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td>Political Activity</td>
-						<td><textarea name="polyticalact" style="resize: none;"></textarea>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td>Cultural Activity</td>
-						<td><textarea name="culturalact" style="resize: none;"></textarea>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><br>
-					</tr>
-					<tr>
-						<td><input type="hidden" name="usermail" value="${loginUser.email}">
-							<!-- <input type="button" name="PrevHobbies" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyHobbies();"> -->
-						</td>
-						<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" name="save_other" value="Save & Continue"  class="savebtn">
-
-						</td>
-					</tr>
-				</table>
-				</form>
-				</div>
+						<form action="/vanjariudyogvishwa-v2/OtherDetails" method="post">
+							<h2 style="background-color: #FBB819;margin-top: 0px;height: 33px;width: 560px;">Step-8</h2>
+							<table align="center">
+								<tr>
+									<td colspan="2"><br>
+								</tr>
+								<tr>
+									<td colspan="2"><font size="5">Fill Your Other
+											Details</font>
+									</td>
+								</tr>
+			
+								<tr>
+									<td colspan="2">This Information will helps us to Create Your
+										Profile</td>
+								</tr>
+								
+							 <tr><td colspan="2"><hr/></td></tr>
+			
+								<tr>
+									<td>Social Status</td>
+									<td><textarea name="socialStatus" id="socialStatusRegi" style="resize: none;"></textarea></td>						
+								</tr>
+								<tr>
+									<td colspan="2" id="socialStatusRegiError" class="error"></td>
+								</tr>
+								<tr>
+									<td>Political Status/View</td>
+									<td><textarea name="polyticalstatus" id="polyticalstatusRegi" style="resize: none;"></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2" id="polyticalstatusRegiError" class="error"></td>
+								</tr>
+								<tr>
+									<td>Social Activity</td>
+									<td><textarea name="socialact" id="socialactRegi" style="resize: none;"></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2" id="socialactRegiError" class="error"></td>
+								</tr>
+								<tr>
+									<td>Political Activity</td>
+									<td><textarea name="polyticalact" id="polyticalactRegi" style="resize: none;"></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2" id="polyticalactRegiError" class="error"></td>
+								</tr>
+								<tr>
+									<td>Cultural Activity</td>
+									<td><textarea name="culturalact" id="culturalactRegi" style="resize: none;"></textarea></td>
+								</tr>
+								<tr>
+									<td colspan="2" id="culturalactRegiError" class="error"></td>
+								</tr>
+								<tr>
+									<td><input type="hidden" name="usermail" value="${loginUser.email}">
+										<!-- <input type="button" name="PrevHobbies" id="submit" value="Previous" class="savebtn" style="width: 100px" onmouseover="return displayMyHobbies();"> -->
+									</td>
+									<td align="right"> &nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="submit" name="save_other" value="Save & Continue"  class="savebtn" onclick="return otherDetailsValidationRegi();">
+			
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
 				</c:if>
 				<!-- Registration Step-11 OtherDetails End Here -->
 			</div>
@@ -911,6 +902,8 @@
 
 			</div>
 		</div>
+		
+		<%@include file="footer.jsp" %>
 		
 	</center>
 

@@ -8,11 +8,9 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
-import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -83,24 +81,12 @@ public class OtherDetailsController {
 	private PeopleRefrenceService peoplerefservice;
 	
 	@RequestMapping(value = "/OtherDetails", method = RequestMethod.POST)
-	public String OtherDetailsMethod(@Valid OtherDetails otherdetails, BindingResult result, @RequestParam("usermail") String emailId,
-			@ModelAttribute("OtherDetailsCredential") OtherDetailsCredential OtherCred,
-			ModelMap map) 
+	public String OtherDetailsMethod(@RequestParam("usermail") String emailId,
+			@ModelAttribute("OtherDetailsCredential") OtherDetailsCredential OtherCred, ModelMap map) 
 	{
-		 if(result.hasErrors()) 
-		 {
-			 map.addAttribute("otherdetails", new OtherDetails ()); 
-			 map.put("HobbiesStatus", true);
-			 System.out.println("from Other Details Controller errorOccured while saving data...");
-	            return "Registration";
-	     }
-		 else
-		 {	 
 		otherDetailsServ.insertOtherDetails(OtherCred);
 		map.put("CurrentEmailId", emailId);
-
 		return "ThankYou";
-		 }
 	}
 	
 	@RequestMapping(value="/editOther", method=RequestMethod.POST)

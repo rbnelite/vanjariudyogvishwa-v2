@@ -347,7 +347,6 @@ function ValidateMyDobForm(dt){
 				return false;
 			}
 			else if(checkMultiSelectList()){
-				alert("Fine very good");
 				document.getElementById("fav_music_err_msg").innerHTML="";
 			}
 			else if(s18.value==""){
@@ -400,3 +399,53 @@ function ValidateMyDobForm(dt){
 		}
 
 /*.......Hobbies Validation End Here........ */
+/*======================================================================================*/
+		
+		/*.......OtherDetails Validation Start Here........ */
+
+
+		function otherDetailsValidationRegi(){
+			var s25=document.getElementById("socialStatusRegi");
+			var s26=document.getElementById("polyticalstatusRegi");
+			var s27=document.getElementById("socialactRegi");
+			var s28=document.getElementById("polyticalactRegi");
+			var s29=document.getElementById("culturalactRegi");
+			
+			hideErrorMsgotherDetailsRegi();
+			
+			if(s25.value==""){
+				s25.focus();
+				document.getElementById("socialStatusRegiError").innerHTML="Provide your Social Status.";
+				return false;
+			}
+			else if(s26.value==""){
+				s26.focus();
+				document.getElementById("polyticalstatusRegiError").innerHTML="Provide your Political Status.";
+				return false;
+			}
+			else if(s27.value==""){
+				s27.focus();
+				document.getElementById("socialactRegiError").innerHTML="What are your social activities? ";
+				return false;
+			}
+			else if(s28.value==""){
+				s28.focus();
+				document.getElementById("polyticalactRegiError").innerHTML="What are your Political activities? ";
+				return false;
+			}
+			else if(s29.value==""){
+				s29.focus();
+				document.getElementById("culturalactRegiError").innerHTML="What are your Cultural activities? ";
+				return false;
+			}
+		}
+		
+		function hideErrorMsgotherDetailsRegi(){
+			document.getElementById("socialStatusRegiError").innerHTML="";
+			document.getElementById("polyticalstatusRegiError").innerHTML="";
+			document.getElementById("socialactRegiError").innerHTML="";
+			document.getElementById("polyticalactRegiError").innerHTML="";
+			document.getElementById("culturalactRegiError").innerHTML="";
+		}
+
+/*.......OtherDetails Validation End Here........ */
