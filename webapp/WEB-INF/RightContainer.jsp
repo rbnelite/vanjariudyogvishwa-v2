@@ -60,24 +60,24 @@
                             <script>
                                 
                                 //variable that will increment through the images
-                                var step=1
+                                var step=1;
                                
                                 function slideit(){
                                     //if browser does not support the image object, exit.
                                     if (!document.images)
                                         return
-                                    document.images.slide.src=eval("image"+step+".src")
+                                    document.images.slide.src=eval("image"+step+".src");
                                     
                                     if (step<6 )
-                                       	step++
+                                       	step++;
                                        
                                     else
-                                        step=1
+                                        step=1;
                                         
                                     //call function "slideit()" every 2.5 seconds
-                                    setTimeout("slideit()",9900)
+                                    setTimeout("slideit()",9900);
                                 }
-                                slideit()
+                                slideit();
                                 
                             </script>
 						

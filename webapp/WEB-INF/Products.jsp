@@ -39,7 +39,7 @@ function jumpcomment(NotificationId) {
 	/* alert(NotificationId); */
 	document.getElementById("notificationId").value = NotificationId;
 
-	var temp = document.getElementById("submit1").click();
+	document.getElementById("submit1").click();
 }
 </script>
 

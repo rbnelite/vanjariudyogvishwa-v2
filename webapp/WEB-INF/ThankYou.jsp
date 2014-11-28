@@ -19,7 +19,7 @@
 <link rel="shortcut icon" href="/vanjariudyogvishwa-v2/resources/images/banner12.png">
 <script src="<c:url value="/resources/js/RBNelite4.js" />"></script>
 
-<title>Thank You | Vanjari Udyog Vishwa & RBNelite IT Solutions</title>
+<title>Thank You | Vanjari Udyog Vishwa And RBNelite IT Solutions</title>
 
 <style type="text/css">
 	#ThankYouMsg {
@@ -119,7 +119,7 @@
 							<td width="66%">020 27658554</td>
 						</tr>
 						<tr>
-							<td height="23"><div align="right">Email &nbsp-</div></td>
+							<td height="23"><div align="right">Email &nbsp;-</div></td>
 							<td>&nbsp;</td>
 							<td>Services@vanjariudyogvishwa.org</td>
 						</tr>
