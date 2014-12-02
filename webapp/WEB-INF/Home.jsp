@@ -995,12 +995,9 @@ input[type="button"][value="Comments"]
 			<div id="rightMain" style="background-color: bisque;margin-top: -1190px">
 				<%@include file="RightContainer.jsp" %>
 			</div>
-				
-				
-				
-			</div>
-			
-			<%@include file="footer.jsp" %>
+		</div>
+		<div style="background-color: #F5CB99; box-shadow: 2px 2px 10px 5px darkorange; width: 790px;"><h3>Showing more Result......!!!</h3></div>	
+		<%@include file="footer.jsp" %>
 	</center>
 </body>
 </html>
