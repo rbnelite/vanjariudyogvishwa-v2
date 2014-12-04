@@ -78,24 +78,24 @@
 		document.getElementById("PasswordNullErrorDiv").innerHTML="";
 	 }
 	 	 
-	 function isNumberKey(evt)
-            {
-		 		clearRegiError();
-                var charCode=(evt.which) ? evt.which :event.keyCode;
-                if(charCode >31 && (charCode<48 || charCode >57))
-                    return false;
-                return true;
-            }
+	function isNumberKey(evt)
+    {
+		clearRegiError();
+        var charCode=(evt.which) ? evt.which :event.keyCode;
+        if(charCode >31 && (charCode<48 || charCode >57))
+            return false;
+        return true;
+	}
             
-            function isCharKey(evt)
-            {
-            	clearRegiError();
-        		 var charCode=(evt.which) ? evt.which :event.keyCode;
+    function isCharKey(evt)
+    {
+    	clearRegiError();
+        var charCode=(evt.which) ? evt.which :event.keyCode;
         		 
-        	        if(charCode >64 && charCode<123 || charCode==8)
-        	            return true;
-        	        return false;
-            }
+        if(charCode >64 && charCode<123 || charCode==8)
+        	return true;
+        return false;
+	}
             function isValidDOB(evt){
             	clearRegiError();
             	var charCode=(evt.which) ? evt.which :event.keyCode;
